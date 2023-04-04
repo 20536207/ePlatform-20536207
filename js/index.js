@@ -272,7 +272,7 @@ $(() => {
           },
           editing: {
             mode: 'row',
-            allowUpdating: true,
+            allowUpdating: false,
             allowAdding: false,
             allowDeleting: false,
             confirmDelete: true,
