@@ -1,0 +1,22 @@
+
+html,body {
+  height: 100%;
+  margin: 0 auto;
+}
+
+#MasterGridContainer{
+  height: 100%;
+  padding: 5px;
+}
+
+#ChildGridContainer{
+  height: 100%;
+  padding: 5px;
+}
+
+.dx-fieldset {
+  padding: 5px;
+  border-style: solid;
+  border-width: thin;
+  margin: 0 auto;
+}
