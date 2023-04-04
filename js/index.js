@@ -212,7 +212,7 @@ $(() => {
     headerFilter: { visible: true },
     groupPanel: { visible: false },
     grouping: {
-      autoExpandAll: false,
+      autoExpandAll: true,
     },
     wordWrapEnabled: false,
     columns: _TbDashboard,
@@ -329,40 +329,23 @@ $(() => {
           headerFilter: { visible: true },
           groupPanel: { visible: false },
           grouping: {
-            autoExpandAll: false,
+            autoExpandAll: true,
           },
           wordWrapEnabled: false,
           //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
           //summary: _TBSummaryDashboard,
           //toolbar: undefined,
-          columns: [
-            {
-              caption: 'ID Kelas',
-              dataField: 'A01',
-              sortOrder: 'asc',
-              fixed: true,
-
-            }, {
-              caption: 'NIPD',
-              dataField: 'B01',
-
-            }, {
-              caption: 'NISN',
-              dataField: 'B02',
-
-            }, {
-              caption: 'Nama Lengkap',
-              dataField: 'B03',
-
-            }
-          ],
+          columns: _TbInfoPd,
           dataSource: new DevExpress.data.CustomStore({
-            key: "A01",
-            loadMode: "raw", // omit in the DataGrid, TreeList, PivotGrid, and Scheduler
+            key: "A02",
             load: function () {
               var d = $.Deferred();
               return $.getJSON(
                 "data/info_pd.json",
+                {
+                  "param1": "value1",
+                  "param2": "value2"
+                }
               )
                 .done(function (result) {
                   // You can process the response here
@@ -370,52 +353,13 @@ $(() => {
                 })
                 .fail(function () {
                   throw "Data loading error";
-                });
+                })
             },
-            insert: function (values) {
-              var deferred = $.Deferred();
-              $.ajax({
-                url: "data/info_pd.json",
-                method: "POST",
-                data: JSON.stringify(values)
-              })
-                .done(deferred.resolve)
-                .fail(function (e) {
-                  deferred.reject("Insertion failed");
-                });
-              return deferred.promise();
-            },
-            remove: function (key) {
-              var deferred = $.Deferred();
-              $.ajax({
-                url: "data/info_pd.json" + encodeURIComponent(key),
-                method: "DELETE"
-              })
-                .done(deferred.resolve)
-                .fail(function (e) {
-                  deferred.reject("Deletion failed");
-                });
-              return deferred.promise();
-            },
-            update: function (key, values) {
-              var deferred = $.Deferred();
-              $.ajax({
-                url: "data/info_pd.json" + encodeURIComponent(key),
-                method: "PUT",
-                dataType: "json",
-                data: JSON.stringify(values)
-              })
-                .done(deferred.resolve)
-                .fail(function (e) {
-                  deferred.reject("failed update");
-                });
-              return deferred.promise();
-            }
           }),
         }).appendTo(container);
-      },
-    },
-  }).dxDataGrid('instance');
+      }
+    }
+  });
 });
 //===========================================================================================
 /*
