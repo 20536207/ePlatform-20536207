@@ -223,6 +223,7 @@ $(() => {
       enabled: true,
       template(container, options) {
         $("<div>").dxDataGrid({
+          /*
           dataSource: new DevExpress.data.CustomStore({
             key: "A01",
             loadMode: "raw", // omit in the DataGrid, TreeList, PivotGrid, and Scheduler
@@ -232,6 +233,7 @@ $(() => {
               );
             },
           }),
+          */
           showBorders: true,
           showColumnHeaders: true,
           showColumnLines: true,
@@ -269,12 +271,12 @@ $(() => {
             visible: true,
           },
           editing: {
-            mode: 'form',
-            allowUpdating: false,
+            mode: 'row',
+            allowUpdating: true,
             allowAdding: false,
             allowDeleting: false,
             confirmDelete: true,
-            useIcons: true,
+            useIcons: false,
           },
           export: {
             enabled: true,
@@ -333,7 +335,88 @@ $(() => {
           //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
           //summary: _TBSummaryDashboard,
           //toolbar: undefined,
-          columns: _TbInfoPd,
+          columns: [
+            {
+              caption: 'Identitas Peserta Didik',
+              fixed: true,
+              columns: [
+                {
+                  caption: 'ID Kelas',
+                  dataField: 'A01',
+                  sortOrder: 'asc',
+
+                }, {
+                  caption: 'NIPD',
+                  dataField: 'B01',
+
+                }, {
+                  caption: 'NISN',
+                  dataField: 'B02',
+
+                }, {
+                  caption: 'Nama Lengkap',
+                  dataField: 'B03',
+
+                }
+              ],
+            },
+          ],
+          dataSource: new DevExpress.data.CustomStore({
+            key: "A01",
+            loadMode: "raw", // omit in the DataGrid, TreeList, PivotGrid, and Scheduler
+            load: function () {
+              var d = $.Deferred();
+              return $.getJSON(
+                "data/info_pd.json",
+              )
+                .done(function (result) {
+                  // You can process the response here
+                  d.resolve(result);
+                })
+                .fail(function () {
+                  throw "Data loading error";
+                });
+            },
+            insert: function (values) {
+              var deferred = $.Deferred();
+              $.ajax({
+                url: "data/info_pd.json",
+                method: "POST",
+                data: JSON.stringify(values)
+              })
+                .done(deferred.resolve)
+                .fail(function (e) {
+                  deferred.reject("Insertion failed");
+                });
+              return deferred.promise();
+            },
+            remove: function (key) {
+              var deferred = $.Deferred();
+              $.ajax({
+                url: "data/info_pd.json" + encodeURIComponent(key),
+                method: "DELETE"
+              })
+                .done(deferred.resolve)
+                .fail(function (e) {
+                  deferred.reject("Deletion failed");
+                });
+              return deferred.promise();
+            },
+            update: function (key, values) {
+              var deferred = $.Deferred();
+              $.ajax({
+                url: "data/info_pd.json" + encodeURIComponent(key),
+                method: "PUT",
+                dataType: "json",
+                data: JSON.stringify(values)
+              })
+                .done(deferred.resolve)
+                .fail(function (e) {
+                  deferred.reject("failed update");
+                });
+              return deferred.promise();
+            }
+          }),
         }).appendTo(container);
       },
     },
@@ -383,7 +466,7 @@ $(function() {
           .done(deferred.resolve)
           .fail(function(e){
               deferred.reject("Deletion failed");
-          };
+          });
           return deferred.promise();
       },
       update: function(key, values) {
@@ -396,7 +479,7 @@ $(function() {
           .done(deferred.resolve)
           .fail(function(e){
               deferred.reject("Update failed");
-          };
+          });
           return deferred.promise();
       }
   });
