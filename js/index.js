@@ -260,7 +260,7 @@ $(() => {
           },
           hoverStateEnabled: true,
           paging: {
-            pageSize: 15,
+            pageSize: 5,
           },
           pager: {
             allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
@@ -337,29 +337,24 @@ $(() => {
           //toolbar: undefined,
           columns: [
             {
-              caption: 'Identitas Peserta Didik',
+              caption: 'ID Kelas',
+              dataField: 'A01',
+              sortOrder: 'asc',
               fixed: true,
-              columns: [
-                {
-                  caption: 'ID Kelas',
-                  dataField: 'A01',
-                  sortOrder: 'asc',
 
-                }, {
-                  caption: 'NIPD',
-                  dataField: 'B01',
+            }, {
+              caption: 'NIPD',
+              dataField: 'B01',
 
-                }, {
-                  caption: 'NISN',
-                  dataField: 'B02',
+            }, {
+              caption: 'NISN',
+              dataField: 'B02',
 
-                }, {
-                  caption: 'Nama Lengkap',
-                  dataField: 'B03',
+            }, {
+              caption: 'Nama Lengkap',
+              dataField: 'B03',
 
-                }
-              ],
-            },
+            }
           ],
           dataSource: new DevExpress.data.CustomStore({
             key: "A01",
