@@ -276,7 +276,7 @@ $(() => {
             allowAdding: false,
             allowDeleting: false,
             confirmDelete: true,
-            useIcons: false,
+            useIcons: true,
           },
           export: {
             enabled: true,
