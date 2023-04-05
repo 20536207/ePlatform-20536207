@@ -219,6 +219,16 @@ $(() => {
     sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
     summary: _TBSummaryDashboard,
     toolbar: undefined,
+    customizeColumns: function(columns) {  
+      columns.forEach(function(col) {  
+        col.calculateDisplayValue = function(rowData) {  
+          if (rowData[col.dataField] == 0) {  
+            return "-";  
+          }  
+          return rowData[col.dataField];  
+        }  
+      });  
+    },  
     masterDetail: {
       enabled: true,
       template(container, options) {
@@ -337,7 +347,7 @@ $(() => {
           //toolbar: undefined,
           columns: _TbInfoPd,
           dataSource: new DevExpress.data.CustomStore({
-            key: "A02",
+            key: "A01",
             load: function () {
               var d = $.Deferred();
               return $.getJSON(
@@ -349,6 +359,9 @@ $(() => {
               )
                 .done(function (result) {
                   // You can process the response here
+                  result = result.filter(function(val) {
+                    return (val.A02 == options.key);
+                  });
                   d.resolve(result);
                 })
                 .fail(function () {
