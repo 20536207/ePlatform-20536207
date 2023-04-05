@@ -1,13 +1,12 @@
 var
     _ColTingkat = {
         caption: 'Kelas',
+        fixed: true,
         dataField: 'Z01',
         sortOrder: 'asc',
         alignment: 'left',
         groupIndex: 0,
-
     },
-
     //=========================================================================
     _ColRombel = {
         caption: 'Rombel',
@@ -705,813 +704,1133 @@ var
     _SumRombel = {
         column: 'Z01',
         summaryType: 'count',
-        displayFormat: ' {0} Rombel ',
+        displayFormat: 'Total : ( {0} Rombel )',
+        alignByColumn: true,
+        showInColumn: 'A01',
+        showInGroupFooter: true,
     },
 
     //=========================================================================
-    _SumAnggotaRombel_L = {
+    _SumAnggotaRombel = [{
+        //L
         column: 'B01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumAnggotaRombel_P = {
+    {
+        //P
         column: 'B02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumAnggotaRombel_JML = {
+    {
+        //JML
         column: 'B03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
     //=========================================================================
-    _SumBerkebutuhanKhusus_L = {
+    _SumBerkebutuhanKhusus = [{
         column: 'C01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumBerkebutuhanKhusus_P = {
+    {
         column: 'C02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumBerkebutuhanKhusus_JML = {
+    {
         column: 'C03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumYatim_L = {
+    _SumYatim = [{
         column: 'D01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumYatim_P = {
+    {
         column: 'D02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumYatim_JML = {
+    {
         column: 'D03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumPiatu_L = {
+    _SumPiatu = [{
         column: 'D04',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumPiatu_P = {
+    {
         column: 'D05',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumPiatu_JML = {
+    {
         column: 'D06',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumYatimPiatu_L = {
+    _SumYatimPiatu = [{
         column: 'D07',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumYatimPiatu_P = {
+    {
         column: 'D08',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumYatimPiatu_JML = {
+    {
         column: 'D09',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumKIP_L = {
+    _SumKIP = [{
         column: 'E01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKIP_P = {
+    {
         column: 'E02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKIP_JML = {
+    {
         column: 'E03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumPKH_L = {
+    _SumPKH = [{
         column: 'E04',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumPKH_P = {
+    {
         column: 'E05',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumPKH_JML = {
+    {
         column: 'E06',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumKPS_L = {
+    _SumKPS = [{
         column: 'E07',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKPS_P = {
+    {
         column: 'E08',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKPS_JML = {
+    {
         column: 'E09',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumKKS_L = {
+    _SumKKS = [{
         column: 'E10',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKKS_P = {
+    {
         column: 'E11',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKKS_JML = {
+    {
         column: 'E12',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumBestari_L = {
+    _SumBestari = [{
         column: 'E13',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumBestari_P = {
+    {
         column: 'E14',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumBestari_JML = {
+    {
         column: 'E15',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumPYBK_L = {
+    _SumPYBK = [{
         column: 'E16',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumPYBK_P = {
+    {
         column: 'E17',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumPYBK_JML = {
+    {
         column: 'E18',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumUSP_L = {
+    _SumUSP = [{
         column: 'E19',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumUSP_P = {
+    {
         column: 'E20',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumUSP_JML = {
+    {
         column: 'E21',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumRekomPIP_L = {
+    _SumRekomPIP = [{
         column: 'E22',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumRekomPIP_P = {
+    {
         column: 'E23',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumRekomPIP_JML = {
+    {
         column: 'E24',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumPIP_L = {
+    _SumPIP = [{
         column: 'F01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumPIP_P = {
+    {
         column: 'F02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumPIP_JML = {
+    {
         column: 'F03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumDomDalamDaerah_L = {
+    _SumDomDalamDaerah = [{
         column: 'G01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumDomDalamDaerah_P = {
+    {
         column: 'G02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumDomDalamDaerah_JML = {
+    {
         column: 'G03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumDomLuarDaerah_L = {
+    _SumDomLuarDaerah = [{
         column: 'G04',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumDomLuarDaerah_P = {
+    {
         column: 'G05',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumDomLuarDaerah_JML = {
+    {
         column: 'G06',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumIslam_L = {
+    _SumIslam = [{
         column: 'H01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumIslam_P = {
+    {
         column: 'H02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumIslam_JML = {
+    {
         column: 'H03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumKristen_L = {
+    _SumKristen = [{
         column: 'H04',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKristen_P = {
+    {
         column: 'H05',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKristen_JML = {
+    {
         column: 'H06',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumKatolik_L = {
+    _SumKatolik = [{
         column: 'H07',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKatolik_P = {
+    {
         column: 'H08',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKatolik_JML = {
+    {
         column: 'H09',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumHindu_L = {
+    _SumHindu = [{
         column: 'H10',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumHindu_P = {
+    {
         column: 'H11',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumHindu_JML = {
+    {
         column: 'H12',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumBudha_L = {
+    _SumBudha = [{
         column: 'H13',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumBudha_P = {
+    {
         column: 'H14',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumBudha_JML = {
+    {
         column: 'H15',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumKongHuCu_L = {
+    _SumKongHuCu = [{
         column: 'H16',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKongHuCu_P = {
+    {
         column: 'H17',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKongHuCu_JML = {
+    {
         column: 'H18',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumKepercayaan_L = {
+    _SumKepercayaan = [{
         column: 'H19',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKepercayaan_P = {
+    {
         column: 'H20',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKepercayaan_JML = {
+    {
         column: 'H21',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumTK_L = {
+    _SumTK = [{
         column: 'I01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumTK_P = {
+    {
         column: 'I02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumTK_JML = {
+    {
         column: 'I03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumKB_L = {
+    _SumKB = [{
         column: 'I04',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKB_P = {
+    {
         column: 'I05',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumKB_JML = {
+    {
         column: 'I06',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumTPA_L = {
+    _SumTPA = [{
         column: 'I07',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumTPA_P = {
+    {
         column: 'I08',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumTPA_JML = {
+    {
         column: 'I09',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumLess6Th_L = {
+    _SumLess6Th = [{
         column: 'J01',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumLess6Th_P = {
+    {
         column: 'J02',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumLess6Th_JML = {
+    {
         column: 'J03',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _Sum6Th_L = {
+    _Sum6Th = [{
         column: 'J04',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum6Th_P = {
+    {
         column: 'J05',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum6Th_JML = {
+    {
         column: 'J06',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _Sum7Th_L = {
+    _Sum7Th = [{
         column: 'J07',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum7Th_P = {
+    {
         column: 'J08',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum7Th_JML = {
+    {
         column: 'J09',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _Sum8Th_L = {
+    _Sum8Th = [{
         column: 'J10',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum8Th_P = {
+    {
         column: 'J11',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum8Th_JML = {
+    {
         column: 'J12',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _Sum9Th_L = {
+    _Sum9Th = [{
         column: 'J13',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum9Th_P = {
+    {
         column: 'J14',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum9Th_JML = {
+    {
         column: 'J15',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _Sum10Th_L = {
+    _Sum10Th = [{
         column: 'J16',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum10Th_P = {
+    {
         column: 'J17',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum10Th_JML = {
+    {
         column: 'J18',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _Sum11Th_L = {
+    _Sum11Th = [{
         column: 'J19',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum11Th_P = {
+    {
         column: 'J20',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum11Th_JML = {
+    {
         column: 'J21',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _Sum12Th_L = {
+    _Sum12Th = [{
         column: 'J22',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum12Th_P = {
+    {
         column: 'J23',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _Sum12Th_JML = {
+    {
         column: 'J24',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
-    
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
+
     //=========================================================================
-    _SumUp12Th_L = {
+    _SumUp12Th = [{
         column: 'J25',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumUp12Th_P = {
+    {
         column: 'J26',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
     },
-    _SumUp12Th_JML = {
+    {
         column: 'J27',
         summaryType: 'sum',
-        showInGroupFooter: false,
+        showInGroupFooter: true,
         alignByColumn: true,
         displayFormat: '{0}',
-    },
+        customizeText: function (e) {
+            return e.value <= 0 ? "-" : e.value;
+        },
+    }],
 
 
     //========================================================================================================
@@ -1529,44 +1848,45 @@ var
         _ColUsia
     ],
 
-    
+
     _TBSummaryDashboard = {
+
         groupItems: [
             _SumRombel,
-            _SumAnggotaRombel_L, _SumAnggotaRombel_P, _SumAnggotaRombel_JML,
-            _SumBerkebutuhanKhusus_L, _SumBerkebutuhanKhusus_P, _SumBerkebutuhanKhusus_JML,
-            _SumYatim_L, _SumYatim_P, _SumYatim_JML,
-            _SumPiatu_L, _SumPiatu_P, _SumPiatu_JML,
-            _SumYatimPiatu_L, _SumYatimPiatu_P, _SumYatimPiatu_JML,
-            _SumKIP_L, _SumKIP_P, _SumKIP_JML,
-            _SumPKH_L, _SumPKH_P, _SumPKH_JML,
-            _SumKPS_L, _SumKPS_P, _SumKPS_JML,
-            _SumKKS_L, _SumKKS_P, _SumKKS_JML,
-            _SumBestari_L, _SumBestari_P, _SumBestari_JML,
-            _SumPYBK_L, _SumPYBK_P, _SumPYBK_JML,
-            _SumUSP_L, _SumUSP_P, _SumUSP_JML,
-            _SumRekomPIP_L, _SumRekomPIP_P, _SumRekomPIP_JML,
-            _SumPIP_L, _SumPIP_P, _SumPIP_JML,
-            _SumDomDalamDaerah_L, _SumDomDalamDaerah_P, _SumDomDalamDaerah_JML,
-            _SumDomLuarDaerah_L, _SumDomLuarDaerah_P, _SumDomLuarDaerah_JML,
-            _SumIslam_L, _SumIslam_P, _SumIslam_JML,
-            _SumKristen_L, _SumKristen_P, _SumKristen_JML,
-            _SumKatolik_L, _SumKatolik_P, _SumKatolik_JML,
-            _SumHindu_L, _SumHindu_P, _SumHindu_JML,
-            _SumBudha_L, _SumBudha_P, _SumBudha_JML,
-            _SumKongHuCu_L, _SumKongHuCu_P, _SumKongHuCu_JML,
-            _SumKepercayaan_L, _SumKepercayaan_P, _SumKepercayaan_JML,
-            _SumTK_L, _SumTK_P, _SumTK_JML,
-            _SumKB_L, _SumKB_P, _SumKB_JML,
-            _SumTPA_L, _SumTPA_P, _SumTPA_JML,
-            _SumLess6Th_L, _SumLess6Th_P, _SumLess6Th_JML,
-            _Sum6Th_L, _Sum6Th_P, _Sum6Th_JML,
-            _Sum7Th_L, _Sum7Th_P, _Sum7Th_JML,
-            _Sum8Th_L, _Sum8Th_P, _Sum8Th_JML,
-            _Sum9Th_L, _Sum9Th_P, _Sum9Th_JML,
-            _Sum10Th_L, _Sum10Th_P, _Sum10Th_JML,
-            _Sum11Th_L, _Sum11Th_P, _Sum11Th_JML,
-            _Sum12Th_L, _Sum12Th_P, _Sum12Th_JML,
-            _SumUp12Th_L, _SumUp12Th_P, _SumUp12Th_JML
+            _SumAnggotaRombel[0], _SumAnggotaRombel[1], _SumAnggotaRombel[2],
+            _SumBerkebutuhanKhusus[0], _SumBerkebutuhanKhusus[1], _SumBerkebutuhanKhusus[2],
+            _SumYatim[0], _SumYatim[1], _SumYatim[2],
+            _SumPiatu[0], _SumPiatu[1], _SumPiatu[2],
+            _SumYatimPiatu[0], _SumYatimPiatu[1], _SumYatimPiatu[2],
+            _SumKIP[0], _SumKIP[1], _SumKIP[2],
+            _SumPKH[0], _SumPKH[1], _SumPKH[2],
+            _SumKPS[0], _SumKPS[1], _SumKPS[2],
+            _SumKKS[0], _SumKKS[1], _SumKKS[2],
+            _SumBestari[0], _SumBestari[1], _SumBestari[2],
+            _SumPYBK[0], _SumPYBK[1], _SumPYBK[2],
+            _SumUSP[0], _SumUSP[1], _SumUSP[2],
+            _SumRekomPIP[0], _SumRekomPIP[1], _SumRekomPIP[2],
+            _SumPIP[0], _SumPIP[1], _SumPIP[2],
+            _SumDomDalamDaerah[0], _SumDomDalamDaerah[1], _SumDomDalamDaerah[2],
+            _SumDomLuarDaerah[0], _SumDomLuarDaerah[1], _SumDomLuarDaerah[2],
+            _SumIslam[0], _SumIslam[1], _SumIslam[2],
+            _SumKristen[0], _SumKristen[1], _SumKristen[2],
+            _SumKatolik[0], _SumKatolik[1], _SumKatolik[2],
+            _SumHindu[0], _SumHindu[1], _SumHindu[2],
+            _SumBudha[0], _SumBudha[1], _SumBudha[2],
+            _SumKongHuCu[0], _SumKongHuCu[1], _SumKongHuCu[2],
+            _SumKepercayaan[0], _SumKepercayaan[1], _SumKepercayaan[2],
+            _SumTK[0], _SumTK[1], _SumTK[2],
+            _SumKB[0], _SumKB[1], _SumKB[2],
+            _SumTPA[0], _SumTPA[1], _SumTPA[2],
+            _SumLess6Th[0], _SumLess6Th[1], _SumLess6Th[2],
+            _Sum6Th[0], _Sum6Th[1], _Sum6Th[2],
+            _Sum7Th[0], _Sum7Th[1], _Sum7Th[2],
+            _Sum8Th[0], _Sum8Th[1], _Sum8Th[2],
+            _Sum9Th[0], _Sum9Th[1], _Sum9Th[2],
+            _Sum10Th[0], _Sum10Th[1], _Sum10Th[2],
+            _Sum11Th[0], _Sum11Th[1], _Sum11Th[2],
+            _Sum12Th[0], _Sum12Th[1], _Sum12Th[2],
+            _SumUp12Th[0], _SumUp12Th[1], _SumUp12Th[2]
         ],
     }
