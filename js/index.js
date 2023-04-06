@@ -220,159 +220,178 @@ $(() => {
     sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
     summary: _TBSummaryDashboard,
     toolbar: undefined,
-    customizeColumns: function (columns,options) {
+    customizeColumns: function (columns) {
       columns.forEach(function (col) {
         col.calculateDisplayValue = function (rowData) {
           return rowData[col.dataField] == 0 ? "-" : rowData[col.dataField];
         };
       });
     },
-    
-    // masterDetail: {
-    //   enabled: true,
-    //   template(container, options) {
-    //     $("<div>").dxDataGrid({
-    //       /*
-    //       dataSource: new DevExpress.data.CustomStore({
-    //         key: "A01",
-    //         loadMode: "raw", // omit in the DataGrid, TreeList, PivotGrid, and Scheduler
-    //         load: function () {
-    //           return $.getJSON(
-    //             "data/info_pd.json"
-    //           );
-    //         },
-    //       }),
-    //       */
-    //       showBorders: true,
-    //       showColumnHeaders: true,
-    //       showColumnLines: true,
-    //       showRowLines: true,
-    //       columnHidingEnabled: false,
-    //       allowColumnReordering: true,
-    //       allowColumnResizing: true,
-    //       columnResizingMode: 'widget',
-    //       columnAutoWidth: true,
-    //       wordWrapEnabled: false,
-    //       columnChooser: {
-    //         allowSearch: false,
-    //         //emptyPanelText:"Drag a column here to hide it",
-    //         enabled: true,
-    //         //height:260,
-    //         mode: "select",
-    //         //searchTimeout:500,
-    //         sortOrder: undefined,
-    //         title: "Column Chooser",
-    //         //width:250,
-    //       },
-    //       columnFixing: {
-    //         enabled: true,
-    //       },
-    //       hoverStateEnabled: true,
-    //       paging: {
-    //         pageSize: 5,
-    //       },
-    //       pager: {
-    //         allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
-    //         displayMode: "compact",
-    //         showInfo: true,
-    //         showNavigationButtons: true,
-    //         showPageSizeSelector: true,
-    //         visible: true,
-    //       },
-    //       editing: {
-    //         mode: 'row',
-    //         allowUpdating: false,
-    //         allowAdding: false,
-    //         allowDeleting: false,
-    //         confirmDelete: true,
-    //         useIcons: true,
-    //       },
-    //       export: {
-    //         enabled: true,
-    //         formats: ['xlsx', 'pdf'],
-    //         allowExportSelectedData: true,
-    //       },
-    //       onExporting(e) {
-    //         if (e.format === 'xlsx') {
-    //           const workbook = new ExcelJS.Workbook();
-    //           const worksheet = workbook.addWorksheet('Report');
-    //           DevExpress.excelExporter.exportDataGrid({
-    //             component: e.component,
-    //             worksheet,
-    //             autoFilterEnabled: true,
-    //           }).then(() => {
-    //             workbook.xlsx.writeBuffer().then((buffer) => {
-    //               saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
-    //             });
-    //           });
-    //           e.cancel = true;
-    //         }
-    //         else if (e.format === 'pdf') {
-    //           const doc = new jsPDF('l', 'pt');
-    //           DevExpress.pdfExporter.exportDataGrid({
-    //             jsPDFDocument: doc,
-    //             component: e.component,
-    //           }).then(() => {
-    //             doc.save('report.pdf');
-    //           });
-    //         }
-    //       },
 
-    //       remoteOperations: false,
-    //       sorting: {
-    //         mode: 'multiple',
-    //       },
-    //       searchPanel: {
-    //         visible: true,
-    //         highlightCaseSensitive: false,
-    //       },
-    //       selection: {
-    //         allowSelectAll: true,
-    //         deferred: false,
-    //         mode: "multiple",
-    //         selectAllMode: "allPages",
-    //         showCheckBoxesMode: "click"
-    //       },
-    //       filterRow: { visible: true },
-    //       filterPanel: { visible: true },
-    //       headerFilter: { visible: true },
-    //       groupPanel: { visible: false },
-    //       grouping: {
-    //         autoExpandAll: true,
-    //       },
-    //       wordWrapEnabled: false,
-    //       //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-    //       //summary: _TBSummaryDashboard,
-    //       //toolbar: undefined,
-    //       rowAlternationEnabled: false,
-    //       columns: _TbInfoPd,
-    //       dataSource: new DevExpress.data.CustomStore({
-    //         key: "A01",
-    //         load: function () {
-    //           var d = $.Deferred();
-    //           return $.getJSON(
-    //             "data/info_pd.json",
-    //             {
-    //               "param1": "value1",
-    //               "param2": "value2"
-    //             }
-    //           )
-    //             .done(function (result) {
-    //               // You can process the response here
-    //               result = result.filter(function (val) {
-    //                 return (val.A02 == options.key);
-    //               });
-    //               d.resolve(result);
-    //             })
-    //             .fail(function () {
-    //               throw "Data loading error";
-    //             })
-    //         },
-    //       }),
-    //     }).appendTo(container);
-    //   }
-    // }
+    masterDetail: {
+      enabled: true,
+      template(container, options) {
+        $("<div>").dxDataGrid({
+          dataSource: 'data/info_pd.json',
+          // dataSource: $.getJSON("data/info_pd.json", function (jsondata) {
+          //   jsondata = jsondata.filter(function (obj) {
+          //     return obj.A01.includes(options.data.A01);
+          //   });
+          // }),
+          columns: _TbInfoPd,
+          filterValue: ["A01", "contains", options.data.A01],
+          showBorders: true,
+          showColumnHeaders: true,
+          showColumnLines: true,
+          showRowLines: true,
+          columnHidingEnabled: false,
+          allowColumnReordering: true,
+          allowColumnResizing: true,
+          columnResizingMode: 'widget',
+          columnAutoWidth: true,
+          wordWrapEnabled: false,
+          columnChooser: {
+            allowSearch: false,
+            //emptyPanelText:"Drag a column here to hide it",
+            enabled: true,
+            //height:260,
+            mode: "select",
+            //searchTimeout:500,
+            sortOrder: undefined,
+            title: "Column Chooser",
+            //width:250,
+          },
+          columnFixing: {
+            enabled: true,
+          },
+          hoverStateEnabled: true,
+          paging: {
+            pageSize: 5,
+          },
+          pager: {
+            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
+            displayMode: "compact",
+            showInfo: true,
+            showNavigationButtons: true,
+            showPageSizeSelector: true,
+            visible: true,
+          },
+          editing: {
+            mode: 'row',
+            allowUpdating: false,
+            allowAdding: false,
+            allowDeleting: false,
+            confirmDelete: true,
+            useIcons: true,
+          },
+          export: {
+            enabled: true,
+            formats: ['xlsx', 'pdf'],
+            allowExportSelectedData: true,
+          },
+          onExporting(e) {
+            if (e.format === 'xlsx') {
+              const workbook = new ExcelJS.Workbook();
+              const worksheet = workbook.addWorksheet('Report');
+              DevExpress.excelExporter.exportDataGrid({
+                component: e.component,
+                worksheet,
+                autoFilterEnabled: true,
+              }).then(() => {
+                workbook.xlsx.writeBuffer().then((buffer) => {
+                  saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
+                });
+              });
+              e.cancel = true;
+            }
+            else if (e.format === 'pdf') {
+              const doc = new jsPDF('l', 'pt');
+              DevExpress.pdfExporter.exportDataGrid({
+                jsPDFDocument: doc,
+                component: e.component,
+              }).then(() => {
+                doc.save('report.pdf');
+              });
+            }
+          },
+
+          remoteOperations: false,
+          sorting: {
+            mode: 'multiple',
+          },
+          searchPanel: {
+            visible: true,
+            highlightCaseSensitive: false,
+          },
+          selection: {
+            allowSelectAll: true,
+            deferred: false,
+            mode: "multiple",
+            selectAllMode: "allPages",
+            showCheckBoxesMode: "click"
+          },
+          filterRow: { visible: true },
+          filterPanel: { visible: false },
+          headerFilter: { visible: false },
+          groupPanel: { visible: false },
+          grouping: {
+            autoExpandAll: true,
+          },
+          wordWrapEnabled: false,
+          //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+          //summary: _TBSummaryDashboard,
+          //toolbar: undefined,
+          rowAlternationEnabled: false,
+        }).appendTo(container);
+      }
+    }
+  }).dxDataGrid('instance');
+
+  //===========================================================================================
+  $(() => {
+    $('#MasterGrid').dxDataGrid({
+      dataSource: 'data/Dashboard.json',
+      keyExpr: 'A01',
+      showBorders: true,
+      columns: [{
+        dataField: 'A01',
+        caption: 'ID Kelas'
+      }],
+      masterDetail: {
+        enabled: true,
+        template(container, options) {
+          $('<div>')
+            .dxDataGrid({
+              columnAutoWidth: true,
+              showBorders: true,
+              columns: _TbInfoPd,
+              dataSource: $.getJSON("data/info_pd.json", function (data) {
+                var items = data;
+                items = data.filter(function (obj) {
+                  return obj.A01.includes(options.data.A01)
+                });
+              })
+              /*
+              dataSource: new DevExpress.data.dataSource({
+                store : new DevExpress.data.arrayStore({
+                  key: 'A02',
+                  data: $.getJSON("data/info_pd.json", function (data) {
+                    ///set your variable - you did this part right:
+                    var items = data;
+                    // now apply your filter:
+                    items = data.filter(function (obj) {
+                      return JSON.stringify(obj.A01.includes(options.data.A01));
+                    });
+                  }),
+                }),
+              }),
+              */
+            }).appendTo(container);
+        },
+      },
+    });
   });
+
 });
 //===========================================================================================
 /*

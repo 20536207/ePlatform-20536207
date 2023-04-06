@@ -44,12 +44,10 @@ var
             caption: 'L',
             dataField: 'C01',
             alignment: 'center',
-
         }, {
             caption: 'P',
             dataField: 'C02',
             alignment: 'center',
-
         }, {
             caption: 'JML',
             dataField: 'C03',
@@ -69,7 +67,6 @@ var
                     caption: 'L',
                     dataField: 'D01',
                     alignment: 'center',
-
                 }, {
                     caption: 'P',
                     dataField: 'D02',
@@ -131,11 +128,11 @@ var
                     caption: 'L',
                     dataField: 'E01',
                     alignment: 'center',
-
                 }, {
                     caption: 'P',
                     dataField: 'E02',
                     alignment: 'center',
+                    
                 }, {
                     caption: 'JML',
                     dataField: 'E03',
@@ -1889,4 +1886,42 @@ var
             _Sum12Th[0], _Sum12Th[1], _Sum12Th[2],
             _SumUp12Th[0], _SumUp12Th[1], _SumUp12Th[2]
         ],
-    }
+        totalItems : [
+            _SumRombel,
+            _SumAnggotaRombel[0], _SumAnggotaRombel[1], _SumAnggotaRombel[2],
+            _SumBerkebutuhanKhusus[0], _SumBerkebutuhanKhusus[1], _SumBerkebutuhanKhusus[2],
+            _SumYatim[0], _SumYatim[1], _SumYatim[2],
+            _SumPiatu[0], _SumPiatu[1], _SumPiatu[2],
+            _SumYatimPiatu[0], _SumYatimPiatu[1], _SumYatimPiatu[2],
+            _SumKIP[0], _SumKIP[1], _SumKIP[2],
+            _SumPKH[0], _SumPKH[1], _SumPKH[2],
+            _SumKPS[0], _SumKPS[1], _SumKPS[2],
+            _SumKKS[0], _SumKKS[1], _SumKKS[2],
+            _SumBestari[0], _SumBestari[1], _SumBestari[2],
+            _SumPYBK[0], _SumPYBK[1], _SumPYBK[2],
+            _SumUSP[0], _SumUSP[1], _SumUSP[2],
+            _SumRekomPIP[0], _SumRekomPIP[1], _SumRekomPIP[2],
+            _SumPIP[0], _SumPIP[1], _SumPIP[2],
+            _SumDomDalamDaerah[0], _SumDomDalamDaerah[1], _SumDomDalamDaerah[2],
+            _SumDomLuarDaerah[0], _SumDomLuarDaerah[1], _SumDomLuarDaerah[2],
+            _SumIslam[0], _SumIslam[1], _SumIslam[2],
+            _SumKristen[0], _SumKristen[1], _SumKristen[2],
+            _SumKatolik[0], _SumKatolik[1], _SumKatolik[2],
+            _SumHindu[0], _SumHindu[1], _SumHindu[2],
+            _SumBudha[0], _SumBudha[1], _SumBudha[2],
+            _SumKongHuCu[0], _SumKongHuCu[1], _SumKongHuCu[2],
+            _SumKepercayaan[0], _SumKepercayaan[1], _SumKepercayaan[2],
+            _SumTK[0], _SumTK[1], _SumTK[2],
+            _SumKB[0], _SumKB[1], _SumKB[2],
+            _SumTPA[0], _SumTPA[1], _SumTPA[2],
+            _SumLess6Th[0], _SumLess6Th[1], _SumLess6Th[2],
+            _Sum6Th[0], _Sum6Th[1], _Sum6Th[2],
+            _Sum7Th[0], _Sum7Th[1], _Sum7Th[2],
+            _Sum8Th[0], _Sum8Th[1], _Sum8Th[2],
+            _Sum9Th[0], _Sum9Th[1], _Sum9Th[2],
+            _Sum10Th[0], _Sum10Th[1], _Sum10Th[2],
+            _Sum11Th[0], _Sum11Th[1], _Sum11Th[2],
+            _Sum12Th[0], _Sum12Th[1], _Sum12Th[2],
+            _SumUp12Th[0], _SumUp12Th[1], _SumUp12Th[2]
+        ]
+    };
