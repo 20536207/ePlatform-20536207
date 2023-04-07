@@ -216,7 +216,7 @@ $(() => {
     },
     wordWrapEnabled: false,
     rowAlternationEnabled: false,
-    columns: _TbDashboard,
+    columns: _TbDashboard, // Last Template
     sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
     summary: _TBSummaryDashboard,
     toolbar: undefined,
@@ -342,6 +342,7 @@ $(() => {
           //summary: _TBSummaryDashboard,
           //toolbar: undefined,
           rowAlternationEnabled: false,
+          
         }).appendTo(container);
       }
     }

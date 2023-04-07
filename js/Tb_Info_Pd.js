@@ -10,7 +10,7 @@ var
                     dataField: 'A02',
                     groupIndex: 0,
                 },*/ {
-                    caption: 'ID Kelas',
+                    caption: 'ID Rombel',
                     dataField: 'A01',
                     sortOrder: 'asc',
 
