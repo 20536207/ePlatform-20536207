@@ -1,15 +1,14 @@
-
 html,body {
   height: 100%;
   margin: 0 auto;
 }
 
-#MasterGridContainer{
+#GridInfoPesertaDidik{
   height: 100%;
   padding: 5px;
 }
 
-#ChildGridContainer{
+/* #ChildGridContainer{
   height: 100%;
   padding: 5px;
 }
@@ -19,4 +18,6 @@ html,body {
   border-style: solid;
   border-width: thin;
   margin: 0 auto;
-}
+} */
+
+
