@@ -3,11 +3,37 @@ html,body {
   margin: 0 auto;
 }
 
+#gallery {
+  max-width: 325px;
+  max-height: 235px;
+  
+}
+
 #GridInfoPesertaDidik{
   height: 100%;
   padding: 5px;
 }
 
+
+#MainToolbar {
+  background:rgb(64, 65, 65);
+  padding: 5px;
+}
+
+#view {
+  background:inherit;
+  padding: 5px;
+
+}
+
+.MainSidebar {
+  background:rgb(49, 49, 49);
+  padding: 3px;
+}
+
+#classCustomers {
+  color: red;
+}
 /* #ChildGridContainer{
   height: 100%;
   padding: 5px;
