@@ -1,39 +1,68 @@
-html,body {
+html,
+body {
   height: 100%;
   margin: 0 auto;
 }
 
-#gallery {
-  max-width: 325px;
-  max-height: 235px;
-  
+.DevApp {
+  background: rgb(64, 65, 65);
+  margin-bottom: 10px;
+  /* padding: 5px; */
+  border-width: 0 0 0 5px;
+  border-style: inset;
+  /* font-size: 2rem; */
 }
 
-#GridInfoPesertaDidik{
+.DevApp-Menu {
+  font-style: italic;
+  background: #58626d;
+
+}
+
+.DevApp-Customer {
+  text-indent: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.MainPageToolbar {
+  display: inline-block;
+  background: rgb(80, 81, 82);
+  /* padding: 5px; */
+  border-width: 0 16px 0 16px;
+  border-style: double;
+}
+
+.Page-Title {
+  text-indent: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#Gallerian {
+  max-width: 325px;
+  max-height: 245px;
+}
+
+#GridInfoPesertaDidik {
   height: 100%;
   padding: 5px;
 }
 
 
-#MainToolbar {
-  background:rgb(64, 65, 65);
-  padding: 5px;
-}
+
 
 #view {
-  background:inherit;
+  background: inherit;
   padding: 5px;
-
 }
 
 .MainSidebar {
-  background:rgb(49, 49, 49);
+  background: rgb(49, 49, 49);
   padding: 3px;
+  margin-right: 100px;
 }
 
-#classCustomers {
-  color: red;
-}
 /* #ChildGridContainer{
   height: 100%;
   padding: 5px;
@@ -45,5 +74,3 @@ html,body {
   border-width: thin;
   margin: 0 auto;
 } */
-
-

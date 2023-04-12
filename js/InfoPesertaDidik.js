@@ -2426,123 +2426,123 @@ $(() => {
 
         toolbar: undefined,
         wordWrapEnabled: false,
-        // masterDetail: {
-        //   enabled: true,
-        //   template(container, options) {
-        //     $("<div>").dxDataGrid({
-        //       dataSource: 'data/info_pd.json',
-        //       // dataSource: $.getJSON("data/info_pd.json", function (jsondata) {
-        //       //   jsondata = jsondata.filter(function (obj) {
-        //       //     return obj.A01.includes(options.data.A01);
-        //       //   });
-        //       // }),
-        //       columns: _TbInfoPd,
-        //       filterValue: ["A01", "contains", options.data.A01],
-        //       showBorders: true,
-        //       showColumnHeaders: true,
-        //       showColumnLines: true,
-        //       showRowLines: true,
-        //       columnHidingEnabled: false,
-        //       allowColumnReordering: true,
-        //       allowColumnResizing: true,
-        //       columnResizingMode: 'widget',
-        //       columnAutoWidth: true,
-        //       wordWrapEnabled: false,
-        //       columnChooser: {
-        //         allowSearch: false,
-        //         //emptyPanelText:"Drag a column here to hide it",
-        //         enabled: true,
-        //         //height:260,
-        //         mode: "select",
-        //         //searchTimeout:500,
-        //         sortOrder: undefined,
-        //         title: "Column Chooser",
-        //         //width:250,
-        //       },
-        //       columnFixing: {
-        //         enabled: true,
-        //       },
-        //       hoverStateEnabled: false,
-        //       paging: {
-        //         pageSize: 5,
-        //       },
-        //       pager: {
-        //         allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
-        //         displayMode: "compact",
-        //         showInfo: true,
-        //         showNavigationButtons: true,
-        //         showPageSizeSelector: true,
-        //         visible: true,
-        //       },
-        //       editing: {
-        //         mode: 'row',
-        //         allowUpdating: false,
-        //         allowAdding: false,
-        //         allowDeleting: false,
-        //         confirmDelete: true,
-        //         useIcons: true,
-        //       },
-        //       export: {
-        //         enabled: true,
-        //         formats: ['xlsx', 'pdf'],
-        //         allowExportSelectedData: true,
-        //       },
-        //       onExporting(e) {
-        //         if (e.format === 'xlsx') {
-        //           const workbook = new ExcelJS.Workbook();
-        //           const worksheet = workbook.addWorksheet('Report');
-        //           DevExpress.excelExporter.exportDataGrid({
-        //             component: e.component,
-        //             worksheet,
-        //             autoFilterEnabled: true,
-        //           }).then(() => {
-        //             workbook.xlsx.writeBuffer().then((buffer) => {
-        //               saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
-        //             });
-        //           });
-        //           e.cancel = true;
-        //         }
-        //         else if (e.format === 'pdf') {
-        //           const doc = new jsPDF('l', 'pt');
-        //           DevExpress.pdfExporter.exportDataGrid({
-        //             jsPDFDocument: doc,
-        //             component: e.component,
-        //           }).then(() => {
-        //             doc.save('report.pdf');
-        //           });
-        //         }
-        //       },
+        masterDetail: {
+          enabled: true,
+          template(container, options) {
+            $("<div>").dxDataGrid({
+              dataSource: 'data/info_pd.json',
+              // dataSource: $.getJSON("data/info_pd.json", function (jsondata) {
+              //   jsondata = jsondata.filter(function (obj) {
+              //     return obj.A01.includes(options.data.A01);
+              //   });
+              // }),
+              columns: _TbInfoPd,
+              filterValue: ["A01", "contains", options.data.A01],
+              showBorders: true,
+              showColumnHeaders: true,
+              showColumnLines: true,
+              showRowLines: true,
+              columnHidingEnabled: false,
+              allowColumnReordering: true,
+              allowColumnResizing: true,
+              columnResizingMode: 'widget',
+              columnAutoWidth: true,
+              wordWrapEnabled: false,
+              columnChooser: {
+                allowSearch: false,
+                //emptyPanelText:"Drag a column here to hide it",
+                enabled: true,
+                //height:260,
+                mode: "select",
+                //searchTimeout:500,
+                sortOrder: undefined,
+                title: "Column Chooser",
+                //width:250,
+              },
+              columnFixing: {
+                enabled: true,
+              },
+              hoverStateEnabled: false,
+              paging: {
+                pageSize: 5,
+              },
+              pager: {
+                allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
+                displayMode: "compact",
+                showInfo: true,
+                showNavigationButtons: true,
+                showPageSizeSelector: true,
+                visible: true,
+              },
+              editing: {
+                mode: 'row',
+                allowUpdating: false,
+                allowAdding: false,
+                allowDeleting: false,
+                confirmDelete: true,
+                useIcons: true,
+              },
+              export: {
+                enabled: true,
+                formats: ['xlsx', 'pdf'],
+                allowExportSelectedData: true,
+              },
+              onExporting(e) {
+                if (e.format === 'xlsx') {
+                  const workbook = new ExcelJS.Workbook();
+                  const worksheet = workbook.addWorksheet('Report');
+                  DevExpress.excelExporter.exportDataGrid({
+                    component: e.component,
+                    worksheet,
+                    autoFilterEnabled: true,
+                  }).then(() => {
+                    workbook.xlsx.writeBuffer().then((buffer) => {
+                      saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
+                    });
+                  });
+                  e.cancel = true;
+                }
+                else if (e.format === 'pdf') {
+                  const doc = new jsPDF('l', 'pt');
+                  DevExpress.pdfExporter.exportDataGrid({
+                    jsPDFDocument: doc,
+                    component: e.component,
+                  }).then(() => {
+                    doc.save('report.pdf');
+                  });
+                }
+              },
 
-        //       remoteOperations: false,
-        //       sorting: {
-        //         mode: 'multiple',
-        //       },
-        //       searchPanel: {
-        //         visible: true,
-        //         highlightCaseSensitive: false,
-        //       },
-        //       selection: {
-        //         allowSelectAll: true,
-        //         deferred: false,
-        //         mode: "multiple",
-        //         selectAllMode: "allPages",
-        //         showCheckBoxesMode: "click"
-        //       },
-        //       filterRow: { visible: true },
-        //       filterPanel: { visible: false },
-        //       headerFilter: { visible: false },
-        //       groupPanel: { visible: false },
-        //       grouping: {
-        //         autoExpandAll: true,
-        //       },
-        //       wordWrapEnabled: false,
-        //       //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-        //       //summary: _TBSummaryDashboard,
-        //       //toolbar: undefined,
-        //       rowAlternationEnabled: false,
+              remoteOperations: false,
+              sorting: {
+                mode: 'multiple',
+              },
+              searchPanel: {
+                visible: true,
+                highlightCaseSensitive: false,
+              },
+              selection: {
+                allowSelectAll: true,
+                deferred: false,
+                mode: "multiple",
+                selectAllMode: "allPages",
+                showCheckBoxesMode: "click"
+              },
+              filterRow: { visible: true },
+              filterPanel: { visible: false },
+              headerFilter: { visible: false },
+              groupPanel: { visible: false },
+              grouping: {
+                autoExpandAll: true,
+              },
+              wordWrapEnabled: false,
+              //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+              //summary: _TBSummaryDashboard,
+              //toolbar: undefined,
+              rowAlternationEnabled: false,
 
-        //     }).appendTo(container);
-        //   }
-        // },
+            }).appendTo(container);
+          }
+        },
     }).dxDataGrid('instance');
 });

@@ -1,6 +1,6 @@
 window.jsPDF = window.jspdf.jsPDF;
 
-$(() => {
+$(function () {
 
   const navigation = [
     {
@@ -44,100 +44,137 @@ $(() => {
   ];
 
   const _popup = $("#popup").dxPopup({
-    contentTemplate: () => {
-      return $("<div id='gallery' />").dxGallery({
+    contentTemplate: function () {
+      return $("<div id='Gallerian' />").dxGallery({
         dataSource: [
-          'images/ePlatform.png',
-          'images/TutWuriHandayani.png',
-          'images/PemkotProbolinggo.png',
-          'images/LOGO20536207.png',
-          'images/AWARD.png',
-          'images/adiwiyata.png',
-          'images/SRA.png',
+          'images/001.jpg',
+          'images/002.jpg',
+          'images/003.jpg',
         ],
         loop: true,
         slideshowDelay: 2000,
         showNavButtons: false,
         showIndicator: false,
-      }).dxScrollView({
-        height: "100%",
-        width: "100%"
-      });
+      })
+        .dxScrollView({
+          height: "100%",
+          width: "100%"
+        });
     },
     hideOnOutsideClick: true,
+    hideOnParentScroll: true,
     showTitle: true,
     title: "Information",
     resizeEnabled: false,
     dragEnabled: false,
-    position: "center",
-    width: undefined,
-    height: undefined,
+    position: { my: 'center', at: 'center', collision: 'fit' },
+    width: 325,
+    height: 265,
+    visible: false,
   }).dxPopup("instance");
 
-
   //========================================================================================================
-  $("#view").load("./pages/DashboardPesertaDidik.html");
-
-  $('#MainToolbar').dxToolbar({
+  $('#DevApp').dxToolbar({
+    elementAttr: {
+      id: "IdDevApp",
+      class: "DevApp"
+    },
     items: [{
       widget: 'dxButton',
       location: 'before',
+      locateInMenu: 'never',
+      cssClass: 'DevApp-Menu',
       options: {
-        text: "e-PLATFORM",
+        text: 'e-Platform',
         icon: 'menu',
         focusStateEnabled: false,
         activeStateEnabled: true,
-        type: 'default',
+        type: 'normal',
+        stylingMode: "text",
         onClick() {
           _MainLayout.toggle();
         },
       },
     }, {
       location: 'before',
-      text: "SD NEGERI TISNONEGARAN 1 PROBOLINGGO ( 20536207 )",
+      locateInMenu: 'auto',
+      text: 'SD NEGERI TISNONEGARAN 1 PROBOLINGGO',
+      template(e) {
+        return $("<div class='DevApp-Customer'>" + e.text + "</div>");
+      },
     }, {
       widget: 'dxButton',
       location: 'after',
+      locateInMenu: 'auto',
       options: {
         text: null,
         icon: 'user',
         focusStateEnabled: false,
         activeStateEnabled: true,
-        type: 'success',
-        onClick() {
+        type: 'default',
+        stylingMode: "text",
+        onClick: () => {
+          // _popup.hide();
+          // _popup.option('disabled', _popup.option('disabled') === true ? true : true);
+          // _popup.option('visible', _popup.option('visible') === true ? false : true);
           _popup.show();
         },
       },
     }],
   });
 
+  //========================================================================================================
+  //$("#view").load("./pages/DashboardPesertaDidik.html");
+
+  const _MainPageToolbar = $('#MainPageToolbar').dxToolbar({
+    elementAttr: {
+      id: "IdMainPage",
+      class: "MainPageToolbar"
+    },
+    items: [{
+      location: 'before',
+      text: '',
+      template(e) {
+        return $("<div class='Page-Title'>" + e.text + "</div>");
+      },
+    }],
+  }).dxToolbar('instance');
+
+  
+  //===============================================================================
   const _MainLayout = $('#MainLayout').dxDrawer({
     opened: true,
     revealMode: "slide", //expand
     openedStateMode: "shrink", //shrink //overlap
     position: 'left', //right
+    shading: false,
     closeOnOutsideClick: false,
     template() {
-      const list = $('<div>')
-        .addClass('MainSidebar');
+      const _ListWidget = $('<div>').addClass('MainSidebar');
 
-      return list.dxList({
-        dataSource: navigation,
-        hoverStateEnabled: true,
-        focusStateEnabled: true,
-        activeStateEnabled: false,
-        grouped: true,
-        collapsibleGroups: true,
-        groupTemplate(data) {
-          return $(`<div style="color: orange">${data.key}</div>`);
-        },
-        width: 250,
-        selectionMode: "single",
-        onSelectionChanged: function (e) {
-          $("#view").load("./pages/" + e.addedItems[0].filepath + ".html");
-          drawer.hide();
-        }
-      });
+        return _ListWidget
+        .dxList({
+          dataSource: navigation,
+          hoverStateEnabled: true,
+          focusStateEnabled: true,
+          activeStateEnabled: false,
+          grouped: true,
+          collapsibleGroups: true,
+          showSelectionControls: false,
+          groupTemplate(data) {
+            return $(`<div style="color: goldenrod">${data.key}</div>`);
+          },
+          width: 250,
+          selectionMode: "single",
+          onItemClick(e) {
+            // const _PageLoad = "./pages/"+e.itemData['filepath']+'.html';
+            //_MainPageToolbar.itemElement.index(0).option('text', e.itemData['text']);
+            DevExpress.ui.notify(_MainPageToolbar.menuItem[1]);
+            //$("#view").load("./pages/"+e.itemData['filepath']+'.html');
+          },
+        }).addClass('MainSidebar');
+
+      return list;
     },
   }).dxDrawer('instance');
 
