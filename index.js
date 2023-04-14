@@ -1,6 +1,7 @@
 window.jsPDF = window.jspdf.jsPDF;
 
-$(function () {
+$(document).ready(function () {
+  //$("#PageContains").load("./pages/DashboardPesertaDidik.html");
 
   const navigation = [
     {
@@ -43,42 +44,40 @@ $(function () {
     },
   ];
 
-  const _popup = $("#popup").dxPopup({
-    contentTemplate: function () {
-      return $("<div id='Gallerian' />").dxGallery({
-        dataSource: [
-          'images/001.jpg',
-          'images/002.jpg',
-          'images/003.jpg',
-        ],
-        loop: true,
-        slideshowDelay: 2000,
-        showNavButtons: false,
-        showIndicator: false,
-      })
-        .dxScrollView({
-          height: "100%",
-          width: "100%"
-        });
-    },
-    hideOnOutsideClick: true,
-    hideOnParentScroll: true,
-    showTitle: true,
-    title: "Information",
-    resizeEnabled: false,
-    dragEnabled: false,
-    position: { my: 'center', at: 'center', collision: 'fit' },
-    width: 325,
-    height: 265,
-    visible: false,
-  }).dxPopup("instance");
+  const _popup = function () {
+    $("<div>").dxPopup({
+      contentTemplate: function () {
+        return $("<div id='Gallerian' />").dxGallery({
+          dataSource: [
+            'images/001.jpg',
+            'images/002.jpg',
+            'images/003.jpg',
+          ],
+          loop: true,
+          slideshowDelay: 2000,
+          showNavButtons: false,
+          showIndicator: false,
+        })
+          .dxScrollView({
+            height: "100%",
+            width: "100%"
+          });
+      },
+      hideOnOutsideClick: true,
+      hideOnParentScroll: true,
+      showTitle: true,
+      title: "Information",
+      resizeEnabled: false,
+      dragEnabled: false,
+      position: { my: 'center', at: 'center', collision: 'fit' },
+      width: 325,
+      height: 265,
+      visible: false,
+    }).dxPopup("instance");
+  };
 
-  //========================================================================================================
-  $('#DevApp').dxToolbar({
-    elementAttr: {
-      id: "IdDevApp",
-      class: "DevApp"
-    },
+  //==============================================================================
+  const _LayoutHeader = $('#LayoutHeader').dxToolbar({
     items: [{
       widget: 'dxButton',
       location: 'before',
@@ -87,17 +86,20 @@ $(function () {
       options: {
         text: 'e-Platform',
         icon: 'menu',
-        focusStateEnabled: false,
+        hoverStateEnabled: true,
+        focusStateEnabled: true,
         activeStateEnabled: true,
         type: 'normal',
         stylingMode: "text",
+        height: undefined,
+        width: undefined,
         onClick() {
-          _MainLayout.toggle();
+          _LayoutContains.toggle();
         },
       },
     }, {
       location: 'before',
-      locateInMenu: 'auto',
+      locateInMenu: 'never',
       text: 'SD NEGERI TISNONEGARAN 1 PROBOLINGGO',
       template(e) {
         return $("<div class='DevApp-Customer'>" + e.text + "</div>");
@@ -107,52 +109,49 @@ $(function () {
       location: 'after',
       locateInMenu: 'auto',
       options: {
-        text: null,
-        icon: 'user',
-        focusStateEnabled: false,
+        text: 'Home',
+        icon: 'home',
+        hoverStateEnabled: true,
+        focusStateEnabled: true,
         activeStateEnabled: true,
-        type: 'default',
+        type: 'normal',
         stylingMode: "text",
         onClick: () => {
-          // _popup.hide();
-          // _popup.option('disabled', _popup.option('disabled') === true ? true : true);
-          // _popup.option('visible', _popup.option('visible') === true ? false : true);
+          alert("This is an alert message!");
+          // _popup.show();
+        },
+      },
+    }, {
+      widget: 'dxButton',
+      location: 'after',
+      locateInMenu: 'auto',
+      options: {
+        text: 'Referensi',
+        icon: 'bookmark',
+        hoverStateEnabled: true,
+        focusStateEnabled: true,
+        activeStateEnabled: true,
+        type: 'normal',
+        stylingMode: "text",
+        onClick: () => {
           _popup.show();
         },
       },
     }],
-  });
+  }).dxToolbar("instance");
 
-  //========================================================================================================
-  //$("#view").load("./pages/DashboardPesertaDidik.html");
-
-  const _MainPageToolbar = $('#MainPageToolbar').dxToolbar({
-    elementAttr: {
-      id: "IdMainPage",
-      class: "MainPageToolbar"
-    },
-    items: [{
-      location: 'before',
-      text: '',
-      template(e) {
-        return $("<div class='Page-Title'>" + e.text + "</div>");
-      },
-    }],
-  }).dxToolbar('instance');
-
-  
   //===============================================================================
-  const _MainLayout = $('#MainLayout').dxDrawer({
-    opened: true,
+  const _LayoutContains = $('#LayoutContent').dxDrawer({
+    opened: false,
     revealMode: "slide", //expand
     openedStateMode: "shrink", //shrink //overlap
     position: 'left', //right
     shading: false,
     closeOnOutsideClick: false,
     template() {
-      const _ListWidget = $('<div>').addClass('MainSidebar');
+      const _ListWidget = $('<div>').addClass('ContainsSidebar');
 
-        return _ListWidget
+      return _ListWidget
         .dxList({
           dataSource: navigation,
           hoverStateEnabled: true,
@@ -162,21 +161,89 @@ $(function () {
           collapsibleGroups: true,
           showSelectionControls: false,
           groupTemplate(data) {
-            return $(`<div style="color: goldenrod">${data.key}</div>`);
+            return $(`<b style="color: rgba(28, 168, 221, 1)">${data.key}</b>`);
           },
-          width: 250,
+          width: 265,
           selectionMode: "single",
           onItemClick(e) {
-            // const _PageLoad = "./pages/"+e.itemData['filepath']+'.html';
-            //_MainPageToolbar.itemElement.index(0).option('text', e.itemData['text']);
-            DevExpress.ui.notify(_MainPageToolbar.menuItem[1]);
-            //$("#view").load("./pages/"+e.itemData['filepath']+'.html');
-          },
-        }).addClass('MainSidebar');
+            $("#PageContains")
+              .empty()
+              .load("./pages/" + e.itemData["filepath"] + ".html");
+            _LayoutContains.toggle();
 
-      return list;
+            //_MainPageToolbar.itemElement.index(0).option('text', e.itemData['text']);
+            //DevExpress.ui.notify(_DashboardPesertaDidik.option('columnHidingEnabled'));
+            //$('#view').prepend(_DashboardPesertaDidik);
+            //$("#view").load(_PageLoad);
+          },
+        }).addClass('ContainsSidebar');
+
+
+      // list.collapsed;
+      // return _ListWidget;
     },
   }).dxDrawer('instance');
 
+  const _PageToolbar = $('#PageToolbar').dxToolbar({
+    items: [{
+      location: 'before',
+      text: '',
+      template(e) {
+        return $("<div class='Page-Title'>" + e.text + "</div>");
+      },
+    }, {
+      widget: 'dxSelectBox',
+      valueExpr: this,
+      location: 'after',
+      locateInMenu: 'auto',
+      options: {
+        width: '250px',
+      }
+
+    }],
+  }).dxToolbar('instance');
+
+  const _PageContains = $('#PageContains').dxScrollView({
+    direction: 'both',
+    scrollByContent: true,
+    scrollByThumb: false,
+    showScrollbar: 'onHover',
+    usenative: false,
+    width: '100%',
+    height: '100%',
+  }).dxScrollView('instance');
+
+  //========================================================================================================
+  const _LayoutFooter = $('#LayoutFooter').dxTabs({
+    dataSource: [
+      {
+        id: 0,
+        text: 'About',
+        icon: 'info',
+        content: 'User tab content',
+      },
+      {
+        id: 1,
+        text: 'Home',
+        icon: 'comment',
+        content: 'Comment tab content',
+      },
+      {
+        id: 2,
+        text: 'Referensi',
+        icon: 'bookmark',
+        content: 'Find tab content',
+      },
+    ],
+    hoverStateEnabled: false,
+    focusStateEnabled: false,
+    activeStateEnabled: false,
+    // onItemClick(e) {
+    //   alert(e.itemData.text);
+    // },
+    onSelectionChanged(e){
+      alert(e.tabIndex);
+    },
+  }).dxTabs('instance');
 });
 

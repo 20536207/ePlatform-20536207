@@ -2,41 +2,112 @@ html,
 body {
   height: 100%;
   margin: 0 auto;
+  font-size: 1rem;
 }
 
-.DevApp {
-  background: rgb(64, 65, 65);
-  margin-bottom: 10px;
-  /* padding: 5px; */
-  border-width: 0 0 0 5px;
-  border-style: inset;
-  /* font-size: 2rem; */
+#MainLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* border-collapse: collapse; */
+  vertical-align: middle;
+  /* font-size: 0.8rem; */
+  overflow-y: none;
 }
+
+#LayoutHeader {
+  display: flex;
+  justify-self: flex-start;
+  vertical-align: middle;
+  /* font-size: 0.8rem; */
+  padding: 12px 5px 12px 5px;
+  /* border-bottom: thin rgba(77, 77, 77, 1) solid; */
+  border: thin rgba(77, 77, 77, 1) solid;
+}
+
+#LayoutContent {
+  flex: 1 1 auto;
+  height: 0px;
+  overflow-y: none;
+  /* padding: 10px 0 10px 0; */
+  /* margin: 5px 0 5px 0; */
+  border: thin rgba(77, 77, 77, 1) solid;
+}
+
+#LayoutFooter {
+  justify-self: flex-end;
+  height:48px;
+  /* font-size: 1rem; */
+  /* padding: 5px; */
+  /* border-top: thin rgba(77, 77, 77, 1) solid; */
+  border: thin rgba(77, 77, 77, 1) solid;
+}
+
+/* ==================================================================================== */
 
 .DevApp-Menu {
   font-style: italic;
-  background: #58626d;
-
+  vertical-align: middle;
+  /* font-size: 0.8rem; */
 }
 
 .DevApp-Customer {
-  text-indent: 5px;
-  font-size: 0.9rem;
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 1rem;
   font-weight: bold;
+  text-shadow: 1px 0.8px 2px rgb(194, 194, 194);
 }
 
-.MainPageToolbar {
-  display: inline-block;
-  background: rgb(80, 81, 82);
-  /* padding: 5px; */
-  border-width: 0 16px 0 16px;
-  border-style: double;
+/* ==================================================================================== */
+.ContainsSidebar {
+  padding: 3px;
+  /* font-size: 0.8rem; */
+  background-color: rgb(54, 53, 52);
+  /* border-right: thin rgba(77, 77, 77, 1) solid; */
 }
 
+/* ==================================================================================== */
+#MainPage {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: inherit;
+  vertical-align: middle;
+  /* font-size: 0.8rem; */
+  overflow-y: none;
+  /*  */
+  /* margin:5px; */
+   padding: 5px;
+
+}
+
+/* ==================================================================================== */
+#PageToolbar {
+  justify-self: flex-start;
+  padding: 5px;
+  /* font-size: 0.8rem; */
+  vertical-align: middle;
+  border-left: 20px rgba(77, 77, 77, 1) solid;
+  border-top: thin rgba(77, 77, 77, 1) solid;
+  border-right: thin rgba(77, 77, 77, 1) solid;
+  border-bottom: thin rgba(77, 77, 77, 1) solid;
+  display: flex;
+}
+
+#PageContains {
+  flex: 1 1 auto;
+  display: inline-flex;
+  padding: 10px 0 0 0;
+  height: 0;
+  /* border: thin greenyellow solid; */
+  /* overflow-y: none; */
+}
+
+/* ==================================================================================== */
 .Page-Title {
-  text-indent: 5px;
-  font-size: 0.9rem;
-  font-weight: bold;
+  font-size: 0.8rem;
+  margin-left: 10px;
 }
 
 #Gallerian {
@@ -44,33 +115,8 @@ body {
   max-height: 245px;
 }
 
-#GridInfoPesertaDidik {
+/* #DashboardPesertaDidik {
+  font-size: 0.8rem;
   height: 100%;
   padding: 5px;
-}
-
-
-
-
-#view {
-  background: inherit;
-  padding: 5px;
-}
-
-.MainSidebar {
-  background: rgb(49, 49, 49);
-  padding: 3px;
-  margin-right: 100px;
-}
-
-/* #ChildGridContainer{
-  height: 100%;
-  padding: 5px;
-}
-
-.dx-fieldset {
-  padding: 5px;
-  border-style: solid;
-  border-width: thin;
-  margin: 0 auto;
 } */
