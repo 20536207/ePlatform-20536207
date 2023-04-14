@@ -104,39 +104,6 @@ $(document).ready(function () {
       template(e) {
         return $("<div class='DevApp-Customer'>" + e.text + "</div>");
       },
-    }, {
-      widget: 'dxButton',
-      location: 'after',
-      locateInMenu: 'auto',
-      options: {
-        text: 'Home',
-        icon: 'home',
-        hoverStateEnabled: true,
-        focusStateEnabled: true,
-        activeStateEnabled: true,
-        type: 'normal',
-        stylingMode: "text",
-        onClick: () => {
-          alert("This is an alert message!");
-          // _popup.show();
-        },
-      },
-    }, {
-      widget: 'dxButton',
-      location: 'after',
-      locateInMenu: 'auto',
-      options: {
-        text: 'Referensi',
-        icon: 'bookmark',
-        hoverStateEnabled: true,
-        focusStateEnabled: true,
-        activeStateEnabled: true,
-        type: 'normal',
-        stylingMode: "text",
-        onClick: () => {
-          _popup.show();
-        },
-      },
     }],
   }).dxToolbar("instance");
 
@@ -238,11 +205,8 @@ $(document).ready(function () {
     hoverStateEnabled: false,
     focusStateEnabled: false,
     activeStateEnabled: false,
-    // onItemClick(e) {
-    //   alert(e.itemData.text);
-    // },
-    onSelectionChanged(e){
-      alert(e.tabIndex);
+    onItemClick(e) {
+      alert(e.itemData.text);
     },
   }).dxTabs('instance');
 });
