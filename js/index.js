@@ -1,207 +1,204 @@
 window.jsPDF = window.jspdf.jsPDF;
-
 $(document).ready(function () {
-  //$("#PageContains").load("./pages/DashboardPesertaDidik.html");
+  // $("#PageContains").load("./pages/ViewHome.html");
 
-  const navigation = [
-    {
-      key: 'Dashboard',
-      items: [
-        { id: 01 - 01, text: 'Profil Sekolah', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 02, text: 'Peserta Didik', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardPesertaDidik" },
-        { id: 01 - 03, text: 'Pegawai', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardPegawai" },
-        { id: 01 - 04, text: 'Sarana Prasarana', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardSaranaPrasarana" },
-        { id: 01 - 05, text: 'Anggaran', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardAnggaran" },
-      ]
-    },
-    {
-      key: 'Informasi Kesiswaan',
-      items: [
-        { id: 02 - 01, text: 'Data Induk Peserta Didik', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 02 - 02, text: 'Rombongan Belajar', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 02 - 03, text: 'Data Prestasi', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-      ]
-    },
-    {
-      key: 'Informasi Kepegawaian',
-      items: [
-        { id: 01 - 01, text: 'Data Induk Pegawai', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 02, text: 'Putusan Non-ASN', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 03, text: 'Putusan ASN', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 04, text: 'Putusan Kepangkatan', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 05, text: 'Putusan Gaji Berkala', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-      ]
-    },
-    {
-      key: 'Informasi Sarana Prasarana',
-      items: [
-        { id: 01 - 01, text: 'Data Induk Pegawai', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 02, text: 'Putusan Non-ASN', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 03, text: 'Putusan ASN', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 04, text: 'Putusan Kepangkatan', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-        { id: 01 - 05, text: 'Putusan Gaji Berkala', icon: 'tags', badge: 'new', disabled: false, visible: true, filepath: "DashboardProfilSekolah" },
-      ]
-    },
-  ];
+  const
 
-  const _popup = function () {
-    $("<div>").dxPopup({
-      contentTemplate: function () {
-        return $("<div id='Gallerian' />").dxGallery({
-          dataSource: [
-            'images/001.jpg',
-            'images/002.jpg',
-            'images/003.jpg',
-          ],
-          loop: true,
-          slideshowDelay: 2000,
-          showNavButtons: false,
-          showIndicator: false,
-        })
-          .dxScrollView({
-            height: "100%",
-            width: "100%"
-          });
-      },
-      hideOnOutsideClick: true,
-      hideOnParentScroll: true,
-      showTitle: true,
-      title: "Information",
-      resizeEnabled: false,
-      dragEnabled: false,
-      position: { my: 'center', at: 'center', collision: 'fit' },
-      width: 325,
-      height: 265,
-      visible: false,
-    }).dxPopup("instance");
-  };
-
-  //==============================================================================
-  const _LayoutHeader = $('#LayoutHeader').dxToolbar({
-    items: [{
-      widget: 'dxButton',
-      location: 'before',
-      locateInMenu: 'never',
-      cssClass: 'DevApp-Menu',
-      options: {
-        text: 'e-Platform',
-        icon: 'menu',
-        hoverStateEnabled: true,
-        focusStateEnabled: true,
-        activeStateEnabled: true,
-        type: 'normal',
-        stylingMode: "text",
-        height: undefined,
-        width: undefined,
-        onClick() {
-          _LayoutContains.toggle();
+    _popup = function () {
+      $("<div>").dxPopup({
+        contentTemplate: function () {
+          return $("<div id='Gallerian' />").dxGallery({
+            dataSource: [
+              'images/001.jpg',
+              'images/002.jpg',
+              'images/003.jpg',
+            ],
+            loop: true,
+            slideshowDelay: 2000,
+            showNavButtons: false,
+            showIndicator: false,
+          })
+            .dxScrollView({
+              height: "100%",
+              width: "100%"
+            });
         },
-      },
-    }, {
-      location: 'before',
-      locateInMenu: 'never',
-      text: 'SD NEGERI TISNONEGARAN 1 PROBOLINGGO',
-      template(e) {
-        return $("<div class='DevApp-Customer'>" + e.text + "</div>");
-      },
-    }],
-  }).dxToolbar("instance");
+        hideOnOutsideClick: true,
+        hideOnParentScroll: true,
+        showTitle: true,
+        title: "Information",
+        resizeEnabled: false,
+        dragEnabled: false,
+        position: { my: 'center', at: 'center', collision: 'fit' },
+        width: 325,
+        height: 265,
+        visible: false,
+      }).dxPopup("instance");
+    },
 
-  //===============================================================================
-  const _LayoutContains = $('#LayoutContent').dxDrawer({
-    opened: false,
-    revealMode: "slide", //expand
-    openedStateMode: "shrink", //shrink //overlap
-    position: 'left', //right
-    shading: false,
-    closeOnOutsideClick: false,
-    template() {
-      const _ListWidget = $('<div>').addClass('ContainsSidebar');
+    _ActionSheet = $('#ActionSheet').dxActionSheet({
+      dataSource: [
+        { text: 'Action 001' },
+        { text: 'Action 002' },
+        { text: 'Action 003' },
+        { text: 'Action 004' },
+      ],
+      title: 'Choose action',
+      showTitle: true,
+      showCancelButton: true,
+      visible: false,
+      usePopover: true,
+      onCancelClick() {
+        alert('Cancel');
+      },
+      onItemClick(value) {
+        DevExpress.ui.notify(
+          {
+            message: value.itemData.text,
+            maxWidth: 300,
+            displayTime: 3000,
+            animation: {
+              show: { type: 'fade', duration: 400, from: 0, to: 1 },
+              hide: { type: 'fade', duration: 40, to: 0 },
+            },
+          },
+          { position: "top right", direction: "down-push" }
+        );
+      },
+    }).dxActionSheet('instance'),
 
-      return _ListWidget
-        .dxList({
-          dataSource: navigation,
+    //==============================================================================
+    _LayoutHeader = $('#LayoutHeader').dxToolbar({
+      items: [{
+        widget: 'dxButton',
+        location: 'before',
+        locateInMenu: 'never',
+        cssClass: 'DevApp-Menu',
+        options: {
+          text: 'e-Platform',
+          icon: 'menu',
           hoverStateEnabled: true,
           focusStateEnabled: true,
-          activeStateEnabled: false,
-          grouped: true,
-          collapsibleGroups: true,
-          showSelectionControls: false,
-          groupTemplate(data) {
-            return $(`<b style="color: rgba(28, 168, 221, 1)">${data.key}</b>`);
-          },
-          width: 265,
-          selectionMode: "single",
-          onItemClick(e) {
-            $("#PageContains")
-              .empty()
-              .load("./pages/" + e.itemData["filepath"] + ".html");
+          activeStateEnabled: true,
+          type: 'normal',
+          stylingMode: "text",
+          height: undefined,
+          width: undefined,
+          onClick() {
             _LayoutContains.toggle();
-
-            //_MainPageToolbar.itemElement.index(0).option('text', e.itemData['text']);
-            //DevExpress.ui.notify(_DashboardPesertaDidik.option('columnHidingEnabled'));
-            //$('#view').prepend(_DashboardPesertaDidik);
-            //$("#view").load(_PageLoad);
           },
-        }).addClass('ContainsSidebar');
+        },
+      }, {
+        location: 'before',
+        locateInMenu: 'auto',
+        text: 'SD NEGERI TISNONEGARAN 1 PROBOLINGGO',
+        template(e) {
+          return $("<div class='DevApp-Customer'>" + e.text + "</div>");
+        },
+      }],
+    }).dxToolbar("instance"),
+
+    //===============================================================================
+    _LayoutContains = $('#LayoutContent').dxDrawer({
+      opened: false,
+      revealMode: "slide", //expand
+      openedStateMode: "shrink", //shrink //overlap
+      position: 'left', //right
+      shading: false,
+      closeOnOutsideClick: false,
+      template() {
+        const _ListWidget = $('<div>').addClass('ContainsSidebar');
+
+        return _ListWidget
+          .dxList({
+            dataSource: "./data/NavMain.json",
+            hoverStateEnabled: true,
+            focusStateEnabled: true,
+            activeStateEnabled: false,
+            grouped: true,
+            collapsibleGroups: true,
+            showSelectionControls: false,
+            groupTemplate(data) {
+              return $(`<b style="color: rgba(28, 168, 221, 1)">${data.key}</b>`);
+            },
+            width: 265,
+            selectionMode: "single",
+            onItemClick(e) {
+              $("#PageContains")
+                .empty()
+                .load("./pages/" + e.itemData["filepath"] + ".html");
+              _LayoutContains.toggle();
+            },
+          }).addClass('ContainsSidebar');
 
 
-      // list.collapsed;
-      // return _ListWidget;
-    },
-  }).dxDrawer('instance');
-
-  const _PageToolbar = $('#PageToolbar').dxToolbar({
-    items: [{
-      widget: 'dxButton',
-      location: 'before',
-      locateInMenu: 'never',
-      text: '',
-      template(e) {
-        return $("<div class='Page-Title'>" + e.text + "</div>");
+        // list.collapsed;
+        // return _ListWidget;
       },
-    }],
-  }).dxToolbar('instance');
+    }).dxDrawer('instance'),
 
-  // const _PageContains = $('#PageContains').dxScrollView({
-  //   direction: 'both',
-  //   scrollByContent: true,
-  //   scrollByThumb: true,
-  //   showScrollbar: 'onHover',
-  //   usenative: true,
-  //   width: 'inherit',
-  //   height: 'inherit',
-  // }).dxScrollView('instance');
+    _PageToolbar = $('#PageToolbar').dxToolbar({
+      items: [{
+        widget: 'dxButton',
+        location: 'before',
+        locateInMenu: 'never',
+        text: '',
+        template(e) {
+          return $("<div class='Page-Title'>" + e.text + "</div>");
+        },
+      }],
+    }).dxToolbar('instance'),
 
-  //========================================================================================================
-  const _LayoutFooter = $('#LayoutFooter').dxTabs({
-    dataSource: [
-      {
-        id: 0,
-        text: 'About',
-        icon: 'info',
-        content: 'User tab content',
+    // const _PageContains = $('#PageContains').dxScrollView({
+    //   direction: 'both',
+    //   scrollByContent: true,
+    //   scrollByThumb: true,
+    //   showScrollbar: 'onHover',
+    //   usenative: true,
+    //   width: 'inherit',
+    //   height: 'inherit',
+    // }).dxScrollView('instance');
+
+    //========================================================================================================
+    _LayoutFooter = $('#LayoutFooter').dxTabs({
+      dataSource: [
+        {
+          id: 0,
+          text: 'About',
+          icon: 'info',
+          loadpage: './pages/ViewAbout.html',
+        },
+        {
+          id: 1,
+          text: 'Home',
+          icon: 'home',
+          loadpage: './pages/ViewHome.html',
+        },
+        {
+          id: 2,
+          text: 'Referensi',
+          icon: 'bookmark',
+          loadpage: './pages/ViewReferensi.html',
+        },
+      ],
+      hoverStateEnabled: true,
+      focusStateEnabled: false,
+      activeStateEnabled: true,
+      selectedIndex: -1,
+      onItemClick(e) { //itemData, itemIndex, itemElement
+        // alert(e.itemData.text);
+        // $("#PageContains").load(e.itemData.loadpage);
+        _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
+        _ActionSheet.option('target', e.itemElement);
+        _ActionSheet.option('title', e.itemData.text);
+        _ActionSheet.option('visible', true);
+        
+        _LayoutFooter.option('selectedIndex',-1);
+
       },
-      {
-        id: 1,
-        text: 'Home',
-        icon: 'home',
-        content: 'Comment tab content',
-      },
-      {
-        id: 2,
-        text: 'Referensi',
-        icon: 'bookmark',
-        content: 'Find tab content',
-      },
-    ],
-    hoverStateEnabled: false,
-    focusStateEnabled: false,
-    activeStateEnabled: false,
-    selectedIndex:1,
-    onItemClick(e) {
-      // alert(e.itemData.text);
-    },
-  }).dxTabs('instance');
+    }).dxTabs('instance');
+
+    DevExpress.ui.notify(_PageToolbar.items[0].text);
+
 });
 

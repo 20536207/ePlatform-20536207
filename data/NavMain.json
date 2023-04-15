@@ -1,0 +1,184 @@
+[
+    {
+        "key": "Dashboard",
+        "items": [
+            {
+                "id": "01-01",
+                "text": "Profil Sekolah",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-02",
+                "text": "Peserta Didik",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardPesertaDidik"
+            },
+            {
+                "id": "01-03",
+                "text": "Pegawai",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardPegawai"
+            },
+            {
+                "id": "01-04",
+                "text": "Sarana Prasarana",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardSaranaPrasarana"
+            },
+            {
+                "id": "01-05",
+                "text": "Anggaran",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardAnggaran"
+            }
+        ]
+    },
+    {
+        "key": "Informasi Kesiswaan",
+        "items": [
+            {
+                "id": "02-01",
+                "text": "Data Induk Peserta Didik",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "02-02",
+                "text": "Rombongan Belajar",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "02-03",
+                "text": "Data Prestasi",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            }
+        ]
+    },
+    {
+        "key": "Informasi Kepegawaian",
+        "items": [
+            {
+                "id": "01-01",
+                "text": "Data Induk Pegawai",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-02",
+                "text": "Putusan Non-ASN",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-03",
+                "text": "Putusan ASN",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-04",
+                "text": "Putusan Kepangkatan",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-05",
+                "text": "Putusan Gaji Berkala",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            }
+        ]
+    },
+    {
+        "key": "Informasi Sarana Prasarana",
+        "items": [
+            {
+                "id": "01-01",
+                "text": "Data Induk Pegawai",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-02",
+                "text": "Putusan Non-ASN",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-03",
+                "text": "Putusan ASN",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-04",
+                "text": "Putusan Kepangkatan",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            },
+            {
+                "id": "01-05",
+                "text": "Putusan Gaji Berkala",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "filepath": "DashboardProfilSekolah"
+            }
+        ]
+    }
+]

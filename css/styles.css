@@ -8,52 +8,41 @@ body {
 #MainLayout {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  /* border-collapse: collapse; */
-  vertical-align: middle;
-  /* font-size: 0.8rem; */
+  width: inherit;
+  height: inherit;
   overflow-y: none;
 }
 
 #LayoutHeader {
-  display: flex;
   justify-self: flex-start;
-  vertical-align: middle;
-  /* font-size: 0.8rem; */
   padding: 12px 5px 12px 5px;
-  /* border-bottom: thin rgba(77, 77, 77, 1) solid; */
   border: thin rgba(77, 77, 77, 1) solid;
+  overflow-y: none;
 }
 
 #LayoutContent {
   flex: 1 1 auto;
   height: 0px;
-  overflow-y: none;
-  /* padding: 10px 0 10px 0; */
-  /* margin: 5px 0 5px 0; */
+  width: inherit;
   border: thin rgba(77, 77, 77, 1) solid;
+  overflow-y: none;
 }
 
 #LayoutFooter {
   justify-self: flex-end;
   height:48px;
-  /* font-size: 1rem; */
-  /* padding: 5px; */
-  /* border-top: thin rgba(77, 77, 77, 1) solid; */
   border: thin rgba(77, 77, 77, 1) solid;
+  overflow-y: none;
 }
 
 /* ==================================================================================== */
 
 .DevApp-Menu {
   font-style: italic;
-  vertical-align: middle;
-  /* font-size: 0.8rem; */
 }
 
 .DevApp-Customer {
   margin-right: 10px;
-  vertical-align: middle;
   font-size: 1rem;
   font-weight: bold;
   text-shadow: 1px 0.8px 2px rgb(194, 194, 194);
@@ -62,9 +51,7 @@ body {
 /* ==================================================================================== */
 .ContainsSidebar {
   padding: 3px;
-  /* font-size: 0.8rem; */
   background-color: rgb(37, 37, 37);
-  /* border-right: thin rgba(77, 77, 77, 1) solid; */
 }
 
 /* ==================================================================================== */
@@ -73,28 +60,21 @@ body {
   flex-direction: column;
   width: inherit;
   height: inherit;
-  vertical-align: middle;
-  /* font-size: 0.8rem; */
   overflow-y: none;
-  /*  */
-  /* margin:5px; */
-  /* padding: 5px; */
-
+  padding: 5px;
 }
 
 /* ==================================================================================== */
 #PageToolbar {
   justify-self: flex-start;
-  padding: 5px;
-  vertical-align: middle;
-  border-left: 20px rgba(77, 77, 77, 1) solid;
-  border-bottom: thin rgba(77, 77, 77, 1) solid;
+  border-left: 10px rgba(77, 77, 77, 1) solid;
+  /* border-bottom: thin rgba(77, 77, 77, 1) solid; */
 }
 
 #PageContains {
   flex: 1 1 auto;
   height: 0;
-  /* overflow-y: auto; */
+  overflow: auto;
 }
 
 /* ==================================================================================== */
