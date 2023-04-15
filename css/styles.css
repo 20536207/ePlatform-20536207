@@ -63,7 +63,7 @@ body {
 .ContainsSidebar {
   padding: 3px;
   /* font-size: 0.8rem; */
-  background-color: rgb(54, 53, 52);
+  background-color: rgb(37, 37, 37);
   /* border-right: thin rgba(77, 77, 77, 1) solid; */
 }
 
@@ -78,7 +78,7 @@ body {
   overflow-y: none;
   /*  */
   /* margin:5px; */
-   padding: 5px;
+  /* padding: 5px; */
 
 }
 
@@ -86,22 +86,15 @@ body {
 #PageToolbar {
   justify-self: flex-start;
   padding: 5px;
-  /* font-size: 0.8rem; */
   vertical-align: middle;
   border-left: 20px rgba(77, 77, 77, 1) solid;
-  border-top: thin rgba(77, 77, 77, 1) solid;
-  border-right: thin rgba(77, 77, 77, 1) solid;
   border-bottom: thin rgba(77, 77, 77, 1) solid;
-  display: flex;
 }
 
 #PageContains {
   flex: 1 1 auto;
-  display: inline-flex;
-  padding: 10px 0 0 0;
   height: 0;
-  /* border: thin greenyellow solid; */
-  /* overflow-y: none; */
+  /* overflow-y: auto; */
 }
 
 /* ==================================================================================== */
@@ -114,9 +107,3 @@ body {
   max-width: 325px;
   max-height: 245px;
 }
-
-/* #DashboardPesertaDidik {
-  font-size: 0.8rem;
-  height: 100%;
-  padding: 5px;
-} */

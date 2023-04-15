@@ -2275,7 +2275,7 @@ $(function () {
         ],
 
         //===============================================================================
-        _InfoPesertaDidik = $('#InfoPesertaDidik').dxDataGrid({
+        _DashboardPesertaDidik = $('#DashboardPesertaDidik').dxDataGrid({
             keyExpr: 'A01',
             columns: _TbDashboard,
             columnHidingEnabled: false,
@@ -2412,7 +2412,7 @@ $(function () {
                 rowRenderingMode: "standard",
                 scrollByContent: true,
                 scrollByThumb: true,
-                showScrollbar: "always",
+                showScrollbar: "onHover",
                 useNative: "auto"
             },
             sorting: {

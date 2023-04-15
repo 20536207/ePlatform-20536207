@@ -153,32 +153,25 @@ $(document).ready(function () {
 
   const _PageToolbar = $('#PageToolbar').dxToolbar({
     items: [{
+      widget: 'dxButton',
       location: 'before',
+      locateInMenu: 'never',
       text: '',
       template(e) {
         return $("<div class='Page-Title'>" + e.text + "</div>");
       },
-    }, {
-      widget: 'dxSelectBox',
-      valueExpr: this,
-      location: 'after',
-      locateInMenu: 'auto',
-      options: {
-        width: '250px',
-      }
-
     }],
   }).dxToolbar('instance');
 
-  const _PageContains = $('#PageContains').dxScrollView({
-    direction: 'both',
-    scrollByContent: true,
-    scrollByThumb: false,
-    showScrollbar: 'onHover',
-    usenative: false,
-    width: '100%',
-    height: '100%',
-  }).dxScrollView('instance');
+  // const _PageContains = $('#PageContains').dxScrollView({
+  //   direction: 'both',
+  //   scrollByContent: true,
+  //   scrollByThumb: true,
+  //   showScrollbar: 'onHover',
+  //   usenative: true,
+  //   width: 'inherit',
+  //   height: 'inherit',
+  // }).dxScrollView('instance');
 
   //========================================================================================================
   const _LayoutFooter = $('#LayoutFooter').dxTabs({
@@ -192,7 +185,7 @@ $(document).ready(function () {
       {
         id: 1,
         text: 'Home',
-        icon: 'comment',
+        icon: 'home',
         content: 'Comment tab content',
       },
       {
@@ -205,8 +198,9 @@ $(document).ready(function () {
     hoverStateEnabled: false,
     focusStateEnabled: false,
     activeStateEnabled: false,
+    selectedIndex:1,
     onItemClick(e) {
-      alert(e.itemData.text);
+      // alert(e.itemData.text);
     },
   }).dxTabs('instance');
 });
