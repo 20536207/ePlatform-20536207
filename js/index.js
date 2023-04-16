@@ -1,6 +1,5 @@
 window.jsPDF = window.jspdf.jsPDF;
 $(document).ready(function () {
-  // $("#PageContains").load("./pages/ViewHome.html");
 
   const
 
@@ -93,7 +92,7 @@ $(document).ready(function () {
         locateInMenu: 'auto',
         text: '',//$(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
         template(e) {
-          return $("<div class='DevApp-Customer'>"+e.text+"</div>");
+          return $("<div class='DevApp-Customer'>" + e.text + "</div>");
         },
       }],
     }).dxToolbar("instance"),
@@ -125,12 +124,12 @@ $(document).ready(function () {
             selectionMode: "single",
             onItemClick(e) {
               try {
-                _PageToolbar.option("items[0].text",e.itemData.text);
-                
+                _PageToolbar.option("items[0].text", e.itemData.text);
+
                 $("#PageContains")
                   .empty()
                   .load("./pages/" + e.itemData["filepath"] + ".html");
-                  
+
               }
               catch (error) {
                 alert(error);
@@ -195,8 +194,8 @@ $(document).ready(function () {
       onItemClick(e) { //itemData, itemIndex, itemElement
         // alert(e.itemData.text);
         // $("#PageContains").load(e.itemData.loadpage);
-        _PageToolbar.option("items[0].text",e.itemData.text);
-        
+        _PageToolbar.option("items[0].text", e.itemData.text);
+
         _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
         _ActionSheet.option('target', e.itemElement);
         _ActionSheet.option('title', e.itemData.text);
@@ -207,10 +206,9 @@ $(document).ready(function () {
       },
     }).dxTabs('instance');
 
-  _LayoutHeader.option("items[1].text",$(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO");
-  
-  // $("#toolbar").dxToolbar("instance").option("items[4].options.text", "New text");
-  //   }, 3000);
+  _LayoutHeader.option("items[1].text", $(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO");
+  $("#PageContains").load("./pages/ViewHome.html");
+  _PageToolbar.option("items[0].text", 'Home');
 
 });
 
