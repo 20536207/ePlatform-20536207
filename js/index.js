@@ -89,11 +89,11 @@ $(document).ready(function () {
           },
         },
       }, {
-        location: 'before',
+        location: $(window).width() < 600 ? "after" : 'before',
         locateInMenu: 'auto',
-        text: 'SD NEGERI TISNONEGARAN 1 PROBOLINGGO',
+        text: '',//$(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
         template(e) {
-          return $("<div class='DevApp-Customer'>" + e.text + "</div>");
+          return $("<div class='DevApp-Customer'>"+e.text+"</div>");
         },
       }],
     }).dxToolbar("instance"),
@@ -124,24 +124,31 @@ $(document).ready(function () {
             width: 265,
             selectionMode: "single",
             onItemClick(e) {
-              $("#PageContains")
-                .empty()
-                .load("./pages/" + e.itemData["filepath"] + ".html");
-              _LayoutContains.toggle();
+              try {
+                _PageToolbar.option("items[0].text",e.itemData.text);
+                
+                $("#PageContains")
+                  .empty()
+                  .load("./pages/" + e.itemData["filepath"] + ".html");
+                  
+              }
+              catch (error) {
+                alert(error);
+              }
+              finally {
+                _LayoutContains.toggle();
+              };
+
             },
           }).addClass('ContainsSidebar');
-
-
-        // list.collapsed;
-        // return _ListWidget;
       },
     }).dxDrawer('instance'),
 
     _PageToolbar = $('#PageToolbar').dxToolbar({
       items: [{
-        widget: 'dxButton',
         location: 'before',
         locateInMenu: 'never',
+        // cssClass: 'Page-Title',
         text: '',
         template(e) {
           return $("<div class='Page-Title'>" + e.text + "</div>");
@@ -188,17 +195,22 @@ $(document).ready(function () {
       onItemClick(e) { //itemData, itemIndex, itemElement
         // alert(e.itemData.text);
         // $("#PageContains").load(e.itemData.loadpage);
+        _PageToolbar.option("items[0].text",e.itemData.text);
+        
         _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
         _ActionSheet.option('target', e.itemElement);
         _ActionSheet.option('title', e.itemData.text);
         _ActionSheet.option('visible', true);
-        
-        _LayoutFooter.option('selectedIndex',-1);
+
+        _LayoutFooter.option('selectedIndex', -1);
 
       },
     }).dxTabs('instance');
 
-    DevExpress.ui.notify(_PageToolbar.items[0].text);
+  _LayoutHeader.option("items[1].text",$(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO");
+  
+  // $("#toolbar").dxToolbar("instance").option("items[4].options.text", "New text");
+  //   }, 3000);
 
 });
 

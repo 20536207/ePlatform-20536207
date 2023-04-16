@@ -61,13 +61,14 @@ body {
   width: inherit;
   height: inherit;
   overflow-y: none;
-  padding: 5px;
+  padding: 10px 5px 5px 5px;
 }
 
 /* ==================================================================================== */
 #PageToolbar {
   justify-self: flex-start;
-  border-left: 10px rgba(77, 77, 77, 1) solid;
+  border-left: 10px dodgerblue solid;
+  background-color: rgba(77, 77, 77, 0.3);
   /* border-bottom: thin rgba(77, 77, 77, 1) solid; */
 }
 
@@ -75,12 +76,15 @@ body {
   flex: 1 1 auto;
   height: 0;
   overflow: auto;
+  padding-top: 10px;
 }
 
 /* ==================================================================================== */
 .Page-Title {
-  font-size: 0.8rem;
-  margin-left: 10px;
+  font-size: 0.9rem;
+  margin-left: 5px;
+  font-weight: bold;
+  color: greenyellow;
 }
 
 #Gallerian {
