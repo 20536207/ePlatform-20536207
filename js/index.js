@@ -1,6 +1,5 @@
 window.jsPDF = window.jspdf.jsPDF;
 $(document).ready(function () {
-
   const
 
     _popup = function () {
@@ -36,12 +35,7 @@ $(document).ready(function () {
     },
 
     _ActionSheet = $('#ActionSheet').dxActionSheet({
-      dataSource: [
-        { text: 'Action 001' },
-        { text: 'Action 002' },
-        { text: 'Action 003' },
-        { text: 'Action 004' },
-      ],
+      dataSource: undefined,
       title: 'Choose action',
       showTitle: true,
       showCancelButton: true,
@@ -77,7 +71,7 @@ $(document).ready(function () {
           text: 'e-Platform',
           icon: 'menu',
           hoverStateEnabled: true,
-          focusStateEnabled: true,
+          focusStateEnabled: false,
           activeStateEnabled: true,
           type: 'normal',
           stylingMode: "text",
@@ -88,9 +82,10 @@ $(document).ready(function () {
           },
         },
       }, {
-        location: $(window).width() < 600 ? "after" : 'before',
+        location: 'before',
+        // location: $(window).width() < 600 ? "before" : 'before',
         locateInMenu: 'auto',
-        text: '',//$(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
+        text: $(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
         template(e) {
           return $("<div class='DevApp-Customer'>" + e.text + "</div>");
         },
@@ -104,7 +99,7 @@ $(document).ready(function () {
       openedStateMode: "shrink", //shrink //overlap
       position: 'left', //right
       shading: false,
-      closeOnOutsideClick: false,
+      closeOnOutsideClick: true,
       template() {
         const _ListWidget = $('<div>').addClass('ContainsSidebar');
 
@@ -117,26 +112,20 @@ $(document).ready(function () {
             grouped: true,
             collapsibleGroups: true,
             showSelectionControls: false,
+            useNativeScrolling: false,
             groupTemplate(data) {
               return $(`<b style="color: rgba(28, 168, 221, 1)">${data.key}</b>`);
             },
             width: 265,
             selectionMode: "single",
             onItemClick(e) {
-              try {
-                _PageToolbar.option("items[0].text", e.itemData.text);
 
-                $("#PageContains")
-                  .empty()
-                  .load("./pages/" + e.itemData["filepath"] + ".html");
+              _PageToolbar.option("items[0].text", e.itemData.text);
+              _LayoutContains.toggle();
 
-              }
-              catch (error) {
-                alert(error);
-              }
-              finally {
-                _LayoutContains.toggle();
-              };
+              $("#PageContains").empty();
+              $("#PageContains").load("./pages/" + e.itemData["filepath"] + ".html");
+
 
             },
           }).addClass('ContainsSidebar');
@@ -167,48 +156,27 @@ $(document).ready(function () {
 
     //========================================================================================================
     _LayoutFooter = $('#LayoutFooter').dxTabs({
-      dataSource: [
-        {
-          id: 0,
-          text: 'About',
-          icon: 'info',
-          loadpage: './pages/ViewAbout.html',
-        },
-        {
-          id: 1,
-          text: 'Home',
-          icon: 'home',
-          loadpage: './pages/ViewHome.html',
-        },
-        {
-          id: 2,
-          text: 'Referensi',
-          icon: 'bookmark',
-          loadpage: './pages/ViewReferensi.html',
-        },
-      ],
+      dataSource: "./data/NavTaskbar.json",
       hoverStateEnabled: true,
       focusStateEnabled: false,
       activeStateEnabled: true,
       selectedIndex: -1,
       onItemClick(e) { //itemData, itemIndex, itemElement
-        // alert(e.itemData.text);
-        // $("#PageContains").load(e.itemData.loadpage);
+        $("#PageContains").load(e.itemData.loadpage);
         _PageToolbar.option("items[0].text", e.itemData.text);
-
-        _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
-        _ActionSheet.option('target', e.itemElement);
-        _ActionSheet.option('title', e.itemData.text);
-        _ActionSheet.option('visible', true);
+        
+        // _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
+        // _ActionSheet.option('target', e.itemElement);
+        // _ActionSheet.option('title', e.itemData.text);
+        // _ActionSheet.option('visible', true);
 
         _LayoutFooter.option('selectedIndex', -1);
 
       },
     }).dxTabs('instance');
 
-  _LayoutHeader.option("items[1].text", $(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO");
   $("#PageContains").load("./pages/ViewHome.html");
+
   _PageToolbar.option("items[0].text", 'Home');
 
 });
-

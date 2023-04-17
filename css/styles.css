@@ -3,6 +3,7 @@ body {
   height: 100%;
   margin: 0 auto;
   font-size: 1rem;
+  font-family: "Segoe UI","Helvetica Neue",Helvetica,Verdana,"san-serif";
 }
 
 #MainLayout {
@@ -15,7 +16,7 @@ body {
 
 #LayoutHeader {
   justify-self: flex-start;
-  padding: 12px 5px 12px 5px;
+  padding: 7px;
   border: thin rgba(77, 77, 77, 1) solid;
   overflow-y: none;
 }
@@ -67,8 +68,9 @@ body {
 /* ==================================================================================== */
 #PageToolbar {
   justify-self: flex-start;
-  border-left: 10px dodgerblue solid;
-  background-color: rgba(77, 77, 77, 0.3);
+  border-left: 10px dodgerblue ridge;
+  
+  background-color: rgba(90, 90, 90, 0.3);
   /* border-bottom: thin rgba(77, 77, 77, 1) solid; */
 }
 
@@ -82,8 +84,8 @@ body {
 /* ==================================================================================== */
 .Page-Title {
   font-size: 0.9rem;
+
   margin-left: 5px;
-  font-weight: bold;
   color: greenyellow;
 }
 

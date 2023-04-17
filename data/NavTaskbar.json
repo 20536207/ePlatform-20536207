@@ -1,0 +1,5 @@
+[
+    {"id": 0,"parentid":"00","text": "About","icon": "info","loadpage": "./pages/ViewAbout.html"},
+    {"id": 1,"parentid":"00","text": "Home","icon": "home","loadpage": "./pages/ViewHome.html"},
+    {"id": 3,"parentid":"00","text": "Referensi","icon": "bookmark","loadpage": "./pages/ViewReferensi.html"}
+]
