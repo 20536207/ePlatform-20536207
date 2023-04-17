@@ -62,34 +62,40 @@ $(document).ready(function () {
 
     //==============================================================================
     _LayoutHeader = $('#LayoutHeader').dxToolbar({
-      items: [{
-        widget: 'dxButton',
-        location: 'before',
-        locateInMenu: 'never',
-        cssClass: 'DevApp-Menu',
-        options: {
-          text: 'e-Platform',
-          icon: 'menu',
-          hoverStateEnabled: true,
-          focusStateEnabled: false,
-          activeStateEnabled: true,
-          type: 'normal',
-          stylingMode: "text",
-          height: undefined,
-          width: undefined,
-          onClick() {
-            _LayoutContains.toggle();
+      items: [
+        {
+          // widget: 'dxButton',
+          location: 'before',
+          locateInMenu: 'never',
+          // cssClass: 'DevApp-Menu',
+          text: $('<div></div>'),
+          // options: {
+          //   text: 'e-Platform',
+          //   icon: 'menu',
+          //   hoverStateEnabled: true,
+          //   focusStateEnabled: false,
+          //   activeStateEnabled: true,
+          //   type: 'normal',
+          //   stylingMode: "text",
+          //   height: undefined,
+          //   width: undefined,
+          //   onClick() {
+          //     _LayoutContains.toggle();
+          //   },
+          // },
+          template(e) {
+            return $('<div class="DevApp-Menu icon-windows icon-1x pull-left">'+' e-Platform All In One <br> Ver. 20536207.1</div>')
+          }
+        },
+        {
+          location: 'after',
+          // location: $(window).width() < 600 ? "after" : 'before',
+          locateInMenu: 'never', //ayuto never always
+          text: $(window).width() < 480 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
+          template(e) {
+            return $("<div class='DevApp-Customer'>" + e.text + "</div>");
           },
-        },
-      }, {
-        location: 'before',
-        // location: $(window).width() < 600 ? "before" : 'before',
-        locateInMenu: 'auto',
-        text: $(window).width() < 600 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
-        template(e) {
-          return $("<div class='DevApp-Customer'>" + e.text + "</div>");
-        },
-      }],
+        }],
     }).dxToolbar("instance"),
 
     //===============================================================================
@@ -162,9 +168,14 @@ $(document).ready(function () {
       activeStateEnabled: true,
       selectedIndex: -1,
       onItemClick(e) { //itemData, itemIndex, itemElement
-        $("#PageContains").load(e.itemData.loadpage);
+        if (e.itemIndex == 0) {
+          _LayoutContains.toggle();
+        } else {
+          $("#PageContains").load(e.itemData.loadpage);
+        }
+
         _PageToolbar.option("items[0].text", e.itemData.text);
-        
+
         // _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
         // _ActionSheet.option('target', e.itemElement);
         // _ActionSheet.option('title', e.itemData.text);

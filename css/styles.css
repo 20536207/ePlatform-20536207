@@ -3,7 +3,7 @@ body {
   height: 100%;
   margin: 0 auto;
   font-size: 1rem;
-  font-family: "Segoe UI","Helvetica Neue",Helvetica,Verdana,"san-serif";
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Verdana, "san-serif";
 }
 
 #MainLayout {
@@ -16,8 +16,12 @@ body {
 
 #LayoutHeader {
   justify-self: flex-start;
-  padding: 7px;
-  border: thin rgba(77, 77, 77, 1) solid;
+  padding: 15px;
+  /* border: thin rgba(77, 77, 77, 1) solid; */
+  /* align-content: center; */
+  /* justify-content: center; */
+  /* vertical-align: middle; */
+  /* height: auto; */
   overflow-y: none;
 }
 
@@ -25,27 +29,33 @@ body {
   flex: 1 1 auto;
   height: 0px;
   width: inherit;
-  border: thin rgba(77, 77, 77, 1) solid;
+  /* border: thin rgba(77, 77, 77, 1) solid; */
   overflow-y: none;
 }
 
 #LayoutFooter {
   justify-self: flex-end;
-  height:48px;
-  border: thin rgba(77, 77, 77, 1) solid;
+  align-content: center;
+  justify-content: center;
+  vertical-align: middle;
+  height: 56px;
+
+  font-size: 0.9rem;
+  font-family: inherit;
+  /* border: thin rgba(77, 77, 77, 1) solid; */
   overflow-y: none;
+  border: none;
 }
 
 /* ==================================================================================== */
 
 .DevApp-Menu {
   font-style: italic;
+  font-size: 1rem;
 }
 
 .DevApp-Customer {
-  margin-right: 10px;
   font-size: 1rem;
-  font-weight: bold;
   text-shadow: 1px 0.8px 2px rgb(194, 194, 194);
 }
 
@@ -62,16 +72,16 @@ body {
   width: inherit;
   height: inherit;
   overflow-y: none;
-  padding: 10px 5px 5px 5px;
+  padding: 5px;
 }
 
 /* ==================================================================================== */
 #PageToolbar {
   justify-self: flex-start;
-  border-left: 10px dodgerblue ridge;
-  
+  /* border-left: 10px dodgerblue ridge; */
+  height: fit-content;
+  padding: 5px;
   background-color: rgba(90, 90, 90, 0.3);
-  /* border-bottom: thin rgba(77, 77, 77, 1) solid; */
 }
 
 #PageContains {
@@ -83,10 +93,10 @@ body {
 
 /* ==================================================================================== */
 .Page-Title {
-  font-size: 0.9rem;
+  font-size: 1rem;
 
   margin-left: 5px;
-  color: greenyellow;
+  color: rgb(255, 255, 255, 0.8);
 }
 
 #Gallerian {

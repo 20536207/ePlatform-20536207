@@ -1,0 +1,79 @@
+#ViewHome {
+    display: flex;
+    flex-direction: column;
+    overflow: none;
+    flex: 1 1 auto;
+    height: 100%;
+    /* overflow: none; */
+    /* background-image: url(./images/banner-homepage.jpg); */
+    /* background-size: cover; */
+    /* position: relative; */
+}
+
+.demo-container,
+#page {
+    text-align: auto;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.layout-01,
+.layout-02,
+.layout-03,
+.layout-04,
+.layout-05 {
+    margin: 2px;
+    background-color: rgba(90, 90, 90, 0.2);
+    padding: 5px;
+    height: 0;
+
+    font-size: 0.9rem;
+    color: rgb(255, 255, 255, 0.8);
+    text-align: justify;
+    align-content: center;
+    justify-content: top;
+    border: none;
+}
+
+.layout-01,
+.layout-03,
+.layout-04 {
+    font-family: inherit;
+}
+
+
+.layout-04 {
+    line-height: 1.3rem;
+}
+
+.layout-02{
+    text-align: center;
+    justify-content: center;
+}
+
+#NavbarLayout03{
+    padding:0;
+    height: 46px;
+    font-size: 0.8;
+
+}
+
+@media only screen and (max-width: 480px) {
+    .layout-01 {
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 481px) {
+    .layout-01 {
+        text-align: left;
+        font-size: 2rem;
+        font-weight: normal;
+        line-height: 2.3rem;
+    }
+
+
+}
