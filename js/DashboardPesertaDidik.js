@@ -2413,7 +2413,7 @@ $(function () {
                 scrollByContent: true,
                 scrollByThumb: true,
                 showScrollbar: "onHover",
-                useNative: "auto"
+                useNative: false
             },
             sorting: {
                 mode: 'multiple',
