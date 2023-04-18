@@ -172,9 +172,8 @@ $(document).ready(function () {
           _LayoutContains.toggle();
         } else {
           $("#PageContains").load(e.itemData.loadpage);
+          _PageToolbar.option("items[0].text", e.itemData.text);
         }
-
-        _PageToolbar.option("items[0].text", e.itemData.text);
 
         // _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
         // _ActionSheet.option('target', e.itemElement);

@@ -1,10 +1,11 @@
 $(() => {
-    $('#responsive-box').dxResponsiveBox({
+    _ViewHome = $('#ViewHome').dxResponsiveBox({
         rows: [
-            { ratio: 0, screen: 'sm lg' },
-            { ratio: 0, screen: 'sm lg' },
-            { ratio: 0, screen: 'sm lg' },
-            { ratio: 1, screen: 'sm lg' },
+            { ratio: 0, screen: 'sm lg' }, //01
+            { ratio: 0, screen: 'sm lg' }, //02
+            { ratio: 0, screen: 'sm lg' }, //03 sm lg
+            { ratio: 1, screen: 'sm lg' }, //04 sm lg
+
         ],
         cols: [
             { ratio: 3 },
@@ -14,7 +15,16 @@ $(() => {
         screenByWidth(width) {
             return (width < 481) ? 'sm' : 'lg';
         },
-    });
+    })
+        .dxScrollView({
+            scrollByContent: true,
+            scrollByThumb: true,
+            useNative: false,
+            showScrollbar: 'onHover',
+            height: "100%",
+            width: "100%",
+
+        });
 
     _NavbarLayout03 = $('#NavbarLayout03').dxTabs({
         dataSource: "./data/NavLayout03.json",
@@ -29,5 +39,22 @@ $(() => {
             $("#Layout04").load(e.itemData.loadpage);
         },
     }).dxTabs('instance');
+
+    _BannerImage = $('#BannerImage').dxGallery({
+        dataSource: './data/BannerImage.json',
+        height: 'innerWidth',
+        width: 'innerWidth',
+        loop: true,
+        slideshowDelay: 6000,
+        showNavButtons: false,
+        showIndicator: false,
+        itemTemplate(item) {
+          const result = $('<div>');
+          $('<img style="width: 90%">').attr('src', item.Image).appendTo(result);
+          $('<div>').addClass('item-title').text(item.Title).appendTo(result);
+          $('<div>').addClass('item-keterangan').text(item.Keterangan).appendTo(result);
+          return result;
+        },
+      });
 
 });
