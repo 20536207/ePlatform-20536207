@@ -434,6 +434,17 @@ $(function () {
                 selectAllMode: "allPages",
                 showCheckBoxesMode: "click"
             },
+            scrolling: {
+                columnRenderingMode: "standard",
+                mode: "standard",
+                preloadEnabled: false,
+                renderAsync: undefined,
+                rowRenderingMode: "standard",
+                scrollByContent: true,
+                scrollByThumb: true,
+                showScrollbar: "onHover",
+                useNative: "auto"
+            },
             filterRow: { visible: true },
             filterPanel: { visible: false },
             headerFilter: { visible: false },
