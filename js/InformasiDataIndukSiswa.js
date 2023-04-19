@@ -470,7 +470,7 @@ $(function () {
             },
             
             wordWrapEnabled: false,
-            sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+            // sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
             summary: _TBSummaryInfo,
             //toolbar: undefined,
         }).dxDataGrid('instance');
