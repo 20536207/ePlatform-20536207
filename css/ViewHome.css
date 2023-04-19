@@ -70,5 +70,10 @@
         line-height: 2.3rem;
     }
 
+}
 
+
+.banner-image-title{
+    font-weight: bold;
+    line-height: 18px;
 }

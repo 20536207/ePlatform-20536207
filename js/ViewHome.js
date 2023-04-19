@@ -51,8 +51,8 @@ $(() => {
         itemTemplate(item) {
           const result = $('<div>');
           $('<img style="width: 90%">').attr('src', item.Image).appendTo(result);
-          $('<div>').addClass('item-title').text(item.Title).appendTo(result);
-          $('<div>').addClass('item-keterangan').text(item.Keterangan).appendTo(result);
+          $('<div>').addClass('banner-image-title').text(item.Title).appendTo(result);
+          $('<div>').addClass('banner-image-keterangan').text(item.Keterangan).appendTo(result);
           return result;
         },
       });
