@@ -1,6 +1,8 @@
 #DashboardPesertaDidik {
-    font-size: 0.8rem;
-    height: 100%;
-    /* padding: 5px; */
-    overflow: none;
-  }
+  display: flex;
+  flex-direction: column;
+  overflow: none;
+  flex: 1 1 auto;
+  font-size: 0.8rem;
+  height: 100%;
+}

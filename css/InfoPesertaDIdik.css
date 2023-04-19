@@ -1,5 +1,8 @@
 #InfoPesertaDidik {
-    font-size: 0.8rem;
+  display: flex;
+    flex-direction: column;
     overflow: none;
+    flex: 1 1 auto;
     height: 100%;
+    font-size: 0.8rem;
   }

@@ -370,7 +370,7 @@ $(function () {
             },
             hoverStateEnabled: false,
             paging: {
-                pageSize: 15,
+                pageSize: 20,
             },
             pager: {
                 allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
@@ -440,10 +440,10 @@ $(function () {
                 preloadEnabled: false,
                 renderAsync: undefined,
                 rowRenderingMode: "standard",
-                scrollByContent: true,
+                scrollByContent: false,
                 scrollByThumb: true,
                 showScrollbar: "onHover",
-                useNative: false
+                useNative: "auto"
             },
             filterRow: { visible: true },
             filterPanel: { visible: false },
