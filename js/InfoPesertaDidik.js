@@ -450,7 +450,7 @@ $(function () {
             headerFilter: { visible: false },
             groupPanel: { visible: false },
             grouping: {
-                autoExpandAll: false,
+                autoExpandAll: true,
             },
             wordWrapEnabled: false,
             //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
