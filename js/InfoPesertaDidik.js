@@ -443,7 +443,7 @@ $(function () {
                 scrollByContent: true,
                 scrollByThumb: true,
                 showScrollbar: "onHover",
-                useNative: "auto"
+                useNative: false
             },
             filterRow: { visible: true },
             filterPanel: { visible: false },
