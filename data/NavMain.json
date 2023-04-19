@@ -54,12 +54,12 @@
         "items": [
             {
                 "id": "02-01",
-                "text": "Data Induk Peserta Didik",
+                "text": "Data Induk Siswa",
                 "icon": "tags",
                 "badge": "new",
                 "disabled": false,
                 "visible": true,
-                "filepath": "InfoPesertaDidik"
+                "filepath": "InformasiDataIndukSiswa"
             },
             {
                 "id": "02-02",

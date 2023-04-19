@@ -2332,7 +2332,7 @@ $(function () {
                     };
                 });
             },
-            dataSource: 'data/Dashboard.json',
+            dataSource: 'data/DashboardPesertaDidik.json',
             editing: {
                 mode: 'form',
                 allowUpdating: false,
@@ -2436,7 +2436,6 @@ $(function () {
             showRowLines: true,
             sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
             summary: _TBSummaryDashboard,
-
             toolbar: undefined,
             wordWrapEnabled: false,
             // masterDetail: {

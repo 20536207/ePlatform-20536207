@@ -334,26 +334,28 @@ $(function () {
             }
         ],
 
+        _SumIDRombel = {
+            column: 'A01',
+            summaryType: 'count',
+            displayFormat: 'Total : ( {0} Peserta Didik )',
+            alignByColumn: true,
+            showInColumn: 'A01',
+            showInGroupFooter: true,
+        },
+
+        _TBSummaryInfo = {
+            groupItems: [_SumIDRombel],
+            totalItems: [_SumIDRombel]
+        },
+
         //===============================================================================
-        _InfoPesertaDidik = $('#InfoPesertaDidik').dxDataGrid({
-            dataSource: './data/info_pd.json',
-            // dataSource: $.getJSON("data/info_pd.json", function (jsondata) {
-            //   jsondata = jsondata.filter(function (obj) {
-            //     return obj.A01.includes(options.data.A01);
-            //   });
-            // }),
-            columns: _TbInfoPd,
-            // filterValue: ["A01", "contains", options.data.A01],
-            showBorders: true,
-            showColumnHeaders: true,
-            showColumnLines: true,
-            showRowLines: true,
-            columnHidingEnabled: false,
+        _InformasiDataIndukSiswa = $('#InformasiDataIndukSiswa').dxDataGrid({
             allowColumnReordering: true,
             allowColumnResizing: true,
+
+            columnHidingEnabled: false,
             columnResizingMode: 'widget',
             columnAutoWidth: true,
-            wordWrapEnabled: false,
             columnChooser: {
                 allowSearch: false,
                 //emptyPanelText:"Drag a column here to hide it",
@@ -368,18 +370,10 @@ $(function () {
             columnFixing: {
                 enabled: true,
             },
-            hoverStateEnabled: false,
-            paging: {
-                pageSize: 20,
-            },
-            pager: {
-                allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
-                displayMode: "compact",
-                showInfo: true,
-                showNavigationButtons: true,
-                showPageSizeSelector: true,
-                visible: true,
-            },
+            columns: _TbInfoPd,
+
+            dataSource: './data/informasiDataIndukSiswa.json',
+
             editing: {
                 mode: 'row',
                 allowUpdating: false,
@@ -419,7 +413,36 @@ $(function () {
                 }
             },
 
+            // filterValue: ["A01", "contains", options.data.A01],
+            filterRow: { visible: true },
+            filterPanel: { visible: false },
+
+            groupPanel: { visible: false },
+            grouping: {
+                autoExpandAll: false,
+            },
+
+            headerFilter: { visible: false },
+            hoverStateEnabled: false,
+
+            paging: {
+                pageSize: 20,
+            },
+            pager: {
+                allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
+                displayMode: "compact",
+                showInfo: true,
+                showNavigationButtons: true,
+                showPageSizeSelector: true,
+                visible: true,
+            },
+
             remoteOperations: false,
+
+            showBorders: true,
+            showColumnHeaders: true,
+            showColumnLines: true,
+            showRowLines: true,
             sorting: {
                 mode: 'multiple',
             },
@@ -443,20 +466,13 @@ $(function () {
                 scrollByContent: false,
                 scrollByThumb: true,
                 showScrollbar: "onHover",
-                useNative: "auto"
+                useNative: false
             },
-            filterRow: { visible: true },
-            filterPanel: { visible: false },
-            headerFilter: { visible: false },
-            groupPanel: { visible: false },
-            grouping: {
-                autoExpandAll: true,
-            },
+            
             wordWrapEnabled: false,
-            //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-            //summary: _TBSummaryDashboard,
+            sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+            summary: _TBSummaryInfo,
             //toolbar: undefined,
-            rowAlternationEnabled: false,
         }).dxDataGrid('instance');
 
 });

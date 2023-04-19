@@ -40,7 +40,7 @@ body {
   vertical-align: middle;
   height: 56px;
 
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: inherit;
   /* border: thin rgba(77, 77, 77, 1) solid; */
   overflow-y: none;
@@ -81,14 +81,14 @@ body {
   /* border-left: 10px dodgerblue ridge; */
   height: fit-content;
   padding: 5px;
-  background-color: rgba(90, 90, 90, 0.3);
+  background-color: rgba(90, 90, 90, 0.2);
 }
 
 #PageContains {
   flex: 1 1 auto;
   height: 0;
   overflow: auto;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 /* ==================================================================================== */
