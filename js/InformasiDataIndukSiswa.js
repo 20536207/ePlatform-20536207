@@ -372,7 +372,7 @@ $(function () {
             },
             columns: _TbInfoPd,
 
-            dataSource: './data/informasiDataIndukSiswa.json',
+            dataSource: './data/InformasiDataIndukSiswa.json',
 
             editing: {
                 mode: 'row',

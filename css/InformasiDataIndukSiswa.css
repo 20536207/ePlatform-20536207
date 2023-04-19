@@ -1,8 +1,8 @@
 #InformasiDataIndukSiswa {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   overflow: none;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
   height: 100%;
   font-size: 0.8rem;
 }
