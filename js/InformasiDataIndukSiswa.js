@@ -1,7 +1,7 @@
 //=========================================================================================================
 $(function () {
     var
-        _TbInfoPd = [
+        _TbDataSiswa = [
             {
                 caption: 'Identitas Peserta Didik',
                 fixed: true,
@@ -14,14 +14,17 @@ $(function () {
                         caption: 'ID Rombel',
                         dataField: 'A01',
                         sortOrder: 'asc',
+                        // hidingPriority: 0,
 
                     }, {
                         caption: 'NIPD',
                         dataField: 'B01',
+                        // hidingPriority: 1,
 
                     }, {
                         caption: 'NISN',
                         dataField: 'B02',
+                        // hidingPriority: 2,
 
                     }, {
                         caption: 'Nama Lengkap',
@@ -352,7 +355,6 @@ $(function () {
         _InformasiDataIndukSiswa = $('#InformasiDataIndukSiswa').dxDataGrid({
             allowColumnReordering: true,
             allowColumnResizing: true,
-
             columnHidingEnabled: false,
             columnResizingMode: 'widget',
             columnAutoWidth: true,
@@ -370,7 +372,7 @@ $(function () {
             columnFixing: {
                 enabled: true,
             },
-            columns: _TbInfoPd,
+            columns: _TbDataSiswa,
 
             dataSource: './data/InformasiDataIndukSiswa.json',
 
@@ -463,7 +465,7 @@ $(function () {
                 preloadEnabled: false,
                 renderAsync: undefined,
                 rowRenderingMode: "standard",
-                scrollByContent: false,
+                scrollByContent: true,
                 scrollByThumb: true,
                 showScrollbar: "onHover",
                 useNative: false
