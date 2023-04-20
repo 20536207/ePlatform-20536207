@@ -90,7 +90,7 @@ $(document).ready(function () {
         {
           location: 'after',
           // location: $(window).width() < 600 ? "after" : 'before',
-          locateInMenu: 'never', //ayuto never always
+          locateInMenu: 'auto', //auto never always
           text: $(window).width() < 480 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
           template(e) {
             return $("<div class='DevApp-Customer'>" + e.text + "</div>");
