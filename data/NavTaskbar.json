@@ -1,6 +1,7 @@
 
 [
-    {"id": 0,"parentid":"00","text": "e-Platorm","icon": "fas icon-windows","loadpage": "./pages/ViewePlatform.html"},
-    {"id": 1,"parentid":"00","text": "Home","icon": "fas icon-home","loadpage": "./pages/ViewHome.html"},
-    {"id": 3,"parentid":"00","text": "Referensi","icon": "fas icon-bookmark","loadpage": "./pages/ViewReferensi.html"}
+    {"id": 0,"parentid":"00","text": "e-Platorm","icon": "fab fa-windows fa-lg","loadpage": "./pages/ViewePlatform.html"},
+    {"id": 1,"parentid":"00","text": "Home","icon": "fas fa-house","loadpage": "./pages/ViewHome.html"},
+    {"id": 2,"parentid":"00","text": "Referensi","icon": "fas fa-bookmark","loadpage": "./pages/ViewReferensi.html"}
+    
 ]

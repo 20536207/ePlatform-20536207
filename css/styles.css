@@ -51,7 +51,8 @@ body {
 
 .DevApp-Menu {
   font-style: italic;
-  font-size: 1rem;
+  font-family: 'Times New Roman';
+  font-size: 0.9rem;
 }
 
 .DevApp-Customer {
@@ -94,8 +95,6 @@ body {
 /* ==================================================================================== */
 .Page-Title {
   font-size: 1rem;
-
-  margin-left: 5px;
   color: rgb(255, 255, 255, 0.8);
 }
 

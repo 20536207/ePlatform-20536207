@@ -35,34 +35,48 @@
     font-family: inherit;
 }
 
-.layout-02{
+.layout-02 {
     text-align: center;
 }
 
-.layout-03{
-    padding:0;
+.layout-03 {
+    padding: 0;
 }
 
 .layout-04 {
     line-height: 1.3rem;
 }
 
-#NavbarLayout03{
+#NavbarLayout03 {
     border: none;
-    height: 46px;
-    font-size: 0.8;
-
+    /* height: 46px; */
 }
 
-@media only screen and (max-width: 480px) {
+#MyHomePages > div {
+    flex: 1 1 auto;
+    color: thistle;
+}
+
+.banner-image-title {
+    font-weight: bold;
+    line-height: 18px;
+}
+
+@media screen and (max-width: 480px) {
     .layout-01 {
         text-align: center;
         font-size: 1.3rem;
         line-height: 1.5rem;
     }
+
+    .bannerimage {
+        width: 80%;
+    }
+
 }
 
-@media only screen and (min-width: 481px) {
+
+@media screen and (min-width: 481px) {
     .layout-01 {
         text-align: left;
         font-size: 2rem;
@@ -70,10 +84,7 @@
         line-height: 2.3rem;
     }
 
-}
-
-
-.banner-image-title{
-    font-weight: bold;
-    line-height: 18px;
+    .bannerimage {
+        width: 90%;
+    }
 }

@@ -84,7 +84,7 @@ $(document).ready(function () {
           //   },
           // },
           template(e) {
-            return $('<div class="DevApp-Menu icon-windows icon-1x pull-left">'+' e-Platform All In One <br> Ver. 20536207.1</div>')
+            return $('<div class="fab fa-windows"><span class="DevApp-Menu"> e-Platform All In One <br> Ver. 20536207.1</span></div>')
           }
         },
         {
@@ -140,7 +140,7 @@ $(document).ready(function () {
 
     _PageToolbar = $('#PageToolbar').dxToolbar({
       items: [{
-        location: 'before',
+        location: 'center',
         locateInMenu: 'never',
         // cssClass: 'Page-Title',
         text: '',
@@ -165,7 +165,7 @@ $(document).ready(function () {
       dataSource: "./data/NavTaskbar.json",
       hoverStateEnabled: true,
       focusStateEnabled: false,
-      activeStateEnabled: true,
+      selectionMode: 'none',
       selectedIndex: -1,
       onItemClick(e) { //itemData, itemIndex, itemElement
         if (e.itemIndex == 0) {
@@ -179,8 +179,7 @@ $(document).ready(function () {
         // _ActionSheet.option('target', e.itemElement);
         // _ActionSheet.option('title', e.itemData.text);
         // _ActionSheet.option('visible', true);
-
-        _LayoutFooter.option('selectedIndex', -1);
+        // _LayoutFooter.option('selectedIndex', -1);
 
       },
     }).dxTabs('instance');
