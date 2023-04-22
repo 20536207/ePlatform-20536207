@@ -1,0 +1,44 @@
+[
+    {
+        "id": 0,
+        "parentid": "00",
+        "text": "Page01",
+        "icon": null,
+        "loadpage": "./pages/homepages/page1.html"
+    },
+    {
+        "id": 1,
+        "parentid": "00",
+        "text": "Page02",
+        "icon": null,
+        "loadpage": "./pages/homepages/page2.html"
+    },
+    {
+        "id": 2,
+        "parentid": "00",
+        "text": "Page03",
+        "icon": null,
+        "loadpage": "./pages/homepages/page3.html"
+    },
+    {
+        "id": 3,
+        "parentid": "00",
+        "text": "Page04",
+        "icon": null,
+        "loadpage": "./pages/homepages/page4.html"
+    },
+    {
+        "id": 4,
+        "parentid": "00",
+        "text": "Page05",
+        "icon": null,
+        "loadpage": "./pages/homepages/page5.html"
+    },
+    {
+        "id": 5,
+        "parentid": "00",
+        "text": "Page06",
+        "icon": null,
+        "loadpage": "./pages/homepages/page6.html"
+    }
+]

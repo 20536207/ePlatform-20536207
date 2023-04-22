@@ -1,51 +1,110 @@
 [
     {
-        "key": "Dashboard",
+        "key": "Halaman Utama",
         "items": [
             {
                 "id": "01-01",
+                "text": "Home",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/HomePages/HomePagesHome.html"
+            },
+            {
+                "id": "01-02",
+                "text": "Dokumentasi",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/HomePages/page2.html"
+            },
+            {
+                "id": "01-03",
+                "text": "Page-03",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/HomePages/page3.html"
+            },
+            {
+                "id": "01-04",
+                "text": "Page-04",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/HomePages/page4.html"
+            },
+            {
+                "id": "01-05",
+                "text": "Page-05",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/HomePages/page5.html"
+            },
+            {
+                "id": "01-06",
+                "text": "Page-06",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/HomePages/page6.html"
+            }
+        ]
+    },
+    {
+        "key": "Dashboard",
+        "items": [
+            {
+                "id": "02-01",
                 "text": "Profil Sekolah",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/Dashboard/DashboardProfilSekolah.hmtl"
             },
             {
-                "id": "01-02",
+                "id": "02-02",
                 "text": "Peserta Didik",
                 "icon": "tags",
                 "badge": "new",
                 "disabled": false,
                 "visible": true,
-                "filepath": "DashboardPesertaDidik"
+                "target": "./pages/Dashboard/DashboardPesertaDidik.html"
             },
             {
-                "id": "01-03",
+                "id": "02-03",
                 "text": "Pegawai",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardPegawai"
+                "target": "./pages/Dashboard/DashboardPegawai.hmtl"
             },
             {
-                "id": "01-04",
-                "text": "Sarana Prasarana",
+                "id": "02-04",
+                "text": "Sarana dan Prasarana",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardSaranaPrasarana"
+                "target": "./pages/Dashboard/DashboardSaranaPrasarana.html"
             },
             {
-                "id": "01-05",
+                "id": "02-05",
                 "text": "Anggaran",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardAnggaran"
+                "target": "./pages/Dashboard/DashboardAnggaran.html"
             }
         ]
     },
@@ -53,31 +112,31 @@
         "key": "Informasi Kesiswaan",
         "items": [
             {
-                "id": "02-01",
+                "id": "03-01",
                 "text": "Data Induk Siswa",
                 "icon": "tags",
                 "badge": "new",
                 "disabled": false,
                 "visible": true,
-                "filepath": "InformasiDataIndukSiswa"
+                "target": "./pages/InformasiKesiswaan/InformasiDataIndukSiswa.html"
             },
             {
-                "id": "02-02",
+                "id": "03-02",
                 "text": "Rombongan Belajar",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiKesiswaan/RombonganBelajar.html"
             },
             {
-                "id": "02-03",
+                "id": "03-03",
                 "text": "Data Prestasi",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiKesiswaan/DataPrestasi.html"
             }
         ]
     },
@@ -85,49 +144,49 @@
         "key": "Informasi Kepegawaian",
         "items": [
             {
-                "id": "01-01",
+                "id": "04-01",
                 "text": "Data Induk Pegawai",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiKepegawaian/DataIndukPegawai.html"
             },
             {
-                "id": "01-02",
+                "id": "04-02",
                 "text": "Putusan Non-ASN",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiKepegawaian/PutusanNonASN.html"
             },
             {
-                "id": "01-03",
+                "id": "04-03",
                 "text": "Putusan ASN",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiKepegawaian/PutusanASN.html"
             },
             {
-                "id": "01-04",
+                "id": "04-04",
                 "text": "Putusan Kepangkatan",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiKepegawaian/PutusanKepangkatan.html"
             },
             {
-                "id": "01-05",
+                "id": "04-05",
                 "text": "Putusan Gaji Berkala",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiKepegawaian/PutusanGajiBerkala.html"
             }
         ]
     },
@@ -135,49 +194,40 @@
         "key": "Informasi Sarana Prasarana",
         "items": [
             {
-                "id": "01-01",
-                "text": "Data Induk Pegawai",
+                "id": "05-01",
+                "text": "Data Aset Bangunan",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiSaranaPrasarana/DataAsetBangunan.html"
             },
             {
-                "id": "01-02",
-                "text": "Putusan Non-ASN",
+                "id": "05-02",
+                "text": "Data Aset Peralatan",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiSaranaPrasarana/DataAsetPeralatan.html"
             },
             {
-                "id": "01-03",
-                "text": "Putusan ASN",
+                "id": "05-03",
+                "text": "Data Aset Lainnya",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiSaranaPrasarana/DataAsetLainnya.html"
             },
             {
-                "id": "01-04",
-                "text": "Putusan Kepangkatan",
+                "id": "05-04",
+                "text": "Data Persediaan Barang",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "filepath": "DashboardProfilSekolah"
-            },
-            {
-                "id": "01-05",
-                "text": "Putusan Gaji Berkala",
-                "icon": "tags",
-                "badge": "",
-                "disabled": true,
-                "visible": true,
-                "filepath": "DashboardProfilSekolah"
+                "target": "./pages/InformasiSaranaPrasarana/DataPersediaanBarang.html"
             }
         ]
     }

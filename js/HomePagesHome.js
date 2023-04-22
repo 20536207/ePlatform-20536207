@@ -3,17 +3,18 @@ $(() => {
         rows: [
             { ratio: 0, screen: 'sm lg' }, //01
             { ratio: 0, screen: 'sm lg' }, //02
-            { ratio: 0, screen: 'sm lg' }, //03 sm lg
-            { ratio: 1, screen: 'sm lg' }, //04 sm lg
+            { ratio: 0, screen: 'sm lg' }, //03
+            { ratio: 1, screen: 'sm lg' }, //04
+            { ratio: 0, screen: 'sm lg' }, //05
 
         ],
         cols: [
             { ratio: 4 },
-            { ratio: 2, screen: 'lg' },
+            { ratio: 1, screen: 'lg' },
         ],
         singleColumnScreen: 'sm',
         screenByWidth(width) {
-            return (width < 481) ? 'sm' : 'lg';
+            return (width < 601) ? 'sm' : 'lg';
         },
     })
         .dxScrollView({
@@ -28,7 +29,7 @@ $(() => {
 
     _NavbarLayout03 = $('#NavbarLayout03').dxTabs({
         dataSource: "./data/NavLayout03.json",
-        hoverStateEnabled: false,
+        hoverStateEnabled: true,
         focusStateEnabled: false,
         selectionMode: 'none',
         activeStateEnabled: false,
@@ -39,6 +40,23 @@ $(() => {
         onItemClick(e) { //itemData, itemIndex, itemElement
             //window.location.href = 'http://20536207.ip-dynamic.com:5774';
             window.open(e.itemData.loadpage, '_blank');
+            // $("#Layout04").load(e.itemData.loadpage);
+        },
+    }).dxTabs('instance');
+
+    _NavbarLayout05 = $('#NavbarLayout05').dxTabs({
+        dataSource: "./data/NavLayout05.json",
+        hoverStateEnabled: true,
+        focusStateEnabled: false,
+        selectionMode: 'none',
+        activeStateEnabled: false,
+        scrollByContent: true,
+        scrollingEnabled: true,
+        showNavButtons: true,
+        selectedIndex: -1,
+        onItemClick(e) { //itemData, itemIndex, itemElement
+            //window.location.href = 'http://20536207.ip-dynamic.com:5774';
+            // window.open(e.itemData.loadpage, '_blank');
             // $("#Layout04").load(e.itemData.loadpage);
         },
     }).dxTabs('instance');
@@ -60,6 +78,6 @@ $(() => {
         },
     });
 
-    _MyHomePages = $("#MyHomePages").load("./pages/HomepagesAIO/HomepagesAIO.html");
+    _MyHomePages = $("#MyHomePages").load("./pages/homepages/HomepagesAIO.html");
 
 });

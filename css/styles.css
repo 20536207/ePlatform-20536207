@@ -3,7 +3,8 @@ body {
   height: 100%;
   margin: 0 auto;
   font-size: 1rem;
-  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Verdana, "san-serif";
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  overflow-y: none;
 }
 
 #MainLayout {
@@ -15,34 +16,40 @@ body {
 }
 
 #LayoutHeader {
-  justify-self: flex-start;
-  padding: 15px;
-  /* border: thin rgba(77, 77, 77, 1) solid; */
-  /* align-content: center; */
-  /* justify-content: center; */
-  /* vertical-align: middle; */
-  /* height: auto; */
+  justify-self : flex-start;
+  background-color: rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+  height: 56px;
   overflow-y: none;
+}
+
+#LayoutHeader .dx-toolbar{
+  height: 56px;
+}
+
+#LayoutHeader .dx-button{
+  height: 56px;
+  text-align: left;
+  border-radius: 0;
 }
 
 #LayoutContent {
   flex: 1 1 auto;
   height: 0px;
-  width: inherit;
-  /* border: thin rgba(77, 77, 77, 1) solid; */
   overflow-y: none;
 }
 
-#LayoutFooter {
+#LayoutFooter{
   justify-self: flex-end;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
   align-content: center;
   justify-content: center;
   vertical-align: middle;
-  height: 56px;
+  padding: 15px 0 15px 0;
 
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: inherit;
-  /* border: thin rgba(77, 77, 77, 1) solid; */
   overflow-y: none;
   border: none;
 }
@@ -51,9 +58,11 @@ body {
 
 .DevApp-Menu {
   font-style: italic;
-  font-family: 'Times New Roman';
-  font-size: 0.9rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  line-height: 1.2rem;
+  font-size: 1rem;
 }
+
 
 .DevApp-Customer {
   font-size: 1rem;
@@ -64,6 +73,7 @@ body {
 .ContainsSidebar {
   padding: 3px;
   background-color: rgb(37, 37, 37);
+  font-size: 1rem;
 }
 
 /* ==================================================================================== */
@@ -72,30 +82,27 @@ body {
   flex-direction: column;
   width: inherit;
   height: inherit;
-  overflow-y: none;
-  padding: 5px;
+  overflow: none;
 }
 
 /* ==================================================================================== */
 #PageToolbar {
-  justify-self: flex-start;
-  /* border-left: 10px dodgerblue ridge; */
-  height: fit-content;
+  justify-self: flex-start;  
   padding: 5px;
-  background-color: rgba(90, 90, 90, 0.2);
+  background-color: rgba(26, 41, 58, 0.267);
 }
 
 #PageContains {
-  flex: 1 1 auto;
-  height: 0;
-  overflow: auto;
-  padding-top: 5px;
+  flex: 0 1 auto;
+  justify-self: flex-start;
+  height: 100%;
+  overflow-y: auto;
+  padding-top: 2px;
 }
 
 /* ==================================================================================== */
 .Page-Title {
   font-size: 1rem;
-  color: rgb(255, 255, 255, 0.8);
 }
 
 #Gallerian {

@@ -64,36 +64,54 @@ $(document).ready(function () {
     _LayoutHeader = $('#LayoutHeader').dxToolbar({
       items: [
         {
-          // widget: 'dxButton',
+          widget: 'dxButton',
           location: 'before',
           locateInMenu: 'never',
           // cssClass: 'DevApp-Menu',
-          text: $('<div></div>'),
-          // options: {
-          //   text: 'e-Platform',
-          //   icon: 'menu',
-          //   hoverStateEnabled: true,
-          //   focusStateEnabled: false,
-          //   activeStateEnabled: true,
-          //   type: 'normal',
-          //   stylingMode: "text",
-          //   height: undefined,
-          //   width: undefined,
-          //   onClick() {
-          //     _LayoutContains.toggle();
-          //   },
-          // },
-          template(e) {
-            return $('<div class="fab fa-windows"><span class="DevApp-Menu"> e-Platform All In One <br> Ver. 20536207.1</span></div>')
-          }
+          // text: $("<div>"),
+          options: {
+            text: 'e-Platform',
+            icon: 'fab fa-windows 2x',
+            template: '<div class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br>ver. 20536207.1</div>',
+            hoverStateEnabled: true,
+            focusStateEnabled: false,
+            activeStateEnabled: true,
+            selectionMode: 'none',
+            type: 'normal',
+            stylingMode: "text",
+            height: undefined,
+            width: undefined,
+            onClick() {
+              _LayoutContains.toggle();
+            },
+          },
+          // template(e) {
+          //   return $('<div class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br/>ver. 20536207.1</div>')
+          // }
         },
         {
+          widget: 'dxTabs',
           location: 'after',
           // location: $(window).width() < 600 ? "after" : 'before',
           locateInMenu: 'auto', //auto never always
-          text: $(window).width() < 480 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
+          // text: $(window).width() < 601 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
           template(e) {
-            return $("<div class='DevApp-Customer'>" + e.text + "</div>");
+            return $("#polo").dxTabs({
+              dataSource: "./data/NavLayout05.json",
+              hoverStateEnabled: true,
+              focusStateEnabled: false,
+              selectionMode: 'none',
+              activeStateEnabled: false,
+              scrollByContent: true,
+              scrollingEnabled: true,
+              showNavButtons: true,
+              selectedIndex: -1,
+              onItemClick(e) { //itemData, itemIndex, itemElement
+                //window.location.href = 'http://20536207.ip-dynamic.com:5774';
+                // window.open(e.itemData.loadpage, '_blank');
+                // $("#Layout04").load(e.itemData.loadpage);
+              },
+            }).dxTabs('instance');
           },
         }],
     }).dxToolbar("instance"),
@@ -102,9 +120,9 @@ $(document).ready(function () {
     _LayoutContains = $('#LayoutContent').dxDrawer({
       opened: false,
       revealMode: "slide", //expand
-      openedStateMode: "shrink", //shrink //overlap
+      openedStateMode: $(window).width() < 600 ? "overlap" : "shrink", //shrink //overlap
       position: 'left', //right
-      shading: false,
+      shading: $(window).width() < 600 ? true : false,
       closeOnOutsideClick: true,
       template() {
         const _ListWidget = $('<div>').addClass('ContainsSidebar');
@@ -118,6 +136,8 @@ $(document).ready(function () {
             grouped: true,
             collapsibleGroups: true,
             showSelectionControls: false,
+            scrollByContent: true,
+            scrollByThumb: true,
             useNativeScrolling: false,
             groupTemplate(data) {
               return $(`<b style="color: rgba(28, 168, 221, 1)">${data.key}</b>`);
@@ -130,7 +150,7 @@ $(document).ready(function () {
               _LayoutContains.toggle();
 
               $("#PageContains").empty();
-              $("#PageContains").load("./pages/" + e.itemData["filepath"] + ".html");
+              $("#PageContains").load(e.itemData["target"]);
 
 
             },
@@ -148,7 +168,7 @@ $(document).ready(function () {
           return $("<div class='Page-Title'>" + e.text + "</div>");
         },
       }],
-    }).dxToolbar('instance'),
+    }).dxToolbar('instance');
 
     // const _PageContains = $('#PageContains').dxScrollView({
     //   direction: 'both',
@@ -161,30 +181,49 @@ $(document).ready(function () {
     // }).dxScrollView('instance');
 
     //========================================================================================================
-    _LayoutFooter = $('#LayoutFooter').dxTabs({
-      dataSource: "./data/NavTaskbar.json",
-      hoverStateEnabled: true,
-      focusStateEnabled: false,
-      selectionMode: 'none',
-      selectedIndex: -1,
-      onItemClick(e) { //itemData, itemIndex, itemElement
-        if (e.itemIndex == 0) {
-          _LayoutContains.toggle();
-        } else {
-          $("#PageContains").load(e.itemData.loadpage);
-          _PageToolbar.option("items[0].text", e.itemData.text);
-        }
+    // _LayoutFooter = $('#LayoutFooter').dxTabs({
+    //   dataSource: "./data/NavTaskbar.json",
+    //   hoverStateEnabled: true,
+    //   focusStateEnabled: false,
+    //   selectionMode: 'none',
+    //   selectedIndex: -1,
+    //   onItemClick(e) { //itemData, itemIndex, itemElement
+    //     switch (e.itemIndex) {
+    //       case 0:
+    //         _LayoutContains.toggle();
+    //         break;
+    //       case 1:
+    //         $("#PageContains").load(e.itemData.loadpage);
+    //         _PageToolbar.option("items[0].text", e.itemData.text);
+    //         break;
+    //       case 2:
+    //         data = $.getJSON("./data/NavTaskbar.json", function (jsondata) {
+    //           jsondata.forEach((element, index) => {
+    //             DevExpress.ui.notify(item);
+    //           });
+    //         });
+    //         _PageToolbar.option("items[0].text", data.itemData.text);
+    //         break;
+    //       default:
+    //         break;
+    //     }
+    //     // if (e.itemIndex == 0) {
+    //     //   _LayoutContains.toggle();
+    //     // } else {
+    //     //   $("#PageContains").load(e.itemData.loadpage);
+    //     //   _PageToolbar.option("items[0].text", e.itemData.text);
+    //     // }
 
-        // _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
-        // _ActionSheet.option('target', e.itemElement);
-        // _ActionSheet.option('title', e.itemData.text);
-        // _ActionSheet.option('visible', true);
-        // _LayoutFooter.option('selectedIndex', -1);
+    //     // _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
+    //     // _ActionSheet.option('target', e.itemElement);
+    //     // _ActionSheet.option('title', e.itemData.text);
+    //     // _ActionSheet.option('visible', true);
+    //     // _LayoutFooter.option('selectedIndex', -1);
 
-      },
-    }).dxTabs('instance');
+    //   },
+    // }).dxTabs('instance');
 
-  $("#PageContains").load("./pages/ViewHome.html");
+  $("#PageContains").load("./pages/HomePages/HomePagesHome.html");
 
   _PageToolbar.option("items[0].text", 'Home');
 
