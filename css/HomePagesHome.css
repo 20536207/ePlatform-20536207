@@ -18,7 +18,7 @@
     padding: 7px;
     height: 0;
 
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     color: rgb(255, 255, 255, 0.8);
     text-align: justify;
     align-content: center;
@@ -27,11 +27,11 @@
 
 }
 
-.layout-01,
+/* .layout-01,
 .layout-03,
 .layout-04 {
     font-family: inherit;
-}
+} */
 
 #NavbarLayout03 {
     border: none;
@@ -102,7 +102,5 @@
         width: inherit;
         height: 215px;
     }
-
-
 
 }

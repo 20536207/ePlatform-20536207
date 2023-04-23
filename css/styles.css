@@ -6,6 +6,9 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   overflow-y: none;
 }
+.dx-widget{
+  font-size: 1rem;
+}
 
 #MainLayout {
   display: flex;
@@ -31,6 +34,18 @@ body {
   height: 56px;
   text-align: left;
   border-radius: 0;
+}
+
+#LayoutHeader .dx-dropdownmenu-button{
+  width: 42px;
+  height: 42px;
+  margin: 7px 5px 5px 5px;
+  border: 0;
+  border-radius: 60px;
+  padding: 0;
+}
+#LayoutHeader .dx-dropdownmenu-button .dx-icon-overflow{
+  font-size: 1.3rem;
 }
 
 #LayoutContent {
@@ -64,16 +79,10 @@ body {
 }
 
 
-.DevApp-Customer {
-  font-size: 1rem;
-  text-shadow: 1px 0.8px 2px rgb(194, 194, 194);
-}
-
 /* ==================================================================================== */
 .ContainsSidebar {
-  padding: 3px;
+  padding: 0 3px 0 3px;
   background-color: rgb(37, 37, 37);
-  font-size: 1rem;
 }
 
 /* ==================================================================================== */
@@ -105,7 +114,19 @@ body {
   font-size: 1rem;
 }
 
+.toolbar-separator {
+  height: 56px ;
+  margin: 0 5px;
+  border-left: 1px rgba(71, 71, 71, 0.3) solid;
+}
+
+.toolbar-menu-separator {
+  height: 1px;
+  border-bottom: 1px rgba(71, 71, 71, 0.3) solid
+}
+
 #Gallerian {
   max-width: 325px;
   max-height: 245px;
 }
+

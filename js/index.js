@@ -1,6 +1,20 @@
 window.jsPDF = window.jspdf.jsPDF;
 $(document).ready(function () {
   const
+    toolbarSeparator = {
+      locateInMenu: 'auto',
+      location: 'after',
+      template(itemData, itemIndex, element) {
+        $('<div>')
+          .addClass('toolbar-separator')
+          .appendTo(element);
+      },
+      menuItemTemplate(itemData, itemIndex, element) {
+        $('<div>')
+          .addClass('toolbar-menu-separator')
+          .appendTo(element);
+      },
+    },
 
     _popup = function () {
       $("<div>").dxPopup({
@@ -72,7 +86,7 @@ $(document).ready(function () {
           options: {
             text: null,
             icon: undefined,
-            template: '<div class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br>ver. 20536207.1</div>',
+            template: '<div style="padding: 10px 5px 0 5px" class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br>ver. 20536207.1</div>',
             hoverStateEnabled: true,
             focusStateEnabled: false,
             activeStateEnabled: true,
@@ -92,33 +106,48 @@ $(document).ready(function () {
           locateInMenu: 'auto',
           cssClass: undefined,
           text: null,
-          template(itemData, itemIndex, element) {
-            const
-              NavHeader = $.getJSON("./data/NavHeader.json", function (jsondata) {
-                Data = [];
-                $.each(jsondata, function (i, f) {
-                  var itemjson = {
-                    icon : f.icon,
-                    text : f.text,
-                    target : f.target,
-                  };
-                 Data.push(itemjson);
-                });
-                //DevExpress.ui.notify(JSON.stringify(Data));
-                return Data;
-              });
-              // DevExpress.ui.notify(NavHeader);
-            $buttonGroup = $('<div>').dxButtonGroup({
-              items: NavHeader,
-              keyExpr: 'text',
-              stylingMode: 'text',
-              // selectedItemKeys: ['Home'],
-              onItemClick(e) {
-                onButtonClick(e.itemData.hint);
-              },
-            });
-            $buttonGroup.appendTo(element);
-          },
+          options: {
+            hoverStateEnabled: true,
+            focusStateEnabled: false,
+            activeStateEnabled: true,
+            selectionMode: 'none',
+            type: 'normal',
+            stylingMode: "text",
+            height: undefined,
+            width: undefined,
+            items: [{
+              text: "Home",
+              // icon: "fas fa-home",
+              target: "./pages/HomePages/HomePagesHome.html"
+            }, {
+              text: "Program",
+              // icon: "fas fa-school",
+              target: "./pages/HomePages/HomePagesHome.html"
+            }, {
+              text: "Dokumentasi",
+              // icon: "fas fa-school",
+              target: "./pages/HomePages/HomePagesHome.html"
+            }, {
+              text: "Literasi",
+              // icon: "fas fa-school",
+              target: "./pages/HomePages/HomePagesHome.html"
+            }, {
+              text: "Referensi",
+              // icon: "fas fa-school",
+              target: "./pages/HomePages/HomePagesHome.html"
+            }],
+            onItemClick(e) {
+              if (e.itemIndex == 0) {
+                $("#PageContains").load(e.itemData.target);
+              } else {
+                // $("#PageContains").load(e.itemData.target);
+                _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
+                _ActionSheet.option('target', e.itemElement);
+                _ActionSheet.option('title', e.itemData.text);
+                _ActionSheet.option('visible', true);
+              }
+            },
+          }
         }
       ]
     }).dxToolbar("instance"),
