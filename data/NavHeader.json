@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "text": "Home",
+        "icon": "tags",
+        "badge": "",
+        "disabled": false,
+        "visible": true,
+        "target": "./pages/HomePages/HomePagesHome.html"
+    },
+    {
+        "id": 2,
+        "text": "Program",
+        "icon": "tags",
+        "badge": "",
+        "disabled": false,
+        "visible": true,
+        "target": "./pages/HomePages/HomePagesProgram.html"
+    },
+    {
+        "id": 3,
+        "text": "Dokumentasi",
+        "icon": "tags",
+        "badge": "",
+        "disabled": false,
+        "visible": true,
+        "target": "./pages/HomePages/HomePagesDokumentasi.html"
+    },
+    {
+        "id": 4,
+        "text": "Literasi",
+        "icon": "tags",
+        "badge": "",
+        "disabled": false,
+        "visible": true,
+        "target": "./pages/HomePages/HomePagesLiterasi.html"
+    },
+    {
+        "id": 5,
+        "text": "Referensi",
+        "icon": "tags",
+        "badge": "",
+        "disabled": false,
+        "visible": true,
+        "target": "./pages/HomePages/HomePagesReferensi.html"
+    },
+    {
+        "id": 6,
+        "text": "Contact",
+        "icon": "tags",
+        "badge": "",
+        "disabled": false,
+        "visible": true,
+        "target": "./pages/HomePages/HomePagesContact.html"
+    }
+]

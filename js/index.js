@@ -67,11 +67,11 @@ $(document).ready(function () {
           widget: 'dxButton',
           location: 'before',
           locateInMenu: 'never',
-          // cssClass: 'DevApp-Menu',
-          // text: $("<div>"),
+          cssClass: undefined,
+          text: null,
           options: {
-            text: 'e-Platform',
-            icon: 'fab fa-windows 2x',
+            text: null,
+            icon: undefined,
             template: '<div class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br>ver. 20536207.1</div>',
             hoverStateEnabled: true,
             focusStateEnabled: false,
@@ -84,36 +84,43 @@ $(document).ready(function () {
             onClick() {
               _LayoutContains.toggle();
             },
-          },
-          // template(e) {
-          //   return $('<div class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br/>ver. 20536207.1</div>')
-          // }
+          }
         },
         {
-          widget: 'dxTabs',
+          widget: 'dxButtonGroup',
           location: 'after',
-          // location: $(window).width() < 600 ? "after" : 'before',
-          locateInMenu: 'auto', //auto never always
-          // text: $(window).width() < 601 ? "NPSN : 20536207" : "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
-          template(e) {
-            return $("#polo").dxTabs({
-              dataSource: "./data/NavLayout05.json",
-              hoverStateEnabled: true,
-              focusStateEnabled: false,
-              selectionMode: 'none',
-              activeStateEnabled: false,
-              scrollByContent: true,
-              scrollingEnabled: true,
-              showNavButtons: true,
-              selectedIndex: -1,
-              onItemClick(e) { //itemData, itemIndex, itemElement
-                //window.location.href = 'http://20536207.ip-dynamic.com:5774';
-                // window.open(e.itemData.loadpage, '_blank');
-                // $("#Layout04").load(e.itemData.loadpage);
+          locateInMenu: 'auto',
+          cssClass: undefined,
+          text: null,
+          template(itemData, itemIndex, element) {
+            const
+              NavHeader = $.getJSON("./data/NavHeader.json", function (jsondata) {
+                Data = [];
+                $.each(jsondata, function (i, f) {
+                  var itemjson = {
+                    icon : f.icon,
+                    text : f.text,
+                    target : f.target,
+                  };
+                 Data.push(itemjson);
+                });
+                //DevExpress.ui.notify(JSON.stringify(Data));
+                return Data;
+              });
+              // DevExpress.ui.notify(NavHeader);
+            $buttonGroup = $('<div>').dxButtonGroup({
+              items: NavHeader,
+              keyExpr: 'text',
+              stylingMode: 'text',
+              // selectedItemKeys: ['Home'],
+              onItemClick(e) {
+                onButtonClick(e.itemData.hint);
               },
-            }).dxTabs('instance');
+            });
+            $buttonGroup.appendTo(element);
           },
-        }],
+        }
+      ]
     }).dxToolbar("instance"),
 
     //===============================================================================
@@ -170,58 +177,58 @@ $(document).ready(function () {
       }],
     }).dxToolbar('instance');
 
-    // const _PageContains = $('#PageContains').dxScrollView({
-    //   direction: 'both',
-    //   scrollByContent: true,
-    //   scrollByThumb: true,
-    //   showScrollbar: 'onHover',
-    //   usenative: true,
-    //   width: 'inherit',
-    //   height: 'inherit',
-    // }).dxScrollView('instance');
+  // const _PageContains = $('#PageContains').dxScrollView({
+  //   direction: 'both',
+  //   scrollByContent: true,
+  //   scrollByThumb: true,
+  //   showScrollbar: 'onHover',
+  //   usenative: true,
+  //   width: 'inherit',
+  //   height: 'inherit',
+  // }).dxScrollView('instance');
 
-    //========================================================================================================
-    // _LayoutFooter = $('#LayoutFooter').dxTabs({
-    //   dataSource: "./data/NavTaskbar.json",
-    //   hoverStateEnabled: true,
-    //   focusStateEnabled: false,
-    //   selectionMode: 'none',
-    //   selectedIndex: -1,
-    //   onItemClick(e) { //itemData, itemIndex, itemElement
-    //     switch (e.itemIndex) {
-    //       case 0:
-    //         _LayoutContains.toggle();
-    //         break;
-    //       case 1:
-    //         $("#PageContains").load(e.itemData.loadpage);
-    //         _PageToolbar.option("items[0].text", e.itemData.text);
-    //         break;
-    //       case 2:
-    //         data = $.getJSON("./data/NavTaskbar.json", function (jsondata) {
-    //           jsondata.forEach((element, index) => {
-    //             DevExpress.ui.notify(item);
-    //           });
-    //         });
-    //         _PageToolbar.option("items[0].text", data.itemData.text);
-    //         break;
-    //       default:
-    //         break;
-    //     }
-    //     // if (e.itemIndex == 0) {
-    //     //   _LayoutContains.toggle();
-    //     // } else {
-    //     //   $("#PageContains").load(e.itemData.loadpage);
-    //     //   _PageToolbar.option("items[0].text", e.itemData.text);
-    //     // }
+  //========================================================================================================
+  // _LayoutFooter = $('#LayoutFooter').dxTabs({
+  //   dataSource: "./data/NavTaskbar.json",
+  //   hoverStateEnabled: true,
+  //   focusStateEnabled: false,
+  //   selectionMode: 'none',
+  //   selectedIndex: -1,
+  //   onItemClick(e) { //itemData, itemIndex, itemElement
+  //     switch (e.itemIndex) {
+  //       case 0:
+  //         _LayoutContains.toggle();
+  //         break;
+  //       case 1:
+  //         $("#PageContains").load(e.itemData.loadpage);
+  //         _PageToolbar.option("items[0].text", e.itemData.text);
+  //         break;
+  //       case 2:
+  //         data = $.getJSON("./data/NavTaskbar.json", function (jsondata) {
+  //           jsondata.forEach((element, index) => {
+  //             DevExpress.ui.notify(item);
+  //           });
+  //         });
+  //         _PageToolbar.option("items[0].text", data.itemData.text);
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //     // if (e.itemIndex == 0) {
+  //     //   _LayoutContains.toggle();
+  //     // } else {
+  //     //   $("#PageContains").load(e.itemData.loadpage);
+  //     //   _PageToolbar.option("items[0].text", e.itemData.text);
+  //     // }
 
-    //     // _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
-    //     // _ActionSheet.option('target', e.itemElement);
-    //     // _ActionSheet.option('title', e.itemData.text);
-    //     // _ActionSheet.option('visible', true);
-    //     // _LayoutFooter.option('selectedIndex', -1);
+  //     // _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
+  //     // _ActionSheet.option('target', e.itemElement);
+  //     // _ActionSheet.option('title', e.itemData.text);
+  //     // _ActionSheet.option('visible', true);
+  //     // _LayoutFooter.option('selectedIndex', -1);
 
-    //   },
-    // }).dxTabs('instance');
+  //   },
+  // }).dxTabs('instance');
 
   $("#PageContains").load("./pages/HomePages/HomePagesHome.html");
 
