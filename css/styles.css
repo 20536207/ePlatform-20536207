@@ -27,7 +27,7 @@ body {
 
 #LayoutHeader {
   justify-self : flex-start;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   vertical-align: middle;
   height: 56px;
   overflow-y: none;
@@ -63,7 +63,7 @@ body {
 
 #LayoutFooter{
   justify-self: flex-end;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   text-align: center;
   align-content: center;
   justify-content: center;
@@ -121,15 +121,8 @@ body {
   font-size: 1rem;
 }
 
-.toolbar-separator {
-  height: 56px ;
-  margin: 0 5px;
-  border-left: 1px rgba(71, 71, 71, 0.3) solid;
-}
-
-.toolbar-menu-separator {
-  height: 1px;
-  border-bottom: 1px rgba(71, 71, 71, 0.3) solid
+.separator {
+  border: 1px rgba(0, 0, 0, 0.2) solid
 }
 
 #Gallerian {

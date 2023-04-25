@@ -17,7 +17,7 @@
         "key": "Program",
         "items": [
             {
-                "id": 1,
+                "id": 0,
                 "text": "Visi dan Misi",
                 "icon": "tags",
                 "badge": "",
@@ -25,6 +25,16 @@
                 "visible": true,
                 "target": "./pages/program/ProgramVisiDanMisi.html"
             },
+            {
+                "id": 1,
+                "text": null,
+                "icon": null,
+                "badge": null,
+                "disabled": false,
+                "visible": true,
+                "target": null,
+                "template": "<hr class='separator' />"
+            },    
             {
                 "id": 2,
                 "text": "Standar Kelulusan",
