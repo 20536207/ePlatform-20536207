@@ -51,14 +51,14 @@ $(document).ready(function () {
 
   _ActionSheet = $('#ActionSheet').dxActionSheet({
     dataSource: undefined,
-    title: 'Choose action',
+    title: null,
     showTitle: true,
     showCancelButton: true,
     visible: false,
     usePopover: true,
+    width: undefined,
     onCancelClick() {
       return false;
-      // alert('Cancel');
     },
     onItemClick(value) {
       DevExpress.ui.notify(
@@ -73,7 +73,7 @@ $(document).ready(function () {
         },
         { position: "top right", direction: "down-push" }
       );
-    },
+    }
   }).dxActionSheet('instance');
 
   //==============================================================================
@@ -117,48 +117,26 @@ $(document).ready(function () {
           stylingMode: "text",
           height: undefined,
           width: undefined,
-          items: [{
-            text: "Home",
-            // icon: "fas fa-home",
-            target: "./pages/HomePages/HomePagesHome.html"
-          }, {
-            text: "Program",
-            // icon: "fas fa-school",
-            target: "./pages/HomePages/HomePagesHome.html"
-          }, {
-            text: "Dokumentasi",
-            // icon: "fas fa-school",
-            target: "./pages/HomePages/HomePagesHome.html"
-          }, {
-            text: "Literasi",
-            // icon: "fas fa-school",
-            target: "./pages/HomePages/HomePagesHome.html"
-          }, {
-            text: "Referensi",
-            // icon: "fas fa-school",
-            target: "./pages/HomePages/HomePagesHome.html"
-          }],
-
-          // items: $.getJSON("./data/NavHeader.json", function (result) {
-          //   var items = result;
-          //   items = result.filter(function (obj) {
-          //     return obj.text != "Home";
-          //   });
-          //   DevExpress.ui.notify(NavHeader);
-          // }),
-          // buttonTemplate: function (itemData, $buttonContent) {
-          //   $buttonContent.append(
-          //     // Custom jQuery elements go here
-          //   )
-          //   // ===== or =====
-          //   return /* your markup goes here */
-          // },
+          items: [
+            { text: "Home" },
+            { text: "Program" },
+            { text: "Dokumentasi" },
+            { text: "Literasi" },
+            { text: "Referensi" }
+          ],
           onItemClick(e) {
             if (e.itemIndex == 0) {
-              $("#PageContains").load(e.itemData.target);
+              $.getJSON("./data/NavHeader.json", function (result) {
+                $("#PageContains").load(result[0].items[0].target);
+              });
             } else {
+              $.getJSON("./data/NavHeader.json", function (result) {
+                _ActionSheet.option('dataSource', result[e.itemIndex].items);
+              });
               // $("#PageContains").load(e.itemData.target);
               _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
+              _ActionSheet.option('width', $(window).width() < 600 ? undefined : 'auto');
+              _ActionSheet.option('showTitle', $(window).width() < 600 ? true : false);
               _ActionSheet.option('target', e.itemElement);
               _ActionSheet.option('title', e.itemData.text);
               _ActionSheet.option('visible', true);
@@ -276,7 +254,7 @@ $(document).ready(function () {
   //   },
   // }).dxTabs('instance');
 
-  $("#PageContains").load("./pages/HomePages/HomePagesHome.html");
+  $("#PageContains").load("./pages/HomePagesHome.html");
 
   _PageToolbar.option("items[0].text", 'Home');
 

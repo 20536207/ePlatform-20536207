@@ -1,56 +1,171 @@
 [
     {
-        "id": 1,
-        "text": "Home",
-        "icon": "tags",
-        "badge": "",
-        "disabled": false,
-        "visible": true,
-        "target": "./pages/HomePages/HomePagesHome.html"
+        "key": "Home",
+        "items": [
+            {
+                "id": 1,
+                "text": "Home",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/HomePagesHome.html"
+            }
+        ]
     },
     {
-        "id": 2,
-        "text": "Program",
-        "icon": "tags",
-        "badge": "",
-        "disabled": false,
-        "visible": true,
-        "target": "./pages/HomePages/HomePagesProgram.html"
+        "key": "Program",
+        "items": [
+            {
+                "id": 1,
+                "text": "Visi dan Misi",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramVisiDanMisi.html"
+            },
+            {
+                "id": 2,
+                "text": "Standar Kelulusan",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarKelulusan.html"
+            },
+            {
+                "id": 3,
+                "text": "Standar Isi",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarIsi.html"
+            },
+            {
+                "id": 4,
+                "text": "Standar Proses",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarProses.html"
+            },
+            {
+                "id": 5,
+                "text": "Standar Sarana Prasarana",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarSaranaPrasarana.html"
+            },
+            {
+                "id": 6,
+                "text": "Standar Pendidik dan Tenaga Kependidikan",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarPTK.html"
+            },
+            {
+                "id": 7,
+                "text": "Standar Pembiayaan",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarPembiayaan.html"
+            },
+            {
+                "id": 8,
+                "text": "Standar Pengelolaan",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarPengelolaan.html"
+            },
+            {
+                "id": 9,
+                "text": "Standar Pembiayaan",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarPembiayaan.html"
+            }
+        ]
     },
     {
-        "id": 3,
-        "text": "Dokumentasi",
-        "icon": "tags",
-        "badge": "",
-        "disabled": false,
-        "visible": true,
-        "target": "./pages/HomePages/HomePagesDokumentasi.html"
+        "key": "Dokumentasi",
+        "items": [
+            {
+                "id": 1,
+                "text": "Sub 001",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Dokumentasi/DokumentasiSub001.html"
+            },
+            {
+                "id": 2,
+                "text": "Sub 002",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Dokumentasi/DokumentasiSub002.html"
+            }
+        ]
     },
     {
-        "id": 4,
-        "text": "Literasi",
-        "icon": "tags",
-        "badge": "",
-        "disabled": false,
-        "visible": true,
-        "target": "./pages/HomePages/HomePagesLiterasi.html"
+        "key": "Literasi",
+        "items": [
+            {
+                "id": 1,
+                "text": "Sub 001",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Literasi/LiterasiSub001.html"
+            },
+            {
+                "id": 2,
+                "text": "Sub 002",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Literasi/LiterasiSub002.html"
+            }
+        ]
     },
     {
-        "id": 5,
-        "text": "Referensi",
-        "icon": "tags",
-        "badge": "",
-        "disabled": false,
-        "visible": true,
-        "target": "./pages/HomePages/HomePagesReferensi.html"
-    },
-    {
-        "id": 6,
-        "text": "Contact",
-        "icon": "tags",
-        "badge": "",
-        "disabled": false,
-        "visible": true,
-        "target": "./pages/HomePages/HomePagesContact.html"
+        "key": "Referensi",
+        "items": [
+            {
+                "id": 1,
+                "text": "Sub 001",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Referensi/ReferensiSub001.html"
+            },
+            {
+                "id": 2,
+                "text": "Sub 002",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Referensi/ReferensiSub002.html"
+            }
+        ]
     }
 ]
