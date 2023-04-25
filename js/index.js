@@ -60,6 +60,7 @@ $(document).ready(function () {
     onCancelClick() {
       this.option('dataSource', undefined);
       this.option('title', null);
+      return false;
     },
     onItemClick(value) {
       DevExpress.ui.notify(
