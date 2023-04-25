@@ -58,7 +58,8 @@ $(document).ready(function () {
     usePopover: true,
     width: undefined,
     onCancelClick() {
-      return false;
+      this.option('dataSource', undefined);
+      this.option('title', null);
     },
     onItemClick(value) {
       DevExpress.ui.notify(
@@ -88,7 +89,7 @@ $(document).ready(function () {
         options: {
           text: null,
           icon: undefined,
-          template: '<div style="padding: 10px 5px 0 5px" class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br>ver. 20536207.1</div>',
+          template: '<div style="padding: 5px 5px 0 5px" class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br>ver. 20536207.1</div>',
           hoverStateEnabled: true,
           focusStateEnabled: false,
           activeStateEnabled: true,
@@ -124,6 +125,20 @@ $(document).ready(function () {
             { text: "Literasi" },
             { text: "Referensi" }
           ],
+          // items: $.getJSON("./data/NavHeader.json", function (result) {
+          //   var items = result;
+          //   items = result.filter(function (obj) {
+          //     return obj.text != "Home";
+          //   });
+          //   DevExpress.ui.notify(NavHeader);
+          // }),
+          // buttonTemplate: function (itemData, $buttonContent) {
+          //   $buttonContent.append(
+          //     // Custom jQuery elements go here
+          //   )
+          //   // ===== or =====
+          //   return /* your markup goes here */
+          // },
           onItemClick(e) {
             if (e.itemIndex == 0) {
               $.getJSON("./data/NavHeader.json", function (result) {
