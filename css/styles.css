@@ -9,6 +9,21 @@ body {
 .dx-widget{
   font-size: 0.9rem;
 }
+.dx-datagrid, .dx-datagrid-rowsview .dx-master-detail-row:not(.dx-datagrid-edit-form) .dx-master-detail-cell{
+  background-color: transparent;
+}
+
+.dx-datagrid-content .dx-datagrid-table .dx-row > td.dx-datagrid-group-space{
+  vertical-align: middle;
+  padding: 0;
+}
+
+.dx-datagrid-rowsview{
+  font-size: 0.9rem;
+}
+.dx-datagrid-rowsview .dx-button-text{
+  font-size: 0.9rem;
+}
 
 .dx-actionsheet-item-content .dx-button{
   border: none;
@@ -109,9 +124,8 @@ body {
 }
 
 #PageContains {
-  flex: 0 1 auto;
-  justify-self: flex-start;
-  height: 100%;
+  flex: 1 0 auto;
+  height: 0;
   overflow-y: auto;
   padding-top: 2px;
 }

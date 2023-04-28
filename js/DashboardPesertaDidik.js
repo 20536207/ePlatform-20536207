@@ -17,6 +17,7 @@ $(function () {
             dataField: 'A01',
             sortOrder: 'asc',
             alignment: 'left',
+            masterField: 'A02',
         },
 
         //=========================================================================
@@ -755,7 +756,7 @@ $(function () {
                 return e.value <= 0 ? "-" : e.value;
             },
         }],
-        
+
         //=========================================================================
         _SumBerkebutuhanKhusus = [{
             column: 'C01',
@@ -2273,6 +2274,154 @@ $(function () {
 
                 }],
             },
+            {
+                caption: 'Keterangan Dinamis Peserta Didik',
+                columns: [{
+                    caption: 'No. Telpon',
+                    dataField: 'I01',
+
+                }, {
+                    caption: 'Tinggi Badan (Cm)',
+                    dataField: 'I02',
+
+                }, {
+                    caption: 'Berat Badan (Kg)',
+                    dataField: 'I03',
+
+                }, {
+                    caption: 'Lingkar Kepala (Cm)',
+                    dataField: 'I04',
+
+                }, {
+                    caption: 'Hobi',
+                    dataField: 'I05',
+                }, {
+                    caption: 'Cita-cita',
+                    dataField: 'I06',
+
+                }, {
+                    caption: 'Bakat',
+                    dataField: 'I07',
+
+                }, {
+                    caption: 'Berkebutuhan Khusus',
+                    dataField: 'I08',
+
+                }, {
+                    caption: 'Jml. Sdr. Kandung',
+                    dataField: 'I09',
+
+                }, {
+                    caption: 'Jml. Sdr. Tiri',
+                    dataField: 'I10',
+
+                }, {
+                    caption: 'Jml. Sdr. Angkat',
+                    dataField: 'I11',
+
+                }]
+            },
+            {
+                caption: 'Keterangan Jaminan Sosial Pendidikan',
+                columns: [{
+                    caption: 'Jenis Jamsos',
+                    dataField: 'J01',
+
+                }, {
+                    caption: 'Nomor Jamsos',
+                    dataField: 'J02',
+
+                }, {
+                    caption: 'Nomor Rekening PIP',
+                    dataField: 'J03',
+
+                }, {
+                    caption: 'Nama Bank PIP',
+                    dataField: 'J04',
+                }]
+            },
+            {
+                caption: 'Keterangan Penerimaan Peserta Didik',
+                columns: [{
+                    caption: 'Jalur Penerimaan',
+                    dataField: 'K01',
+
+                }, {
+                    caption: 'Nomor Dokumen',
+                    dataField: 'K02',
+
+                }, {
+                    caption: 'Tertanggal',
+                    dataField: 'K03',
+                    dataType: 'date',
+                    format: "dd MMMM yyyy",
+
+                }, {
+                    caption: 'Classical',
+                    dataField: 'K04',
+                }]
+            },
+            {
+                caption: 'Keterangan Pendidikan Tingkat Sebelumnya',
+                columns: [{
+                    caption: 'Identitas Satuan Pendidikan',
+                    dataField: 'L01',
+
+                }, {
+                    caption: 'Nomor Dokumen',
+                    dataField: 'L02',
+
+                }, {
+                    caption: 'Tertanggal',
+                    dataField: 'L03',
+                    dataType: 'date',
+                    format: "dd MMMM yyyy",
+
+                }]
+            },
+            {
+                caption: 'Keterangan Satuan Pendidikan Pindahan',
+                columns: [{
+                    caption: 'Identitas Satuan Pendidikan',
+                    dataField: 'L04',
+
+                }]
+            },
+            {
+                caption: 'Akun Belajar Id',
+                columns: [{
+                    caption: 'Email',
+                    dataField: 'M01',
+
+                }]
+            },
+            {
+                caption: 'Riwayat Rombongan Belajar',
+                columns: [{
+                    caption: 'Usia',
+                    dataField: 'N01',
+
+                }, {
+                    caption: 'Status',
+                    dataField: 'N02',
+                    filterType: "=", // or "include"
+                    filterValues: ["Aktif"],
+
+                }, {
+                    caption: 'Nomor Dokumen Non Aktif',
+                    dataField: 'N03',
+
+                }, {
+                    caption: 'Tertanggal Non Aktif',
+                    dataField: 'N04',
+                    dataType: 'date',
+                    format: "dd MMMM yyyy",
+
+                }, {
+                    caption: 'Satuan Pendidikan Lanjutan',
+                    dataField: 'N05',
+                }]
+            }
         ],
 
         //===============================================================================
@@ -2299,11 +2448,11 @@ $(function () {
                 enabled: true,
             },
             customizeColumns: function (columns) {
-                columns.forEach(function (col) {
+                columns.forEach(function (DataCell, DataIndex) {
                     // col.calculateDisplayValue = function (rowData) {
                     //   return rowData[col.dataField] == 0 ? "-" : rowData[col.dataField];
                     // };
-                    col.cellTemplate = (container, options) => {
+                    DataCell.cellTemplate = (container, options) => {
                         return $('<div>').dxButton({
                             stylingMode: 'text',
                             activeStateEnabled: true,
@@ -2316,9 +2465,9 @@ $(function () {
 
                                 DevExpress.ui.notify(
                                     {
-                                        message: 'Data View Under Construction',
+                                        message: DataCell.dataField + " = " + DataIndex,
                                         maxWidth: 300,
-                                        displayTime: 3000,
+                                        displayTime: 1000,
                                         animation: {
                                             show: { type: 'fade', duration: 400, from: 0, to: 1 },
                                             hide: { type: 'fade', duration: 40, to: 0 },
@@ -2426,7 +2575,7 @@ $(function () {
             selection: {
                 allowSelectAll: false,
                 deferred: false,
-                mode: "multiple",
+                mode: "single", //none ; single ; multiple
                 selectAllMode: "allPages",
                 showCheckBoxesMode: "click"
             },
@@ -2438,123 +2587,142 @@ $(function () {
             summary: _TBSummaryDashboard,
             toolbar: undefined,
             wordWrapEnabled: false,
-            // masterDetail: {
-            //   enabled: true,
-            //   template(container, options) {
-            //     $("<div>").dxDataGrid({
-            //       dataSource: 'data/info_pd.json',
-            //       // dataSource: $.getJSON("data/info_pd.json", function (jsondata) {
-            //       //   jsondata = jsondata.filter(function (obj) {
-            //       //     return obj.A01.includes(options.data.A01);
-            //       //   });
-            //       // }),
-            //       columns: _TbInfoPd,
-            //       filterValue: ["A01", "contains", options.data.A01],
-            //       showBorders: true,
-            //       showColumnHeaders: true,
-            //       showColumnLines: true,
-            //       showRowLines: true,
-            //       columnHidingEnabled: false,
-            //       allowColumnReordering: true,
-            //       allowColumnResizing: true,
-            //       columnResizingMode: 'widget',
-            //       columnAutoWidth: true,
-            //       wordWrapEnabled: false,
-            //       columnChooser: {
-            //         allowSearch: false,
-            //         //emptyPanelText:"Drag a column here to hide it",
-            //         enabled: true,
-            //         //height:260,
-            //         mode: "select",
-            //         //searchTimeout:500,
-            //         sortOrder: undefined,
-            //         title: "Column Chooser",
-            //         //width:250,
-            //       },
-            //       columnFixing: {
-            //         enabled: true,
-            //       },
-            //       hoverStateEnabled: false,
-            //       paging: {
-            //         pageSize: 5,
-            //       },
-            //       pager: {
-            //         allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
-            //         displayMode: "compact",
-            //         showInfo: true,
-            //         showNavigationButtons: true,
-            //         showPageSizeSelector: true,
-            //         visible: true,
-            //       },
-            //       editing: {
-            //         mode: 'row',
-            //         allowUpdating: false,
-            //         allowAdding: false,
-            //         allowDeleting: false,
-            //         confirmDelete: true,
-            //         useIcons: true,
-            //       },
-            //       export: {
-            //         enabled: true,
-            //         formats: ['xlsx', 'pdf'],
-            //         allowExportSelectedData: true,
-            //       },
-            //       onExporting(e) {
-            //         if (e.format === 'xlsx') {
-            //           const workbook = new ExcelJS.Workbook();
-            //           const worksheet = workbook.addWorksheet('Report');
-            //           DevExpress.excelExporter.exportDataGrid({
-            //             component: e.component,
-            //             worksheet,
-            //             autoFilterEnabled: true,
-            //           }).then(() => {
-            //             workbook.xlsx.writeBuffer().then((buffer) => {
-            //               saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
-            //             });
-            //           });
-            //           e.cancel = true;
-            //         }
-            //         else if (e.format === 'pdf') {
-            //           const doc = new jsPDF('l', 'pt');
-            //           DevExpress.pdfExporter.exportDataGrid({
-            //             jsPDFDocument: doc,
-            //             component: e.component,
-            //           }).then(() => {
-            //             doc.save('report.pdf');
-            //           });
-            //         }
-            //       },
+            masterDetail: {
+                enabled: true,
+                template(container, options) {
+                    $("<div>").dxDataGrid({
+                        dataSource: 'data/InformasiDataIndukSiswa.json',
+                        //============
+                        // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
+                        //   jsondata = jsondata.filter(function (obj) {
+                        //     return obj.A01.includes(options.data.A01);
+                        //   });
+                        // }),
+                        //============
+                        // dataSource: DevExpress.data.query($.getJSON("./data/InformasiDataIndukSiswa.json")
+                            // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
+                        //     .sortBy("birthYear")
+                        //     .select("name", "birthYear")
+                        //     .toArray()
+                        // ),
+                        columns: _TbInfoPd,
+                        filterValue: [["A01", "contains", options.data.A01],"and",["N02", "=", "Aktif"]],
+                        showBorders: true,
+                        showColumnHeaders: true,
+                        showColumnLines: true,
+                        showRowLines: true,
+                        columnHidingEnabled: false,
+                        allowColumnReordering: true,
+                        allowColumnResizing: true,
+                        columnResizingMode: 'widget',
+                        columnAutoWidth: true,
+                        wordWrapEnabled: false,
+                        columnChooser: {
+                            allowSearch: false,
+                            //emptyPanelText:"Drag a column here to hide it",
+                            enabled: true,
+                            //height:260,
+                            mode: "select",
+                            //searchTimeout:500,
+                            sortOrder: undefined,
+                            title: "Column Chooser",
+                            //width:250,
+                        },
+                        columnFixing: {
+                            enabled: true,
+                        },
+                        hoverStateEnabled: false,
+                        paging: {
+                            pageSize: 5,
+                        },
+                        pager: {
+                            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
+                            displayMode: "compact",
+                            showInfo: true,
+                            showNavigationButtons: true,
+                            showPageSizeSelector: true,
+                            visible: true,
+                        },
+                        editing: {
+                            mode: 'row',
+                            allowUpdating: false,
+                            allowAdding: false,
+                            allowDeleting: false,
+                            confirmDelete: true,
+                            useIcons: true,
+                        },
+                        export: {
+                            enabled: true,
+                            formats: ['xlsx', 'pdf'],
+                            allowExportSelectedData: true,
+                        },
+                        onExporting(e) {
+                            if (e.format === 'xlsx') {
+                                const workbook = new ExcelJS.Workbook();
+                                const worksheet = workbook.addWorksheet('Report');
+                                DevExpress.excelExporter.exportDataGrid({
+                                    component: e.component,
+                                    worksheet,
+                                    autoFilterEnabled: true,
+                                }).then(() => {
+                                    workbook.xlsx.writeBuffer().then((buffer) => {
+                                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
+                                    });
+                                });
+                                e.cancel = true;
+                            }
+                            else if (e.format === 'pdf') {
+                                const doc = new jsPDF('l', 'pt');
+                                DevExpress.pdfExporter.exportDataGrid({
+                                    jsPDFDocument: doc,
+                                    component: e.component,
+                                }).then(() => {
+                                    doc.save('report.pdf');
+                                });
+                            }
+                        },
 
-            //       remoteOperations: false,
-            //       sorting: {
-            //         mode: 'multiple',
-            //       },
-            //       searchPanel: {
-            //         visible: true,
-            //         highlightCaseSensitive: false,
-            //       },
-            //       selection: {
-            //         allowSelectAll: true,
-            //         deferred: false,
-            //         mode: "multiple",
-            //         selectAllMode: "allPages",
-            //         showCheckBoxesMode: "click"
-            //       },
-            //       filterRow: { visible: true },
-            //       filterPanel: { visible: false },
-            //       headerFilter: { visible: false },
-            //       groupPanel: { visible: false },
-            //       grouping: {
-            //         autoExpandAll: true,
-            //       },
-            //       wordWrapEnabled: false,
-            //       //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-            //       //summary: _TBSummaryDashboard,
-            //       //toolbar: undefined,
-            //       rowAlternationEnabled: false,
+                        remoteOperations: false,
+                        scrolling: {
+                            columnRenderingMode: "standard",
+                            mode: "standard",
+                            preloadEnabled: false,
+                            renderAsync: undefined,
+                            rowRenderingMode: "standard",
+                            scrollByContent: true,
+                            scrollByThumb: true,
+                            showScrollbar: "onHover",
+                            useNative: false
+                        },
+                        sorting: {
+                            mode: 'multiple',
+                        },
+                        searchPanel: {
+                            visible: true,
+                            highlightCaseSensitive: false,
+                        },
+                        selection: {
+                            allowSelectAll: true,
+                            deferred: false,
+                            mode: "multiple",
+                            selectAllMode: "allPages",
+                            showCheckBoxesMode: "click"
+                        },
+                        filterRow: { visible: true },
+                        filterPanel: { visible: false },
+                        headerFilter: { visible: false },
+                        groupPanel: { visible: false },
+                        grouping: {
+                            autoExpandAll: true,
+                        },
+                        wordWrapEnabled: false,
+                        //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+                        //summary: _TBSummaryDashboard,
+                        //toolbar: undefined,
+                        rowAlternationEnabled: false,
 
-            //     }).appendTo(container);
-            //   }
-            // },
+                    }).appendTo(container);
+                }
+            },
         }).dxDataGrid('instance');
 });

@@ -334,6 +334,152 @@ $(function () {
                     dataField: 'H10',
 
                 }]
+            },
+            {
+                caption: 'Keterangan Dinamis Peserta Didik',
+                columns: [{
+                    caption: 'No. Telpon',
+                    dataField: 'I01',
+
+                },{
+                    caption: 'Tinggi Badan (Cm)',
+                    dataField: 'I02',
+
+                },{
+                    caption: 'Berat Badan (Kg)',
+                    dataField: 'I03',
+
+                },{
+                    caption: 'Lingkar Kepala (Cm)',
+                    dataField: 'I04',
+
+                },{
+                    caption: 'Hobi',
+                    dataField: 'I05',
+                },{
+                    caption: 'Cita-cita',
+                    dataField: 'I06',
+
+                },{
+                    caption: 'Bakat',
+                    dataField: 'I07',
+
+                },{
+                    caption: 'Berkebutuhan Khusus',
+                    dataField: 'I08',
+
+                },{
+                    caption: 'Jml. Sdr. Kandung',
+                    dataField: 'I09',
+
+                },{
+                    caption: 'Jml. Sdr. Tiri',
+                    dataField: 'I10',
+
+                },{
+                    caption: 'Jml. Sdr. Angkat',
+                    dataField: 'I11',
+
+                }]
+            },
+            {
+                caption: 'Keterangan Jaminan Sosial Pendidikan',
+                columns: [{
+                    caption: 'Jenis Jamsos',
+                    dataField: 'J01',
+
+                },{
+                    caption: 'Nomor Jamsos',
+                    dataField: 'J02',
+
+                },{
+                    caption: 'Nomor Rekening PIP',
+                    dataField: 'J03',
+
+                },{
+                    caption: 'Nama Bank PIP',
+                    dataField: 'J04',
+                }]
+            },
+            {
+                caption: 'Keterangan Penerimaan Peserta Didik',
+                columns: [{
+                    caption: 'Jalur Penerimaan',
+                    dataField: 'K01',
+
+                },{
+                    caption: 'Nomor Dokumen',
+                    dataField: 'K02',
+
+                },{
+                    caption: 'Tertanggal',
+                    dataField: 'K03',
+                    type: 'date',
+                    format: "dd MMMM yyyy",
+
+                },{
+                    caption: 'Classical',
+                    dataField: 'K04',
+                }]
+            },
+            {
+                caption: 'Keterangan Pendidikan Tingkat Sebelumnya',
+                columns: [{
+                    caption: 'Identitas Satuan Pendidikan',
+                    dataField: 'L01',
+
+                },{
+                    caption: 'Nomor Dokumen',
+                    dataField: 'L02',
+
+                },{
+                    caption: 'Tertanggal',
+                    dataField: 'L03',
+                    type: 'date',
+                    format: "dd MMMM yyyy",
+
+                }]
+            },
+            {
+                caption: 'Keterangan Satuan Pendidikan Pindahan',
+                columns: [{
+                    caption: 'Identitas Satuan Pendidikan',
+                    dataField: 'L04',
+
+                }]
+            },
+            {
+                caption: 'Akun Belajar Id',
+                columns: [{
+                    caption: 'Email',
+                    dataField: 'M01',
+
+                }]
+            },
+            {
+                caption: 'Riwayat Rombongan Belajar',
+                columns: [{
+                    caption: 'Usia',
+                    dataField: 'N01',
+
+                },{
+                    caption: 'Status',
+                    dataField: 'N02',
+
+                },{
+                    caption: 'Nomor Dokumen Non Aktif',
+                    dataField: 'N03',
+
+                },{
+                    caption: 'Tertanggal Non Aktif',
+                    dataField: 'N04',
+                    type: 'date',
+                    format: "dd MMMM yyyy",
+
+                },{
+                    caption: 'Satuan Pendidikan Lanjutan',
+                    dataField: 'N05',
+                }]
             }
         ],
 

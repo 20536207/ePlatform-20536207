@@ -45,7 +45,7 @@ $(document).ready(function () {
       position: { my: 'center', at: 'center', collision: 'fit' },
       width: 325,
       height: 265,
-      visible: false,
+      visible: true,
     }).dxPopup("instance");
   };
 
@@ -67,7 +67,7 @@ $(document).ready(function () {
         {
           message: value.itemData.text,
           maxWidth: 300,
-          displayTime: 3000,
+          displayTime: 1000,
           animation: {
             show: { type: 'fade', duration: 400, from: 0, to: 1 },
             hide: { type: 'fade', duration: 40, to: 0 },
