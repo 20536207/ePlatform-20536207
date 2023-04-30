@@ -4,7 +4,8 @@ $(() => {
             { ratio: 0, screen: 'sm lg' }, //01
             { ratio: 0, screen: 'sm lg' }, //02
             { ratio: 0, screen: 'sm lg' }, //03
-            { ratio: 1, screen: 'sm lg' }, //04
+            { ratio: 0, screen: 'sm lg' }, //04
+            { ratio: 1, screen: 'sm lg' }, //05
         ],
         cols: [
             { ratio: 3 },
@@ -56,4 +57,46 @@ $(() => {
             return result;
         },
     });
+    
+    _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxMultiView({
+        dataSource: "./data/HomeLinkedPlatform.json",
+        selectedIndex: 0,
+        loop: true,
+        animationEnabled: true,
+        onSelectionChanged(e) {
+            $('.selected-index')
+                .text(e.component.option('selectedIndex') + 1);
+        },
+        itemTemplate: function (devdata, devindex, develement) {
+            a = 
+                "<div class='HomeLinkedPlatform-dev'>" +
+                "<b>" + devdata.dev + "</b><br>" +
+                "<i>" + devdata.detail + "</i>" +
+                "</div>"
+
+            b="";
+
+            devdata.items.forEach(function (productdata, productindex, productelement) {
+                b= b+
+                "<div class='HomeLinkedPlatform-layout'>"+
+                    "<div class='clearfix HomeLinkedPlatform-item'>"+
+                        "<a target='_blank' href="+productdata.target+">"+
+                            "<img src="+productdata.icon+" />"+
+                        "</a>"+
+                        "<div class='HomeLinkedPlatform-item-detail'>"+
+                            "<div>" + productdata.product + "</div>"+
+                            // "<br/><p>" + productdata.detail + "</p>"+
+                        "</div>"+
+                    "</div>"+
+                "</div>"
+            });
+            develement.append(a+b); //"<div class='clearfix'></div>"
+        },
+    });
+
+    $.getJSON("./data/HomeLinkedPlatform.json", function (jsondata) {
+        $('.HomeLinkedPlatform-item-count').text(jsondata.length);
+    });
+
+
 });

@@ -172,8 +172,7 @@ $(document).ready(function () {
     shading: $(window).width() < 600 ? true : false,
     closeOnOutsideClick: true,
     template() {
-      const _ListWidget = $('<div>').addClass('ContainsSidebar');
-
+      const _ListWidget = $("<div>").addClass('ContainsSidebar');
       return _ListWidget
         .dxList({
           dataSource: "./data/NavMain.json",
