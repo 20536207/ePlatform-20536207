@@ -84,7 +84,7 @@ $(() => {
             devdata.items.forEach(function (productdata, productindex, productelement) {
                 b= b+
                 "<div class='HomeLinkedPlatform-layout'>"+
-                    "<div class='clearfix HomeLinkedPlatform-item'>"+
+                    "<div class='HomeLinkedPlatform-item'>"+
                         "<a target='_blank' href="+productdata.target+">"+
                             "<img src="+productdata.icon+" />"+
                         "</a>"+
