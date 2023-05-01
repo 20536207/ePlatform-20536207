@@ -60,6 +60,11 @@ $(() => {
     
     _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxMultiView({
         dataSource: "./data/HomeLinkedPlatform.json",
+        onContentReady: function(e){
+            $.getJSON(e.component.option('dataSource'),function(jsondata){
+                $('.HomeLinkedPlatform-item-count').text(jsondata.length);
+            });
+        },
         selectedIndex: 0,
         loop: true,
         animationEnabled: true,
@@ -92,10 +97,6 @@ $(() => {
             });
             develement.append(a+b); //"<div class='clearfix'></div>"
         },
-    });
-
-    $.getJSON("./data/HomeLinkedPlatform.json", function (jsondata) {
-        $('.HomeLinkedPlatform-item-count').text(jsondata.length);
     });
 
 
