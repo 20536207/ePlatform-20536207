@@ -5,6 +5,16 @@
       "detail": "Satuan Pendidikan Dasar",
       "items": [
         {
+          "product": "Database Peserta Didik",
+          "detail": "Manajemen Database Internal Peserta Didik",
+          "icon": "./images/home/windows.png",
+          "target": "https://docs.google.com/spreadsheets/d/1wRpAJIQs6rzrlq_dGzuInUGk5Hb4BLwDdeN6MRdtE6g/edit?usp=sharing"
+        },{
+          "product": "Database Pegawai",
+          "detail": "Manajemen Database Internal Kepegawaian",
+          "icon": "./images/home/windows.png",
+          "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo/edit?usp=sharing"
+        }, {
           "product": "Dapodik",
           "detail": "Manajemen Data Pokok Pendidikan",
           "icon": "./images/home/homelinkedplatform/dapodik.png",
