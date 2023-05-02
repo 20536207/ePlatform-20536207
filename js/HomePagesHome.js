@@ -94,30 +94,59 @@ $(() => {
                 .text(e.component.option('selectedIndex') + 1);
         },
         itemTemplate: function (devdata, devindex, develement) {
-            a =
+            develement.append(
                 "<div class='HomeLinkedPlatform-dev'>" +
                 "<b>" + devdata.dev + "</b><br>" +
                 "<i>" + devdata.detail + "</i>" +
                 "</div>"
-
-            b = "";
+            );
 
             devdata.items.forEach(function (productdata, productindex, productelement) {
-                b = b +
-                    "<div class='HomeLinkedPlatform-layout'>" +
-                    "<div class='HomeLinkedPlatform-item'>" +
-                    // "<a target='_blank' href=" + productdata.target + ">" +
-                    // "<img src=" + productdata.icon + " />" +
-                    // "</a>" +
-                    // "<div class='HomeLinkedPlatform-item-detail'>" +
-                    // "<div>" + productdata.product + "</div>" +
-                    "<a target='_blank' href=" + productdata.target + ">" +productdata.product+"</a>"+
-                    "<br><i>" + productdata.detail + "</i><br><br>"+
-                    // "</div>" +
-                    "</div>" +
-                    "</div>"
+                develement.append(
+                    $("<div>").dxButton({
+                        stylingMode: 'text',
+                        type: 'normal',
+                        width: '100%',
+                        focusStateEnabled: false,
+                        activeStateEnabled: true,
+                        onClick() {
+                            window.open(productdata.target, '_blank')
+                        },
+                        template() {
+                            return (
+                                "<div class='HomeLinkedPlatform-item-detail'>" +
+                                "<a>" + productdata.product + "</a>" +
+                                "<br><i>" + productdata.detail + "</i>" +
+                                "</div>"
+                            );
+                        },
+                    })
+                )
             });
-            develement.append(a + b);
+
+            // b = ""
+            // devdata.items.forEach(function (productdata, productindex, productelement) {
+            // b = b +
+            //     "<div class='HomeLinkedPlatform-layout'>" +
+            //     "<div class='HomeLinkedPlatform-item'>" +
+            //     //===========================================================
+            //     // "<a target='_blank' href=" + productdata.target + ">" +
+            //     // "<img src=" + productdata.icon + " />" +
+            //     // "</a>" +
+            //     // "<div class='HomeLinkedPlatform-item-detail'>" +
+            //     // "<div>" + productdata.product + "</div>" +
+            //     // "<br><i>" + productdata.detail + "</i><br><br>"+
+            //     // "</div>" +
+            //     //===========================================================
+            //     // "<a target='_blank' href=" + productdata.target + ">" +productdata.product+"</a>"+
+            //     // "<br><i>" + productdata.detail + "</i><br><br>"+
+            //     //===========================================================
+
+            //     //===========================================================
+            //     "</div>" +
+            //     "</div>"
+            // });
+            // develement.append(a);
         },
     });
 

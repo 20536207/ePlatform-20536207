@@ -6,7 +6,7 @@
     background-color: rgba(50, 50, 50, 1);
     padding: 7px;
     height: 0;
-    color: rgb(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     text-align: justify;
     align-content: center;
     justify-content: top;
@@ -114,10 +114,15 @@
     text-align: left;
     font-size: 1rem;
     margin: 10px 0 20px 0;
+    color: orange;
+}
+.HomeLinkedPlatform-dev > i{
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .HomeLinkedPlatform-layout {
-    float: left;
+    /* float: left; */
     width: 100%;
     /* padding: 6px; */
     /* box-sizing: border-box; */
@@ -129,7 +134,7 @@
     text-align: justify;
     font-size: 1rem;
     /* background-color: rgba(0, 0, 0, 0.2); */
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
 }
 
 .HomeLinkedPlatform-item img {
@@ -138,14 +143,20 @@
     border-radius: 3rem 0 3rem 0;
 }
 
-.HomeLinkedPlatform-item-detail {
+#HomeLinkedPlatform .dx-button-content{
     text-align: justify;
-    padding: 5px;
-    font-size: 0.9rem;
+    justify-content: left;
 }
 
-.HomeLinkedPlatform-item-detail>p {
-    font-size: 0.8rem;
+.HomeLinkedPlatform-item-detail {
+    text-align: justify;
+    /* padding: 5px; */
+    font-size: 1rem;
+}
+
+.HomeLinkedPlatform-item-detail>i {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .clearfix:after {
