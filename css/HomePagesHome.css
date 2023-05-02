@@ -3,20 +3,15 @@
 .layout-03,
 .layout-04,
 .layout-05 {
-    background-color: rgba(90, 90, 90, 0.2);
+    background-color: rgba(50, 50, 50, 1);
     padding: 7px;
     height: 0;
     color: rgb(255, 255, 255, 0.8);
     text-align: justify;
     align-content: center;
-    justify-content: center;
-    border: thin rgb(0, 0, 0, 0.2) solid;
+    justify-content: top;
+    border: 1px rgb(0, 0, 0, 0.2) solid;
 
-}
-
-#NavbarLayout03 {
-    border: none;
-    height: 42px;
 }
 
 .layout-01 {
@@ -24,6 +19,7 @@
     font-size: 2rem;
     font-weight: normal;
     line-height: 2.3rem;
+    /* background-color: transparent; */
 }
 
 .layout-02 {
@@ -32,6 +28,11 @@
 
 .layout-03 {
     padding: 0;
+}
+
+#NavbarLayout03 {
+    border: none;
+    height: 42px;
 }
 
 #NavbarLayout03 .fa-whatsapp {
@@ -82,6 +83,8 @@
     /* Aspect Ratio ==> 16:9 (52.25%) ; 4:3 (75%) ; 3:2 (66.66%) */
     align-content: center;
     justify-content: center;
+    background-color: transparent;
+    border: none;
 }
 
 .layout-04 .Introduction {
@@ -94,30 +97,36 @@
     width: 80%;
     height: 80%;
     border: none;
+
 }
 
 /* ==================================================================== */
-.HomeLinkedPlatform-paging > b {
+.layout-05 {
+    /* margin-top: 2px; */
+    padding-top: 10px;
+}
+
+.HomeLinkedPlatform-paging>b {
     color: greenyellow;
 }
 
 .HomeLinkedPlatform-dev {
-    text-align: justify;
+    text-align: left;
     font-size: 1rem;
     margin: 10px 0 20px 0;
 }
 
 .HomeLinkedPlatform-layout {
-    padding: 6px;
     float: left;
-    width: 9.99999%;
-    box-sizing: border-box;
-    background-color: transparent;
-    border-radius: 1rem;
+    width: 100%;
+    /* padding: 6px; */
+    /* box-sizing: border-box; */
+    /* background-color: transparent; */
+    /* border-radius: 1rem; */
 }
 
 .HomeLinkedPlatform-item {
-    text-align: center;
+    text-align: justify;
     font-size: 1rem;
     /* background-color: rgba(0, 0, 0, 0.2); */
     border-radius: 1rem;
@@ -126,15 +135,16 @@
 .HomeLinkedPlatform-item img {
     width: 100%;
     height: auto;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 3rem 0 3rem 0;
 }
 
 .HomeLinkedPlatform-item-detail {
-    text-align: center;
+    text-align: justify;
     padding: 5px;
     font-size: 0.9rem;
 }
-.HomeLinkedPlatform-item-detail > p{
+
+.HomeLinkedPlatform-item-detail>p {
     font-size: 0.8rem;
 }
 
@@ -150,23 +160,23 @@
     }
 } */
 
-@media only screen and (max-width: 1280px) {
+/* @media only screen and (max-width: 1280px) {
     .HomeLinkedPlatform-layout {
         width: 14.28571%;
     }
-}
+} */
 
-@media only screen and (max-width: 1024px) {
+/* @media only screen and (max-width: 1024px) {
     .HomeLinkedPlatform-layout {
         width: 16.66666%;
     }
-}
+} */
 
-@media only screen and (max-width: 960px) {
+/* @media only screen and (max-width: 960px) {
     .HomeLinkedPlatform-layout {
         width: 19.99999%;
     }
-}
+} */
 
 /* @media only screen and (max-width: 854px) {
     .HomeLinkedPlatform-layout {
@@ -174,13 +184,22 @@
     }
 } */
 
-@media only screen and (max-width: 640px) {
+/* @media only screen and (max-width: 640px) {
     .HomeLinkedPlatform-layout {
         width: 24.99999%;
     }
-}
+} */
 
 @media only screen and (max-width: 600px) {
+
+    .layout-01,
+    .layout-02,
+    .layout-03,
+    .layout-04,
+    .layout-05 {
+        background-color: transparent;
+    }
+
     .layout-01 {
         text-align: center;
         font-size: 1.3rem;
@@ -201,8 +220,8 @@
     }
 }
 
-@media only screen and (max-width: 360px) {
+/* @media only screen and (max-width: 360px) {
     .HomeLinkedPlatform-layout {
         width: 33.26666%;
     }
-}
+} */

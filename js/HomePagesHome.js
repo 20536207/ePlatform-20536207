@@ -57,11 +57,32 @@ $(() => {
             return result;
         },
     });
-    
+
+    _ListPlatform = $("<div>").dxList({
+        dataSource: "./data/HomeLinkedPlatform.json",
+        focusStateEnabled: false,
+        activeStateEnabled: false,
+        grouped: true,
+        collapsibleGroups: false,
+        showSelectionControls: false,
+        useNativeScrolling: false,
+        groupTemplate(data) {
+            return $(`<div style="color: rgba(28, 168, 221, 1)">${data.dev}</div>`);
+        },
+        itemTemplate(data) {
+            return $(`<div>${data.product}</div>`);
+        },
+        width: '100%',
+        selectionMode: "none",
+        onItemClick(e) {
+            window.open(e.itemData.target, '_blank')
+        },
+    });
+
     _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxMultiView({
         dataSource: "./data/HomeLinkedPlatform.json",
-        onContentReady: function(e){
-            $.getJSON(e.component.option('dataSource'),function(jsondata){
+        onContentReady: function (e) {
+            $.getJSON(e.component.option('dataSource'), function (jsondata) {
                 $('.HomeLinkedPlatform-item-count').text(jsondata.length);
             });
         },
@@ -73,29 +94,30 @@ $(() => {
                 .text(e.component.option('selectedIndex') + 1);
         },
         itemTemplate: function (devdata, devindex, develement) {
-            a = 
+            a =
                 "<div class='HomeLinkedPlatform-dev'>" +
                 "<b>" + devdata.dev + "</b><br>" +
                 "<i>" + devdata.detail + "</i>" +
                 "</div>"
 
-            b="";
+            b = "";
 
             devdata.items.forEach(function (productdata, productindex, productelement) {
-                b= b+
-                "<div class='HomeLinkedPlatform-layout'>"+
-                    "<div class='HomeLinkedPlatform-item'>"+
-                        "<a target='_blank' href="+productdata.target+">"+
-                            "<img src="+productdata.icon+" />"+
-                        "</a>"+
-                        "<div class='HomeLinkedPlatform-item-detail'>"+
-                            "<div>" + productdata.product + "</div>"+
-                            // "<br/><p>" + productdata.detail + "</p>"+
-                        "</div>"+
-                    "</div>"+
-                "</div>"
+                b = b +
+                    "<div class='HomeLinkedPlatform-layout'>" +
+                    "<div class='HomeLinkedPlatform-item'>" +
+                    // "<a target='_blank' href=" + productdata.target + ">" +
+                    // "<img src=" + productdata.icon + " />" +
+                    // "</a>" +
+                    // "<div class='HomeLinkedPlatform-item-detail'>" +
+                    // "<div>" + productdata.product + "</div>" +
+                    "<a target='_blank' href=" + productdata.target + ">" +productdata.product+"</a>"+
+                    "<br><i>" + productdata.detail + "</i><br><br>"+
+                    // "</div>" +
+                    "</div>" +
+                    "</div>"
             });
-            develement.append(a+b); //"<div class='clearfix'></div>"
+            develement.append(a + b);
         },
     });
 
