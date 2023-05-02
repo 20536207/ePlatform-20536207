@@ -144,6 +144,7 @@ $(document).ready(function () {
             if (e.itemIndex == 0) {
               $.getJSON("./data/NavHeader.json", function (result) {
                 $("#PageContains").load(result[0].items[0].target);
+                _PageToolbar.option("items[0].text",result[0].items[0].text);
               });
             } else {
               $.getJSON("./data/NavHeader.json", function (result) {
