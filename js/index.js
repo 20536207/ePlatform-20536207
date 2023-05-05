@@ -1,4 +1,15 @@
 window.jsPDF = window.jspdf.jsPDF;
+/*===================================================================================*/
+function GoEncrypt(_Contains, _Key)
+/*===================================================================================*/ {
+  return CryptoJS.TripleDES.encrypt(_Contains.toString(), _Key).toString();
+}
+
+/*===================================================================================*/
+function GoDecrypt(_Contains, _Key)
+/*===================================================================================*/ {
+  return CryptoJS.TripleDES.decrypt(_Contains, _Key).toString(CryptoJS.enc.Utf8);
+}
 
 $(document).ready(function () {
 
@@ -119,37 +130,41 @@ $(document).ready(function () {
           stylingMode: "text",
           height: undefined,
           width: undefined,
-          items: [
-            { text: "Home" },
-            { text: "Program" },
-            { text: "Dokumentasi" },
-            { text: "Literasi" },
-            { text: "Referensi" }
-          ],
-          // items: $.getJSON("./data/NavHeader.json", function (result) {
-          //   var items = result;
-          //   items = result.filter(function (obj) {
-          //     return obj.text != "Home";
+          items:
+            [
+              {
+                text: "Home",
+                icon: "fas fa-home fa-2xl",
+              },
+              { text: "Program", visible: false },
+              { text: "Dokumentasi", visible: false },
+              { text: "Literasi", visible: false },
+              { text: "Referensi", visible: false }
+            ],
+          // $.getJSON("./data/NavHeader.json", function (result) {
+          //   item = result.filter(function (obj) {
+          //     return obj.key == "Home";
           //   });
-          //   DevExpress.ui.notify(NavHeader);
+          //   return item;
           // }),
-          // buttonTemplate: function (itemData, $buttonContent) {
-          //   $buttonContent.append(
-          //     // Custom jQuery elements go here
-          //   )
-          //   // ===== or =====
-          //   return /* your markup goes here */
+          // buttonTemplate: function (itemData, itemElement) {
+          //   return $(`<div>${itemData.key}</div>`);
           // },
           onItemClick(e) {
             if (e.itemIndex == 0) {
               $.getJSON("./data/NavHeader.json", function (result) {
                 $("#PageContains").load(result[0].items[0].target);
-                _PageToolbar.option("items[0].text",result[0].items[0].text);
+                _PageToolbar.option("items[0].text", result[0].items[0].text);
               });
+
+              // DevExpress.ui.notify(GoEncrypt(pass, key));
+
             } else {
-              $.getJSON("./data/NavHeader.json", function (result) {
-                _ActionSheet.option('dataSource', result[e.itemIndex].items);
-              });
+              $.getJSON(
+                GoDecrypt("U2FsdGVkX19Mn/M47FB35sSQvPhOj1+LejvxpIUdeuC0gaMMaYrrxg==", "20536207DigitalAIO"),
+                function (result) {
+                  _ActionSheet.option('dataSource', result[e.itemIndex].items);
+                });
               // $("#PageContains").load(e.itemData.target);
               _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
               _ActionSheet.option('width', $(window).width() < 600 ? undefined : 'auto');
@@ -176,6 +191,7 @@ $(document).ready(function () {
       const _ListWidget = $("<div>").addClass('ContainsSidebar');
       return _ListWidget
         .dxList({
+          keyExpr: "key",
           dataSource: "./data/NavMain.json",
           hoverStateEnabled: true,
           focusStateEnabled: true,
@@ -193,7 +209,9 @@ $(document).ready(function () {
           selectionMode: "single",
           onItemClick(e) {
 
+            // DevExpress.ui.notify(e.groupItem.key);
             _PageToolbar.option("items[0].text", e.itemData.text);
+            
             _LayoutContains.toggle();
 
             $("#PageContains").empty();

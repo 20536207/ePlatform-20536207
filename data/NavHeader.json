@@ -1,6 +1,7 @@
 [
     {
         "key": "Home",
+        "visible": true,
         "items": [
             {
                 "id": 1,
@@ -15,6 +16,7 @@
     },
     {
         "key": "Program",
+        "visible": false,
         "items": [
             {
                 "id": 0,
@@ -22,7 +24,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramVisiDanMisi.html"
             },
             {
@@ -31,7 +33,7 @@
                 "icon": null,
                 "badge": null,
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": null,
                 "template": "<hr class='separator' />"
             },    
@@ -41,7 +43,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramStandarKelulusan.html"
             },
             {
@@ -50,7 +52,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramStandarIsi.html"
             },
             {
@@ -59,7 +61,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramStandarProses.html"
             },
             {
@@ -68,7 +70,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramStandarSaranaPrasarana.html"
             },
             {
@@ -77,7 +79,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramStandarPTK.html"
             },
             {
@@ -86,7 +88,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramStandarPembiayaan.html"
             },
             {
@@ -95,7 +97,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramStandarPengelolaan.html"
             },
             {
@@ -104,13 +106,14 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/program/ProgramStandarPembiayaan.html"
             }
         ]
     },
     {
         "key": "Dokumentasi",
+        "visible": false,
         "items": [
             {
                 "id": 1,
@@ -118,7 +121,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/Dokumentasi/DokumentasiSub001.html"
             },
             {
@@ -127,13 +130,14 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/Dokumentasi/DokumentasiSub002.html"
             }
         ]
     },
     {
         "key": "Literasi",
+        "visible": false,
         "items": [
             {
                 "id": 1,
@@ -141,7 +145,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/Literasi/LiterasiSub001.html"
             },
             {
@@ -150,13 +154,14 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/Literasi/LiterasiSub002.html"
             }
         ]
     },
     {
         "key": "Referensi",
+        "visible": false,
         "items": [
             {
                 "id": 1,
@@ -164,7 +169,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/Referensi/ReferensiSub001.html"
             },
             {
@@ -173,7 +178,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": true,
+                "visible": false,
                 "target": "./pages/Referensi/ReferensiSub002.html"
             }
         ]

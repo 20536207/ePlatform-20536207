@@ -2465,7 +2465,8 @@ $(function () {
 
                                 DevExpress.ui.notify(
                                     {
-                                        message: DataCell.dataField + " = " + DataIndex,
+                                        // message: DataCell.dataField + " = " + DataIndex,
+                                        message: this.option('text'),
                                         maxWidth: 300,
                                         displayTime: 1000,
                                         animation: {
