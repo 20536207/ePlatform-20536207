@@ -78,15 +78,16 @@
 .layout-04 {
     position: relative;
     width: 100%;
-    /* overflow: none; */
+    overflow: none;
     padding-top: 56.25%;
     /* Aspect Ratio ==> 16:9 (52.25%) ; 4:3 (75%) ; 3:2 (66.66%) */
-    align-content: center;
-    justify-content: center;
+    align-content: start ;
+    justify-content: start;
     background-color: transparent;
     border: none;
 }
 
+/*YOUTUBE*/
 .layout-04 .Introduction {
     position: absolute;
     padding: 7px;

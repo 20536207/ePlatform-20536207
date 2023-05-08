@@ -563,14 +563,14 @@ $(function () {
 
             // filterValue: ["A01", "contains", options.data.A01],
             filterRow: { visible: true },
-            filterPanel: { visible: false },
+            filterPanel: { visible: true },
 
             groupPanel: { visible: false },
             grouping: {
                 autoExpandAll: false,
             },
 
-            headerFilter: { visible: false },
+            headerFilter: { visible: true },
             hoverStateEnabled: false,
 
             paging: {
