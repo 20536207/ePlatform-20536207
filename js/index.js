@@ -161,7 +161,7 @@ $(document).ready(function () {
 
             } else {
               $.getJSON(
-                GoDecrypt("U2FsdGVkX19Mn/M47FB35sSQvPhOj1+LejvxpIUdeuC0gaMMaYrrxg==", "20536207DigitalAIO"),
+                GoDecrypt("U2FsdGVkX19Mn/M47FB35sSQvPhOj1+LejvxpIUdeuC0gaMMaYrrxg==", "TripleDES"),
                 function (result) {
                   _ActionSheet.option('dataSource', result[e.itemIndex].items);
                 });
@@ -211,7 +211,7 @@ $(document).ready(function () {
 
             // DevExpress.ui.notify(e.groupItem.key);
             _PageToolbar.option("items[0].text", e.itemData.text);
-            
+
             _LayoutContains.toggle();
 
             $("#PageContains").empty();
@@ -224,15 +224,41 @@ $(document).ready(function () {
   }).dxDrawer('instance');
 
   _PageToolbar = $('#PageToolbar').dxToolbar({
-    items: [{
-      location: 'center',
-      locateInMenu: 'never',
-      // cssClass: 'Page-Title',
-      text: '',
-      template(e) {
-        return $("<div class='Page-Title'>" + e.text + "</div>");
-      },
-    }],
+    items: [
+      {
+        location: 'center',
+        locateInMenu: 'never',
+        // cssClass: 'Page-Title',
+        text: '',
+        template(e) {
+          return $("<div class='Page-Title'>" + e.text + "</div>");
+        },
+      }
+      // ,{
+      //   widget: 'dxButton',
+      //   location: 'after',
+      //   locateInMenu: 'never',
+      //   cssClass: undefined,
+      //   text: null,
+      //   visible: true,
+      //   options: {
+      //     text: 'locked',
+      //     icon: 'lock',
+      //     // template: '<div class="fas fa-lock"></div>',
+      //     hoverStateEnabled: true,
+      //     focusStateEnabled: false,
+      //     activeStateEnabled: true,
+      //     selectionMode: 'none',
+      //     type: 'normal',
+      //     stylingMode: "text",
+      //     // height: undefined,
+      //     // width: undefined,
+      //     onClick() {
+      //       // _LayoutContains.toggle();
+      //     },
+      //   }
+      // }
+    ],
   }).dxToolbar('instance');
 
   // const _PageContains = $('#PageContains').dxScrollView({
