@@ -24,12 +24,14 @@
           "detail": "Manajemen Nilai Rapor Peserta Didik Kurikulum Merdeka",
           "icon": "./images/home/homelinkedplatform/eraporsdkm.png",
           "target": "http://20536207.ip-dynamic.com:7231"
-        },{
-          "product": "e-Rapor SD-K13",
-          "detail": "Manajemen Nilai Rapor Peserta Didik Kurikulum 2013",
-          "icon": "./images/home/homelinkedplatform/eraporsdk13.png",
-          "target": "http://20536207.ip-dynamic.com:2050"
-        },{
+        },
+        // {
+        //   "product": "e-Rapor SD-K13",
+        //   "detail": "Manajemen Nilai Rapor Peserta Didik Kurikulum 2013",
+        //   "icon": "./images/home/homelinkedplatform/eraporsdk13.png",
+        //   "target": "http://20536207.ip-dynamic.com:2050"
+        // },
+        {
           "product": "e-Rapor SP",
           "detail": "Manajemen Nilai Rapor Peserta Didik Sekolah Penggerak",
           "icon": "./images/home/homelinkedplatform/eraporsp.png",
