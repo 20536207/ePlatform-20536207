@@ -5,6 +5,12 @@
       "detail": "Satuan Pendidikan Dasar",
       "items": [
         {
+          "product": "Daftar Ulang PPDB 2023",
+          "detail": "Pengelolaan Data Hasil Seleksi PPDB",
+          "icon": "./images/home/windows.png",
+          "target": "https://docs.google.com/spreadsheets/d/14rbrxzxCx_eoJ13wmLbqRDUwt5QTf0uYUdVxTSWl_4Q/edit?usp=sharing"
+        },
+        {
           "product": "Database Peserta Didik",
           "detail": "Manajemen Database Internal Peserta Didik",
           "icon": "./images/home/windows.png",
