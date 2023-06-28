@@ -79,7 +79,7 @@
     position: relative;
     width: 100%;
     overflow: no;
-    padding-top: 90%;
+    padding-top: 100%;
     /* Aspect Ratio ==> 16:9 (52.25%) ; 4:3 (75%) ; 3:2 (66.66%) */
     align-content:start ;
     justify-content: start;
