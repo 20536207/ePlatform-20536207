@@ -28,7 +28,7 @@ $(() => {
 
     _NavbarLayout03 = $('#NavbarLayout03').dxTabs({
         dataSource: "./data/NavLayout03.json",
-        hoverStateEnabled: false,
+        hoverStateEnabled: true,
         focusStateEnabled: false,
         selectionMode: 'none',
         activeStateEnabled: false,
