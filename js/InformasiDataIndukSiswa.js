@@ -410,7 +410,7 @@ $(function () {
                 }, {
                     caption: 'Tertanggal',
                     dataField: 'K03',
-                    type: 'date',
+                    dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
@@ -431,7 +431,7 @@ $(function () {
                 }, {
                     caption: 'Tertanggal',
                     dataField: 'L03',
-                    type: 'date',
+                    dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }]
@@ -469,7 +469,7 @@ $(function () {
                 }, {
                     caption: 'Tertanggal Non Aktif',
                     dataField: 'N04',
-                    type: 'date',
+                    dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
