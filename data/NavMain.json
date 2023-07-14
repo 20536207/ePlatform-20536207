@@ -68,7 +68,7 @@
                 "badge": "new",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/InformasiKesiswaan/RombonganBelajar.html"
+                "target": "./pages/InformasiKesiswaan/InformasiRombonganBelajar.html"
             },
             {
                 "id": "02-03",
