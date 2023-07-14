@@ -65,8 +65,8 @@
                 "id": "02-02",
                 "text": "Rombongan Belajar",
                 "icon": "tags",
-                "badge": "",
-                "disabled": true,
+                "badge": "new",
+                "disabled": false,
                 "visible": true,
                 "target": "./pages/InformasiKesiswaan/RombonganBelajar.html"
             },
