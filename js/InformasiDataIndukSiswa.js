@@ -6,64 +6,71 @@ $(function () {
                 caption: 'Identitas Peserta Didik',
                 fixed: true,
                 columns: [
+                    // {
+                    //     caption: 'Tahun Akademik',
+                    //     dataField: 'a02',
+                    //     groupIndex: 0,
+                    // }, {
+                    //     caption: 'Rombel',
+                    //     dataField: 'a03',
+                    //     groupIndex: 0,
+                    // }, 
+                    // {
+                    //     caption: 'ID Rombel',
+                    //     dataField: 'a01',
+                    //     sortOrder: 'asc',
+                    //     // hidingPriority: 0,
+                    // },
                     {
-                        caption: 'Rombel',
-                        dataField: 'A02',
-                        groupIndex: 0,
-                    }, {
-                        caption: 'ID Rombel',
-                        dataField: 'A01',
-                        sortOrder: 'asc',
-                        // hidingPriority: 0,
-                    }, {
                         caption: 'NIPD',
-                        dataField: 'B01',
+                        dataField: 'b01',
+                        // groupIndex: 0
                         // // hidingPriority: 1,
                     }, {
                         caption: 'NISN',
-                        dataField: 'B02',
+                        dataField: 'b02',
                         // hidingPriority: 2,
                     }, {
                         caption: 'Nama Lengkap',
-                        dataField: 'B03',
+                        dataField: 'b03',
                     }],
             },
             {
                 caption: 'Catatan Sipil Peserta Didik',
                 columns: [{
                     caption: 'NIK',
-                    dataField: 'C01',
+                    dataField: 'c01',
                 }, {
                     caption: 'No. Register',
-                    dataField: 'C02',
+                    dataField: 'c02',
 
                 }, {
                     caption: 'No. Akta Kelahiran',
-                    dataField: 'C03',
+                    dataField: 'c03',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'C04',
+                    dataField: 'c04',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
                     caption: 'Gender',
-                    dataField: 'C05',
+                    dataField: 'c05',
 
                 }, {
                     caption: 'Tempat Lahir',
-                    dataField: 'C06',
+                    dataField: 'c06',
 
                 }, {
                     caption: 'Tanggal Lahir',
-                    dataField: 'C07',
+                    dataField: 'c07',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
                     caption: 'Anak Ke-',
-                    dataField: 'C08',
+                    dataField: 'c08',
 
                 }],
             },
@@ -71,49 +78,49 @@ $(function () {
                 caption: 'Catatan Kependudukan Peserta Didik',
                 columns: [{
                     caption: 'No. KK',
-                    dataField: 'D01',
+                    dataField: 'd01',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'D02',
+                    dataField: 'd02',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
                     caption: 'Alamat',
-                    dataField: 'D03',
+                    dataField: 'd03',
 
                 }, {
                     caption: 'RT',
-                    dataField: 'D04',
+                    dataField: 'd04',
 
                 }, {
                     caption: 'RW',
-                    dataField: 'D05',
+                    dataField: 'd05',
 
                 }, {
                     caption: 'Desa/Kelurahan',
-                    dataField: 'D06',
+                    dataField: 'd06',
 
                 }, {
                     caption: 'Kecamatan',
-                    dataField: 'D07',
+                    dataField: 'd07',
 
                 }, {
                     caption: 'Pemerintah Daerah',
-                    dataField: 'D08',
+                    dataField: 'd08',
 
                 }, {
                     caption: 'Pemerintah Propinsi',
-                    dataField: 'D09',
+                    dataField: 'd09',
 
                 }, {
                     caption: 'Kode Pos',
-                    dataField: 'D10',
+                    dataField: 'd10',
 
                 }, {
                     caption: 'Agama',
-                    dataField: 'D11',
+                    dataField: 'd11',
 
                 }],
             },
@@ -121,63 +128,63 @@ $(function () {
                 caption: 'Keterangan Tempat Tinggal Peserta DIdik',
                 columns: [{
                     caption: 'Dokumen',
-                    dataField: 'E01',
+                    dataField: 'e01',
 
                 }, {
                     caption: 'Nomor',
-                    dataField: 'E02',
+                    dataField: 'e02',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'E03',
+                    dataField: 'e03',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
                     caption: 'Alamat',
-                    dataField: 'E04',
+                    dataField: 'e04',
 
                 }, {
                     caption: 'RT',
-                    dataField: 'E05',
+                    dataField: 'e05',
 
                 }, {
                     caption: 'RW',
-                    dataField: 'E06',
+                    dataField: 'e06',
 
                 }, {
                     caption: 'Desa/Kelurahan',
-                    dataField: 'E07',
+                    dataField: 'e07',
 
                 }, {
                     caption: 'Kecamatan',
-                    dataField: 'E08',
+                    dataField: 'e08',
 
                 }, {
                     caption: 'Pemerintah Daerah',
-                    dataField: 'E09',
+                    dataField: 'e09',
 
                 }, {
                     caption: 'Pemerintah Propinsi',
-                    dataField: 'E10',
+                    dataField: 'e10',
 
                 }, {
                     caption: 'Kode Pos',
-                    dataField: 'E11',
+                    dataField: 'e11',
 
                 }, {
                     caption: 'Koordinat',
-                    dataField: 'E12',
+                    dataField: 'e12',
 
                 }, {
                     caption: 'Jarak (Km)',
-                    dataField: 'E13',
+                    dataField: 'e13',
                     type: 'number',
                     format: '0.000'
 
                 }, {
                     caption: 'Waktu (Menit)',
-                    dataField: 'E14',
+                    dataField: 'e14',
 
                 }],
             },
@@ -185,49 +192,49 @@ $(function () {
                 caption: 'Keterangan Ayah Kandung',
                 columns: [{
                     caption: 'Nama Lengkap',
-                    dataField: 'F01',
+                    dataField: 'f01',
 
                 }, {
                     caption: 'Gelar Depan',
-                    dataField: 'F02',
+                    dataField: 'f02',
 
                 }, {
                     caption: 'Gelar Belakang',
-                    dataField: 'F03',
+                    dataField: 'f03',
 
                 }, {
                     caption: 'NIK',
-                    dataField: 'F04',
+                    dataField: 'f04',
 
                 }, {
                     caption: 'Tempat Lahir',
-                    dataField: 'F05',
+                    dataField: 'f05',
 
                 }, {
                     caption: 'Tanggal Lahir',
-                    dataField: 'F06',
+                    dataField: 'f06',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
                     caption: 'Agama',
-                    dataField: 'F07',
+                    dataField: 'f07',
 
                 }, {
                     caption: 'Pendidikan',
-                    dataField: 'F08',
+                    dataField: 'f08',
 
                 }, {
                     caption: 'Pekerjaan',
-                    dataField: 'F09',
+                    dataField: 'f09',
 
                 }, {
                     caption: 'Status Perkawinan',
-                    dataField: 'F10',
+                    dataField: 'f10',
 
                 }, {
                     caption: 'Tanggal Meninggal',
-                    dataField: 'F11',
+                    dataField: 'f11',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
@@ -237,49 +244,49 @@ $(function () {
                 caption: 'Keterangan Ibu Kandung',
                 columns: [{
                     caption: 'Nama Lengkap',
-                    dataField: 'G01',
+                    dataField: 'g01',
 
                 }, {
                     caption: 'Gelar Depan',
-                    dataField: 'G02',
+                    dataField: 'g02',
 
                 }, {
                     caption: 'Gelar Belakang',
-                    dataField: 'G03',
+                    dataField: 'g03',
 
                 }, {
                     caption: 'NIK',
-                    dataField: 'G04',
+                    dataField: 'g04',
 
                 }, {
                     caption: 'Tempat Lahir',
-                    dataField: 'G05',
+                    dataField: 'g05',
 
                 }, {
                     caption: 'Tanggal Lahir',
-                    dataField: 'G06',
+                    dataField: 'g06',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
                     caption: 'Agama',
-                    dataField: 'G07',
+                    dataField: 'g07',
 
                 }, {
                     caption: 'Pendidikan',
-                    dataField: 'G08',
+                    dataField: 'g08',
 
                 }, {
                     caption: 'Pekerjaan',
-                    dataField: 'G09',
+                    dataField: 'g09',
 
                 }, {
                     caption: 'Status Perkawinan',
-                    dataField: 'G10',
+                    dataField: 'g10',
 
                 }, {
                     caption: 'Tanggal Meninggal',
-                    dataField: 'G11',
+                    dataField: 'g11',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
@@ -289,45 +296,45 @@ $(function () {
                 caption: 'Keterangan Wali',
                 columns: [{
                     caption: 'Hubungan Keluarga',
-                    dataField: 'H01',
+                    dataField: 'h01',
 
                 }, {
                     caption: 'Nama Lengkap',
-                    dataField: 'H02',
+                    dataField: 'h02',
 
                 }, {
                     caption: 'Gelar Depan',
-                    dataField: 'H03',
+                    dataField: 'h03',
 
                 }, {
                     caption: 'Gelar Belakang',
-                    dataField: 'H04',
+                    dataField: 'h04',
 
                 }, {
                     caption: 'NIK',
-                    dataField: 'H05',
+                    dataField: 'h05',
 
                 }, {
                     caption: 'Tempat Lahir',
-                    dataField: 'H06',
+                    dataField: 'h06',
 
                 }, {
                     caption: 'Tanggal Lahir',
-                    dataField: 'H07',
+                    dataField: 'h07',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
                     caption: 'Agama',
-                    dataField: 'H08',
+                    dataField: 'h08',
 
                 }, {
                     caption: 'Pendidikan',
-                    dataField: 'H09',
+                    dataField: 'h09',
 
                 }, {
                     caption: 'Pekerjaan',
-                    dataField: 'H10',
+                    dataField: 'h10',
 
                 }]
             },
@@ -335,46 +342,46 @@ $(function () {
                 caption: 'Keterangan Dinamis Peserta Didik',
                 columns: [{
                     caption: 'No. Telpon',
-                    dataField: 'I01',
+                    dataField: 'i01',
 
                 }, {
                     caption: 'Tinggi Badan (Cm)',
-                    dataField: 'I02',
+                    dataField: 'i02',
 
                 }, {
                     caption: 'Berat Badan (Kg)',
-                    dataField: 'I03',
+                    dataField: 'i03',
 
                 }, {
                     caption: 'Lingkar Kepala (Cm)',
-                    dataField: 'I04',
+                    dataField: 'i04',
 
                 }, {
                     caption: 'Hobi',
-                    dataField: 'I05',
+                    dataField: 'i05',
                 }, {
                     caption: 'Cita-cita',
-                    dataField: 'I06',
+                    dataField: 'i06',
 
                 }, {
                     caption: 'Bakat',
-                    dataField: 'I07',
+                    dataField: 'i07',
 
                 }, {
                     caption: 'Berkebutuhan Khusus',
-                    dataField: 'I08',
+                    dataField: 'i08',
 
                 }, {
                     caption: 'Jml. Sdr. Kandung',
-                    dataField: 'I09',
+                    dataField: 'i09',
 
                 }, {
                     caption: 'Jml. Sdr. Tiri',
-                    dataField: 'I10',
+                    dataField: 'i10',
 
                 }, {
                     caption: 'Jml. Sdr. Angkat',
-                    dataField: 'I11',
+                    dataField: 'i11',
 
                 }]
             },
@@ -382,55 +389,55 @@ $(function () {
                 caption: 'Keterangan Jaminan Sosial Pendidikan',
                 columns: [{
                     caption: 'Jenis Jamsos',
-                    dataField: 'J01',
+                    dataField: 'j01',
 
                 }, {
                     caption: 'Nomor Jamsos',
-                    dataField: 'J02',
+                    dataField: 'j02',
 
                 }, {
                     caption: 'Nomor Rekening PIP',
-                    dataField: 'J03',
+                    dataField: 'j03',
 
                 }, {
                     caption: 'Nama Bank PIP',
-                    dataField: 'J04',
+                    dataField: 'j04',
                 }]
             },
             {
                 caption: 'Keterangan Penerimaan Peserta Didik',
                 columns: [{
                     caption: 'Jalur Penerimaan',
-                    dataField: 'K01',
+                    dataField: 'k01',
 
                 }, {
                     caption: 'Nomor Dokumen',
-                    dataField: 'K02',
+                    dataField: 'k02',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'K03',
+                    dataField: 'k03',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
                 }, {
                     caption: 'Classical',
-                    dataField: 'K04',
+                    dataField: 'k04',
                 }]
             },
             {
                 caption: 'Keterangan Pendidikan Tingkat Sebelumnya',
                 columns: [{
                     caption: 'Identitas Satuan Pendidikan',
-                    dataField: 'L01',
+                    dataField: 'l01',
 
                 }, {
                     caption: 'Nomor Dokumen',
-                    dataField: 'L02',
+                    dataField: 'l02',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'L03',
+                    dataField: 'l03',
                     dataType: 'date',
                     format: "dd MMMM yyyy",
 
@@ -440,7 +447,7 @@ $(function () {
                 caption: 'Keterangan Satuan Pendidikan Pindahan',
                 columns: [{
                     caption: 'Identitas Satuan Pendidikan',
-                    dataField: 'L04',
+                    dataField: 'l04',
 
                 }]
             },
@@ -448,35 +455,35 @@ $(function () {
                 caption: 'Akun Belajar Id',
                 columns: [{
                     caption: 'Email',
-                    dataField: 'M01',
+                    dataField: 'm01',
 
-                }]
-            },
-            {
-                caption: 'Riwayat Rombongan Belajar',
-                columns: [{
-                    caption: 'Usia',
-                    dataField: 'N01',
-
-                }, {
-                    caption: 'Status',
-                    dataField: 'N02',
-
-                }, {
-                    caption: 'Nomor Dokumen Non Aktif',
-                    dataField: 'N03',
-
-                }, {
-                    caption: 'Tertanggal Non Aktif',
-                    dataField: 'N04',
-                    dataType: 'date',
-                    format: "dd MMMM yyyy",
-
-                }, {
-                    caption: 'Satuan Pendidikan Lanjutan',
-                    dataField: 'N05',
                 }]
             }
+            // {
+            //     caption: 'Riwayat Rombongan Belajar',
+            //     columns: [{
+            //         caption: 'Usia',
+            //         dataField: 'n01',
+
+            //     }, {
+            //         caption: 'Status',
+            //         dataField: 'n02',
+
+            //     }, {
+            //         caption: 'Nomor Dokumen Non Aktif',
+            //         dataField: 'n03',
+
+            //     }, {
+            //         caption: 'Tertanggal Non Aktif',
+            //         dataField: 'n04',
+            //         dataType: 'date',
+            //         format: "dd MMMM yyyy",
+
+            //     }, {
+            //         caption: 'Satuan Pendidikan Lanjutan',
+            //         dataField: 'n05',
+            //     }]
+            // }
         ],
 
         _SumIDRombel = {
@@ -492,6 +499,48 @@ $(function () {
             groupItems: [_SumIDRombel],
             totalItems: [_SumIDRombel]
         },
+
+        //===============================================================================
+        _TbInfoRombel = [
+            {
+                caption: 'Riwayat Rombongan Belajar',
+                columns: [
+                    {
+                        caption: 'NIPD',
+                        dataField: 'B01',
+                        visible: false,
+                        // groupIndex: 0
+                        // // hidingPriority: 1,
+                    }, {
+                        caption: 'ID Rombel',
+                        dataField: 'A01',
+                        sortOrder: 'asc',
+                        // hidingPriority: 0,
+                    }, {
+                        caption: 'Usia',
+                        dataField: 'N01',
+
+                    }, {
+                        caption: 'Status',
+                        dataField: 'N02',
+
+                    }, {
+                        caption: 'Nomor Dokumen Non Aktif',
+                        dataField: 'N03',
+
+                    }, {
+                        caption: 'Tertanggal Non Aktif',
+                        dataField: 'N04',
+                        dataType: 'date',
+                        format: "dd MMMM yyyy",
+
+                    }, {
+                        caption: 'Satuan Pendidikan Lanjutan',
+                        dataField: 'N05',
+                    }
+                ]
+            }
+        ],
 
         //===============================================================================
         _InformasiDataIndukSiswa = $('#InformasiDataIndukSiswa').dxDataGrid({
@@ -617,6 +666,143 @@ $(function () {
             // sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
             summary: _TBSummaryInfo,
             //toolbar: undefined,
+            masterDetail: {
+                enabled: true,
+                template(container, options) {
+                    $("<div>").dxDataGrid({
+                        dataSource: 'data/InformasiRombonganBelajar.json',
+                        //============
+                        // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
+                        //   jsondata = jsondata.filter(function (obj) {
+                        //     return obj.A01.includes(options.data.A01);
+                        //   });
+                        // }),
+                        //============
+                        // dataSource: DevExpress.data.query($.getJSON("./data/InformasiDataIndukSiswa.json")
+                        // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
+                        //     .sortBy("birthYear")
+                        //     .select("name", "birthYear")
+                        //     .toArray()
+                        // ),
+                        columns: _TbInfoRombel,
+                        filterValue: [["B01", "=", options.data.b01]],
+                        showBorders: true,
+                        showColumnHeaders: true,
+                        showColumnLines: true,
+                        showRowLines: true,
+                        columnHidingEnabled: false,
+                        allowColumnReordering: true,
+                        allowColumnResizing: true,
+                        columnResizingMode: 'widget',
+                        columnAutoWidth: true,
+                        wordWrapEnabled: false,
+                        columnChooser: {
+                            allowSearch: false,
+                            //emptyPanelText:"Drag a column here to hide it",
+                            enabled: true,
+                            //height:260,
+                            mode: "select",
+                            //searchTimeout:500,
+                            sortOrder: undefined,
+                            title: "Column Chooser",
+                            //width:250,
+                        },
+                        columnFixing: {
+                            enabled: true,
+                        },
+                        hoverStateEnabled: false,
+                        paging: {
+                            pageSize: 5,
+                        },
+                        pager: {
+                            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
+                            displayMode: "compact",
+                            showInfo: true,
+                            showNavigationButtons: true,
+                            showPageSizeSelector: true,
+                            visible: true,
+                        },
+                        editing: {
+                            mode: 'row',
+                            allowUpdating: false,
+                            allowAdding: false,
+                            allowDeleting: false,
+                            confirmDelete: true,
+                            useIcons: true,
+                        },
+                        export: {
+                            enabled: true,
+                            formats: ['xlsx', 'pdf'],
+                            allowExportSelectedData: true,
+                        },
+                        onExporting(e) {
+                            if (e.format === 'xlsx') {
+                                const workbook = new ExcelJS.Workbook();
+                                const worksheet = workbook.addWorksheet('Report');
+                                DevExpress.excelExporter.exportDataGrid({
+                                    component: e.component,
+                                    worksheet,
+                                    autoFilterEnabled: true,
+                                }).then(() => {
+                                    workbook.xlsx.writeBuffer().then((buffer) => {
+                                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
+                                    });
+                                });
+                                e.cancel = true;
+                            }
+                            else if (e.format === 'pdf') {
+                                const doc = new jsPDF('l', 'pt');
+                                DevExpress.pdfExporter.exportDataGrid({
+                                    jsPDFDocument: doc,
+                                    component: e.component,
+                                }).then(() => {
+                                    doc.save('report.pdf');
+                                });
+                            }
+                        },
+
+                        remoteOperations: false,
+                        scrolling: {
+                            columnRenderingMode: "standard",
+                            mode: "standard",
+                            preloadEnabled: false,
+                            renderAsync: undefined,
+                            rowRenderingMode: "standard",
+                            scrollByContent: true,
+                            scrollByThumb: true,
+                            showScrollbar: "onHover",
+                            useNative: false
+                        },
+                        sorting: {
+                            mode: 'multiple',
+                        },
+                        searchPanel: {
+                            visible: true,
+                            highlightCaseSensitive: false,
+                        },
+                        selection: {
+                            allowSelectAll: true,
+                            deferred: false,
+                            mode: "multiple",
+                            selectAllMode: "allPages",
+                            showCheckBoxesMode: "click"
+                        },
+                        filterRow: { visible: true },
+                        filterPanel: { visible: false },
+                        headerFilter: { visible: false },
+                        groupPanel: { visible: false },
+                        grouping: {
+                            autoExpandAll: true,
+                        },
+                        wordWrapEnabled: false,
+                        //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+                        //summary: _TBSummaryDashboard,
+                        //toolbar: undefined,
+                        rowAlternationEnabled: false,
+
+                    }).appendTo(container);
+                }
+            },
         }).dxDataGrid('instance');
 
 });

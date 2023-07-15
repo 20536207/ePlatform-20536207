@@ -15,7 +15,7 @@
                 "id": "01-02",
                 "text": "Peserta Didik",
                 "icon": "tags",
-                "badge": "new",
+                "badge": "",
                 "disabled": false,
                 "visible": true,
                 "target": "./pages/Dashboard/DashboardPesertaDidik.html"

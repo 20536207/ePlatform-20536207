@@ -1,14 +1,18 @@
 //=========================================================================================================
 $(function () {
     var
-        _TbDataSiswa = [
+        _TbInfoRombel = [
             {
                 caption: 'Identitas Peserta Didik',
                 fixed: true,
                 columns: [
                     {
-                        caption: 'Rombel',
+                        caption: 'Tahun Akademik',
                         dataField: 'A02',
+                        groupIndex: 0,
+                    }, {
+                        caption: 'Rombel',
+                        dataField: 'A03',
                         groupIndex: 0,
                     }, {
                         caption: 'ID Rombel',
@@ -514,7 +518,7 @@ $(function () {
             columnFixing: {
                 enabled: true,
             },
-            columns: _TbDataSiswa,
+            columns: _TbInfoRombel,
 
             dataSource: './data/InformasiRombonganBelajar.json',
 
