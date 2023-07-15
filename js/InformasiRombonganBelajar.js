@@ -1,7 +1,7 @@
 //=========================================================================================================
 $(function () {
     var
-        _TbInfoRombel = [
+        _TbDataRombel = [
             {
                 caption: 'Identitas Peserta Didik',
                 fixed: true,
@@ -518,7 +518,7 @@ $(function () {
             columnFixing: {
                 enabled: true,
             },
-            columns: _TbInfoRombel,
+            columns: _TbDataRombel,
 
             dataSource: './data/InformasiRombonganBelajar.json',
 

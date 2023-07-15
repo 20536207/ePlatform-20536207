@@ -24,7 +24,7 @@ $(function () {
                     {
                         caption: 'NIPD',
                         dataField: 'b01',
-                        // groupIndex: 0
+                        sortOrder: 'asc',
                         // // hidingPriority: 1,
                     }, {
                         caption: 'NISN',
@@ -501,7 +501,7 @@ $(function () {
         },
 
         //===============================================================================
-        _TbInfoRombel = [
+        _TbDataRombel = [
             {
                 caption: 'Riwayat Rombongan Belajar',
                 columns: [
@@ -684,7 +684,7 @@ $(function () {
                         //     .select("name", "birthYear")
                         //     .toArray()
                         // ),
-                        columns: _TbInfoRombel,
+                        columns: _TbDataRombel,
                         filterValue: [["B01", "=", options.data.b01]],
                         showBorders: true,
                         showColumnHeaders: true,
@@ -712,7 +712,7 @@ $(function () {
                         },
                         hoverStateEnabled: false,
                         paging: {
-                            pageSize: 5,
+                            pageSize: 'null',
                         },
                         pager: {
                             allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
@@ -720,7 +720,7 @@ $(function () {
                             showInfo: true,
                             showNavigationButtons: true,
                             showPageSizeSelector: true,
-                            visible: true,
+                            visible: false,
                         },
                         editing: {
                             mode: 'row',
