@@ -1,113 +1,139 @@
 [
-    {
-      "id": 1,
-      "dev": "SD NEGERI TISNONEGARAN 1",
-      "detail": "Satuan Pendidikan Dasar",
-      "items": [
-        {
-          "product": "Database Peserta Didik",
-          "detail": "Manajemen Database Internal Peserta Didik",
-          "icon": "./images/home/windows.png",
-          "target": "https://docs.google.com/spreadsheets/d/1wRpAJIQs6rzrlq_dGzuInUGk5Hb4BLwDdeN6MRdtE6g/edit?usp=sharing"
-        },{
-          "product": "Database Pegawai",
-          "detail": "Manajemen Database Internal Kepegawaian",
-          "icon": "./images/home/windows.png",
-          "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo/edit?usp=sharing"
-        }, {
-          "product": "Dapodik",
-          "detail": "Manajemen Data Pokok Pendidikan",
-          "icon": "./images/home/homelinkedplatform/dapodik.png",
-          "target": "http://20536207.ip-dynamic.com:5774"
-        },{
-          "product": "e-Rapor SD-KM",
-          "detail": "Manajemen Nilai Rapor Peserta Didik Kurikulum Merdeka",
-          "icon": "./images/home/homelinkedplatform/eraporsdkm.png",
-          "target": "http://20536207.ip-dynamic.com:7231"
-        },{
-          "product": "e-Rapor SP",
-          "detail": "Manajemen Nilai Rapor Peserta Didik Sekolah Penggerak",
-          "icon": "./images/home/homelinkedplatform/eraporsp.png",
-          "target": "http://20536207.ip-dynamic.com:7252"
-        }
-      ]
-    },{
-      "id": 2,
-      "dev": "DINAS PENDIDIKAN DAN KEBUDAYAAN",
-      "detail": "Satuan Kerja Perangkat Daerah",
-      "items": [
-        {
-          "product": "SI-IJOL",
-          "detail": "Manajemen Sistem Informasi Ijasah Online",
-          "icon": "./images/home/homelinkedplatform/siijol.png",
-          "target": "https://siijol.probolinggokota.go.id"
-        }
-      ]
-    },{
-      "id": 3,
-      "dev": "BKPSDM",
-      "detail": "Badan Kepegawaian dan Pengembangan Sumber Daya Manusia",
-      "items": [
-        {
-          "product": "SIMPEG",
-          "detail": "Manajemen Sistem Informasi Pegawai Kota Probolinggo",
-          "icon": "./images/home/homelinkedplatform/simpeg.png",
-          "target": "https://simpeg.probolinggokota.go.id/lite/4.4/index.php/login/index/Dashboard"
-        },{
-          "product": "G-Kinerja",
-          "detail": "Manajemen Sistem Informasi Pegawai Kota Probolinggo",
-          "icon": "./images/home/homelinkedplatform/gkinerja.png",
-          "target": "https://e-pasprohandal.probolinggokota.go.id"
-        },{
-          "product": "SIAP",
-          "detail": "Manajemen Sistem Informasi Absensi Presensi Pegawai",
-          "icon": "./images/home/homelinkedplatform/siap.png",
-          "target": "https://siap.probolinggokota.go.id"
-        }
-      ]
-    },{
-      "id": 4,
-      "dev": "BPPKAD",
-      "detail": "Badan Pendapatan, Pengelolaan Keuangan dan Aset Daerah",
-      "items": [
-        {
-          "product": "SIMRAL",
-          "detail": "Manajemen Sistem Informasi Perencanaan, Penganggaran dan Pelaporan",
-          "icon": "./images/home/homelinkedplatform/simral.png",
-          "target": "https://simral.probolinggokota.go.id/2021/"
-        },{
-          "product": "SIMPATDA",
-          "detail": "Manajemen Sistem Pendapatan Asli Daerah",
-          "icon": "./images/home/homelinkedplatform/simpatda.png",
-          "target": "http://esptpd.probolinggokota.go.id/"
-        }
-      ]
-    },{
-      "id": 5,
-      "dev": "KEMENDIKBUD RISTEK",
-      "detail": "Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi",
-      "items": [
-        {
-          "product": "Dapodik SP",
-          "detail": "Manajemen Integrasi pengelolaan data pokok satuan satuan pendidikan",
-          "icon": "./images/home/homelinkedplatform/dapodik-sp.png",
-          "target": "https://sp.datadik.kemdikbud.go.id"
-        },{
-          "product": "Dapodik PTK",
-          "detail": "Manajemen Integrasi pengelolaan data pokok satuan satuan pendidikan",
-          "icon": "./images/home/homelinkedplatform/dapodik-ptk.png",
-          "target": "https://ptk.datadik.kemdikbud.go.id"
-        },{
-          "product": "Verval SP",
-          "detail": "Manajemen Verifikasi Validasi data pokok satuan satuan pendidikan",
-          "icon": "./images/home/homelinkedplatform/dapodik-vervalsp.png",
-          "target": "https://vervalsp.data.kemdikbud.go.id"
-        },{
-          "product": "Verval PTK",
-          "detail": "Manajemen Verifikasi Validasi data pokok Pendidik dan Tenaga Kependidikan",
-          "icon": "./images/home/homelinkedplatform/dapodik-vervalptk.png",
-          "target": "https://vervalptk.data.kemdikbud.go.id"
-        }
-      ]
-    }
-  ]
+  {
+    "id": 1,
+    "dev": "SD NEGERI TISNONEGARAN 1",
+    "detail": "Satuan Pendidikan Dasar",
+    "items": [
+      {
+        "product": "Database Peserta Didik",
+        "detail": "Manajemen Database Internal Peserta Didik",
+        "icon": "./images/home/windows.png",
+        "target": "https://docs.google.com/spreadsheets/d/1wRpAJIQs6rzrlq_dGzuInUGk5Hb4BLwDdeN6MRdtE6g/edit?usp=sharing"
+      },
+      {
+        "product": "Database Pegawai",
+        "detail": "Manajemen Database Internal Kepegawaian",
+        "icon": "./images/home/windows.png",
+        "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo/edit?usp=sharing"
+      },
+      {
+        "product": "Dapodik",
+        "detail": "Manajemen Data Pokok Pendidikan",
+        "icon": "./images/home/homelinkedplatform/dapodik.png",
+        "target": "http://20536207.ip-dynamic.com:5774"
+      },
+      {
+        "product": "e-Rapor SD-KM",
+        "detail": "Manajemen Nilai Rapor Peserta Didik Kurikulum Merdeka",
+        "icon": "./images/home/homelinkedplatform/eraporsdkm.png",
+        "target": "http://20536207.ip-dynamic.com:7231"
+      },
+      {
+        "product": "e-Rapor SP",
+        "detail": "Manajemen Nilai Rapor Peserta Didik Sekolah Penggerak",
+        "icon": "./images/home/homelinkedplatform/eraporsp.png",
+        "target": "http://20536207.ip-dynamic.com:7252"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "dev": "DINAS PENDIDIKAN DAN KEBUDAYAAN",
+    "detail": "Satuan Kerja Perangkat Daerah",
+    "items": [
+      {
+        "product": "SI-IJOL",
+        "detail": "Manajemen Sistem Informasi Ijasah Online",
+        "icon": "./images/home/homelinkedplatform/siijol.png",
+        "target": "https://siijol.probolinggokota.go.id"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "dev": "BKPSDM",
+    "detail": "Badan Kepegawaian dan Pengembangan Sumber Daya Manusia",
+    "items": [
+      {
+        "product": "SIMPEG",
+        "detail": "Manajemen Sistem Informasi Pegawai Kota Probolinggo",
+        "icon": "./images/home/homelinkedplatform/simpeg.png",
+        "target": "https://simpeg.probolinggokota.go.id/lite/4.4/index.php/login/index/Dashboard"
+      },
+      {
+        "product": "G-Kinerja",
+        "detail": "Manajemen Sistem Informasi Pegawai Kota Probolinggo",
+        "icon": "./images/home/homelinkedplatform/gkinerja.png",
+        "target": "https://e-pasprohandal.probolinggokota.go.id"
+      },
+      {
+        "product": "SIAP",
+        "detail": "Manajemen Sistem Informasi Absensi Presensi Pegawai",
+        "icon": "./images/home/homelinkedplatform/siap.png",
+        "target": "https://siap.probolinggokota.go.id"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "dev": "BPPKAD",
+    "detail": "Badan Pendapatan, Pengelolaan Keuangan dan Aset Daerah",
+    "items": [
+      {
+        "product": "SIMRAL",
+        "detail": "Manajemen Sistem Informasi Perencanaan, Penganggaran dan Pelaporan",
+        "icon": "./images/home/homelinkedplatform/simral.png",
+        "target": "https://simral.probolinggokota.go.id/2021/"
+      },
+      {
+        "product": "SIMPATDA",
+        "detail": "Manajemen Sistem Pendapatan Asli Daerah",
+        "icon": "./images/home/homelinkedplatform/simpatda.png",
+        "target": "http://esptpd.probolinggokota.go.id/"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "dev": "KEMENDIKBUD RISTEK",
+    "detail": "Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi",
+    "items": [
+      {
+        "product": "DAPODIK-SP",
+        "detail": "Integrasi pengelolaan Dapodik satuan pendidikan",
+        "icon": "./images/home/homelinkedplatform/dapodik-sp.png",
+        "target": "https://sp.datadik.kemdikbud.go.id"
+      },
+      {
+        "product": "DAPODIK-PTK",
+        "detail": "Integrasi pengelolaan Dapodik PTK",
+        "icon": "./images/home/homelinkedplatform/dapodik-ptk.png",
+        "target": "https://ptk.datadik.kemdikbud.go.id"
+      },
+      {
+        "product": "DAPODIK-PD",
+        "detail": "Integrasi pengelolaan Dapodik Peserta Didik",
+        "icon": "./images/home/homelinkedplatform/dapodik-pd.png",
+        "target": "https://pd.data.kemdikbud.go.id"
+      },
+      {
+        "product": "Verval-SP",
+        "detail": "Manajemen Verifikasi Validasi data pokok satuan satuan pendidikan",
+        "icon": "./images/home/homelinkedplatform/dapodik-vervalsp.png",
+        "target": "https://vervalsp.data.kemdikbud.go.id"
+      },
+      {
+        "product": "Verval-PTK",
+        "detail": "Manajemen Verifikasi Validasi data pokok Pendidik dan Tenaga Kependidikan",
+        "icon": "./images/home/homelinkedplatform/dapodik-vervalptk.png",
+        "target": "https://vervalptk.data.kemdikbud.go.id"
+      },
+      {
+        "product": "Verval-PD",
+        "detail": "Manajemen Verifikasi Validasi data Peserta Didik",
+        "icon": "./images/home/homelinkedplatform/dapodik-vervalpd.png",
+        "target": "https://vervalpd.data.kemdikbud.go.id/"
+      }
+    ]
+  }
+]

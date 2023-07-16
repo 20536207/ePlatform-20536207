@@ -1,21 +1,22 @@
 $(() => {
-    _ViewHome = $('#HomePagesHome').dxResponsiveBox({
-        rows: [
-            { ratio: 0, screen: 'sm lg' }, //01
-            { ratio: 0, screen: 'sm lg' }, //02
-            { ratio: 0, screen: 'sm lg' }, //03
-            { ratio: 0, screen: 'sm lg' }, //04
-            { ratio: 1, screen: 'sm lg' }, //05
-        ],
-        cols: [
-            { ratio: 3 },
-            { ratio: 1, screen: 'lg' },
-        ],
-        singleColumnScreen: 'sm',
-        screenByWidth(width) {
-            return (width < 601) ? 'sm' : 'lg';
-        },
-    })
+    _ViewHome = $('#HomePagesHome')
+        .dxResponsiveBox({
+            rows: [
+                { ratio: 0, screen: 'sm lg' }, //01
+                { ratio: 0, screen: 'sm lg' }, //02
+                { ratio: 0, screen: 'sm lg' }, //03
+                { ratio: 0, screen: 'sm lg' }, //04
+                { ratio: 1, screen: 'sm lg' }, //05
+            ],
+            cols: [
+                { ratio: 3 },
+                { ratio: 1, screen: 'lg' },
+            ],
+            singleColumnScreen: 'sm',
+            screenByWidth(width) {
+                return (width < 601) ? 'sm' : 'lg';
+            },
+        })
         .dxScrollView({
             scrollByContent: true,
             scrollByThumb: true,
@@ -58,26 +59,26 @@ $(() => {
         },
     });
 
-    _ListPlatform = $("<div>").dxList({
-        dataSource: "./data/HomeLinkedPlatform.json",
-        focusStateEnabled: false,
-        activeStateEnabled: false,
-        grouped: true,
-        collapsibleGroups: false,
-        showSelectionControls: false,
-        useNativeScrolling: false,
-        groupTemplate(data) {
-            return $(`<div style="color: rgba(28, 168, 221, 1)">${data.dev}</div>`);
-        },
-        itemTemplate(data) {
-            return $(`<div>${data.product}</div>`);
-        },
-        width: '100%',
-        selectionMode: "none",
-        onItemClick(e) {
-            window.open(e.itemData.target, '_blank')
-        },
-    });
+    // _ListPlatform = $("<div>").dxList({
+    //     dataSource: "./data/HomeLinkedPlatform.json",
+    //     focusStateEnabled: false,
+    //     activeStateEnabled: false,
+    //     grouped: true,
+    //     collapsibleGroups: false,
+    //     showSelectionControls: false,
+    //     useNativeScrolling: false,
+    //     groupTemplate(data) {
+    //         return $(`<div style="color: rgba(28, 168, 221, 1)">${data.dev}</div>`);
+    //     },
+    //     itemTemplate(data) {
+    //         return $(`<div>${data.product}</div>`);
+    //     },
+    //     width: '100%',
+    //     selectionMode: "none",
+    //     onItemClick(e) {
+    //         window.open(e.itemData.target, '_blank')
+    //     },
+    // });
 
     _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxMultiView({
         dataSource: "./data/HomeLinkedPlatform.json",
@@ -86,9 +87,9 @@ $(() => {
                 $('.HomeLinkedPlatform-item-count').text(jsondata.length);
             });
         },
-        selectedIndex: 0,
-        loop: true,
-        animationEnabled: true,
+        // selectedIndex: 0,
+        // loop: true,
+        // animationEnabled: true,
         onSelectionChanged(e) {
             $('.selected-index')
                 .text(e.component.option('selectedIndex') + 1);
