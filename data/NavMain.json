@@ -3,6 +3,15 @@
         "key": "Dashboard",
         "items": [
             {
+                "id": "01-00",
+                "text": "File Storage",
+                "icon": "tags",
+                "badge": "new",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Dashboard/DashboardFileStorage.hmtl"
+            },
+            {
                 "id": "01-01",
                 "text": "Profil Sekolah",
                 "icon": "tags",

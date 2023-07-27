@@ -2583,6 +2583,10 @@ $(function () {
                 selectAllMode: "allPages",
                 showCheckBoxesMode: "click"
             },
+            // onSelectionChanged(e) {
+            //     e.component.collapseAll(-1);
+            //     e.component.expandRow(e.currentSelectedRowKeys[0]);
+            //   },
             showBorders: true,
             showColumnHeaders: true,
             showColumnLines: true,
