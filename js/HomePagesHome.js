@@ -88,7 +88,7 @@ $(() => {
             });
         },
         // selectedIndex: 0,
-        // loop: true,
+        loop: true,
         // animationEnabled: true,
         onSelectionChanged(e) {
             $('.selected-index')

@@ -1,0 +1,9 @@
+#DashboardFileStorage {
+    display: flex;
+    flex-direction: column;
+    overflow: none;
+    flex: 1 1 auto;
+    /* font-size: 2rem; */
+    height: 100%;
+    /* padding: 3px 5px 0 5px; */
+  }

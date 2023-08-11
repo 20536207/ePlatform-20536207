@@ -670,7 +670,7 @@ $(function () {
                 enabled: true,
                 template(container, options) {
                     $("<div>").dxDataGrid({
-                        dataSource: 'data/InformasiRombonganBelajar.json',
+                        dataSource: './data/InformasiRombonganBelajar.json',
                         //============
                         // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
                         //   jsondata = jsondata.filter(function (obj) {

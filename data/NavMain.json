@@ -9,7 +9,7 @@
                 "badge": "new",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/Dashboard/DashboardFileStorage.hmtl"
+                "target": "./pages/Dashboard/DashboardFileStorage.html"
             },
             {
                 "id": "01-01",
@@ -18,7 +18,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/Dashboard/DashboardProfilSekolah.hmtl"
+                "target": "./pages/Dashboard/DashboardProfilSekolah.html"
             },
             {
                 "id": "01-02",
@@ -36,7 +36,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/Dashboard/DashboardPegawai.hmtl"
+                "target": "./pages/Dashboard/DashboardPegawai.html"
             },
             {
                 "id": "01-04",
