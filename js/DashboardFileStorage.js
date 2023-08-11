@@ -90,13 +90,12 @@ $(function () {
 
     _UrlPathStorage =
       new DevExpress.fileManagement.RemoteFileSystemProvider({
-        endpointUrl: 'https://drive.google.com/drive/folders/1jRia9a9LhFbNTLMGhKDK7bm0fOq2CBJ4',
-        //'https://js.devexpress.com/Demos/Mvc/api/file-manager-file-system-scripts',
+        endpointUrl: 'https://js.devexpress.com/Demos/Mvc/api/file-manager-file-system-scripts',
       });
 
   _DashboardFileStorage = $('#DashboardFileStorage').dxFileManager({
     name: 'File-Manager',
-    fileSystemProvider: _UrlPathStorage,
+    fileSystemProvider: _DataFileStorage,
     height: '100%',
     permissions: {
       create: true,
