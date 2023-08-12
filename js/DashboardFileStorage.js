@@ -91,20 +91,20 @@ $(function () {
     _UrlPathStorage =
       new DevExpress.fileManagement.RemoteFileSystemProvider({
         endpointUrl: 'https://js.devexpress.com/Demos/Mvc/api/file-manager-file-system-scripts',
-      });
+      }),
 
-  _DashboardFileStorage = $('#DashboardFileStorage').dxFileManager({
-    name: 'File-Manager',
-    fileSystemProvider: _DataFileStorage,
-    height: '100%',
-    permissions: {
-      create: true,
-      copy: true,
-      move: true,
-      delete: true,
-      rename: true,
-      upload: true,
-      download: true,
-    },
-  }).dxFileManager('instance');
+    _DashboardFileStorage = $('#DashboardFileStorage').dxFileManager({
+      name: 'File-Manager',
+      fileSystemProvider: _UrlPathStorage,
+      height: '99%',
+      permissions: {
+        create: true,
+        copy: true,
+        move: true,
+        delete: true,
+        rename: true,
+        upload: true,
+        download: true,
+      },
+    }).dxFileManager('instance');
 })
