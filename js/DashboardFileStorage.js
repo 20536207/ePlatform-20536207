@@ -96,7 +96,7 @@ $(function () {
     _DashboardFileStorage = $('#DashboardFileStorage').dxFileManager({
       name: 'File-Manager',
       fileSystemProvider: _UrlPathStorage,
-      height: '99%',
+      height: '98%',
       permissions: {
         create: true,
         copy: true,
