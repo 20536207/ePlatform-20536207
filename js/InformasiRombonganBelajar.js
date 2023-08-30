@@ -480,6 +480,58 @@ $(function () {
                     caption: 'Satuan Pendidikan Lanjutan',
                     dataField: 'N05',
                 }]
+            },
+            {
+                caption: 'Verval Peserta Didik',
+                columns: [{
+                    caption: 'NISN',
+                    dataField: 'O01',
+
+                }, {
+                    caption: 'Nama',
+                    dataField: 'O02',
+
+                }, {
+                    caption: 'NIK',
+                    dataField: 'O03',
+
+                }, {
+                    caption: 'Tempat Lahir',
+                    dataField: 'O04',
+
+                }, {
+                    caption: 'Tanggal Lahir',
+                    dataField: 'O05',
+
+                }]
+            },
+            {
+                caption: 'Verval Ibu Kandung',
+                columns: [{
+                    caption: 'Nama',
+                    dataField: 'P01',
+
+                }, {
+                    caption: 'NIK',
+                    dataField: 'P02',
+
+                }]
+            },
+            {
+                caption: 'Verval Ayah Kandung',
+                columns: [{
+                    caption: 'Nama',
+                    dataField: 'Q01',
+
+                }, {
+                    caption: 'NIK',
+                    dataField: 'Q02',
+
+                }]
+            },
+            {
+                caption: 'Status Verval',
+                dataField: 'R01',
             }
         ],
 
