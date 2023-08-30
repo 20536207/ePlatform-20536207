@@ -33,12 +33,6 @@
         "detail": "Manajemen Nilai Rapor Peserta Didik Sekolah Penggerak",
         "icon": "./images/home/homelinkedplatform/eraporsp.png",
         "target": "http://20536207.ip-dynamic.com:7252"
-      },
-      {
-        "product": "Benahi Data Peserta Didik",
-        "detail": "Identifikasi - Benahi Data Peserta Didik",
-        "icon": "./images/home/windows.png",
-        "target": "https://bit.ly/20536207_VervalToDapodik"
       }
     ]
   },
