@@ -151,7 +151,13 @@
         "product": "e-Kinerja",
         "detail": "Platform Pengelolaan eKinerja ASN",
         "icon": "./images/home/homelinkedplatform/ekinerja.png",
-        "target": "https://kinerja.bkn.go.id/"
+        "target": "https://kinerja.bkn.go.id"
+      },
+      {
+        "product": "DISPAKATI",
+        "detail": "Platform Penilaian Angka Kredit",
+        "icon": "./images/home/homelinkedplatform/dispakati.png",
+        "target": "https://dispakati.bkn.go.id"
       }
 
     ]
