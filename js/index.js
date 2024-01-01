@@ -28,66 +28,7 @@ $(document).ready(function () {
     },
   };
 
-  _popup = function () {
-    $("<div>").dxPopup({
-      contentTemplate: function () {
-        return $("<div id='Gallerian' />").dxGallery({
-          dataSource: [
-            'images/001.jpg',
-            'images/002.jpg',
-            'images/003.jpg',
-          ],
-          loop: true,
-          slideshowDelay: 2000,
-          showNavButtons: false,
-          showIndicator: false,
-        })
-          .dxScrollView({
-            height: "100%",
-            width: "100%"
-          });
-      },
-      hideOnOutsideClick: true,
-      hideOnParentScroll: true,
-      showTitle: true,
-      title: "Information",
-      resizeEnabled: false,
-      dragEnabled: false,
-      position: { my: 'center', at: 'center', collision: 'fit' },
-      width: 325,
-      height: 265,
-      visible: true,
-    }).dxPopup("instance");
-  };
-
-  _ActionSheet = $('#ActionSheet').dxActionSheet({
-    dataSource: undefined,
-    title: null,
-    showTitle: true,
-    showCancelButton: true,
-    visible: false,
-    usePopover: true,
-    width: undefined,
-    onCancelClick() {
-      this.option('dataSource', undefined);
-      this.option('title', null);
-      return false;
-    },
-    onItemClick(value) {
-      DevExpress.ui.notify(
-        {
-          message: value.itemData.text,
-          maxWidth: 300,
-          displayTime: 1000,
-          animation: {
-            show: { type: 'fade', duration: 400, from: 0, to: 1 },
-            hide: { type: 'fade', duration: 40, to: 0 },
-          },
-        },
-        { position: "top right", direction: "down-push" }
-      );
-    }
-  }).dxActionSheet('instance');
+  
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
@@ -234,85 +175,11 @@ $(document).ready(function () {
           return $("<div class='Page-Title'>" + e.text + "</div>");
         },
       }
-      // ,{
-      //   widget: 'dxButton',
-      //   location: 'after',
-      //   locateInMenu: 'never',
-      //   cssClass: undefined,
-      //   text: null,
-      //   visible: true,
-      //   options: {
-      //     text: 'locked',
-      //     icon: 'lock',
-      //     // template: '<div class="fas fa-lock"></div>',
-      //     hoverStateEnabled: true,
-      //     focusStateEnabled: false,
-      //     activeStateEnabled: true,
-      //     selectionMode: 'none',
-      //     type: 'normal',
-      //     stylingMode: "text",
-      //     // height: undefined,
-      //     // width: undefined,
-      //     onClick() {
-      //       // _LayoutContains.toggle();
-      //     },
-      //   }
-      // }
+      
     ],
   }).dxToolbar('instance');
 
-  // const _PageContains = $('#PageContains').dxScrollView({
-  //   direction: 'both',
-  //   scrollByContent: true,
-  //   scrollByThumb: true,
-  //   showScrollbar: 'onHover',
-  //   usenative: true,
-  //   width: 'inherit',
-  //   height: 'inherit',
-  // }).dxScrollView('instance');
-
-  //========================================================================================================
-  // _LayoutFooter = $('#LayoutFooter').dxTabs({
-  //   dataSource: "./data/NavTaskbar.json",
-  //   hoverStateEnabled: true,
-  //   focusStateEnabled: false,
-  //   selectionMode: 'none',
-  //   selectedIndex: -1,
-  //   onItemClick(e) { //itemData, itemIndex, itemElement
-  //     switch (e.itemIndex) {
-  //       case 0:
-  //         _LayoutContains.toggle();
-  //         break;
-  //       case 1:
-  //         $("#PageContains").load(e.itemData.loadpage);
-  //         _PageToolbar.option("items[0].text", e.itemData.text);
-  //         break;
-  //       case 2:
-  //         data = $.getJSON("./data/NavTaskbar.json", function (jsondata) {
-  //           jsondata.forEach((element, index) => {
-  //             DevExpress.ui.notify(item);
-  //           });
-  //         });
-  //         _PageToolbar.option("items[0].text", data.itemData.text);
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //     // if (e.itemIndex == 0) {
-  //     //   _LayoutContains.toggle();
-  //     // } else {
-  //     //   $("#PageContains").load(e.itemData.loadpage);
-  //     //   _PageToolbar.option("items[0].text", e.itemData.text);
-  //     // }
-
-  //     // _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
-  //     // _ActionSheet.option('target', e.itemElement);
-  //     // _ActionSheet.option('title', e.itemData.text);
-  //     // _ActionSheet.option('visible', true);
-  //     // _LayoutFooter.option('selectedIndex', -1);
-
-  //   },
-  // }).dxTabs('instance');
+  
 
   $("#PageContains").load("./pages/HomePagesHome.html");
 
