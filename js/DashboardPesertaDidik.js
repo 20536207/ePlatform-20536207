@@ -137,7 +137,7 @@ $(function () {
             alignment: 'left',
             columns: [
                 {
-                    caption: 'KIP',
+                    caption: 'PIP',
                     alignment: 'center',
                     columns: [{
                         caption: 'L',
