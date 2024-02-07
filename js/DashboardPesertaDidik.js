@@ -1032,7 +1032,7 @@ $(function () {
         }],
 
         //=========================================================================
-        _SumBestari = [{
+        _SumPendalungan = [{
             column: 'E13',
             summaryType: 'sum',
             showInGroupFooter: true,
@@ -1062,9 +1062,8 @@ $(function () {
                 return e.value <= 0 ? "-" : e.value;
             },
         }],
-
         //=========================================================================
-        _SumPYBK = [{
+        _SumBestari = [{
             column: 'E16',
             summaryType: 'sum',
             showInGroupFooter: true,
@@ -1094,9 +1093,8 @@ $(function () {
                 return e.value <= 0 ? "-" : e.value;
             },
         }],
-
         //=========================================================================
-        _SumUSP = [{
+        _SumPYBK = [{
             column: 'E19',
             summaryType: 'sum',
             showInGroupFooter: true,
@@ -1128,7 +1126,7 @@ $(function () {
         }],
 
         //=========================================================================
-        _SumRekomPIP = [{
+        _SumUSP = [{
             column: 'E22',
             summaryType: 'sum',
             showInGroupFooter: true,
@@ -1150,6 +1148,38 @@ $(function () {
         },
         {
             column: 'E24',
+            summaryType: 'sum',
+            showInGroupFooter: true,
+            alignByColumn: true,
+            displayFormat: '{0}',
+            customizeText: function (e) {
+                return e.value <= 0 ? "-" : e.value;
+            },
+        }],
+
+        //=========================================================================
+        _SumRekomPIP = [{
+            column: 'E25',
+            summaryType: 'sum',
+            showInGroupFooter: true,
+            alignByColumn: true,
+            displayFormat: '{0}',
+            customizeText: function (e) {
+                return e.value <= 0 ? "-" : e.value;
+            },
+        },
+        {
+            column: 'E26',
+            summaryType: 'sum',
+            showInGroupFooter: true,
+            alignByColumn: true,
+            displayFormat: '{0}',
+            customizeText: function (e) {
+                return e.value <= 0 ? "-" : e.value;
+            },
+        },
+        {
+            column: 'E27',
             summaryType: 'sum',
             showInGroupFooter: true,
             alignByColumn: true,
@@ -1893,6 +1923,7 @@ $(function () {
                 _SumPKH[0], _SumPKH[1], _SumPKH[2],
                 _SumKPS[0], _SumKPS[1], _SumKPS[2],
                 _SumKKS[0], _SumKKS[1], _SumKKS[2],
+                _SumPendalungan[0], _SumPendalungan[1], _SumPendalungan[2],
                 _SumBestari[0], _SumBestari[1], _SumBestari[2],
                 _SumPYBK[0], _SumPYBK[1], _SumPYBK[2],
                 _SumUSP[0], _SumUSP[1], _SumUSP[2],
@@ -1931,6 +1962,7 @@ $(function () {
                 _SumPKH[0], _SumPKH[1], _SumPKH[2],
                 _SumKPS[0], _SumKPS[1], _SumKPS[2],
                 _SumKKS[0], _SumKKS[1], _SumKKS[2],
+                _SumPendalungan[0], _SumPendalungan[1], _SumPendalungan[2],
                 _SumBestari[0], _SumBestari[1], _SumBestari[2],
                 _SumPYBK[0], _SumPYBK[1], _SumPYBK[2],
                 _SumUSP[0], _SumUSP[1], _SumUSP[2],
@@ -2678,13 +2710,13 @@ $(function () {
                         // }),
                         //============
                         // dataSource: DevExpress.data.query($.getJSON("./data/InformasiDataIndukSiswa.json")
-                            // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
+                        // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
                         //     .sortBy("birthYear")
                         //     .select("name", "birthYear")
                         //     .toArray()
                         // ),
                         columns: _TbInfoPd,
-                        filterValue: [["a01", "contains", options.data.A01],"and",["N02", "=", "Aktif"]],
+                        filterValue: [["a01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]],
                         showBorders: true,
                         showColumnHeaders: true,
                         showColumnLines: true,
