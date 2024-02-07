@@ -137,7 +137,7 @@ $(function () {
             alignment: 'left',
             columns: [
                 {
-                    caption: 'PIP',
+                    caption: 'KIP',
                     alignment: 'center',
                     columns: [{
                         caption: 'L',
@@ -209,7 +209,7 @@ $(function () {
                     }],
                 },
                 {
-                    caption: 'BESTARI',
+                    caption: 'PENDALUNGAN',
                     alignment: 'center',
                     columns: [{
                         caption: 'L',
@@ -227,7 +227,7 @@ $(function () {
                     }],
                 },
                 {
-                    caption: 'PYBK',
+                    caption: 'BESTARI',
                     alignment: 'center',
                     columns: [{
                         caption: 'L',
@@ -245,7 +245,7 @@ $(function () {
                     }],
                 },
                 {
-                    caption: 'USP',
+                    caption: 'PYBK',
                     alignment: 'center',
                     columns: [{
                         caption: 'L',
@@ -263,19 +263,37 @@ $(function () {
                     }],
                 },
                 {
+                    caption: 'USP',
+                    alignment: 'center',
+                    columns: [{
+                        caption: 'L',
+                        dataField: 'E22',
+                        alignment: 'center',
+
+                    }, {
+                        caption: 'P',
+                        dataField: 'E22',
+                        alignment: 'center',
+                    }, {
+                        caption: 'JML',
+                        dataField: 'E24',
+                        alignment: 'center',
+                    }],
+                },
+                {
                     caption: 'L',
-                    dataField: 'E22',
+                    dataField: 'E25',
                     alignment: 'center',
 
                 },
                 {
                     caption: 'P',
-                    dataField: 'E23',
+                    dataField: 'E26',
                     alignment: 'center',
                 },
                 {
                     caption: 'JML',
-                    dataField: 'E24',
+                    dataField: 'E27',
                     alignment: 'center',
                 }
             ]
