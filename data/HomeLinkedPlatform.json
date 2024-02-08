@@ -20,19 +20,19 @@
         "product": "Dapodik",
         "detail": "Manajemen Data Pokok Pendidikan",
         "icon": "./images/home/homelinkedplatform/dapodik.png",
-        "target": "http://20536207.ip-dynamic.com:5774"
+        "target": "http://10.144.238.171:5774"
       },
       {
         "product": "e-Rapor SD-KM",
         "detail": "Manajemen Rapor Kurikulum Merdeka",
         "icon": "./images/home/homelinkedplatform/eraporsdkm.png",
-        "target": "http://20536207.ip-dynamic.com:7231"
+        "target": "http://10.144.238.171:7231"
       },
       {
         "product": "e-Rapor SP",
         "detail": "Manajemen Rapor Alternatif",
         "icon": "./images/home/homelinkedplatform/eraporsp.png",
-        "target": "http://20536207.ip-dynamic.com:7252"
+        "target": "http://10.144.238.171:7252"
       }
     ]
   },
