@@ -37,6 +37,9 @@ $(function () {
                 columns: [{
                     caption: 'NIK',
                     dataField: 'C01',
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'No. Register',
                     dataField: 'C02',
@@ -76,7 +79,9 @@ $(function () {
                 columns: [{
                     caption: 'No. KK',
                     dataField: 'D01',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,14),"*".repeat(14));
+                    },
                 }, {
                     caption: 'Tertanggal',
                     dataField: 'D02',
@@ -130,7 +135,9 @@ $(function () {
                 }, {
                     caption: 'Nomor',
                     dataField: 'E02',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tertanggal',
                     dataField: 'E03',
@@ -202,7 +209,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'F04',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tempat Lahir',
                     dataField: 'F05',
@@ -254,7 +263,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'G04',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tempat Lahir',
                     dataField: 'G05',
@@ -310,7 +321,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'H05',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tempat Lahir',
                     dataField: 'H06',
@@ -340,7 +353,9 @@ $(function () {
                 columns: [{
                     caption: 'No. Telpon',
                     dataField: 'I01',
-
+                    format: function (value) {
+                        return value.replace(value.substr(3,5),"*".repeat(5));
+                    },
                 }, {
                     caption: 'Tinggi Badan (Cm)',
                     dataField: 'I02',
@@ -395,7 +410,9 @@ $(function () {
                 }, {
                     caption: 'Nomor Rekening PIP',
                     dataField: 'J03',
-
+                    format: function (value) {
+                        return value.replace(value.substr(3,10),"*".repeat(10));
+                    },
                 }, {
                     caption: 'Nama Bank PIP',
                     dataField: 'J04',
@@ -494,7 +511,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'O03',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tempat Lahir',
                     dataField: 'O04',
@@ -514,7 +533,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'P02',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }]
             },
             {
@@ -526,7 +547,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'Q02',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }]
             },
             {

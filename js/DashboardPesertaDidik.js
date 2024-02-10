@@ -2031,6 +2031,9 @@ $(function () {
                 columns: [{
                     caption: 'NIK',
                     dataField: 'c01',
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'No. Register',
                     dataField: 'c02',
@@ -2070,6 +2073,9 @@ $(function () {
                 columns: [{
                     caption: 'No. KK',
                     dataField: 'd01',
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
 
                 }, {
                     caption: 'Tertanggal',
@@ -2196,7 +2202,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'f04',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tempat Lahir',
                     dataField: 'f05',
@@ -2248,7 +2256,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'g04',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tempat Lahir',
                     dataField: 'g05',
@@ -2304,7 +2314,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'h05',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tempat Lahir',
                     dataField: 'h06',
@@ -2334,7 +2346,9 @@ $(function () {
                 columns: [{
                     caption: 'No. Telpon',
                     dataField: 'i01',
-
+                    format: function (value) {
+                        return value.replace(value.substr(3,5),"*".repeat(5));
+                    },
                 }, {
                     caption: 'Tinggi Badan (Cm)',
                     dataField: 'i02',
@@ -2389,7 +2403,9 @@ $(function () {
                 }, {
                     caption: 'Nomor Rekening PIP',
                     dataField: 'j03',
-
+                    format: function (value) {
+                        return value.replace(value.substr(3,10),"*".repeat(10));
+                    },
                 }, {
                     caption: 'Nama Bank PIP',
                     dataField: 'j04',
@@ -2488,7 +2504,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'o03',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }, {
                     caption: 'Tempat Lahir',
                     dataField: 'o04',
@@ -2508,7 +2526,9 @@ $(function () {
                 }, {
                     caption: 'NIK',
                     dataField: 'p02',
-
+                    format: function (value) {
+                        return value.replace(value.substr(1,13),"*".repeat(13));
+                    },
                 }]
             },
             {
