@@ -28,7 +28,7 @@ $(document).ready(function () {
     },
   };
 
-  
+
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
@@ -150,7 +150,7 @@ $(document).ready(function () {
           selectionMode: "single",
           onItemClick(e) {
 
-            // DevExpress.ui.notify(e.groupItem.key);
+            //DevExpress.ui.notify(e.itemData.text);
             _PageToolbar.option("items[0].text", e.itemData.text);
 
             _LayoutContains.toggle();
@@ -175,11 +175,11 @@ $(document).ready(function () {
           return $("<div class='Page-Title'>" + e.text + "</div>");
         },
       }
-      
+
     ],
   }).dxToolbar('instance');
 
-  
+
 
   $("#PageContains").load("./pages/HomePagesHome.html");
 
