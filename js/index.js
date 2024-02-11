@@ -79,13 +79,12 @@ $(document).ready(function () {
           stylingMode: "text",
           height: undefined,
           width: undefined,
-          items:
-            [
+          items: [
               {
                 text: "Home",
                 icon: "fas fa-home fa-2xl",
               },
-              { text: "Program", visible: false },
+              { text: "Program", visible: true },
               { text: "Dokumentasi", visible: false },
               { text: "Literasi", visible: false },
               { text: "Referensi", visible: false }
@@ -99,6 +98,7 @@ $(document).ready(function () {
           // buttonTemplate: function (itemData, itemElement) {
           //   return $(`<div>${itemData.key}</div>`);
           // },
+          
           onItemClick(e) {
             if (e.itemIndex == 0) {
               $.getJSON("./data/NavHeader.json", function (result) {
@@ -108,14 +108,14 @@ $(document).ready(function () {
 
             } else {
               $.getJSON("./data/NavHeader.json", function (result) {
-                //DevExpress.ui.notify(result[e.itemIndex].items);
-                _ActionSheet.option('dataSource', result[e.itemIndex].items);
-                //$("#PageContains").load(e.itemData.target);
 
-                //_ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
-                //_ActionSheet.option('width', $(window).width() < 600 ? undefined : 'auto');
-                //_ActionSheet.option('showTitle', $(window).width() < 600 ? true : false);
-                //_ActionSheet.option('target', e.itemElement);
+                _ActionSheet.option('dataSource', result[e.itemIndex].items);
+                // $("#PageContains").load(e.itemData.target);
+
+                _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
+                _ActionSheet.option('width', $(window).width() < 600 ? undefined : 'auto');
+                _ActionSheet.option('showTitle', $(window).width() < 600 ? true : false);
+                _ActionSheet.option('target', e.itemElement);
                 _ActionSheet.option('title', result[e.itemIndex].key);
                 _ActionSheet.option('visible', true);
               });
@@ -184,19 +184,12 @@ $(document).ready(function () {
       this.option('title', null);
       return false;
     },
-    onItemClick(value) {
-      DevExpress.ui.notify(
-        {
-          message: value.itemData.text,
-          maxWidth: 300,
-          displayTime: 1000,
-          animation: {
-            show: { type: 'fade', duration: 400, from: 0, to: 1 },
-            hide: { type: 'fade', duration: 40, to: 0 },
-          },
-        },
-        { position: "top right", direction: "down-push" }
-      );
+    onItemClick(e) {
+      _PageToolbar.option("items[0].text", e.itemData.text);
+
+      $("#PageContains").empty();
+      $("#PageContains").load(e.itemData["target"]);
+    
     }
   }).dxActionSheet('instance');
 

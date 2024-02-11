@@ -24,7 +24,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": "./pages/program/ProgramVisiDanMisi.html"
             },
             {
@@ -33,7 +33,7 @@
                 "icon": null,
                 "badge": null,
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": null,
                 "template": "<hr class='separator' />"
             },    
@@ -43,7 +43,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": "./pages/program/ProgramStandarKelulusan.html"
             },
             {
@@ -52,7 +52,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": "./pages/program/ProgramStandarIsi.html"
             },
             {
@@ -61,7 +61,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": "./pages/program/ProgramStandarProses.html"
             },
             {
@@ -70,7 +70,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": "./pages/program/ProgramStandarSaranaPrasarana.html"
             },
             {
@@ -79,7 +79,7 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": "./pages/program/ProgramStandarPTK.html"
             },
             {
@@ -88,26 +88,26 @@
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": "./pages/program/ProgramStandarPembiayaan.html"
             },
             {
                 "id": 8,
+                "text": "Standar Penilaian",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/program/ProgramStandarPenilaian.html"
+            },
+            {
+                "id": 9,
                 "text": "Standar Pengelolaan",
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
-                "visible": false,
+                "visible": true,
                 "target": "./pages/program/ProgramStandarPengelolaan.html"
-            },
-            {
-                "id": 9,
-                "text": "Standar Pembiayaan",
-                "icon": "tags",
-                "badge": "",
-                "disabled": false,
-                "visible": false,
-                "target": "./pages/program/ProgramStandarPembiayaan.html"
             }
         ]
     },
