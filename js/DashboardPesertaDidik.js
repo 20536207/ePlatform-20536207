@@ -2787,16 +2787,17 @@ $(function () {
                             allowExportSelectedData: true,
                         },
                         onExporting(e) {
+                            const _nmfile = 'Data Peserta Didik';
                             if (e.format === 'xlsx') {
                                 const workbook = new ExcelJS.Workbook();
-                                const worksheet = workbook.addWorksheet('Report');
+                                const worksheet = workbook.addWorksheet('Data');
                                 DevExpress.excelExporter.exportDataGrid({
                                     component: e.component,
                                     worksheet,
                                     autoFilterEnabled: true,
                                 }).then(() => {
                                     workbook.xlsx.writeBuffer().then((buffer) => {
-                                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
+                                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }),_nmfile+'.xlsx');
                                     });
                                 });
                                 e.cancel = true;
@@ -2807,7 +2808,7 @@ $(function () {
                                     jsPDFDocument: doc,
                                     component: e.component,
                                 }).then(() => {
-                                    doc.save('report.pdf');
+                                    doc.save(_nmfile+'.pdf');
                                 });
                             }
                         },
