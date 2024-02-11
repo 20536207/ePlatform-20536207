@@ -1,4 +1,5 @@
-;(function (root, factory, undef) {
+/* 
+function (root, factory, undef) {
 	if (typeof exports === "object") {
 		// CommonJS
 		module.exports = exports = factory(require("./core"), require("./enc-base64"), require("./md5"), require("./evpkdf"), require("./cipher-core"));
@@ -585,9 +586,7 @@
 	        0x0001f800, 0x00001f80, 0x000001f8, 0x8000001f
 	    ];
 
-	    /**
-	     * DES block cipher algorithm.
-	     */
+	  
 	    var DES = C_algo.DES = BlockCipher.extend({
 	        _doReset: function () {
 	            // Shortcuts
@@ -709,19 +708,10 @@
 	        this._rBlock ^= t << offset;
 	    }
 
-	    /**
-	     * Shortcut functions to the cipher's object interface.
-	     *
-	     * @example
-	     *
-	     *     var ciphertext = CryptoJS.DES.encrypt(message, key, cfg);
-	     *     var plaintext  = CryptoJS.DES.decrypt(ciphertext, key, cfg);
-	     */
+	 
 	    C.DES = BlockCipher._createHelper(DES);
 
-	    /**
-	     * Triple-DES block cipher algorithm.
-	     */
+	 
 	    var TripleDES = C_algo.TripleDES = BlockCipher.extend({
 	        _doReset: function () {
 	            // Shortcuts
@@ -762,14 +752,7 @@
 	        blockSize: 64/32
 	    });
 
-	    /**
-	     * Shortcut functions to the cipher's object interface.
-	     *
-	     * @example
-	     *
-	     *     var ciphertext = CryptoJS.TripleDES.encrypt(message, key, cfg);
-	     *     var plaintext  = CryptoJS.TripleDES.decrypt(ciphertext, key, cfg);
-	     */
+	  
 	    C.TripleDES = BlockCipher._createHelper(TripleDES);
 	}());
 
@@ -777,3 +760,4 @@
 	return CryptoJS.TripleDES;
 
 }));
+*/

@@ -51,7 +51,15 @@ $(document).ready(function () {
           stylingMode: "text",
           height: undefined,
           width: undefined,
-          onClick() {
+          onClick: () => {
+            // $("#popup").dxPopup({
+            //   // ...
+            //   showTitle: true,
+            //   title: "Information",
+            //   visble: true,
+            //   hideOnOutsideClick: true,
+            // });
+
             _LayoutContains.toggle();
           },
         }
@@ -98,21 +106,19 @@ $(document).ready(function () {
                 _PageToolbar.option("items[0].text", result[0].items[0].text);
               });
 
-              // DevExpress.ui.notify(GoEncrypt(pass, key));
-
             } else {
-              $.getJSON(
-                GoDecrypt("U2FsdGVkX19Mn/M47FB35sSQvPhOj1+LejvxpIUdeuC0gaMMaYrrxg==", "TripleDES"),
-                function (result) {
-                  _ActionSheet.option('dataSource', result[e.itemIndex].items);
-                });
-              // $("#PageContains").load(e.itemData.target);
-              _ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
-              _ActionSheet.option('width', $(window).width() < 600 ? undefined : 'auto');
-              _ActionSheet.option('showTitle', $(window).width() < 600 ? true : false);
-              _ActionSheet.option('target', e.itemElement);
-              _ActionSheet.option('title', e.itemData.text);
-              _ActionSheet.option('visible', true);
+              $.getJSON("./data/NavHeader.json", function (result) {
+                //DevExpress.ui.notify(result[e.itemIndex].items);
+                _ActionSheet.option('dataSource', result[e.itemIndex].items);
+                //$("#PageContains").load(e.itemData.target);
+
+                //_ActionSheet.option('usePopover', $(window).width() < 600 ? false : true);
+                //_ActionSheet.option('width', $(window).width() < 600 ? undefined : 'auto');
+                //_ActionSheet.option('showTitle', $(window).width() < 600 ? true : false);
+                //_ActionSheet.option('target', e.itemElement);
+                _ActionSheet.option('title', result[e.itemIndex].key);
+                _ActionSheet.option('visible', true);
+              });
             }
           },
         }
@@ -129,7 +135,7 @@ $(document).ready(function () {
     shading: $(window).width() < 600 ? true : false,
     closeOnOutsideClick: true,
     template() {
-      const _ListWidget = $("<div>").addClass('ContainsSidebar');
+      const _ListWidget = $("<div>");
       return _ListWidget
         .dxList({
           keyExpr: "key",
@@ -164,6 +170,37 @@ $(document).ready(function () {
     },
   }).dxDrawer('instance');
 
+  //===============================================================================
+  _ActionSheet = $('#ActionSheet').dxActionSheet({
+    dataSource: undefined,
+    title: null,
+    showTitle: true,
+    showCancelButton: true,
+    visible: false,
+    usePopover: true,
+    width: undefined,
+    onCancelClick() {
+      this.option('dataSource', undefined);
+      this.option('title', null);
+      return false;
+    },
+    onItemClick(value) {
+      DevExpress.ui.notify(
+        {
+          message: value.itemData.text,
+          maxWidth: 300,
+          displayTime: 1000,
+          animation: {
+            show: { type: 'fade', duration: 400, from: 0, to: 1 },
+            hide: { type: 'fade', duration: 40, to: 0 },
+          },
+        },
+        { position: "top right", direction: "down-push" }
+      );
+    }
+  }).dxActionSheet('instance');
+
+  //===============================================================================
   _PageToolbar = $('#PageToolbar').dxToolbar({
     items: [
       {
@@ -179,10 +216,25 @@ $(document).ready(function () {
     ],
   }).dxToolbar('instance');
 
+  //===============================================================================
+  _FormAuthentication = $("#form").dxForm({
+    formData: {
+      name: "John Heart",
+      officeNumber: 901,
+      hireDate: new Date(2012, 4, 13)
+    },
+    items: ["name", "officeNumber", {
+      dataField: "hireDate",
+      editorOptions: {
+        disabled: true
+      }
+    }]
+  });
 
-
+  //===============================================================================
   $("#PageContains").load("./pages/HomePagesHome.html");
 
+  //===============================================================================
   _PageToolbar.option("items[0].text", 'Home');
 
 });
