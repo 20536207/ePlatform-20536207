@@ -161,5 +161,19 @@
       }
 
     ]
+  },
+  {
+    "id": 7,
+    "dev": "KEMENPANRB R.I",
+    "detail": "Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Republik Indonesia",
+    "items": [
+      {
+        "product": "SRIKANDI",
+        "detail": "Platform Layanan Arsip dan Persuratan",
+        "icon": "./images/home/homelinkedplatform/srikandi.png",
+        "target": "https://srikandi.arsip.go.id/auth/login"
+      }
+
+    ]
   }
 ]
