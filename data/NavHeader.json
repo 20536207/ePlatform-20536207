@@ -16,7 +16,7 @@
     },
     {
         "key": "Program",
-        "visible": false,
+        "visible": true,
         "items": [
             {
                 "id": 0,
