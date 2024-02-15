@@ -40,6 +40,7 @@ $(document).ready(function () {
         cssClass: undefined,
         text: null,
         options: {
+          //disabled: true,
           text: null,
           icon: undefined,
           template: '<div style="padding: 5px 5px 0 5px" class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br>ver. 20536207.1</div>',
@@ -65,6 +66,7 @@ $(document).ready(function () {
         }
       },
       {
+        //visible: false,
         widget: 'dxButtonGroup',
         location: 'after',
         locateInMenu: 'auto',
@@ -79,7 +81,8 @@ $(document).ready(function () {
           stylingMode: "text",
           height: undefined,
           width: undefined,
-          items: [
+          items:
+            [
               {
                 text: "Home",
                 icon: "fas fa-home fa-2xl",
@@ -89,16 +92,19 @@ $(document).ready(function () {
               { text: "Literasi", visible: false },
               { text: "Referensi", visible: false }
             ],
-          // $.getJSON("./data/NavHeader.json", function (result) {
-          //   item = result.filter(function (obj) {
-          //     return obj.key == "Home";
-          //   });
-          //   return item;
-          // }),
-          // buttonTemplate: function (itemData, itemElement) {
-          //   return $(`<div>${itemData.key}</div>`);
+
+          // items: () => {
+          //   return $.getJSON("./data/NavHeader.json", function (result) {
+          //   //   item = result.filter(function (obj) {
+          //   //     return obj.key == "Home";
+          //   //   });
+          //   //   return item;
+          //   // }),
+          //     // buttonTemplate: function (itemData, itemElement) {
+          //     return $(`<div>${itemData.key}</div>`);
+          //     }
           // },
-          
+
           onItemClick(e) {
             if (e.itemIndex == 0) {
               $.getJSON("./data/NavHeader.json", function (result) {
@@ -187,14 +193,17 @@ $(document).ready(function () {
     onItemClick(e) {
       _PageToolbar.option("items[0].text", e.itemData.text);
 
+      //_LayoutHeader.option("items[0].options.disabled", true);
       $("#PageContains").empty();
       $("#PageContains").load(e.itemData["target"]);
-    
+
+
     }
   }).dxActionSheet('instance');
 
   //===============================================================================
   _PageToolbar = $('#PageToolbar').dxToolbar({
+    //visible: false,
     items: [
       {
         location: 'center',
@@ -226,8 +235,9 @@ $(document).ready(function () {
 
   //===============================================================================
   $("#PageContains").load("./pages/HomePagesHome.html");
-
-  //===============================================================================
   _PageToolbar.option("items[0].text", 'Home');
+  //_LayoutHeader.option("items[0].options.disabled", false);
+  //===============================================================================
+
 
 });

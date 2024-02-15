@@ -2,7 +2,7 @@
     {
         "id": 0,
         "parentid": "00",
-        "text": "",
+        "text": null,
         "icon": "fab fa-whatsapp",
         "loadpage": "https://api.whatsapp.com/send?phone=6285330307971"
     },
