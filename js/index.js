@@ -13,7 +13,7 @@ function GoDecrypt(_Contains, _Key)
 
 $(document).ready(function () {
 
-  toolbarSeparator = {
+  _toolbarSeparator = {
     locateInMenu: 'auto',
     location: 'after',
     template(itemData, itemIndex, element) {
@@ -150,6 +150,7 @@ $(document).ready(function () {
           focusStateEnabled: true,
           activeStateEnabled: false,
           grouped: true,
+          collapsible: false,
           collapsibleGroups: true,
           showSelectionControls: false,
           scrollByContent: true,
