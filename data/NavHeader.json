@@ -111,12 +111,12 @@
             },
             {
                 "id": 10,
-                "text": "GeoLocation",
+                "text": "User Authentication",
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/Utility/GeoLocation.html"
+                "target": "./pages/Utility/UtilityUserAuthentication.html"
             }
         ]
     },

@@ -3,48 +3,6 @@ $(function () {
     _DataFileStorage =
       [
         {
-          name: "01-Dokumen",
-          isDirectory: true,
-          items: [
-            {
-              name: "01-01-SubDokumen",
-              isDirectory: true,
-              items: [
-                {
-                  name: "File-01",
-                  isDirectory: false,
-                },
-                {
-                  name: "File-02",
-                  isDirectory: false,
-                },
-                {
-                  "name": "File-03",
-                  "isDirectory": false,
-                },
-              ],
-            },
-            {
-              name: "01-02-SubDokumen",
-              isDirectory: true,
-              items: [
-                {
-                  name: "File-01",
-                  isDirectory: false,
-                },
-                {
-                  name: "File-02",
-                  isDirectory: false,
-                },
-                {
-                  "name": "File-03",
-                  "isDirectory": false,
-                },
-              ],
-            },
-          ],
-        },
-        {
           name: "02-Dokumen",
           isDirectory: true,
           items: [
@@ -53,15 +11,15 @@ $(function () {
               isDirectory: true,
               items: [
                 {
-                  name: "File-01",
-                  isDirectory: false,
-                },
-                {
                   name: "File-02",
                   isDirectory: false,
                 },
                 {
-                  "name": "File-03",
+                  name: "File-03",
+                  isDirectory: false,
+                },
+                {
+                  "name": "File-04",
                   "isDirectory": false,
                 },
               ],
@@ -71,15 +29,57 @@ $(function () {
               isDirectory: true,
               items: [
                 {
-                  name: "File-01",
+                  name: "File-02",
                   isDirectory: false,
                 },
+                {
+                  name: "File-03",
+                  isDirectory: false,
+                },
+                {
+                  "name": "File-04",
+                  "isDirectory": false,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "03-Dokumen",
+          isDirectory: true,
+          items: [
+            {
+              name: "03-01-SubDokumen",
+              isDirectory: true,
+              items: [
                 {
                   name: "File-02",
                   isDirectory: false,
                 },
                 {
-                  "name": "File-03",
+                  name: "File-03",
+                  isDirectory: false,
+                },
+                {
+                  "name": "File-04",
+                  "isDirectory": false,
+                },
+              ],
+            },
+            {
+              name: "03-02-SubDokumen",
+              isDirectory: true,
+              items: [
+                {
+                  name: "File-02",
+                  isDirectory: false,
+                },
+                {
+                  name: "File-03",
+                  isDirectory: false,
+                },
+                {
+                  "name": "File-04",
                   "isDirectory": false,
                 },
               ],
@@ -96,7 +96,7 @@ $(function () {
     _DashboardFileStorage = $('#DashboardFileStorage').dxFileManager({
       name: 'File-Manager',
       fileSystemProvider: _UrlPathStorage,
-      height: '98%',
+      height: '99%',
       permissions: {
         create: true,
         copy: true,
@@ -117,7 +117,7 @@ $(function () {
     }).dxFileManager('instance');
 
   $('#photo-popup').dxPopup({
-    maxHeight: 600,
+    maxHeight: 601,
     hideOnOutsideClick: true,
     onContentReady(e) {
       const $contentElement = e.component.content();
