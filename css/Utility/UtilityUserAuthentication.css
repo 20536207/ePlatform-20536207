@@ -1,8 +1,31 @@
 #UserAuthentication {
-    display: flex;
-    flex-direction: column;
-    overflow: none;
-    flex: 1 1 auto;
-    height: 100%;
-    padding: 3px 5px 0 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: none;
+  flex: 1 1 auto;
+  height: 100%;
+  max-width: 30%;
+  margin: auto;
+  align-content: center;
+  justify-content: center;
+  padding: 3px 5px 0 5px;
+}
+
+@media only screen and (max-width: 980px) {
+  #UserAuthentication {
+    max-width: 50%;
   }
+}
+
+@media only screen and (max-width: 640px) {
+  #UserAuthentication {
+    max-width: 70%;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  #UserAuthentication {
+    max-width: 90%;
+  }
+}

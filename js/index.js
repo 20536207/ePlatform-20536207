@@ -220,18 +220,45 @@ $(document).ready(function () {
   }).dxToolbar('instance');
 
   //===============================================================================
-  _FormAuthentication = $("#form").dxForm({
-    formData: {
-      name: "John Heart",
-      officeNumber: 901,
-      hireDate: new Date(2012, 4, 13)
+  _UserAuth = $("#UserAuthentication").dxPopup({
+    hideOnParentScroll: true,
+    title: "User Authentication",
+    visible: true,
+    width: () => {
+      return () => {
+        if ($(window).width() <= 480) { return "90%" } else
+          if ($(window).width() >= 481 && $(window).width() <= 640) { return "70%" } else
+            if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { "100%" };
+      };
     },
-    items: ["name", "officeNumber", {
-      dataField: "hireDate",
-      editorOptions: {
-        disabled: true
+    height: "auto",
+    contentTemplate: () => {
+      return $("<div />").dxForm({
+        formData: {
+          username: null,
+          password: null
+        },
+        items: ["username", "password",
+          //  {
+          //   dataField: "hireDate",
+          //   editorOptions: {
+          //     disabled: true
+          //   }
+          // }
+        ],
+      });
+    },
+    toolbarItems: [{
+      widget: "dxButton",
+      location: "after",
+      toolbar: "bottom",
+      location: "center",
+      options: {
+        text: "Login",
+        onClick: function (e) { /* ... */ }
       }
-    }]
+    }],
+
   });
 
   //===============================================================================
