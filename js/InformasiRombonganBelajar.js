@@ -3,23 +3,25 @@ $(function () {
     var
         _TbDataRombel = [
             {
-                caption: 'Identitas Peserta Didik',
+                caption: 'ID Anggota Rombel',
                 fixed: true,
+                dataField: 'A01',
+                sortOrder: 'asc',
+            },
+            {
+                caption: 'Tahun Akademik',
+                dataField: 'A02',
+                groupIndex: 0,
+            },
+            {
+                caption: 'Rombel',
+                dataField: 'A03',
+                groupIndex: 0,
+            },
+            {
+                caption: 'Identitas Peserta Didik',
                 columns: [
                     {
-                        caption: 'Tahun Akademik',
-                        dataField: 'A02',
-                        groupIndex: 0,
-                    }, {
-                        caption: 'Rombel',
-                        dataField: 'A03',
-                        groupIndex: 0,
-                    }, {
-                        caption: 'ID Rombel',
-                        dataField: 'A01',
-                        sortOrder: 'asc',
-                        // hidingPriority: 0,
-                    }, {
                         caption: 'NIPD',
                         dataField: 'B01',
                         // // hidingPriority: 1,
@@ -38,7 +40,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'C01',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'No. Register',
@@ -80,7 +82,7 @@ $(function () {
                     caption: 'No. KK',
                     dataField: 'D01',
                     format: function (value) {
-                        return value.replace(value.substr(1,14),"*".repeat(14));
+                        return value.replace(value.substr(1, 14), "*".repeat(14));
                     },
                 }, {
                     caption: 'Tertanggal',
@@ -136,7 +138,7 @@ $(function () {
                     caption: 'Nomor',
                     dataField: 'E02',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tertanggal',
@@ -210,7 +212,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'F04',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
@@ -264,7 +266,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'G04',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
@@ -322,7 +324,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'H05',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
@@ -354,7 +356,7 @@ $(function () {
                     caption: 'No. Telpon',
                     dataField: 'I01',
                     format: function (value) {
-                        return value.replace(value.substr(3,5),"*".repeat(5));
+                        return value.replace(value.substr(3, 5), "*".repeat(5));
                     },
                 }, {
                     caption: 'Tinggi Badan (Cm)',
@@ -411,7 +413,7 @@ $(function () {
                     caption: 'Nomor Rekening PIP',
                     dataField: 'J03',
                     format: function (value) {
-                        return value.replace(value.substr(3,10),"*".repeat(10));
+                        return value.replace(value.substr(3, 10), "*".repeat(10));
                     },
                 }, {
                     caption: 'Nama Bank PIP',
@@ -512,7 +514,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'O03',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
@@ -534,7 +536,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'P02',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }]
             },
@@ -548,7 +550,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'Q02',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }]
             },
@@ -621,7 +623,7 @@ $(function () {
                         autoFilterEnabled: true,
                     }).then(() => {
                         workbook.xlsx.writeBuffer().then((buffer) => {
-                            saveAs(new Blob([buffer], { type: 'application/octet-stream' }),_nmfile+'.xlsx');
+                            saveAs(new Blob([buffer], { type: 'application/octet-stream' }), _nmfile + '.xlsx');
                         });
                     });
                     e.cancel = true;
@@ -632,7 +634,7 @@ $(function () {
                         jsPDFDocument: doc,
                         component: e.component,
                     }).then(() => {
-                        doc.save(_nmfile+'.pdf');
+                        doc.save(_nmfile + '.pdf');
                     });
                 }
             },

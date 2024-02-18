@@ -1994,24 +1994,14 @@ $(function () {
 
         _TbInfoPd = [
             {
-                caption: 'Identitas Peserta Didik',
+                caption: 'ID Anggota Rombel',
                 fixed: true,
+                dataField: 'a01',
+                sortOrder: 'asc',
+            },
+            {
+                caption: 'Identitas Peserta Didik',
                 columns: [
-                    // {
-                    //     caption: 'Tahun Akademik',
-                    //     dataField: 'a02',
-                    //     groupIndex: 0,
-                    // }, {
-                    //     caption: 'Rombel',
-                    //     dataField: 'a03',
-                    //     groupIndex: 0,
-                    // }, 
-                    {
-                        caption: 'ID Rombel',
-                        dataField: 'a01',
-                        sortOrder: 'asc',
-                        // hidingPriority: 0,
-                    },
                     {
                         caption: 'NIPD',
                         dataField: 'b01',
@@ -2024,7 +2014,8 @@ $(function () {
                     }, {
                         caption: 'Nama Lengkap',
                         dataField: 'b03',
-                    }],
+                    }
+                ],
             },
             {
                 caption: 'Catatan Sipil Peserta Didik',
@@ -2032,7 +2023,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'c01',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'No. Register',
@@ -2074,7 +2065,7 @@ $(function () {
                     caption: 'No. KK',
                     dataField: 'd01',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
 
                 }, {
@@ -2203,7 +2194,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'f04',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
@@ -2257,7 +2248,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'g04',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
@@ -2315,7 +2306,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'h05',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
@@ -2347,7 +2338,7 @@ $(function () {
                     caption: 'No. Telpon',
                     dataField: 'i01',
                     format: function (value) {
-                        return value.replace(value.substr(3,5),"*".repeat(5));
+                        return value.replace(value.substr(3, 5), "*".repeat(5));
                     },
                 }, {
                     caption: 'Tinggi Badan (Cm)',
@@ -2404,7 +2395,7 @@ $(function () {
                     caption: 'Nomor Rekening PIP',
                     dataField: 'j03',
                     format: function (value) {
-                        return value.replace(value.substr(3,10),"*".repeat(10));
+                        return value.replace(value.substr(3, 10), "*".repeat(10));
                     },
                 }, {
                     caption: 'Nama Bank PIP',
@@ -2505,7 +2496,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'o03',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
@@ -2527,7 +2518,7 @@ $(function () {
                     caption: 'NIK',
                     dataField: 'p02',
                     format: function (value) {
-                        return value.replace(value.substr(1,13),"*".repeat(13));
+                        return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }]
             },
@@ -2797,7 +2788,7 @@ $(function () {
                                     autoFilterEnabled: true,
                                 }).then(() => {
                                     workbook.xlsx.writeBuffer().then((buffer) => {
-                                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }),_nmfile+'.xlsx');
+                                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }), _nmfile + '.xlsx');
                                     });
                                 });
                                 e.cancel = true;
@@ -2808,7 +2799,7 @@ $(function () {
                                     jsPDFDocument: doc,
                                     component: e.component,
                                 }).then(() => {
-                                    doc.save(_nmfile+'.pdf');
+                                    doc.save(_nmfile + '.pdf');
                                 });
                             }
                         },
