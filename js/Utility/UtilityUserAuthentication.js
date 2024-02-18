@@ -1,6 +1,6 @@
 $(function () {
   var
-  _UserAuth = $("#UtilityUserAuthentication").dxForm({
+  _UserAuth = $("#UserAuthentication").dxForm({
     formData: {
       name: "John Heart",
       officeNumber: 901,
