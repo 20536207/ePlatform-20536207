@@ -108,6 +108,15 @@
                 "disabled": false,
                 "visible": true,
                 "target": "./pages/program/ProgramStandarPengelolaan.html"
+            },
+            {
+                "id": 10,
+                "text": "GeoLocation",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Utility/GeoLocation.html"
             }
         ]
     },

@@ -593,7 +593,7 @@ $(function () {
             },
             columns: _TbDataSiswa,
 
-            dataSource: './data/InformasiDataIndukSiswa.json',
+            dataSource: './data/InformasiKesiswaan/InformasiDataIndukSiswa.json',
 
             editing: {
                 mode: 'row',
@@ -699,7 +699,7 @@ $(function () {
                 enabled: true,
                 template(container, options) {
                     $("<div>").dxDataGrid({
-                        dataSource: './data/InformasiRombonganBelajar.json',
+                        dataSource: './data/InformasiKesiswaan/InformasiRombonganBelajar.json',
                         //============
                         // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
                         //   jsondata = jsondata.filter(function (obj) {

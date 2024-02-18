@@ -597,7 +597,7 @@ $(function () {
             },
             columns: _TbDataRombel,
 
-            dataSource: './data/InformasiRombonganBelajar.json',
+            dataSource: './data/InformasiKesiswaan/InformasiRombonganBelajar.json',
 
             editing: {
                 mode: 'row',

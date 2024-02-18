@@ -2598,7 +2598,7 @@ $(function () {
                     };
                 });
             },
-            dataSource: './data/DashboardPesertaDidik.json',
+            dataSource: './data/Dashboard/DashboardPesertaDidik.json',
             editing: {
                 mode: 'form',
                 allowUpdating: false,
@@ -2712,7 +2712,7 @@ $(function () {
                 enabled: true,
                 template(container, options) {
                     $("<div>").dxDataGrid({
-                        dataSource: './data/InformasiDataIndukSiswa.json',
+                        dataSource: './data/InformasiKesiswaan/InformasiDataIndukSiswa.json',
                         //============
                         // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
                         //   jsondata = jsondata.filter(function (obj) {
