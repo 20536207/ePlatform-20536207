@@ -1,6 +1,7 @@
 [
     {
         "key": "Home",
+        "text": "Home",
         "visible": true,
         "items": [
             {

@@ -4,20 +4,30 @@ $(function () {
       hideOnParentScroll: true,
       title: "User Authentication",
       visible: true,
+      hideOnParentScroll: false,
       width: () => {
         return () => {
           if ($(window).width() <= 480) { return "90%" } else
             if ($(window).width() >= 481 && $(window).width() <= 640) { return "70%" } else
-              if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { "100%" };
+              if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { return "25%" };
         };
       },
       height: "auto",
       contentTemplate: () => {
         return $("<div />").dxForm({
-          formData: {
-            username: null,
-            password: null
-          },
+          // formData: {
+          //   username: null,
+          //   password: null
+          // },
+          FormData,
+          items: ["username", "password",
+            //  {
+            //   dataField: "hireDate",
+            //   editorOptions: {
+            //     disabled: true
+            //   }
+            // }
+          ],
         })
       },
       toolbarItems: [{
@@ -33,7 +43,7 @@ $(function () {
 
     });
 
-});
+}).dxPopup('instance');
 
 // // //========================================================================================================
 // _UserAuthentication1 = $('#UtilityUserAuthentication1').dxTextBox({

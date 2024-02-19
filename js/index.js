@@ -64,9 +64,37 @@ $(document).ready(function () {
             _LayoutContains.toggle();
           },
         }
+      }, {
+        widget: 'dxButton',
+        location: 'after',
+        locateInMenu: 'never',
+        cssClass: undefined,
+        text: null,
+        options: {
+          disabled: false,
+          text: null,
+          icon: null,
+          template: '<div style="padding: 5px 40px 5px 40px" class="fas fa-user fa-xl"></div>',
+          hoverStateEnabled: true,
+          focusStateEnabled: false,
+          activeStateEnabled: false,
+          selectionMode: 'none',
+          type: 'normal',
+          stylingMode: "text",
+          height: undefined,
+          width: undefined,
+          onClick() {
+            _LayoutHeader.option(
+              'items[1].options.type',
+              _LayoutHeader.option('items[1].options.type') === 'normal' ? 'default' : 'normal'
+            );
+            _UserAuth.show();
+          },
+        }
       },
       {
-        //visible: false,
+        visible: false,
+        disabled: true,
         widget: 'dxButtonGroup',
         location: 'after',
         locateInMenu: 'auto',
@@ -84,10 +112,11 @@ $(document).ready(function () {
           items:
             [
               {
-                text: "Home",
-                icon: "fas fa-home fa-2xl",
+                text: "Home", icon: "fas fa-home fa-2xl",
               },
-              { text: "Program", visible: true },
+              {
+                text: "Program",
+              },
               { text: "Dokumentasi", visible: false },
               { text: "Literasi", visible: false },
               { text: "Referensi", visible: false }
@@ -135,7 +164,8 @@ $(document).ready(function () {
   //===============================================================================
   _LayoutContains = $('#LayoutContent').dxDrawer({
     opened: false,
-    revealMode: "slide", //expand
+    animationEnabled: false,
+    revealMode: "slide", //"slide | expand"
     openedStateMode: $(window).width() < 600 ? "overlap" : "shrink", //shrink //overlap
     position: 'left', //right
     shading: $(window).width() < 600 ? true : false,
@@ -194,7 +224,7 @@ $(document).ready(function () {
     onItemClick(e) {
       _PageToolbar.option("items[0].text", e.itemData.text);
 
-      //_LayoutHeader.option("items[0].options.disabled", true);
+      // _LayoutHeader.option("items[0].options.disabled", true);
       $("#PageContains").empty();
       $("#PageContains").load(e.itemData["target"]);
 
@@ -220,15 +250,15 @@ $(document).ready(function () {
   }).dxToolbar('instance');
 
   //===============================================================================
-  _UserAuth = $("#UserAuthentication").dxPopup({
-    hideOnParentScroll: true,
+  _UserAuth = $('#UserAuthentication').dxPopup({
     title: "User Authentication",
-    visible: true,
+    visible: false,
+    dragEnabled:false,
     width: () => {
       return () => {
         if ($(window).width() <= 480) { return "90%" } else
           if ($(window).width() >= 481 && $(window).width() <= 640) { return "70%" } else
-            if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { "100%" };
+            if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { "25%" };
       };
     },
     height: "auto",
@@ -259,7 +289,7 @@ $(document).ready(function () {
       }
     }],
 
-  });
+  }).dxPopup('instance');
 
   //===============================================================================
   $("#PageContains").load("./pages/HomePagesHome.html");
