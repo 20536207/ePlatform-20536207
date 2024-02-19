@@ -13,6 +13,7 @@ function GoDecrypt(_Contains, _Key)
 
 $(document).ready(function () {
 
+  //==============================================================================
   _toolbarSeparator = {
     locateInMenu: 'auto',
     location: 'after',
@@ -27,8 +28,6 @@ $(document).ready(function () {
         .appendTo(element);
     },
   };
-
-
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
@@ -250,32 +249,39 @@ $(document).ready(function () {
   }).dxToolbar('instance');
 
   //===============================================================================
-  _UserAuth = $('#UserAuthentication').dxPopup({
-    title: "User Authentication",
+  // $("<div id='Authentication' />").appendTo('#MainPage');
+
+  _UserAuth = $('#Authentication').dxPopup({
+    title: "Authentication",
     visible: false,
-    dragEnabled:false,
+    dragEnabled: false,
     width: () => {
       return () => {
         if ($(window).width() <= 480) { return "90%" } else
           if ($(window).width() >= 481 && $(window).width() <= 640) { return "70%" } else
-            if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { "25%" };
+            if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { return "25%" };
       };
     },
     height: "auto",
     contentTemplate: () => {
       return $("<div />").dxForm({
+        labelMode: 'floating',
         formData: {
           username: null,
           password: null
         },
-        items: ["username", "password",
-          //  {
-          //   dataField: "hireDate",
-          //   editorOptions: {
-          //     disabled: true
-          //   }
-          // }
+        items: [
+          {
+            dataField: "UserPhoto",
+            editorOptions: {
+              disabled: true
+            }
+          },
+          "username", "password"
         ],
+      }).dxScrollView({
+        height: "100%",
+        width: "100%"
       });
     },
     toolbarItems: [{
@@ -289,7 +295,7 @@ $(document).ready(function () {
       }
     }],
 
-  }).dxPopup('instance');
+  }).dxPopup("instance");
 
   //===============================================================================
   $("#PageContains").load("./pages/HomePagesHome.html");

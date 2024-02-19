@@ -1,4 +1,4 @@
-#UserAuthentication {
+#Authentication {
   display: flex;
   flex-direction: column;
   overflow: none;
@@ -12,20 +12,20 @@
 }
 
 @media only screen and (max-width: 980px) {
-  #UserAuthentication {
+  #Authentication {
     max-width: 50%;
   }
 }
 
 @media only screen and (max-width: 640px) {
-  #UserAuthentication {
+  #Authentication {
     max-width: 70%;
   }
 }
 
 
 @media only screen and (max-width: 480px) {
-  #UserAuthentication {
+  #Authentication {
     max-width: 90%;
   }
 }

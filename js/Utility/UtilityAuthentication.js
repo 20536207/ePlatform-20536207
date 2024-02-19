@@ -1,8 +1,8 @@
 $(function () {
   var
-    _UserAuth = $("#UserAuthentication").dxPopup({
+    _UserAuth = $("#Authentication").dxPopup({
       hideOnParentScroll: true,
-      title: "User Authentication",
+      title: "Authentication",
       visible: true,
       hideOnParentScroll: false,
       width: () => {
