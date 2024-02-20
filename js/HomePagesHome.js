@@ -22,7 +22,7 @@ $(() => {
             scrollByThumb: true,
             useNative: false,
             showScrollbar: 'onHover',
-            // height: "100%",
+            height: undefined,
             // width: "100%",
 
         });
@@ -46,7 +46,7 @@ $(() => {
         dataSource: './data/BannerImage.json',
         height: 'innerWidth',
         width: 'innerWidth',
-        focusStateEnabled:false,
+        focusStateEnabled: false,
         loop: true,
         slideshowDelay: 6000,
         showNavButtons: false,
@@ -125,6 +125,7 @@ $(() => {
                     })
                 )
             });
+
 
             // b = ""
             // devdata.items.forEach(function (productdata, productindex, productelement) {

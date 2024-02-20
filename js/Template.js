@@ -1,4 +1,86 @@
 
+// _UserAuth = $('#Authentication').dxPopup({
+//       title: "Authentication",
+//       visible: true,
+//       dragEnabled: false,
+//       showCloseButton: false,
+//       // container: '.dx-viewport',
+//       width: () => {
+//         return () => {
+//           if ($(window).width() <= 480) { return "90%" } else
+//             if ($(window).width() >= 481 && $(window).width() <= 640) { return "70%" } else
+//               if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { return "25%" };
+//         };
+//       },
+//       height: "auto",
+//       contentTemplate: () => {
+//         return $("<div style='text-align: center'/>")
+//           .append(
+//             $("<img style='object-fit: cover; border-radius:50%'/>")
+//               .attr("src", "./Images/002.jpg")
+//               .attr("height", "102px")
+//               .attr("width", "102px")
+//           ).append(
+//             $("<div />").dxForm({
+//               labelMode: 'floating',
+//               formData: {
+//                 photo: null,
+//                 username: null,
+//                 password: null
+//               },
+//               items: [
+//                 "username", "password"
+//               ],
+//             })
+//           );
+//       },
+//       toolbarItems: [
+//         {
+//           widget: "dxButton",
+//           location: "after",
+//           toolbar: "top",
+//           location: "right",
+//           options: {
+//             text: null,
+//             icon: 'close',
+//             stylingMode: "text",
+//             activeStateEnabled: false,
+//             focusStateEnabled: false,
+//             onClick() {
+//               _UserAuth.hide();
+//             }
+//           }
+//         },
+//         {
+//           widget: "dxButton",
+//           location: "after",
+//           toolbar: "bottom",
+//           location: "center",
+//           options: {
+//             text: 'LOGIN',
+//             // type: 'default',
+//             activeStateEnabled: false,
+//             focusStateEnabled: false,
+//             onClick() {
+//               _UserAuth.option(
+//                 'toolbarItems[1].options.type',
+//                 _UserAuth.option('toolbarItems[1].options.type') === 'default' ? 'danger' : 'default'
+//               );
+//               _UserAuth.option(
+//                 'toolbarItems[1].options.text',
+//                 _UserAuth.option('toolbarItems[1].options.text') === 'LOGIN' ? 'LOGOUT' : 'LOGIN'
+//               );
+//               _LayoutHeader.option(
+//                 'items[1].options.type',
+//                 _LayoutHeader.option('items[1].options.type') === 'default' ? 'danger' : 'default'
+//               );
+//               _UserAuth.hide();
+//             }
+//           }
+//         }],
+
+//     }).dxPopup("instance");
+
 // $("#popup").dxPopup({
 //        height: 300,
 //        contentTemplate: function(container){

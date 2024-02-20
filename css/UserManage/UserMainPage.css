@@ -1,14 +1,17 @@
-#Authentication {
+#UserMainPage {
   display: flex;
   flex-direction: column;
   overflow: none;
   flex: 1 1 auto;
   height: 100%;
+  padding: 3px 5px 0 5px;
+}
+
+#Authentication {
   max-width: 25%;
   margin: auto;
   align-content: center;
   justify-content: center;
-  padding: 3px 5px 0 5px;
 }
 
 @media only screen and (max-width: 980px) {

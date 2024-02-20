@@ -79,16 +79,15 @@ $(document).ready(function () {
           focusStateEnabled: false,
           activeStateEnabled: false,
           selectionMode: 'none',
-          type: 'normal',
+          type: 'danger',
           stylingMode: "text",
           height: undefined,
           width: undefined,
           onClick() {
-            _LayoutHeader.option(
-              'items[1].options.type',
-              _LayoutHeader.option('items[1].options.type') === 'normal' ? 'default' : 'normal'
-            );
-            _UserAuth.show();
+            _PageToolbar.option("items[0].text", "e-Pltaform Account");
+            $("#PageContains").empty();
+            $("#PageContains").load("./pages/UserManage/UserMainPage.html");
+            // _UserAuth.show();
           },
         }
       },
@@ -177,7 +176,7 @@ $(document).ready(function () {
           keyExpr: "key",
           dataSource: "./data/NavMain.json",
           hoverStateEnabled: true,
-          focusStateEnabled: true,
+          focusStateEnabled: false,
           activeStateEnabled: false,
           grouped: true,
           collapsible: false,
@@ -248,52 +247,6 @@ $(document).ready(function () {
 
     ],
   }).dxToolbar('instance');
-
-  //===============================================================================
-  // $("<div id='Authentication' />").appendTo('#MainPage');
-
-  _UserAuth = $('#Authentication').dxPopup({
-    title: "Authentication",
-    visible: false,
-    dragEnabled: false,
-    width: () => {
-      return () => {
-        if ($(window).width() <= 480) { return "90%" } else
-          if ($(window).width() >= 481 && $(window).width() <= 640) { return "70%" } else
-            if ($(window).width() >= 641 && $(window).width() <= 980) { return "50%" } else { return "25%" };
-      };
-    },
-    height: "auto",
-    contentTemplate: () => {
-      return $("<div />").dxForm({
-        labelMode: 'floating',
-        formData: {
-          username: null,
-          password: null
-        },
-        items: [
-          {
-            $() {
-              $('<img>')
-                .attr('src', './images/ePlatform.png')
-            },
-          },
-          "username", "password"
-        ],
-      });
-    },
-    toolbarItems: [{
-      widget: "dxButton",
-      location: "after",
-      toolbar: "bottom",
-      location: "center",
-      options: {
-        text: "Login",
-        onClick: function (e) { /* ... */ }
-      }
-    }],
-
-  }).dxPopup("instance");
 
   //===============================================================================
   $("#PageContains").load("./pages/HomePagesHome.html");
