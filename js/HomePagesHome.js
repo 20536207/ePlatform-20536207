@@ -46,6 +46,7 @@ $(() => {
         dataSource: './data/BannerImage.json',
         height: 'innerWidth',
         width: 'innerWidth',
+        focusStateEnabled:false,
         loop: true,
         slideshowDelay: 6000,
         showNavButtons: false,
