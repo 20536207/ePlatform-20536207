@@ -31,6 +31,7 @@ $(document).ready(function () {
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
+    height: '56px',
     items: [
       {
         widget: 'dxButton',
@@ -272,16 +273,13 @@ $(document).ready(function () {
         },
         items: [
           {
-            dataField: "UserPhoto",
-            editorOptions: {
-              disabled: true
-            }
+            $() {
+              $('<img>')
+                .attr('src', './images/ePlatform.png')
+            },
           },
           "username", "password"
         ],
-      }).dxScrollView({
-        height: "100%",
-        width: "100%"
       });
     },
     toolbarItems: [{

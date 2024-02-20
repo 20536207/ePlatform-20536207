@@ -16,7 +16,7 @@ body {
 .dx-widget {
   font-size: 0.9rem;
 }
-
+/*
 .dx-datagrid,
 .dx-datagrid-rowsview .dx-master-detail-row:not(.dx-datagrid-edit-form) .dx-master-detail-cell {
   background-color: transparent;
@@ -41,7 +41,7 @@ body {
 
 .dx-actionsheet-item-content .dx-button .dx-button-content {
   justify-content: start;
-}
+} */
 
 #MainLayout {
   display: flex;
@@ -55,12 +55,13 @@ body {
   justify-self: flex-start;
   background-color: rgba(0, 0, 0, 0.3);
   vertical-align: middle;
-  height: 56px;
   overflow-y: none;
 }
 
 #LayoutHeader .dx-toolbar {
-  height: 56px;
+  align-items: center;
+  vertical-align: middle;
+  gap: 40px;
 }
 
 #LayoutHeader .dx-button {
@@ -69,6 +70,7 @@ body {
   border-radius: 0;
 }
 
+/*
 #LayoutHeader .dx-dropdownmenu-button {
   width: 42px;
   height: 42px;
@@ -80,7 +82,7 @@ body {
 
 #LayoutHeader .dx-dropdownmenu-button .dx-icon-overflow {
   font-size: 1.3rem;
-}
+} */
 
 #LayoutContent {
   flex: 1 1 auto;
@@ -117,7 +119,7 @@ body {
 /* ==================================================================================== */
 .ContainsSidebar {
   padding: 0 3px 0 3px;
-  background-color: rgba(37, 37, 37);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* ==================================================================================== */
@@ -133,7 +135,7 @@ body {
 #PageToolbar {
   justify-self: flex-start;
   padding: 5px;
-  background-color: rgba(54, 54, 54, 0.6);
+  background-color: rgba(100, 100, 100, 0.4);
   /* rgba(26, 41, 58, 0.267);*/
 
 }
@@ -149,9 +151,9 @@ body {
 /* ==================================================================================== */
 .Page-Title {
   font-size: 1rem;
-  color:rgb(28, 168, 221);
+  color: rgba(28, 168, 221);
   font-weight: bold;
-  /* text-shadow: 1px 1px 2px rgb(97, 97, 97); */
+  /* text-shadow: 1px 1px 2px rgb(255, 255, 255); */
 }
 
 .separator {

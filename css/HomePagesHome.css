@@ -113,12 +113,12 @@
 
 .HomeLinkedPlatform-dev {
     text-align: left;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin: 10px 0 20px 0;
     color: orange;
 }
 .HomeLinkedPlatform-dev > i{
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -152,11 +152,11 @@
 .HomeLinkedPlatform-item-detail {
     text-align: justify;
     /* padding: 5px; */
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
 .HomeLinkedPlatform-item-detail>i {
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     color: rgba(255, 255, 255, 0.8);
 }
 
