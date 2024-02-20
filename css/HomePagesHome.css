@@ -18,8 +18,7 @@
     text-align: left;
     font-size: 2rem;
     font-weight: normal;
-    line-height: 2.3rem;
-    /* background-color: transparent; */
+   line-height: 2.3rem;
 }
 
 .layout-02 {
@@ -81,7 +80,7 @@
     overflow: no;
     padding-top: 100%;
     /* Aspect Ratio ==> 16:9 (52.25%) ; 4:3 (75%) ; 3:2 (66.66%) */
-    align-content:start ;
+    align-content: start;
     justify-content: start;
     background-color: transparent;
     border: none;
@@ -96,14 +95,13 @@
     bottom: 0;
     right: 0;
     width: 100%;
-    height:100%;
+    height: 100%;
     border: none;
 
 }
 
 /* ==================================================================== */
 .layout-05 {
-    /* margin-top: 2px; */
     padding-top: 10px;
 }
 
@@ -113,29 +111,21 @@
 
 .HomeLinkedPlatform-dev {
     text-align: left;
-    /* font-size: 1rem; */
     margin: 10px 0 20px 0;
     color: orange;
 }
-.HomeLinkedPlatform-dev > i{
-    /* font-size: 0.9rem; */
+
+.HomeLinkedPlatform-dev>i {
     color: rgba(255, 255, 255, 0.8);
 }
 
 .HomeLinkedPlatform-layout {
-    /* float: left; */
     width: 100%;
-    /* padding: 6px; */
-    /* box-sizing: border-box; */
-    /* background-color: transparent; */
-    /* border-radius: 1rem; */
 }
 
 .HomeLinkedPlatform-item {
     text-align: justify;
     font-size: 1rem;
-    /* background-color: rgba(0, 0, 0, 0.2); */
-    /* border-radius: 1rem; */
 }
 
 .HomeLinkedPlatform-item img {
@@ -144,19 +134,16 @@
     border-radius: 3rem 0 3rem 0;
 }
 
-#HomeLinkedPlatform .dx-button-content{
+#HomeLinkedPlatform .dx-button-content {
     text-align: justify;
     justify-content: left;
 }
 
 .HomeLinkedPlatform-item-detail {
     text-align: justify;
-    /* padding: 5px; */
-    /* font-size: 1rem; */
 }
 
 .HomeLinkedPlatform-item-detail>i {
-    /* font-size: 0.9rem; */
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -165,42 +152,6 @@
     display: table;
     clear: both;
 }
-
-/* @media only screen and (max-width: 1366px) {
-    .HomeLinkedPlatform-layout {
-        width: 12.5%;
-    }
-} */
-
-/* @media only screen and (max-width: 1280px) {
-    .HomeLinkedPlatform-layout {
-        width: 14.28571%;
-    }
-} */
-
-/* @media only screen and (max-width: 1024px) {
-    .HomeLinkedPlatform-layout {
-        width: 16.66666%;
-    }
-} */
-
-/* @media only screen and (max-width: 960px) {
-    .HomeLinkedPlatform-layout {
-        width: 19.99999%;
-    }
-} */
-
-/* @media only screen and (max-width: 854px) {
-    .HomeLinkedPlatform-layout {
-        width: 24.99999%;
-    }
-} */
-
-/* @media only screen and (max-width: 640px) {
-    .HomeLinkedPlatform-layout {
-        width: 24.99999%;
-    }
-} */
 
 @media only screen and (max-width: 600px) {
 
@@ -231,9 +182,3 @@
         height: 100%;
     }
 }
-
-/* @media only screen and (max-width: 360px) {
-    .HomeLinkedPlatform-layout {
-        width: 33.26666%;
-    }
-} */

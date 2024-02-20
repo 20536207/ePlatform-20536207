@@ -16,32 +16,6 @@ body {
 .dx-widget {
   font-size: 0.9rem;
 }
-/*
-.dx-datagrid,
-.dx-datagrid-rowsview .dx-master-detail-row:not(.dx-datagrid-edit-form) .dx-master-detail-cell {
-  background-color: transparent;
-}
-
-.dx-datagrid-content .dx-datagrid-table .dx-row>td.dx-datagrid-group-space {
-  vertical-align: middle;
-  padding: 0;
-}
-
-.dx-datagrid-rowsview {
-  font-size: 0.9rem;
-}
-
-.dx-datagrid-rowsview .dx-button-text {
-  font-size: 0.9rem;
-}
-
-.dx-actionsheet-item-content .dx-button {
-  border: none;
-}
-
-.dx-actionsheet-item-content .dx-button .dx-button-content {
-  justify-content: start;
-} */
 
 #MainLayout {
   display: flex;
@@ -70,20 +44,6 @@ body {
   border-radius: 0;
 }
 
-/*
-#LayoutHeader .dx-dropdownmenu-button {
-  width: 42px;
-  height: 42px;
-  margin: 7px 5px 5px 5px;
-  border: 0;
-  border-radius: 60px;
-  padding: 0;
-}
-
-#LayoutHeader .dx-dropdownmenu-button .dx-icon-overflow {
-  font-size: 1.3rem;
-} */
-
 #LayoutContent {
   flex: 1 1 auto;
   height: 0px;
@@ -110,7 +70,6 @@ body {
 .DevApp-Menu {
   font-style: italic;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  /* font-family: "Roboto", sans-serif; */
   line-height: 1.2rem;
   font-size: 1rem;
 }
@@ -136,14 +95,11 @@ body {
   justify-self: flex-start;
   padding: 5px;
   background-color: rgba(100, 100, 100, 0.4);
-  /* rgba(26, 41, 58, 0.267);*/
-
 }
 
 #PageContains {
   flex: 1 0 auto;
   height: 0;
-  /* overflow-y: auto; */
   overflow: none;
   padding-top: 2px;
 }
@@ -153,7 +109,6 @@ body {
   font-size: 1rem;
   color: rgba(28, 168, 221);
   font-weight: bold;
-  /* text-shadow: 1px 1px 2px rgb(255, 255, 255); */
 }
 
 .separator {
