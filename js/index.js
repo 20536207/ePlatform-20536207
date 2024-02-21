@@ -85,10 +85,9 @@ $(document).ready(function () {
           width: undefined,
           onClick() {
             _PageToolbar.option("items[0].text", "e-Pltaform Account"),
-            // _PageToolbar.option('visible', false);
-            $("#PageContains").empty();
+              $("#PageContains").empty();
             $("#PageContains").load("./pages/UserManage/UserMainPage.html");
-            // _UserAuth.show();
+           
           },
         }
       },
