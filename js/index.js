@@ -84,7 +84,8 @@ $(document).ready(function () {
           height: undefined,
           width: undefined,
           onClick() {
-            _PageToolbar.option("items[0].text", "e-Pltaform Account");
+            _PageToolbar.option("items[0].text", "e-Pltaform Account"),
+            // _PageToolbar.option('visible', false);
             $("#PageContains").empty();
             $("#PageContains").load("./pages/UserManage/UserMainPage.html");
             // _UserAuth.show();
@@ -233,7 +234,7 @@ $(document).ready(function () {
 
   //===============================================================================
   _PageToolbar = $('#PageToolbar').dxToolbar({
-    //visible: false,
+    // visible: true,
     items: [
       {
         location: 'center',

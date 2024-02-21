@@ -1,31 +1,38 @@
 $(function () {
   var
-    _UserAccount = $('#UserPage')
-      .dxTabPanel({
+    _UserPage = $('#UserPage')
+      .dxTabs({
         iconPosition: "top",
         stylingMode: "primary",
+        hoverStateEnabled: true,
+        focusStateEnabled: false,
+        selectionMode: 'single',
+        activeStateEnabled: true,
         scrollByContent: true,
+        scrollingEnabled: true,
+        showNavButtons: true,
+        selectedIndex: -1,
         items: [
           {
-            title: 'System Information',
-            icon: 'far fa-user',
-            template: function (itemData, itemIndex, element) {
-              _FormSysTab = $("<div>").appendTo(element)
-                .dxForm({
-                  labelMode: 'floating',
-                  items: [
-                    'ID', {
-                      itemType: 'group',
-                      caption: 'Main Information',
-                      items: ['FirstName', 'LastName', 'HireDate', 'Position', 'OfficeNo'],
-                    },
-                  ],
-                }).dxForm('instance');
-            },
+            text: 'Authentication',
+            icon: 'fas fa-user',
+            // template: function (itemData, itemIndex, element) {
+            //   _FormSysTab = $("<div>").appendTo(element)
+            //     .dxForm({
+            //       labelMode: 'floating',
+            //       items: [
+            //         'ID', {
+            //           itemType: 'group',
+            //           caption: 'Main Information',
+            //           items: ['FirstName', 'LastName', 'HireDate', 'Position', 'OfficeNo'],
+            //         },
+            //       ],
+            //     }).dxForm('instance');
+            // },
           },
           {
-            title: 'Personal Data',
-            icon: 'far fa-user',
+            text: 'Personal Data',
+            icon: 'fas fa-user',
             // items: ['BirthDate', {
             //   itemType: 'group',
             //   caption: 'Home Address',
@@ -33,16 +40,16 @@ $(function () {
             // }],
           },
           {
-            title: 'Phone',
-            icon: 'far fa-user',
+            text: 'Phone',
+            icon: 'fas fa-user',
             // items: ['Phone'],
           }, {
-            title: 'Skype',
-            icon: 'far fa-user',
+            text: 'Skype',
+            icon: 'fas fa-user',
             // items: ['Skype'],
           }, {
-            title: 'Email',
-            icon: 'far fa-user',
+            text: 'Email',
+            icon: 'fas fa-user',
             // items: ['Email'],
           }
         ],
@@ -55,5 +62,6 @@ $(function () {
         height: undefined,
         // width: "100%",
       });
+
 
 });
