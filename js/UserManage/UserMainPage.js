@@ -1,6 +1,6 @@
 $(() => {
 
-  _getItems = GoItems("./data/NavMain.json");
+  _getitems = GoItems("./data/NavMain.json");
 
   _TabUserPage = $('#TabUserPage')
     .dxTabs({
@@ -80,7 +80,7 @@ $(() => {
       screenByWidth(width) {
         return width < 480 ? 'xs' : width < 840 ? 'sm' : width < 1024 ? 'md' : 'lg';
       },
-      items: _getItems,
+      items: _getitems,
 
     })
     .dxScrollView({
@@ -109,7 +109,7 @@ $(() => {
           },
         });
       });
-      DevExpress.ui.notify(JSON.stringify(_new));
+      // DevExpress.ui.notify(JSON.stringify(_new));
       return _new;
     });
   }
