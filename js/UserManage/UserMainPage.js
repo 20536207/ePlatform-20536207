@@ -1,5 +1,7 @@
 $(() => {
 
+  _getItems = GoItems("./data/NavMain.json");
+
   _TabUserPage = $('#TabUserPage')
     .dxTabs({
       iconPosition: "top",
@@ -78,7 +80,8 @@ $(() => {
       screenByWidth(width) {
         return width < 480 ? 'xs' : width < 840 ? 'sm' : width < 1024 ? 'md' : 'lg';
       },
-      items: _getItems("./data/NavMain.json"),
+      items: _getItems,
+
     })
     .dxScrollView({
       scrollByContent: true,
@@ -89,48 +92,26 @@ $(() => {
       // width: "100%",
     });
 
-
   //===================================================================
-  function _getItems(_objItems) {
+  function GoItems(_objItems) {
     _new = [];
     $.getJSON(_objItems, function (result) {
       result.forEach(function (rowData) {
         _new.push({
-          "itemType": "button",
-          "buttonOptions": {
-            "text": rowData.key,
-            "icon": "fas fa-comment fa-xl",
-            "type": "default",
-            "width": "100%",
-            "height": "200px",
-            "focusStateEnabled": false
-          }
+          'itemType': 'button',
+          'buttonOptions': {
+            'text': rowData.key,
+            'icon': 'fas fa-comment fa-xl',
+            'type': 'default',
+            'width': '100%',
+            'height': '200px',
+            'focusStateEnabled': false,
+          },
         });
-
       });
-      // DevExpress.ui.notify(JSON.stringify(_new));
-
-      // return JSON.stringify(_new);
-
-      $("#popup").dxPopup({
-        visible: true,
-        width: "100%",
-        height: "100%",
-        contentTemplate: () => {
-          DevExpress.ui.notify(JSON.stringify(_new));
-          const content = $("<div />");
-          content.append(
-            $(JSON.stringify(_new))
-          );
-          DevExpress.ui.notify(JSON.stringify(_new));
-          return content;
-        },
-      });
-      
-
+      DevExpress.ui.notify(JSON.stringify(_new));
+      return _new;
     });
-
   }
 
 });
-
