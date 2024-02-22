@@ -109,7 +109,7 @@ $(() => {
           },
         });
       });
-      // DevExpress.ui.notify(JSON.stringify(_new));
+      DevExpress.ui.notify(JSON.stringify(_new));
       return _new;
     });
   }
