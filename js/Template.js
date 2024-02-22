@@ -1,3 +1,144 @@
+// for (var i = 1; i < 8; i++) {
+//     $("#UserPage").append(
+//       $("<div />").dxButton({
+//         text: 'Contained',
+//         type: 'normal',
+//         icon: 'fas fa-gear fa-xl',
+//         stylingMode: 'contained',
+//         width: 176,
+//         height: 176,
+//         onClick() {
+//           DevExpress.ui.notify('The Contained button was clicked');
+//         },
+//       })
+//     )
+//   };
+
+
+
+// for (var i = 1; i < 8; i++) {
+//     $("#UserPage").append(
+//       $("<img style='object-fit: cover; border-radius:50%'/>")
+//         .attr("src", "./Images/4003.jpg")
+//         .attr("height", "176px")
+//         .attr("width", "176px")
+//     )
+//   };
+
+
+
+
+
+// //==========================================================================================
+//   _UserPage = $("#UserPage")
+//     .dxForm({
+//       // minColWidth: '200px',
+//       colCount: 'auto',
+//       // width: '100%',
+//       colCountByScreen: {
+//         lg: 4,
+//         md: 4,
+//         sm: 2,
+//         xs: 1,
+//       },
+//       screenByWidth(width) {
+//         return width < 480 ? 'xs' : width < 840 ? 'sm' : width < 1024 ? 'md' : 'lg';
+//       },
+//       items: undefined,
+//     }).dxForm("instance");
+
+
+// _getitems = GoItems("./data/NavMain.json");
+//   //===================================================================
+//   function GoItems(_objItems) {
+//     _new = [];
+//     $.getJSON(_objItems, function (result) {
+//       result.forEach(function (rowData) {
+//         _new.push({
+//           'itemType': 'button',
+//           'buttonOptions': {
+//             'text': rowData.key,
+//             'icon': 'fas fa-comment fa-xl',
+//             'type': 'default',
+//             'width': '200px',
+//             'height': '200px',
+//             'focusStateEnabled': false,
+//           },
+//         });
+//       });
+//       _UserPage.option('items', _new);
+//     });
+//   }
+
+
+
+
+
+// _TabUserPage = $('#TabUserPage')
+//     .dxTabs({
+//       iconPosition: "top",
+//       stylingMode: "primary",
+//       hoverStateEnabled: true,
+//       focusStateEnabled: false,
+//       selectionMode: 'single',
+//       activeStateEnabled: true,
+//       scrollByContent: true,
+//       scrollingEnabled: true,
+//       showNavButtons: true,
+//       selectedIndex: -1,
+//       items: [
+//         {
+//           text: 'Authentication',
+//           icon: 'fas fa-user',
+//           // template: function (itemData, itemIndex, element) {
+//           //   _FormSysTab = $("<div>").appendTo(element)
+//           //     .dxForm({
+//           //       labelMode: 'floating',
+//           //       items: [
+//           //         'ID', {
+//           //           itemType: 'group',
+//           //           caption: 'Main Information',
+//           //           items: ['FirstName', 'LastName', 'HireDate', 'Position', 'OfficeNo'],
+//           //         },
+//           //       ],
+//           //     }).dxForm('instance');
+//           // },
+//         },
+//         {
+//           text: 'Personal Data',
+//           icon: 'fas fa-user',
+//           // items: ['BirthDate', {
+//           //   itemType: 'group',
+//           //   caption: 'Home Address',
+//           //   items: ['Address', 'City', 'State', 'Zipcode'],
+//           // }],
+//         },
+//         {
+//           text: 'Phone',
+//           icon: 'fas fa-user',
+//           // items: ['Phone'],
+//         }, {
+//           text: 'Skype',
+//           icon: 'fas fa-user',
+//           // items: ['Skype'],
+//         }, {
+//           text: 'Email',
+//           icon: 'fas fa-user',
+//           // items: ['Email'],
+//         }
+//       ],
+//     })
+//     .dxScrollView({
+//       scrollByContent: true,
+//       scrollByThumb: true,
+//       useNative: false,
+//       showScrollbar: 'onHover',
+//       height: '100%',
+//       width: "100%",
+//     });
+
+
+
 
 // _UserAuth = $('#Authentication').dxPopup({
 //       title: "Authentication",
@@ -78,8 +219,9 @@
 //             }
 //           }
 //         }],
-
 //     }).dxPopup("instance");
+
+
 
 // $("#popup").dxPopup({
 //        height: 300,
@@ -87,20 +229,17 @@
 //          var scrollView = $("<div id='scrollView'></div>");
 //          var content = $("<div></div>"); 
 //          scrollView.append(content);
-         
 //          content.text("test content").height(1000);
 //          scrollView.dxScrollView({
 //              height: '100%',
 //              width: '100%'
-          
 //          });
-         
 //          container.append(scrollView);
-         
 //          return container;
 //        }
-
 // })
+
+
 
 // const PopupAIO = $('#PopupAIO').dxPopup({
 //     accessKey: undefined,
@@ -181,6 +320,8 @@
 //     width: "80vw",
 //     wrapperAttr: {}
 // });
+
+
 
 // //=========================================================================================================
 // const GridAIO = $('#GridAIO').dxDataGrid({
@@ -708,6 +849,8 @@
 //     wordWrapEnabled: false
 // });
 
+
+
 // //========================================================================================================
 // const _userauth = $('#userauth').dxTextBox({
 //     accessKey: undefined,
@@ -724,7 +867,6 @@
 //             button.option('icon', button.option('icon') === 'lock' ? 'unlock' : 'lock');
 //             _userauth.option('mode', _userauth.option('mode') === 'text' ? 'password' : 'text');
 //           },
-
 //         }
 //       },
 //       {
@@ -739,7 +881,6 @@
 //           onClick: function () {
 //             $("#boxOptions").remove();
 //             $("body").prepend("<div id='gridContainer'></div>");
-            
 //             DevExpress.ui.notify(
 //               {
 //                 message: _userauth.option('value'),
@@ -808,6 +949,8 @@
 //     visible: true,
 //     width: 300
 //   }).dxTextBox('instance');
+
+
 
 //   //========================================================================================================
 //   $('#MasterGridContainer').dxDataGrid({
@@ -878,7 +1021,6 @@
 //     },
 //     hoverStateEnabled: false,
 //     headerFilter: { visible: false },
-
 //     onExporting(e) {
 //       if (e.format === 'xlsx') {
 //         const workbook = new ExcelJS.Workbook();
@@ -910,7 +1052,6 @@
 //     // onRowExpanding: function(e){
 //     //   e.component.collapseAll(-1);
 //     // },
-
 //     paging: {
 //       pageSize: 20,
 //     },
@@ -922,10 +1063,8 @@
 //       showPageSizeSelector: true,
 //       visible: true,
 //     },
-
 //     remoteOperations: false,
 //     rowAlternationEnabled: false,
-
 //     sorting: {
 //       mode: 'multiple',
 //     },
@@ -946,7 +1085,6 @@
 //     showRowLines: true,
 //     sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
 //     summary: _TBSummaryDashboard,
-
 //     toolbar: undefined,
 //     wordWrapEnabled: false,
 //     // masterDetail: {
@@ -1035,7 +1173,6 @@
 //     //           });
 //     //         }
 //     //       },
-
 //     //       remoteOperations: false,
 //     //       sorting: {
 //     //         mode: 'multiple',
@@ -1063,11 +1200,12 @@
 //     //       //summary: _TBSummaryDashboard,
 //     //       //toolbar: undefined,
 //     //       rowAlternationEnabled: false,
-
 //     //     }).appendTo(container);
 //     //   }
 //     // },
 //   //});.dxDataGrid('instance');
+
+
 
 // //===========================================================================================
 // /*

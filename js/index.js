@@ -31,7 +31,7 @@ $(document).ready(function () {
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
-    height: '56px',
+    height: '62px',
     items: [
       {
         widget: 'dxButton',
@@ -53,14 +53,6 @@ $(document).ready(function () {
           height: undefined,
           width: undefined,
           onClick: () => {
-            // $("#popup").dxPopup({
-            //   // ...
-            //   showTitle: true,
-            //   title: "Information",
-            //   visble: true,
-            //   hideOnOutsideClick: true,
-            // });
-
             _LayoutContains.toggle();
           },
         }
@@ -74,7 +66,7 @@ $(document).ready(function () {
           disabled: false,
           text: null,
           icon: null,
-          template: '<div style="padding: 5px 40px 5px 40px" class="fas fa-user fa-xl"></div>',
+          template: '<div style="padding: 1px 15px 0 15px" class="fas fa-circle-user fa-3x"></div>',
           hoverStateEnabled: true,
           focusStateEnabled: false,
           activeStateEnabled: false,
@@ -233,7 +225,7 @@ $(document).ready(function () {
 
   //===============================================================================
   _PageToolbar = $('#PageToolbar').dxToolbar({
-    // visible: true,
+    // visible: false,
     items: [
       {
         location: 'center',

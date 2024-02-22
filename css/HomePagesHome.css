@@ -3,20 +3,14 @@
 .layout-03,
 .layout-04,
 .layout-05 {
-    background-color: rgba(50, 50, 50, 1);
-    padding: 7px;
     height: 0;
-    color: rgba(255, 255, 255, 0.8);
     text-align: justify;
     align-content: center;
     justify-content: top;
-    border: 1px rgb(0, 0, 0, 0.2) solid;
     padding-top: 100%;
-
 }
 
 .layout-01 {
-    padding: 7px;
     text-align: left;
     font-size: 2rem;
     font-weight: normal;
@@ -26,10 +20,11 @@
 .layout-02 {
     padding: 7px;
     text-align: center;
+    background-color:rgb(49, 49, 49, 0.8);
 }
 
 .layout-03 {
-    padding: 0;
+    padding: 7px;
 }
 
 #NavbarLayout03 {
@@ -37,10 +32,10 @@
     height: 42px;
 }
 
-#NavbarLayout03 .fa-whatsapp {
+#NavbarLayout03 * {
     font-size: 1.2rem;
 }
-
+/* 
 #NavbarLayout03 .fa-instagram {
     font-size: 1.2rem;
 }
@@ -59,7 +54,7 @@
 
 #NavbarLayout03 .fa-envelope {
     font-size: 1.2rem;
-}
+} */
 
 #BannerImage .dx-gallery-item-content {
     position: -webkit-sticky;
@@ -81,12 +76,13 @@
     position: relative;
     width: 100%;
     overflow: no;
-    padding-top: 7px;
+    padding: 7px;
+
     /* padding-top: 100%; */
     /* Aspect Ratio ==> 16:9 (52.25%) ; 4:3 (75%) ; 3:2 (66.66%) */
+
     align-content: start;
     justify-content: start;
-    background-color: transparent;
     border: none;
 }
 
@@ -108,6 +104,8 @@
 .layout-05 {
     padding: 7px;
     padding-top: 10px;
+    background-color:rgb(49, 49, 49, 0.8);
+    border-top: rgba(100, 100, 100, 0.3) ridge;
 }
 
 .HomeLinkedPlatform-paging>b {

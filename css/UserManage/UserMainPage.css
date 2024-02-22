@@ -4,7 +4,15 @@
   overflow: none;
   flex: 1 1 auto;
   height: 100%;
+  width: 100%;
   padding: 10px;
+  text-align:center;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+#UserPage .dx-button {
+  margin: 10px 5px 5px 5px;
 }
 
 #Authentication {
@@ -13,6 +21,7 @@
   align-content: center;
   justify-content: center;
 }
+
 
 @media only screen and (max-width: 980px) {
   #Authentication {
