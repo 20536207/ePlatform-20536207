@@ -22,7 +22,7 @@ $(() => {
             scrollByThumb: true,
             useNative: false,
             showScrollbar: 'onHover',
-            // height: 'inherit',
+            height: '100%',
             // width: "100%",
 
         });

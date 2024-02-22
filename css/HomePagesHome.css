@@ -1,4 +1,4 @@
-.layout-01,
+/* .layout-01, */
 .layout-02,
 .layout-03,
 .layout-04,
@@ -11,17 +11,20 @@
     align-content: center;
     justify-content: top;
     border: 1px rgb(0, 0, 0, 0.2) solid;
+    padding-top: 100%;
 
 }
 
 .layout-01 {
+    padding: 7px;
     text-align: left;
     font-size: 2rem;
     font-weight: normal;
-   line-height: 2.3rem;
+    line-height: 2.3rem;
 }
 
 .layout-02 {
+    padding: 7px;
     text-align: center;
 }
 
@@ -102,6 +105,7 @@
 
 /* ==================================================================== */
 .layout-05 {
+    padding: 7px;
     padding-top: 10px;
 }
 
@@ -141,6 +145,7 @@
 
 .HomeLinkedPlatform-item-detail {
     text-align: justify;
+    display: inline-block;
 }
 
 .HomeLinkedPlatform-item-detail>i {
