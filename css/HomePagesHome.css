@@ -7,7 +7,6 @@
     text-align: justify;
     align-content: center;
     justify-content: top;
-    padding-top: 100%;
 }
 
 .layout-01 {
@@ -20,7 +19,7 @@
 .layout-02 {
     padding: 7px;
     text-align: center;
-    background-color:rgb(49, 49, 49, 0.8);
+    background-color: rgb(49, 49, 49, 0.8);
 }
 
 .layout-03 {
@@ -35,6 +34,7 @@
 #NavbarLayout03 * {
     font-size: 1.2rem;
 }
+
 /* 
 #NavbarLayout03 .fa-instagram {
     font-size: 1.2rem;
@@ -73,38 +73,42 @@
 }
 
 .layout-04 {
-    position: relative;
-    width: 100%;
-    overflow: no;
+    /* position: relative; */
+    /* width: 100%; */
+    /* overflow: no; */
     padding: 7px;
 
     /* padding-top: 100%; */
     /* Aspect Ratio ==> 16:9 (52.25%) ; 4:3 (75%) ; 3:2 (66.66%) */
 
-    align-content: start;
-    justify-content: start;
-    border: none;
+    /* align-content: start; */
+    /* justify-content: start; */
+    /* border: none; */
 }
 
-/*YOUTUBE*/
-.layout-04 .Introduction {
-    position: absolute;
-    padding: 7px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
+#PageLayout {
+    display: flex;
+    flex-direction: column;
+    overflow: none;
+    flex: 1 1 auto;
     height: 100%;
-    border: none;
-
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+#PageLayout .dx-button {
+  margin: 10px 5px 5px 5px;
+}
+
 
 /* ==================================================================== */
 .layout-05 {
     padding: 7px;
     padding-top: 10px;
-    background-color:rgb(49, 49, 49, 0.8);
+    background-color: rgb(49, 49, 49, 0.8);
     border-top: rgba(100, 100, 100, 0.3) ridge;
 }
 

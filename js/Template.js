@@ -1575,3 +1575,51 @@
 
   //   },
   // }).dxTabs('instance');
+
+
+  // _ListPlatform = $("<div>").dxList({
+    //     dataSource: "./data/HomeLinkedPlatform.json",
+    //     focusStateEnabled: false,
+    //     activeStateEnabled: false,
+    //     grouped: true,
+    //     collapsibleGroups: false,
+    //     showSelectionControls: false,
+    //     useNativeScrolling: false,
+    //     groupTemplate(data) {
+    //         return $(`<div style="color: rgba(28, 168, 221, 1)">${data.dev}</div>`);
+    //     },
+    //     itemTemplate(data) {
+    //         return $(`<div>${data.product}</div>`);
+    //     },
+    //     width: '100%',
+    //     selectionMode: "none",
+    //     onItemClick(e) {
+    //         window.open(e.itemData.target, '_blank')
+    //     },
+    // });
+
+
+
+    // b = ""
+            // devdata.items.forEach(function (productdata, productindex, productelement) {
+            // b = b +
+            //     "<div class='HomeLinkedPlatform-layout'>" +
+            //     "<div class='HomeLinkedPlatform-item'>" +
+            //     //===========================================================
+            //     // "<a target='_blank' href=" + productdata.target + ">" +
+            //     // "<img src=" + productdata.icon + " />" +
+            //     // "</a>" +
+            //     // "<div class='HomeLinkedPlatform-item-detail'>" +
+            //     // "<div>" + productdata.product + "</div>" +
+            //     // "<br><i>" + productdata.detail + "</i><br><br>"+
+            //     // "</div>" +
+            //     //===========================================================
+            //     // "<a target='_blank' href=" + productdata.target + ">" +productdata.product+"</a>"+
+            //     // "<br><i>" + productdata.detail + "</i><br><br>"+
+            //     //===========================================================
+
+            //     //===========================================================
+            //     "</div>" +
+            //     "</div>"
+            // });
+            // develement.append(a);

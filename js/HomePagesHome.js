@@ -1,4 +1,5 @@
 $(() => {
+    // ===============================================================================================
     _ViewHome = $('#HomePagesHome')
         .dxResponsiveBox({
             rows: [
@@ -24,9 +25,9 @@ $(() => {
             showScrollbar: 'onHover',
             height: '100%',
             // width: "100%",
-
         });
 
+    // ===============================================================================================
     _NavbarLayout03 = $('#NavbarLayout03').dxTabs({
         dataSource: "./data/NavLayout03.json",
         hoverStateEnabled: true,
@@ -42,6 +43,7 @@ $(() => {
         },
     }).dxTabs('instance');
 
+    // ===============================================================================================
     _BannerImage = $('#BannerImage').dxGallery({
         dataSource: './data/BannerImage.json',
         height: 'innerWidth',
@@ -60,27 +62,7 @@ $(() => {
         },
     });
 
-    // _ListPlatform = $("<div>").dxList({
-    //     dataSource: "./data/HomeLinkedPlatform.json",
-    //     focusStateEnabled: false,
-    //     activeStateEnabled: false,
-    //     grouped: true,
-    //     collapsibleGroups: false,
-    //     showSelectionControls: false,
-    //     useNativeScrolling: false,
-    //     groupTemplate(data) {
-    //         return $(`<div style="color: rgba(28, 168, 221, 1)">${data.dev}</div>`);
-    //     },
-    //     itemTemplate(data) {
-    //         return $(`<div>${data.product}</div>`);
-    //     },
-    //     width: '100%',
-    //     selectionMode: "none",
-    //     onItemClick(e) {
-    //         window.open(e.itemData.target, '_blank')
-    //     },
-    // });
-
+    // ===============================================================================================
     _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxMultiView({
         dataSource: "./data/HomeLinkedPlatform.json",
         onContentReady: function (e) {
@@ -125,33 +107,53 @@ $(() => {
                     })
                 )
             });
-
-
-            // b = ""
-            // devdata.items.forEach(function (productdata, productindex, productelement) {
-            // b = b +
-            //     "<div class='HomeLinkedPlatform-layout'>" +
-            //     "<div class='HomeLinkedPlatform-item'>" +
-            //     //===========================================================
-            //     // "<a target='_blank' href=" + productdata.target + ">" +
-            //     // "<img src=" + productdata.icon + " />" +
-            //     // "</a>" +
-            //     // "<div class='HomeLinkedPlatform-item-detail'>" +
-            //     // "<div>" + productdata.product + "</div>" +
-            //     // "<br><i>" + productdata.detail + "</i><br><br>"+
-            //     // "</div>" +
-            //     //===========================================================
-            //     // "<a target='_blank' href=" + productdata.target + ">" +productdata.product+"</a>"+
-            //     // "<br><i>" + productdata.detail + "</i><br><br>"+
-            //     //===========================================================
-
-            //     //===========================================================
-            //     "</div>" +
-            //     "</div>"
-            // });
-            // develement.append(a);
         },
     });
 
+    // ===============================================================================================
+    for (var i = 1; i < 51; i++) {
+        $("#PageLayout").append(
+            $("<div />").dxButton({
+                // text: 'Contained',
+                type: 'normal',
+                // icon: 'fas fa-user-shield fa-4x',
+                stylingMode: 'contained',
+                hoverStateEnabled: true,
+                focusStateEnabled: false,
+                activeStateEnabled: true,
+                width: 132,
+                height: 132,
+                template: () => {
+                    return $(
+                        "<div style='display:flex;display: flex; flex-direction: column;'>"+
+                        "<i class='fab fa-weibo fa-4x'></i>"+
+                        "<span>Layanan satuan pendidikan satu data kualitas terjaga</span></div>"
+                    )
+                },
+                onClick() {
+                    DevExpress.ui.notify(
+                        {
+                            message: 'masih dalam proses ritual', //this.option('text'),
+                            maxWidth: 300,
+                            displayTime: 1000,
+                            animation: {
+                                show: { type: 'fade', duration: 400, from: 0, to: 1 },
+                                hide: { type: 'fade', duration: 40, to: 0 },
+                            },
+                        },
+                        { position: "top right", direction: "down-push" }
+                    );
+                },
+            })
+        )
+    };
+    $("#PageLayout").dxScrollView({
+    scrollByContent: true,
+    scrollByThumb: true,
+    useNative: false,
+    showScrollbar: 'onHover',
+    height: '100%',
+    width: "100%",
+  })
 
 });
