@@ -36,7 +36,7 @@
 //       colCount: 'auto',
 //       // width: '100%',
 //       colCountByScreen: {
-//         lg: 4,
+//         lg: 5,
 //         md: 4,
 //         sm: 2,
 //         xs: 1,

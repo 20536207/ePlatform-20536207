@@ -111,7 +111,7 @@ $(() => {
     });
 
     // ===============================================================================================
-    for (var i = 1; i < 51; i++) {
+    for (var i = 1; i <= 50; i++) {
         $("#PageLayout").append(
             $("<div />").dxButton({
                 // text: 'Contained',
@@ -121,12 +121,14 @@ $(() => {
                 hoverStateEnabled: true,
                 focusStateEnabled: false,
                 activeStateEnabled: true,
-                width: 132,
-                height: 132,
+                width: () => {
+                    return $(window).width() > 1024 ? '20%' : $(window).width() > 960 ? '25%' : $(window).width() > 600 ? '33.3%' : $(window).width() > 480 ? '50%' : '100%';
+                },
+                // height: undefined,
                 template: () => {
                     return $(
-                        "<div style='display:flex;display: flex; flex-direction: column;'>"+
-                        "<i class='fab fa-weibo fa-4x'></i>"+
+                        "<div style='display:flex;display: flex; flex-direction: column;padding: 5px'>" +
+                        "<i class='fab fa-weibo fa-4x'></i>" +
                         "<span>Layanan satuan pendidikan satu data kualitas terjaga</span></div>"
                     )
                 },
@@ -145,15 +147,16 @@ $(() => {
                     );
                 },
             })
+            // .dxButton("instance")
         )
     };
-//     $("#PageLayout").dxScrollView({
-//     scrollByContent: true,
-//     scrollByThumb: true,
-//     useNative: false,
-//     showScrollbar: 'onHover',
-//     height: '100%',
-//     width: "100%",
-//   })
+    //     $("#PageLayout").dxScrollView({
+    //     scrollByContent: true,
+    //     scrollByThumb: true,
+    //     useNative: false,
+    //     showScrollbar: 'onHover',
+    //     height: '100%',
+    //     width: "100%",
+    //   })
 
 });
