@@ -114,16 +114,15 @@ $(() => {
     for (var i = 1; i <= 50; i++) {
         $("#PageLayout").append(
             $("<div />").dxButton({
-                // text: 'Contained',
+                elementAttr: {class: 'btnPageLayout'},
                 type: 'normal',
-                // icon: 'fas fa-user-shield fa-4x',
                 stylingMode: 'contained',
                 hoverStateEnabled: true,
                 focusStateEnabled: false,
                 activeStateEnabled: true,
-                width: () => {
-                    return $(window).width() > 1024 ? '20%' : $(window).width() > 960 ? '25%' : $(window).width() > 600 ? '33.3%' : $(window).width() > 480 ? '50%' : '100%';
-                },
+                // width: () => {
+                //     return $(window).width() > 1024 ? '20%' : $(window).width() > 960 ? '25%' : $(window).width() > 600 ? '33.3%' : $(window).width() > 480 ? '50%' : '100%';
+                // },
                 // height: undefined,
                 template: () => {
                     return $(

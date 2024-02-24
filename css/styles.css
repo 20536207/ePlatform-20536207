@@ -117,3 +117,14 @@ body {
   max-width: 325px;
   max-height: 245px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .layout-01 {
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+
+    .bannerimage {width: 75%;}
+}

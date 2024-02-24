@@ -6,14 +6,14 @@
   height: 100%;
   width: 100%;
   padding: 10px;
-  text-align:center;
+  text-align: center;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
 }
 
-#UserPage .dx-button {
+/* #UserPage .dx-button {
   margin: 10px 5px 5px 5px;
-}
+} */
 
 #Authentication {
   max-width: 25%;
@@ -23,21 +23,33 @@
 }
 
 
-@media only screen and (max-width: 980px) {
-  #Authentication {
-    max-width: 50%;
-  }
+/* ==================================================================================== */
+#PageLayout {
+    text-align: center;
+    justify-content: center;
 }
 
-@media only screen and (max-width: 640px) {
-  #Authentication {
-    max-width: 70%;
-  }
+#PageLayout .dx-button{
+    margin: auto;
 }
 
+.btnPageLayout{ width: 20%;}
+
+@media only screen and (max-width: 960px) {
+    .btnPageLayout{ width: 25%;}
+    #Authentication {max-width: 50%;}
+}
+
+@media only screen and (max-width: 600px) {
+    .btnPageLayout{ width: 33.3%;}
+    #Authentication {max-width: 70%;}
+}
 
 @media only screen and (max-width: 480px) {
-  #Authentication {
-    max-width: 90%;
-  }
+    .btnPageLayout{ width: 50%;}
+    #Authentication { max-width: 90%;}
+}
+
+@media only screen and (max-width: 368px) {
+    .btnPageLayout{ width: 100%;}
 }

@@ -3,17 +3,20 @@ $(() => {
   for (var i = 1; i < 21; i++) {
     $("#UserPage").append(
       $("<div />").dxButton({
-        // text: 'Contained',
+        elementAttr: {class: 'btnPageLayout'},
         type: 'normal',
-        // icon: 'fas fa-user-shield fa-4x',
         stylingMode: 'contained',
         hoverStateEnabled: true,
         focusStateEnabled: false,
         activeStateEnabled: true,
-        width: 176,
-        height: 176,
+        // width: 176,
+        // height: 176,
         template: () => {
-          return $("<i class='fas fa-user-shield fa-4x' />");
+          return $(
+            "<div style='display:flex;display: flex; flex-direction: column;padding: 5px'>" +
+            "<i class='fas fa-user-shield fa-4x'></i>" +
+            "<span>Information, Manage and Security User</span></div>"
+          )
         },
         onClick() {
           DevExpress.ui.notify(
