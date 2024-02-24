@@ -104,7 +104,6 @@ body {
 
 /* ==================================================================================== */
 .Page-Title {
-  font-size: 1rem;
   color: rgba(28, 168, 221);
   font-weight: bold;
 }
@@ -119,12 +118,4 @@ body {
 }
 
 
-@media only screen and (max-width: 600px) {
-    .layout-01 {
-        text-align: center;
-        font-size: 1.3rem;
-        line-height: 1.5rem;
-    }
 
-    .bannerimage {width: 75%;}
-}

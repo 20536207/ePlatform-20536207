@@ -141,25 +141,38 @@
     justify-content: center;
 }
 
-#PageLayout .dx-button{
+#PageLayout .dx-button {
     margin: auto;
 }
 
-.btnPageLayout{ width: 20%;}
+.btnPageLayout {
+    width: 20%;
+}
 
 @media only screen and (max-width: 960px) {
-    .btnPageLayout{ width: 25%;}
+    
+    .btnPageLayout {width: 25%;}
 }
 
 @media only screen and (max-width: 600px) {
-    .btnPageLayout{ width: 33.3%;}
+
+    .layout-01 {
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+
+    .bannerimage {width: 75%;}
+
+    .btnPageLayout {width: 33.3%;}
 }
 
 @media only screen and (max-width: 480px) {
-    .btnPageLayout{ width: 50%;}
+    .btnPageLayout {width: 50%;}
 }
 
 @media only screen and (max-width: 368px) {
-    .btnPageLayout{ width: 100%;}
+    .btnPageLayout {width: 100%;}
 }
 
+@media only screen and (max-width: 600px) {}

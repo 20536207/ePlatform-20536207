@@ -79,7 +79,7 @@ $(document).ready(function () {
             _PageToolbar.option("items[0].text", "e-Pltaform Account"),
               $("#PageContains").empty();
             $("#PageContains").load("./pages/UserManage/UserMainPage.html");
-           
+
           },
         }
       },
@@ -226,15 +226,16 @@ $(document).ready(function () {
   //===============================================================================
   _PageToolbar = $('#PageToolbar').dxToolbar({
     // visible: false,
+    // elementAttr: { class: 'Page-Title' },
     items: [
       {
         location: 'center',
         locateInMenu: 'never',
-        // cssClass: 'Page-Title',
+        cssClass: 'Page-Title',
         text: '',
-        template(e) {
-          return $("<div class='Page-Title'>" + e.text + "</div>");
-        },
+        // template(e) {
+        //   return $("<div class='Page-Title'>" + e.text + "</div>");
+        // },
       }
 
     ],

@@ -1,12 +1,12 @@
 $(() => {
 
-  for (var i = 1; i < 21; i++) {
+  for (var i = 1; i <= 50; i++) {
     $("#UserPage").append(
       $("<div />").dxButton({
         elementAttr: {class: 'btnPageLayout'},
         type: 'normal',
         stylingMode: 'contained',
-        hoverStateEnabled: true,
+        hoverStateEnabled: false,
         focusStateEnabled: false,
         activeStateEnabled: true,
         // width: 176,
@@ -15,7 +15,7 @@ $(() => {
           return $(
             "<div style='display:flex;display: flex; flex-direction: column;padding: 5px'>" +
             "<i class='fas fa-user-shield fa-4x'></i>" +
-            "<span>Information, Manage and Security User</span></div>"
+            "<span>Authentication, Management and Information</span></div>"
           )
         },
         onClick() {

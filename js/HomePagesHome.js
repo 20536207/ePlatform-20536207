@@ -117,7 +117,7 @@ $(() => {
                 elementAttr: {class: 'btnPageLayout'},
                 type: 'normal',
                 stylingMode: 'contained',
-                hoverStateEnabled: true,
+                hoverStateEnabled: false,
                 focusStateEnabled: false,
                 activeStateEnabled: true,
                 // width: () => {
