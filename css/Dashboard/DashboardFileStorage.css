@@ -1,11 +1,15 @@
+#PageContains{
+  padding: 10px 5px 5px 5px;
+}
+
 #DashboardFileStorage {
   display: flex;
   flex-direction: column;
   overflow: none;
   flex: 1 1 auto;
   height: 100%;
-  margin: 5px;
-
+  /* margin: 5px; */
+  /* padding: 10px 5px 0 5px; */
 }
 
 .photo-popup-content {

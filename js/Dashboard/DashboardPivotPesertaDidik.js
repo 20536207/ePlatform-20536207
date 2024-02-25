@@ -1,12 +1,61 @@
 $(() => {
 
-    $('#PesertaDidikPivotGrid').dxPivotGrid({
+    _TBPivotPesertaDidik = {
+        fields: [
+            // {
+            //     caption: 'ID Anggota Rombel',
+            //     fixed: true,
+            //     dataField: 'A01',
+            //     sortOrder: 'asc',
+            // },
+            // {
+            //     caption: 'Tahun Akademik',
+            //     dataField: 'A02',
+            //     groupIndex: 0,
+            // },
+            // {
+            //     caption: 'Rombel',
+            //     dataField: 'A03',
+            //     groupIndex: 0,
+            // },
+
+            {
+                caption: 'Rombel',
+                // width: 120,
+                dataField: 'A03',
+                area: 'row',
+                headerFilter: {
+                    search: {
+                        enabled: true,
+                    },
+                },
+                // selector(data) {
+                //     return `${data.city} (${data.country})`;
+                // },
+            }, {
+                groupName: 'Gender',
+                groupInterval: 'month',
+                visible: false,
+            },
+            {
+                caption: 'Gender',
+                dataField: 'C05',
+                dataType: 'number',
+                summaryType: 'counta',
+                format: 'currency',
+                area: 'data',
+            }
+        ],
+        store: './data/Dashboard/DashboardPesertaDidik.json',
+    };
+
+    $('#DashboardPesertaDidik').dxPivotGrid({
         allowExpandAll: false,
         allowFiltering: false,
         allowSorting: false,
         allowSortingBySummary: false,
         dataFieldArea: "column", //column | row
-        dataSource: Edit,
+        dataSource: _TBPivotPesertaDidik,
         disabled: false,
         elementAttr: {},
         encodeHtml: true,
@@ -17,25 +66,8 @@ $(() => {
             allowSearch: false,
             applyChangesMode: "instantly", //instantly | onDemand
             enabled: true,
-            height: 600,
-            layout: "0", // 0 | 1 | 2 // 
-
-                        // "0"     Col1                    Col2
-                        // Row1:   A — All Fields          R — Row Fields
-                        // Row2:                           C — Column Fields
-                        // Row3:   F — Filter Fields       D — Data Fields
-
-                        // "1"     Col1                    Col2
-                        // Row1:   A — All Fields          F — Filter Fields
-                        // Row2:                           R — Row Fields
-                        // Row3:                           C — Column Fields
-                        // Row4:                           D — Data Fields
-                        
-                        // "2"     Col1                    Col2
-                        // Row1:   A — All Fields
-                        // Row2:   F — Filter Fields       C — Column Fields
-                        // Row3:   R — Row Fields          D — Data Fields
-
+            height: '90%',
+            layout: "0", // 0 | 1 | 2
             searchTimeout: 500,
             texts: {
                 allFields: "All Fields",
@@ -45,7 +77,7 @@ $(() => {
                 rowFields: "Row Fields"
             },
             title: "Field Chooser",
-            width: 400
+            width: '90%'
         },
         fieldPanel: {
             allowFieldDragging: true,
