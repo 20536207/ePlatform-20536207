@@ -76,7 +76,7 @@ $(document).ready(function () {
           height: undefined,
           width: undefined,
           onClick() {
-            _PageToolbar.option("items[0].text", "e-Pltaform Account"),
+            _PageToolbar.option("items[0].text", "e-Platform Account"),
               $("#PageContains").empty();
             $("#PageContains").load("./pages/UserManage/UserMainPage.html");
 
