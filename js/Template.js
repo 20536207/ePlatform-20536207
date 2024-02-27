@@ -1600,6 +1600,55 @@
 
 
 
+// _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxMultiView({
+//         dataSource: "./data/HomeLinkedPlatform.json",
+//         onContentReady: function (e) {
+//             $.getJSON(e.component.option('dataSource'), function (jsondata) {
+//                 $('.HomeLinkedPlatform-item-count').text(jsondata.length);
+//             });
+//         },
+//         // selectedIndex: 0,
+//         loop: true,
+//         // animationEnabled: true,
+//         onSelectionChanged(e) {
+//             $('.selected-index')
+//                 .text(e.component.option('selectedIndex') + 1);
+//         },
+//         itemTemplate: function (devdata, devindex, develement) {
+//             develement.append(
+//                 "<div class='HomeLinkedPlatform-dev'>" +
+//                 "<b>" + devdata.dev + "</b><br>" +
+//                 "<i>" + devdata.detail + "</i>" +
+//                 "</div>"
+//             );
+
+//             devdata.items.forEach(function (productdata, productindex, productelement) {
+//                 develement.append(
+//                     $("<div>").dxButton({
+//                         stylingMode: 'text',
+//                         type: 'normal',
+//                         width: '100%',
+//                         focusStateEnabled: false,
+//                         activeStateEnabled: true,
+//                         onClick() {
+//                             window.open(productdata.target, '_blank')
+//                         },
+//                         template() {
+//                             return (
+//                                 "<div class='HomeLinkedPlatform-item-detail'>" +
+//                                 "<a>" + productdata.product + "</a>" +
+//                                 "<br><i>" + productdata.detail + "</i>" +
+//                                 "</div>"
+//                             );
+//                         },
+//                     })
+//                 )
+//             });
+//         },
+//     });
+
+
+
     // b = ""
             // devdata.items.forEach(function (productdata, productindex, productelement) {
             // b = b +

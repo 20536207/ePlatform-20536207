@@ -79,10 +79,15 @@
 
 /* ==================================================================== */
 .layout-05 {
-    padding: 7px;
-    padding-top: 10px;
+    padding: 10px 7px 7px 7px;
     background-color: rgb(49, 49, 49, 0.8);
     border-top: rgba(100, 100, 100, 0.3) ridge;
+}
+
+#HomeLinkedPlatform {
+    margin-top: 20px;
+
+    background-color: transparent;
 }
 
 .HomeLinkedPlatform-paging>b {
@@ -91,11 +96,13 @@
 
 .HomeLinkedPlatform-dev {
     text-align: left;
-    margin: 10px 0 20px 0;
+    margin: 10px 25px 20px 0;
+    font-size:smaller;
     color: orange;
 }
 
 .HomeLinkedPlatform-dev>i {
+    font-size: small;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -150,8 +157,10 @@
 }
 
 @media only screen and (max-width: 960px) {
-    
-    .btnPageLayout {width: 25%;}
+
+    .btnPageLayout {
+        width: 25%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -162,17 +171,25 @@
         line-height: 1.5rem;
     }
 
-    .bannerimage {width: 75%;}
+    .bannerimage {
+        width: 75%;
+    }
 
-    .btnPageLayout {width: 33.3%;}
+    .btnPageLayout {
+        width: 33.3%;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-    .btnPageLayout {width: 50%;}
+    .btnPageLayout {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 368px) {
-    .btnPageLayout {width: 100%;}
+    .btnPageLayout {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 600px) {}

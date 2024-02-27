@@ -17,15 +17,7 @@ $(() => {
             screenByWidth(width) {
                 return (width < 601) ? 'sm' : 'lg';
             },
-        })
-        .dxScrollView({
-            scrollByContent: true,
-            scrollByThumb: true,
-            useNative: false,
-            showScrollbar: 'onHover',
-            height: '100%',
-            // width: "100%",
-        });
+        }).dxResponsiveBox('instance');
 
     // ===============================================================================================
     _NavbarLayout03 = $('#NavbarLayout03').dxTabs({
@@ -63,28 +55,31 @@ $(() => {
     });
 
     // ===============================================================================================
-    _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxMultiView({
+    _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxAccordion({
         dataSource: "./data/HomeLinkedPlatform.json",
+        activeStateEnabled: true,
+        focusStateEnabled: false,
+        hoverStateEnabled: false,
+        animationDuration: 0,
+        collapsible: true,
         onContentReady: function (e) {
             $.getJSON(e.component.option('dataSource'), function (jsondata) {
                 $('.HomeLinkedPlatform-item-count').text(jsondata.length);
             });
         },
-        // selectedIndex: 0,
-        loop: true,
-        // animationEnabled: true,
         onSelectionChanged(e) {
             $('.selected-index')
                 .text(e.component.option('selectedIndex') + 1);
         },
-        itemTemplate: function (devdata, devindex, develement) {
+        itemTitleTemplate: function (devdata, devindex, develement) {
             develement.append(
                 "<div class='HomeLinkedPlatform-dev'>" +
                 "<b>" + devdata.dev + "</b><br>" +
                 "<i>" + devdata.detail + "</i>" +
                 "</div>"
             );
-
+        },
+        itemTemplate: function (devdata, devindex, develement) {
             devdata.items.forEach(function (productdata, productindex, productelement) {
                 develement.append(
                     $("<div>").dxButton({
@@ -114,7 +109,7 @@ $(() => {
     for (var i = 1; i <= 50; i++) {
         $("#PageLayout").append(
             $("<div />").dxButton({
-                elementAttr: {class: 'btnPageLayout'},
+                elementAttr: { class: 'btnPageLayout' },
                 type: 'normal',
                 stylingMode: 'contained',
                 hoverStateEnabled: false,
@@ -149,13 +144,12 @@ $(() => {
             // .dxButton("instance")
         )
     };
-    //     $("#PageLayout").dxScrollView({
-    //     scrollByContent: true,
-    //     scrollByThumb: true,
-    //     useNative: false,
-    //     showScrollbar: 'onHover',
-    //     height: '100%',
-    //     width: "100%",
-    //   })
+
+    $('#PageContains').dxScrollView({
+        scrollByContent: true,
+        scrollByThumb: true,
+        useNative: false,
+        showScrollbar: 'onHover',
+    });
 
 });

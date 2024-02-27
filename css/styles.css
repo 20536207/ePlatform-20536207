@@ -3,7 +3,7 @@ body {
   height: 100%;
   margin: 0 auto;
   font-size: 0.9rem;
-  overflow-y: none;
+  overflow: hidden;
 }
 
 *>a {
@@ -20,13 +20,13 @@ body {
   flex-direction: column;
   width: inherit;
   height: inherit;
-  overflow-y: none;
+  overflow: hidden;
 }
 
 #LayoutHeader {
   justify-self: flex-start;
   vertical-align: middle;
-  overflow-y: none;
+  overflow: hidden;
   padding: 8px;
 }
 
@@ -43,10 +43,10 @@ body {
 }
 
 #LayoutContent {
-  /* display: flex; */
+  justify-self: stretch;
   flex: 1 1 auto;
-  height:0;
-  overflow-y: none;
+  height: 0;
+  overflow: hidden;
 }
 
 #LayoutFooter {
@@ -59,7 +59,7 @@ body {
 
   font-size: 0.8rem;
   font-family: inherit;
-  overflow-y: none;
+  overflow: hidden;
   border-top: rgba(100, 100, 100, 0.3) ridge;
 }
 
@@ -75,7 +75,7 @@ body {
 /* ==================================================================================== */
 .ContainsSidebar {
   padding: 0 3px 0 3px;
-  background-color:rgb(49, 49, 49, 0.8);
+  background-color: rgb(49, 49, 49, 0.8);
 }
 
 /* ==================================================================================== */
@@ -84,7 +84,7 @@ body {
   flex-direction: column;
   width: inherit;
   height: inherit;
-  overflow: none;
+  overflow: hidden;
 }
 
 /* ==================================================================================== */
@@ -97,8 +97,7 @@ body {
 #PageContains {
   flex: 1 0 auto;
   height: 0;
-  overflow: none;
-  /* padding-top: 2px; */
+  overflow: hidden;
   background-color: transparent;
 }
 
@@ -116,6 +115,3 @@ body {
   max-width: 325px;
   max-height: 245px;
 }
-
-
-
