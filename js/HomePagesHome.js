@@ -86,8 +86,9 @@ $(() => {
                         stylingMode: 'text',
                         type: 'normal',
                         width: '100%',
-                        focusStateEnabled: false,
                         activeStateEnabled: true,
+                        focusStateEnabled: false,
+                        hoverStateEnabled: false,
                         onClick() {
                             window.open(productdata.target, '_blank')
                         },

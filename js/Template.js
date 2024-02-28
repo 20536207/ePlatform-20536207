@@ -1,3 +1,13 @@
+// const apiEndpoint = "https://jsonplaceholder.typicode.com/users";
+
+// const getData = async() => {
+//   const res = await fetch(apiEndpoint);
+//   const data = await res.json();
+//   console.log(data);
+//   return data;
+// }
+// getData();
+
 // for (var i = 1; i < 8; i++) {
 //     $("#UserPage").append(
 //       $("<div />").dxButton({
