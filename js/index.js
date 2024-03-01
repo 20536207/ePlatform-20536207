@@ -91,7 +91,7 @@ $(document).ready(function () {
     opened: false,
     animationEnabled: false,
     revealMode: "slide", //"slide | expand"
-    openedStateMode: $(window).width() < 960 ? "overlap" : "shrink", //shrink //overlap
+    openedStateMode: $(window).width() < 980 ? "overlap" : "shrink", //shrink //overlap
     position: 'left', //right
     shading: $(window).width() < 600 ? true : false,
     closeOnOutsideClick: true,
@@ -179,7 +179,11 @@ $(document).ready(function () {
   $("#PageContains").load("./pages/HomePagesHome.html");
   _PageToolbar.option("items[0].text", 'Home');
   //_LayoutHeader.option("items[0].options.disabled", false);
+
   //===============================================================================
+  $(window).resize(function () {
+    _LayoutContains.option('openedStateMode', $(window).width() < 960 ? "overlap" : "shrink");
+  });
 
 
 });
