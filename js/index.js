@@ -91,7 +91,7 @@ $(document).ready(function () {
     opened: false,
     animationEnabled: false,
     revealMode: "slide", //"slide | expand"
-    openedStateMode: $(window).width() < 600 ? "overlap" : "shrink", //shrink //overlap
+    openedStateMode: $(window).width() < 960 ? "overlap" : "shrink", //shrink //overlap
     position: 'left', //right
     shading: $(window).width() < 600 ? true : false,
     closeOnOutsideClick: true,
