@@ -1,18 +1,16 @@
-window.jsPDF = window.jspdf.jsPDF;
-/*===================================================================================*/
-function GoEncrypt(_Contains, _Key)
-/*===================================================================================*/ {
-  return CryptoJS.TripleDES.encrypt(_Contains.toString(), _Key).toString();
-}
 
 /*===================================================================================*/
-function GoDecrypt(_Contains, _Key)
-/*===================================================================================*/ {
-  return CryptoJS.TripleDES.decrypt(_Contains, _Key).toString(CryptoJS.enc.Utf8);
-}
+// function GoEncrypt(_Contains, _Key) {
+//   return CryptoJS.TripleDES.encrypt(_Contains.toString(), _Key).toString();
+// }
+
+/*===================================================================================*/
+// function GoDecrypt(_Contains, _Key) {
+//   return CryptoJS.TripleDES.decrypt(_Contains, _Key).toString(CryptoJS.enc.Utf8);
+// }
 
 $(document).ready(function () {
-
+  window.jsPDF = window.jspdf.jsPDF;
   //==============================================================================
   _toolbarSeparator = {
     locateInMenu: 'auto',
@@ -151,9 +149,7 @@ $(document).ready(function () {
 
       // _LayoutHeader.option("items[0].options.disabled", true);
       $("#PageContains").empty();
-      $("#PageContains").load(e.itemData["target"]);
-
-
+      return $("#PageContains").load(e.itemData["target"]);
     }
   }).dxActionSheet('instance');
 

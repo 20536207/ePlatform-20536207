@@ -1,5 +1,5 @@
 //=========================================================================================================
-$(function () {
+$(document).ready(function () {
     var
         _ColTingkat = {
             caption: 'Kelas',
@@ -2550,15 +2550,15 @@ $(function () {
             columnResizingMode: 'widget',
             columnAutoWidth: true,
             columnChooser: {
-                allowSearch: false,
-                //emptyPanelText: "Drag a column here to hide it",
                 enabled: true,
-                //height:260,
                 mode: "select",
-                searchTimeout: null,
                 sortOrder: undefined,
                 title: "Column Chooser",
-                //width:250,
+                search: {
+                    editorOptions: {},
+                    enabled: true,
+                    timeout: null,
+                },
             },
             columnFixing: {
                 enabled: true,
@@ -2739,15 +2739,15 @@ $(function () {
                         columnAutoWidth: true,
                         wordWrapEnabled: false,
                         columnChooser: {
-                            allowSearch: false,
-                            //emptyPanelText:"Drag a column here to hide it",
                             enabled: true,
-                            //height:260,
                             mode: "select",
-                            //searchTimeout:500,
                             sortOrder: undefined,
                             title: "Column Chooser",
-                            //width:250,
+                            search: {
+                                editorOptions: {},
+                                enabled: true,
+                                timeout: null,
+                            },
                         },
                         columnFixing: {
                             enabled: true,
