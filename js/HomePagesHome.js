@@ -7,7 +7,9 @@ $(() => {
                 { ratio: 0, screen: 'sm lg' }, //02
                 { ratio: 0, screen: 'sm lg' }, //03
                 { ratio: 0, screen: 'sm lg' }, //04
-                { ratio: 1, screen: 'sm lg' }, //05
+                { ratio: 0, screen: 'sm lg' }, //05
+                { ratio: 0, screen: 'sm lg' }, //06
+                { ratio: 1, screen: 'sm lg' }, //07
             ],
             cols: [
                 { ratio: 3 },
@@ -20,7 +22,7 @@ $(() => {
         }).dxResponsiveBox('instance');
 
     // ===============================================================================================
-    _NavbarLayout03 = $('#NavbarLayout03').dxTabs({
+    _NavbarLayout04 = $('#NavbarLayout04').dxTabs({
         dataSource: "./data/NavLayout03.json",
         hoverStateEnabled: true,
         focusStateEnabled: false,
@@ -47,9 +49,9 @@ $(() => {
         showIndicator: false,
         itemTemplate(item) {
             const result = $('<div>');
-            $('<img class="bannerimage">').attr('src', item.Image).appendTo(result);
-            $('<div>').addClass('banner-image-title').text(item.Title).appendTo(result);
-            $('<div>').addClass('banner-image-keterangan').text(item.Keterangan).appendTo(result);
+            $('<img class="bannerimage" />').attr('src', item.Image).appendTo(result);
+            // $('<div>').addClass('banner-image-title').text(item.Title).appendTo(result);
+            // $('<div>').addClass('banner-image-keterangan').text(item.Keterangan).appendTo(result);
             return result;
         },
     });
@@ -62,15 +64,15 @@ $(() => {
         hoverStateEnabled: false,
         animationDuration: 0,
         collapsible: true,
-        onContentReady: function (e) {
-            $.getJSON(e.component.option('dataSource'), function (jsondata) {
-                $('.HomeLinkedPlatform-item-count').text(jsondata.length);
-            });
-        },
-        onSelectionChanged(e) {
-            $('.selected-index')
-                .text(e.component.option('selectedIndex') + 1);
-        },
+        // onContentReady: function (e) {
+        //     $.getJSON(e.component.option('dataSource'), function (jsondata) {
+        //         $('.HomeLinkedPlatform-item-count').text(jsondata.length);
+        //     });
+        // },
+        // onSelectionChanged(e) {
+        //     $('.selected-index')
+        //         .text(e.component.option('selectedIndex') + 1);
+        // },
         itemTitleTemplate: function (devdata, devindex, develement) {
             develement.append(
                 "<div class='HomeLinkedPlatform-dev'>" +

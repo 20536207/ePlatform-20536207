@@ -1682,3 +1682,18 @@
             //     "</div>"
             // });
             // develement.append(a);
+
+
+// <!-- <div class="HomeLinkedPlatform-paging">
+//     <b>Pintasan Manajemen Data : </b>
+//     <span class="selected-index">1</span> of <span class="HomeLinkedPlatform-item-count"></span>
+// </div> -->
+
+
+
+// <!-- <iframe class='Introduction' src='https://pubhtml5.com/bookcase/ssxdv/silver' seamless='seamless' scrolling='no'
+//     frameborder='0' allowtransparency='true' allowfullscreen>
+// </iframe> -->
+
+// <!-- src="https://www.youtube.com/embed/videoseries?list=PLasucyBLR_zCPhyGpg0n4X6jfYfI23zBW&autoplay=0&mute=1&loop=1" -->
+// <!-- src="https://googledriveembedder.collegefam.com/?key=AIzaSyB8nuwb4z7YOFftmhwzCVmYduqTwvvNfpg&folderid=1jRia9a9LhFbNTLMGhKDK7bm0fOq2CBJ4" -->
