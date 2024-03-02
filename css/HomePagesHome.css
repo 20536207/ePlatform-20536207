@@ -233,7 +233,7 @@
 
 @media only screen and (max-width: 368px) {
     #PageLayout .dx-button {
-    margin-bottom: 10px;
+    margin: 5px 0 5px 0;
 }
     .btnPageLayout {
         width: 100%;
