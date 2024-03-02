@@ -24,32 +24,65 @@
 
 
 /* ==================================================================================== */
-#PageLayout {
-    text-align: center;
-    justify-content: center;
+#UserPage {
+  text-align: center;
+  justify-content: center;
 }
 
-#PageLayout .dx-button{
-    margin: auto;
+#UserPage .dx-button {
+  margin: 0.5%;
 }
 
-.btnPageLayout{ width: 20%;}
+.btnPageLayout {
+  width: 19%;
+}
 
 @media only screen and (max-width: 960px) {
-    .btnPageLayout{ width: 25%;}
-    #Authentication {max-width: 50%;}
+  #UserPage .dx-button {
+    margin: 1%;
+  }
+
+  .btnPageLayout {
+    width: 23%;
+    /*split 4 */
+  }
+
+  #Authentication {
+    max-width: 50%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .btnPageLayout{ width: 33.3%;}
-    #Authentication {max-width: 70%;}
+  #UserPage .dx-button {
+    margin: 1.5%;
+  }
+
+  .btnPageLayout {
+    width: 30.33%;
+    /* Split 3 */
+  }
+
+  #Authentication {
+    max-width: 70%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
-    .btnPageLayout{ width: 50%;}
-    #Authentication { max-width: 90%;}
+  #UserPage .dx-button {
+    margin: 0.9%;
+  }
+
+  .btnPageLayout {
+    width: 48.2%;
+  }
+
+  #Authentication {
+    max-width: 90%;
+  }
 }
 
 @media only screen and (max-width: 368px) {
-    .btnPageLayout{ width: 100%;}
+  .btnPageLayout {
+    width: 100%;
+  }
 }

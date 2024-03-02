@@ -162,17 +162,22 @@
 }
 
 #PageLayout .dx-button {
-    margin: auto;
+    margin: 0.5%;
 }
 
 .btnPageLayout {
-    width: 20%;
+    width: 19%;
 }
 
 @media only screen and (max-width: 960px) {
 
+    #PageLayout .dx-button {
+        margin: 1%;
+    }
+
     .btnPageLayout {
-        width: 25%;
+        width: 23%;
+        /*split 4 */
     }
 
     #BannerImage>div {
@@ -196,9 +201,15 @@
         font-size: small;
     }
 
-    .btnPageLayout {
-        width: 33.3%;
+    #PageLayout .dx-button {
+        margin: 1.5%;
     }
+
+    .btnPageLayout {
+        width: 30.33%;
+        /* Split 3 */
+    }
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -209,6 +220,15 @@
     .bannerimage {
         width: 75%;
     }
+
+    #PageLayout .dx-button {
+        margin: 0.9%;
+    }
+
+    .btnPageLayout {
+        width: 48.2%;
+    }
+
 }
 
 @media only screen and (max-width: 368px) {

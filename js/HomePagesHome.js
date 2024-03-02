@@ -125,8 +125,8 @@ $(document).ready(function () {
                 // height: undefined,
                 template: () => {
                     return $(
-                        "<div style='display:flex;display: flex; flex-direction: column;padding: 5px'>" +
-                        "<i class='fab fa-weibo fa-4x'></i>" +
+                        "<div style='display:flex;display: flex; flex-direction: column;padding: 7px 5px 5px 5px'>" +
+                        "<i class='fas fa-layer-group fa-4x'></i>" +
                         "<span>Layanan satuan pendidikan satu data kualitas terjaga</span></div>"
                     )
                 },
