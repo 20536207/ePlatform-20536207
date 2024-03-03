@@ -1,5 +1,5 @@
 // $(() => {
-$(document).ready(function () {    
+$(document).ready(function () {
     // ===============================================================================================
     _ViewHome = $('#HomePagesHome')
         .dxResponsiveBox({
@@ -110,44 +110,49 @@ $(document).ready(function () {
     });
 
     // ===============================================================================================
-    for (var i = 1; i <= 50; i++) {
-        $("#PageLayout").append(
-            $("<div />").dxButton({
-                elementAttr: { class: 'btnPageLayout' },
-                type: 'normal',
-                stylingMode: 'contained',
-                hoverStateEnabled: false,
-                focusStateEnabled: false,
-                activeStateEnabled: true,
-                // width: () => {
-                //     return $(window).width() > 1024 ? '20%' : $(window).width() > 960 ? '25%' : $(window).width() > 600 ? '33.3%' : $(window).width() > 480 ? '50%' : '100%';
-                // },
-                // height: undefined,
-                template: () => {
-                    return $(
-                        "<div style='display:flex;display: flex; flex-direction: column;padding: 7px 5px 5px 5px'>" +
-                        "<i class='fas fa-layer-group fa-4x'></i>" +
-                        "<span>Layanan satuan pendidikan satu data kualitas terjaga</span></div>"
-                    )
-                },
-                onClick() {
-                    DevExpress.ui.notify(
-                        {
-                            message: 'masih dalam proses ritual', //this.option('text'),
-                            maxWidth: 300,
-                            displayTime: 1000,
-                            animation: {
-                                show: { type: 'fade', duration: 400, from: 0, to: 1 },
-                                hide: { type: 'fade', duration: 40, to: 0 },
-                            },
-                        },
-                        { position: "top right", direction: "down-push" }
-                    );
-                },
-            })
-            // .dxButton("instance")
-        )
-    };
+    $.getJSON("./data/NavMain.json", function (result) {
+        result[0].items.forEach(function (itemData) {
+
+            $("#HomePageContains").append(
+                $("<div />").dxButton({
+                    elementAttr: { class: 'btnHomePageContains' },
+                    type: 'normal',
+                    stylingMode: 'contained',
+                    hoverStateEnabled: false,
+                    focusStateEnabled: false,
+                    activeStateEnabled: true,
+                    height: '125px',
+                    template: () => {
+                        return $(
+                            "<div class='itembtnpage'>" +
+                            "<div class='itemicon'><i class='fas fa-layer-group fa-4x'></i></div>" +
+                            "<div class='itemdev'><div>" + itemData.text + "</div></div>" +
+                            "</div>"
+                        )
+                    },
+                    onClick(e) {
+                        // DevExpress.ui.notify(
+                        //     {
+                        //         message: itemData.text, //this.option('text'),
+                        //         maxWidth: 300,
+                        //         displayTime: 1000,
+                        //         animation: {
+                        //             show: { type: 'fade', duration: 400, from: 0, to: 1 },
+                        //             hide: { type: 'fade', duration: 40, to: 0 },
+                        //         },
+                        //     },
+                        //     { position: "top right", direction: "down-push" }
+                        // );
+                        _PageToolbar.option("items[0].text", itemData.text);
+                        $("#PageContains").empty();
+                        return $("#PageContains").load(itemData.target);
+                    },
+                })
+                // .dxButton("instance")
+            )
+
+        });
+    });
 
     $('#PageContains').dxScrollView({
         scrollByContent: true,

@@ -1,7 +1,7 @@
 [
   {
-    "id": 1,
-    "dev": "SD NEGERI TISNONEGARAN 1",
+    "id": 0,
+    "dev": "SATDIK 20536207",
     "detail": "Satuan Pendidikan Dasar",
     "items": [
       {
@@ -37,9 +37,9 @@
     ]
   },
   {
-    "id": 2,
-    "dev": "DINAS PENDIDIKAN DAN KEBUDAYAAN",
-    "detail": "Satuan Kerja Perangkat Daerah",
+    "id": 1,
+    "dev": "DISDIKBUD",
+    "detail": "Dinas Pendidikan dan Kebudayaan",
     "items": [
       {
         "product": "SI-IJOL",
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 2,
     "dev": "BKPSDM",
     "detail": "Badan Kepegawaian dan Pengembangan Sumber Daya Manusia",
     "items": [
@@ -75,7 +75,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 3,
     "dev": "BPPKAD",
     "detail": "Badan Pendapatan, Pengelolaan Keuangan dan Aset Daerah",
     "items": [
@@ -94,7 +94,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 4,
     "dev": "KEMENDIKBUD RISTEK",
     "detail": "Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi",
     "items": [
@@ -137,8 +137,8 @@
     ]
   },
   {
-    "id": 6,
-    "dev": "BKN R.I",
+    "id": 5,
+    "dev": "BKN",
     "detail": "Badan Kepegawaian Negara Republik Indonesia",
     "items": [
       {
@@ -163,8 +163,8 @@
     ]
   },
   {
-    "id": 7,
-    "dev": "KEMENPANRB R.I",
+    "id": 6,
+    "dev": "KEMENPANRB",
     "detail": "Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Republik Indonesia",
     "items": [
       {

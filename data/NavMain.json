@@ -3,15 +3,6 @@
         "key": "Dashboard",
         "items": [
             {
-                "id": "01-00",
-                "text": "File Storage",
-                "icon": "tags",
-                "badge": "new",
-                "disabled": false,
-                "visible": true,
-                "target": "./pages/Dashboard/DashboardFileStorage.html"
-            },
-            {
                 "id": "01-01",
                 "text": "Profil Sekolah",
                 "icon": "tags",
@@ -49,12 +40,12 @@
             },
             {
                 "id": "01-05",
-                "text": "Anggaran",
+                "text": "Program Kegiatan",
                 "icon": "tags",
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/Dashboard/DashboardAnggaran.html"
+                "target": "./pages/Dashboard/DashboardProgram.html"
             }
         ]
     },
@@ -178,6 +169,20 @@
                 "disabled": true,
                 "visible": true,
                 "target": "./pages/InformasiSaranaPrasarana/DataPersediaanBarang.html"
+            }
+        ]
+    },
+    {
+        "key": "Cloud Storage",
+        "items": [
+            {
+                "id": "01-00",
+                "text": "Utility",
+                "icon": "tags",
+                "badge": null,
+                "disabled": false,
+                "visible": true,
+                "target": "./pages/Dashboard/DashboardFileStorage.html"
             }
         ]
     }

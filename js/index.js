@@ -85,6 +85,8 @@ $(document).ready(function () {
   }).dxToolbar("instance");
 
   //===============================================================================
+  
+
   _LayoutContains = $('#LayoutContent').dxDrawer({
     opened: false,
     animationEnabled: false,
@@ -99,6 +101,7 @@ $(document).ready(function () {
         .dxList({
           keyExpr: "key",
           dataSource: "./data/NavMain.json",
+          // items: _itemNavMain,
           hoverStateEnabled: true,
           focusStateEnabled: false,
           activeStateEnabled: false,

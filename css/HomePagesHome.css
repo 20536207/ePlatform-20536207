@@ -156,26 +156,59 @@
 
 
 /* ==================================================================================== */
-#PageLayout {
+#HomePageContains {
     text-align: center;
     justify-content: center;
 }
 
-#PageLayout .dx-button {
+#HomePageContains .dx-button {
     margin: 0.5%;
+    /* background-color: rgba(28, 168, 221, 0.8); */
 }
 
-.btnPageLayout {
+.btnHomePageContains {
     width: 19%;
+}
+
+.btnHomePageContains .itembtnpage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.btnHomePageContains .itembtnpage .itemicon {
+    justify-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: inherit;
+    /* width: inherit; */
+    padding: 10px 10px 10px 10px;
+}
+
+.btnHomePageContains .itembtnpage .itemdev {
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(49, 49, 49, 0.8);
+    
+    height: inherit;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+
 }
 
 @media only screen and (max-width: 960px) {
 
-    #PageLayout .dx-button {
+    #HomePageContains .dx-button {
         margin: 1%;
     }
 
-    .btnPageLayout {
+    .btnHomePageContains {
         width: 23%;
         /*split 4 */
     }
@@ -201,11 +234,11 @@
         font-size: small;
     }
 
-    #PageLayout .dx-button {
+    #HomePageContains .dx-button {
         margin: 1.5%;
     }
 
-    .btnPageLayout {
+    .btnHomePageContains {
         width: 30.33%;
         /* Split 3 */
     }
@@ -213,31 +246,28 @@
 }
 
 @media only screen and (max-width: 480px) {
-    /* .btnPageLayout {
-        width: 33.3%;
-    } */
 
     .bannerimage {
         width: 75%;
     }
 
-    #PageLayout .dx-button {
+    #HomePageContains .dx-button {
         margin: 0.9%;
     }
 
-    .btnPageLayout {
+    .btnHomePageContains {
         width: 48.2%;
     }
 
 }
 
 @media only screen and (max-width: 368px) {
-    #PageLayout .dx-button {
+    #HomePageContains .dx-button {
         margin: auto;
         margin-bottom: 10px;
     }
 
-    .btnPageLayout {
+    .btnHomePageContains {
         width: 100%;
     }
 }
