@@ -143,7 +143,7 @@ $(document).ready(function () {
                         //     },
                         //     { position: "top right", direction: "down-push" }
                         // );
-                        _PageToolbar.option("items[0].text", itemData.text);
+                        _PageToolbar.option("items[1].text", itemData.text);
                         $("#PageContains").empty();
                         return $("#PageContains").load(itemData.target);
                     },

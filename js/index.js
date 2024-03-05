@@ -13,18 +13,18 @@ $(document).ready(function () {
   window.jsPDF = window.jspdf.jsPDF;
   //==============================================================================
   _toolbarSeparator = {
-    locateInMenu: 'auto',
-    location: 'after',
+    locateInMenu: 'never',
+    location: 'before',
     template(itemData, itemIndex, element) {
       $('<div>')
         .addClass('toolbar-separator')
         .appendTo(element);
     },
-    menuItemTemplate(itemData, itemIndex, element) {
-      $('<div>')
-        .addClass('toolbar-menu-separator')
-        .appendTo(element);
-    },
+    // menuItemTemplate(itemData, itemIndex, element) {
+    //   $('<div>')
+    //     .addClass('toolbar-menu-separator')
+    //     .appendTo(element);
+    // },
   };
 
   //==============================================================================
@@ -74,7 +74,7 @@ $(document).ready(function () {
           height: undefined,
           width: undefined,
           onClick() {
-            _PageToolbar.option("items[0].text", "e-Platform Account"),
+            _PageToolbar.option("items[1].text", "e-Platform Account"),
               $("#PageContains").empty();
             $("#PageContains").load("./pages/UserManage/UserMainPage.html");
 
@@ -85,8 +85,6 @@ $(document).ready(function () {
   }).dxToolbar("instance");
 
   //===============================================================================
-  
-
   _LayoutContains = $('#LayoutContent').dxDrawer({
     opened: false,
     animationEnabled: false,
@@ -102,9 +100,9 @@ $(document).ready(function () {
           keyExpr: "key",
           dataSource: "./data/NavMain.json",
           // items: _itemNavMain,
-          hoverStateEnabled: true,
-          focusStateEnabled: false,
-          activeStateEnabled: false,
+          hoverStateEnabled: false,
+          focusStateEnabled: true,
+          activeStateEnabled: true,
           grouped: true,
           collapsible: false,
           collapsibleGroups: true,
@@ -119,8 +117,9 @@ $(document).ready(function () {
           selectionMode: "single",
           onItemClick(e) {
 
-            //DevExpress.ui.notify(e.itemData.text);
-            _PageToolbar.option("items[0].text", e.itemData.text);
+            _PageToolbar.option("items[1].text", e.itemData.text);
+            _PageToolbar.option("items[0].options.icon", 'fas fa-home');
+            _PageToolbar.option("items[0].visible", true);
 
             _LayoutContains.toggle();
 
@@ -148,7 +147,7 @@ $(document).ready(function () {
       return false;
     },
     onItemClick(e) {
-      _PageToolbar.option("items[0].text", e.itemData.text);
+      _PageToolbar.option("items[1].text", e.itemData.text);
 
       // _LayoutHeader.option("items[0].options.disabled", true);
       $("#PageContains").empty();
@@ -157,26 +156,48 @@ $(document).ready(function () {
   }).dxActionSheet('instance');
 
   //===============================================================================
-  _PageToolbar = $('#PageToolbar').dxToolbar({
-    // visible: false,
-    // elementAttr: { class: 'Page-Title' },
-    items: [
-      {
-        location: 'center',
-        locateInMenu: 'never',
-        cssClass: 'Page-Title',
-        text: '',
-        // template(e) {
-        //   return $("<div class='Page-Title'>" + e.text + "</div>");
-        // },
-      }
+  _PageToolbarItem = [
+    {
+      location: 'before',
+      locateInMenu: 'never',
+      visible: false,
+      widget: 'dxButton',
+      options: {
+        icon: "fas fa-right-from-bracket",
+        stylingMode: "text",
+        hoverStateEnabled: true,
+        focusStateEnabled: false,
+        activeStateEnabled: true,
+        onClick() {
+          _PageToolbar.option("items[1].text", 'Home');
+          _PageToolbar.option("items[0].options.icon", _PageToolbar.option("items[0].options.icon") === 'fas fa-right-from-bracket fa-rotate-180' ? 'fas fa-home' : 'fas fa-right-from-bracket fa-rotate-180');
+          _PageToolbar.option("items[0].visible", _PageToolbar.option("items[1].text") !== 'Home' ? true : false);
 
-    ],
+          $("#PageContains").empty();
+          $("#PageContains").load("./pages/HomePagesHome.html");
+        },
+      },
+    },
+    {
+      location: 'center',
+      locateInMenu: 'never',
+      cssClass: 'Page-Title',
+      text: '',
+    },_toolbarSeparator
+  ];
+
+
+  _PageToolbar = $('#PageToolbar').dxToolbar({
+    dataSource: _PageToolbarItem,
+    options: {
+      elementAttr: { id: "ToolbarAddNewButton" },
+    },
   }).dxToolbar('instance');
 
   //===============================================================================
+  _PageToolbar.option("items[1].text", 'Home');
+  // _PageToolbar.option("items[0].options.icon", 'fas fa-home');
   $("#PageContains").load("./pages/HomePagesHome.html");
-  _PageToolbar.option("items[0].text", 'Home');
   //_LayoutHeader.option("items[0].options.disabled", false);
 
   //===============================================================================

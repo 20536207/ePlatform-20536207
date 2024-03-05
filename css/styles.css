@@ -15,6 +15,17 @@ body {
   font-size: 0.9rem;
 }
 
+.toolbar-separator {
+  height: 27px;
+  border-left: 1px rgba(100, 100, 100, 0.4) inset;
+  /* margin: 0 4px 0 4px; */
+}
+
+.separator {
+  border: 1px rgba(0, 0, 0, 0.2) solid
+}
+
+/* ==================================================================================== */
 #MainLayout {
   display: flex;
   flex-direction: column;
@@ -23,6 +34,7 @@ body {
   overflow: hidden;
 }
 
+/* ==================================================================================== */
 #LayoutHeader {
   justify-self: flex-start;
   vertical-align: middle;
@@ -42,6 +54,13 @@ body {
   text-align: center;
 }
 
+#LayoutHeader .dx-button .DevApp-Menu {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1.2rem;
+  font-size: 1rem;
+}
+
+/* ==================================================================================== */
 #LayoutContent {
   justify-self: stretch;
   flex: 1 1 auto;
@@ -49,33 +68,10 @@ body {
   overflow: hidden;
 }
 
-#LayoutFooter {
-  justify-self: flex-end;
-  text-align: center;
-  align-content: center;
-  justify-content: center;
-  vertical-align: middle;
-  padding: 15px 0 15px 0;
-
-  font-size: 0.8rem;
-  font-family: inherit;
-  overflow: hidden;
-  border-top: rgba(100, 100, 100, 0.3) ridge;
-}
-
 /* ==================================================================================== */
-
-.DevApp-Menu {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  line-height: 1.2rem;
-  font-size: 1rem;
-}
-
-
-/* ==================================================================================== */
-.ContainsSidebar {
+#LayoutContent .ContainsSidebar {
   padding: 0 3px 0 3px;
-  background-color: rgb(49, 49, 49, 0.8);
+  background-color: rgba(100, 100, 100, 0.1);
 }
 
 /* ==================================================================================== */
@@ -90,10 +86,21 @@ body {
 /* ==================================================================================== */
 #PageToolbar {
   justify-self: flex-start;
-  padding: 10px;
-  background-color: rgba(100, 100, 100, 0.4);
+  background-color: rgba(100, 100, 100, 0.2);
+
+  align-items: center;
+  padding: 8px;
 }
 
+#PageToolbar .dx-button {
+  padding: 0 10px 0 10px;
+}
+
+#PageToolbar .Page-Title {
+  font-weight: bold;
+}
+
+/* ==================================================================================== */
 #PageContains {
   flex: 1 0 auto;
   height: 0;
@@ -102,16 +109,16 @@ body {
 }
 
 /* ==================================================================================== */
-.Page-Title {
-  color: rgba(28, 168, 221);
-  font-weight: bold;
-}
+#LayoutFooter {
+  justify-self: flex-end;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  vertical-align: middle;
+  padding: 15px 0 15px 0;
 
-.separator {
-  border: 1px rgba(0, 0, 0, 0.2) solid
-}
-
-#Gallerian {
-  max-width: 325px;
-  max-height: 245px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  overflow: hidden;
+  border-top: rgba(100, 100, 100, 0.3) ridge;
 }

@@ -20,7 +20,7 @@
 
 .layout-03 {
     padding: 7px;
-    background-color: rgb(49, 49, 49, 0.8);
+    background-color: rgba(100, 100, 100, 0.1);
 }
 
 .layout-04 {
@@ -94,7 +94,7 @@
 /* ==================================================================== */
 .layout-07 {
     padding: 0 5px 5px 5px;
-    background-color: rgb(49, 49, 49, 0.8);
+    background-color: rgba(100, 100, 100, 0.1);
     /* border-top: rgba(100, 100, 100, 0.3) ridge; */
 }
 
@@ -114,12 +114,10 @@
     text-align: left;
     margin: 10px 25px 20px 0;
     font-size: smaller;
-    color: orange;
 }
 
 .HomeLinkedPlatform-dev>i {
     font-size: small;
-    color: rgba(255, 255, 255, 0.8);
 }
 
 .HomeLinkedPlatform-item {
@@ -140,12 +138,10 @@
 
 .HomeLinkedPlatform-item-detail {
     text-align: left;
-    /* display: inline-block; */
 }
 
 .HomeLinkedPlatform-item-detail>i {
     font-size: small;
-    color: rgba(255, 255, 255, 0.8);
 }
 
 .clearfix:after {
@@ -163,7 +159,6 @@
 
 #HomePageContains .dx-button {
     margin: 0.5%;
-    /* background-color: rgba(28, 168, 221, 0.8); */
 }
 
 .btnHomePageContains {
@@ -184,7 +179,6 @@
     justify-content: center;
 
     height: inherit;
-    /* width: inherit; */
     padding: 10px 10px 10px 10px;
 }
 
@@ -193,8 +187,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(49, 49, 49, 0.8);
-    
+    background-color: rgba(100, 100, 100, 0.2);;
+
     height: inherit;
     width: 100%;
     padding: 5px;
@@ -224,6 +218,10 @@
         text-align: center;
         font-size: 1.3rem;
         line-height: 1.5rem;
+    }
+
+    .layout-03 {
+        background-color: transparent;
     }
 
     .bannerimage {
