@@ -1,29 +1,32 @@
 // $(() => {
 $(document).ready(function () {
-    // ===============================================================================================
-    _ViewHome = $('#HomePagesHome')
-        .dxResponsiveBox({
-            rows: [
-                { ratio: 0, screen: 'sm lg' }, //01
-                { ratio: 0, screen: 'sm lg' }, //02
-                { ratio: 0, screen: 'sm lg' }, //03
-                { ratio: 0, screen: 'sm lg' }, //04
-                { ratio: 0, screen: 'sm lg' }, //05
-                { ratio: 0, screen: 'sm lg' }, //06
-                { ratio: 1, screen: 'sm lg' }, //07
-            ],
-            cols: [
-                { ratio: 3 },
-                { ratio: 1, screen: 'lg' },
-            ],
-            singleColumnScreen: 'sm',
-            screenByWidth(width) {
-                return (width < 601) ? 'sm' : 'lg';
-            },
-        }).dxResponsiveBox('instance');
+
+    _PageToolbar.option("items[0].text", 'Home');
+    _ParentPageContains = "./pages/HomePagesHome.html";
 
     // ===============================================================================================
-    _NavbarLayout04 = $('#NavbarLayout04').dxTabs({
+    $("#HomePagesContains").dxResponsiveBox({
+        rows: [
+            { ratio: 0, screen: 'sm lg' }, //01
+            { ratio: 0, screen: 'sm lg' }, //02
+            { ratio: 0, screen: 'sm lg' }, //03
+            { ratio: 0, screen: 'sm lg' }, //04
+            { ratio: 0, screen: 'sm lg' }, //05
+            { ratio: 0, screen: 'sm lg' }, //06
+            { ratio: 1, screen: 'sm lg' }, //07
+        ],
+        cols: [
+            { ratio: 3 },
+            { ratio: 1, screen: 'lg' },
+        ],
+        singleColumnScreen: 'sm',
+        screenByWidth(width) {
+            return (width < 601 ? 'sm' : 'lg');
+        },
+    }).dxResponsiveBox("instance");
+
+    // ===============================================================================================
+    $('#NavbarLayout04').dxTabs({
         dataSource: "./data/NavLayout03.json",
         hoverStateEnabled: true,
         focusStateEnabled: false,
@@ -39,7 +42,7 @@ $(document).ready(function () {
     }).dxTabs('instance');
 
     // ===============================================================================================
-    _BannerImage = $('#BannerImage').dxGallery({
+    $('#BannerImage').dxGallery({
         dataSource: './data/BannerImage.json',
         height: 'innerWidth',
         width: 'innerWidth',
@@ -58,7 +61,7 @@ $(document).ready(function () {
     });
 
     // ===============================================================================================
-    _HomeLinkedPlatform = $('#HomeLinkedPlatform').dxAccordion({
+    $('#HomeLinkedPlatform').dxAccordion({
         dataSource: "./data/HomeLinkedPlatform.json",
         activeStateEnabled: true,
         focusStateEnabled: false,
@@ -143,9 +146,13 @@ $(document).ready(function () {
                         //     },
                         //     { position: "top right", direction: "down-push" }
                         // );
-                        _PageToolbar.option("items[1].text", itemData.text);
+                        _PageToolbar.option("items[0].text", itemData.text);
+                        // _PageToolbar.option("items[1].options.icon", _PageToolbar.option("items[1].options.icon") === 'fas fa-right-from-bracket fa-rotate-180' ? 'fas fa-home' : 'fas fa-right-from-bracket fa-rotate-180');
+                        // _PageToolbar.option("items[1].visible", true);
+
                         $("#PageContains").empty();
-                        return $("#PageContains").load(itemData.target);
+                        _actPageContains = itemData.target;
+                        return $("#PageContains").load(_actPageContains);
                     },
                 })
                 // .dxButton("instance")
@@ -153,8 +160,8 @@ $(document).ready(function () {
 
         });
     });
-
-    $('#PageContains').dxScrollView({
+    
+    $("#HomePagesContains").dxScrollView({
         scrollByContent: true,
         scrollByThumb: true,
         useNative: false,

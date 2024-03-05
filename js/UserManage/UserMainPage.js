@@ -1,16 +1,17 @@
 $(document).ready(function () {
 
+  _ParentPageContains = "./pages/HomePagesHome.html";
+
+  // ===============================================================================================
   for (var i = 1; i <= 50; i++) {
     $("#UserPage").append(
       $("<div />").dxButton({
-        elementAttr: {class: 'btnPageLayout'},
+        elementAttr: { class: 'btnPageLayout' },
         type: 'normal',
         stylingMode: 'contained',
         hoverStateEnabled: false,
         focusStateEnabled: false,
         activeStateEnabled: true,
-        // width: 176,
-        // height: 176,
         template: () => {
           return $(
             "<div style='display:flex;display: flex; flex-direction: column;padding: 5px'>" +

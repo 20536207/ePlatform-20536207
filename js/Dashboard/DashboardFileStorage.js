@@ -1,5 +1,9 @@
 $(document).ready(function () {
-  var
+
+  _ParentPageContains = "./pages/HomePagesHome.html";
+
+  // ===============================================================================================
+  const
     _DataFileStorage =
       [
         {
@@ -124,5 +128,5 @@ $(document).ready(function () {
       $contentElement.addClass('photo-popup-content');
     },
   });
-  
+
 })

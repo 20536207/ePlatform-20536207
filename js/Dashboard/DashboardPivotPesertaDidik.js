@@ -1,52 +1,57 @@
 $(document).ready(function () {
-    _TBPivotPesertaDidik = {
-        fields: [
-            // {
-            //     caption: 'ID Anggota Rombel',
-            //     fixed: true,
-            //     dataField: 'A01',
-            //     sortOrder: 'asc',
-            // },
-            // {
-            //     caption: 'Tahun Akademik',
-            //     dataField: 'A02',
-            //     groupIndex: 0,
-            // },
-            // {
-            //     caption: 'Rombel',
-            //     dataField: 'A03',
-            //     groupIndex: 0,
-            // },
 
-            {
-                caption: 'Rombel',
-                // width: 120,
-                dataField: 'A03',
-                area: 'row',
-                headerFilter: {
-                    search: {
-                        enabled: true,
-                    },
-                },
-                // selector(data) {
-                //     return `${data.city} (${data.country})`;
+    _ParentPageContains = "./pages/HomePagesHome.html";
+
+    // ===============================================================================================
+    const
+        _TBPivotPesertaDidik = {
+            fields: [
+                // {
+                //     caption: 'ID Anggota Rombel',
+                //     fixed: true,
+                //     dataField: 'A01',
+                //     sortOrder: 'asc',
                 // },
-            }, {
-                groupName: 'Gender',
-                groupInterval: 'month',
-                visible: false,
-            },
-            {
-                caption: 'Gender',
-                dataField: 'C05',
-                dataType: 'number',
-                summaryType: 'counta',
-                format: 'currency',
-                area: 'data',
-            }
-        ],
-        store: './data/Dashboard/DashboardPesertaDidik.json',
-    };
+                // {
+                //     caption: 'Tahun Akademik',
+                //     dataField: 'A02',
+                //     groupIndex: 0,
+                // },
+                // {
+                //     caption: 'Rombel',
+                //     dataField: 'A03',
+                //     groupIndex: 0,
+                // },
+
+                {
+                    caption: 'Rombel',
+                    // width: 120,
+                    dataField: 'A03',
+                    area: 'row',
+                    headerFilter: {
+                        search: {
+                            enabled: true,
+                        },
+                    },
+                    // selector(data) {
+                    //     return `${data.city} (${data.country})`;
+                    // },
+                }, {
+                    groupName: 'Gender',
+                    groupInterval: 'month',
+                    visible: false,
+                },
+                {
+                    caption: 'Gender',
+                    dataField: 'C05',
+                    dataType: 'number',
+                    summaryType: 'counta',
+                    format: 'currency',
+                    area: 'data',
+                }
+            ],
+            store: './data/Dashboard/DashboardPesertaDidik.json',
+        };
 
     $('#DashboardPesertaDidik').dxPivotGrid({
         allowExpandAll: false,

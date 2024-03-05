@@ -1,6 +1,10 @@
 //=========================================================================================================
 $(document).ready(function () {
-    var
+    
+    _ParentPageContains = "./pages/HomePagesHome.html";
+    
+    // ===============================================================================================
+    const
         _TbDataSiswa = [
             {
                 // headerCellTemplate(container) {
@@ -583,7 +587,7 @@ $(document).ready(function () {
                 sortOrder: undefined,
                 title: "Column Chooser",
                 search: {
-                    editorOptions:{},
+                    editorOptions: {},
                     enabled: true,
                     timeout: null,
                 },

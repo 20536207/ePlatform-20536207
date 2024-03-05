@@ -12,9 +12,9 @@
 $(document).ready(function () {
   window.jsPDF = window.jspdf.jsPDF;
   //==============================================================================
-  _toolbarSeparator = {
+  _toolbarSeparatorBefore = {
     locateInMenu: 'never',
-    location: 'before',
+    location: "before",
     template(itemData, itemIndex, element) {
       $('<div>')
         .addClass('toolbar-separator')
@@ -25,7 +25,21 @@ $(document).ready(function () {
     //     .addClass('toolbar-menu-separator')
     //     .appendTo(element);
     // },
+
   };
+  _toolbarSeparatorAfter = {
+    locateInMenu: 'never',
+    location: "after",
+    template(itemData, itemIndex, element) {
+      $('<div>')
+        .addClass('toolbar-separator')
+        .appendTo(element);
+    },
+  };
+
+  //==============================================================================
+  _actPageContains = "";
+  _ParentPageContains = "";
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
@@ -74,10 +88,11 @@ $(document).ready(function () {
           height: undefined,
           width: undefined,
           onClick() {
-            _PageToolbar.option("items[1].text", "e-Platform Account"),
-              $("#PageContains").empty();
-            $("#PageContains").load("./pages/UserManage/UserMainPage.html");
+            _PageToolbar.option("items[0].text", "e-Platform Account");
 
+            $("#PageContains").empty();
+            _actPageContains = "./pages/UserManage/UserMainPage.html";
+            $("#PageContains").load(_actPageContains);
           },
         }
       }
@@ -117,16 +132,12 @@ $(document).ready(function () {
           selectionMode: "single",
           onItemClick(e) {
 
-            _PageToolbar.option("items[1].text", e.itemData.text);
-            _PageToolbar.option("items[0].options.icon", 'fas fa-home');
-            _PageToolbar.option("items[0].visible", true);
-
+            _PageToolbar.option("items[0].text", e.itemData.text);
             _LayoutContains.toggle();
 
             $("#PageContains").empty();
-            $("#PageContains").load(e.itemData["target"]);
-
-
+            _actPageContains = e.itemData["target"];
+            $("#PageContains").load(_actPageContains);
           },
         }).addClass('ContainsSidebar');
     },
@@ -147,63 +158,75 @@ $(document).ready(function () {
       return false;
     },
     onItemClick(e) {
-      _PageToolbar.option("items[1].text", e.itemData.text);
+      _PageToolbar.option("items[0].text", e.itemData.text);
 
       // _LayoutHeader.option("items[0].options.disabled", true);
       $("#PageContains").empty();
-      return $("#PageContains").load(e.itemData["target"]);
+      _actPageContains = e.itemData["target"];
+      return $("#PageContains").load(_actPageContains);
     }
   }).dxActionSheet('instance');
 
   //===============================================================================
-  _PageToolbarItem = [
-    {
-      location: 'before',
-      locateInMenu: 'never',
-      visible: false,
-      widget: 'dxButton',
-      options: {
-        icon: "fas fa-right-from-bracket",
-        stylingMode: "text",
-        hoverStateEnabled: true,
-        focusStateEnabled: false,
-        activeStateEnabled: true,
-        onClick() {
-          _PageToolbar.option("items[1].text", 'Home');
-          _PageToolbar.option("items[0].options.icon", _PageToolbar.option("items[0].options.icon") === 'fas fa-right-from-bracket fa-rotate-180' ? 'fas fa-home' : 'fas fa-right-from-bracket fa-rotate-180');
-          _PageToolbar.option("items[0].visible", _PageToolbar.option("items[1].text") !== 'Home' ? true : false);
+  _PageToolbar = $('#PageToolbar').dxToolbar({
+    items: [
+      {
+        location: 'center',
+        locateInMenu: 'never',
+        cssClass: 'Page-Title',
+        text: '',
+      },
+      {
+        location: 'before',
+        locateInMenu: 'never',
+        visible: true,
+        widget: 'dxButton',
+        options: {
+          icon: "fas fa-right-from-bracket fa-rotate-180",
+          stylingMode: "text",
+          hoverStateEnabled: true,
+          focusStateEnabled: false,
+          activeStateEnabled: true,
+          onClick() {
+            // _PageToolbar.option("items[0].text", 'Home');
+            // _PageToolbar.option("items[1].options.icon", _PageToolbar.option("items[1].options.icon") === 'fas fa-right-from-bracket fa-rotate-180' ? 'fas fa-home' : 'fas fa-right-from-bracket fa-rotate-180');
+            // _PageToolbar.option("items[1].visible", _PageToolbar.option("items[0].text") !== 'Home' ? true : false);
 
-          $("#PageContains").empty();
-          $("#PageContains").load("./pages/HomePagesHome.html");
+            $("#PageContains").empty();
+            _actPageContains = _ParentPageContains;
+            $("#PageContains").load(_actPageContains);
+          },
         },
       },
-    },
-    {
-      location: 'center',
-      locateInMenu: 'never',
-      cssClass: 'Page-Title',
-      text: '',
-    },_toolbarSeparator
-  ];
+      _toolbarSeparatorBefore,
+      _toolbarSeparatorAfter,
+      {
+        location: 'after',
+        locateInMenu: 'never',
+        visible: true,
+        widget: 'dxButton',
+        options: {
+          icon: "fas fa-refresh",
+          stylingMode: "text",
+          hoverStateEnabled: true,
+          focusStateEnabled: false,
+          activeStateEnabled: true,
+          onClick() {
+            $("#PageContains").empty();
+            $("#PageContains").load(_actPageContains);
+          },
+        },
+      }
+    ],
 
-
-  _PageToolbar = $('#PageToolbar').dxToolbar({
-    dataSource: _PageToolbarItem,
-    options: {
-      elementAttr: { id: "ToolbarAddNewButton" },
-    },
   }).dxToolbar('instance');
 
   //===============================================================================
-  _PageToolbar.option("items[1].text", 'Home');
-  // _PageToolbar.option("items[0].options.icon", 'fas fa-home');
-  $("#PageContains").load("./pages/HomePagesHome.html");
-  //_LayoutHeader.option("items[0].options.disabled", false);
-
+  _actPageContains = "./pages/HomePagesHome.html";
+  $("#PageContains").load(_actPageContains);
   //===============================================================================
   $(window).resize(function () {
     _LayoutContains.option('openedStateMode', $(window).width() < 960 ? "overlap" : "shrink");
   });
-
 
 });

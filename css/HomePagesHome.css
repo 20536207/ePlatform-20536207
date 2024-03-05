@@ -1,3 +1,14 @@
+
+#HomePagesMain {
+  display: flex;
+  flex-direction: column;
+  overflow: none;
+  flex: 1 1 auto;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
 /* .layout-01, */
 .layout-02,
 .layout-03,
@@ -16,15 +27,17 @@
     font-size: 2rem;
     font-weight: normal;
     line-height: 2.3rem;
+    padding: 8px;
+    justify-content: center;
 }
 
 .layout-03 {
-    padding: 7px;
+    padding: 8px;
     background-color: rgba(100, 100, 100, 0.1);
 }
 
 .layout-04 {
-    padding: 7px;
+    padding: 8px;
 }
 
 #NavbarLayout04 {
@@ -83,24 +96,19 @@
 }
 
 .layout-05 {
-    padding: 7px;
+    padding: 8px;
 }
 
 .layout-06 {
     overflow: none;
-    padding: 7px;
+    padding: 8px;
 }
+
 
 /* ==================================================================== */
 .layout-07 {
-    padding: 0 5px 5px 5px;
     background-color: rgba(100, 100, 100, 0.1);
-    /* border-top: rgba(100, 100, 100, 0.3) ridge; */
 }
-
-/* .HomeLinkedPlatform-layout {
-    width: 100%;
-} */
 
 #HomeLinkedPlatform {
     background-color: transparent;
