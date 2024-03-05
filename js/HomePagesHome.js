@@ -20,8 +20,8 @@ $(document).ready(function () {
             { ratio: 1, screen: 'lg' },
         ],
         singleColumnScreen: 'sm',
-        screenByWidth(width) {
-            return (width < 601 ? 'sm' : 'lg');
+        screenByWidth() {
+            return $(window).width() < 601 ? 'sm' : 'lg';
         },
     }).dxResponsiveBox("instance");
 
@@ -161,7 +161,7 @@ $(document).ready(function () {
         });
     });
     
-    $("#HomePagesContains").dxScrollView({
+    $("#HomePagesMain").dxScrollView({
         scrollByContent: true,
         scrollByThumb: true,
         useNative: false,
