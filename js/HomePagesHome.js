@@ -168,6 +168,9 @@ $(document).ready(function () {
         scrollByThumb: true,
         useNative: false,
         showScrollbar: 'onHover',
+        direction: 'both',
+        // height: '100%',
+        // width: '100%',
     });
 
 });

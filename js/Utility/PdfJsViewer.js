@@ -24,11 +24,12 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
     pdfjsLib.getDocument(_pdffile).promise.then(_pdfDocument => {
 
         let _renderTask;
+        let _scaleCanvas;
 
         for (let npage = 1; npage <= _pdfDocument.numPages; npage++) {
             _pdfDocument.getPage(npage).then(function (_pdfPage) {
 
-                var _scaleCanvas = (_pdfPageContains.offsetWidth / _pdfPage.getViewport({ scale: 1 }).width).toFixed(1);
+                _scaleCanvas = (_pdfPageContains.offsetWidth / _pdfPage.getViewport({ scale: 1 }).width).toFixed(1);
 
                 const _viewport = _pdfPage.getViewport({ scale: _scaleCanvas > 1 ? 1 : _scaleCanvas });
                 const _idPage = "pdfPage" + npage;
