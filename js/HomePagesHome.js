@@ -79,10 +79,10 @@ $(document).ready(function () {
         // },
         itemTitleTemplate: function (devdata, devindex, develement) {
             develement.append(
-                "<div class='HomeLinkedPlatform-dev'>" +
-                "<b>" + devdata.dev + "</b><br>" +
-                "<i>" + devdata.detail + "</i>" +
-                "</div>"
+                $("<div class='HomeLinkedPlatform-dev'>" +
+                    "<b>" + devdata.dev + "</b><br>" +
+                    "<i>" + devdata.detail + "</i>" +
+                    "</div>")
             );
         },
         itemTemplate: function (devdata, devindex, develement) {
@@ -98,11 +98,11 @@ $(document).ready(function () {
                         onClick() {
                             window.open(productdata.target, '_blank')
                         },
-                        template() {
+                        template: () => {
                             return (
                                 "<div class='HomeLinkedPlatform-item-detail'>" +
-                                "<a>" + productdata.product + "</a>" +
-                                "<br><i>" + productdata.detail + "</i>" +
+                                "<a>" + productdata.product + "</a><br>" +
+                                "<i>" + productdata.detail + "</i>" +
                                 "</div>"
                             );
                         },
@@ -152,8 +152,8 @@ $(document).ready(function () {
 
                         $("#PageContains").empty();
                         _actPageContains = itemData.target;
-                        _PdfFilePageContains="./PdfPageContains/Dashboard "+itemData.text+".pdf";
-                        _ParentPageContains="./pages/HomePagesHome.html";
+                        _PdfFilePageContains = "./PdfPageContains/Dashboard " + itemData.text + ".pdf";
+                        _ParentPageContains = "./pages/HomePagesHome.html";
                         return $("#PageContains").load(_actPageContains);
                     },
                 })
@@ -162,13 +162,13 @@ $(document).ready(function () {
 
         });
     });
-    
+
     $("#HomePagesMain").dxScrollView({
         scrollByContent: true,
         scrollByThumb: true,
         useNative: false,
         showScrollbar: 'onHover',
-        direction: 'both',
+        // direction: 'both',
         // height: '100%',
         // width: '100%',
     });

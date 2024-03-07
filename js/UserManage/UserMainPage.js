@@ -14,7 +14,7 @@ $(document).ready(function () {
         activeStateEnabled: true,
         template: () => {
           return $(
-            "<div style='display:flex;display: flex; flex-direction: column;padding: 5px'>" +
+            "<div style='display:flex;flex-direction: column;padding: 5px'>" +
             "<i class='fas fa-user-shield fa-4x'></i>" +
             "<span>Authentication, Management and Information</span></div>"
           )
@@ -81,7 +81,7 @@ $(document).ready(function () {
     scrollByThumb: true,
     useNative: false,
     showScrollbar: 'onHover',
-    direction: 'both',
+    // direction: 'both',
     // height: '100%',
     // width: '100%', 
   });
