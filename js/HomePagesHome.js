@@ -152,6 +152,8 @@ $(document).ready(function () {
 
                         $("#PageContains").empty();
                         _actPageContains = itemData.target;
+                        _PdfFilePageContains="./PdfPageContains/Dashboard "+itemData.text+".pdf";
+                        _ParentPageContains="./pages/HomePagesHome.html";
                         return $("#PageContains").load(_actPageContains);
                     },
                 })

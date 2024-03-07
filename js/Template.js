@@ -1,3 +1,30 @@
+// const _pdffile = "./pages/Dashboard/pageContains/PenerimaPIP.pdf";
+    // pdfjsLib.getDocument(_pdffile).promise.then(_pdfDocument => {
+
+//     const _pdfPageContains = document.getElementById("pdfPageContains");
+//     let _renderTask;
+
+//     for (let npage = 1; npage <= _pdfDocument.numPages; npage++) {
+//         _pdfDocument.getPage(npage).then(function (_pdfPage) {
+
+//             var _scaleCanvas = (_pdfPageContains.offsetWidth / _pdfPage.getViewport({ scale: 1 }).width).toFixed(1);
+
+//             const _viewport = _pdfPage.getViewport({ scale: _scaleCanvas > 1.7 ? 1.5 : _scaleCanvas });
+//             const _idPage = "pdfPage" + npage;
+//             $(_pdfPageContains).append("<canvas id='" + _idPage + "'></canvas>");
+//             const _pdfCanvas = document.getElementById(_idPage);
+//             _pdfCanvas.width = _viewport.width;
+//             _pdfCanvas.height = _viewport.height;
+
+//             _renderTask = _pdfPage.render({
+//                 canvasContext: _pdfCanvas.getContext('2d'),
+//                 viewport: _viewport,
+//             }).promise;
+//         });
+//     }
+//     return _renderTask;
+// });
+
 // ,
 //       {
 //         visible: false,

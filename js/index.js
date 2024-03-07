@@ -38,8 +38,9 @@ $(document).ready(function () {
   };
 
   //==============================================================================
-  _actPageContains = "";
-  _ParentPageContains = "";
+  _actPageContains="";
+  _PdfFilePageContains="";
+  _ParentPageContains="";
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
