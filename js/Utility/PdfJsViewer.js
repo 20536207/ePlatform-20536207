@@ -1,5 +1,3 @@
-var _zoomScaleCanvas=0;
-
 function GoPdfJsViewer(_pdffile, _pdfPageContains) {
 
     $('#action-zoom-in').dxSpeedDialAction({
@@ -7,8 +5,8 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
         icon: "fas fa-magnifying-glass-plus",
         index: 1,
         onClick() {
-            _zoomScaleCanvas += 0.25
-            OnRenderPage(_pdffile, _pdfPageContains)
+            _zoomScaleCanvas += 0.25;
+            OnRenderPage(_pdffile, _pdfPageContains);
         },
     }).dxSpeedDialAction('instance');
 
@@ -18,8 +16,8 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
         index: 2,
         // visible: false,
         onClick() {
-            _zoomScaleCanvas -= 0.25
-            OnRenderPage(_pdffile, _pdfPageContains)
+            _zoomScaleCanvas -= 0.25;
+            OnRenderPage(_pdffile, _pdfPageContains);
         },
     }).dxSpeedDialAction('instance');
 
@@ -56,8 +54,7 @@ function OnRenderPage(_pdffile, _pdfPageContains) {
             _pdfDocument.getPage(npage).then(function (_pdfPage) {
 
                 _scaleCanvas = (_pdfPageContains.offsetWidth / _pdfPage.getViewport({ scale: 1 }).width).toFixed(1);
-
-                const _viewport = _pdfPage.getViewport({ scale: _scaleCanvas > 1 ? 1 + _zoomScaleCanvas : (_scaleCanvas + _zoomScaleCanvas ) - 0.05 });
+                const _viewport = _pdfPage.getViewport({ scale: (_scaleCanvas > 1 ? 1  : _scaleCanvas - 0.05) + _zoomScaleCanvas});
                 const _idPage = "pdfPage" + npage;
                 $(_pdfPageContains).append("<canvas id='" + _idPage + "'></canvas>");
                 const _pdfCanvas = document.getElementById(_idPage);
@@ -69,6 +66,6 @@ function OnRenderPage(_pdffile, _pdfPageContains) {
                     viewport: _viewport,
                 }).promise;
             });
-        }
-    })
+        };
+    });
 };
