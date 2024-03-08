@@ -1,16 +1,7 @@
-
-/*===================================================================================*/
-// function GoEncrypt(_Contains, _Key) {
-//   return CryptoJS.TripleDES.encrypt(_Contains.toString(), _Key).toString();
-// }
-
-/*===================================================================================*/
-// function GoDecrypt(_Contains, _Key) {
-//   return CryptoJS.TripleDES.decrypt(_Contains, _Key).toString(CryptoJS.enc.Utf8);
-// }
-
 $(document).ready(function () {
+  //==============================================================================
   window.jsPDF = window.jspdf.jsPDF;
+
   //==============================================================================
   _toolbarSeparatorBefore = {
     locateInMenu: 'never',
@@ -20,11 +11,11 @@ $(document).ready(function () {
         .addClass('toolbar-separator')
         .appendTo(element);
     },
-    // menuItemTemplate(itemData, itemIndex, element) {
-    //   $('<div>')
-    //     .addClass('toolbar-menu-separator')
-    //     .appendTo(element);
-    // },
+    menuItemTemplate(itemData, itemIndex, element) {
+      $('<div>')
+        .addClass('toolbar-menu-separator')
+        .appendTo(element);
+    },
 
   };
   _toolbarSeparatorAfter = {
@@ -38,9 +29,9 @@ $(document).ready(function () {
   };
 
   //==============================================================================
-  _actPageContains="";
-  _PdfFilePageContains="";
-  _ParentPageContains="";
+  _actPageContains = "";
+  _PdfFilePageContains = "";
+  _ParentPageContains = "";
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
@@ -189,10 +180,6 @@ $(document).ready(function () {
           focusStateEnabled: false,
           activeStateEnabled: true,
           onClick() {
-            // _PageToolbar.option("items[0].text", 'Home');
-            // _PageToolbar.option("items[1].options.icon", _PageToolbar.option("items[1].options.icon") === 'fas fa-right-from-bracket fa-rotate-180' ? 'fas fa-home' : 'fas fa-right-from-bracket fa-rotate-180');
-            // _PageToolbar.option("items[1].visible", _PageToolbar.option("items[0].text") !== 'Home' ? true : false);
-
             $("#PageContains").empty();
             _actPageContains = _ParentPageContains;
             $("#PageContains").load(_actPageContains);

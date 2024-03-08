@@ -1795,3 +1795,28 @@
 
 // <!-- src="https://www.youtube.com/embed/videoseries?list=PLasucyBLR_zCPhyGpg0n4X6jfYfI23zBW&autoplay=0&mute=1&loop=1" -->
 // <!-- src="https://googledriveembedder.collegefam.com/?key=AIzaSyB8nuwb4z7YOFftmhwzCVmYduqTwvvNfpg&folderid=1jRia9a9LhFbNTLMGhKDK7bm0fOq2CBJ4" -->
+
+
+
+
+
+/*===================================================================================*/
+// function GoEncrypt(_Contains, _Key) {
+//   return CryptoJS.TripleDES.encrypt(_Contains.toString(), _Key).toString();
+// }
+
+/*===================================================================================*/
+// function GoDecrypt(_Contains, _Key) {
+//   return CryptoJS.TripleDES.decrypt(_Contains, _Key).toString(CryptoJS.enc.Utf8);
+// }
+
+
+
+
+//   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf_viewer.mjs" type="module"></script> -->
+//   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js"></script> -->
+
+//   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme-quill/1.7.0/dx-quill.min.js"></script> -->
+//   <!-- <script src="https://unpkg.com/devextreme-quill@1.6.2/dist/dx-quill.min.js"></script> -->
+
+//   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.12.1/polyfill.min.js"></script> -->
