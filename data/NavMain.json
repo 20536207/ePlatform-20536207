@@ -7,9 +7,9 @@
                 "text": "Profil Sekolah",
                 "icon": "tags",
                 "badge": "",
-                "disabled": true,
+                "disabled": false,
                 "visible": true,
-                "target": "./pages/Utility/PdfPageContains.html"
+                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-02",
@@ -18,34 +18,34 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/Dashboard/DashboardPesertaDidik.html"
+                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-03",
                 "text": "Pegawai",
                 "icon": "tags",
                 "badge": "",
-                "disabled": true,
+                "disabled": false,
                 "visible": true,
-                "target": "./pages/Utility/PdfPageContains.html"
+                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-04",
                 "text": "Sarana dan Prasarana",
                 "icon": "tags",
                 "badge": "",
-                "disabled": true,
+                "disabled": false,
                 "visible": true,
-                "target": "./pages/Utility/PdfPageContains.html"
+                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-05",
                 "text": "Program Kegiatan",
                 "icon": "tags",
                 "badge": "",
-                "disabled": true,
+                "disabled": false,
                 "visible": true,
-                "target": "./pages/Utility/PdfPageContains.html"
+                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
             }
         ]
     },
@@ -54,21 +54,30 @@
         "items": [
             {
                 "id": "02-01",
-                "text": "Data Induk Siswa",
+                "text": "Daftar Induk Siswa",
                 "icon": "tags",
-                "badge": "new",
+                "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/InformasiKesiswaan/InformasiDataIndukSiswa.html"
+                "target": "./Master/Kesiswaan_DataIndukSiswa/Kesiswaan_DataIndukSiswa.html"
             },
             {
                 "id": "02-02",
-                "text": "Rombongan Belajar",
+                "text": "Daftar Rombongan Belajar",
                 "icon": "tags",
-                "badge": "new",
+                "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/InformasiKesiswaan/InformasiRombonganBelajar.html"
+                "target": "./Master/Kesiswaan_RombonganBelajar/Kesiswaan_RombonganBelajar.html"
+            },
+            {
+                "id": "02-03",
+                "text": "Daftar Peserta Didik",
+                "icon": "tags",
+                "badge": "",
+                "disabled": false,
+                "visible": true,
+                "target": "./Master/Kesiswaan_PesertaDidik/Kesiswaan_PesertaDidik.html"
             },
             {
                 "id": "02-03",
@@ -77,7 +86,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiKesiswaan/DataPrestasi.html"
+                "target": "./Master/Kesiswaan_DataPrestasi/Kesiswaan_DataPrestasi.html"
             }
         ]
     },
@@ -91,7 +100,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiKepegawaian/DataIndukPegawai.html"
+                "target": "./Master/Kepegawaian_DataIndukPegawai/Kepegawaian_DataIndukPegawai.html"
             },
             {
                 "id": "03-02",
@@ -100,7 +109,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiKepegawaian/PutusanNonASN.html"
+                "target": "./Master/Kepegawaian_PutusanNonASN/Kepegawaian_PutusanNonASN.html"
             },
             {
                 "id": "03-03",
@@ -109,7 +118,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiKepegawaian/PutusanASN.html"
+                "target": "./Master/Kepegawaian_PutusanASN/Kepegawaian_PutusanASN.html"
             },
             {
                 "id": "03-04",
@@ -118,7 +127,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiKepegawaian/PutusanKepangkatan.html"
+                "target": "./Master/Kepegawaian_PutusanKepangkatan/Kepegawaian_PutusanKepangkatan.html"
             },
             {
                 "id": "03-05",
@@ -127,7 +136,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiKepegawaian/PutusanGajiBerkala.html"
+                "target": "./Master/Kepegawaian_GajiBerkala/Kepegawaian_PutusanGajiBerkala.html"
             }
         ]
     },
@@ -141,7 +150,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiSaranaPrasarana/DataAsetBangunan.html"
+                "target": "./Master/SaranaPrasarana_DataAsetBangunan/SaranaPrasarana_DataAsetBangunan.html"
             },
             {
                 "id": "04-02",
@@ -150,7 +159,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiSaranaPrasarana/DataAsetPeralatan.html"
+                "target": "./Master/SaranaPrasarana_DataAsetPeralatan/SaranaPrasarana_DataAsetPeralatan.html"
             },
             {
                 "id": "04-03",
@@ -159,7 +168,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiSaranaPrasarana/DataAsetLainnya.html"
+                "target": "./Master/SaranaPrasarana_DataAsetLainnya/SaranaPrasarana_DataAsetLainnya.html"
             },
             {
                 "id": "04-04",
@@ -168,7 +177,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./pages/InformasiSaranaPrasarana/DataPersediaanBarang.html"
+                "target": "./Master/SaranaPrasarana_DataPersediaanBarang/SaranaPrasarana_DataPersediaanBarang.html"
             }
         ]
     },
@@ -176,13 +185,13 @@
         "key": "Cloud Storage",
         "items": [
             {
-                "id": "01-00",
+                "id": "05-01",
                 "text": "Utility",
                 "icon": "tags",
                 "badge": null,
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/Dashboard/DashboardFileStorage.html"
+                "target": "./Master/Dashboard_FileStorage/Dashboard_FileStorage.html"
             }
         ]
     }

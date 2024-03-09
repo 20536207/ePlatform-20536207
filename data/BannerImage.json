@@ -3,36 +3,36 @@
       "ID": "1",
       "Title": "SD NEGERI TISNONEGARAN 1",
       "Keterangan": "Satuan Pendidikan Dasar",
-      "Image": "./images/home/bannerimage/1.png"
+      "Image": "./Master/Homepage/Assets/bannerimage/1.png"
     },
     {
       "ID": "2",
       "Title": "PEMERINTAH KOTA PROBOLINGGO",
       "Keterangan": "Pemerintahan Daerah",
-      "Image": "./images/home/bannerimage/2.png"
+      "Image": "./Master/Homepage/Assets/bannerimage/2.png"
     },
     {
       "ID": "3",
       "Title": "KEMENDIKBUDRISTEK",
       "Keterangan": "Kementerian Negara R.I",
-      "Image": "./images/home/bannerimage/3.png"
+      "Image": "./Master/Homepage/Assets/bannerimage/3.png"
     },
     {
       "ID": "4",
       "Title": "SEKOLAH ADIWIYATA NASIONAL",
       "Keterangan": "Penganugerahan Satuan Pendidikan",
-      "Image": "./images/home/bannerimage/4.png"
+      "Image": "./Master/Homepage/Assets/bannerimage/4.png"
     },
     {
       "ID": "5",
       "Title": "SEKOLAH RAMAH ANAK",
       "Keterangan": "Penganugerahan Satuan Pendidikan",
-      "Image": "./images/home/bannerimage/5.png"
+      "Image": "./Master/Homepage/Assets/bannerimage/5.png"
     },
     {
       "ID": "6",
       "Title": "",
       "Keterangan": "",
-      "Image": "./images/home/bannerimage/6.png"
+      "Image": "./Master/Homepage/Assets/bannerimage/6.png"
     }
   ]

@@ -11,7 +11,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/HomePagesHome.html"
+                "target": "./Master/Homepage/Home.html"
             }
         ]
     },
@@ -26,7 +26,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramVisiDanMisi.html"
+                "target": "./Master/Program/Program_VisiDanMisi.html"
             },
             {
                 "id": 1,
@@ -45,7 +45,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramStandarKelulusan.html"
+                "target": "./Master/Program/Program_StandarKelulusan.html"
             },
             {
                 "id": 3,
@@ -54,7 +54,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramStandarIsi.html"
+                "target": "./Master/Program/Program_StandarIsi.html"
             },
             {
                 "id": 4,
@@ -63,7 +63,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramStandarProses.html"
+                "target": "./Master/Program/Program_StandarProses.html"
             },
             {
                 "id": 5,
@@ -72,7 +72,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramStandarSaranaPrasarana.html"
+                "target": "./Master/Program/Program_StandarSaranaPrasarana.html"
             },
             {
                 "id": 6,
@@ -81,7 +81,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramStandarPTK.html"
+                "target": "./Master/Program/Program_StandarPTK.html"
             },
             {
                 "id": 7,
@@ -90,7 +90,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramStandarPembiayaan.html"
+                "target": "./Master/Program/Program_StandarPembiayaan.html"
             },
             {
                 "id": 8,
@@ -99,7 +99,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramStandarPenilaian.html"
+                "target": "./Master/Program/Program_StandarPenilaian.html"
             },
             {
                 "id": 9,
@@ -108,16 +108,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./pages/program/ProgramStandarPengelolaan.html"
-            },
-            {
-                "id": 10,
-                "text": "User Authentication",
-                "icon": "tags",
-                "badge": "",
-                "disabled": false,
-                "visible": true,
-                "target": "./pages/Utility/UtilityUserAuthentication.html"
+                "target": "./Master/Program/Program_StandarPengelolaan.html"
             }
         ]
     },
@@ -132,7 +123,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": false,
-                "target": "./pages/Dokumentasi/DokumentasiSub001.html"
+                "target": "./Master/Dokumentasi/Dokumentasi_Sub001.html"
             },
             {
                 "id": 2,
@@ -141,7 +132,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": false,
-                "target": "./pages/Dokumentasi/DokumentasiSub002.html"
+                "target": "./Master/Dokumentasi/Dokumentasi_Sub002.html"
             }
         ]
     },
@@ -156,7 +147,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": false,
-                "target": "./pages/Literasi/LiterasiSub001.html"
+                "target": "./Master/Literasi/Literasi_Sub001.html"
             },
             {
                 "id": 2,
@@ -165,7 +156,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": false,
-                "target": "./pages/Literasi/LiterasiSub002.html"
+                "target": "./Master/Literasi/Literasi_Sub002.html"
             }
         ]
     },
@@ -180,7 +171,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": false,
-                "target": "./pages/Referensi/ReferensiSub001.html"
+                "target": "./Master/Referensi/Referensi_Sub001.html"
             },
             {
                 "id": 2,
@@ -189,7 +180,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": false,
-                "target": "./pages/Referensi/ReferensiSub002.html"
+                "target": "./Master/Referensi/Referensi_Sub002.html"
             }
         ]
     }

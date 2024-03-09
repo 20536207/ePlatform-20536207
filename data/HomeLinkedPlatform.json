@@ -7,31 +7,31 @@
       {
         "product": "Database Peserta Didik",
         "detail": "Manajemen Database Internal Peserta Didik",
-        "icon": "./images/home/windows.png",
+        "icon": "tags",
         "target": "https://docs.google.com/spreadsheets/d/1wRpAJIQs6rzrlq_dGzuInUGk5Hb4BLwDdeN6MRdtE6g/edit?usp=sharing"
       },
       {
         "product": "Database Pegawai",
         "detail": "Manajemen Database Internal Kepegawaian",
-        "icon": "./images/home/windows.png",
+        "icon": "tags",
         "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo/edit?usp=sharing"
       },
       {
         "product": "Dapodik",
         "detail": "Manajemen Data Pokok Pendidikan",
-        "icon": "./images/home/homelinkedplatform/dapodik.png",
+        "icon": "tags",
         "target": "http://20536207.ip-dynamic.com:5774"
       },
       {
         "product": "e-Rapor SD-KM",
         "detail": "Manajemen Rapor Kurikulum Merdeka",
-        "icon": "./images/home/homelinkedplatform/eraporsdkm.png",
+        "icon": "tags",
         "target": "http://20536207.ip-dynamic.com:7231"
       },
       {
         "product": "e-Rapor SP",
         "detail": "Manajemen Rapor Alternatif",
-        "icon": "./images/home/homelinkedplatform/eraporsp.png",
+        "icon": "tags",
         "target": "http://20536207.ip-dynamic.com:7252"
       }
     ]
@@ -44,7 +44,7 @@
       {
         "product": "SI-IJOL",
         "detail": "Manajemen Sistem Informasi Ijasah Online",
-        "icon": "./images/home/homelinkedplatform/siijol.png",
+        "icon": "tags",
         "target": "https://siijol.probolinggokota.go.id"
       }
     ]
@@ -57,19 +57,19 @@
       {
         "product": "SIMPEG",
         "detail": "Manajemen Sistem Informasi Pegawai Kota Probolinggo",
-        "icon": "./images/home/homelinkedplatform/simpeg.png",
+        "icon": "tags",
         "target": "https://simpeg.probolinggokota.go.id/lite/4.4/index.php/login/index/Dashboard"
       },
       {
         "product": "G-Kinerja",
         "detail": "Manajemen Sistem Informasi Pegawai Kota Probolinggo",
-        "icon": "./images/home/homelinkedplatform/gkinerja.png",
+        "icon": "tags",
         "target": "https://e-pasprohandal.probolinggokota.go.id"
       },
       {
         "product": "SIAP",
         "detail": "Manajemen Sistem Informasi Absensi Presensi Pegawai",
-        "icon": "./images/home/homelinkedplatform/siap.png",
+        "icon": "tags",
         "target": "https://siap.probolinggokota.go.id"
       }
     ]
@@ -82,13 +82,13 @@
       {
         "product": "SIMRAL",
         "detail": "Manajemen Sistem Informasi Perencanaan, Penganggaran dan Pelaporan",
-        "icon": "./images/home/homelinkedplatform/simral.png",
+        "icon": "tags",
         "target": "https://simral.probolinggokota.go.id/2021/"
       },
       {
         "product": "SIMPATDA",
         "detail": "Manajemen Sistem Pendapatan Asli Daerah",
-        "icon": "./images/home/homelinkedplatform/simpatda.png",
+        "icon": "tags",
         "target": "http://esptpd.probolinggokota.go.id/"
       }
     ]
@@ -101,37 +101,37 @@
       {
         "product": "DAPODIK-SP",
         "detail": "Integrasi pengelolaan Dapodik satuan pendidikan",
-        "icon": "./images/home/homelinkedplatform/dapodik-sp.png",
+        "icon": "tags",
         "target": "https://sp.datadik.kemdikbud.go.id"
       },
       {
         "product": "DAPODIK-PTK",
         "detail": "Integrasi pengelolaan Dapodik PTK",
-        "icon": "./images/home/homelinkedplatform/dapodik-ptk.png",
+        "icon": "tags",
         "target": "https://ptk.datadik.kemdikbud.go.id"
       },
       {
         "product": "DAPODIK-PD",
         "detail": "Integrasi pengelolaan Dapodik Peserta Didik",
-        "icon": "./images/home/homelinkedplatform/dapodik-pd.png",
+        "icon": "tags",
         "target": "https://pd.data.kemdikbud.go.id"
       },
       {
         "product": "Verval-SP",
         "detail": "Manajemen Verifikasi Validasi data pokok satuan satuan pendidikan",
-        "icon": "./images/home/homelinkedplatform/dapodik-vervalsp.png",
+        "icon": "tags",
         "target": "https://vervalsp.data.kemdikbud.go.id"
       },
       {
         "product": "Verval-PTK",
         "detail": "Manajemen Verifikasi Validasi data pokok Pendidik dan Tenaga Kependidikan",
-        "icon": "./images/home/homelinkedplatform/dapodik-vervalptk.png",
+        "icon": "tags",
         "target": "https://vervalptk.data.kemdikbud.go.id"
       },
       {
         "product": "Verval-PD",
         "detail": "Manajemen Verifikasi Validasi data Peserta Didik",
-        "icon": "./images/home/homelinkedplatform/dapodik-vervalpd.png",
+        "icon": "tags",
         "target": "https://vervalpd.data.kemdikbud.go.id/"
       }
     ]
@@ -144,19 +144,19 @@
       {
         "product": "MyASN",
         "detail": "Platform Layanan Integrasi Data ASN",
-        "icon": "./images/home/homelinkedplatform/mysapk.png",
+        "icon": "tags",
         "target": "https://myasn.bkn.go.id"
       },
       {
         "product": "e-Kinerja",
         "detail": "Platform Pengelolaan eKinerja ASN",
-        "icon": "./images/home/homelinkedplatform/ekinerja.png",
+        "icon": "tags",
         "target": "https://kinerja.bkn.go.id"
       },
       {
         "product": "DISPAKATI",
         "detail": "Platform Penilaian Angka Kredit",
-        "icon": "./images/home/homelinkedplatform/dispakati.png",
+        "icon": "tags",
         "target": "https://dispakati.bkn.go.id"
       }
 
@@ -168,15 +168,9 @@
     "detail": "Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Republik Indonesia",
     "items": [
       {
-        "product": "SRIKANDI V.2",
+        "product": "SRIKANDI",
         "detail": "Platform Layanan Arsip dan Persuratan",
-        "icon": "./images/home/homelinkedplatform/srikandi.png",
-        "target": "https://srikandi-v2.arsip.go.id"
-      },
-      {
-        "product": "SRIKANDI V.3",
-        "detail": "Platform Layanan Arsip dan Persuratan",
-        "icon": "./images/home/homelinkedplatform/srikandi.png",
+        "icon": "tags",
         "target": "https://srikandi.arsip.go.id/auth/login"
       }
 

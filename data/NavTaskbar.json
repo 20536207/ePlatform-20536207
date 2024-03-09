@@ -1,6 +1,0 @@
-
-[
-    {"id": 0,"parentid":"00","text": "e-Platorm","icon": "fab fa-windows","loadpage": "./pages/ViewePlatform.html"},
-    {"id": 1,"parentid":"00","text": "Home","icon": "fas fa-house","loadpage": "./pages/ViewHome.html"}
-    
-]
