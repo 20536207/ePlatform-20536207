@@ -1,7 +1,6 @@
 $(document).ready(function () {
   //==============================================================================
   window.jsPDF = window.jspdf.jsPDF;
-
   //==============================================================================
   _toolbarSeparatorBefore = {
     locateInMenu: 'never',

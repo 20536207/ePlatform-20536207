@@ -30,6 +30,15 @@
   <script src="./js/index.js"></script>
 
   <script>$(document).bind("contextmenu", function (e) { return false; })</script>
+  <script>
+    window.onload = (event) => {
+      document.clear()
+    };
+
+    window.addEventListener("beforeunload", (event) => {
+      document.clear()
+    });
+  </script>
 
 </head>
 
