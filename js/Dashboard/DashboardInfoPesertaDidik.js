@@ -275,7 +275,7 @@ $(document).ready(function () {
 
                     }, {
                         caption: 'P',
-                        dataField: 'E22',
+                        dataField: 'E23',
                         alignment: 'center',
                     }, {
                         caption: 'JML',
@@ -2545,7 +2545,7 @@ $(document).ready(function () {
 
         //===============================================================================
         _DashboardPesertaDidik = $('#DashboardPesertaDidik').dxDataGrid({
-            keyExpr: 'A01',
+            // keyExpr: 'A01',
             columns: _TbDashboard,
             columnHidingEnabled: false,
             allowColumnReordering: true,
