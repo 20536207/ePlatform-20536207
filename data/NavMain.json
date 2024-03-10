@@ -77,7 +77,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./master/KesiswaanRombonganBelajar/Kesiswaan_RombonganBelajar.html"
+                "target": "./master/KesiswaanPesertaDIdik/Kesiswaan_PesertaDidik.html"
             },
             {
                 "id": "02-04",
@@ -86,7 +86,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./master/KesiswaanPesertaDidik/Kesiswaan_PesertaDidik.html"
+                "target": "./master/KesiswaanDataPrestasi/Kesiswaan_DataPrestasi.html"
             }
         ]
     },
