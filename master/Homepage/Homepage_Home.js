@@ -152,7 +152,7 @@ $(document).ready(function () {
 
                         $("#PageContains").empty();
                         _actPageContains = itemData.target;
-                        _PdfFilePageContains = "./master/AIO_PdfPageContains/PdfPageContains/Dashboard " + itemData.text + ".pdf";
+                        _PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/Dashboard " + itemData.text + ".pdf";
                         _ParentPageContains = "./master/Homepage/Homepage_Home.html";
                         return $("#PageContains").load(_actPageContains);
                     },

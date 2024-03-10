@@ -9,7 +9,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
+                "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-02",
@@ -18,7 +18,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
+                "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-03",
@@ -27,7 +27,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
+                "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-04",
@@ -36,7 +36,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
+                "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-05",
@@ -45,7 +45,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/AIO_PdfPageContains/AIO_PdfPageContains.html"
+                "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
             }
         ]
     },
@@ -59,7 +59,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/Kesiswaan_DataIndukSiswa/Kesiswaan_DataIndukSiswa.html"
+                "target": "./master/KesiswaanDataIndukSiswa/Kesiswaan_DataIndukSiswa.html"
             },
             {
                 "id": "02-02",
@@ -68,7 +68,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/Kesiswaan_RombonganBelajar/Kesiswaan_RombonganBelajar.html"
+                "target": "./master/KesiswaanRombonganBelajar/Kesiswaan_RombonganBelajar.html"
             },
             {
                 "id": "02-03",
@@ -77,7 +77,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/Kesiswaan_PesertaDidik/Kesiswaan_PesertaDidik.html"
+                "target": "./master/KesiswaanPesertaDidik/Kesiswaan_PesertaDidik.html"
             },
             {
                 "id": "02-03",
@@ -86,7 +86,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/Kesiswaan_DataPrestasi/Kesiswaan_DataPrestasi.html"
+                "target": "./master/KesiswaanDataPrestasi/Kesiswaan_DataPrestasi.html"
             }
         ]
     },
@@ -100,7 +100,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/Kepegawaian_DataIndukPegawai/Kepegawaian_DataIndukPegawai.html"
+                "target": "./master/KepegawaianDataIndukPegawai/Kepegawaian_DataIndukPegawai.html"
             },
             {
                 "id": "03-02",
@@ -109,7 +109,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/Kepegawaian_PutusanNonASN/Kepegawaian_PutusanNonASN.html"
+                "target": "./master/KepegawaianPutusanNonASN/Kepegawaian_PutusanNonASN.html"
             },
             {
                 "id": "03-03",
@@ -118,7 +118,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/Kepegawaian_PutusanASN/Kepegawaian_PutusanASN.html"
+                "target": "./master/KepegawaianPutusanASN/Kepegawaian_PutusanASN.html"
             },
             {
                 "id": "03-04",
@@ -127,7 +127,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/Kepegawaian_PutusanKepangkatan/Kepegawaian_PutusanKepangkatan.html"
+                "target": "./master/KepegawaianPutusanKepangkatan/Kepegawaian_PutusanKepangkatan.html"
             },
             {
                 "id": "03-05",
@@ -136,7 +136,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/Kepegawaian_GajiBerkala/Kepegawaian_PutusanGajiBerkala.html"
+                "target": "./master/KepegawaianGajiBerkala/Kepegawaian_PutusanGajiBerkala.html"
             }
         ]
     },
@@ -150,7 +150,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/SaranaPrasarana_DataAsetBangunan/SaranaPrasarana_DataAsetBangunan.html"
+                "target": "./master/SaranaPrasaranaDataAsetBangunan/SaranaPrasarana_DataAsetBangunan.html"
             },
             {
                 "id": "04-02",
@@ -159,7 +159,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/SaranaPrasarana_DataAsetPeralatan/SaranaPrasarana_DataAsetPeralatan.html"
+                "target": "./master/SaranaPrasaranaDataAsetPeralatan/SaranaPrasarana_DataAsetPeralatan.html"
             },
             {
                 "id": "04-03",
@@ -168,7 +168,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/SaranaPrasarana_DataAsetLainnya/SaranaPrasarana_DataAsetLainnya.html"
+                "target": "./master/SaranaPrasaranaDataAsetLainnya/SaranaPrasarana_DataAsetLainnya.html"
             },
             {
                 "id": "04-04",
@@ -177,7 +177,7 @@
                 "badge": "",
                 "disabled": true,
                 "visible": true,
-                "target": "./Master/SaranaPrasarana_DataPersediaanBarang/SaranaPrasarana_DataPersediaanBarang.html"
+                "target": "./master/SaranaPrasaranaDataPersediaanBarang/SaranaPrasarana_DataPersediaanBarang.html"
             }
         ]
     },
@@ -191,7 +191,7 @@
                 "badge": null,
                 "disabled": false,
                 "visible": true,
-                "target": "./Master/Dashboard_FileStorage/Dashboard_FileStorage.html"
+                "target": "./master/DashboardFileStorage/Dashboard_FileStorage.html"
             }
         ]
     }
