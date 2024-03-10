@@ -82,7 +82,7 @@ $(document).ready(function () {
             _PageToolbar.option("items[0].text", "e-Platform Account");
 
             $("#PageContains").empty();
-            _actPageContains = "./Master/User/User_MainPage.html";
+            _actPageContains = "./master/User/User_MainPage.html";
             $("#PageContains").load(_actPageContains);
           },
         }
@@ -128,7 +128,7 @@ $(document).ready(function () {
 
             $("#PageContains").empty();
             _actPageContains = e.itemData["target"];
-            _PdfFilePageContains = "./Master/AIO_PdfPageContains/PdfPageContains/Dashboard " + e.itemData["text"] + ".pdf";
+            _PdfFilePageContains = "./master/AIO_PdfPageContains/PdfPageContains/Dashboard " + e.itemData["text"] + ".pdf";
             $("#PageContains").load(_actPageContains);
           },
         }).addClass('ContainsSidebar');
@@ -210,7 +210,7 @@ $(document).ready(function () {
   }).dxToolbar('instance');
 
   //===============================================================================
-  _actPageContains = "./Master/Homepage/Homepage_Home.html";
+  _actPageContains = "./master/Homepage/Homepage_Home.html";
   $("#PageContains").load(_actPageContains);
   //===============================================================================
   $(window).resize(function () {

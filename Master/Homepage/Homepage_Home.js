@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
     _PageToolbar.option("items[0].text", 'Home');
-    _ParentPageContains = "./Master/Homepage/Homepage_Home.html";
+    _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
     // ===============================================================================================
     $("#HomePagesContains").dxResponsiveBox({
@@ -152,8 +152,8 @@ $(document).ready(function () {
 
                         $("#PageContains").empty();
                         _actPageContains = itemData.target;
-                        _PdfFilePageContains = "./Master/AIO_PdfPageContains/PdfPageContains/Dashboard " + itemData.text + ".pdf";
-                        _ParentPageContains = "./Master/Homepage/Homepage_Home.html";
+                        _PdfFilePageContains = "./master/AIO_PdfPageContains/PdfPageContains/Dashboard " + itemData.text + ".pdf";
+                        _ParentPageContains = "./master/Homepage/Homepage_Home.html";
                         return $("#PageContains").load(_actPageContains);
                     },
                 })

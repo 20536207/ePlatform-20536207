@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  _ParentPageContains = "./Master/Homepage/Homepage_Home.html";
+  _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
   // ===============================================================================================
   for (var i = 1; i <= 50; i++) {
