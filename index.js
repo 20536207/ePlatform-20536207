@@ -210,7 +210,7 @@ $(document).ready(function () {
   }).dxToolbar('instance');
 
   //===============================================================================
-  _actPageContains = "./Master/HomePage/Homepage_Home.html";
+  _actPageContains = "./Master/Homepage/Homepage_Home.html";
   $("#PageContains").load(_actPageContains);
   //===============================================================================
   $(window).resize(function () {
