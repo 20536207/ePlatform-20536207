@@ -8,8 +8,20 @@
   padding: 10px 5px 5px 5px;
   text-align: center;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
 
+}
+
+#pdfPageContainsToolbar{
+  position: sticky;
+  top: 0;
+  background-color: inherit;
+}
+
+
+
+#pdfPageContainsToolbar .dx-button {
+  padding: 10px 20px 10px 20px;
 }
 
 #pdfPageContains > canvas{

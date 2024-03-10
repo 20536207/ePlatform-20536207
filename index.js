@@ -1,3 +1,19 @@
+//==============================================================================
+function _notify(_message) {
+  return DevExpress.ui.notify(
+    {
+      message: _message,
+      maxWidth: 300,
+      displayTime: 1000,
+      animation: {
+        show: { type: 'fade', duration: 400, from: 0, to: 1 },
+        hide: { type: 'fade', duration: 40, to: 0 },
+      },
+    },
+    { position: "top right", direction: "down-push" }
+  );
+};
+
 $(document).ready(function () {
   //==============================================================================
   window.jsPDF = window.jspdf.jsPDF;
@@ -28,9 +44,10 @@ $(document).ready(function () {
   };
 
   //==============================================================================
-  _actPageContains = "";
-  _PdfFilePageContains = "";
-  _ParentPageContains = "";
+  _actPageContains = null;
+  _PdfFilePageContains = null;
+  _ParentPageContains = null;
+
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
@@ -128,7 +145,7 @@ $(document).ready(function () {
 
             $("#PageContains").empty();
             _actPageContains = e.itemData["target"];
-            _PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/" + e.itemData["text"].replace(" ","") + ".pdf";
+            _PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/" + e.itemData["text"].replace(" ", "") + ".pdf";
             $("#PageContains").load(_actPageContains);
           },
         }).addClass('ContainsSidebar');
@@ -187,6 +204,12 @@ $(document).ready(function () {
         },
       },
       _toolbarSeparatorBefore,
+      {
+        location: 'after',
+        locateInMenu: 'auto',
+        visible: true,
+        widget: 'dxButtonGroup',
+      },
       _toolbarSeparatorAfter,
       {
         location: 'after',

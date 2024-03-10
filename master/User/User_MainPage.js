@@ -19,19 +19,9 @@ $(document).ready(function () {
             "<span>Authentication, Management and Information</span></div>"
           )
         },
-        onClick() {
-          DevExpress.ui.notify(
-            {
-              message: 'masih dalam proses ritual', //this.option('text'),
-              maxWidth: 300,
-              displayTime: 1000,
-              animation: {
-                show: { type: 'fade', duration: 400, from: 0, to: 1 },
-                hide: { type: 'fade', duration: 40, to: 0 },
-              },
-            },
-            { position: "top right", direction: "down-push" }
-          );
+        onClick(e) {
+          // e.indexOf( liNodeReference );
+          _notify('option ' + e.id +' masih proses ritual');
         },
       })
     )
