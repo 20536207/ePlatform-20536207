@@ -191,7 +191,7 @@
                 "badge": null,
                 "disabled": false,
                 "visible": true,
-                "target": "./master/DashboardFileStorage/Dashboard_FileStorage.html"
+                "target": "./master/DashboardFileStorage/DashboardFileStorage.html"
             }
         ]
     }
