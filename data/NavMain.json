@@ -77,16 +77,16 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./master/KesiswaanPesertaDidik/Kesiswaan_PesertaDidik.html"
+                "target": "./master/KesiswaanRombonganBelajar/Kesiswaan_RombonganBelajar.html"
             },
             {
                 "id": "02-04",
                 "text": "Data Prestasi",
                 "icon": "tags",
                 "badge": "",
-                "disabled": true,
+                "disabled": false,
                 "visible": true,
-                "target": "./master/KesiswaanDataPrestasi/Kesiswaan_DataPrestasi.html"
+                "target": "./master/KesiswaanPesertaDidik/Kesiswaan_PesertaDidik.html"
             }
         ]
     },
