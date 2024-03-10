@@ -51,21 +51,22 @@ function OnRenderPage(_pdffile, _pdfPageContains) {
         let _scaleCanvas;
 
         for (let npage = 1; npage <= _pdfDocument.numPages; npage++) {
+            let _idPage = "pdfPage" + npage;
+            $(_pdfPageContains).append("<canvas id=" + _idPage + "></canvas>");
+            
             _pdfDocument.getPage(npage).then(function (_pdfPage) {
-
                 _scaleCanvas = (_pdfPageContains.offsetWidth / _pdfPage.getViewport({ scale: 1 }).width).toFixed(1);
-                const _viewport = _pdfPage.getViewport({ scale: ((_scaleCanvas > 1 ? 1  : _scaleCanvas - 0.05) + _zoomScaleCanvas).toFixed(1)});
-                const _idPage = "pdfPage" + npage;
-                $(_pdfPageContains).append("<canvas id='" + _idPage + "'></canvas>");
-                const _pdfCanvas = document.getElementById(_idPage);
+                let _viewport = _pdfPage.getViewport({ scale: ((_scaleCanvas > 1 ? 1 : _scaleCanvas - 0.05) + _zoomScaleCanvas).toFixed(1) });
+                let _pdfCanvas = document.getElementById(_idPage);
+
                 _pdfCanvas.width = _viewport.width;
                 _pdfCanvas.height = _viewport.height;
-
                 _renderTask = _pdfPage.render({
                     canvasContext: _pdfCanvas.getContext('2d'),
                     viewport: _viewport,
                 }).promise;
             });
-        };
+
+        }
     });
 };
