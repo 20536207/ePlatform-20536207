@@ -128,7 +128,7 @@ $(document).ready(function () {
 
             $("#PageContains").empty();
             _actPageContains = e.itemData["target"];
-            _PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/Dashboard " + e.itemData["text"] + ".pdf";
+            _PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/" + e.itemData["text"].replace(" ","") + ".pdf";
             $("#PageContains").load(_actPageContains);
           },
         }).addClass('ContainsSidebar');

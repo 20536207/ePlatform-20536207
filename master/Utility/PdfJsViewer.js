@@ -21,6 +21,16 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
         },
     }).dxSpeedDialAction('instance');
 
+    $('#action-print').dxSpeedDialAction({
+        icon: 'fas fa-print',
+        label: 'Print',
+        index: 3,
+        // visible: false,
+        onClick() {
+            window.open(_pdffile);
+        },
+    }).dxSpeedDialAction('instance');
+
     //===================================================================================
     OnRenderPage(_pdffile, _pdfPageContains);
 
@@ -39,6 +49,7 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
         },
     });
     DevExpress.ui.repaintFloatingActionButton();
+
 
 };
 

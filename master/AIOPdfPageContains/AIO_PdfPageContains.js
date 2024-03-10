@@ -1,5 +1,5 @@
 
-var _zoomScaleCanvas=0;
+var _zoomScaleCanvas = 0;
 $(document).ready(function () {
     //==================================================================================================================
     GoPdfJsViewer(
@@ -7,6 +7,7 @@ $(document).ready(function () {
         document.getElementById("pdfPageContains")
     );
 
+    //==================================================================================================================
     $("#pdfMainPage").dxScrollView({
         scrollByContent: true,
         scrollByThumb: true,

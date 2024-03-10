@@ -81,12 +81,12 @@
             },
             {
                 "id": "02-04",
-                "text": "Data Prestasi",
+                "text": "Daftar Prestasi Siswa",
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./master/KesiswaanDataPrestasi/Kesiswaan_DataPrestasi.html"
+                "target": "./master/KesiswaanPrestasi/Kesiswaan_Prestasi.html"
             }
         ]
     },

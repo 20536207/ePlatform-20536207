@@ -591,7 +591,7 @@ $(document).ready(function () {
                 sortOrder: undefined,
                 title: "Column Chooser",
                 search: {
-                    editorOptions:{},
+                    editorOptions: {},
                     enabled: true,
                     timeout: null,
                 },
@@ -634,6 +634,8 @@ $(document).ready(function () {
                 }
                 else if (e.format === 'pdf') {
                     const doc = new jsPDF('l', 'pt');
+                    doc.setFont('inherit', 'normal');
+                    doc.setFontSize('inherit');
                     DevExpress.pdfExporter.exportDataGrid({
                         jsPDFDocument: doc,
                         component: e.component,
