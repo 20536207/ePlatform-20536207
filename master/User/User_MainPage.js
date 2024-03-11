@@ -3,10 +3,10 @@ $(document).ready(function () {
   _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
   // ===============================================================================================
-  for (var i = 1; i <= 50; i++) {
+  for (let i = 1; i <= 50; i++) {
     $("#UserPage").append(
       $("<div />").dxButton({
-        elementAttr: { class: 'btnPageLayout' },
+        elementAttr: { id: "box" + i, class: 'btnPageLayout' },
         type: 'normal',
         stylingMode: 'contained',
         hoverStateEnabled: false,
@@ -21,7 +21,7 @@ $(document).ready(function () {
         },
         onClick(e) {
           // e.indexOf( liNodeReference );
-          _notify('option ' + e.id +' masih proses ritual');
+          _notify('option ' + $('div').index(this) + ' masih proses ritual');
         },
       })
     )

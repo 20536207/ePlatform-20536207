@@ -48,7 +48,6 @@ $(document).ready(function () {
   _PdfFilePageContains = null;
   _ParentPageContains = null;
 
-
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
     height: '62px',
@@ -96,7 +95,8 @@ $(document).ready(function () {
           height: undefined,
           width: undefined,
           onClick() {
-            _PageToolbar.option("items[0].text", "e-Platform Account");
+            _PageToolbar.option("items[2].text", "e-Platform Account");
+            _PageToolbar.option("items[3].visible", false);
 
             $("#PageContains").empty();
             _actPageContains = "./master/User/User_MainPage.html";
@@ -139,8 +139,8 @@ $(document).ready(function () {
           width: 265,
           selectionMode: "single",
           onItemClick(e) {
-
-            _PageToolbar.option("items[0].text", e.itemData.text);
+            _PageToolbar.option("items[2].text", e.itemData.text);
+            _PageToolbar.option("items[3].visible", false);
             _LayoutContains.toggle();
 
             $("#PageContains").empty();
@@ -167,7 +167,8 @@ $(document).ready(function () {
       return false;
     },
     onItemClick(e) {
-      _PageToolbar.option("items[0].text", e.itemData.text);
+      _PageToolbar.option("items[2].text", e.itemData.text);
+      _PageToolbar.option("items[3].visible", false);
 
       // _LayoutHeader.option("items[0].options.disabled", true);
       $("#PageContains").empty();
@@ -180,16 +181,11 @@ $(document).ready(function () {
   _PageToolbar = $('#PageToolbar').dxToolbar({
     items: [
       {
-        location: 'center',
-        locateInMenu: 'never',
-        cssClass: 'Page-Title',
-        text: '',
-      },
-      {
         location: 'before',
         locateInMenu: 'never',
         visible: true,
         widget: 'dxButton',
+        text: "",
         options: {
           icon: "fas fa-right-from-bracket fa-rotate-180",
           stylingMode: "text",
@@ -197,6 +193,7 @@ $(document).ready(function () {
           focusStateEnabled: false,
           activeStateEnabled: true,
           onClick() {
+            _PageToolbar.option("items[3].visible", false);
             $("#PageContains").empty();
             _actPageContains = _ParentPageContains;
             $("#PageContains").load(_actPageContains);
@@ -205,9 +202,15 @@ $(document).ready(function () {
       },
       _toolbarSeparatorBefore,
       {
+        location: 'before',
+        locateInMenu: 'never',
+        cssClass: 'Page-Title',
+        text: "",
+      },
+      {
         location: 'after',
         locateInMenu: 'auto',
-        visible: true,
+        visible: false,
         widget: 'dxButtonGroup',
       },
       _toolbarSeparatorAfter,
@@ -223,6 +226,8 @@ $(document).ready(function () {
           focusStateEnabled: false,
           activeStateEnabled: true,
           onClick() {
+            _PageToolbar.option("items[3].visible", false);
+            
             $("#PageContains").empty();
             $("#PageContains").load(_actPageContains);
           },

@@ -1,7 +1,8 @@
 // $(() => {
 $(document).ready(function () {
 
-    _PageToolbar.option("items[0].text", 'Home');
+    _PageToolbar.option("items[2].text", 'Home');
+    _PageToolbar.option("items[3].visible", false);
     _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
     // ===============================================================================================
@@ -146,7 +147,9 @@ $(document).ready(function () {
                         //     },
                         //     { position: "top right", direction: "down-push" }
                         // );
-                        _PageToolbar.option("items[0].text", itemData.text);
+
+                        _PageToolbar.option("items[2].text", itemData.text);
+                        _PageToolbar.option("items[3].visible", false);
                         // _PageToolbar.option("items[1].options.icon", _PageToolbar.option("items[1].options.icon") === 'fas fa-right-from-bracket fa-rotate-180' ? 'fas fa-home' : 'fas fa-right-from-bracket fa-rotate-180');
                         // _PageToolbar.option("items[1].visible", true);
 
