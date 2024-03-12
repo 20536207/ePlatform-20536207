@@ -36,7 +36,7 @@
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "https://docs.google.com/document/d/1K3YyLaWlhNJrvxN-5SWfqQ4wG4pw5afUzMA0eMHrIh8/edit"
+                "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
             },
             {
                 "id": "01-05",
