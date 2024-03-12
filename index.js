@@ -23,7 +23,7 @@ $(document).ready(function () {
     location: "before",
     template(itemData, itemIndex, element) {
       $('<div>')
-        .addClass('toolbar-separator')
+        .addClass('separator-before')
         .appendTo(element);
     },
     menuItemTemplate(itemData, itemIndex, element) {
@@ -38,7 +38,7 @@ $(document).ready(function () {
     location: "after",
     template(itemData, itemIndex, element) {
       $('<div>')
-        .addClass('toolbar-separator')
+        .addClass('separator-after')
         .appendTo(element);
     },
   };
@@ -50,19 +50,20 @@ $(document).ready(function () {
 
   //==============================================================================
   _LayoutHeader = $('#LayoutHeader').dxToolbar({
-    height: '62px',
     items: [
       {
         widget: 'dxButton',
         location: 'before',
         locateInMenu: 'never',
         cssClass: undefined,
-        text: null,
+        text: "",
         options: {
           //disabled: true,
-          text: null,
-          icon: undefined,
-          template: '<div style="padding: 5px 5px 0 5px" class="fab fa-windows fa-xl"><span class="DevApp-Menu"> e-Platform AIO<br>ver. 20536207.1</div>',
+          text: "",
+          icon: null,
+          template:
+            "<div class='fab fa-windows fa-xl'><span class='DevApp-Menu'> e-Platform AIO<br>"+
+            "ver. 20536207.1</span></div>",
           hoverStateEnabled: true,
           focusStateEnabled: false,
           activeStateEnabled: true,
@@ -85,18 +86,18 @@ $(document).ready(function () {
           disabled: false,
           text: null,
           icon: null,
-          template: '<div style="padding: 1px 15px 0 15px" class="fas fa-circle-user fa-3x"></div>',
+          template: '<a class="fas fa-circle-user fa-3x"></a>',
           hoverStateEnabled: true,
           focusStateEnabled: false,
           activeStateEnabled: false,
           selectionMode: 'none',
-          type: 'danger',
+          type: 'normal',
           stylingMode: "text",
           height: undefined,
           width: undefined,
           onClick() {
-            _PageToolbar.option("items[2].text", "e-Platform Account");
-            _PageToolbar.option("items[3].visible", false);
+            _PageToolbar.option("items[1].text", "e-Platform Account");
+            _PageToolbar.option("items[2].visible", false);
 
             $("#PageContains").empty();
             _actPageContains = "./master/User/User_MainPage.html";
@@ -139,8 +140,8 @@ $(document).ready(function () {
           width: 265,
           selectionMode: "single",
           onItemClick(e) {
-            _PageToolbar.option("items[2].text", e.itemData.text);
-            _PageToolbar.option("items[3].visible", false);
+            _PageToolbar.option("items[1].text", e.itemData.text);
+            _PageToolbar.option("items[2].visible", false);
             _LayoutContains.toggle();
 
             $("#PageContains").empty();
@@ -167,8 +168,8 @@ $(document).ready(function () {
       return false;
     },
     onItemClick(e) {
-      _PageToolbar.option("items[2].text", e.itemData.text);
-      _PageToolbar.option("items[3].visible", false);
+      _PageToolbar.option("items[1].text", e.itemData.text);
+      _PageToolbar.option("items[2].visible", false);
 
       // _LayoutHeader.option("items[0].options.disabled", true);
       $("#PageContains").empty();
@@ -185,6 +186,7 @@ $(document).ready(function () {
         locateInMenu: 'never',
         visible: true,
         widget: 'dxButton',
+        cssClass: 'items-before',
         text: "",
         options: {
           icon: "fas fa-right-from-bracket fa-rotate-180",
@@ -193,14 +195,14 @@ $(document).ready(function () {
           focusStateEnabled: false,
           activeStateEnabled: true,
           onClick() {
-            _PageToolbar.option("items[3].visible", false);
+            _PageToolbar.option("items[2].visible", false);
             $("#PageContains").empty();
             _actPageContains = _ParentPageContains;
             $("#PageContains").load(_actPageContains);
           },
         },
       },
-      _toolbarSeparatorBefore,
+      // _toolbarSeparatorBefore,
       {
         location: 'before',
         locateInMenu: 'never',
@@ -211,13 +213,14 @@ $(document).ready(function () {
         location: 'after',
         locateInMenu: 'auto',
         visible: false,
+        cssClass: 'items-after',
         widget: 'dxButtonGroup',
       },
-      _toolbarSeparatorAfter,
       {
         location: 'after',
         locateInMenu: 'never',
         visible: true,
+        cssClass: 'items-after',
         widget: 'dxButton',
         options: {
           icon: "fas fa-refresh",
@@ -226,8 +229,8 @@ $(document).ready(function () {
           focusStateEnabled: false,
           activeStateEnabled: true,
           onClick() {
-            _PageToolbar.option("items[3].visible", false);
-            
+            _PageToolbar.option("items[2].visible", false);
+
             $("#PageContains").empty();
             $("#PageContains").load(_actPageContains);
           },

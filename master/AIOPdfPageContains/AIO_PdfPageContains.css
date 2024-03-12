@@ -1,6 +1,6 @@
 #pdfMainPage {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   overflow: none;
   flex: 1 1 auto;
   height: 100%;
@@ -13,10 +13,12 @@
 }
 
 #pdfPageContainsToolbar {
+  display:fixed;
+  float: inherit;
   position:sticky;
-  top: 0;
-  offset: 0 10;
-  background-color: inherit;
+  left: 0px;
+  top: 0px;
+  transform: translate(0px, 0px);
 }
 
 

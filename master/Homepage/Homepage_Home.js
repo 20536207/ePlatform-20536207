@@ -1,8 +1,8 @@
 // $(() => {
 $(document).ready(function () {
 
-    _PageToolbar.option("items[2].text", 'Home');
-    _PageToolbar.option("items[3].visible", false);
+    _PageToolbar.option("items[1].text", 'Home');
+    _PageToolbar.option("items[2].visible", false);
     _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
     // ===============================================================================================
@@ -125,7 +125,7 @@ $(document).ready(function () {
                     hoverStateEnabled: false,
                     focusStateEnabled: false,
                     activeStateEnabled: true,
-                    height: '125px',
+                    height: '130px',
                     template: () => {
                         return $(
                             "<div class='itembtnpage'>" +
@@ -135,23 +135,8 @@ $(document).ready(function () {
                         )
                     },
                     onClick(e) {
-                        // DevExpress.ui.notify(
-                        //     {
-                        //         message: itemData.text, //this.option('text'),
-                        //         maxWidth: 300,
-                        //         displayTime: 1000,
-                        //         animation: {
-                        //             show: { type: 'fade', duration: 400, from: 0, to: 1 },
-                        //             hide: { type: 'fade', duration: 40, to: 0 },
-                        //         },
-                        //     },
-                        //     { position: "top right", direction: "down-push" }
-                        // );
-
-                        _PageToolbar.option("items[2].text", itemData.text);
-                        _PageToolbar.option("items[3].visible", false);
-                        // _PageToolbar.option("items[1].options.icon", _PageToolbar.option("items[1].options.icon") === 'fas fa-right-from-bracket fa-rotate-180' ? 'fas fa-home' : 'fas fa-right-from-bracket fa-rotate-180');
-                        // _PageToolbar.option("items[1].visible", true);
+                        _PageToolbar.option("items[1].text", itemData.text);
+                        _PageToolbar.option("items[2].visible", false);
 
                         $("#PageContains").empty();
                         _actPageContains = itemData.target;
