@@ -1,12 +1,11 @@
-
 #HomePagesMain {
-  display: flex;
-  flex-direction: column;
-  overflow: none;
-  flex: 1 1 auto;
-  height: 100%;
-  width: 100%;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    overflow: none;
+    flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 /* .layout-01, */
@@ -182,6 +181,7 @@
     #BannerImage>div {
         font-size: smaller;
     }
+
 }
 
 @media only screen and (max-width: 600px) {

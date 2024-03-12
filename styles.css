@@ -16,7 +16,7 @@ body {
 }
 
 .dx-item {
-  min-height: 36px;  
+  min-height: 36px;
 }
 
 .dx-list-item {
@@ -39,7 +39,8 @@ body {
   align-items: center;
 }
 
-.dx-textbox, .dx-texteditor-input-container {
+.dx-textbox,
+.dx-texteditor-input-container {
   min-height: 36px;
   align-items: center;
 }
@@ -50,6 +51,11 @@ body {
 
 .toolbar-separator {
   border: 1px rgba(0, 0, 0, 0.2) solid
+}
+
+.dx-list-group-header {
+  background-color: rgba(100, 100, 100, 0.2);
+  min-height: 44px;
 }
 
 /* ==================================================================================== */
@@ -142,4 +148,13 @@ body {
   font-family: inherit;
   overflow: hidden;
   border-top: rgba(100, 100, 100, 0.3) ridge;
+}
+
+@media only screen and (max-width: 960px) {
+
+  #LayoutContent .ContainsSidebar {
+    padding: 0 3px 0 3px;
+    background-color: rgba(36, 36, 36, 0.95);
+  }
+
 }

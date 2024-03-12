@@ -123,9 +123,8 @@ $(document).ready(function () {
         .dxList({
           keyExpr: "key",
           dataSource: "./data/NavMain.json",
-          // items: _itemNavMain,
           hoverStateEnabled: false,
-          focusStateEnabled: true,
+          focusStateEnabled: false,
           activeStateEnabled: true,
           grouped: true,
           collapsible: false,
