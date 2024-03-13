@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  
   _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
   // ===============================================================================================
@@ -20,7 +20,6 @@ $(document).ready(function () {
           )
         },
         onClick(e) {
-          // e.indexOf( liNodeReference );
           _notify('option ' + $('div').index(this) + ' masih proses ritual');
         },
       })

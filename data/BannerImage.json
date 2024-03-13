@@ -1,45 +1,44 @@
 [
-    {
-      "ID": "1",
-      "Title": "SD NEGERI TISNONEGARAN 1",
-      "Keterangan": "Satuan Pendidikan Dasar",
-      "Image": "./master/Homepage/Assets/bannerimage/1.png"
-    },
-    {
-      "ID": "2",
-      "Title": "PEMERINTAH KOTA PROBOLINGGO",
-      "Keterangan": "Pemerintahan Daerah",
-      "Image": "./master/Homepage/Assets/bannerimage/2.png"
-    },
-    {
-      "ID": "3",
-      "Title": "KEMENDIKBUDRISTEK",
-      "Keterangan": "Kementerian Negara R.I",
-      "Image": "./master/Homepage/Assets/bannerimage/3.png"
-    },
-    {
-      "ID": "4",
-      "Title": "SEKOLAH ADIWIYATA NASIONAL",
-      "Keterangan": "Penganugerahan Satuan Pendidikan",
-      "Image": "./master/Homepage/Assets/bannerimage/4.png"
-    },
-    {
-      "ID": "5",
-      "Title": "SEKOLAH RAMAH ANAK",
-      "Keterangan": "Penganugerahan Satuan Pendidikan",
-      "Image": "./master/Homepage/Assets/bannerimage/5.png"
-    },
-    {
-      "ID": "6",
-      "Title": "",
-      "Keterangan": "",
-      "Image": "./master/Homepage/Assets/bannerimage/6.png"
-    },
-    {
-      "ID": "8",
-      "Title": "",
-      "Keterangan": "",
-      "Image": "./master/Homepage/Assets/bannerimage/8.png"
-    }
-    
-  ]
+  {
+    "ID": "1",
+    "Title": "SD NEGERI TISNONEGARAN 1",
+    "Keterangan": "Satuan Pendidikan Dasar",
+    "Image": "./master/Homepage/Assets/bannerimage/1.png"
+  },
+  {
+    "ID": "2",
+    "Title": "PEMERINTAH KOTA PROBOLINGGO",
+    "Keterangan": "Pemerintahan Daerah",
+    "Image": "./master/Homepage/Assets/bannerimage/2.png"
+  },
+  {
+    "ID": "3",
+    "Title": "KEMENDIKBUDRISTEK",
+    "Keterangan": "Kementerian Negara R.I",
+    "Image": "./master/Homepage/Assets/bannerimage/3.png"
+  },
+  {
+    "ID": "4",
+    "Title": "SEKOLAH ADIWIYATA NASIONAL",
+    "Keterangan": "Penganugerahan Satuan Pendidikan",
+    "Image": "./master/Homepage/Assets/bannerimage/4.png"
+  },
+  {
+    "ID": "5",
+    "Title": "SEKOLAH RAMAH ANAK",
+    "Keterangan": "Penganugerahan Satuan Pendidikan",
+    "Image": "./master/Homepage/Assets/bannerimage/5.png"
+  },
+  {
+    "ID": "6",
+    "Title": "",
+    "Keterangan": "",
+    "Image": "./master/Homepage/Assets/bannerimage/6.png"
+  },
+  {
+    "ID": "8",
+    "Title": "",
+    "Keterangan": "",
+    "Image": "./master/Homepage/Assets/bannerimage/8.png"
+  }
+]

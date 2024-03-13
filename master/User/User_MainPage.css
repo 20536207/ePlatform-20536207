@@ -15,16 +15,9 @@
   margin: 10px 5px 5px 5px;
 } */
 
-#Authentication {
-  max-width: 25%;
-  margin: auto;
-  align-content: center;
-  justify-content: center;
-}
-
-
 /* ==================================================================================== */
 #UserPage {
+  justify-self: flex-start;
   text-align: center;
   justify-content: center;
 }
@@ -37,6 +30,15 @@
   width: 19%;
 }
 
+#Authentication {
+  justify-self: flex-start;
+  width: 100%;
+  margin: auto;
+  align-content: center;
+  justify-content: center;
+}
+
+
 @media only screen and (max-width: 960px) {
   #UserPage .dx-button {
     margin: 1%;
@@ -47,9 +49,9 @@
     /*split 4 */
   }
 
-  #Authentication {
+  /* #Authentication {
     max-width: 50%;
-  }
+  } */
 }
 
 @media only screen and (max-width: 600px) {
@@ -62,9 +64,9 @@
     /* Split 3 */
   }
 
-  #Authentication {
+  /* #Authentication {
     max-width: 70%;
-  }
+  } */
 }
 
 @media only screen and (max-width: 480px) {
@@ -76,9 +78,9 @@
     width: 48.2%;
   }
 
-  #Authentication {
+  /* #Authentication {
     max-width: 90%;
-  }
+  } */
 }
 
 @media only screen and (max-width: 368px) {

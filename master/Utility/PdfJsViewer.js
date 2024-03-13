@@ -9,6 +9,7 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 label: 'Zoom in',
                 hint: 'Zoom-In',
                 stylingMode: 'contained',
+                onClick(e) { _zoomScaleCanvas += 0.1; OnRenderPage(_pdffile, _pdfPageContains); },
             },
             {
                 index: 2,
@@ -17,6 +18,7 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 label: 'Zoom Out',
                 hint: 'Zoom-Out',
                 stylingMode: 'contained',
+                onClick(e) { _zoomScaleCanvas -= 0.1; OnRenderPage(_pdffile, _pdfPageContains); },
             },
             {
                 index: 3,
@@ -25,6 +27,7 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 label: 'Download',
                 hint: 'Download',
                 stylingMode: 'contained',
+                onClick(e) { _notify('option ' + e.itemData.index + ' of ' + e.itemData.hint + ' masih proses ritual') },
             },
             {
                 index: 4,
@@ -33,38 +36,20 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 label: 'Print',
                 hint: 'Print',
                 stylingMode: 'contained',
+                onClick(e) { _notify('option ' + e.itemData.index + ' of ' + e.itemData.hint + ' masih proses ritual') },
             }
         ],
         stylingMode: 'contained',
         focusStateEnabled: false,
         selectionMode: "none",
-        onItemClick(e) {
-            switch (e.itemIndex) {
-                case 0:
-                    _zoomScaleCanvas += 0.3;
-                    OnRenderPage(_pdffile, _pdfPageContains);
-                    break;
-                case 1:
-                    _zoomScaleCanvas -= 0.3;
-                    OnRenderPage(_pdffile, _pdfPageContains);
-                    break;
-                case 2:
-                    _notify('option ' + e.itemIndex + ' of ' + e.itemData.hint + ' masih proses ritual');
-                    break;
-                case 3:
-                    _notify('option ' + e.itemIndex + ' of ' + e.itemData.hint + ' masih proses ritual');
-                    break;
-                default:
-                    break;
-            }
-        },
     };
 
     //========================================================================================
     let _pdfPageContainsToolbar = $("#pdfPageContainsToolbar").dxButtonGroup(_pdfToolItems).dxButtonGroup("instance"); // OR 
+    _pdfPageContainsToolbar.option("visible", $(window).width() > 480 && $(window).width() < 980 ? true : false);
 
     _PageToolbar.option("items[2].options", _pdfToolItems);
-    _PageToolbar.option("items[2].visible", true);
+    _PageToolbar.option("items[2].visible", $(window).width() > 980 ? true : false);
     _PageToolbar.option("items[2].options.stylingMode", "text");
 
     //reconfig of tool options items
@@ -75,9 +60,10 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
             index: _pdfToolItems.items[ii].index,
             label: _pdfToolItems.items[ii].label,
             icon: _pdfToolItems.items[ii].icon,
-            // onClick(){_pdfToolItems.onItemClick();},
+            onClick: _pdfToolItems.items[ii].onClick,
+            visible: $(window).width() < 480 ? true : false,
         }).dxSpeedDialAction('instance');
-
+            
     };
 
     //===================================================================================
@@ -99,7 +85,6 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
         },
     });
     DevExpress.ui.repaintFloatingActionButton();
-
 
 }
 

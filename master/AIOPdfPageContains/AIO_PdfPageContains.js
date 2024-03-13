@@ -1,6 +1,7 @@
 var _zoomScaleCanvas = 0;
 
 $(document).ready(function () {
+
     //==================================================================================================================
     GoPdfJsViewer(
         _PdfFilePageContains,
