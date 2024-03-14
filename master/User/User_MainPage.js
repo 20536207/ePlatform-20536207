@@ -23,40 +23,44 @@ $(document).ready(function () {
 
   _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
-  // ===============================================================================================
-  for (let i = 1; i <= 2; i++) {
-    if (i == 1) {
-      $("#UserPage").append(
-        '<div id = "g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
-        'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
-        '</div>' +
+  _Auth = $(
+    "<div style='display:flex;flex-direction: column;padding: 5px'>" +
+    "<i class='fas fa-user-shield fa-4x'></i>" +
+    "<span>Authentication, Management and Information</span></div>" +
 
-        '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
-        'data-size="large" data-logo_alignment="left">' +
-        '</div><br>'
-      );
-    } else {
-      $("#UserPage").append(
-        $("<div />").dxButton({
-          elementAttr: { id: "box" + i, class: "btnPageLayout", },
-          type: 'normal',
-          stylingMode: 'contained',
-          hoverStateEnabled: false,
-          focusStateEnabled: false,
-          activeStateEnabled: true,
-          template: () => {
-            return $(
-              "<div style='display:flex;flex-direction: column;padding: 5px'>" +
-              "<i class='fas fa-user-shield fa-4x'></i>" +
-              "<span>Authentication, Management and Information</span></div>"
-            )
-          },
-          // onClick(e) {
-          //     _notify('option ' + $('div').index(this) + ' masih proses ritual');
-          // },
-        })
-      );
-    };
+    '<div id = "g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
+    'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
+    '</div>' +
+
+    '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
+    'data-size="large" data-logo_alignment="left">' +
+    '</div><br>'
+  );
+  // ===============================================================================================
+ 
+  $("#UserPage").append($(_Auth));
+
+  for (let i = 1; i <= 20; i++) {
+    $("#UserPage").append(
+      $("<div />").dxButton({
+        elementAttr: { id: "box" + i, class: "btnPageLayout", },
+        type: 'normal',
+        stylingMode: 'contained',
+        hoverStateEnabled: false,
+        focusStateEnabled: false,
+        activeStateEnabled: true,
+        template: () => {
+          return $(
+            "<div style='display:flex;flex-direction: column;padding: 5px'>" +
+            "<i class='fas fa-user-shield fa-4x'></i>" +
+            "<span>Authentication, Management and Information</span></div>"
+          )
+        },
+        onClick(e) {
+          _notify('option ' + $('div').index(this) + ' masih proses ritual');
+        },
+      })
+    )
   };
 
 
