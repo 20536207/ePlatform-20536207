@@ -26,9 +26,9 @@ $(document).ready(function () {
   _Auth = 
     "<div id='authorized'>" +
       "<div class='fas fa-circle-user fa-4x'></div>" +
-      "<div id='useraccount' style='margin: 5px 0 5px 0;'></div>" +
+      "<div id='useraccount' style='margin: 5px 0 5px 0;'>Authorized</div>" +
 
-      '<div id = "g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
+      '<div id="g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
         'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
       '</div>' +
 

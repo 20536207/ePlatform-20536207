@@ -26,6 +26,8 @@
 
 #authorized .g_id_signin {
   padding: 5px;
+  min-width: 90%;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -48,13 +50,13 @@
   width: 19%;
 }
 
-#Authentication {
+/* #Authentication {
   justify-self: flex-start;
   width: 100%;
   margin: auto;
   align-content: center;
   justify-content: center;
-}
+} */
 
 
 @media only screen and (max-width: 960px) {
