@@ -25,7 +25,9 @@ $(document).ready(function () {
 
   _Auth = 
     "<div class='authorized'>" +
+
       "<div class='fas fa-circle-user fa-4x'></div>" +
+
       "<div id='useraccount' style='margin: 5px 0 5px 0;'>Authorized</div>" +
 
       '<div id="g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
@@ -35,6 +37,7 @@ $(document).ready(function () {
       '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
         'data-size="large" data-logo_alignment="left">' +
       '</div>' +
+
     '</div>';
   // ===============================================================================================
 
@@ -103,7 +106,7 @@ $(document).ready(function () {
   // };
 
 
-  $("#UserMainPage").dxScrollView({
+  $("#PageContains").dxScrollView({
     scrollByContent: true,
     scrollByThumb: true,
     useNative: false,

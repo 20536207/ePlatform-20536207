@@ -17,19 +17,20 @@
 
 /* ==================================================================================== */
 #UserAuthorized {
+  width: 300px;
   text-align: center;
-  justify-content: center;
-  padding: 10px;
+  margin: auto;
+  padding-top: 20px;
 }
 
-/* .authorized {
-  width: 300px;
-} */
+.authorized {
+  margin: auto;
+  min-width: 300px;
+}
 
 .g_id_signin {
-  padding: 5px;
-  /* text-align: center;
-  justify-content: center; */
+  min-width: 300px;
+  margin: auto;
 }
 
 #UserPage {
