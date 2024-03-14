@@ -28,8 +28,8 @@
 
 .g_id_signin {
   margin: auto;
-  margin-bottom: 8px;
-  width: 50%;
+  /* margin-bottom: 8px; */
+  width: 200px;
 }
 
 .btnPageLayout{
