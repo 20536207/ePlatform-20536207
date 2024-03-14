@@ -24,7 +24,7 @@ $(document).ready(function () {
   _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
   _Auth = 
-    "<div id='authorized'>" +
+    "<div class='authorized'>" +
       "<div class='fas fa-circle-user fa-4x'></div>" +
       "<div id='useraccount' style='margin: 5px 0 5px 0;'>Authorized</div>" +
 
@@ -38,7 +38,7 @@ $(document).ready(function () {
     '</div>';
   // ===============================================================================================
 
-  $("#UserPage").append($(_Auth));
+  $("#UserAuthorized").append($(_Auth));
 
   for (let i = 1; i <= 20; i++) {
     $("#UserPage").append(
@@ -103,7 +103,7 @@ $(document).ready(function () {
   // };
 
 
-  $("#UserPage").dxScrollView({
+  $("#UserMainPage").dxScrollView({
     scrollByContent: true,
     scrollByThumb: true,
     useNative: false,

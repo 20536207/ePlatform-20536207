@@ -1,6 +1,6 @@
 #UserMainPage {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   overflow: none;
   flex: 1 1 auto;
   height: 100%;
@@ -16,19 +16,20 @@
 } */
 
 /* ==================================================================================== */
-#authorized {
-  width: 300px;
-  padding: 5px;
+#UserAuthorized {
   text-align: center;
   justify-content: center;
-  margin: auto;
+  padding: 10px;
 }
 
-#authorized .g_id_signin {
+/* .authorized {
+  width: 300px;
+} */
+
+.g_id_signin {
   padding: 5px;
-  min-width: 90%;
-  max-width: 90%;
-  margin: auto;
+  /* text-align: center;
+  justify-content: center; */
 }
 
 #UserPage {
