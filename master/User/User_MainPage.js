@@ -25,7 +25,7 @@ $(document).ready(function () {
 
   _Auth = $(
 
-    "<div style='width:200px; text-align: center; justify-content: center; margin:auto;'>"+
+    "<div style='width:300px; text-align: center; justify-content: center; margin:auto;'>"+
         "<div style='justify-self: flex-start; display:flex;flex-direction: column;padding: 5px;text-align: center;justify-content: center;'>" +
             "<i class='fas fa-circle-user fa-4x'></i>" +
             "<div id='useraccount' style='margin: 5px 0 5px 0;'>User Authentication</div>" +

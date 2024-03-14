@@ -114,6 +114,7 @@ body {
 }
 
 #PageToolbar .Page-Title {
+  font-size: 0.9rem;
   font-weight: bold;
   min-height: 36px;
   padding-left: 10px;
