@@ -16,18 +16,23 @@
 } */
 
 /* ==================================================================================== */
-#UserPage {
-  justify-self: flex-start;
-  text-align: center;
-  justify-content: center;
-}
-
-.g_id_signin {
-  width: 30%;
+#authorized {
+  width: 300px;
   padding: 5px;
   text-align: center;
   justify-content: center;
   margin: auto;
+}
+
+#authorized .g_id_signin {
+  padding: 5px;
+  margin: auto;
+}
+
+#UserPage {
+  justify-self: flex-start;
+  text-align: center;
+  justify-content: center;
 }
 
 #UserPage .dx-button {
