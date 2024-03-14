@@ -34,7 +34,7 @@ $(document).ready(function () {
               'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
             '</div>' +
   
-            '<div style="width:90%;padding:5px;text-align: center; justify-content: center; margin:auto;" class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
+            '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
               'data-size="large" data-logo_alignment="left">' +
             '</div>' +
       "</div>"+

@@ -22,6 +22,14 @@
   justify-content: center;
 }
 
+.g_id_signin {
+  width: 90%;
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
 #UserPage .dx-button {
   margin: 0.5%;
 }
@@ -31,7 +39,7 @@
   margin: auto;
 } */
 
-.btnPageLayout{
+.btnPageLayout {
   width: 19%;
 }
 
@@ -89,7 +97,7 @@
 }
 
 @media only screen and (max-width: 368px) {
-  #UserPage .dx-button{
+  #UserPage .dx-button {
     margin: auto;
     margin-bottom: 10px;
   }
