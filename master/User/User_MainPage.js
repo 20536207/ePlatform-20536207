@@ -28,7 +28,7 @@ $(document).ready(function () {
 
         '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
         'data-size="large" data-logo_alignment="left">' +
-        '</div>'
+        '</div><br>'
       );
     } else {
       $("#UserPage").append(
