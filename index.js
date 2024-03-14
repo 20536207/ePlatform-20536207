@@ -62,7 +62,7 @@ $(document).ready(function () {
           text: "",
           icon: null,
           template:
-            "<div class='fab fa-windows fa-xl'><span class='DevApp-Menu'> e-Platform AIO<br>"+
+            "<div class='fab fa-windows fa-xl'><span class='DevApp-Menu'> e-Platform AIO<br>" +
             "ver. 20536207.1</span></div>",
           hoverStateEnabled: true,
           focusStateEnabled: false,

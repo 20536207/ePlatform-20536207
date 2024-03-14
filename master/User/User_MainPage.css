@@ -26,7 +26,13 @@
   margin: 0.5%;
 }
 
-.btnPageLayout {
+.g_id_signin {
+  margin: auto;
+  margin-bottom: 8px;
+  max-width: 70%;
+}
+
+.btnPageLayout{
   width: 19%;
 }
 
@@ -84,7 +90,7 @@
 }
 
 @media only screen and (max-width: 368px) {
-  #UserPage .dx-button {
+  #UserPage .dx-button{
     margin: auto;
     margin-bottom: 10px;
   }
