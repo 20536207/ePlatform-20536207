@@ -28,13 +28,13 @@ $(document).ready(function () {
     "<div style='width:300px; padding:5px; text-align: center; justify-content: center; margin:auto;'>"+
         "<div>" +
             "<div class='fas fa-circle-user fa-4x'></div>" +
-            "<div id='useraccount' style='margin: 5px 0 5px 0;'>User Authentication</div>" +
+            "<div id='useraccount' style='margin: 5px 0 5px 0;'></div>" +
 
             '<div id = "g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
               'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
             '</div>' +
   
-            '<div style="width:90%;text-align: center; justify-content: center; margin:auto;" class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
+            '<div style="width:90%;padding:5px;text-align: center; justify-content: center; margin:auto;" class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
               'data-size="large" data-logo_alignment="left">' +
             '</div>' +
       "</div>"+
