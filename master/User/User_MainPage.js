@@ -27,8 +27,8 @@ $(document).ready(function () {
 
     "<div style='width:200px; text-align: center; justify-content: center; margin:auto;'>"+
         "<div style='justify-self: flex-start; display:flex;flex-direction: column;padding: 5px;text-align: center;justify-content: center;'>" +
-            "<i class='fas fa-user-shield fa-4x'></i>" +
-            "<span>Authentication, Management and Information</span>" +
+            "<i class='fas fa-circle-user fa-4x'></i>" +
+            "<div id='useraccount' style='margin: 5px 0 5px 0;'>User Authentication</div>" +
 
             '<div id = "g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
               'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
@@ -38,7 +38,7 @@ $(document).ready(function () {
               'data-size="large" data-logo_alignment="left">' +
             '</div>' +
         "</div>"+
-    '</div><br>'
+    '</div>'
     
   );
   // ===============================================================================================
