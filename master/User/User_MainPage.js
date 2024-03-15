@@ -29,7 +29,7 @@ function onSignIn(response) {
     }
   };
   
-  console.log(_Authorized.user.picture);
+  console.log(_Authorized);
 
   document.getElementById("UserPict").src=_Authorized.user.picture;
   document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
