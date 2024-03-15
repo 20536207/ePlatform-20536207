@@ -32,8 +32,9 @@ function onSignIn(response) {
   console.log(_Authorized.user.name);
 
   document.getElementById("UserPict").src = _Authorized.user.picture;
-  document.getElementById("UserAccount").innerHTML = _Authorized.user.name; // + '<br>' + _Authorized.user.email;
-  // "https://lh3.googleusercontent.com/d/1_T-tcD6DfYqBEU79etn9JtrSF8leuOby"
+  document.getElementById("UserPict").display = inherit;
+  document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
+  document.getElementById("UserAccount").display = inherit;
 
 }
 
@@ -54,10 +55,10 @@ $(document).ready(function () {
     $('<div id="g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
       'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
       '</div>' +
-
-      "<div><img id='UserPict' style='object-fit:scale-down;width:125px;height:125px></img></div>"+
-
-      "<div id='UserAccount' style='margin: 5px 0 5px 0;'>user</div>" +
+      
+      "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;display:none;'>"+
+      "<div id='UserAccount' style='margin: 5px 0 5px 0;display:none;'></div>" +
+      
 
       '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
       'data-size="large" data-logo_alignment="left">' +
