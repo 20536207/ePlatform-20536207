@@ -29,8 +29,6 @@ function onSignIn(response) {
     }
   };
   
-  console.log(_Authorized.user.name);
-
   document.getElementById("UserPict").src = _Authorized.user.picture;
   document.getElementById("UserPict").display = inherit;
   document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
