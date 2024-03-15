@@ -29,7 +29,7 @@ function onSignIn(response) {
     }
   };
   
-  console.log(_Authorized.user);
+  console.log(_Authorized.user.name);
 
   document.getElementById("UserPict").src = _Authorized.user.picture;
   document.getElementById("UserAccount").innerHTML = _Authorized.user.name; // + '<br>' + _Authorized.user.email;
@@ -55,7 +55,7 @@ $(document).ready(function () {
       'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
       '</div>' +
 
-      "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px>"+
+      "<div><img id='UserPict' style='object-fit:scale-down;width:125px;height:125px></div>"+
 
       "<div id='UserAccount' style='margin: 5px 0 5px 0;'>user</div>" +
 
