@@ -55,7 +55,7 @@ $(document).ready(function () {
       'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
       '</div>' +
 
-      "<div><img id='UserPict' style='object-fit:scale-down;width:125px;height:125px></div>"+
+      "<div><img id='UserPict' style='object-fit:scale-down;width:125px;height:125px></img></div>"+
 
       "<div id='UserAccount' style='margin: 5px 0 5px 0;'>user</div>" +
 
