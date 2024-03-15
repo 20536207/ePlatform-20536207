@@ -29,10 +29,10 @@ function onSignIn(response) {
     }
   };
   
-  console.log(_Authorized);
+  console.log(_Authorized.user);
 
-  document.getElementById("UserPict").src=_Authorized.user.picture;
-  document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
+  document.getElementById("UserPict").src = _Authorized.user.picture;
+  document.getElementById("UserAccount").innerHTML = _Authorized.user.name; // + '<br>' + _Authorized.user.email;
   // "https://lh3.googleusercontent.com/d/1_T-tcD6DfYqBEU79etn9JtrSF8leuOby"
 
 }
