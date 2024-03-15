@@ -17,24 +17,25 @@
 
 /* ==================================================================================== */
 #UserAuthorized {
+  /* background-color: rgb(50, 205, 184); */
   width: 300px;
+  margin: auto;
+  padding: 10px;
+  
+}
+
+/* .authorized {
+  width: 25%;
+  margin: auto;
+} */
+
+/* .g_id_signin>* {
   text-align: center;
-  margin: auto;
-  padding-top: 20px;
-}
-
-.authorized {
-  margin: auto;
-  min-width: 300px;
-}
-
-.g_id_signin {
-  min-width: 300px;
-  margin: auto;
-}
+  justify-items: center;
+} */
 
 #UserPage {
-  justify-self: flex-start;
+  /* background-color: yellowgreen; */
   text-align: center;
   justify-content: center;
 }

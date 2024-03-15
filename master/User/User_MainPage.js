@@ -1,9 +1,9 @@
 function onSignIn(googleUser) {
-  var profile = googleUser.json();
+  // var profile = googleUser;
   console.log(googleUser);
-  console.log(profile);
+  // console.log(profile);
   console.log(JSON.stringify(googleUser));
-  console.log(JSON.stringify(profile));
+  // console.log(JSON.stringify(profile));
 
   // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
   // console.log('Name: ' + profile.getName());
@@ -23,16 +23,16 @@ $(document).ready(function () {
 
   _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
-  _Auth = 
-    "<div class='authorized'>" +
+  _Auth =
+    '<div id="g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
+      'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
+    '</div>' +
+
+    "<div>" +
 
       "<div class='fas fa-circle-user fa-4x'></div>" +
 
       "<div id='useraccount' style='margin: 5px 0 5px 0;'>Authorized</div>" +
-
-      '<div id="g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
-        'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
-      '</div>' +
 
       '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
         'data-size="large" data-logo_alignment="left">' +
@@ -106,7 +106,7 @@ $(document).ready(function () {
   // };
 
 
-  $("#PageContains").dxScrollView({
+  $("#UserMainPage").dxScrollView({
     scrollByContent: true,
     scrollByThumb: true,
     useNative: false,
