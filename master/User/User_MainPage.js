@@ -19,7 +19,7 @@ function onSignIn(response) {
   //   }
   // };
 
-
+  console.log(response.credential);
   const responsePayload = decodeJwtResponse(response.credential);
   console.log(JSON.stringify(responsePayload));
 
