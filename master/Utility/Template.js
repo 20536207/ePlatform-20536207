@@ -1,3 +1,20 @@
+// "credentials": {
+//     "access_token": "ya29.GlsSBIA_hMKZIDE_wqJAJS0vrHD_Wd2HfwRTTvLISv0i1uFICCqz4JdEZcL09mFFlGdt71D9pW80SLShHgyeSOZgnWcL5piL5m0jYo1TMU6o0fDLnqGAWm6BY-Wl",
+//     "token_type": "Bearer",
+//     "expires_in": 3600,
+//     "refresh_token": "1\/az_TmhPRaYG5NDH6L9gBeNo6STOD9EbTt1VkkBmp3IQ",
+//     "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjBlNmExN2I2YjU4MGIzNTFmMGQ5YmEzMzY2YTU0Y2U1NmViOWIxN2UifQ.eyJhenAiOiIxMDAzMjk3NzQ4MDc1LWsxdml0OGMxMHJ1ZnM4cjZpYmZyYmxlZmJhamFoZmllLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTAwMzI5Nzc0ODA3NS1rMXZpdDhjMTBydWZzOHI2aWJmcmJsZWZiYWphaGZpZS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExNjgwNzU1MTIzNzk2OTc0Njc3NCIsImVtYWlsIjoiNzA0MzA2N0BnbWFpbC5jb20iLCJlbWFpbF84PIXpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IkdrOHFjMTdCcEVGVGZmWkpKbkh6NGciLCJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE0ODk4MTIxMzksImV4cCI6MTQ4OTgxNTczOSwibmFtZSI6IkFudG9uIEFsZWtzYW5kcm92IiwicGljdHVyZSI6Imh0dHBzOi8vbGg0Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tTEJuMTlWX1NEN3cvQUFBQUFBQUFBQUkvQUFBQUFBQUFBQUEvQUFvbXZWMTRMVFIycUgtOXJ5S2dScjIxd3A1Z1FZRGNmUS9zOTYtYy9waG90by5qcGciLCJnaXZlbl9uYW1lIjoiQW50b24iLCJmYW1pbHlfbmFtZSI6IkFsZWtzYW5kcm92IiwibG9jYWxlIjoiZW4ifQ.BHv5BP3ZsagvunfMzGLwmxkBdtoRocPa_PXdq2lrd4D9BoFGkK06eJVbNNbcPOFdAMba3V5lIIG_L499gIy3TTz_PIHBPi6DMSp6uyfkCwf2n-PspZtTbTRlUm5ZvRdAyPEEyLLkWllKkMsRk-Nwp3vhyOLnExzH7SXiEefU4kaXXCpjsHV3GvZ-yhrmNlicEY3TPLwI-tl_lydXTBXRRiPZBGWjHK75hqvQzUktC2Flimd7JnCLhF0FOS3yFKc5D11WPKMOO4YkIQDbBrKY64vyxQAd-Zb2KfvXZi6Dorq7IJF6sK2GAfI3edSaoMZBMa0-x2V7FuFIBLtTgGRnsw"
+//   }
+
+// aud: "641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"
+// azp: "641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"
+// exp: 1710506637
+// iat: 1710503037
+// iss: "https://accounts.google.com"
+// jti: "dcde7ed59cda2c4a1661e2f09aca723c6d9f01f6"
+// nbf: 1710502737
+
+
 // const _pdffile = "./pages/Dashboard/pageContains/PenerimaPIP.pdf";
     // pdfjsLib.getDocument(_pdffile).promise.then(_pdfDocument => {
 
