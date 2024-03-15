@@ -29,10 +29,9 @@
   margin: auto;
 } */
 
-/* .g_id_signin>* {
-  text-align: center;
-  justify-items: center;
-} */
+.g_id_signin > * {
+  display: inline-flex;
+}
 
 #UserPage {
   /* background-color: yellowgreen; */
