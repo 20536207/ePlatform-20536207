@@ -50,7 +50,6 @@ $(document).ready(function () {
   _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
   // ===============================================================================================
-
   $("#UserAuthorized").append(
     $('<div id="g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
       'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
@@ -90,52 +89,11 @@ $(document).ready(function () {
   };
 
 
-  // $("#UserPage").append(
-  //   $("<div />").dxToolbar({
-  //     height: '100%',
-  //     item: undefined,
-  //   })
-  // );
-
-  // _new = [];
-
-  // for (var i = 1; i < 15; i++) {
-  //    _new.push(
-  //       {
-  //         'widget': 'dxButton',
-  //         'location': 'before',
-  //         'locateInMenu': 'never',
-  //         'cssClass': undefined,
-  //         'text': null,
-  //         'options': {
-  //           'text': null,
-  //           'icon': undefined,
-  //           'template': "() => {"
-  //             'return $("<i class='fas fa-user-shield fa-4x' />");
-  //           },
-  //           'hoverStateEnabled': true,
-  //           'focusStateEnabled': false,
-  //           'activeStateEnabled': true,
-  //           'selectionMode': 'none',
-  //           'type': 'normal',
-  //           'stylingMode': "text",
-  //           'height': '176px',
-  //           'width': '176px',
-  //           'onClick': () => {
-  //           },
-  //         }
-  //       }
-  //    )
-  // };
-
-
+  // ===============================================================================================
   $("#UserMainPage").dxScrollView({
     scrollByContent: true,
     scrollByThumb: true,
     useNative: false,
     showScrollbar: 'onHover',
-    // direction: 'both',
-    // height: '100%',
-    // width: '100%', 
   });
 });
