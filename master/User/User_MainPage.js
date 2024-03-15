@@ -30,9 +30,9 @@ function onSignIn(response) {
   };
   
   document.getElementById("UserPict").src = _Authorized.user.picture;
-  document.getElementById("UserPict").display = inherit;
+  document.getElementById("UserPict").display = 'inline-flex';
   document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
-  document.getElementById("UserAccount").display = inherit;
+  document.getElementById("UserAccount").display = 'inline-flex';
 
 }
 
