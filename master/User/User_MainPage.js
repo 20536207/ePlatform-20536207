@@ -14,7 +14,6 @@ function decodeJwtResponse(token) {
 }
 
 function onSignIn(response) {
-  console.log(response);
   const responsePayload = decodeJwtResponse(response.credential);
   _Authorized = {
     "user": {
@@ -30,9 +29,9 @@ function onSignIn(response) {
   };
   
   document.getElementById("UserPict").src = _Authorized.user.picture;
-  document.getElementById("UserPict").display = 'inline-flex';
+  // document.getElementById("UserPict").display = 'inline-flex';
   document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
-  document.getElementById("UserAccount").display = 'inline-flex';
+  // document.getElementById("UserAccount").display = 'inline-flex';
 
 }
 
@@ -54,8 +53,8 @@ $(document).ready(function () {
       'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
       '</div>' +
       
-      "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;display:none;'>"+
-      "<div id='UserAccount' style='margin: 5px 0 5px 0;display:none;'></div>" +
+      "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;'>"+
+      "<div id='UserAccount' style='margin: 5px 0 5px 0;'></div>" +
       
 
       '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
