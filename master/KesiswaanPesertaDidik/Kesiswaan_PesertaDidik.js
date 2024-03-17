@@ -1999,24 +1999,28 @@ $(document).ready(function () {
             {
                 caption: 'ID Anggota Rombel',
                 fixed: true,
-                dataField: 'a01',
+                dataField: 'A01',
                 sortOrder: 'asc',
+                dataType: 'string',
             },
             {
                 caption: 'Identitas Peserta Didik',
                 columns: [
                     {
                         caption: 'NIPD',
-                        dataField: 'b01',
+                        dataField: 'B01',
                         sortOrder: 'asc',
+                        dataType: 'string',
                         // // hidingPriority: 1,
                     }, {
                         caption: 'NISN',
-                        dataField: 'b02',
+                        dataField: 'B02',
+                        dataType: 'string',
                         // hidingPriority: 2,
                     }, {
                         caption: 'Nama Lengkap',
-                        dataField: 'b03',
+                        dataField: 'B03',
+                        dataType: 'string',
                     }
                 ],
             },
@@ -2024,41 +2028,47 @@ $(document).ready(function () {
                 caption: 'Catatan Sipil Peserta Didik',
                 columns: [{
                     caption: 'NIK',
-                    dataField: 'c01',
+                    dataField: 'C01',
+                    dataType: 'string',
                     format: function (value) {
                         return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'No. Register',
-                    dataField: 'c02',
+                    dataField: 'C02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'No. Akta Kelahiran',
-                    dataField: 'c03',
+                    dataField: 'C03',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'c04',
+                    dataField: 'C04',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Gender',
-                    dataField: 'c05',
+                    dataField: 'C05',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tempat Lahir',
-                    dataField: 'c06',
+                    dataField: 'C06',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tanggal Lahir',
-                    dataField: 'c07',
+                    dataField: 'C07',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Anak Ke-',
-                    dataField: 'c08',
+                    dataField: 'C08',
+                    dataType: 'number',
 
                 }],
             },
@@ -2066,52 +2076,64 @@ $(document).ready(function () {
                 caption: 'Catatan Kependudukan Peserta Didik',
                 columns: [{
                     caption: 'No. KK',
-                    dataField: 'd01',
+                    dataField: 'D01',
+                    dataType: 'string',
                     format: function (value) {
                         return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'd02',
+                    dataField: 'D02',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Alamat',
-                    dataField: 'd03',
+                    dataField: 'D03',
+                    dataType: 'string',
 
                 }, {
                     caption: 'RT',
-                    dataField: 'd04',
+                    dataField: 'D04',
+                    dataType: 'string',
+                    format: function (value) { return String(value).padStart(3, '0'); },
 
                 }, {
                     caption: 'RW',
-                    dataField: 'd05',
+                    dataField: 'D05',
+                    dataType: 'string',
+                    format: function (value) { return String(value).padStart(3, '0'); },
 
                 }, {
                     caption: 'Desa/Kelurahan',
-                    dataField: 'd06',
+                    dataField: 'D06',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Kecamatan',
-                    dataField: 'd07',
+                    dataField: 'D07',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pemerintah Daerah',
-                    dataField: 'd08',
+                    dataField: 'D08',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pemerintah Propinsi',
-                    dataField: 'd09',
+                    dataField: 'D09',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Kode Pos',
-                    dataField: 'd10',
+                    dataField: 'D10',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Agama',
-                    dataField: 'd11',
+                    dataField: 'D11',
+                    dataType: 'string',
 
                 }],
             },
@@ -2119,63 +2141,77 @@ $(document).ready(function () {
                 caption: 'Keterangan Tempat Tinggal Peserta DIdik',
                 columns: [{
                     caption: 'Dokumen',
-                    dataField: 'e01',
+                    dataField: 'E01',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Nomor',
-                    dataField: 'e02',
+                    dataField: 'E02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'e03',
+                    dataField: 'E03',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Alamat',
-                    dataField: 'e04',
+                    dataField: 'E04',
+                    dataType: 'string',
 
                 }, {
                     caption: 'RT',
-                    dataField: 'e05',
+                    dataField: 'E05',
+                    dataType: 'string',
+                    format: function (value) { return String(value).padStart(3, '0'); },
 
                 }, {
                     caption: 'RW',
-                    dataField: 'e06',
+                    dataField: 'E06',
+                    dataType: 'string',
+                    format: function (value) { return String(value).padStart(3, '0'); },
 
                 }, {
                     caption: 'Desa/Kelurahan',
-                    dataField: 'e07',
+                    dataField: 'E07',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Kecamatan',
-                    dataField: 'e08',
+                    dataField: 'E08',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pemerintah Daerah',
-                    dataField: 'e09',
+                    dataField: 'E09',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pemerintah Propinsi',
-                    dataField: 'e10',
+                    dataField: 'E10',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Kode Pos',
-                    dataField: 'e11',
+                    dataField: 'E11',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Koordinat',
-                    dataField: 'e12',
+                    dataField: 'E12',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Jarak (Km)',
-                    dataField: 'e13',
-                    type: 'number',
+                    dataField: 'E13',
+                    dataType: 'number',
                     format: '0.000'
 
                 }, {
                     caption: 'Waktu (Menit)',
-                    dataField: 'e14',
+                    dataField: 'E14',
+                    dataType: 'number',
 
                 }],
             },
@@ -2183,53 +2219,62 @@ $(document).ready(function () {
                 caption: 'Keterangan Ayah Kandung',
                 columns: [{
                     caption: 'Nama Lengkap',
-                    dataField: 'f01',
+                    dataField: 'F01',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Gelar Depan',
-                    dataField: 'f02',
+                    dataField: 'F02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Gelar Belakang',
-                    dataField: 'f03',
+                    dataField: 'F03',
+                    dataType: 'string',
 
                 }, {
                     caption: 'NIK',
-                    dataField: 'f04',
+                    dataField: 'F04',
+                    dataType: 'string',
                     format: function (value) {
                         return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
-                    dataField: 'f05',
+                    dataField: 'F05',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tanggal Lahir',
-                    dataField: 'f06',
+                    dataField: 'F06',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Agama',
-                    dataField: 'f07',
+                    dataField: 'F07',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pendidikan',
-                    dataField: 'f08',
+                    dataField: 'F08',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pekerjaan',
-                    dataField: 'f09',
+                    dataField: 'F09',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Status Perkawinan',
-                    dataField: 'f10',
+                    dataField: 'F10',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tanggal Meninggal',
-                    dataField: 'f11',
+                    dataField: 'F11',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }],
             },
@@ -2237,53 +2282,62 @@ $(document).ready(function () {
                 caption: 'Keterangan Ibu Kandung',
                 columns: [{
                     caption: 'Nama Lengkap',
-                    dataField: 'g01',
+                    dataField: 'G01',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Gelar Depan',
-                    dataField: 'g02',
+                    dataField: 'G02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Gelar Belakang',
-                    dataField: 'g03',
+                    dataField: 'G03',
+                    dataType: 'string',
 
                 }, {
                     caption: 'NIK',
-                    dataField: 'g04',
+                    dataField: 'G04',
+                    dataType: 'string',
                     format: function (value) {
                         return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
-                    dataField: 'g05',
+                    dataField: 'G05',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tanggal Lahir',
-                    dataField: 'g06',
+                    dataField: 'G06',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Agama',
-                    dataField: 'g07',
+                    dataField: 'G07',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pendidikan',
-                    dataField: 'g08',
+                    dataField: 'G08',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pekerjaan',
-                    dataField: 'g09',
+                    dataField: 'G09',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Status Perkawinan',
-                    dataField: 'g10',
+                    dataField: 'G10',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tanggal Meninggal',
-                    dataField: 'g11',
+                    dataField: 'G11',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }],
             },
@@ -2291,47 +2345,56 @@ $(document).ready(function () {
                 caption: 'Keterangan Wali',
                 columns: [{
                     caption: 'Hubungan Keluarga',
-                    dataField: 'h01',
+                    dataField: 'H01',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Nama Lengkap',
-                    dataField: 'h02',
+                    dataField: 'H02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Gelar Depan',
-                    dataField: 'h03',
+                    dataField: 'H03',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Gelar Belakang',
-                    dataField: 'h04',
+                    dataField: 'H04',
+                    dataType: 'string',
 
                 }, {
                     caption: 'NIK',
-                    dataField: 'h05',
+                    dataField: 'H05',
+                    dataType: 'string',
                     format: function (value) {
                         return value.replace(value.substr(1, 13), "*".repeat(13));
                     },
                 }, {
                     caption: 'Tempat Lahir',
-                    dataField: 'h06',
+                    dataField: 'H06',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tanggal Lahir',
-                    dataField: 'h07',
+                    dataField: 'H07',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Agama',
-                    dataField: 'h08',
+                    dataField: 'H08',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pendidikan',
-                    dataField: 'h09',
+                    dataField: 'H09',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Pekerjaan',
-                    dataField: 'h10',
+                    dataField: 'H10',
+                    dataType: 'string',
 
                 }]
             },
@@ -2339,48 +2402,60 @@ $(document).ready(function () {
                 caption: 'Keterangan Dinamis Peserta Didik',
                 columns: [{
                     caption: 'No. Telpon',
-                    dataField: 'i01',
+                    dataField: 'I01',
+                    dataType: 'string',
                     format: function (value) {
                         return value.replace(value.substr(3, 5), "*".repeat(5));
                     },
                 }, {
                     caption: 'Tinggi Badan (Cm)',
-                    dataField: 'i02',
+                    dataField: 'I02',
+                    dataType: 'number',
 
                 }, {
                     caption: 'Berat Badan (Kg)',
-                    dataField: 'i03',
+                    dataField: 'I03',
+                    dataType: 'number',
+                    // format: '0.000',
 
                 }, {
                     caption: 'Lingkar Kepala (Cm)',
-                    dataField: 'i04',
+                    dataField: 'I04',
+                    dataType: 'number',
 
                 }, {
                     caption: 'Hobi',
-                    dataField: 'i05',
+                    dataField: 'I05',
+                    dataType: 'string',
                 }, {
                     caption: 'Cita-cita',
-                    dataField: 'i06',
+                    dataField: 'I06',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Bakat',
-                    dataField: 'i07',
+                    dataField: 'I07',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Berkebutuhan Khusus',
-                    dataField: 'i08',
+                    dataField: 'I08',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Jml. Sdr. Kandung',
-                    dataField: 'i09',
+                    dataField: 'I09',
+                    dataType: 'number',
 
                 }, {
                     caption: 'Jml. Sdr. Tiri',
-                    dataField: 'i10',
+                    dataField: 'I10',
+                    dataType: 'number',
 
                 }, {
                     caption: 'Jml. Sdr. Angkat',
-                    dataField: 'i11',
+                    dataField: 'I11',
+                    dataType: 'number',
 
                 }]
             },
@@ -2388,59 +2463,68 @@ $(document).ready(function () {
                 caption: 'Keterangan Jaminan Sosial Pendidikan',
                 columns: [{
                     caption: 'Jenis Jamsos',
-                    dataField: 'j01',
+                    dataField: 'J01',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Nomor Jamsos',
-                    dataField: 'j02',
+                    dataField: 'J02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Nomor Rekening PIP',
-                    dataField: 'j03',
+                    dataField: 'J03',
+                    dataType: 'string',
                     format: function (value) {
                         return value.replace(value.substr(3, 10), "*".repeat(10));
                     },
                 }, {
                     caption: 'Nama Bank PIP',
-                    dataField: 'j04',
+                    dataField: 'J04',
+                    dataType: 'string',
                 }]
             },
             {
                 caption: 'Keterangan Penerimaan Peserta Didik',
                 columns: [{
                     caption: 'Jalur Penerimaan',
-                    dataField: 'k01',
+                    dataField: 'K01',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Nomor Dokumen',
-                    dataField: 'k02',
+                    dataField: 'K02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'k03',
+                    dataField: 'K03',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Classical',
-                    dataField: 'k04',
+                    dataField: 'K04',
+                    dataType: 'string',
                 }]
             },
             {
                 caption: 'Keterangan Pendidikan Tingkat Sebelumnya',
                 columns: [{
                     caption: 'Identitas Satuan Pendidikan',
-                    dataField: 'l01',
+                    dataField: 'L01',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Nomor Dokumen',
-                    dataField: 'l02',
+                    dataField: 'L02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tertanggal',
-                    dataField: 'l03',
+                    dataField: 'L03',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }]
             },
@@ -2448,7 +2532,8 @@ $(document).ready(function () {
                 caption: 'Keterangan Satuan Pendidikan Pindahan',
                 columns: [{
                     caption: 'Identitas Satuan Pendidikan',
-                    dataField: 'l04',
+                    dataField: 'L04',
+                    dataType: 'string',
 
                 }]
             },
@@ -2456,7 +2541,8 @@ $(document).ready(function () {
                 caption: 'Akun Belajar Id',
                 columns: [{
                     caption: 'Email',
-                    dataField: 'm01',
+                    dataField: 'M01',
+                    dataType: 'string',
 
                 }]
             },
@@ -2464,390 +2550,395 @@ $(document).ready(function () {
                 caption: 'Riwayat Rombongan Belajar',
                 columns: [{
                     caption: 'Usia',
-                    dataField: 'n01',
+                    dataField: 'N01',
+                    dataType: 'number',
 
                 }, {
                     caption: 'Status',
-                    dataField: 'n02',
+                    dataField: 'N02',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Nomor Dokumen Non Aktif',
-                    dataField: 'n03',
+                    dataField: 'N03',
+                    dataType: 'string',
 
                 }, {
                     caption: 'Tertanggal Non Aktif',
-                    dataField: 'n04',
+                    dataField: 'N04',
                     dataType: 'date',
-                    format: "dd MMMM yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Satuan Pendidikan Lanjutan',
-                    dataField: 'n05',
+                    dataField: 'N05',
+                    dataType: 'string',
                 }]
             },
-            {
-                caption: 'Verval Peserta Didik',
-                columns: [{
-                    caption: 'NISN',
-                    dataField: 'o01',
+            // {
+            //     caption: 'Verval Peserta Didik',
+            //     columns: [{
+            //         caption: 'NISN',
+            //         dataField: 'o01',
 
-                }, {
-                    caption: 'Nama',
-                    dataField: 'o02',
+            //     }, {
+            //         caption: 'Nama',
+            //         dataField: 'o02',
 
-                }, {
-                    caption: 'NIK',
-                    dataField: 'o03',
-                    format: function (value) {
-                        return value.replace(value.substr(1, 13), "*".repeat(13));
-                    },
-                }, {
-                    caption: 'Tempat Lahir',
-                    dataField: 'o04',
+            //     }, {
+            //         caption: 'NIK',
+            //         dataField: 'o03',
+            //         format: function (value) {
+            //             return value.replace(value.substr(1, 13), "*".repeat(13));
+            //         },
+            //     }, {
+            //         caption: 'Tempat Lahir',
+            //         dataField: 'o04',
 
-                }, {
-                    caption: 'Tanggal Lahir',
-                    dataField: 'o05',
+            //     }, {
+            //         caption: 'Tanggal Lahir',
+            //         dataField: 'o05',
 
-                }]
-            },
-            {
-                caption: 'Verval Ibu Kandung',
-                columns: [{
-                    caption: 'Nama',
-                    dataField: 'p01',
+            //     }]
+            // },
+            // {
+            //     caption: 'Verval Ibu Kandung',
+            //     columns: [{
+            //         caption: 'Nama',
+            //         dataField: 'p01',
 
-                }, {
-                    caption: 'NIK',
-                    dataField: 'p02',
-                    format: function (value) {
-                        return value.replace(value.substr(1, 13), "*".repeat(13));
-                    },
-                }]
-            },
-            {
-                caption: 'Verval Ayah Kandung',
-                columns: [{
-                    caption: 'Nama',
-                    dataField: 'q01',
+            //     }, {
+            //         caption: 'NIK',
+            //         dataField: 'p02',
+            //         format: function (value) {
+            //             return value.replace(value.substr(1, 13), "*".repeat(13));
+            //         },
+            //     }]
+            // },
+            // {
+            //     caption: 'Verval Ayah Kandung',
+            //     columns: [{
+            //         caption: 'Nama',
+            //         dataField: 'q01',
 
-                }, {
-                    caption: 'NIK',
-                    dataField: 'q02',
+            //     }, {
+            //         caption: 'NIK',
+            //         dataField: 'q02',
 
-                }]
-            },
-            {
-                caption: 'Status Verval',
-                dataField: 'r01',
-            }
+            //     }]
+            // },
+            // {
+            //     caption: 'Status Verval',
+            //     dataField: 'r01',
+            // }
         ],
 
         //===============================================================================
-        _InformasiPesertaDidik = $('#InformasiPesertaDidik').dxDataGrid({
-            // keyExpr: 'A01',
-            columns: _TbDashboard,
-            columnHidingEnabled: false,
-            allowColumnReordering: true,
-            allowColumnResizing: true,
-            columnResizingMode: 'widget',
-            columnAutoWidth: true,
-            columnChooser: {
-                enabled: true,
-                mode: "select",
-                sortOrder: undefined,
-                title: "Column Chooser",
-                search: {
-                    editorOptions: {},
+        _InformasiPesertaDidik = GetJsonData(
+            "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
+            1957628809,                                     //SheetID
+            "A1:DF",                                        //Range
+            "SELECT * WHERE A <> ''"                   //Filter or Query
+        ).then(_Dashboard => {
+            $('#InformasiPesertaDidik').dxDataGrid({
+                // keyExpr: 'A01',
+                columns: _TbDashboard,
+                columnHidingEnabled: false,
+                allowColumnReordering: true,
+                allowColumnResizing: true,
+                columnResizingMode: 'widget',
+                columnAutoWidth: true,
+                columnChooser: {
                     enabled: true,
-                    timeout: null,
+                    mode: "select",
+                    sortOrder: undefined,
+                    title: "Column Chooser",
+                    search: {
+                        editorOptions: {},
+                        enabled: true,
+                        timeout: null,
+                    },
                 },
-            },
-            columnFixing: {
-                enabled: true,
-            },
-            customizeColumns: function (columns) {
-                columns.forEach(function (DataCell, DataIndex) {
-                    // col.calculateDisplayValue = function (rowData) {
-                    //   return rowData[col.dataField] == 0 ? "-" : rowData[col.dataField];
-                    // };
-                    DataCell.cellTemplate = (container, options) => {
-                        return $('<div>').dxButton({
-                            stylingMode: 'text',
-                            activeStateEnabled: true,
-                            hoverStateEnabled: false,
-                            focusStateEnabled: false,
-                            disabled: options.value == 0 ? true : false,
-                            text: options.value == 0 ? "-" : options.value,
-                            type: options.value == 0 ? 'normal' : 'default',
-                            onClick(e) {
+                columnFixing: {
+                    enabled: true,
+                },
+                customizeColumns: function (columns) {
+                    columns.forEach(function (DataCell, DataIndex) {
+                        // col.calculateDisplayValue = function (rowData) {
+                        //   return rowData[col.dataField] == 0 ? "-" : rowData[col.dataField];
+                        // };
+                        DataCell.cellTemplate = (container, options) => {
+                            return $('<div>').dxButton({
+                                stylingMode: 'text',
+                                activeStateEnabled: true,
+                                hoverStateEnabled: false,
+                                focusStateEnabled: false,
+                                disabled: options.value == 0 ? true : false,
+                                text: options.value == 0 ? "-" : options.value,
+                                type: options.value == 0 ? 'normal' : 'default',
+                                onClick(e) {_notify(this.option('text'));},
+                            });
+                        };
+                    });
+                },
+                dataSource: JSON.parse(_Dashboard),
+                //'./data/PesertaDidik.json',
+                editing: {
+                    mode: 'form',
+                    allowUpdating: false,
+                    allowAdding: false,
+                    allowDeleting: false,
+                    confirmDelete: true,
+                    useIcons: true,
+                },
+                export: {
+                    enabled: true,
+                    formats: ['xlsx', 'pdf'],
+                    allowExportSelectedData: true,
+                },
+                filterRow: { visible: false },
+                filterPanel: { visible: false },
+                focusedRowIndex: null,
+                focusedRowEnabled: false,
+                focusedRowKey: null,
+                groupPanel: { visible: false },
+                grouping: {
+                    autoExpandAll: true,
+                },
+                hoverStateEnabled: false,
+                headerFilter: { visible: false },
 
-                                DevExpress.ui.notify(
-                                    {
-                                        // message: DataCell.dataField + " = " + DataIndex,
-                                        message: this.option('text'),
-                                        maxWidth: 300,
-                                        displayTime: 1000,
-                                        animation: {
-                                            show: { type: 'fade', duration: 400, from: 0, to: 1 },
-                                            hide: { type: 'fade', duration: 40, to: 0 },
-                                        },
+                onExporting(e) {
+                    if (e.format === 'xlsx') {
+                        const workbook = new ExcelJS.Workbook();
+                        const worksheet = workbook.addWorksheet('Report');
+                        DevExpress.excelExporter.exportDataGrid({
+                            component: e.component,
+                            worksheet,
+                            autoFilterEnabled: true,
+                        }).then(() => {
+                            workbook.xlsx.writeBuffer().then((buffer) => {
+                                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
+                            });
+                        });
+                        e.cancel = true;
+                    }
+                    else if (e.format === 'pdf') {
+                        const doc = new jsPDF('l', 'pt');
+                        DevExpress.pdfExporter.exportDataGrid({
+                            jsPDFDocument: doc,
+                            component: e.component,
+                        }).then(() => {
+                            doc.save('report.pdf');
+                        });
+                    }
+                },
+                // onCellClick: function (e) {
+                //   e.value == 0 ? "" : DevExpress.ui.notify(e.value);
+                // },
+                // onRowExpanding: function(e){
+                //   e.component.collapseAll(-1);
+                // },
+
+                paging: {
+                    pageSize: 20,
+                },
+                pager: {
+                    allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
+                    displayMode: "compact",
+                    showInfo: true,
+                    showNavigationButtons: true,
+                    showPageSizeSelector: true,
+                    visible: true,
+                },
+
+                remoteOperations: false,
+                rowAlternationEnabled: false,
+
+                scrolling: {
+                    columnRenderingMode: "standard",
+                    mode: "standard",
+                    preloadEnabled: false,
+                    renderAsync: undefined,
+                    rowRenderingMode: "standard",
+                    scrollByContent: true,
+                    scrollByThumb: true,
+                    showScrollbar: "onHover",
+                    useNative: false
+                },
+                sorting: {
+                    mode: 'multiple',
+                },
+                searchPanel: {
+                    visible: false,
+                    highlightCaseSensitive: false,
+                },
+                selection: {
+                    allowSelectAll: false,
+                    deferred: false,
+                    mode: "single", //none ; single ; multiple
+                    selectAllMode: "allPages",
+                    showCheckBoxesMode: "click"
+                },
+                // onSelectionChanged(e) {
+                //     e.component.collapseAll(-1);
+                //     e.component.expandRow(e.currentSelectedRowKeys[0]);
+                //   },
+                showBorders: true,
+                showColumnHeaders: true,
+                showColumnLines: true,
+                showRowLines: true,
+                sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+                summary: _TBSummaryDashboard,
+                toolbar: undefined,
+                wordWrapEnabled: false,
+                masterDetail: {
+                    enabled: true,
+                    template(container, options) {
+                        GetJsonData(
+                            "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
+                            1300103800,                                     //SheetID
+                            "A1:CX",                                        //Range
+                            "SELECT * WHERE CU = 'Aktif'"                   //Filter or Query
+                        ).then(_MyData => {
+                            $("<div>").dxDataGrid({
+                                dataSource: JSON.parse(_MyData),
+                                //'./data/DataIndukSiswa.json',
+                                //============
+                                // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
+                                //   jsondata = jsondata.filter(function (obj) {
+                                //     return obj.A01.includes(options.data.A01);
+                                //   });
+                                // }),
+                                //============
+                                // dataSource: DevExpress.data.query($.getJSON("./data/InformasiDataIndukSiswa.json")
+                                // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
+                                //     .sortBy("birthYear")
+                                //     .select("name", "birthYear")
+                                //     .toArray()
+                                // ),
+                                columns: _TbInfoPd,
+                                filterValue: [["A01", "contains", options.data.A01]],
+                                //"and", ["N02", "=", "Aktif"]],
+                                showBorders: true,
+                                showColumnHeaders: true,
+                                showColumnLines: true,
+                                showRowLines: true,
+                                columnHidingEnabled: false,
+                                allowColumnReordering: true,
+                                allowColumnResizing: true,
+                                columnResizingMode: 'widget',
+                                columnAutoWidth: true,
+                                wordWrapEnabled: false,
+                                columnChooser: {
+                                    enabled: true,
+                                    mode: "select",
+                                    sortOrder: undefined,
+                                    title: "Column Chooser",
+                                    search: {
+                                        editorOptions: {},
+                                        enabled: true,
+                                        timeout: null,
                                     },
-                                    { position: "top right", direction: "down-push" }
-                                );
-                                //DevExpress.ui.notify(col.dataField + ' : ' + options.value);
-                            }
+                                },
+                                columnFixing: {
+                                    enabled: true,
+                                },
+                                hoverStateEnabled: false,
+                                paging: {
+                                    pageSize: 5,
+                                },
+                                pager: {
+                                    allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
+                                    displayMode: "compact",
+                                    showInfo: true,
+                                    showNavigationButtons: true,
+                                    showPageSizeSelector: true,
+                                    visible: true,
+                                },
+                                editing: {
+                                    mode: 'row',
+                                    allowUpdating: false,
+                                    allowAdding: false,
+                                    allowDeleting: false,
+                                    confirmDelete: true,
+                                    useIcons: true,
+                                },
+                                export: {
+                                    enabled: true,
+                                    formats: ['xlsx', 'pdf'],
+                                    allowExportSelectedData: true,
+                                },
+                                onExporting(e) {
+                                    const _nmfile = 'Data Peserta Didik';
+                                    if (e.format === 'xlsx') {
+                                        const workbook = new ExcelJS.Workbook();
+                                        const worksheet = workbook.addWorksheet('Data');
+                                        DevExpress.excelExporter.exportDataGrid({
+                                            component: e.component,
+                                            worksheet,
+                                            autoFilterEnabled: true,
+                                        }).then(() => {
+                                            workbook.xlsx.writeBuffer().then((buffer) => {
+                                                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), _nmfile + '.xlsx');
+                                            });
+                                        });
+                                        e.cancel = true;
+                                    }
+                                    else if (e.format === 'pdf') {
+                                        const doc = new jsPDF('l', 'pt');
+                                        DevExpress.pdfExporter.exportDataGrid({
+                                            jsPDFDocument: doc,
+                                            component: e.component,
+                                        }).then(() => {
+                                            doc.save(_nmfile + '.pdf');
+                                        });
+                                    }
+                                },
+
+                                remoteOperations: false,
+                                scrolling: {
+                                    columnRenderingMode: "standard",
+                                    mode: "standard",
+                                    preloadEnabled: false,
+                                    renderAsync: undefined,
+                                    rowRenderingMode: "standard",
+                                    scrollByContent: true,
+                                    scrollByThumb: true,
+                                    showScrollbar: "onHover",
+                                    useNative: false
+                                },
+                                sorting: {
+                                    mode: 'multiple',
+                                },
+                                searchPanel: {
+                                    visible: true,
+                                    highlightCaseSensitive: false,
+                                },
+                                selection: {
+                                    allowSelectAll: true,
+                                    deferred: false,
+                                    mode: "multiple",
+                                    selectAllMode: "allPages",
+                                    showCheckBoxesMode: "click"
+                                },
+                                filterRow: { visible: true },
+                                filterPanel: { visible: false },
+                                headerFilter: { visible: false },
+                                groupPanel: { visible: false },
+                                grouping: {
+                                    autoExpandAll: true,
+                                },
+                                wordWrapEnabled: false,
+                                //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+                                //summary: _TBSummaryDashboard,
+                                //toolbar: undefined,
+                                rowAlternationEnabled: false,
+
+                            }).appendTo(container);
                         });
-                    };
-                });
-            },
-            dataSource: './data/PesertaDidik.json',
-            editing: {
-                mode: 'form',
-                allowUpdating: false,
-                allowAdding: false,
-                allowDeleting: false,
-                confirmDelete: true,
-                useIcons: true,
-            },
-            export: {
-                enabled: true,
-                formats: ['xlsx', 'pdf'],
-                allowExportSelectedData: true,
-            },
-            filterRow: { visible: false },
-            filterPanel: { visible: false },
-            focusedRowIndex: null,
-            focusedRowEnabled: false,
-            focusedRowKey: null,
-            groupPanel: { visible: false },
-            grouping: {
-                autoExpandAll: true,
-            },
-            hoverStateEnabled: false,
-            headerFilter: { visible: false },
-
-            onExporting(e) {
-                if (e.format === 'xlsx') {
-                    const workbook = new ExcelJS.Workbook();
-                    const worksheet = workbook.addWorksheet('Report');
-                    DevExpress.excelExporter.exportDataGrid({
-                        component: e.component,
-                        worksheet,
-                        autoFilterEnabled: true,
-                    }).then(() => {
-                        workbook.xlsx.writeBuffer().then((buffer) => {
-                            saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
-                        });
-                    });
-                    e.cancel = true;
-                }
-                else if (e.format === 'pdf') {
-                    const doc = new jsPDF('l', 'pt');
-                    DevExpress.pdfExporter.exportDataGrid({
-                        jsPDFDocument: doc,
-                        component: e.component,
-                    }).then(() => {
-                        doc.save('report.pdf');
-                    });
-                }
-            },
-            // onCellClick: function (e) {
-            //   e.value == 0 ? "" : DevExpress.ui.notify(e.value);
-            // },
-            // onRowExpanding: function(e){
-            //   e.component.collapseAll(-1);
-            // },
-
-            paging: {
-                pageSize: 20,
-            },
-            pager: {
-                allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
-                displayMode: "compact",
-                showInfo: true,
-                showNavigationButtons: true,
-                showPageSizeSelector: true,
-                visible: true,
-            },
-
-            remoteOperations: false,
-            rowAlternationEnabled: false,
-
-            scrolling: {
-                columnRenderingMode: "standard",
-                mode: "standard",
-                preloadEnabled: false,
-                renderAsync: undefined,
-                rowRenderingMode: "standard",
-                scrollByContent: true,
-                scrollByThumb: true,
-                showScrollbar: "onHover",
-                useNative: false
-            },
-            sorting: {
-                mode: 'multiple',
-            },
-            searchPanel: {
-                visible: false,
-                highlightCaseSensitive: false,
-            },
-            selection: {
-                allowSelectAll: false,
-                deferred: false,
-                mode: "single", //none ; single ; multiple
-                selectAllMode: "allPages",
-                showCheckBoxesMode: "click"
-            },
-            // onSelectionChanged(e) {
-            //     e.component.collapseAll(-1);
-            //     e.component.expandRow(e.currentSelectedRowKeys[0]);
-            //   },
-            showBorders: true,
-            showColumnHeaders: true,
-            showColumnLines: true,
-            showRowLines: true,
-            sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-            summary: _TBSummaryDashboard,
-            toolbar: undefined,
-            wordWrapEnabled: false,
-            masterDetail: {
-                enabled: true,
-                template(container, options) {
-                    $("<div>").dxDataGrid({
-                        dataSource: './data/DataIndukSiswa.json',
-                        //============
-                        // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
-                        //   jsondata = jsondata.filter(function (obj) {
-                        //     return obj.A01.includes(options.data.A01);
-                        //   });
-                        // }),
-                        //============
-                        // dataSource: DevExpress.data.query($.getJSON("./data/InformasiDataIndukSiswa.json")
-                        // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
-                        //     .sortBy("birthYear")
-                        //     .select("name", "birthYear")
-                        //     .toArray()
-                        // ),
-                        columns: _TbInfoPd,
-                        filterValue: [["a01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]],
-                        showBorders: true,
-                        showColumnHeaders: true,
-                        showColumnLines: true,
-                        showRowLines: true,
-                        columnHidingEnabled: false,
-                        allowColumnReordering: true,
-                        allowColumnResizing: true,
-                        columnResizingMode: 'widget',
-                        columnAutoWidth: true,
-                        wordWrapEnabled: false,
-                        columnChooser: {
-                            enabled: true,
-                            mode: "select",
-                            sortOrder: undefined,
-                            title: "Column Chooser",
-                            search: {
-                                editorOptions: {},
-                                enabled: true,
-                                timeout: null,
-                            },
-                        },
-                        columnFixing: {
-                            enabled: true,
-                        },
-                        hoverStateEnabled: false,
-                        paging: {
-                            pageSize: 5,
-                        },
-                        pager: {
-                            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100, 'all'],
-                            displayMode: "compact",
-                            showInfo: true,
-                            showNavigationButtons: true,
-                            showPageSizeSelector: true,
-                            visible: true,
-                        },
-                        editing: {
-                            mode: 'row',
-                            allowUpdating: false,
-                            allowAdding: false,
-                            allowDeleting: false,
-                            confirmDelete: true,
-                            useIcons: true,
-                        },
-                        export: {
-                            enabled: true,
-                            formats: ['xlsx', 'pdf'],
-                            allowExportSelectedData: true,
-                        },
-                        onExporting(e) {
-                            const _nmfile = 'Data Peserta Didik';
-                            if (e.format === 'xlsx') {
-                                const workbook = new ExcelJS.Workbook();
-                                const worksheet = workbook.addWorksheet('Data');
-                                DevExpress.excelExporter.exportDataGrid({
-                                    component: e.component,
-                                    worksheet,
-                                    autoFilterEnabled: true,
-                                }).then(() => {
-                                    workbook.xlsx.writeBuffer().then((buffer) => {
-                                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }), _nmfile + '.xlsx');
-                                    });
-                                });
-                                e.cancel = true;
-                            }
-                            else if (e.format === 'pdf') {
-                                const doc = new jsPDF('l', 'pt');
-                                DevExpress.pdfExporter.exportDataGrid({
-                                    jsPDFDocument: doc,
-                                    component: e.component,
-                                }).then(() => {
-                                    doc.save(_nmfile + '.pdf');
-                                });
-                            }
-                        },
-
-                        remoteOperations: false,
-                        scrolling: {
-                            columnRenderingMode: "standard",
-                            mode: "standard",
-                            preloadEnabled: false,
-                            renderAsync: undefined,
-                            rowRenderingMode: "standard",
-                            scrollByContent: true,
-                            scrollByThumb: true,
-                            showScrollbar: "onHover",
-                            useNative: false
-                        },
-                        sorting: {
-                            mode: 'multiple',
-                        },
-                        searchPanel: {
-                            visible: true,
-                            highlightCaseSensitive: false,
-                        },
-                        selection: {
-                            allowSelectAll: true,
-                            deferred: false,
-                            mode: "multiple",
-                            selectAllMode: "allPages",
-                            showCheckBoxesMode: "click"
-                        },
-                        filterRow: { visible: true },
-                        filterPanel: { visible: false },
-                        headerFilter: { visible: false },
-                        groupPanel: { visible: false },
-                        grouping: {
-                            autoExpandAll: true,
-                        },
-                        wordWrapEnabled: false,
-                        //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-                        //summary: _TBSummaryDashboard,
-                        //toolbar: undefined,
-                        rowAlternationEnabled: false,
-
-                    }).appendTo(container);
-                }
-            },
-        }).dxDataGrid('instance');
+                    }
+                },
+            }).dxDataGrid('instance');
+        });
 });

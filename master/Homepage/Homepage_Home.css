@@ -1,7 +1,7 @@
 #HomePagesMain {
     display: flex;
     flex-direction: column;
-    overflow: none;
+    overflow: hidden;
     flex: 1 1 auto;
     height: 100%;
     width: 100%;
@@ -63,7 +63,7 @@
 }
 
 .layout-06 {
-    overflow: none;
+    overflow: hidden;
     padding: 8px;
 }
 
