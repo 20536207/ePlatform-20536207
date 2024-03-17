@@ -25,7 +25,6 @@ function GetJsonData(_DBId, _TBId, _Range, _Query) {
 
                     _JsonData.push(_arr);
                 });
-                console.log(_JsonData);
                 return JSON.stringify(_JsonData);
             });
         });
