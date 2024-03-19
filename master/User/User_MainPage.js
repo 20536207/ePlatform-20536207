@@ -1,48 +1,3 @@
-function decodeJwtResponse(token) {
-  var base64Url = token.split(".")[1];
-  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-  var jsonPayload = decodeURIComponent(
-    atob(base64)
-      .split("")
-      .map(function (c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join("")
-  );
-
-  return JSON.parse(jsonPayload);
-}
-
-function onSignIn(response) {
-  const responsePayload = decodeJwtResponse(response.credential);
-  _Authorized = {
-    "user": {
-      "id": responsePayload.sub,
-      "email": responsePayload.email,
-      "verified_email": responsePayload.email_verified,
-      "name": responsePayload.name,
-      "given_name": responsePayload.given_name,
-      "family_name": responsePayload.family_name,
-      "picture": responsePayload.picture,
-      "locale": responsePayload.locale,
-    }
-  };
-  
-  document.getElementById("UserPict").src = _Authorized.user.picture;
-  // document.getElementById("UserPict").display = 'inline-flex';
-  document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
-  // document.getElementById("UserAccount").display = 'inline-flex';
-
-}
-
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-  });
-}
-
-
 $(document).ready(function () {
 
   _ParentPageContains = "./master/Homepage/Homepage_Home.html";
@@ -58,7 +13,7 @@ $(document).ready(function () {
       
 
       '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
-      'data-size="large" data-logo_alignment="left">' +
+      'data-size="medium" data-logo_alignment="center">' +
       '</div>'
     )
   );
@@ -95,3 +50,45 @@ $(document).ready(function () {
     showScrollbar: 'onHover',
   });
 });
+
+function decodeJwtResponse(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
+}
+
+function onSignIn(response) {
+  const responsePayload = decodeJwtResponse(response.credential);
+  _Authorized = {
+    "user": {
+      "id": responsePayload.sub,
+      "email": responsePayload.email,
+      "verified_email": responsePayload.email_verified,
+      "name": responsePayload.name,
+      "given_name": responsePayload.given_name,
+      "family_name": responsePayload.family_name,
+      "picture": responsePayload.picture,
+      "locale": responsePayload.locale,
+    }
+  };
+  
+  document.getElementById("UserPict").src = _Authorized.user.picture;
+  document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
+
+}
+
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+  });
+}

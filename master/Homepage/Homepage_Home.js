@@ -1,6 +1,5 @@
 // $(() => {
 $(document).ready(function () {
-
     _PageToolbar.option("items[1].text", 'Home');
     _PageToolbar.option("items[2].visible", false);
     _ParentPageContains = "./master/Homepage/Homepage_Home.html";

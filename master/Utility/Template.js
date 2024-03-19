@@ -1,3 +1,39 @@
+// function GetJsonData(_DBId, _TBId, _Range, _Query) {
+
+//     var _Url = (
+//         "https://docs.google.com/spreadsheets/d/" + _DBId + "/gviz/tq?" +
+//         "&gid=" + _TBId +
+//         "&range=" + _Range +
+//         "&tq=" + _Query
+//     );
+
+//     var _JsonData = [];
+
+//     return fetch(_Url)
+//         .then(res => {
+//             return res.text().then(rep => {
+//                 var _data = JSON.parse(rep.substring(47).slice(0, -2));
+
+//                 _data.table.rows.forEach((_rowItems, _rowIndex) => {
+//                     var _arr = {};
+
+//                     _rowItems.c.forEach((_cItems, _cIndex) => {
+//                         var _field = _data.table.cols[_cIndex].label;
+//                         var _value = _data.table.cols[_cIndex].type == 'date' ? (_cItems == null ? "" : _cItems.f) : (_cItems == null ? "" : _cItems.v);
+//                         _arr[_field] = _value == null ? "" : _value;
+//                     });
+
+//                     _JsonData.push(_arr);
+//                 });
+//                 return JSON.stringify(_JsonData);
+//             });
+//         });
+// };
+
+
+
+
+
 // "credentials": {
 //     "access_token": "ya29.GlsSBIA_hMKZIDE_wqJAJS0vrHD_Wd2HfwRTTvLISv0i1uFICCqz4JdEZcL09mFFlGdt71D9pW80SLShHgyeSOZgnWcL5piL5m0jYo1TMU6o0fDLnqGAWm6BY-Wl",
 //     "token_type": "Bearer",

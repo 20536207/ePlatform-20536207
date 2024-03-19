@@ -670,13 +670,19 @@ $(document).ready(function () {
 
     //===============================================================================
     _InformasiRombonganBelajar =
-        // GetJsonData(
-        //     "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
-        //     1316011922,                                     //SheetID
-        //     "A1:CX",                                        //Range
-        //     "SELECT * WHERE A <> ''"                   //Filter or Query
-        // ).then(_MyData => {
         $('#InformasiRombonganBelajar').dxDataGrid({
+            onContentReady: function (e) {
+                if (!e.component.__ready) {
+                    GetJsonData(
+                        this,
+                        "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
+                        1316011922,                                     //SheetID
+                        "A1:CX",                                        //Range
+                        "SELECT * WHERE A <> ''"                   //Filter or Query
+                    );
+                    e.component.__ready = true;
+                };
+            },
             allowColumnReordering: true,
             allowColumnResizing: true,
             columnHidingEnabled: false,
@@ -697,11 +703,9 @@ $(document).ready(function () {
                 enabled: true,
             },
             columns: _TbDataRombel,
-
-            dataSource:
-                // JSON.parse(_MyData),
-                './data/RombonganBelajar.json',
-
+            // dataSource:
+            //     // JSON.parse(_MyData),
+            //     './data/RombonganBelajar.json',
             editing: {
                 mode: 'row',
                 allowUpdating: false,

@@ -4,7 +4,7 @@ $(document).ready(function () {
     _ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
     // ===============================================================================================
-    const
+    var
         _TbDataSiswa = [
             {
                 caption: 'NIPD',
@@ -614,13 +614,19 @@ $(document).ready(function () {
 
         //===============================================================================
         _InformasiDataIndukSiswa =
-            // GetJsonData(
-            //     "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
-            //     2138208914,                                     //SheetID
-            //     "A1:CO",                                        //Range
-            //     "SELECT * WHERE A <> ''"                        //Filter or Query
-            // ).then(_MyData => {
             $('#InformasiDataIndukSiswa').dxDataGrid({
+                onContentReady: function (e) {
+                    if (!e.component.__ready) {
+                        GetJsonData(
+                            this,
+                            "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
+                            2138208914,                                     //SheetID
+                            "A1:CO",                                        //Range
+                            "SELECT * WHERE A <> ''"                        //Filter or Query
+                        );
+                        e.component.__ready = true;
+                    };
+                },
                 allowColumnReordering: true,
                 allowColumnResizing: true,
                 columnHidingEnabled: false,
@@ -641,10 +647,9 @@ $(document).ready(function () {
                     enabled: true,
                 },
                 columns: _TbDataSiswa,
-
-                dataSource:
-                    //JSON.parse(_MyData),
-                    './data/DataIndukSiswa.json',
+                // dataSource: 
+                //     //JSON.parse(_MyData),
+                //     './data/DataIndukSiswa.json',
                 editing: {
                     mode: 'row',
                     allowUpdating: false,
@@ -748,16 +753,22 @@ $(document).ready(function () {
                 masterDetail: {
                     enabled: true,
                     template(container, options) {
-                        // GetJsonData(
-                        //     "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
-                        //     1316011922,                                     //SheetID
-                        //     "A1:CX",                                        //Range
-                        //     "SELECT E, A, CT, CU, CV, CW, CX WHERE A <> ''"                   //Filter or Query
-                        // ).then(_MyDataDetail => {
                         $("<div>").dxDataGrid({
-                            dataSource:
-                                // JSON.parse(_MyDataDetail),
-                                './data/RombonganBelajar.json',
+                            onContentReady: function (e) {
+                                if (!e.component.__ready) {
+                                    GetJsonData(
+                                        this,
+                                        "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc",     //SpreadsheetID
+                                        1316011922,                                         //SheetID
+                                        "A1:CX",                                            //Range
+                                        "SELECT E, A, CT, CU, CV, CW, CX WHERE A <> ''"     //Filter or Query
+                                    );
+                                    e.component.__ready = true;
+                                };
+                            },
+                            // dataSource:
+                            //     // JSON.parse(_MyDataDetail),
+                            //     './data/RombonganBelajar.json',
                             //============
                             // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
                             //   jsondata = jsondata.filter(function (obj) {

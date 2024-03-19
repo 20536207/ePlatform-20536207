@@ -2635,13 +2635,19 @@ $(document).ready(function () {
 
         //===============================================================================
         _InformasiPesertaDidik =
-            // GetJsonData(
-            //     "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
-            //     1957628809,                                     //SheetID
-            //     "A1:DF",                                        //Range
-            //     "SELECT * WHERE A <> ''"                   //Filter or Query
-            // ).then(_Dashboard => {
             $('#InformasiPesertaDidik').dxDataGrid({
+                onContentReady: function (e) {
+                    if (!e.component.__ready) {
+                        GetJsonData(
+                            this,
+                            "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
+                            1957628809,                                     //SheetID
+                            "A1:DF",                                        //Range
+                            "SELECT * WHERE A <> ''"                   //Filter or Query
+                        );
+                        e.component.__ready = true;
+                    };
+                },
                 // keyExpr: 'A01',
                 columns: _TbDashboard,
                 columnHidingEnabled: false,
@@ -2682,9 +2688,9 @@ $(document).ready(function () {
                         };
                     });
                 },
-                dataSource:
-                    // JSON.parse(_Dashboard),
-                    './data/PesertaDidik.json',
+                // dataSource:
+                //     // JSON.parse(_Dashboard),
+                //     './data/PesertaDidik.json',
                 editing: {
                     mode: 'form',
                     allowUpdating: false,
@@ -2804,9 +2810,21 @@ $(document).ready(function () {
                         //     "SELECT * WHERE CU = 'Aktif'"                   //Filter or Query
                         // ).then(_MyData => {
                         $("<div>").dxDataGrid({
-                            dataSource:
-                                // JSON.parse(_MyData),
-                                './data/DataIndukSiswa.json',
+                            onContentReady: function (e) {
+                                if (!e.component.__ready) {
+                                    GetJsonData(
+                                        this,
+                                        "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
+                                        1300103800,                                     //SheetID
+                                        "A1:CX",                                        //Range
+                                        "SELECT * WHERE CU = 'Aktif'"                   //Filter or Query
+                                    );
+                                    e.component.__ready = true;
+                                };
+                            },
+                            // dataSource:
+                            //     // JSON.parse(_MyData),
+                            //     './data/DataIndukSiswa.json',
                             //============
                             // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
                             //   jsondata = jsondata.filter(function (obj) {

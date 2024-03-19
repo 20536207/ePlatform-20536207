@@ -1,50 +1,56 @@
-function GetJsonData(_DBId, _TBId, _Range, _Query) {
+
+function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
 
     var _Url = (
         "https://docs.google.com/spreadsheets/d/" + _DBId + "/gviz/tq?" +
         "&gid=" + _TBId +
         "&range=" + _Range
-        //  +
-        // "&tq=" + _Query
+        // + "&tq=" + _Query
     );
 
     var query = new google.visualization.Query(_Url);
     query.setQuery(_Query);
-    // console.log(query);
-    // query.send(handleQueryResponse);
+    query.send(response => {
 
-    // "http://www.example.com/mydatasource?tqx=responseHandler:myHandlerFunction
+        if (!(response.isError())) {
+            var data = response.getDataTable();
+            data = JSON.parse(data.toJSON());
 
+            //GetJSONData Structure==================================
+            var
+                _DataSource = [],
+                _Column = [];
 
-    // var _JsonData = [];
+            data.rows.forEach((_rowItems, _rowIndex) => {
+                var _arrRow = {};
 
-    // return fetch(_Url)
-    //     .then(res => {
-    //         return res.text().then(rep => {
-    //             var _data = JSON.parse(rep.substring(47).slice(0, -2));
+                _rowItems.c.forEach((_cItems, _cIndex) => {
+                    var _field = data.cols[_cIndex],
+                        _value = _field.type == 'date' ? (_cItems == null ? "" : _cItems.f) : (_cItems == null ? "" : _cItems.v),
+                        _arrCol = {};
 
-    //             _data.table.rows.forEach((_rowItems, _rowIndex) => {
-    //                 var _arr = {};
+                    _arrRow[_field.label] = _value == null ? "" : _value;
 
-    //                 _rowItems.c.forEach((_cItems, _cIndex) => {
-    //                     var _field = _data.table.cols[_cIndex].label;
-    //                     var _value = _data.table.cols[_cIndex].type == 'date' ? (_cItems == null ? "" : _cItems.f) : (_cItems == null ? "" : _cItems.v);
-    //                     _arr[_field] = _value == null ? "" : _value;
-    //                 });
+                    // set column ===========================================
+                    if (_rowIndex == 0) {
+                        _arrCol["caption"] = _field.label;
+                        _arrCol["fixed"] = _cIndex == 0 ? true : false;
+                        _arrCol["dataField"] = _field.label;
+                        _arrCol["sortOrder"] = _cIndex == 0 ? "asc" : "";
+                        _arrCol["dataType"] = _field.type;
+                        _arrCol["format"] = _field.pattern;
+                        _Column.push(_arrCol);
+                    };
 
-    //                 _JsonData.push(_arr);
-    //             });
-    //             return JSON.stringify(_JsonData);
-    //         });
-    //     });
+                });
+                _DataSource.push(_arrRow);
+            });
+            _this.option("dataSource", _DataSource);
+            return;
+        } else {
+            _notify('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+            return;
+        }
+    });
+
 };
-
-$(document).ready(function () {
-
-    GetJsonData(
-        "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
-        1316011922,                                     //SheetID
-        "A1:CX",                                        //Range
-        "SELECT * WHERE CU = 'Aktif'"                   //Filter or Query
-    );
-});
