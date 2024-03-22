@@ -1,9 +1,9 @@
 function GoPdfJsViewer(_pdffile, _pdfPageContains) {
 
-    let _pdfToolItems = {
+    const _pdfToolItems = {
         items: [
             {
-                index: 1,
+                index: 0,
                 icon: 'fas fa-magnifying-glass-plus fa-2px',
                 text: 'Zoom in',
                 label: 'Zoom in',
@@ -12,7 +12,7 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 onClick(e) { _zoomScaleCanvas += 0.1; OnRenderPage(_pdffile, _pdfPageContains); },
             },
             {
-                index: 2,
+                index: 1,
                 icon: 'fas fa-magnifying-glass-minus fa-2px',
                 text: 'Zoom Out',
                 label: 'Zoom Out',
@@ -21,22 +21,26 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 onClick(e) { _zoomScaleCanvas -= 0.1; OnRenderPage(_pdffile, _pdfPageContains); },
             },
             {
-                index: 3,
+                index: 2,
                 icon: 'fas fa-download fa-2px',
                 text: 'Download',
                 label: 'Download',
                 hint: 'Download',
                 stylingMode: 'contained',
-                onClick(e) { _notify('option ' + e.itemData.index + ' of ' + e.itemData.hint + ' masih proses ritual') },
+                onClick(e) {
+                    _notify('option of ' + _pdfToolItems.items[2].hint + ' masih proses ritual');
+                },
             },
             {
-                index: 4,
+                index: 3,
                 icon: 'fas fa-print fa-2px',
                 text: 'Print',
                 label: 'Print',
                 hint: 'Print',
                 stylingMode: 'contained',
-                onClick(e) { _notify('option ' + e.itemData.index + ' of ' + e.itemData.hint + ' masih proses ritual') },
+                onClick(e) {
+                    _notify('option of ' + _pdfToolItems.items[3].hint + ' masih proses ritual');
+                },
             }
         ],
         stylingMode: 'contained',
@@ -63,7 +67,7 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
             onClick: _pdfToolItems.items[ii].onClick,
             visible: $(window).width() < 480 ? true : false,
         }).dxSpeedDialAction('instance');
-            
+
     };
 
     //===================================================================================

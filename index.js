@@ -18,7 +18,7 @@ function _notify(_message) {
         {
             message: _message,
             maxWidth: 300,
-            displayTime: 1000,
+            displayTime: 2500,
             animation: {
                 show: { type: 'fade', duration: 400, from: 0, to: 1 },
                 hide: { type: 'fade', duration: 40, to: 0 },
