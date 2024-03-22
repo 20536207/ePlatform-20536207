@@ -1864,6 +1864,33 @@
 // }
 
 
+//===============================================================================
+// const _ActionSheet = $('#ActionSheet').dxActionSheet({
+//     dataSource: undefined,
+//     title: null,
+//     showTitle: true,
+//     showCancelButton: true,
+//     visible: false,
+//     usePopover: true,
+//     width: undefined,
+//     onCancelClick() {
+//         this.option('dataSource', undefined);
+//         this.option('title', null);
+//         return false;
+//     },
+//     onItemClick(e) {
+//         _PageToolbar.option("items[1].text", e.itemData.text);
+//         _PageToolbar.option("items[2].visible", false);
+
+//         // _LayoutHeader.option("items[0].options.disabled", true);
+//         $("#PageContains").empty();
+//         _actPageContains = e.itemData["target"];
+//         return $("#PageContains").load(_actPageContains);
+//     }
+// }).dxActionSheet('instance');
+
+//===============================================================================
+
 
 
 //   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf_viewer.mjs" type="module"></script> -->

@@ -1,10 +1,9 @@
-// $(() => {
-$(document).ready(function () {
-    _PageToolbar.option("items[1].text", 'Home');
-    _PageToolbar.option("items[2].visible", false);
-    _ParentPageContains = "./master/Homepage/Homepage_Home.html";
+_PageToolbar.option("items[1].text", 'Home');
+_PageToolbar.option("items[2].visible", false);
+_arrVarGlobal._ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
-    // ===============================================================================================
+// ===============================================================================================
+$(document).ready(function () {
     $("#HomePagesContains").dxResponsiveBox({
         rows: [
             { ratio: 0, screen: 'sm lg' }, //01
@@ -54,8 +53,6 @@ $(document).ready(function () {
         itemTemplate(item) {
             const result = $('<div>');
             $('<img class="bannerimage" />').attr('src', item.Image).appendTo(result);
-            // $('<div>').addClass('banner-image-title').text(item.Title).appendTo(result);
-            // $('<div>').addClass('banner-image-keterangan').text(item.Keterangan).appendTo(result);
             return result;
         },
     });
@@ -68,15 +65,6 @@ $(document).ready(function () {
         hoverStateEnabled: false,
         animationDuration: 0,
         collapsible: true,
-        // onContentReady: function (e) {
-        //     $.getJSON(e.component.option('dataSource'), function (jsondata) {
-        //         $('.HomeLinkedPlatform-item-count').text(jsondata.length);
-        //     });
-        // },
-        // onSelectionChanged(e) {
-        //     $('.selected-index')
-        //         .text(e.component.option('selectedIndex') + 1);
-        // },
         itemTitleTemplate: function (devdata, devindex, develement) {
             develement.append(
                 $("<div class='HomeLinkedPlatform-dev'>" +
@@ -138,13 +126,12 @@ $(document).ready(function () {
                         _PageToolbar.option("items[2].visible", false);
 
                         $("#PageContains").empty();
-                        _actPageContains = itemData.target;
-                        _PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ","") + ".pdf";
-                        _ParentPageContains = "./master/Homepage/Homepage_Home.html";
-                        return $("#PageContains").load(_actPageContains);
+                        _arrVarGlobal._actPageContains = itemData.target;
+                        _arrVarGlobal._PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf";
+                        _arrVarGlobal._ParentPageContains = "./master/Homepage/Homepage_Home.html";
+                        return $("#PageContains").load(_arrVarGlobal._actPageContains);
                     },
                 })
-                // .dxButton("instance")
             )
 
         });
@@ -155,9 +142,6 @@ $(document).ready(function () {
         scrollByThumb: true,
         useNative: false,
         showScrollbar: 'onHover',
-        // direction: 'both',
-        // height: '100%',
-        // width: '100%',
     });
-
+    
 });

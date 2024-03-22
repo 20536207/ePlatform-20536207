@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    _ParentPageContains = "./master/Homepage/Homepage_Home.html";
+    _arrVarGlobal._ParentPageContains = "./master/Homepage/Homepage_Home.html";
 
     // ===============================================================================================
     const
@@ -2575,62 +2575,6 @@ $(document).ready(function () {
                     dataType: 'string',
                 }]
             },
-            // {
-            //     caption: 'Verval Peserta Didik',
-            //     columns: [{
-            //         caption: 'NISN',
-            //         dataField: 'o01',
-
-            //     }, {
-            //         caption: 'Nama',
-            //         dataField: 'o02',
-
-            //     }, {
-            //         caption: 'NIK',
-            //         dataField: 'o03',
-            //         format: function (value) {
-            //             return value.replace(value.substr(1, 13), "*".repeat(13));
-            //         },
-            //     }, {
-            //         caption: 'Tempat Lahir',
-            //         dataField: 'o04',
-
-            //     }, {
-            //         caption: 'Tanggal Lahir',
-            //         dataField: 'o05',
-
-            //     }]
-            // },
-            // {
-            //     caption: 'Verval Ibu Kandung',
-            //     columns: [{
-            //         caption: 'Nama',
-            //         dataField: 'p01',
-
-            //     }, {
-            //         caption: 'NIK',
-            //         dataField: 'p02',
-            //         format: function (value) {
-            //             return value.replace(value.substr(1, 13), "*".repeat(13));
-            //         },
-            //     }]
-            // },
-            // {
-            //     caption: 'Verval Ayah Kandung',
-            //     columns: [{
-            //         caption: 'Nama',
-            //         dataField: 'q01',
-
-            //     }, {
-            //         caption: 'NIK',
-            //         dataField: 'q02',
-
-            //     }]
-            // },
-            // {
-            //     caption: 'Status Verval',
-            //     dataField: 'r01',
-            // }
         ],
 
         //===============================================================================
@@ -2688,9 +2632,6 @@ $(document).ready(function () {
                         };
                     });
                 },
-                // dataSource:
-                //     // JSON.parse(_Dashboard),
-                //     './data/PesertaDidik.json',
                 editing: {
                     mode: 'form',
                     allowUpdating: false,
@@ -2803,12 +2744,6 @@ $(document).ready(function () {
                 masterDetail: {
                     enabled: true,
                     template(container, options) {
-                        // GetJsonData(
-                        //     "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
-                        //     1300103800,                                     //SheetID
-                        //     "A1:CX",                                        //Range
-                        //     "SELECT * WHERE CU = 'Aktif'"                   //Filter or Query
-                        // ).then(_MyData => {
                         $("<div>").dxDataGrid({
                             onContentReady: function (e) {
                                 if (!e.component.__ready) {
@@ -2822,22 +2757,6 @@ $(document).ready(function () {
                                     e.component.__ready = true;
                                 };
                             },
-                            // dataSource:
-                            //     // JSON.parse(_MyData),
-                            //     './data/DataIndukSiswa.json',
-                            //============
-                            // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
-                            //   jsondata = jsondata.filter(function (obj) {
-                            //     return obj.A01.includes(options.data.A01);
-                            //   });
-                            // }),
-                            //============
-                            // dataSource: DevExpress.data.query($.getJSON("./data/InformasiDataIndukSiswa.json")
-                            // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
-                            //     .sortBy("birthYear")
-                            //     .select("name", "birthYear")
-                            //     .toArray()
-                            // ),
                             columns: _TbInfoPd,
                             filterValue: [["A01", "contains", options.data.A01]],
                             //"and", ["N02", "=", "Aktif"]],
@@ -2961,5 +2880,5 @@ $(document).ready(function () {
                     }
                 },
             }).dxDataGrid('instance');
-    // });
+
 });

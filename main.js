@@ -1,19 +1,7 @@
 window.jsPDF = window.jspdf.jsPDF;
-_arrVarGlobal = {
-    _actPageContains: null,
-    _PdfFilePageContains: null,
-    _ParentPageContains: null
-}
-
-_appInfo = {
-    dev: undefined,
-    title: undefined,
-    ver: undefined,
-    icon: undefined
-};
 
 //=== NOTIFY
-function _notify(_message) {
+export function _notify(_message) {
     return DevExpress.ui.notify(
         {
             message: _message,
@@ -28,10 +16,19 @@ function _notify(_message) {
     );
 };
 
-$(document).ready(function () {
-    _appInfo.dev = "e-Platform ( 20536207 )";
-    _appInfo.title = "e-Platform AIO";
-    _appInfo.ver = "20536207.1";
+export const
+    _arrVarGlobal = {
+        _actPageContains: null,
+        _PdfFilePageContains: null,
+        _ParentPageContains: null,
+    },
+
+    _appInfo = {
+        dev: undefined,
+        title: undefined,
+        ver: undefined,
+        icon: undefined
+    },
 
     //=== TOOLBAR SEPARATOR
     _toolbarSeparatorBefore = {
@@ -48,7 +45,7 @@ $(document).ready(function () {
                 .appendTo(element);
         },
 
-    };
+    },
     _toolbarSeparatorAfter = {
         locateInMenu: 'never',
         location: "after",
@@ -57,7 +54,7 @@ $(document).ready(function () {
                 .addClass('separator-after')
                 .appendTo(element);
         },
-    };
+    },
 
     //=== LAYOUT HEADER
     _LayoutHeader = $('#LayoutHeader').dxToolbar({
@@ -110,13 +107,13 @@ $(document).ready(function () {
                         _PageToolbar.option("items[2].visible", false);
 
                         $("#PageContains").empty();
-                        _arrVarGlobal._actPageContains = "./master/User/User_MainPage.html";
+                        _arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
                         $("#PageContains").load(_arrVarGlobal._actPageContains);
                     },
                 }
             }
         ]
-    }).dxToolbar("instance");
+    }).dxToolbar("instance"),
 
 
     //=== LAYOUT CONTAINS
@@ -155,13 +152,13 @@ $(document).ready(function () {
                         _LayoutContains.toggle();
 
                         $("#PageContains").empty();
-                        _arrVarGlobal._actPageContains = e.itemData["target"];
-                        _arrVarGlobal._PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/" + e.itemData["text"].replace(" ", "") + ".pdf";
-                        $("#PageContains").load(_arrVarGlobal._actPageContains);
+                        _actPageContains = e.itemData["target"];
+                        _PdfFilePageContains = "/master/AIOPdfPageContains/PdfPageContains/" + e.itemData["text"].replace(" ", "") + ".pdf";
+                        $("#PageContains").load(_actPageContains);
                     },
                 }).addClass('ContainsSidebar');
         },
-    }).dxDrawer('instance');
+    }).dxDrawer('instance'),
 
     //=== PAGE TOOLBAR
     _PageToolbar = $('#PageToolbar').dxToolbar({
@@ -217,6 +214,7 @@ $(document).ready(function () {
                         _PageToolbar.option("items[2].visible", false);
 
                         $("#PageContains").empty();
+                        // console.log(_arrVarGlobal._actPageContains);
                         $("#PageContains").load(_arrVarGlobal._actPageContains);
                     },
                 },
@@ -224,18 +222,3 @@ $(document).ready(function () {
         ],
 
     }).dxToolbar('instance');
-
-    //==============================================================================
-    _LayoutHeader.option("items[0].options.template",
-        "<div class='fab fa-windows fa-xl'><span class='DevApp-Menu'>" +
-        _appInfo.title + "<br>ver. " + _appInfo.ver + "</span></div>"
-    );
-    _arrVarGlobal._actPageContains = "./master/Homepage/Homepage_Home.html";
-    $("#PageContains").empty();
-    $("#PageContains").load(_arrVarGlobal._actPageContains);
-
-    $(window).resize(function () {
-        _LayoutContains.option('openedStateMode', $(window).width() < 960 ? "overlap" : "shrink");
-    });
-
-});
