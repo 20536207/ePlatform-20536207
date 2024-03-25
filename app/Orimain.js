@@ -1,5 +1,6 @@
 //=======================================================
 $(document).ready(function () {
+    window.jsPDF = window.jspdf.jsPDF;
     _appConfig = {
         app: {
             title: "e-Platform ( 20536207 )",
