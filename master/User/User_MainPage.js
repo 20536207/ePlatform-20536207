@@ -1,16 +1,16 @@
 $(document).ready(function () {
 
-  _arrVarGlobal._ParentPageContains = "./master/Homepage/Homepage_Home.html";
+  _arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
   // ===============================================================================================
   $("#UserAuthorized").append(
     $('<div id="g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
       'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
       '</div>' +
-      
-      "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;'>"+
+
+      "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;'>" +
       "<div id='UserAccount' style='margin: 5px 0 5px 0;'></div>" +
-      
+
 
       '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
       'data-size="medium" data-logo_alignment="center">' +
@@ -80,7 +80,13 @@ function onSignIn(response) {
       "locale": responsePayload.locale,
     }
   };
-  
+
+  _userConfig.user.email = _Authorized.user.email;
+  _userConfig.user.Pict = _Authorized.user.picture;
+  _userConfig.user.name = _Authorized.user.name;
+  _userConfig.user.org = "viewer";
+  _userConfig.user.desc = "user trial";
+
   document.getElementById("UserPict").src = _Authorized.user.picture;
   document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
 

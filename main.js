@@ -130,7 +130,7 @@ export const
             return _ListWidget
                 .dxList({
                     keyExpr: "key",
-                    dataSource: "./data/NavMain.json",
+                    dataSource: "/data/NavMain.json",
                     hoverStateEnabled: false,
                     focusStateEnabled: false,
                     activeStateEnabled: true,

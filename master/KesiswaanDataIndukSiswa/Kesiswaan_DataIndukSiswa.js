@@ -1,7 +1,7 @@
 //=========================================================================================================
 $(document).ready(function () {
 
-    _arrVarGlobal._ParentPageContains = "./master/Homepage/Homepage_Home.html";
+    _arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
     // ===============================================================================================
     var
@@ -649,7 +649,7 @@ $(document).ready(function () {
                 columns: _TbDataSiswa,
                 // dataSource: 
                 //     //JSON.parse(_MyData),
-                //     './data/DataIndukSiswa.json',
+                //     '/data/DataIndukSiswa.json',
                 editing: {
                     mode: 'row',
                     allowUpdating: false,
@@ -768,7 +768,7 @@ $(document).ready(function () {
                             },
                             // dataSource:
                             //     // JSON.parse(_MyDataDetail),
-                            //     './data/RombonganBelajar.json',
+                            //     '/data/RombonganBelajar.json',
                             //============
                             // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
                             //   jsondata = jsondata.filter(function (obj) {
@@ -776,7 +776,7 @@ $(document).ready(function () {
                             //   });
                             // }),
                             //============
-                            // dataSource: DevExpress.data.query($.getJSON("./data/InformasiDataIndukSiswa.json")
+                            // dataSource: DevExpress.data.query($.getJSON("/data/InformasiDataIndukSiswa.json")
                             // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
                             //     .sortBy("birthYear")
                             //     .select("name", "birthYear")

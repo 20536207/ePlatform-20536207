@@ -1,7 +1,7 @@
 //=========================================================================================================
 $(document).ready(function () {
 
-    _arrVarGlobal._ParentPageContains = "./master/Homepage/Homepage_Home.html";
+    _arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
     // ===============================================================================================
     const
         _TbDataRombel = [
@@ -705,7 +705,7 @@ $(document).ready(function () {
             columns: _TbDataRombel,
             // dataSource:
             //     // JSON.parse(_MyData),
-            //     './data/RombonganBelajar.json',
+            //     '/data/RombonganBelajar.json',
             editing: {
                 mode: 'row',
                 allowUpdating: false,

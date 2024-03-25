@@ -1,0 +1,113 @@
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.dx-button {
+  min-width: 52px;
+}
+
+.items-before {
+  border-right: 1px rgba(100, 100, 100, 0.4) outset;
+}
+
+.items-after {
+  border-left: 1px rgba(100, 100, 100, 0.4) inset;
+}
+
+/* ==================================================================================== */
+#MainLayout {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+}
+
+/* ==================================================================================== */
+#LayoutHeader {
+  justify-self: flex-start;
+  text-align: center;
+  padding: 6px 8px 6px 8px;
+}
+
+#elHeader-002 .dx-button-content {
+  padding-block: 1px;
+  padding: 0;
+}
+
+#elHeader-002 {
+  min-width: 0;
+  border-radius: 50%;
+  margin-right: 14px;
+}
+
+#LayoutContent {
+  justify-self: stretch;
+  flex: 1 1 auto;
+  /* height: 100%; */
+  overflow: hidden;
+}
+
+#LayoutFooter {
+  justify-self: flex-end;
+  text-align: center;
+  padding: 8px 0 8px 0;
+  border-top: rgba(100, 100, 100, 0.3) ridge;
+}
+
+/* ==================================================================================== */
+#LayoutContent .ContainsSidebar {
+  background-color: rgba(100, 100, 100, 0.1);
+}
+
+/* ==================================================================================== */
+#MainPage {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+}
+
+/* ==================================================================================== */
+#PageToolbar {
+  justify-self: flex-start;
+  text-align: center;
+  padding: 4px 8px 4px 8px;
+  background-color: rgba(100, 100, 100, 0.2);
+}
+
+#PageToolbar .Page-Title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.items-before {
+  border-right: 1px rgba(100, 100, 100, 0.4) outset;
+}
+
+.items-after {
+  border-left: 1px rgba(100, 100, 100, 0.4) inset;
+}
+
+/* ==================================================================================== */
+#PageContains {
+  flex: 1 0 auto;
+  height: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+/* ==================================================================================== */
+@media only screen and (max-width: 960px) {
+
+  #LayoutContent .ContainsSidebar {
+    padding: 0 3px 0 3px;
+    background-color: rgba(36, 36, 36, 0.95);
+  }
+
+}

@@ -1,9 +1,10 @@
 window.jsPDF = window.jspdf.jsPDF;
+
 _arrVarGlobal = {
     _actPageContains: null,
     _PdfFilePageContains: null,
     _ParentPageContains: null
-}
+};
 
 _appInfo = {
     dev: undefined,
@@ -29,6 +30,7 @@ function _notify(_message) {
 };
 
 $(document).ready(function () {
+    console.log(_arrVarGlobal._actPageContains);
     _appInfo.dev = "e-Platform ( 20536207 )";
     _appInfo.title = "e-Platform AIO";
     _appInfo.ver = "20536207.1";
@@ -110,7 +112,7 @@ $(document).ready(function () {
                         _PageToolbar.option("items[2].visible", false);
 
                         $("#PageContains").empty();
-                        _arrVarGlobal._actPageContains = "./master/User/User_MainPage.html";
+                        _arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
                         $("#PageContains").load(_arrVarGlobal._actPageContains);
                     },
                 }
@@ -133,7 +135,7 @@ $(document).ready(function () {
             return _ListWidget
                 .dxList({
                     keyExpr: "key",
-                    dataSource: "./data/NavMain.json",
+                    dataSource: "/data/NavMain.json",
                     hoverStateEnabled: false,
                     focusStateEnabled: false,
                     activeStateEnabled: true,
@@ -156,7 +158,7 @@ $(document).ready(function () {
 
                         $("#PageContains").empty();
                         _arrVarGlobal._actPageContains = e.itemData["target"];
-                        _arrVarGlobal._PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/" + e.itemData["text"].replace(" ", "") + ".pdf";
+                        _arrVarGlobal._PdfFilePageContains = "/master/AIOPdfPageContains/PdfPageContains/" + e.itemData["text"].replace(" ", "") + ".pdf";
                         $("#PageContains").load(_arrVarGlobal._actPageContains);
                     },
                 }).addClass('ContainsSidebar');
@@ -230,7 +232,7 @@ $(document).ready(function () {
         "<div class='fab fa-windows fa-xl'><span class='DevApp-Menu'>" +
         _appInfo.title + "<br>ver. " + _appInfo.ver + "</span></div>"
     );
-    _arrVarGlobal._actPageContains = "./master/Homepage/Homepage_Home.html";
+    _arrVarGlobal._actPageContains = "/master/Homepage/Homepage_Home.html";
     $("#PageContains").empty();
     $("#PageContains").load(_arrVarGlobal._actPageContains);
 

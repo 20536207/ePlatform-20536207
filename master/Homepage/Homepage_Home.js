@@ -1,6 +1,6 @@
 _PageToolbar.option("items[1].text", 'Home');
 _PageToolbar.option("items[2].visible", false);
-_arrVarGlobal._ParentPageContains = "./master/Homepage/Homepage_Home.html";
+_arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
 // ===============================================================================================
 $(document).ready(function () {
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     // ===============================================================================================
     $('#NavbarLayout04').dxTabs({
-        dataSource: "./data/NavLayout03.json",
+        dataSource: "/data/NavLayout03.json",
         hoverStateEnabled: true,
         focusStateEnabled: false,
         selectionMode: 'none',
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
     // ===============================================================================================
     $('#BannerImage').dxGallery({
-        dataSource: './data/BannerImage.json',
+        dataSource: '/data/BannerImage.json',
         height: 'innerWidth',
         width: 'innerWidth',
         focusStateEnabled: false,
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     // ===============================================================================================
     $('#HomeLinkedPlatform').dxAccordion({
-        dataSource: "./data/HomeLinkedPlatform.json",
+        dataSource: "/data/HomeLinkedPlatform.json",
         activeStateEnabled: true,
         focusStateEnabled: false,
         hoverStateEnabled: false,
@@ -101,7 +101,7 @@ $(document).ready(function () {
     });
 
     // ===============================================================================================
-    $.getJSON("./data/NavMain.json", function (result) {
+    $.getJSON("/data/NavMain.json", function (result) {
         result[0].items.forEach(function (itemData) {
 
             $("#HomePageContains").append(
@@ -127,8 +127,8 @@ $(document).ready(function () {
 
                         $("#PageContains").empty();
                         _arrVarGlobal._actPageContains = itemData.target;
-                        _arrVarGlobal._PdfFilePageContains = "./master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf";
-                        _arrVarGlobal._ParentPageContains = "./master/Homepage/Homepage_Home.html";
+                        _arrVarGlobal._PdfFilePageContains = "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf";
+                        _arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
                         return $("#PageContains").load(_arrVarGlobal._actPageContains);
                     },
                 })
