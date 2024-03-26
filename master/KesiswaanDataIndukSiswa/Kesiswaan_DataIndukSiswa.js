@@ -4,7 +4,7 @@ $(document).ready(function () {
     _arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
     // ===============================================================================================
-    var
+    const
         _TbDataSiswa = [
             {
                 caption: 'NIPD',
@@ -899,9 +899,8 @@ $(document).ready(function () {
                             rowAlternationEnabled: false,
 
                         }).appendTo(container);
-                        // });
+
                     }
                 },
             }).dxDataGrid('instance');
-    // }):
 });
