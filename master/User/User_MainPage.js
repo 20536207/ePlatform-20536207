@@ -16,7 +16,12 @@ $(document).ready(function () {
       '</div>'
     )
   );
-  document.getElementById("UserPict").style.display = 'none';
+
+  if (_userConfig.user.cred == null){
+    document.getElementById("UserPict").style.display = 'none';
+  } else{
+    onSignIn(_userConfig.user.cred);
+  };
 
   for (let i = 1; i <= 20; i++) {
     $("#UserPage").append(
@@ -81,6 +86,7 @@ function onSignIn(response) {
     }
   };
 
+  _userConfig.user.cred = response;
   _userConfig.user.email = _Authorized.user.email;
   _userConfig.user.Pict = _Authorized.user.picture;
   _userConfig.user.name = _Authorized.user.name;

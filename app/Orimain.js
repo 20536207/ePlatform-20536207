@@ -11,6 +11,7 @@ $(document).ready(function () {
     };
     _userConfig = {
         user: {
+            cred: null,
             email: "",
             Pict: "",
             name: "",
