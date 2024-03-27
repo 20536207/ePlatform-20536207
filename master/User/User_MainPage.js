@@ -11,8 +11,7 @@ $(document).ready(function () {
       "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;'>" +
       "<div id='UserAccount' style='margin: 5px 0 5px 0;'></div>" +
 
-
-      '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="signin_with"' +
+      '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="continue_with"' +
       'data-size="medium" data-logo_alignment="center">' +
       '</div>'
     )
