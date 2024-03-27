@@ -16,6 +16,7 @@ $(document).ready(function () {
       '</div>'
     )
   );
+  document.getElementById("UserPict").style.display = 'none';
 
   for (let i = 1; i <= 20; i++) {
     $("#UserPage").append(
@@ -87,6 +88,7 @@ function onSignIn(response) {
   _userConfig.user.desc = "user trial";
 
   document.getElementById("UserPict").src = _Authorized.user.picture;
+  document.getElementById("UserPict").style.display = 'inline-flex';
   document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
 
 }
