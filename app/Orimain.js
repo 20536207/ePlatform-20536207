@@ -11,9 +11,9 @@ $(document).ready(function () {
     };
     _userConfig = {
         user: {
-            email: "",
-            Pict: "",
-            name: "",
+            email: "-",
+            Pict: "-",
+            name: "-",
             org: "viewer",
             desc: "user non organization",
         }

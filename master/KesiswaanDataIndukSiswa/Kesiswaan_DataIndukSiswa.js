@@ -52,7 +52,7 @@ $(document).ready(function () {
                     caption: 'Tertanggal',
                     dataField: 'C04',
                     dataType: 'date',
-                    //format: 'dd/MM/yyyy',
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Gender',
@@ -68,7 +68,7 @@ $(document).ready(function () {
                     caption: 'Tanggal Lahir',
                     dataField: 'C07',
                     dataType: 'date',
-                    //format: 'dd/MM/yyyy',
+                    format: "dd/MM/yyyy",
                 }, {
                     caption: 'Anak Ke-',
                     dataField: 'C08',
@@ -90,7 +90,7 @@ $(document).ready(function () {
                     caption: 'Tertanggal',
                     dataField: 'D02',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Alamat',
@@ -157,7 +157,7 @@ $(document).ready(function () {
                     caption: 'Tertanggal',
                     dataField: 'E03',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Alamat',
@@ -252,7 +252,7 @@ $(document).ready(function () {
                     caption: 'Tanggal Lahir',
                     dataField: 'F06',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Agama',
@@ -278,7 +278,7 @@ $(document).ready(function () {
                     caption: 'Tanggal Meninggal',
                     dataField: 'F11',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }],
             },
@@ -315,7 +315,7 @@ $(document).ready(function () {
                     caption: 'Tanggal Lahir',
                     dataField: 'G06',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Agama',
@@ -341,7 +341,7 @@ $(document).ready(function () {
                     caption: 'Tanggal Meninggal',
                     dataField: 'G11',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }],
             },
@@ -383,7 +383,7 @@ $(document).ready(function () {
                     caption: 'Tanggal Lahir',
                     dataField: 'H07',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Agama',
@@ -504,7 +504,7 @@ $(document).ready(function () {
                     caption: 'Tertanggal',
                     dataField: 'K03',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }, {
                     caption: 'Classical',
@@ -528,7 +528,7 @@ $(document).ready(function () {
                     caption: 'Tertanggal',
                     dataField: 'L03',
                     dataType: 'date',
-                    //format: "dd/MM/yyyy",
+                    format: "dd/MM/yyyy",
 
                 }]
             },
@@ -600,7 +600,7 @@ $(document).ready(function () {
                         caption: 'Tertanggal Non Aktif',
                         dataField: 'N04',
                         dataType: 'date',
-                        //format: "dd/MM/yyyy",
+                        format: "dd/MM/yyyy",
 
                     }, {
                         caption: 'Satuan Pendidikan Lanjutan',
