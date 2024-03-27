@@ -248,7 +248,7 @@ function _PageSidebar(_dataSource) {
                 scrollByThumb: true,
                 useNativeScrolling: false,
                 groupTemplate(data) {
-                    return $(`<b style="color: rgba(28, 168, 221, 1)">${data.key}</b>`);
+                    return $(`<a>${data.key}</a>`);
                 },
                 width: 265,
                 selectionMode: "single",

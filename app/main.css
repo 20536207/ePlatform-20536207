@@ -9,6 +9,10 @@ body {
   min-width: 52px;
 }
 
+.dx-list-group-header {
+  background-color: rgba(100, 100, 100, 0.2);
+}
+
 .items-before {
   border-right: 1px rgba(100, 100, 100, 0.4) outset;
 }
