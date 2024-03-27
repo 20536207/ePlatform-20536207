@@ -11,9 +11,9 @@ $(document).ready(function () {
     };
     _userConfig = {
         user: {
-            email: "-",
-            Pict: "-",
-            name: "-",
+            email: "",
+            Pict: "",
+            name: "",
             org: "viewer",
             desc: "user non organization",
         }
@@ -61,7 +61,6 @@ $(document).ready(function () {
                     visible: true,
                     onClick: () => {
                         if (_userConfig.user.email != "" && _userConfig.user.name != "") {
-                            _PageSidebar("/data/NavMain.json");
                             _LayoutContains.toggle();
                         };
                     }
@@ -133,6 +132,7 @@ $(document).ready(function () {
         shading: $(window).width() < 600 ? true : false,
         closeOnOutsideClick: true,
     }).dxDrawer('instance');
+    _PageSidebar("/data/NavMain.json");
 
 
     //Item PageToolbar =================================================
