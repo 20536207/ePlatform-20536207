@@ -173,7 +173,7 @@ $(document).ready(function () {
                 // widget: "dxButton", //dxButton|dxButtonGroup|dxToolbar|dxTabs
                 locateInMenu: "never", //auto|never|always
                 visible: true,
-                text: "actPageContains",
+                text: "",
                 cssClass: "Page-Title",
                 options: {
                 },
