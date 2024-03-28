@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     //==================================================================================================================
     GoPdfJsViewer(
-        _arrVarGlobal._PdfFilePageContains,
+        _main.arrVarGlobal._PdfFilePageContains,
         document.getElementById("pdfPageContains")
     );
 

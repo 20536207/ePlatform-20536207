@@ -52,9 +52,9 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
     let _pdfPageContainsToolbar = $("#pdfPageContainsToolbar").dxButtonGroup(_pdfToolItems).dxButtonGroup("instance"); // OR 
     _pdfPageContainsToolbar.option("visible", $(window).width() > 480 && $(window).width() < 980 ? true : false);
 
-    _PageToolbar.option("items[2].options", _pdfToolItems);
-    _PageToolbar.option("items[2].visible", $(window).width() > 980 ? true : false);
-    _PageToolbar.option("items[2].options.stylingMode", "text");
+    _element.PageToolbar.option("items[2].options", _pdfToolItems);
+    _element.PageToolbar.option("items[2].visible", $(window).width() > 980 ? true : false);
+    _element.PageToolbar.option("items[2].options.stylingMode", "text");
 
     //reconfig of tool options items
     for (let ii = 0; ii < _pdfToolItems.items.length; ii++) {

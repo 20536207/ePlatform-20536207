@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  _arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
+  _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
   // ===============================================================================================
   const

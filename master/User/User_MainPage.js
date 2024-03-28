@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  _arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
+  _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
   // ===============================================================================================
   $("#UserAuthorized").append(
@@ -17,10 +17,10 @@ $(document).ready(function () {
     )
   );
 
-  if (_userConfig.user.cred == null){
+  if (_main.userConfig.user.cred == null){
     document.getElementById("UserPict").style.display = 'none';
   } else{
-    onSignIn(_userConfig.user.cred);
+    onSignIn(_main.userConfig.user.cred);
   };
 
   for (let i = 1; i <= 20; i++) {
@@ -40,7 +40,7 @@ $(document).ready(function () {
           )
         },
         onClick(e) {
-          _notify('option ' + $('div').index(this) + ' masih proses ritual');
+          _notify("option "+$('div').index(this)+" masih proses ritual");
         },
       })
     )
@@ -73,29 +73,29 @@ function decodeJwtResponse(token) {
 
 function onSignIn(response) {
   const responsePayload = decodeJwtResponse(response.credential);
-  _Authorized = {
-    "user": {
-      "id": responsePayload.sub,
-      "email": responsePayload.email,
-      "verified_email": responsePayload.email_verified,
-      "name": responsePayload.name,
-      "given_name": responsePayload.given_name,
-      "family_name": responsePayload.family_name,
-      "picture": responsePayload.picture,
-      "locale": responsePayload.locale,
-    }
-  };
+  // _Authorized = {
+  //   "user": {
+  //     "id": responsePayload.sub,
+  //     "email": responsePayload.email,
+  //     "verified_email": responsePayload.email_verified,
+  //     "name": responsePayload.name,
+  //     "given_name": responsePayload.given_name,
+  //     "family_name": responsePayload.family_name,
+  //     "picture": responsePayload.picture,
+  //     "locale": responsePayload.locale,
+  //   }
+  // };
 
-  _userConfig.user.cred = response;
-  _userConfig.user.email = _Authorized.user.email;
-  _userConfig.user.Pict = _Authorized.user.picture;
-  _userConfig.user.name = _Authorized.user.name;
-  _userConfig.user.org = "viewer";
-  _userConfig.user.desc = "user trial";
+  _main.userConfig.user.cred = response;
+  _main.userConfig.user.email = responsePayload.email;
+  _main.userConfig.user.Pict = responsePayload.picture;
+  _main.userConfig.user.name = responsePayload.name;
+  _main.userConfig.user.org = "viewer";
+  _main.userConfig.user.desc = "user trial";
 
-  document.getElementById("UserPict").src = _Authorized.user.picture;
+  document.getElementById("UserPict").src = _main.userConfig.user.Pict;
   document.getElementById("UserPict").style.display = 'inline-flex';
-  document.getElementById("UserAccount").innerHTML = _Authorized.user.name + '<br>' + _Authorized.user.email;
+  document.getElementById("UserAccount").innerHTML = _main.userConfig.user.name + '<br>' + _main.userConfig.user.email;
 
 }
 

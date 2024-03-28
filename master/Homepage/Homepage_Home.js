@@ -1,6 +1,6 @@
-_PageToolbar.option("items[1].text", 'Home');
-_PageToolbar.option("items[2].visible", false);
-_arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
+_element.PageToolbar.option("items[1].text", 'Home');
+_element.PageToolbar.option("items[2].visible", false);
+_main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
 // ===============================================================================================
 $(document).ready(function () {
@@ -15,7 +15,7 @@ $(document).ready(function () {
             { ratio: 1, screen: 'sm lg' }, //07
         ],
         cols: [
-            { ratio: 3 },
+            { ratio: 4 },
             { ratio: 1, screen: 'lg' },
         ],
         singleColumnScreen: 'sm',
@@ -122,14 +122,14 @@ $(document).ready(function () {
                         )
                     },
                     onClick(e) {
-                        _PageToolbar.option("items[1].text", itemData.text);
-                        _PageToolbar.option("items[2].visible", false);
+                        _element.PageToolbar.option("items[1].text", itemData.text);
+                        _element.PageToolbar.option("items[2].visible", false);
 
                         $("#PageContains").empty();
-                        _arrVarGlobal._actPageContains = itemData.target;
-                        _arrVarGlobal._PdfFilePageContains = "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf";
-                        _arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
-                        return $("#PageContains").load(_arrVarGlobal._actPageContains);
+                        _main.arrVarGlobal._actPageContains = itemData.target;
+                        _main.arrVarGlobal._PdfFilePageContains = "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf";
+                        _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
+                        return $("#PageContains").load(_main.arrVarGlobal._actPageContains);
                     },
                 })
             )
