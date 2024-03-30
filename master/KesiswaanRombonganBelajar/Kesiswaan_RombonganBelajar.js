@@ -6,7 +6,7 @@ $(document).ready(function () {
     const
         _objData = {
             SumIDRombel: {
-                column: 'B01',
+                column: 'A01',
                 summaryType: 'count',
                 displayFormat: 'Total : ( {0} Peserta Didik )',
                 alignByColumn: true,
@@ -16,7 +16,7 @@ $(document).ready(function () {
 
             TBSummaryInfo: {
                 groupItems: [{
-                    column: 'B01',
+                    column: 'A01',
                     summaryType: 'count',
                     displayFormat: 'Total : ( {0} Peserta Didik )',
                     alignByColumn: true,
@@ -25,7 +25,7 @@ $(document).ready(function () {
                 },],
 
                 totalItems: [{
-                    column: 'B01',
+                    column: 'A01',
                     summaryType: 'count',
                     displayFormat: 'Total : ( {0} Peserta Didik )',
                     alignByColumn: true,
