@@ -94,7 +94,9 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
 
 function OnRenderPage(_pdffile, _pdfPageContains) {
 
+    $(_pdfPageContains).empty();
     //===================================================================================
+
     pdfjsLib.getDocument(_pdffile).promise.then(_pdfInfo => {
 
         let _renderTask;
