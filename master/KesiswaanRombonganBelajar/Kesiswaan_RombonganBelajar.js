@@ -10,7 +10,7 @@ $(document).ready(function () {
                 summaryType: 'count',
                 displayFormat: 'Total : ( {0} Peserta Didik )',
                 alignByColumn: true,
-                showInColumn: 'B01',
+                showInColumn: 'A01',
                 showInGroupFooter: true,
             },
 
@@ -20,7 +20,7 @@ $(document).ready(function () {
                     summaryType: 'count',
                     displayFormat: 'Total : ( {0} Peserta Didik )',
                     alignByColumn: true,
-                    showInColumn: 'B01',
+                    showInColumn: 'A01',
                     showInGroupFooter: true,
                 },],
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
                     summaryType: 'count',
                     displayFormat: 'Total : ( {0} Peserta Didik )',
                     alignByColumn: true,
-                    showInColumn: 'B01',
+                    showInColumn: 'A01',
                     showInGroupFooter: true,
                 },]
             },
