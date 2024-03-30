@@ -95,30 +95,33 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
 function OnRenderPage(_pdffile, _pdfPageContains) {
 
     $(_pdfPageContains).empty();
-    //===================================================================================
-
     pdfjsLib.getDocument(_pdffile).promise.then(_pdfInfo => {
 
         let _renderTask;
         let _scaleCanvas;
 
         for (let npage = 1; npage <= _pdfInfo.numPages; npage++) {
-            let _idPage = "pdfPage" + npage;
-            $(_pdfPageContains).append("<canvas id=" + _idPage + "></canvas>");
+            let _idPage = "pdfPage" + npage.toString();
+            $(_pdfPageContains).append("<canvas id='" + _idPage + "'></canvas>");
 
-            _pdfInfo.getPage(npage).then(function (_pdfPage) {
-                _scaleCanvas = (_pdfPageContains.offsetWidth / _pdfPage.getViewport({ scale: 1 }).width).toFixed(1);
-                let _viewport = _pdfPage.getViewport({ scale: ((_scaleCanvas > 1 ? 1 : _scaleCanvas - 0.05) + _zoomScaleCanvas).toFixed(1) });
-                let _pdfCanvas = document.getElementById(_idPage);
+            try {
+                _pdfInfo.getPage(npage).then(function (_pdfPage) {
 
-                _pdfCanvas.width = _viewport.width;
-                _pdfCanvas.height = _viewport.height;
-                _renderTask = _pdfPage.render({
-                    canvasContext: _pdfCanvas.getContext('2d'),
-                    viewport: _viewport,
-                }).promise;
-            });
+                    _scaleCanvas = (_pdfPageContains.offsetWidth / _pdfPage.getViewport({ scale: 1 }).width).toFixed(1);
+                    let _viewport = _pdfPage.getViewport({ scale: ((_scaleCanvas > 1 ? 1 : _scaleCanvas - 0.05) + _zoomScaleCanvas).toFixed(1) });
+                    let _pdfCanvas = document.getElementById(_idPage);
 
+                    _pdfCanvas.width = _viewport.width;
+                    _pdfCanvas.height = _viewport.height;
+                    _renderTask = _pdfPage.render({
+                        canvasContext: _pdfCanvas.getContext('2d'),
+                        viewport: _viewport,
+                    }).promise;
+                });
+
+            } catch (error) { console.log(error) };
         };
     });
+    return;
+
 }
