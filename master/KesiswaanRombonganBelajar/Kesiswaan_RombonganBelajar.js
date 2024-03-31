@@ -637,7 +637,7 @@ $(document).ready(function () {
                         if (!e.component.__ready) {
                             GetJsonData(
                                 this,
-                                "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
+                                _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
                                 1316011922,                                     //SheetID
                                 "A1:CX",                                        //Range
                                 "SELECT * WHERE A <> ''"                         //Filter or Query

@@ -9,6 +9,16 @@ $(document).ready(function () {
                 appname: "e-Platform AIO",
                 appver: "20536207.01",
             },
+            gapi: {
+                clientId: "237444192144-2gf7p8ombdcbtl6ti7udeu7pkd8m7d6j.apps.googleusercontent.com",
+                apiKey: "AIzaSyD3AQeI27SHVw8W9lhw864Vq85e83n9TyI",
+                discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+                scope: "https://www.googleapis.com/auth/drive",
+            },
+            dataSource: {
+                Kesiswaan: "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
+                Kepegawaian: "",
+            }
         },
         userConfig: {
             user: {

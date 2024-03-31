@@ -2,26 +2,60 @@ $(document).ready(function () {
 
   _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
+
   // ===============================================================================================
   $("#UserAuthorized").append(
-    $('<div id="g_id_onload" data-client_id="237444192144-2gf7p8ombdcbtl6ti7udeu7pkd8m7d6j.apps.googleusercontent.com"' +
-      'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
-      '</div>' +
+    $(
+      "<div "+
+          "id='g_id_onload' "+
+          "data-client_id='"+_main.appConfig.gapi.clientId+"' "+
+          "data-context='signin' "+
+          "data-ux_mode='popup' "+
+          "data-callback='onSignIn' "+
+          "data-auto_prompt='false' >"+
+      "</div>" +
 
       "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;'>" +
       "<div id='UserAccount' style='margin: 5px 0 5px 0;'></div>" +
 
-      '<div class="g_id_signin" data-type="standart" data-shape="pill" data-theme="outline" data-text="continue_with"' +
-      'data-size="medium" data-logo_alignment="center">' +
-      '</div>'
+      "<div "+ 
+          "class='g_id_signin' "+
+          "data-type='standart' "+
+          "data-shape='pill' "+
+          "data-theme='outline' "+
+          "data-text='continue_with' "+
+          "data-size='medium' "+
+          "data-logo_alignment='center' >"+
+      "</div>"
     )
   );
 
-  if (_main.userConfig.user.cred == null){
+  if (_main.userConfig.user.cred == null) {
     document.getElementById("UserPict").style.display = 'none';
-  } else{
+  } else {
     onSignIn(_main.userConfig.user.cred);
   };
+
+
+  // _btnSignInOut = $("#btnSignInOut").dxButton({
+  //   type: 'normal',
+  //   stylingMode: 'contained',
+  //   hoverStateEnabled: false,
+  //   focusStateEnabled: false,
+  //   activeStateEnabled: true,
+  //   text: "",
+  //   onClick(e) {
+  //     if (this.option("text") == "SIGN IN") {
+  //       gapi.auth2.getAuthInstance().signIn();
+  //     } else {
+  //       gapi.auth2.getAuthInstance().signOut().then(function(){
+  //         location.reload();
+  //       });
+  //       gapi.auth2.getAuthInstance().disconnect();
+  //     }
+  //   },
+
+  // }).dxButton("instance");
 
   for (let i = 1; i <= 20; i++) {
     $("#UserPage").append(
@@ -40,7 +74,7 @@ $(document).ready(function () {
           )
         },
         onClick(e) {
-          _notify("option "+$('div').index(this)+" masih proses ritual");
+          _notify("option " + $('div').index(this) + " masih proses ritual");
         },
       })
     )
@@ -96,12 +130,5 @@ function onSignIn(response) {
   document.getElementById("UserPict").src = _main.userConfig.user.Pict;
   document.getElementById("UserPict").style.display = 'inline-flex';
   document.getElementById("UserAccount").innerHTML = _main.userConfig.user.name + '<br>' + _main.userConfig.user.email;
-
-}
-
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-  });
+  
 }

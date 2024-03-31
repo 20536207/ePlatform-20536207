@@ -19,9 +19,18 @@
 
 }
 
+/* #btnSignInOut{
+  border-radius: 25px;
+  width: 75%;
+  height: 36px;
+  font-weight: bold;
+  font-size: larger;
+} */
+
 .g_id_signin>* {
   display: inline-flex;
 }
+
 
 #UserPage {
   text-align: center;
