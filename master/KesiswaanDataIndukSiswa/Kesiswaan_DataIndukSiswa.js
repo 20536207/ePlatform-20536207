@@ -625,10 +625,10 @@ $(document).ready(function () {
                     ]
                 }
             ],
-        },
+        };
 
-        _objElement = {
-            InformasiDataIndukSiswa:
+        // _objElement = {
+        //     InformasiDataIndukSiswa:
                 $('#InformasiDataIndukSiswa').dxDataGrid({
                     onContentReady: function (e) {
                         if (!e.component.__ready) {
@@ -910,6 +910,6 @@ $(document).ready(function () {
 
                         }
                     },
-                }).dxDataGrid('instance'),
-        };
+                }).dxDataGrid('instance');
+        // };
 });

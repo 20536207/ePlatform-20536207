@@ -2530,10 +2530,10 @@ $(document).ready(function () {
                     _objData.SumUp12Th[0], _objData.SumUp12Th[1], _objData.SumUp12Th[2]
                 ],
             },
-        },
+        };
 
-        _objElement = {
-            InformasiPesertaDidik:
+        // _objElement = {
+        //     InformasiPesertaDidik:
                 $('#InformasiPesertaDidik').dxDataGrid({
                     onContentReady: function (e) {
                         if (!e.component.__ready) {
@@ -2831,8 +2831,8 @@ $(document).ready(function () {
                             }).appendTo(container);
                         },
                     },
-                }).dxDataGrid('instance'),
+                }).dxDataGrid('instance');
 
-        };
+        // };
 
 });

@@ -628,10 +628,10 @@ $(document).ready(function () {
                 },
 
             ],
-        },
+        };
 
-        _objElement = {
-            InformasiRombonganBelajar:
+        // _objElement = {
+        //     InformasiRombonganBelajar:
                 $('#InformasiRombonganBelajar').dxDataGrid({
                     onContentReady: function (e) {
                         if (!e.component.__ready) {
@@ -767,7 +767,7 @@ $(document).ready(function () {
                     // sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
                     summary: _objData.TBSummaryInfo,
                     //toolbar: undefined,
-                }).dxDataGrid('instance'),
-        };
+                }).dxDataGrid('instance');
+        // };
 
 });
