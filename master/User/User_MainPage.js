@@ -4,7 +4,7 @@ $(document).ready(function () {
 
   // ===============================================================================================
   $("#UserAuthorized").append(
-    $('<div id="g_id_onload" data-client_id="641473140302-3a81n79atvb0rv3jov0da59ip7o2navp.apps.googleusercontent.com"' +
+    $('<div id="g_id_onload" data-client_id="237444192144-2gf7p8ombdcbtl6ti7udeu7pkd8m7d6j.apps.googleusercontent.com"' +
       'data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false" >' +
       '</div>' +
 
