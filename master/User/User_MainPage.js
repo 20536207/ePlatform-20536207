@@ -2,7 +2,6 @@ $(document).ready(function () {
 
   _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
-
   // ===============================================================================================
   $("#UserAuthorized").append(
     $(
@@ -12,11 +11,11 @@ $(document).ready(function () {
           "data-context='signin' "+
           "data-ux_mode='popup' "+
           "data-callback='onSignIn' "+
-          "data-auto_prompt='false' >"+
-      "</div>" +
+          "data-auto_prompt='false' "+
+      "</div>"+
 
       "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;'>" +
-      "<div id='UserAccount' style='margin: 5px 0 5px 0;'></div>" +
+      "<div id='UserAccount' style='margin: 5px 0 5px 0;'></div>"+
 
       "<div "+ 
           "class='g_id_signin' "+
@@ -36,15 +35,16 @@ $(document).ready(function () {
     onSignIn(_main.userConfig.user.cred);
   };
 
-
-  // _btnSignInOut = $("#btnSignInOut").dxButton({
+  // $("#btnSignInOut").dxButton({
   //   type: 'normal',
   //   stylingMode: 'contained',
   //   hoverStateEnabled: false,
   //   focusStateEnabled: false,
   //   activeStateEnabled: true,
+  //   elementAttr:{class:"g_id_signin"},
   //   text: "",
   //   onClick(e) {
+  //     console.log(document.getElementById("g_id_onload"));
   //     if (this.option("text") == "SIGN IN") {
   //       gapi.auth2.getAuthInstance().signIn();
   //     } else {
@@ -54,7 +54,6 @@ $(document).ready(function () {
   //       gapi.auth2.getAuthInstance().disconnect();
   //     }
   //   },
-
   // }).dxButton("instance");
 
   for (let i = 1; i <= 20; i++) {
@@ -130,5 +129,5 @@ function onSignIn(response) {
   document.getElementById("UserPict").src = _main.userConfig.user.Pict;
   document.getElementById("UserPict").style.display = 'inline-flex';
   document.getElementById("UserAccount").innerHTML = _main.userConfig.user.name + '<br>' + _main.userConfig.user.email;
-  
+
 }

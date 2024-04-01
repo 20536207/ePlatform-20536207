@@ -19,13 +19,13 @@
 
 }
 
-/* #btnSignInOut{
-  border-radius: 25px;
+#btnSignInOut{
+  /* border-radius: 25px; */
   width: 75%;
-  height: 36px;
+  /* height: 36px; */
   font-weight: bold;
-  font-size: larger;
-} */
+  /* font-size: larger; */
+}
 
 .g_id_signin>* {
   display: inline-flex;

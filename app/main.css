@@ -13,14 +13,6 @@ body {
   background-color: rgba(100, 100, 100, 0.2);
 }
 
-.items-before {
-  border-right: 1px rgba(100, 100, 100, 0.4) outset;
-}
-
-.items-after {
-  border-left: 1px rgba(100, 100, 100, 0.4) inset;
-}
-
 /* ==================================================================================== */
 #MainLayout {
   display: flex;
@@ -91,12 +83,16 @@ body {
   padding-left: 10px;
 }
 
-.items-before {
-  border-right: 1px rgba(100, 100, 100, 0.4) outset;
+#PageToolbar >* .items-before {
+  border-right-width: 1px;
+  border-right-color: inherit;
+  border-right-style: outset;
 }
 
-.items-after {
-  border-left: 1px rgba(100, 100, 100, 0.4) inset;
+#PageToolbar >* .items-after {
+  border-left-width: 1px;
+  border-left-color: inherit;
+  border-left-style: inset;
 }
 
 /* ==================================================================================== */
