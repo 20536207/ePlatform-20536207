@@ -95,12 +95,12 @@
         "items": [
             {
                 "id": "03-01",
-                "text": "Instrumen Pegawai",
+                "text": "Instrumen Data Pegawai",
                 "icon": "tags",
                 "badge": "",
                 "disabled": false,
                 "visible": true,
-                "target": "./master/KepegawaianInstrumenPegawai/Kepegawaian_InstrumenPegawai.html"
+                "target": "./master/KepegawaianInstrumenDataPegawai/Kepegawaian_InstrumenDataPegawai.html"
             },
             {
                 "id": "03-02",

@@ -57,7 +57,7 @@ $(document).ready(function () {
                     ],
                 },
                 {
-                    caption: 'Instrumen Data Pegawai :',
+                    caption: 'Data Pokok Kepegawaian :',
                     columns: [
                         {
                             caption: "Putusan/Penetapan Pokok Penghasilan",
@@ -459,8 +459,8 @@ $(document).ready(function () {
         };
 
     // _objElement = {
-    //     InformasiInstrumenPegawai:
-    $('#InformasiInstrumenPegawai').dxDataGrid({
+    //     InformasiInstrumenDataPegawai:
+    $('#InformasiInstrumenDataPegawai').dxDataGrid({
         onContentReady: function (e) {
             if (!e.component.__ready) {
                 GetJsonData(
