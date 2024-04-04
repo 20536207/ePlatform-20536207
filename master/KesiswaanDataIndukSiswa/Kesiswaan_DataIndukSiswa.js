@@ -6,7 +6,7 @@ $(document).ready(function () {
     // ===============================================================================================
     const
         _objData = {
-            TbDataSiswa: [
+            TbColumnsParent: [
                 {
                     caption: 'NIPD',
                     fixed: true,
@@ -211,8 +211,7 @@ $(document).ready(function () {
                         caption: 'Jarak (Km)',
                         dataField: 'E13',
                         dataType: 'number',
-                        format: '0.000'
-
+                        format: { type: "fixedPoint", precision: 3, },
                     }, {
                         caption: 'Waktu (Menit)',
                         dataField: 'E14',
@@ -421,8 +420,7 @@ $(document).ready(function () {
                         caption: 'Berat Badan (Kg)',
                         dataField: 'I03',
                         dataType: 'number',
-                        // format: '0.000',
-
+                        format: { type: "fixedPoint", precision: 3, },
                     }, {
                         caption: 'Lingkar Kepala (Cm)',
                         dataField: 'I04',
@@ -582,7 +580,7 @@ $(document).ready(function () {
                 },]
             },
 
-            TbDataRombel: [
+            TbColumnsChild: [
                 {
                     caption: 'Riwayat Rombongan Belajar',
                     columns: [
@@ -627,28 +625,182 @@ $(document).ready(function () {
             ],
         };
 
-        // _objElement = {
-        //     InformasiDataIndukSiswa:
-                $('#InformasiDataIndukSiswa').dxDataGrid({
+    // _objElement = {
+    //     InformasiDataIndukSiswa:
+    $('#InformasiDataIndukSiswa').dxDataGrid({
+        onContentReady: function (e) {
+            if (!e.component.__ready) {
+                GetJsonData(
+                    this,
+                    _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
+                    2138208914,                           //SheetID
+                    "A1:CO",                              //Range
+                    "SELECT * WHERE A <> ''"              //Filter or Query
+                );
+                e.component.__ready = true;
+            };
+        },
+        allowColumnReordering: true,
+        allowColumnResizing: true,
+        columnHidingEnabled: false,
+        columnResizingMode: 'widget',
+        columnAutoWidth: true,
+        columnChooser: {
+            enabled: true,
+            mode: "select",
+            sortOrder: undefined,
+            title: "Column Chooser",
+            search: {
+                editorOptions: {},
+                enabled: true,
+                timeout: null,
+            },
+        },
+        columnFixing: {
+            enabled: true,
+        },
+        columns: _objData.TbColumnsParent,
+        editing: {
+            mode: 'row',
+            allowUpdating: false,
+            allowAdding: false,
+            allowDeleting: false,
+            confirmDelete: true,
+            useIcons: true,
+        },
+        export: {
+            enabled: true,
+            formats: ['xlsx', 'pdf'],
+            allowExportSelectedData: true,
+        },
+        onExporting(e) {
+            const _nmfile = _element.PageToolbar.option("items[1].text");
+            if (e.format === 'xlsx') {
+                const workbook = new ExcelJS.Workbook();
+                const worksheet = workbook.addWorksheet('Data');
+                DevExpress.excelExporter.exportDataGrid({
+                    component: e.component,
+                    worksheet,
+                    autoFilterEnabled: true,
+                }).then(() => {
+                    workbook.xlsx.writeBuffer().then((buffer) => {
+                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }), _nmfile + '.xlsx');
+                    });
+                });
+                e.cancel = true;
+            }
+            else if (e.format === 'pdf') {
+                const doc = new jsPDF('l', 'pt');
+                DevExpress.pdfExporter.exportDataGrid({
+                    jsPDFDocument: doc,
+                    component: e.component,
+                }).then(() => {
+                    doc.save(_nmfile + '.pdf');
+                });
+            }
+        },
+        // filterValue: ["A01", "contains", options.data.A01],
+        filterRow: { visible: true },
+        filterPanel: { visible: true },
+
+        groupPanel: { visible: false },
+        grouping: {
+            autoExpandAll: false,
+        },
+
+        headerFilter: { visible: true },
+        hoverStateEnabled: false,
+
+        paging: {
+            pageSize: 20,
+        },
+        pager: {
+            allowedPageSizes: [5, 10, 15, 20, 25, 50],
+            displayMode: "compact",
+            showInfo: true,
+            showNavigationButtons: true,
+            showPageSizeSelector: true,
+            visible: true,
+        },
+
+        remoteOperations: false,
+
+        showBorders: true,
+        showColumnHeaders: true,
+        showColumnLines: true,
+        showRowLines: true,
+        sorting: {
+            mode: 'multiple',
+        },
+        searchPanel: {
+            visible: true,
+            highlightCaseSensitive: false,
+        },
+        selection: {
+            allowSelectAll: true,
+            deferred: false,
+            mode: "multiple",
+            selectAllMode: "allPages",
+            showCheckBoxesMode: "click"
+        },
+        scrolling: {
+            columnRenderingMode: "standard",
+            mode: "standard",
+            preloadEnabled: false,
+            renderAsync: undefined,
+            rowRenderingMode: "standard",
+            scrollByContent: true,
+            scrollByThumb: true,
+            showScrollbar: "onHover",
+            useNative: false
+        },
+        wordWrapEnabled: false,
+        // sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+        // summary: _objData.TBSummaryInfo,
+        //toolbar: undefined,
+        masterDetail: {
+            enabled: true,
+            template(container, options) {
+                $("<div>").dxDataGrid({
                     onContentReady: function (e) {
                         if (!e.component.__ready) {
                             GetJsonData(
                                 this,
                                 _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
-                                2138208914,                           //SheetID
-                                "A1:CO",                              //Range
-                                "SELECT * WHERE A <> ''"              //Filter or Query
+                                1316011922,                                         //SheetID
+                                "A1:CX",                                            //Range
+                                "SELECT E, A, CT, CU, CV, CW, CX WHERE E = '" + options.data.B01 + "'"     //Filter or Query
                             );
                             e.component.__ready = true;
                         };
                     },
+                    //============
+                    // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
+                    //   jsondata = jsondata.filter(function (obj) {
+                    //     return obj.A01.includes(options.data.A01);
+                    //   });
+                    // }),
+                    //============
+                    // dataSource: DevExpress.data.query($.getJSON("/data/InformasiDataIndukSiswa.json")
+                    // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
+                    //     .sortBy("birthYear")
+                    //     .select("name", "birthYear")
+                    //     .toArray()
+                    // ),
+                    columns: _objData.TbColumnsChild,
+                    // filterValue: [["B01", "=", options.data.B01]],
+                    showBorders: true,
+                    showColumnHeaders: true,
+                    showColumnLines: true,
+                    showRowLines: true,
+                    columnHidingEnabled: false,
                     allowColumnReordering: true,
                     allowColumnResizing: true,
-                    columnHidingEnabled: false,
                     columnResizingMode: 'widget',
                     columnAutoWidth: true,
+                    wordWrapEnabled: false,
                     columnChooser: {
-                        enabled: true,
+                        enabled: false,
                         mode: "select",
                         sortOrder: undefined,
                         title: "Column Chooser",
@@ -661,7 +813,18 @@ $(document).ready(function () {
                     columnFixing: {
                         enabled: true,
                     },
-                    columns: _objData.TbDataSiswa,
+                    hoverStateEnabled: false,
+                    paging: {
+                        pageSize: 'null',
+                    },
+                    pager: {
+                        allowedPageSizes: [5, 10, 15, 20, 25, 50],
+                        displayMode: "compact",
+                        showInfo: true,
+                        showNavigationButtons: true,
+                        showPageSizeSelector: true,
+                        visible: false,
+                    },
                     editing: {
                         mode: 'row',
                         allowUpdating: false,
@@ -671,12 +834,12 @@ $(document).ready(function () {
                         useIcons: true,
                     },
                     export: {
-                        enabled: true,
+                        enabled: false,
                         formats: ['xlsx', 'pdf'],
                         allowExportSelectedData: true,
                     },
                     onExporting(e) {
-                        const _nmfile = 'Data Induk Siswa';
+                        const _nmfile = _element.PageToolbar.option("items[1].text");
                         if (e.format === 'xlsx') {
                             const workbook = new ExcelJS.Workbook();
                             const worksheet = workbook.addWorksheet('Data');
@@ -702,50 +865,7 @@ $(document).ready(function () {
                         }
                     },
 
-                    // filterValue: ["A01", "contains", options.data.A01],
-                    filterRow: { visible: true },
-                    filterPanel: { visible: true },
-
-                    groupPanel: { visible: false },
-                    grouping: {
-                        autoExpandAll: false,
-                    },
-
-                    headerFilter: { visible: true },
-                    hoverStateEnabled: false,
-
-                    paging: {
-                        pageSize: 20,
-                    },
-                    pager: {
-                        allowedPageSizes: [5, 10, 15, 20, 25, 50],
-                        displayMode: "compact",
-                        showInfo: true,
-                        showNavigationButtons: true,
-                        showPageSizeSelector: true,
-                        visible: true,
-                    },
-
                     remoteOperations: false,
-
-                    showBorders: true,
-                    showColumnHeaders: true,
-                    showColumnLines: true,
-                    showRowLines: true,
-                    sorting: {
-                        mode: 'multiple',
-                    },
-                    searchPanel: {
-                        visible: true,
-                        highlightCaseSensitive: false,
-                    },
-                    selection: {
-                        allowSelectAll: true,
-                        deferred: false,
-                        mode: "multiple",
-                        selectAllMode: "allPages",
-                        showCheckBoxesMode: "click"
-                    },
                     scrolling: {
                         columnRenderingMode: "standard",
                         mode: "standard",
@@ -757,159 +877,37 @@ $(document).ready(function () {
                         showScrollbar: "onHover",
                         useNative: false
                     },
-                    wordWrapEnabled: false,
-                    // sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-                    // summary: _objData.TBSummaryInfo,
-                    //toolbar: undefined,
-                    masterDetail: {
-                        enabled: true,
-                        template(container, options) {
-                            $("<div>").dxDataGrid({
-                                onContentReady: function (e) {
-                                    if (!e.component.__ready) {
-                                        GetJsonData(
-                                            this,
-                                            _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
-                                            1316011922,                                         //SheetID
-                                            "A1:CX",                                            //Range
-                                            "SELECT E, A, CT, CU, CV, CW, CX WHERE E = '" + options.data.B01 + "'"     //Filter or Query
-                                        );
-                                        e.component.__ready = true;
-                                    };
-                                },
-                                //============
-                                // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {
-                                //   jsondata = jsondata.filter(function (obj) {
-                                //     return obj.A01.includes(options.data.A01);
-                                //   });
-                                // }),
-                                //============
-                                // dataSource: DevExpress.data.query($.getJSON("/data/InformasiDataIndukSiswa.json")
-                                // .filter([["A01", "contains", options.data.A01], "and", ["N02", "=", "Aktif"]])
-                                //     .sortBy("birthYear")
-                                //     .select("name", "birthYear")
-                                //     .toArray()
-                                // ),
-                                columns: _objData.TbDataRombel,
-                                // filterValue: [["B01", "=", options.data.B01]],
-                                showBorders: true,
-                                showColumnHeaders: true,
-                                showColumnLines: true,
-                                showRowLines: true,
-                                columnHidingEnabled: false,
-                                allowColumnReordering: true,
-                                allowColumnResizing: true,
-                                columnResizingMode: 'widget',
-                                columnAutoWidth: true,
-                                wordWrapEnabled: false,
-                                columnChooser: {
-                                    enabled: true,
-                                    mode: "select",
-                                    sortOrder: undefined,
-                                    title: "Column Chooser",
-                                    search: {
-                                        editorOptions: {},
-                                        enabled: true,
-                                        timeout: null,
-                                    },
-                                },
-                                columnFixing: {
-                                    enabled: true,
-                                },
-                                hoverStateEnabled: false,
-                                paging: {
-                                    pageSize: 'null',
-                                },
-                                pager: {
-                                    allowedPageSizes: [5, 10, 15, 20, 25, 50],
-                                    displayMode: "compact",
-                                    showInfo: true,
-                                    showNavigationButtons: true,
-                                    showPageSizeSelector: true,
-                                    visible: false,
-                                },
-                                editing: {
-                                    mode: 'row',
-                                    allowUpdating: false,
-                                    allowAdding: false,
-                                    allowDeleting: false,
-                                    confirmDelete: true,
-                                    useIcons: true,
-                                },
-                                export: {
-                                    enabled: true,
-                                    formats: ['xlsx', 'pdf'],
-                                    allowExportSelectedData: true,
-                                },
-                                onExporting(e) {
-                                    if (e.format === 'xlsx') {
-                                        const workbook = new ExcelJS.Workbook();
-                                        const worksheet = workbook.addWorksheet('Report');
-                                        DevExpress.excelExporter.exportDataGrid({
-                                            component: e.component,
-                                            worksheet,
-                                            autoFilterEnabled: true,
-                                        }).then(() => {
-                                            workbook.xlsx.writeBuffer().then((buffer) => {
-                                                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'report.xlsx');
-                                            });
-                                        });
-                                        e.cancel = true;
-                                    }
-                                    else if (e.format === 'pdf') {
-                                        const doc = new jsPDF('l', 'pt');
-                                        DevExpress.pdfExporter.exportDataGrid({
-                                            jsPDFDocument: doc,
-                                            component: e.component,
-                                        }).then(() => {
-                                            doc.save('report.pdf');
-                                        });
-                                    }
-                                },
-
-                                remoteOperations: false,
-                                scrolling: {
-                                    columnRenderingMode: "standard",
-                                    mode: "standard",
-                                    preloadEnabled: false,
-                                    renderAsync: undefined,
-                                    rowRenderingMode: "standard",
-                                    scrollByContent: true,
-                                    scrollByThumb: true,
-                                    showScrollbar: "onHover",
-                                    useNative: false
-                                },
-                                sorting: {
-                                    mode: 'multiple',
-                                },
-                                searchPanel: {
-                                    visible: true,
-                                    highlightCaseSensitive: false,
-                                },
-                                selection: {
-                                    allowSelectAll: true,
-                                    deferred: false,
-                                    mode: "multiple",
-                                    selectAllMode: "allPages",
-                                    showCheckBoxesMode: "click"
-                                },
-                                filterRow: { visible: true },
-                                filterPanel: { visible: false },
-                                headerFilter: { visible: false },
-                                groupPanel: { visible: false },
-                                grouping: {
-                                    autoExpandAll: true,
-                                },
-                                wordWrapEnabled: false,
-                                //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-                                //summary: _TBSummaryDashboard,
-                                //toolbar: undefined,
-                                rowAlternationEnabled: false,
-
-                            }).appendTo(container);
-
-                        }
+                    sorting: {
+                        mode: 'multiple',
                     },
-                }).dxDataGrid('instance');
-        // };
+                    searchPanel: {
+                        visible: false,
+                        highlightCaseSensitive: false,
+                    },
+                    selection: {
+                        allowSelectAll: true,
+                        deferred: false,
+                        mode: "multiple",
+                        selectAllMode: "allPages",
+                        showCheckBoxesMode: "click"
+                    },
+                    filterRow: { visible: true },
+                    filterPanel: { visible: false },
+                    headerFilter: { visible: false },
+                    groupPanel: { visible: false },
+                    grouping: {
+                        autoExpandAll: true,
+                    },
+                    wordWrapEnabled: false,
+                    //sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+                    //summary: _TBSummaryDashboard,
+                    //toolbar: undefined,
+                    rowAlternationEnabled: false,
+
+                }).appendTo(container);
+
+            }
+        },
+    }).dxDataGrid('instance');
+    // };
 });

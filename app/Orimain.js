@@ -17,7 +17,7 @@ $(document).ready(function () {
             },
             dataSource: {
                 Kesiswaan: "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
-                Kepegawaian: "",
+                Kepegawaian: "1CKt_wRc7-pJ9mCvyASKJ9TK11lDqMllZfXzVIsm5mgg",
             }
         },
         userConfig: {

@@ -95,12 +95,12 @@
         "items": [
             {
                 "id": "03-01",
-                "text": "Data Induk Pegawai",
+                "text": "Instrumen Pegawai",
                 "icon": "tags",
                 "badge": "",
-                "disabled": true,
+                "disabled": false,
                 "visible": true,
-                "target": "./master/KepegawaianDataIndukPegawai/Kepegawaian_DataIndukPegawai.html"
+                "target": "./master/KepegawaianInstrumenPegawai/Kepegawaian_InstrumenPegawai.html"
             },
             {
                 "id": "03-02",

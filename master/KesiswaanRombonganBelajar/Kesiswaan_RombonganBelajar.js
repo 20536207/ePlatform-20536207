@@ -34,7 +34,7 @@ $(document).ready(function () {
                 },]
             },
 
-            TbDataRombel: [
+            TbColumns: [
                 {
                     caption: 'ID Anggota Rombel',
                     fixed: true,
@@ -257,7 +257,7 @@ $(document).ready(function () {
                         caption: 'Jarak (Km)',
                         dataField: 'E13',
                         dataType: 'number',
-                        format: '0.000'
+                        format: { type: "fixedPoint", precision: 3, },
 
                     }, {
                         caption: 'Waktu (Menit)',
@@ -467,7 +467,7 @@ $(document).ready(function () {
                         caption: 'Berat Badan (Kg)',
                         dataField: 'I03',
                         dataType: 'number',
-                        // format: '0.000',
+                        format: { type: "fixedPoint", precision: 3, },
 
                     }, {
                         caption: 'Lingkar Kepala (Cm)',
@@ -664,7 +664,7 @@ $(document).ready(function () {
                     columnFixing: {
                         enabled: true,
                     },
-                    columns: _objData.TbDataRombel,
+                    columns: _objData.TbColumns,
                     editing: {
                         mode: 'row',
                         allowUpdating: false,
@@ -679,7 +679,7 @@ $(document).ready(function () {
                         allowExportSelectedData: true,
                     },
                     onExporting(e) {
-                        const _nmfile = 'Data Rombongan Belajar';
+                        const _nmfile = _element.PageToolbar.option("items[1].text");
                         if (e.format === 'xlsx') {
                             const workbook = new ExcelJS.Workbook();
                             const worksheet = workbook.addWorksheet('Data');
@@ -711,7 +711,7 @@ $(document).ready(function () {
                     filterRow: { visible: true },
                     filterPanel: { visible: true },
 
-                    groupPanel: { visible: false },
+                    groupPanel: { visible: true },
                     grouping: {
                         autoExpandAll: false,
                     },

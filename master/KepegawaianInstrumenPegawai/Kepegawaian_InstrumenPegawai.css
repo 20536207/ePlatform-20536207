@@ -1,0 +1,8 @@
+#InformasiInstrumenPegawai {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1 1 auto;
+  height: 100%;
+  padding: 10px 5px 0 5px;
+}
