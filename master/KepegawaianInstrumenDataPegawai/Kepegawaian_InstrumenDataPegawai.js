@@ -12,7 +12,7 @@ $(document).ready(function () {
                     summaryType: 'count',
                     displayFormat: 'Total : ( {0} Pegawai )',
                     alignByColumn: true,
-                    showInColumn: 'A01',
+                    showInColumn: 'ID',
                     showInGroupFooter: true,
                 },],
 
@@ -21,15 +21,19 @@ $(document).ready(function () {
                     summaryType: 'count',
                     displayFormat: 'Total : ( {0} Pegawai )',
                     alignByColumn: true,
-                    showInColumn: 'A01',
+                    showInColumn: 'ID',
                     showInGroupFooter: true,
                 },]
             },
 
             TbColumns: [
                 {
-                    caption: "Nama Pegawai",
+                    caption: "ID Pegawai",
                     fixed: true,
+                    dataField: "ID",
+                    dataType: "string",
+                },{
+                    caption: "Nama Pegawai",
                     dataField: "A01",
                     dataType: "string",
                     // format: undefined,
@@ -60,7 +64,7 @@ $(document).ready(function () {
                     caption: 'Data Pokok Kepegawaian :',
                     columns: [
                         {
-                            caption: "Putusan/Penetapan Pokok Penghasilan",
+                            caption: "Penetapan/Putusan Penghasilan",
                             dataField: "P01",
                             dataType: "string",
                         }, {
@@ -178,8 +182,76 @@ $(document).ready(function () {
                                 type: "fixedPoint",
                             },
                         }, {
-                            caption: "Gaji Terbilang",
+                            caption: "Gaji Berlaku Terbilang",
                             dataField: "P27",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Putusan/Penetapan Penugasan Pegawai :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "O01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "O02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "O03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "O04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "O05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "O06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "O07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "O08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "O09",
+                            dataType: "string",
+                        }, {
+                            caption: "Gol./Ruang",
+                            dataField: "O10",
+                            dataType: "string",
+                        }, {
+                            caption: "GolRuang",
+                            dataField: "O11",
+                            dataType: "string",
+                        }, {
+                            caption: "Pangkat",
+                            dataField: "O12",
+                            dataType: "string",
+                        }, {
+                            caption: "Jabatan ASN",
+                            dataField: "O14",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenjang Jabatan",
+                            dataField: "O15",
+                            dataType: "string",
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "O19",
                             dataType: "string",
                         },
                     ],
@@ -454,6 +526,714 @@ $(document).ready(function () {
                         },
                     ],
                 },
+                {
+                    caption: 'Penetapan/Putusan Non ASN ( Awal ) :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "G01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "G02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "G03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "G04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "G05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "G06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "G07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "G08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "G09",
+                            dataType: "string",
+                        }, {
+                            caption: "Masa Kerja",
+                            dataField: "G13",
+                            dataType: "string",
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "G19",
+                            dataType: "string",
+                        }, {
+                            caption: "Unit / Satuan Kerja",
+                            dataField: "G20",
+                            dataType: "string",
+                        }, {
+                            caption: "Instansi Pemerintahan",
+                            dataField: "G21",
+                            dataType: "string",
+                        }, {
+                            caption: "Gaji",
+                            dataField: "G22",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                            },
+                        }, {
+                            caption: "Gaji Terbilang",
+                            dataField: "G23",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Penetapan/Putusan Non ASN ( Akhir ) :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "H01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "H02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "H03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "H04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "H05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "H06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "H07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "H08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "H09",
+                            dataType: "string",
+                        }, {
+                            caption: "Masa Kerja",
+                            dataField: "H13",
+                            dataType: "string",
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "H19",
+                            dataType: "string",
+                        }, {
+                            caption: "Unit / Satuan Kerja",
+                            dataField: "H20",
+                            dataType: "string",
+                        }, {
+                            caption: "Instansi Pemerintahan",
+                            dataField: "H21",
+                            dataType: "string",
+                        }, {
+                            caption: "Gaji",
+                            dataField: "H22",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                            },
+                        }, {
+                            caption: "Gaji Terbilang",
+                            dataField: "H23",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Penetapan/Putusan CPNS :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "I01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "I02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "I03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "I04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "I05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "I06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "I07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "I08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "I09",
+                            dataType: "string",
+                        }, {
+                            caption: "Gol./Ruang",
+                            dataField: "I10",
+                            dataType: "string",
+                        }, {
+                            caption: "GolRuang",
+                            dataField: "I11",
+                            dataType: "string",
+                        }, {
+                            caption: "Pangkat",
+                            dataField: "I12",
+                            dataType: "string",
+                        }, {
+                            caption: "Masa Kerja",
+                            dataField: "I13",
+                            dataType: "string",
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "I19",
+                            dataType: "string",
+                        }, {
+                            caption: "Unit / Satuan Kerja",
+                            dataField: "I20",
+                            dataType: "string",
+                        }, {
+                            caption: "Instansi Pemerintahan",
+                            dataField: "I21",
+                            dataType: "string",
+                        }, {
+                            caption: "Gaji",
+                            dataField: "I22",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                            },
+                        }, {
+                            caption: "Gaji Terbilang",
+                            dataField: "I23",
+                            dataType: "string",
+                        }, {
+                            caption: "Peraturan Dasar Gaji",
+                            dataField: "I24",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Penetapan/Putusan ASN :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "J01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "J02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "J03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "J04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "J05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "J06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "J07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "J08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "J09",
+                            dataType: "string",
+                        }, {
+                            caption: "Gol./Ruang",
+                            dataField: "J10",
+                            dataType: "string",
+                        }, {
+                            caption: "GolRuang",
+                            dataField: "J11",
+                            dataType: "string",
+                        }, {
+                            caption: "Pangkat",
+                            dataField: "J12",
+                            dataType: "string",
+                        }, {
+                            caption: "Masa Kerja",
+                            dataField: "J13",
+                            dataType: "string",
+                        }, {
+                            caption: "Jabatan ASN",
+                            dataField: "J14",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenjang Jabatan",
+                            dataField: "J15",
+                            dataType: "string",
+                        }, {
+                            caption: "Angka Kredit",
+                            dataField: "J16",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                                precision: 3,
+                            },
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "J19",
+                            dataType: "string",
+                        }, {
+                            caption: "Unit / Satuan Kerja",
+                            dataField: "J20",
+                            dataType: "string",
+                        }, {
+                            caption: "Instansi Pemerintahan",
+                            dataField: "J21",
+                            dataType: "string",
+                        }, {
+                            caption: "Gaji",
+                            dataField: "J22",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                            },
+                        }, {
+                            caption: "Gaji Terbilang",
+                            dataField: "J23",
+                            dataType: "string",
+                        }, {
+                            caption: "Peraturan Dasar Gaji",
+                            dataField: "J24",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Penetapan/Putusan Kepangkatan :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "K01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "K02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "K03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "K04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "K05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "K06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "K07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "K08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "K09",
+                            dataType: "string",
+                        }, {
+                            caption: "Gol./Ruang",
+                            dataField: "K10",
+                            dataType: "string",
+                        }, {
+                            caption: "GolRuang",
+                            dataField: "K11",
+                            dataType: "string",
+                        }, {
+                            caption: "Pangkat",
+                            dataField: "K12",
+                            dataType: "string",
+                        }, {
+                            caption: "Masa Kerja",
+                            dataField: "K13",
+                            dataType: "string",
+                        }, {
+                            caption: "Jabatan ASN",
+                            dataField: "K14",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenjang Jabatan",
+                            dataField: "K15",
+                            dataType: "string",
+                        }, {
+                            caption: "Angka Kredit",
+                            dataField: "K16",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                                precision: 3,
+                            },
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "K19",
+                            dataType: "string",
+                        }, {
+                            caption: "Unit / Satuan Kerja",
+                            dataField: "K20",
+                            dataType: "string",
+                        }, {
+                            caption: "Instansi Pemerintahan",
+                            dataField: "K21",
+                            dataType: "string",
+                        }, {
+                            caption: "Gaji",
+                            dataField: "K22",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                            },
+                        }, {
+                            caption: "Gaji Terbilang",
+                            dataField: "K23",
+                            dataType: "string",
+                        }, {
+                            caption: "Peraturan Dasar Gaji",
+                            dataField: "K24",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Penetapan/Putusan Kenaikan Gaji Berkala :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "L01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "L02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "L03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "L04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "L05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "L06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "L07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "L08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "L09",
+                            dataType: "string",
+                        }, {
+                            caption: "Gol./Ruang",
+                            dataField: "L10",
+                            dataType: "string",
+                        }, {
+                            caption: "GolRuang",
+                            dataField: "L11",
+                            dataType: "string",
+                        }, {
+                            caption: "Pangkat",
+                            dataField: "L12",
+                            dataType: "string",
+                        }, {
+                            caption: "Masa Kerja",
+                            dataField: "L13",
+                            dataType: "string",
+                        }, {
+                            caption: "Jabatan ASN",
+                            dataField: "L14",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenjang Jabatan",
+                            dataField: "L15",
+                            dataType: "string",
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "L19",
+                            dataType: "string",
+                        }, {
+                            caption: "Unit / Satuan Kerja",
+                            dataField: "L20",
+                            dataType: "string",
+                        }, {
+                            caption: "Instansi Pemerintahan",
+                            dataField: "L21",
+                            dataType: "string",
+                        }, {
+                            caption: "Gaji",
+                            dataField: "L22",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                            },
+                        }, {
+                            caption: "Gaji Terbilang",
+                            dataField: "L23",
+                            dataType: "string",
+                        }, {
+                            caption: "Peraturan Dasar Gaji",
+                            dataField: "L24",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Penetapan/Putusan Jabatan :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "M01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "M02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "M03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "M04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "M05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "M06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "M07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "M08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "M09",
+                            dataType: "string",
+                        }, {
+                            caption: "Gol./Ruang",
+                            dataField: "M10",
+                            dataType: "string",
+                        }, {
+                            caption: "GolRuang",
+                            dataField: "M11",
+                            dataType: "string",
+                        }, {
+                            caption: "Pangkat",
+                            dataField: "M12",
+                            dataType: "string",
+                        }, {
+                            caption: "Jabatan ASN",
+                            dataField: "M14",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenjang Jabatan",
+                            dataField: "M15",
+                            dataType: "string",
+                        }, {
+                            caption: "Angka Kredit",
+                            dataField: "M16",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                                precision: 3,
+                            },
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "M19",
+                            dataType: "string",
+                        }, {
+                            caption: "Unit / Satuan Kerja",
+                            dataField: "M20",
+                            dataType: "string",
+                        }, {
+                            caption: "Instansi Pemerintahan",
+                            dataField: "M21",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Penetapan/Putusan Angka Kredit :',
+                    columns: [
+                        {
+                            caption: "Pejabat",
+                            dataField: "N01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "N02",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "N03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Perihal",
+                            dataField: "N04",
+                            dataType: "string",
+                        }, {
+                            caption: "TMT Berlaku",
+                            dataField: "N05",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Status Pegawai",
+                            dataField: "N06",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis Pegawai",
+                            dataField: "N07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kategori PTK",
+                            dataField: "N08",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenis PTK",
+                            dataField: "N09",
+                            dataType: "string",
+                        }, {
+                            caption: "Gol./Ruang",
+                            dataField: "N10",
+                            dataType: "string",
+                        }, {
+                            caption: "GolRuang",
+                            dataField: "N11",
+                            dataType: "string",
+                        }, {
+                            caption: "Pangkat",
+                            dataField: "N12",
+                            dataType: "string",
+                        }, {
+                            caption: "Jabatan ASN",
+                            dataField: "N14",
+                            dataType: "string",
+                        }, {
+                            caption: "Jenjang Jabatan",
+                            dataField: "N15",
+                            dataType: "string",
+                        }, {
+                            caption: "Angka Kredit",
+                            dataField: "N16",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                                precision: 3,
+                            },
+                        }, {
+                            caption: "P.A.K TMT",
+                            dataField: "N17",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "P.A.K TST",
+                            dataField: "N18",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Penugasan",
+                            dataField: "N19",
+                            dataType: "string",
+                        }, {
+                            caption: "Unit / Satuan Kerja",
+                            dataField: "N20",
+                            dataType: "string",
+                        }, {
+                            caption: "Instansi Pemerintahan",
+                            dataField: "N21",
+                            dataType: "string",
+                        },
+                    ],
+                },
             ],
 
         };
@@ -466,8 +1246,8 @@ $(document).ready(function () {
                 GetJsonData(
                     this,
                     _main.appConfig.dataSource.Kepegawaian, //SpreadsheetID
-                    1146160413,                                     //SheetID
-                    "A4:CG",                                        //Range
+                    1523976848,                                     //SheetID
+                    "A4:LP",                                        //Range
                     "SELECT * WHERE A <> ''"                         //Filter or Query
                 );
                 e.component.__ready = true;
