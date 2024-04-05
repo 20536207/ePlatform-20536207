@@ -78,7 +78,7 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick: () => {
-                                if (_main.userConfig.user.email != "" && _main.userConfig.user.name != "") {
+                                if (_main.userConfig.user.email != null && _main.userConfig.user.name != null) {
                                     _element.LayoutContains.toggle();
                                 };
                             }
