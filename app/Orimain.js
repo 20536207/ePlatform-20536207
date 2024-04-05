@@ -1,6 +1,7 @@
 //=======================================================
 $(document).ready(function () {
     window.jsPDF = window.jspdf.jsPDF;
+    
     _main = {
         appConfig: {
             app: {
@@ -18,16 +19,18 @@ $(document).ready(function () {
             dataSource: {
                 Kesiswaan: "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
                 Kepegawaian: "1CKt_wRc7-pJ9mCvyASKJ9TK11lDqMllZfXzVIsm5mgg",
-            }
+                User: "",
+            },
         },
         userConfig: {
             user: {
+                id: null,
+                name: null,
+                email: null,
+                org: null,
+                desc: null,
+                pict: null,
                 cred: null,
-                email: "",
-                Pict: "",
-                name: "",
-                org: "viewer",
-                desc: "user non organization",
             },
         },
         arrVarGlobal: {
@@ -296,3 +299,48 @@ function _notify(_message) {
         { position: "top right", direction: "down-push" }
     );
 };
+
+//=== USER AUTHENTICATION ======================================================================
+function decodeJwtResponse(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
+}
+
+function onSignIn(response) {
+  const responsePayload = decodeJwtResponse(response.credential);
+  // _Authorized = {
+  //   "user": {
+  //     "id": responsePayload.sub,
+  //     "email": responsePayload.email,
+  //     "verified_email": responsePayload.email_verified,
+  //     "name": responsePayload.name,
+  //     "given_name": responsePayload.given_name,
+  //     "family_name": responsePayload.family_name,
+  //     "picture": responsePayload.picture,
+  //     "locale": responsePayload.locale,
+  //   }
+  // };
+  
+  _main.userConfig.user.id = null;
+  _main.userConfig.user.name = responsePayload.name;
+  _main.userConfig.user.email = responsePayload.email;
+  _main.userConfig.user.org = null;
+  _main.userConfig.user.desc = null;
+  _main.userConfig.user.pict = responsePayload.picture;
+  _main.userConfig.user.cred = response;
+
+  document.getElementById("UserPict").src = _main.userConfig.user.pict;
+  document.getElementById("UserPict").style.display = 'inline-flex';
+  document.getElementById("UserAccount").innerHTML = _main.userConfig.user.name + '<br>' + _main.userConfig.user.email;
+
+}

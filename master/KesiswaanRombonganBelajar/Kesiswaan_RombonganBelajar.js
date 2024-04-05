@@ -630,144 +630,146 @@ $(document).ready(function () {
             ],
         };
 
-        // _objElement = {
-        //     InformasiRombonganBelajar:
-                $('#InformasiRombonganBelajar').dxDataGrid({
-                    onContentReady: function (e) {
-                        if (!e.component.__ready) {
-                            GetJsonData(
-                                this,
-                                _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
-                                1316011922,                                     //SheetID
-                                "A1:CX",                                        //Range
-                                "SELECT * WHERE A <> ''"                         //Filter or Query
-                            );
-                            e.component.__ready = true;
-                        };
-                    },
-                    allowColumnReordering: true,
-                    allowColumnResizing: true,
-                    columnHidingEnabled: false,
-                    columnResizingMode: 'widget',
-                    columnAutoWidth: true,
-                    columnChooser: {
-                        enabled: true,
-                        mode: "select",
-                        sortOrder: undefined,
-                        title: "Column Chooser",
-                        search: {
-                            editorOptions: {},
-                            enabled: true,
-                            timeout: null,
-                        },
-                    },
-                    columnFixing: {
-                        enabled: true,
-                    },
-                    columns: _objData.TbColumns,
-                    editing: {
-                        mode: 'row',
-                        allowUpdating: false,
-                        allowAdding: false,
-                        allowDeleting: false,
-                        confirmDelete: true,
-                        useIcons: true,
-                    },
-                    export: {
-                        enabled: true,
-                        formats: ['xlsx', 'pdf'],
-                        allowExportSelectedData: true,
-                    },
-                    onExporting(e) {
-                        const _nmfile = _element.PageToolbar.option("items[1].text");
-                        if (e.format === 'xlsx') {
-                            const workbook = new ExcelJS.Workbook();
-                            const worksheet = workbook.addWorksheet('Data');
-                            DevExpress.excelExporter.exportDataGrid({
-                                component: e.component,
-                                worksheet,
-                                autoFilterEnabled: true,
-                            }).then(() => {
-                                workbook.xlsx.writeBuffer().then((buffer) => {
-                                    saveAs(new Blob([buffer], { type: 'application/octet-stream' }), _nmfile + '.xlsx');
-                                });
-                            });
-                            e.cancel = true;
-                        }
-                        else if (e.format === 'pdf') {
-                            const doc = new jsPDF('l', 'pt');
-                            doc.setFont('inherit', 'normal');
-                            doc.setFontSize('inherit');
-                            DevExpress.pdfExporter.exportDataGrid({
-                                jsPDFDocument: doc,
-                                component: e.component,
-                            }).then(() => {
-                                doc.save(_nmfile + '.pdf');
-                            });
-                        }
-                    },
+    // _objElement = {
+    //     InformasiRombonganBelajar:
 
-                    // filterValue: ["A01", "contains", options.data.A01],
-                    filterRow: { visible: true },
-                    filterPanel: { visible: true },
+    $('#InformasiRombonganBelajar').dxDataGrid({
+        onContentReady: function (e) {
+            if (!e.component._isReady) {
+                GetJsonData(
+                    this,
+                    _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
+                    1316011922,                                     //SheetID
+                    "A1:CX",                                        //Range
+                    "SELECT * WHERE A <> ''"                         //Filter or Query
+                );
+                e.component._isReady = true;
+            };
+        },
+        allowColumnReordering: true,
+        allowColumnResizing: true,
+        columnHidingEnabled: false,
+        columnResizingMode: 'widget',
+        columnAutoWidth: true,
+        columnChooser: {
+            enabled: true,
+            mode: "select",
+            sortOrder: undefined,
+            title: "Column Chooser",
+            search: {
+                editorOptions: {},
+                enabled: true,
+                timeout: null,
+            },
+        },
+        columnFixing: {
+            enabled: true,
+        },
+        columns: _objData.TbColumns,
+        editing: {
+            mode: 'row',
+            allowUpdating: false,
+            allowAdding: false,
+            allowDeleting: false,
+            confirmDelete: true,
+            useIcons: true,
+        },
+        export: {
+            enabled: true,
+            formats: ['xlsx', 'pdf'],
+            allowExportSelectedData: true,
+        },
+        onExporting(e) {
+            const _nmfile = _element.PageToolbar.option("items[1].text");
+            if (e.format === 'xlsx') {
+                const workbook = new ExcelJS.Workbook();
+                const worksheet = workbook.addWorksheet('Data');
+                DevExpress.excelExporter.exportDataGrid({
+                    component: e.component,
+                    worksheet,
+                    autoFilterEnabled: true,
+                }).then(() => {
+                    workbook.xlsx.writeBuffer().then((buffer) => {
+                        saveAs(new Blob([buffer], { type: 'application/octet-stream' }), _nmfile + '.xlsx');
+                    });
+                });
+                e.cancel = true;
+            }
+            else if (e.format === 'pdf') {
+                const doc = new jsPDF('l', 'pt');
+                doc.setFont('inherit', 'normal');
+                doc.setFontSize('inherit');
+                DevExpress.pdfExporter.exportDataGrid({
+                    jsPDFDocument: doc,
+                    component: e.component,
+                }).then(() => {
+                    doc.save(_nmfile + '.pdf');
+                });
+            }
+        },
 
-                    groupPanel: { visible: true },
-                    grouping: {
-                        autoExpandAll: false,
-                    },
+        // filterValue: ["A01", "contains", options.data.A01],
+        filterRow: { visible: true },
+        filterPanel: { visible: true },
 
-                    headerFilter: { visible: true },
-                    hoverStateEnabled: false,
+        groupPanel: { visible: true },
+        grouping: {
+            autoExpandAll: false,
+        },
 
-                    paging: {
-                        pageSize: 20,
-                    },
-                    pager: {
-                        allowedPageSizes: [5, 10, 15, 20, 25, 50],
-                        displayMode: "compact",
-                        showInfo: true,
-                        showNavigationButtons: true,
-                        showPageSizeSelector: true,
-                        visible: true,
-                    },
+        headerFilter: { visible: true },
+        hoverStateEnabled: false,
 
-                    remoteOperations: false,
+        paging: {
+            pageSize: 20,
+        },
+        pager: {
+            allowedPageSizes: [5, 10, 15, 20, 25, 50],
+            displayMode: "compact",
+            showInfo: true,
+            showNavigationButtons: true,
+            showPageSizeSelector: true,
+            visible: true,
+        },
 
-                    showBorders: true,
-                    showColumnHeaders: true,
-                    showColumnLines: true,
-                    showRowLines: true,
-                    sorting: {
-                        mode: 'multiple',
-                    },
-                    searchPanel: {
-                        visible: true,
-                        highlightCaseSensitive: false,
-                    },
-                    selection: {
-                        allowSelectAll: true,
-                        deferred: false,
-                        mode: "multiple",
-                        selectAllMode: "allPages",
-                        showCheckBoxesMode: "click"
-                    },
-                    scrolling: {
-                        columnRenderingMode: "standard",
-                        mode: "standard",
-                        preloadEnabled: false,
-                        renderAsync: undefined,
-                        rowRenderingMode: "standard",
-                        scrollByContent: true,
-                        scrollByThumb: true,
-                        showScrollbar: "onHover",
-                        useNative: false
-                    },
+        remoteOperations: false,
 
-                    wordWrapEnabled: false,
-                    // sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
-                    summary: _objData.TBSummaryInfo,
-                    //toolbar: undefined,
-                }).dxDataGrid('instance');
-        // };
+        showBorders: true,
+        showColumnHeaders: true,
+        showColumnLines: true,
+        showRowLines: true,
+        sorting: {
+            mode: 'multiple',
+        },
+        searchPanel: {
+            visible: true,
+            highlightCaseSensitive: false,
+        },
+        selection: {
+            allowSelectAll: true,
+            deferred: false,
+            mode: "multiple",
+            selectAllMode: "allPages",
+            showCheckBoxesMode: "click"
+        },
+        scrolling: {
+            columnRenderingMode: "standard",
+            mode: "standard",
+            preloadEnabled: false,
+            renderAsync: undefined,
+            rowRenderingMode: "standard",
+            scrollByContent: true,
+            scrollByThumb: true,
+            showScrollbar: "onHover",
+            useNative: false
+        },
 
+        wordWrapEnabled: false,
+        // sortByGroupSummaryInfo: [{ summaryItem: 'count' }],
+        summary: _objData.TBSummaryInfo,
+        //toolbar: undefined,
+    }).dxDataGrid('instance');
+
+    // };
+    //==================================
 });

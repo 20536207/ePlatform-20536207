@@ -1,14 +1,14 @@
-
 function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
+    var
+        query = new google.visualization.Query(
+            "https://docs.google.com/spreadsheets/d/" + _DBId + "/gviz/tq?" +
+            "&gid=" + _TBId +
+            "&range=" + _Range
+            // + "&tq=" + _Query
+        ),
+        _DataSource = [],
+        _Column = [];
 
-    var _Url = (
-        "https://docs.google.com/spreadsheets/d/" + _DBId + "/gviz/tq?" +
-        "&gid=" + _TBId +
-        "&range=" + _Range
-        // + "&tq=" + _Query
-    );
-
-    var query = new google.visualization.Query(_Url);
     query.setQuery(_Query);
     query.send(response => {
 
@@ -17,10 +17,6 @@ function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
             data = JSON.parse(data.toJSON());
 
             //GetJSONData Structure==================================
-            var
-                _DataSource = [],
-                _Column = [];
-
             data.rows.forEach((_rowItems, _rowIndex) => {
                 var _arrRow = {};
 
@@ -45,12 +41,17 @@ function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
                 });
                 _DataSource.push(_arrRow);
             });
-            _this.option("dataSource", _DataSource);
+            _this.option("dataSource",_DataSource);
+            _DataSource=null;
+            _Column=null;
+            _arrCol=null;
+            _arrRow=null;
+            data=null;
             return;
         } else {
             _notify('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-            return;
-        }
+        };
+        return;
     });
-
-};
+    return;
+}
