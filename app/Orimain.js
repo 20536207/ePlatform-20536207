@@ -39,7 +39,7 @@ $(document).ready(function () {
                 // login_uri:"./login",
                 // native_callback:"onSignIn",
                 cancel_on_tap_outside: false,
-                // prompt_parent_id:"",
+                // prompt_parent_id: "elHeader-002",
                 auto_prompt: true,
                 // nonce:"_*keyunique",
                 context: "use",
@@ -71,6 +71,7 @@ $(document).ready(function () {
     _iconApp.href = _main.appConfig.app.iconUrl;
     document.head.appendChild(_iconApp);
     document.getElementById("LayoutFooter").innerHTML = "<i class='far fa-copyright'></i> 2022 SD Negeri Tisnonegaran 1 Probolinggo";
+    google.accounts.id.initialize(_main.account.initialize);
 
     _element = {
         //Item Header =================================================
@@ -154,7 +155,7 @@ $(document).ready(function () {
                                 // $("#PageContains").empty();
                                 // _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
                                 // $("#PageContains").load(_main.arrVarGlobal._actPageContains);
-                                google.accounts.id.initialize(_main.account.initialize);
+
                                 google.accounts.id.prompt();
                                 // _element.PageToolbar.option("items[1].text", "e-Platform Account");
                                 // _element.PageToolbar.option("items[2].visible", false);
@@ -365,7 +366,6 @@ function onSignIn(response) {
 
 //=== VISUALIZATION QUERY ======================================================================
 function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
-
     var
         query = new google.visualization.Query(
             "https://docs.google.com/spreadsheets/d/" + _DBId + "/gviz/tq?" +
@@ -373,9 +373,7 @@ function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
             "&range=" + _Range +
             "&headers=1"
             // + "&tq=" + _Query
-        ),
-        _DataSource = [],
-        _Column = [];
+        );
 
     query.setQuery(_Query);
     query.send(response => {
@@ -385,6 +383,10 @@ function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
             data = JSON.parse(data.toJSON());
 
             //GetJSONData Structure==================================
+            var
+                _DataSource = [],
+                _Column = [];
+
             data.rows.forEach((_rowItems, _rowIndex) => {
                 var _arrRow = {};
 
@@ -412,13 +414,18 @@ function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
 
             if (_this != null) {
                 _this.option("dataSource", _DataSource);
-                // return;
             } else {
-                // return _DataSource;
-            };
+                //==============
+            }
+            delete _DataSource;
+            delete data;
+            delete _Column;
+            delete _arrCol;
+            delete _arrRow;
+
         } else {
             _notify('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
         };
     });
-
-}
+    return;
+};
