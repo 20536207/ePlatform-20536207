@@ -1,7 +1,7 @@
 //=======================================================
 $(document).ready(function () {
     window.jsPDF = window.jspdf.jsPDF;
-    
+
     _main = {
         appConfig: {
             app: {
@@ -19,10 +19,10 @@ $(document).ready(function () {
             dataSource: {
                 Kesiswaan: "15SkVrus9I9rb79E3Hf6EninYthneYxIKJfw8OvIMMUc", //SpreadsheetID
                 Kepegawaian: "1CKt_wRc7-pJ9mCvyASKJ9TK11lDqMllZfXzVIsm5mgg",
-                User: "",
+                User: "1oWTnHGFKF8X-YgnAZjT2YwtXuRpVSfBnCVtKHxFBEWY",
             },
         },
-        userConfig: {
+        account: {
             user: {
                 id: null,
                 name: null,
@@ -31,6 +31,26 @@ $(document).ready(function () {
                 desc: null,
                 pict: null,
                 cred: null,
+            },
+            initialize: {
+                client_id: "237444192144-2gf7p8ombdcbtl6ti7udeu7pkd8m7d6j.apps.googleusercontent.com",
+                auto_select: true,
+                callback: onSignIn,
+                // login_uri:"./login",
+                // native_callback:"onSignIn",
+                cancel_on_tap_outside: false,
+                // prompt_parent_id:"",
+                auto_prompt: true,
+                // nonce:"_*keyunique",
+                context: "use",
+                // state_cookie_domain:"_*.domain",
+                // ux_mode: "popup",
+                // allowed_parent_origin: "_*.domain",
+                // intermediate_iframe_close_callback:"logBeforeClose",
+                itp_support: true,
+                // login_hint:"",
+                // hd:"*",
+                use_fedcm_for_prompt: true,
             },
         },
         arrVarGlobal: {
@@ -78,7 +98,7 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick: () => {
-                                if (_main.userConfig.user.email != null && _main.userConfig.user.name != null) {
+                                if (_main.account.user.email != null && _main.account.user.name != null) {
                                     _element.LayoutContains.toggle();
                                 };
                             }
@@ -128,12 +148,20 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick() {
-                                _element.PageToolbar.option("items[1].text", "e-Platform Account");
-                                _element.PageToolbar.option("items[2].visible", false);
+                                // _element.PageToolbar.option("items[1].text", "e-Platform Account");
+                                // _element.PageToolbar.option("items[2].visible", false);
 
-                                $("#PageContains").empty();
-                                _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
-                                $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                                // $("#PageContains").empty();
+                                // _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
+                                // $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                                google.accounts.id.initialize(_main.account.initialize);
+                                google.accounts.id.prompt();
+                                // _element.PageToolbar.option("items[1].text", "e-Platform Account");
+                                // _element.PageToolbar.option("items[2].visible", false);
+
+                                // $("#PageContains").empty();
+                                // _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
+                                // $("#PageContains").load(_main.arrVarGlobal._actPageContains);
                             },
                         },
                     },
@@ -302,45 +330,95 @@ function _notify(_message) {
 
 //=== USER AUTHENTICATION ======================================================================
 function decodeJwtResponse(token) {
-  var base64Url = token.split(".")[1];
-  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-  var jsonPayload = decodeURIComponent(
-    atob(base64)
-      .split("")
-      .map(function (c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join("")
-  );
+    var base64Url = token.split(".")[1];
+    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    var jsonPayload = decodeURIComponent(
+        atob(base64)
+            .split("")
+            .map(function (c) {
+                return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+            })
+            .join("")
+    );
 
-  return JSON.parse(jsonPayload);
+    return JSON.parse(jsonPayload);
 }
 
 function onSignIn(response) {
-  const responsePayload = decodeJwtResponse(response.credential);
-  // _Authorized = {
-  //   "user": {
-  //     "id": responsePayload.sub,
-  //     "email": responsePayload.email,
-  //     "verified_email": responsePayload.email_verified,
-  //     "name": responsePayload.name,
-  //     "given_name": responsePayload.given_name,
-  //     "family_name": responsePayload.family_name,
-  //     "picture": responsePayload.picture,
-  //     "locale": responsePayload.locale,
-  //   }
-  // };
-  
-  _main.userConfig.user.id = null;
-  _main.userConfig.user.name = responsePayload.name;
-  _main.userConfig.user.email = responsePayload.email;
-  _main.userConfig.user.org = null;
-  _main.userConfig.user.desc = null;
-  _main.userConfig.user.pict = responsePayload.picture;
-  _main.userConfig.user.cred = response;
+    const responsePayload = decodeJwtResponse(response.credential);
+    // GetJsonData(
+    //     null,
+    //     _main.appConfig.dataSource.User,    //SpreadsheetID
+    //     1181780988,                         //SheetID
+    //     "A1:E",                            //Range
+    //     "SELECT * WHERE C = '" + responsePayload.email + "'"            //Filter or Query
+    // );
 
-  document.getElementById("UserPict").src = _main.userConfig.user.pict;
-  document.getElementById("UserPict").style.display = 'inline-flex';
-  document.getElementById("UserAccount").innerHTML = _main.userConfig.user.name + '<br>' + _main.userConfig.user.email;
+    _main.account.user.id = null;
+    _main.account.user.name = responsePayload.name;
+    _main.account.user.email = responsePayload.email;
+    _main.account.user.org = null;
+    _main.account.user.desc = null;
+    _main.account.user.pict = responsePayload.picture;
+    _main.account.user.cred = response;
+}
+
+//=== VISUALIZATION QUERY ======================================================================
+function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
+
+    var
+        query = new google.visualization.Query(
+            "https://docs.google.com/spreadsheets/d/" + _DBId + "/gviz/tq?" +
+            "&gid=" + _TBId +
+            "&range=" + _Range +
+            "&headers=1"
+            // + "&tq=" + _Query
+        ),
+        _DataSource = [],
+        _Column = [];
+
+    query.setQuery(_Query);
+    query.send(response => {
+
+        if (!(response.isError())) {
+            var data = response.getDataTable();
+            data = JSON.parse(data.toJSON());
+
+            //GetJSONData Structure==================================
+            data.rows.forEach((_rowItems, _rowIndex) => {
+                var _arrRow = {};
+
+                _rowItems.c.forEach((_cItems, _cIndex) => {
+                    var _field = data.cols[_cIndex],
+                        _value = _field.type == 'date' ? (_cItems == null ? "" : _cItems.f) : (_cItems == null ? "" : _cItems.v),
+                        _arrCol = {};
+
+                    _arrRow[_field.label] = _value == null ? "" : _value;
+
+                    // set column ===========================================
+                    if (_rowIndex == 0) {
+                        _arrCol["caption"] = _field.label;
+                        _arrCol["fixed"] = _cIndex == 0 ? true : false;
+                        _arrCol["dataField"] = _field.label;
+                        _arrCol["sortOrder"] = _cIndex == 0 ? "asc" : "";
+                        _arrCol["dataType"] = _field.type;
+                        _arrCol["format"] = _field.pattern;
+                        _Column.push(_arrCol);
+                    };
+
+                });
+                _DataSource.push(_arrRow);
+            });
+
+            if (_this != null) {
+                _this.option("dataSource", _DataSource);
+                // return;
+            } else {
+                // return _DataSource;
+            };
+        } else {
+            _notify('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        };
+    });
 
 }

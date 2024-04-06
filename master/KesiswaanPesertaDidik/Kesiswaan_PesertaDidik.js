@@ -2534,7 +2534,7 @@ $(document).ready(function () {
     //     InformasiPesertaDidik:
     $('#InformasiPesertaDidik').dxDataGrid({
         onContentReady: function (e) {
-            if (!e.component.__ready) {
+            if (!e.component._isReady) {
                 GetJsonData(
                     this,
                     _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
@@ -2542,7 +2542,7 @@ $(document).ready(function () {
                     "A1:DF",                                        //Range
                     "SELECT * WHERE A <> ''"                        //Filter or Query
                 );
-                e.component.__ready = true;
+                e.component._isReady = true;
             };
         },
         // keyExpr: 'A01',

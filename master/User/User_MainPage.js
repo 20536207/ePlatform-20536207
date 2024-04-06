@@ -1,60 +1,11 @@
 $(document).ready(function () {
 
   _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
+  document.getElementById("UserPict").src = _main.account.user.pict;
+  document.getElementById("UserPict").style.display = 'inline-flex';
 
-  // ===============================================================================================
-  $("#UserAuthorized").append(
-    $(
-      "<div "+
-          "id='g_id_onload' "+
-          "data-client_id='"+_main.appConfig.gapi.clientId+"' "+
-          "data-context='signin' "+
-          "data-ux_mode='popup' "+
-          "data-callback='onSignIn' "+
-          "data-auto_prompt='false' "+
-      "</div>"+
-
-      "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;'>" +
-      "<div id='UserAccount' style='margin: 5px 0 5px 0;'></div>"+
-
-      "<div "+ 
-          "class='g_id_signin' "+
-          "data-type='standart' "+
-          "data-shape='pill' "+
-          "data-theme='outline' "+
-          "data-text='continue_with' "+
-          "data-size='medium' "+
-          "data-logo_alignment='center' >"+
-      "</div>"
-    )
-  );
-
-  if (_main.userConfig.user.cred == null) {
-    document.getElementById("UserPict").style.display = 'none';
-  } else {
-    onSignIn(_main.userConfig.user.cred);
-  };
-
-  // $("#btnSignInOut").dxButton({
-  //   type: 'normal',
-  //   stylingMode: 'contained',
-  //   hoverStateEnabled: false,
-  //   focusStateEnabled: false,
-  //   activeStateEnabled: true,
-  //   elementAttr:{class:"g_id_signin"},
-  //   text: "",
-  //   onClick(e) {
-  //     console.log(document.getElementById("g_id_onload"));
-  //     if (this.option("text") == "SIGN IN") {
-  //       gapi.auth2.getAuthInstance().signIn();
-  //     } else {
-  //       gapi.auth2.getAuthInstance().signOut().then(function(){
-  //         location.reload();
-  //       });
-  //       gapi.auth2.getAuthInstance().disconnect();
-  //     }
-  //   },
-  // }).dxButton("instance");
+  document.getElementById("UserAccount").innerHTML = _main.account.user.name + '<br>' + _main.account.user.email;
+  document.getElementById("UserAccount").style.display = 'inline-flex';
 
   for (let i = 1; i <= 20; i++) {
     $("#UserPage").append(

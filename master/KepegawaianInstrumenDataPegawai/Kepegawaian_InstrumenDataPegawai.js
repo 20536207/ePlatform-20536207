@@ -1242,7 +1242,7 @@ $(document).ready(function () {
     //     InformasiInstrumenDataPegawai:
     $('#InformasiInstrumenDataPegawai').dxDataGrid({
         onContentReady: function (e) {
-            if (!e.component.__ready) {
+            if (!e.component._isReady) {
                 GetJsonData(
                     this,
                     _main.appConfig.dataSource.Kepegawaian, //SpreadsheetID
@@ -1250,7 +1250,7 @@ $(document).ready(function () {
                     "A4:LP",                                        //Range
                     "SELECT * WHERE A <> ''"                         //Filter or Query
                 );
-                e.component.__ready = true;
+                e.component._isReady = true;
             };
         },
         allowColumnReordering: true,

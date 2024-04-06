@@ -20,10 +20,10 @@
 }
 
 #btnSignInOut{
-  /* border-radius: 25px; */
+  border-radius: 25px;
   width: 75%;
   /* height: 36px; */
-  font-weight: bold;
+  /* font-weight: bold; */
   /* font-size: larger; */
 }
 

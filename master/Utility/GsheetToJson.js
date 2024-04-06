@@ -1,9 +1,12 @@
+//=== VISUALIZATION QUERY ======================================================================
 function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
+
     var
         query = new google.visualization.Query(
             "https://docs.google.com/spreadsheets/d/" + _DBId + "/gviz/tq?" +
             "&gid=" + _TBId +
-            "&range=" + _Range
+            "&range=" + _Range +
+            "&headers=1"
             // + "&tq=" + _Query
         ),
         _DataSource = [],
@@ -41,17 +44,16 @@ function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
                 });
                 _DataSource.push(_arrRow);
             });
-            _this.option("dataSource",_DataSource);
-            _DataSource=null;
-            _Column=null;
-            _arrCol=null;
-            _arrRow=null;
-            data=null;
-            return;
+
+            if (_this != null) {
+                _this.option("dataSource", _DataSource);
+                // return;
+            } else {
+                // return _DataSource;
+            };
         } else {
             _notify('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
         };
-        return;
     });
-    return;
+
 }

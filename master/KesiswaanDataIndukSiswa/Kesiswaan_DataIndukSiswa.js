@@ -629,7 +629,7 @@ $(document).ready(function () {
     //     InformasiDataIndukSiswa:
     $('#InformasiDataIndukSiswa').dxDataGrid({
         onContentReady: function (e) {
-            if (!e.component.__ready) {
+            if (!e.component._isReady) {
                 GetJsonData(
                     this,
                     _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
@@ -637,7 +637,7 @@ $(document).ready(function () {
                     "A1:CO",                              //Range
                     "SELECT * WHERE A <> ''"              //Filter or Query
                 );
-                e.component.__ready = true;
+                e.component._isReady = true;
             };
         },
         allowColumnReordering: true,

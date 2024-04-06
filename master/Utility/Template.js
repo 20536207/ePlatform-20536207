@@ -1,3 +1,97 @@
+// ===============================================================================================
+  // $("#UserAuthorized").append(
+  //   $(
+  //     "<div " +
+  //     "data-client_id='" + _main.appConfig.gapi.clientId + "' " +
+  //     "data-context='use' " +
+  //     "data-ux_mode='popup' " +
+  //     "data-callback='onSignIn' " +
+  //     "data-use_fedcm_for_prompt='true' " +
+  //     "data-auto_select='true' " +
+  //     "data-itp_support='true' " +
+  //     "data-auto_prompt='true' " +
+  //     "data-cancel_on_tap_outside:'false' " +
+  //     "id='g_id_onload'>" +
+  //     "</div>"+
+
+  //     "<img id='UserPict' style='object-fit:scale-down;width:125px;height:125px;'>" +
+  //     "<div id='UserAccount' style='margin: 5px 0 5px 0;'></div>" +
+
+  //     "<div " +
+  //     "class='g_id_signin' " +
+  //     "data-type='standart' " +
+  //     "data-shape='pill' " +
+  //     "data-theme='outline' " +
+  //     "data-text='continue_with' " +
+  //     "data-size='medium' " +
+  //     "data-logo_alignment='left' >" +
+  //     "</div>"
+  //   )
+  // );
+
+
+
+  //=====================
+  // google.accounts.id.initialize({
+  //   client_id: "'"+_main.appConfig.gapi.clientId+"'",
+  //   prompt_parent_id: 'elHeader-002',
+  //   context: "use",
+  //   ux_mode: "popup",
+  //   callback: "onSignIn",
+  //   use_fedcm_for_prompt: true,
+  //   auto_select: true,
+  //   itp_support: true,
+  //   auto_prompt: true,
+  //   cancel_on_tap_outside: false
+  // });
+  // google.accounts.id.prompt();
+
+
+  //=======================
+  // google.accounts.id.renderButton(
+  //   document.getElementById("btnSignInOut"),
+  //   {
+  //     type: "standart",
+  //     shape: "pill",
+  //     theme: "outline",
+  //     text: "continue_with",
+  //     size: "medium",
+  //     logo_alignment: "left",
+  //     // click_listener: onClickHandler
+  //   }
+  // );
+
+
+  // if (_main.account.user.cred == null) {
+  //   document.getElementById("UserPict").style.display = 'none';
+  //   document.getElementById("UserAccount").style.display = 'none';
+  // } else {
+    // onSignIn(_main.account.user.cred);
+  // };
+
+  // $("#btnSignInOut").dxButton({
+  //   type: 'normal',
+  //   stylingMode: 'contained',
+  //   hoverStateEnabled: false,
+  //   focusStateEnabled: false,
+  //   activeStateEnabled: true,
+  //   elementAttr:{class:"g_id_signin"},
+  //   text: "",
+  //   onClick(e) {
+  //     console.log(document.getElementById("g_id_onload"));
+  //     if (this.option("text") == "SIGN IN") {
+  //       gapi.auth2.getAuthInstance().signIn();
+  //     } else {
+  //       gapi.auth2.getAuthInstance().signOut().then(function(){
+  //         location.reload();
+  //       });
+  //       gapi.auth2.getAuthInstance().disconnect();
+  //     }
+  //   },
+  // }).dxButton("instance");
+
+
+
 // function GetJsonData(_DBId, _TBId, _Range, _Query) {
 
 //     var _Url = (
