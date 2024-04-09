@@ -807,23 +807,17 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick() {
-                                google.accounts.id.initialize(_main.account.initialize);
-                                google.accounts.id.prompt();
+                                if (_main.account.user.cred == null) {
+                                    google.accounts.id.initialize(_main.account.initialize);
+                                    google.accounts.id.prompt();
+                                } else {
+                                    _element.PageToolbar.option("items[1].text", "e-Platform Account");
+                                    _element.PageToolbar.option("items[2].visible", false);
 
-                                // _element.PageToolbar.option("items[1].text", "e-Platform Account");
-                                // _element.PageToolbar.option("items[2].visible", false);
-
-                                // $("#PageContains").empty();
-                                // _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
-                                // $("#PageContains").load(_main.arrVarGlobal._actPageContains);
-
-
-                                // _element.PageToolbar.option("items[1].text", "e-Platform Account");
-                                // _element.PageToolbar.option("items[2].visible", false);
-
-                                // $("#PageContains").empty();
-                                // _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
-                                // $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                                    $("#PageContains").empty();
+                                    _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
+                                    $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                                }
                             },
                         },
                     },
@@ -922,6 +916,9 @@ $(document).ready(function () {
                 },
             ]
         }).dxToolbar("instance"),
+        Toast: $('#toast').dxToast({
+            displayTime: 5000,
+        }).dxToast('instance'),
     };
 
     //==============================================================================
@@ -1023,7 +1020,23 @@ function onSignIn(response) {
         _main.account.user.org = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].org : null;
         _main.account.user.desc = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].desc : null;
         _main.account.user.pict = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.picture : null;
-        _main.account.user.cred = response;
+        _main.account.user.cred = _main.arrVarGlobal._dataArray.length != 0 ? response : null;
+
+        if (_main.account.user.cred != null) {
+            _element.PageToolbar.option("items[1].text", "e-Platform Account");
+            _element.PageToolbar.option("items[2].visible", false);
+
+            $("#PageContains").empty();
+            _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
+            $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+        } else {
+            _element.Toast.option(
+                "message",
+                responsePayload.email + " un-authorized as user "+_main.appConfig.app.title
+            );
+            _element.Toast.option("type","error");
+            _element.Toast.show();
+        }
 
     });
     delete getQuery;

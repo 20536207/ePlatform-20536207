@@ -2,11 +2,8 @@ $(document).ready(function () {
 
   _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
   document.getElementById("UserPict").src = _main.account.user.pict;
-  document.getElementById("UserPict").style.display = 'inline-flex';
-
   document.getElementById("UserAccount").innerHTML = _main.account.user.name + '<br>' + _main.account.user.email;
-  document.getElementById("UserAccount").style.display = 'inline-flex';
-
+  
   for (let i = 1; i <= 20; i++) {
     $("#UserPage").append(
       $("<div />").dxButton({
