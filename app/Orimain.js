@@ -32,6 +32,7 @@ $(document).ready(function () {
                 org: null,
                 desc: null,
                 pict: null,
+                sub: null,
                 cred: null,
             },
             initialize: {
@@ -730,7 +731,7 @@ $(document).ready(function () {
     _iconApp.href = _main.appConfig.app.iconUrl;
     document.head.appendChild(_iconApp);
     document.getElementById("LayoutFooter").innerHTML = "<i class='far fa-copyright'></i> " + _main.appConfig.app.createdYear + " " + _main.appConfig.app.owner;
-
+    
     _element = {
         //Item Header =================================================
         LayoutHeader:
@@ -1020,6 +1021,7 @@ function onSignIn(response) {
         _main.account.user.org = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].org : null;
         _main.account.user.desc = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].desc : null;
         _main.account.user.pict = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.picture : null;
+        _main.account.user.sub = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.sub : null;
         _main.account.user.cred = _main.arrVarGlobal._dataArray.length != 0 ? response : null;
 
         if (_main.account.user.cred != null) {
@@ -1032,9 +1034,9 @@ function onSignIn(response) {
         } else {
             _element.Toast.option(
                 "message",
-                responsePayload.email + " un-authorized as user "+_main.appConfig.app.title
+                responsePayload.email + " un-authorized as user " + _main.appConfig.app.title
             );
-            _element.Toast.option("type","error");
+            _element.Toast.option("type", "error");
             _element.Toast.show();
         }
 
