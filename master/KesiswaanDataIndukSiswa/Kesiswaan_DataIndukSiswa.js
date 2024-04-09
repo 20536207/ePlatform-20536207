@@ -630,15 +630,20 @@ $(document).ready(function () {
     $('#InformasiDataIndukSiswa').dxDataGrid({
         onContentReady: function (e) {
             if (!e.component._isReady) {
-                GetJsonData(
-                    this,
+                const getQuery = GetVisualizationQuery(
                     _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
                     2138208914,                           //SheetID
                     "A1:CO",                              //Range
                     "SELECT * WHERE A <> ''"              //Filter or Query
                 );
+                getQuery.send(response => {
+                    GetJsonData(response);
+                    this.option("dataSource", _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
+                });
+                delete getQuery;
+                _main.arrVarGlobal._dataArray = [];
                 e.component._isReady = true;
-            };
+            }
         },
         allowColumnReordering: true,
         allowColumnResizing: true,
@@ -763,16 +768,21 @@ $(document).ready(function () {
             template(container, options) {
                 $("<div>").dxDataGrid({
                     onContentReady: function (e) {
-                        if (!e.component.__ready) {
-                            GetJsonData(
-                                this,
+                        if (!e.component._isReady) {
+                            const getQuery = GetVisualizationQuery(
                                 _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
                                 1316011922,                                         //SheetID
                                 "A1:CX",                                            //Range
                                 "SELECT E, A, CT, CU, CV, CW, CX WHERE E = '" + options.data.B01 + "'"     //Filter or Query
                             );
-                            e.component.__ready = true;
-                        };
+                            getQuery.send(response => {
+                                GetJsonData(response);
+                                this.option("dataSource", _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
+                            });
+                            delete getQuery;
+                            _main.arrVarGlobal._dataArray = [];
+                            e.component._isReady = true;
+                        }
                     },
                     //============
                     // dataSource: $.getJSON("data/InformasiDataIndukSiswa.json", function (jsondata) {

@@ -1,5 +1,5 @@
 //=========================================================================================================
-$(document).ready(function () {
+$(document).ready(async function () {
 
     _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
     // ===============================================================================================
@@ -634,17 +634,23 @@ $(document).ready(function () {
     //     InformasiRombonganBelajar:
 
     $('#InformasiRombonganBelajar').dxDataGrid({
+        // dataSource: await _main.arrVarGlobal._dataArray,
         onContentReady: function (e) {
             if (!e.component._isReady) {
-                GetJsonData(
-                    this,
+                const getQuery = GetVisualizationQuery(
                     _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
                     1316011922,                                     //SheetID
                     "A1:CX",                                        //Range
                     "SELECT * WHERE A <> ''"                         //Filter or Query
                 );
+                getQuery.send(response => {
+                    GetJsonData(response);
+                    this.option("dataSource",_main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
+                });
                 e.component._isReady = true;
-            };
+                delete getQuery;
+                _main.arrVarGlobal._dataArray = [];
+            }
         },
         allowColumnReordering: true,
         allowColumnResizing: true,

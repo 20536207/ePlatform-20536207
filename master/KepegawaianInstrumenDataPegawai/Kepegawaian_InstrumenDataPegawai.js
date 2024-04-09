@@ -32,7 +32,7 @@ $(document).ready(function () {
                     fixed: true,
                     dataField: "ID",
                     dataType: "string",
-                },{
+                }, {
                     caption: "Nama Pegawai",
                     dataField: "A01",
                     dataType: "string",
@@ -1243,15 +1243,20 @@ $(document).ready(function () {
     $('#InformasiInstrumenDataPegawai').dxDataGrid({
         onContentReady: function (e) {
             if (!e.component._isReady) {
-                GetJsonData(
-                    this,
+                const getQuery = GetVisualizationQuery(
                     _main.appConfig.dataSource.Kepegawaian, //SpreadsheetID
                     1523976848,                                     //SheetID
                     "A4:LP",                                        //Range
                     "SELECT * WHERE A <> ''"                         //Filter or Query
                 );
+                getQuery.send(response => {
+                    GetJsonData(response);
+                    this.option("dataSource", _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
+                });
+                delete getQuery;
+                _main.arrVarGlobal._dataArray = [];
                 e.component._isReady = true;
-            };
+            }
         },
         allowColumnReordering: true,
         allowColumnResizing: true,

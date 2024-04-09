@@ -9,6 +9,8 @@ $(document).ready(function () {
                 iconUrl: "/assets/images/LOGO20536207.png",
                 appname: "e-Platform AIO",
                 appver: "20536207.01",
+                owner: "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
+                createdYear: "2022",
             },
             gapi: {
                 clientId: "237444192144-2gf7p8ombdcbtl6ti7udeu7pkd8m7d6j.apps.googleusercontent.com",
@@ -57,6 +59,9 @@ $(document).ready(function () {
             _actPageContains: null,
             _PdfFilePageContains: null,
             _ParentPageContains: null,
+            _data: null,
+            _dataArray: [],
+            _dataObject: {},
         },
     };
 
@@ -70,8 +75,7 @@ $(document).ready(function () {
     _iconApp.type = "image/icon type";
     _iconApp.href = _main.appConfig.app.iconUrl;
     document.head.appendChild(_iconApp);
-    document.getElementById("LayoutFooter").innerHTML = "<i class='far fa-copyright'></i> 2022 SD Negeri Tisnonegaran 1 Probolinggo";
-    google.accounts.id.initialize(_main.account.initialize);
+    document.getElementById("LayoutFooter").innerHTML = "<i class='far fa-copyright'></i> " + _main.appConfig.app.createdYear + " " + _main.appConfig.app.owner;
 
     _element = {
         //Item Header =================================================
@@ -149,6 +153,9 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick() {
+                                google.accounts.id.initialize(_main.account.initialize);
+                                google.accounts.id.prompt();
+
                                 // _element.PageToolbar.option("items[1].text", "e-Platform Account");
                                 // _element.PageToolbar.option("items[2].visible", false);
 
@@ -156,7 +163,7 @@ $(document).ready(function () {
                                 // _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
                                 // $("#PageContains").load(_main.arrVarGlobal._actPageContains);
 
-                                google.accounts.id.prompt();
+                                
                                 // _element.PageToolbar.option("items[1].text", "e-Platform Account");
                                 // _element.PageToolbar.option("items[2].visible", false);
 
@@ -343,29 +350,36 @@ function decodeJwtResponse(token) {
     );
 
     return JSON.parse(jsonPayload);
-}
+};
 
 function onSignIn(response) {
-    const responsePayload = decodeJwtResponse(response.credential);
-    // GetJsonData(
-    //     null,
-    //     _main.appConfig.dataSource.User,    //SpreadsheetID
-    //     1181780988,                         //SheetID
-    //     "A1:E",                            //Range
-    //     "SELECT * WHERE C = '" + responsePayload.email + "'"            //Filter or Query
-    // );
+    const
+        responsePayload = decodeJwtResponse(response.credential),
+        getQuery = GetVisualizationQuery(
+            _main.appConfig.dataSource.User,    //SpreadsheetID
+            1181780988,                         //SheetID
+            "A1:E",                            //Range
+            "SELECT * WHERE C = '" + responsePayload.email + "'"            //Filter or Query
+        );
+    getQuery.send(response => { 
+        GetJsonData(response);
+        _main.account.user.id = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].ID : null;
+        _main.account.user.name = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].name : null;
+        _main.account.user.email = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].email : null;
+        _main.account.user.org = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].org : null;
+        _main.account.user.desc = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].desc : null;
+        _main.account.user.pict = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.picture : null;
+        _main.account.user.cred = response;
 
-    _main.account.user.id = null;
-    _main.account.user.name = responsePayload.name;
-    _main.account.user.email = responsePayload.email;
-    _main.account.user.org = null;
-    _main.account.user.desc = null;
-    _main.account.user.pict = responsePayload.picture;
-    _main.account.user.cred = response;
-}
+    });
+    delete getQuery;
+    delete responsePayload;
+    _main.arrVarGlobal._dataArray = [];
+
+};
 
 //=== VISUALIZATION QUERY ======================================================================
-function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
+function GetVisualizationQuery(_DBId, _TBId, _Range, _Query) {
     var
         query = new google.visualization.Query(
             "https://docs.google.com/spreadsheets/d/" + _DBId + "/gviz/tq?" +
@@ -376,56 +390,53 @@ function GetJsonData(_this, _DBId, _TBId, _Range, _Query) {
         );
 
     query.setQuery(_Query);
-    query.send(response => {
+    return query;
+}
 
-        if (!(response.isError())) {
-            var data = response.getDataTable();
-            data = JSON.parse(data.toJSON());
+function GetJsonData(response) {
+    _main.arrVarGlobal._dataArray = [];
 
-            //GetJSONData Structure==================================
-            var
-                _DataSource = [],
-                _Column = [];
+    if (!(response.isError())) {
+        var
+            data = response.getDataTable(),
+            // _dataSource = [],
+            _column = [];
 
-            data.rows.forEach((_rowItems, _rowIndex) => {
-                var _arrRow = {};
+        //GetJSONData Structure==================================
+        data = JSON.parse(data.toJSON());
+        data.rows.forEach((_rowItems, _rowIndex) => {
+            var _arrRow = {};
+            _rowItems.c.forEach((_cItems, _cIndex) => {
+                var _field = data.cols[_cIndex],
+                    _value = _field.type == 'date' ? (_cItems == null ? "" : _cItems.f) : (_cItems == null ? "" : _cItems.v),
+                    _arrCol = {};
 
-                _rowItems.c.forEach((_cItems, _cIndex) => {
-                    var _field = data.cols[_cIndex],
-                        _value = _field.type == 'date' ? (_cItems == null ? "" : _cItems.f) : (_cItems == null ? "" : _cItems.v),
-                        _arrCol = {};
+                _arrRow[_field.label] = _value == null ? "" : _value;
 
-                    _arrRow[_field.label] = _value == null ? "" : _value;
+                // set column ===========================================
+                if (_rowIndex == 0) {
+                    _arrCol["caption"] = _field.label;
+                    _arrCol["fixed"] = _cIndex == 0 ? true : false;
+                    _arrCol["dataField"] = _field.label;
+                    _arrCol["sortOrder"] = _cIndex == 0 ? "asc" : "";
+                    _arrCol["dataType"] = _field.type;
+                    _arrCol["format"] = _field.pattern;
+                    _column.push(_arrCol);
+                };
 
-                    // set column ===========================================
-                    if (_rowIndex == 0) {
-                        _arrCol["caption"] = _field.label;
-                        _arrCol["fixed"] = _cIndex == 0 ? true : false;
-                        _arrCol["dataField"] = _field.label;
-                        _arrCol["sortOrder"] = _cIndex == 0 ? "asc" : "";
-                        _arrCol["dataType"] = _field.type;
-                        _arrCol["format"] = _field.pattern;
-                        _Column.push(_arrCol);
-                    };
-
-                });
-                _DataSource.push(_arrRow);
             });
+            _main.arrVarGlobal._dataArray.push(_arrRow);
+        });
 
-            if (_this != null) {
-                _this.option("dataSource", _DataSource);
-            } else {
-                //==============
-            }
-            delete _DataSource;
-            delete data;
-            delete _Column;
-            delete _arrCol;
-            delete _arrRow;
+        delete data;
+        delete _field;
+        delete _column;
+        delete _arrCol;
+        delete _arrRow;
+        return;
+    } else {
+        _notify('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+    };
 
-        } else {
-            _notify('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        };
-    });
-    return;
 };

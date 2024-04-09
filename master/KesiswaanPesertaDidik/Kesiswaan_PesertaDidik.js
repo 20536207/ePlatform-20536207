@@ -2535,14 +2535,19 @@ $(document).ready(function () {
     $('#InformasiPesertaDidik').dxDataGrid({
         onContentReady: function (e) {
             if (!e.component._isReady) {
-                GetJsonData(
-                    this,
+                const getQuery = GetVisualizationQuery(
                     _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
                     1957628809,                                     //SheetID
                     "A1:DF",                                        //Range
                     "SELECT * WHERE A <> ''"                        //Filter or Query
                 );
+                getQuery.send(response => {
+                    GetJsonData(response);
+                    this.option("dataSource", _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
+                });
                 e.component._isReady = true;
+                delete getQuery;
+                _main.arrVarGlobal._dataArray = [];
             };
         },
         // keyExpr: 'A01',
@@ -2700,16 +2705,21 @@ $(document).ready(function () {
             template(container, options) {
                 $("<div>").dxDataGrid({
                     onContentReady: function (e) {
-                        if (!e.component.__ready) {
-                            GetJsonData(
-                                this,
+                        if (!e.component._isReady) {
+                            const getQuery = GetVisualizationQuery(
                                 _main.appConfig.dataSource.Kesiswaan,           //SpreadsheetID
                                 1300103800,                                     //SheetID
                                 "A1:CX",                                        //Range
                                 "SELECT * WHERE (CU = 'Aktif') AND (A CONTAINS '" + options.data.A01 + "')"   //Filter or Query
                             );
-                            e.component.__ready = true;
-                        };
+                            getQuery.send(response => {
+                                GetJsonData(response);
+                                this.option("dataSource", _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
+                            });
+                            e.component._isReady = true;
+                            delete getQuery;
+                            _main.arrVarGlobal._dataArray = [];
+                        }
                     },
                     columns: _objData.TbColumns,
                     // filterValue: [["A01", "contains", options.data.A01]],
