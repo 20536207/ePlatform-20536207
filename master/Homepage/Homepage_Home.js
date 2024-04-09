@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     // ===============================================================================================
     $('#NavbarLayout04').dxTabs({
-        dataSource: "/data/NavLayout03.json",
+        dataSource: _main.navigator.linkedInfo,
         hoverStateEnabled: true,
         focusStateEnabled: false,
         selectionMode: 'none',
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
     // ===============================================================================================
     $('#BannerImage').dxGallery({
-        dataSource: '/data/BannerImage.json',
+        dataSource: _main.navigator.banner,
         height: 'innerWidth',
         width: 'innerWidth',
         focusStateEnabled: false,
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     // ===============================================================================================
     $('#HomeLinkedPlatform').dxAccordion({
-        dataSource: "/data/HomeLinkedPlatform.json",
+        dataSource: _main.navigator.linkedPlatform,
         activeStateEnabled: true,
         focusStateEnabled: false,
         hoverStateEnabled: false,
@@ -101,8 +101,8 @@ $(document).ready(function () {
     });
 
     // ===============================================================================================
-    $.getJSON("/data/NavMain.json", function (result) {
-        result[0].items.forEach(function (itemData) {
+    // $.getJSON("/data/NavMain.json", function (result) {
+        _main.navigator.main[0].items.forEach(function (itemData) {
 
             $("#HomePageContains").append(
                 $("<div />").dxButton({
@@ -135,7 +135,7 @@ $(document).ready(function () {
             )
 
         });
-    });
+    // });
 
     $("#HomePagesMain").dxScrollView({
         scrollByContent: true,
