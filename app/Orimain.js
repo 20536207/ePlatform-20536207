@@ -13,8 +13,8 @@ $(document).ready(function () {
                 createdYear: "2022",
             },
             gapi: {
-                clientId: "237444192144-2gf7p8ombdcbtl6ti7udeu7pkd8m7d6j.apps.googleusercontent.com",
-                apiKey: "AIzaSyD3AQeI27SHVw8W9lhw864Vq85e83n9TyI",
+                clientId: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
+                apiKey: "AIzaSyCAXrx4H2jplyt2O7MAI1Q0bX60V2QoP9Q",
                 discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
                 scope: "https://www.googleapis.com/auth/drive",
             },
@@ -26,17 +26,17 @@ $(document).ready(function () {
         },
         account: {
             user: {
+                cred: null,
+                sub: null,
                 id: null,
                 name: null,
                 email: null,
                 org: null,
                 desc: null,
                 pict: null,
-                sub: null,
-                cred: null,
             },
             initialize: {
-                client_id: "237444192144-2gf7p8ombdcbtl6ti7udeu7pkd8m7d6j.apps.googleusercontent.com",
+                client_id: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
                 auto_select: true,
                 callback: onSignIn,
                 // login_uri:"./login",
@@ -731,7 +731,7 @@ $(document).ready(function () {
     _iconApp.href = _main.appConfig.app.iconUrl;
     document.head.appendChild(_iconApp);
     document.getElementById("LayoutFooter").innerHTML = "<i class='far fa-copyright'></i> " + _main.appConfig.app.createdYear + " " + _main.appConfig.app.owner;
-    
+
     _element = {
         //Item Header =================================================
         LayoutHeader:
@@ -1004,25 +1004,27 @@ function decodeJwtResponse(token) {
     return JSON.parse(jsonPayload);
 };
 
-function onSignIn(response) {
+function onSignIn(currentAccount) {
+
     const
-        responsePayload = decodeJwtResponse(response.credential),
+        responsePayload = decodeJwtResponse(currentAccount.credential),
         getQuery = GetVisualizationQuery(
             _main.appConfig.dataSource.User,    //SpreadsheetID
             1181780988,                         //SheetID
             "A1:E",                            //Range
             "SELECT * WHERE C = '" + responsePayload.email + "'"            //Filter or Query
         );
-    getQuery.send(response => {
-        GetJsonData(response);
+
+    getQuery.send(VisualizationQuery => {
+        GetJsonData(VisualizationQuery);
+        _main.account.user.cred = _main.arrVarGlobal._dataArray.length != 0 ? currentAccount.credential : null;
+        _main.account.user.sub = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.sub : null;
         _main.account.user.id = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].ID : null;
         _main.account.user.name = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].name : null;
         _main.account.user.email = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].email : null;
         _main.account.user.org = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].org : null;
         _main.account.user.desc = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].desc : null;
         _main.account.user.pict = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.picture : null;
-        _main.account.user.sub = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.sub : null;
-        _main.account.user.cred = _main.arrVarGlobal._dataArray.length != 0 ? response : null;
 
         if (_main.account.user.cred != null) {
             _element.PageToolbar.option("items[1].text", "e-Platform Account");
