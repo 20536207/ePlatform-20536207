@@ -721,6 +721,7 @@ $(document).ready(function () {
     };
 
     //App Head =================================================
+    google.accounts.id.initialize(_main.account.initialize);
     let _titleApp = document.createElement('title');
     _titleApp.innerHTML = _main.appConfig.app.title;
     document.head.appendChild(_titleApp);
@@ -809,7 +810,7 @@ $(document).ready(function () {
                             visible: true,
                             onClick() {
                                 if (_main.account.user.cred == null) {
-                                    google.accounts.id.initialize(_main.account.initialize);
+                                    // google.accounts.id.initialize(_main.account.initialize);
                                     google.accounts.id.prompt();
                                 } else {
                                     _element.PageToolbar.option("items[1].text", "e-Platform Account");
@@ -930,6 +931,7 @@ $(document).ready(function () {
     $(window).resize(function () {
         _element.LayoutContains.option('openedStateMode', $(window).width() < 960 ? "overlap" : "shrink");
     });
+    
 
 });
 
