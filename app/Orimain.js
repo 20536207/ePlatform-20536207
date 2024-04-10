@@ -721,7 +721,6 @@ $(document).ready(function () {
     };
 
     //App Head =================================================
-    google.accounts.id.initialize(_main.account.initialize);
     let _titleApp = document.createElement('title');
     _titleApp.innerHTML = _main.appConfig.app.title;
     document.head.appendChild(_titleApp);
@@ -918,6 +917,8 @@ $(document).ready(function () {
                 },
             ]
         }).dxToolbar("instance"),
+
+        //Toast info =================================================
         Toast: $('#toast').dxToast({
             displayTime: 5000,
         }).dxToast('instance'),
@@ -931,6 +932,7 @@ $(document).ready(function () {
     $(window).resize(function () {
         _element.LayoutContains.option('openedStateMode', $(window).width() < 960 ? "overlap" : "shrink");
     });
+    google.accounts.id.initialize(_main.account.initialize);
     
 
 });
