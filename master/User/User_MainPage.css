@@ -6,33 +6,31 @@
   height: 100%;
   width: 100%;
   padding: 10px 5px 5px 5px;
-  text-align: center;
+  /* text-align: center; */
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 /* ==================================================================================== */
+#UserContains{
+  padding-bottom: 10px;
+}
+
+#UserContains .dx-item {
+  padding: 15px 8px 15px 8px;
+}
+
 #UserAuthorized {
-  width: 300px;
   margin: auto;
   padding: 10px;
-
+  /* background-color: rgba(100, 100, 100, 0.08); */
+  border-radius: 8px;
+  margin:30px;
+  box-shadow: 0 0 10px 0 rgba(100, 100, 100, 1);
 }
-
-#btnSignInOut{
-  border-radius: 25px;
-  width: 75%;
-  /* height: 36px; */
-  /* font-weight: bold; */
-  /* font-size: larger; */
-}
-
-.g_id_signin>* {
-  display: inline-flex;
-}
-
 
 #UserPage {
+  padding-top: 10px;
   text-align: center;
   justify-content: center;
 }

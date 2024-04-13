@@ -29,31 +29,35 @@ $(document).ready(function () {
                 cred: null,
                 sub: null,
                 id: null,
-                name: null,
+                nama: null,
                 email: null,
-                org: null,
-                desc: null,
-                pict: null,
+                organisasi: null,
+                keterangan: null,
+                photo: null,
             },
-            initialize: {
-                client_id: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
-                auto_select: true,
-                callback: onSignIn,
-                // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
-                // native_callback:"onSignIn",
-                cancel_on_tap_outside: false,
-                // prompt_parent_id: "PageContains",
-                // auto_prompt: true,
-                nonce: "ePlatform20536207",
-                context: "use",
-                // state_cookie_domain:"_*.domain",
-                ux_mode: "redirect", //popup,redirect
-                // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
-                // intermediate_iframe_close_callback:"logBeforeClose",
-                itp_support: true,
-                // login_hint:"",
-                // hd: "*",
-                use_fedcm_for_prompt: true,
+            initialize: () => {
+                google.accounts.id.initialize(
+                    {
+                        client_id: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
+                        auto_select: true,
+                        callback: onSignIn,
+                        // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
+                        // native_callback:"onSignIn",
+                        cancel_on_tap_outside: false,
+                        // prompt_parent_id: "PageContains",
+                        // auto_prompt: true,
+                        // nonce: "ePlatform20536207",
+                        context: "use",
+                        // state_cookie_domain:"_*.domain",
+                        // ux_mode: "redirect", //popup,redirect
+                        // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
+                        // intermediate_iframe_close_callback:"logBeforeClose",
+                        itp_support: true,
+                        // login_hint:"",
+                        // hd: "*",
+                        use_fedcm_for_prompt: true,
+                    }
+                );
             },
         },
         arrVarGlobal: {
@@ -730,7 +734,7 @@ $(document).ready(function () {
     _iconApp.type = "image/icon type";
     _iconApp.href = _main.appConfig.app.iconUrl;
     document.head.appendChild(_iconApp);
-    document.getElementById("LayoutFooter").innerHTML = "<i class='far fa-copyright'></i> " + _main.appConfig.app.createdYear + " " + _main.appConfig.app.owner;
+    document.getElementById("LayoutFooter").innerHTML = `<i class="far fa-copyright"></i>${_main.appConfig.app.createdYear} ${_main.appConfig.app.owner}`;
 
     _element = {
         //Item Header =================================================
@@ -758,7 +762,7 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick: () => {
-                                if (_main.account.user.email != null && _main.account.user.name != null) {
+                                if (_main.account.user.cred != null){
                                     _element.LayoutContains.toggle();
                                 };
                             }
@@ -812,7 +816,7 @@ $(document).ready(function () {
                                     // google.accounts.id.initialize(_main.account.initialize);
                                     google.accounts.id.prompt();
                                 } else {
-                                    _element.PageToolbar.option("items[1].text", "e-Platform Account");
+                                    _element.PageToolbar.option("items[1].text", "e-Platform Authorized");
                                     _element.PageToolbar.option("items[2].visible", false);
 
                                     $("#PageContains").empty();
@@ -932,9 +936,7 @@ $(document).ready(function () {
     $(window).resize(function () {
         _element.LayoutContains.option('openedStateMode', $(window).width() < 960 ? "overlap" : "shrink");
     });
-    google.accounts.id.initialize(_main.account.initialize);
-
-
+    _main.account.initialize();
 });
 
 //=== Sidebar ======================================================================
@@ -956,7 +958,7 @@ function _PageSidebar(_dataSource) {
                 scrollByThumb: true,
                 useNativeScrolling: false,
                 groupTemplate(data) {
-                    return $(`<a>${data.key}</a>`);
+                    return `<a>${data.key}</a>`;
                 },
                 width: 265,
                 selectionMode: "single",
@@ -1024,14 +1026,14 @@ function onSignIn(currentAccount) {
         _main.account.user.cred = _main.arrVarGlobal._dataArray.length != 0 ? currentAccount.credential : null;
         _main.account.user.sub = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.sub : null;
         _main.account.user.id = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].ID : null;
-        _main.account.user.name = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].name : null;
+        _main.account.user.nama = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].nama : null;
         _main.account.user.email = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].email : null;
-        _main.account.user.org = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].org : null;
-        _main.account.user.desc = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].desc : null;
-        _main.account.user.pict = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.picture : null;
+        _main.account.user.organisasi = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].organisasi : null;
+        _main.account.user.keterangan = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].keterangan : null;
+        _main.account.user.photo = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.picture : null;
 
         if (_main.account.user.cred != null) {
-            _element.PageToolbar.option("items[1].text", "e-Platform Account");
+            _element.PageToolbar.option("items[1].text", "e-Platform Authorized");
             _element.PageToolbar.option("items[2].visible", false);
 
             $("#PageContains").empty();
@@ -1050,7 +1052,6 @@ function onSignIn(currentAccount) {
     delete getQuery;
     delete responsePayload;
     _main.arrVarGlobal._dataArray = [];
-
 };
 
 //=== VISUALIZATION QUERY ======================================================================

@@ -43,6 +43,8 @@
 #NavbarLayout04 {
     border: none;
     height: 42px;
+    background-color: rgba(100, 100, 100, 0.1);
+    
 }
 
 #NavbarLayout04 * {
@@ -82,18 +84,18 @@
 }
 
 .HomeLinkedPlatform-dev {
+    padding: 5px 20px 5px 0;
     text-align: left;
-    margin: 10px 25px 20px 0;
-    font-size: smaller;
+    align-self: center;
+    font-size: small;
 }
 
 .HomeLinkedPlatform-dev>i {
-    font-size: small;
+    font-size: smaller;
 }
 
 .HomeLinkedPlatform-item {
     text-align: justify;
-    font-size: 1rem;
 }
 
 .HomeLinkedPlatform-item img {
@@ -109,10 +111,11 @@
 
 .HomeLinkedPlatform-item-detail {
     text-align: left;
+    font-size: small;
 }
 
 .HomeLinkedPlatform-item-detail>i {
-    font-size: small;
+    font-size: smaller;
 }
 
 .clearfix:after {

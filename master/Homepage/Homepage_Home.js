@@ -19,8 +19,8 @@ $(document).ready(function () {
             { ratio: 1, screen: 'lg' },
         ],
         singleColumnScreen: 'sm',
-        screenByWidth() {
-            return $(window).width() < 601 ? 'sm' : 'lg';
+        screenByWidth(width) {
+            return width < 601 ? 'sm' : 'lg';
         },
     }).dxResponsiveBox("instance");
 
@@ -65,13 +65,13 @@ $(document).ready(function () {
         hoverStateEnabled: false,
         animationDuration: 0,
         collapsible: true,
-        itemTitleTemplate: function (devdata, devindex, develement) {
-            develement.append(
-                $("<div class='HomeLinkedPlatform-dev'>" +
-                    "<b>" + devdata.dev + "</b><br>" +
-                    "<i>" + devdata.detail + "</i>" +
-                    "</div>")
-            );
+        itemTitleTemplate: (devdata, devindex, develement) => {
+            return `
+                <div class = "HomeLinkedPlatform-dev">
+                    <b>${devdata.dev}</b><br>
+                    <i>${devdata.detail}</i></br>
+                </div>
+            `;
         },
         itemTemplate: function (devdata, devindex, develement) {
             devdata.items.forEach(function (productdata, productindex, productelement) {
@@ -87,12 +87,12 @@ $(document).ready(function () {
                             window.open(productdata.target, '_blank')
                         },
                         template: () => {
-                            return (
-                                "<div class='HomeLinkedPlatform-item-detail'>" +
-                                "<a>" + productdata.product + "</a><br>" +
-                                "<i>" + productdata.detail + "</i>" +
-                                "</div>"
-                            );
+                            return `
+                                <div class = "HomeLinkedPlatform-item-detail">
+                                <a>${productdata.product}</a><br>
+                                <i>${productdata.detail}</i></br>
+                                </div>
+                            `;
                         },
                     })
                 )
@@ -101,40 +101,40 @@ $(document).ready(function () {
     });
 
     // ===============================================================================================
-    // $.getJSON("/data/NavMain.json", function (result) {
-        _main.navigator.main[0].items.forEach(function (itemData) {
+    _main.navigator.main[0].items.forEach(function (itemData) {
+        $("#HomePageContains").append(
+            $("<div />").dxButton({
+                elementAttr: { class: 'btnHomePageContains' },
+                type: 'normal',
+                stylingMode: 'contained',
+                hoverStateEnabled: false,
+                focusStateEnabled: false,
+                activeStateEnabled: true,
+                height: '130px',
+                template: () => {
+                    return `
+                        <div class="itembtnpage">
+                            <div class="itemicon"><i class="fas fa-layer-group fa-4x"></i></div>
+                            <div class="itemdev">
+                                ${itemData.text}
+                            </div>
+                        </div>
+                    `;
+                },
+                onClick(e) {
+                    _element.PageToolbar.option("items[1].text", itemData.text);
+                    _element.PageToolbar.option("items[2].visible", false);
 
-            $("#HomePageContains").append(
-                $("<div />").dxButton({
-                    elementAttr: { class: 'btnHomePageContains' },
-                    type: 'normal',
-                    stylingMode: 'contained',
-                    hoverStateEnabled: false,
-                    focusStateEnabled: false,
-                    activeStateEnabled: true,
-                    height: '130px',
-                    template: () => {
-                        return $(
-                            "<div class='itembtnpage'>" +
-                            "<div class='itemicon'><i class='fas fa-layer-group fa-4x'></i></div>" +
-                            "<div class='itemdev'><div>" + itemData.text + "</div></div>" +
-                            "</div>"
-                        )
-                    },
-                    onClick(e) {
-                        _element.PageToolbar.option("items[1].text", itemData.text);
-                        _element.PageToolbar.option("items[2].visible", false);
+                    $("#PageContains").empty();
+                    _main.arrVarGlobal._actPageContains = itemData.target;
+                    _main.arrVarGlobal._PdfFilePageContains = "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf";
+                    _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
+                    return $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                },
+            })
+        )
 
-                        $("#PageContains").empty();
-                        _main.arrVarGlobal._actPageContains = itemData.target;
-                        _main.arrVarGlobal._PdfFilePageContains = "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf";
-                        _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
-                        return $("#PageContains").load(_main.arrVarGlobal._actPageContains);
-                    },
-                })
-            )
-
-        });
+    });
     // });
 
     $("#HomePagesMain").dxScrollView({
@@ -143,5 +143,5 @@ $(document).ready(function () {
         useNative: false,
         showScrollbar: 'onHover',
     });
-    
+
 });
