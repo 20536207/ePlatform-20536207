@@ -47,7 +47,7 @@ $(document).ready(function () {
                         // prompt_parent_id: "PageContains",
                         // auto_prompt: true,
                         // nonce: "ePlatform20536207",
-                        context: "use",
+                        context: "signin",
                         // state_cookie_domain:"_*.domain",
                         // ux_mode: "redirect", //popup,redirect
                         // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
@@ -762,7 +762,7 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick: () => {
-                                if (_main.account.user.cred != null){
+                                if (_main.account.user.cred != null) {
                                     _element.LayoutContains.toggle();
                                 };
                             }
@@ -1116,3 +1116,38 @@ function GetJsonData(response) {
     };
 
 };
+
+function addPageButton(itemElement, itemDataCaption, actPageContains, ParentPageContains, pdfFileContains) {
+
+    $(itemElement).append(
+        $("<div />").dxButton({
+            elementAttr: { class: 'pageButton' },
+            type: 'normal',
+            stylingMode: 'contained',
+            hoverStateEnabled: false,
+            focusStateEnabled: false,
+            activeStateEnabled: true,
+            height: '130px',
+            template: () => {
+                return `
+                        <div class="itemPageButtton">
+                            <div class="itemPageButtonIcon"><i class="fas fa-layer-group fa-4x"></i></div>
+                            <div class="itemPageButtonCaption">
+                                ${itemDataCaption}
+                            </div>
+                        </div>
+                    `;
+            },
+            onClick() {
+                _element.PageToolbar.option("items[1].text", itemDataCaption);
+                _element.PageToolbar.option("items[2].visible", false);
+
+                $("#PageContains").empty();
+                _main.arrVarGlobal._actPageContains = actPageContains;
+                _main.arrVarGlobal._ParentPageContains = ParentPageContains;
+                _main.arrVarGlobal._PdfFilePageContains = pdfFileContains;
+                return $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+            },
+        })
+    );
+}

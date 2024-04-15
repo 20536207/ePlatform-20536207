@@ -102,40 +102,16 @@ $(document).ready(function () {
 
     // ===============================================================================================
     _main.navigator.main[0].items.forEach(function (itemData) {
-        $("#HomePageContains").append(
-            $("<div />").dxButton({
-                elementAttr: { class: 'btnHomePageContains' },
-                type: 'normal',
-                stylingMode: 'contained',
-                hoverStateEnabled: false,
-                focusStateEnabled: false,
-                activeStateEnabled: true,
-                height: '130px',
-                template: () => {
-                    return `
-                        <div class="itembtnpage">
-                            <div class="itemicon"><i class="fas fa-layer-group fa-4x"></i></div>
-                            <div class="itemdev">
-                                ${itemData.text}
-                            </div>
-                        </div>
-                    `;
-                },
-                onClick(e) {
-                    _element.PageToolbar.option("items[1].text", itemData.text);
-                    _element.PageToolbar.option("items[2].visible", false);
 
-                    $("#PageContains").empty();
-                    _main.arrVarGlobal._actPageContains = itemData.target;
-                    _main.arrVarGlobal._PdfFilePageContains = "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf";
-                    _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
-                    return $("#PageContains").load(_main.arrVarGlobal._actPageContains);
-                },
-            })
-        )
+        addPageButton(
+            "#HomePageContains", //itemElement,
+            itemData.text,  //itemBDataCaption,
+            itemData.target,    //actPageContains,
+            "/master/Homepage/Homepage_Home.html", //ParentPageContains
+            "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
+        );
 
     });
-    // });
 
     $("#HomePagesMain").dxScrollView({
         scrollByContent: true,

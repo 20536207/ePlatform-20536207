@@ -1,90 +1,153 @@
+_element.PageToolbar.option("items[1].text", "e-Platform Authentication");
+_element.PageToolbar.option("items[2].visible", false);
+_main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
+
 $(document).ready(function () {
+  $("#UserPagesContains").dxResponsiveBox({
+    rows: [
+      { ratio: 0, screen: 'sm lg' }, //01
+      { ratio: 1, screen: 'sm lg' }, //02
+    ],
+    cols: [
+      { ratio: 1 },
+      { ratio: 5, screen: 'lg' },
+    ],
+    singleColumnScreen: 'sm',
+    screenByWidth(width) {
+      return width < 960 ? 'sm' : 'lg';
+    },
+  }).dxResponsiveBox("instance");
 
-  _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
-
-  //==========================================================================================
-  // $('#UserContains').dxTabPanel({
-  //   dataSource: _main.navigator.main,
-  //   itemTitleTemplate: (itemData, itemIndex, element)=>{
-  //     return itemData.key;
-  //   },
-  //   focusStateEnabled:false,
-  //   hoverStateEnabled:false,
-  //   width: "100%",
-  //   animationEnabled: true,
-  //   swipeEnabled: true,
-  //   tabsPosition: $(window).width() < 960 ? "top" : "left",
-  //   stylingMode: "secondary",
-  //   iconPosition: 'top',
-  //   // itemTemplate: ({ tasks }) => taskList(tasks),
-  // }).dxTabPanel('instance');
-
-  //==========================================================================================
-  $("#UserAuthorized")
-    .dxForm({
-      formData: _main.account.user,
+  _Authentication = {
+    FormOpt: {
       readOnly: true,
-      // disabled: true,
       labelLocation: "left",
       labelMode: "outside",
+      showColonAfterLabel: false,
       colCount: "auto",
-      colCountByScreen: {
-        lg: 9,
-        md: 9,
-        sm: 1,
-        xs: 1,
-      },
-      screenByWidth(width) {
-        return width < 960 ? 'sm' : 'lg';
-        // return width < 480 ? 'xs' : width < 840 ? 'sm' : width < 1024 ? 'md' : 'lg';
-      },
-      items: [
-        {
-          itemType: 'group',
-          items: [
-            {
-              template: `<img id="UserPict" src=${_main.account.user.photo} style="display:'inline-flex';object-fit:scale-down;width:98px;height:98px;">`
-            },
-          ],
-        },
-        {
-          itemType: 'group',
-          caption: 'User Info',
-          colSpan: 4,
-          items: ['nama', 'organisasi', 'keterangan', "id"]
-        },
-        {
-          itemType: 'group',
-          caption: 'Account Info',
-          colSpan: 4,
-          items: ['email', 'sub']
-        },
-      ],
-    }).dxForm("instance");
+      colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
+      screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
+    },
+    CurrentUser: () => {
+      var _orgUser = null;
 
-  for (let i = 1; i <= 20; i++) {
-    $("#UserPage").append(
-      $("<div />").dxButton({
-        elementAttr: { id: "box" + i, class: "btnPageLayout", },
-        type: 'normal',
-        stylingMode: 'contained',
-        hoverStateEnabled: false,
-        focusStateEnabled: false,
-        activeStateEnabled: true,
-        template: () => {
-          return `
-            <div style="display:flex;flex-direction: column;padding: 5px">
-            <i class="fas fa-user-shield fa-4x"></i>
-            <span>Authentication, Management and Information</span></div>
-          `;
-        },
-        onClick(e) {
-          _notify("option " + $('div').index(this) + " masih proses ritual");
-        },
-      })
-    )
+      switch (_main.account.user.organisasi) {
+        case "Peserta Didik":
+          _orgUser = [
+            {
+              tabs: "Data Diri",
+            },
+            {
+              tabs: "Catatan Kependudukan",
+            },
+            {
+              tabs: "Keterangan Tempat Tinggal",
+            },
+            {
+              tabs: "Keterangan Ayah Kandung",
+            },
+            {
+              tabs: "Keterangan Ibu Kandung",
+            },
+            {
+              tabs: "Keterangan Wali",
+            },
+            {
+              tabs: "Keterangan Data Dinamis",
+            },
+            {
+              tabs: "Jaminan Sosial Pendidikan",
+            },
+            {
+              tabs: "Penerimaan Peserta Didik",
+            },
+            {
+              tabs: "Pendidikan Sebelumnya",
+            },
+            {
+              tabs: "Satuan Pendidikan Pindahan",
+            },
+          ];
+          break;
+        case "Pendidik":
+          _orgUser = [
+            {
+              tabs: "Instrumen Data",
+              dataSource: "",
+            },
+            {
+              tabs: "Catatan Sipil",
+              dataSource: "",
+            },
+            {
+              tabs: "Catatan Kependudukan",
+              dataSource: "",
+            },
+            {
+              tabs: "Keterangan Tempat Tinggal",
+              dataSource: "",
+            },
+            {
+              tabs: "Penugasan Pegawai",
+              dataSource: "",
+            },
+            {
+              tabs: "Penugasan Pegawai",
+              dataSource: "",
+            },
+            {
+              tabs: "Penugasan Pegawai",
+              dataSource: "",
+            },
+            {
+              tabs: "Penugasan Pegawai",
+              dataSource: "",
+            },
+            {
+              tabs: "Penugasan Pegawai",
+              dataSource: "",
+            },
+            {
+              tabs: "Penugasan Pegawai",
+              dataSource: "",
+            },
+            {
+              tabs: "Penugasan Pegawai",
+              dataSource: "",
+            },
+            {
+              tabs: "Penugasan Pegawai",
+              dataSource: "",
+            },
+          ];
+          break;
+        case "Kependidikan":
+          _orgUser = [
+            {
+
+            },
+          ];
+          break;
+        default: break;
+      };
+      return _orgUser;
+    },
   };
 
+  // ===============================================================================================
+  FormUserAuthentication();
+
+  _Authentication.CurrentUser().forEach(function (itemData) {
+  
+    addPageButton(
+      "#UserPage", //itemElement,
+      itemData.tabs,  //itemBDataCaption,
+      "/master/AIOFormPageContains.html",    //actPageContains,
+      "/master/User/User_MainPage.html", //ParentPageContains
+      "" //pdfFileContains
+    );
+
+  })
 
   // ===============================================================================================
   $("#UserMainPage").dxScrollView({
@@ -93,4 +156,45 @@ $(document).ready(function () {
     useNative: false,
     showScrollbar: 'onHover',
   });
+  
 });
+
+// ===============================================================================================
+function FormUserAuthentication() {
+  $("#UserAuthentication").dxForm({
+    readOnly: true,
+    labelLocation: "left",
+    labelMode: "outside",
+    showColonAfterLabel: false,
+    colCount: "auto",
+    colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
+    screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
+    formData: _main.account.user,
+    items: [
+      {
+        itemType: 'group',
+        colSpan: 2,
+        items: [
+          {
+            template: `
+          <div id=UserPict style="text-align: center">
+            <img src=${_main.account.user.photo} style="display:inline-flex;object-fit:scale-down;width:106px;height:106px;"></img>
+          </div>`
+          },
+        ],
+      },
+      {
+        itemType: 'group',
+        caption: 'User Info',
+        // colSpan: 2,
+        items: ['nama', 'organisasi', 'keterangan', "id"]
+      },
+      {
+        itemType: 'group',
+        caption: 'Account Info',
+        // colSpan: 2,
+        items: ['email', 'sub']
+      },
+    ],
+  }).dxForm("instance");
+}

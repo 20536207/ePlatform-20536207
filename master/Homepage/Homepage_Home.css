@@ -44,7 +44,7 @@
     border: none;
     height: 42px;
     background-color: rgba(100, 100, 100, 0.1);
-    
+
 }
 
 #NavbarLayout04 * {
@@ -126,60 +126,18 @@
 
 
 /* ==================================================================================== */
-#HomePageContains {
-    text-align: center;
-    justify-content: center;
-}
+/* #HomePageContains { */
+    /* text-align: center; */
+    /* justify-content: center; */
+/* } */
 
-#HomePageContains .dx-button {
-    margin: 0.5%;
-}
-
-.btnHomePageContains {
-    width: 19%;
-}
-
-.btnHomePageContains .itembtnpage {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
-
-.btnHomePageContains .itembtnpage .itemicon {
-    justify-self: flex-start;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* height: inherit; */
-    padding: 10px 10px 10px 10px;
-}
-
-.btnHomePageContains .itembtnpage .itemdev {
-    justify-self: flex-end;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(100, 100, 100, 0.2);
-
-    height: 100%;
-    /* width: 100%; */
-    padding: 5px;
-    border-radius: 5px;
-
-}
-
+/* ==================================================================================== */
 @media only screen and (max-width: 960px) {
 
-    #HomePageContains .dx-button {
+    /* .pageButton {
         margin: 1%;
-    }
-
-    .btnHomePageContains {
         width: 23%;
-        /*split 4 */
-    }
+    } */
 
     #BannerImage>div {
         font-size: smaller;
@@ -207,14 +165,10 @@
         font-size: small;
     }
 
-    #HomePageContains .dx-button {
+    /* .pageButton{
         margin: 1.5%;
-    }
-
-    .btnHomePageContains {
         width: 30.33%;
-        /* Split 3 */
-    }
+    } */
 
 }
 
@@ -224,23 +178,17 @@
         width: 75%;
     }
 
-    #HomePageContains .dx-button {
+    /* .pageButton{
         margin: 0.9%;
-    }
-
-    .btnHomePageContains {
         width: 48.2%;
-    }
+    } */
 
 }
 
 @media only screen and (max-width: 368px) {
-    #HomePageContains .dx-button {
+    /* .pageButton {
         margin: auto;
         margin-bottom: 10px;
-    }
-
-    .btnHomePageContains {
         width: 100%;
-    }
+    } */
 }

@@ -13,6 +13,28 @@ body {
   background-color: rgba(100, 100, 100, 0.2);
 }
 
+.dx-form {
+  padding: 10px;
+  border-radius: 8px;
+  margin: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+.dx-form-group-caption {
+  display: block;
+  font-size: small;
+  font-weight: bold;
+  background-color: rgba(100, 100, 100, 0.2);
+  padding: 5px 8px 5px 8px;
+  border-radius: 4px;
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7); */
+}
+
+.dx-form-group-with-caption>.dx-form-group-content {
+  padding-top: 10px;
+  border-top: none;
+}
+
 /* ==================================================================================== */
 #MainLayout {
   display: flex;
@@ -83,13 +105,13 @@ body {
   padding-left: 10px;
 }
 
-#PageToolbar >* .items-before {
+#PageToolbar>* .items-before {
   border-right-width: 1px;
   border-right-color: inherit;
   border-right-style: outset;
 }
 
-#PageToolbar >* .items-after {
+#PageToolbar>* .items-after {
   border-left-width: 1px;
   border-left-color: inherit;
   border-left-style: inset;
@@ -104,6 +126,38 @@ body {
 }
 
 /* ==================================================================================== */
+.pageButton {
+  width: 19%;
+  margin: 0.5%;
+}
+
+.pageButton .itemPageButtton {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.pageButton .itemPageButtton .itemPageButtonIcon {
+  justify-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px 10px 10px;
+}
+
+.pageButton .itemPageButtton .itemPageButtonCaption {
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(100, 100, 100, 0.2);
+  height: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* ==================================================================================== */
 @media only screen and (max-width: 960px) {
 
   #LayoutContent .ContainsSidebar {
@@ -111,4 +165,33 @@ body {
     background-color: rgba(36, 36, 36, 0.95);
   }
 
+  .pageButton {
+    margin: 1%;
+    width: 23%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .pageButton {
+    margin: 1.5%;
+    width: 30.33%;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+  .pageButton {
+    margin: 0.9%;
+    width: 48.2%;
+  }
+
+}
+
+@media only screen and (max-width: 368px) {
+  .pageButton {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 100%;
+  }
 }

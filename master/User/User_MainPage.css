@@ -1,91 +1,14 @@
 #UserMainPage {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   overflow: hidden;
   flex: 1 1 auto;
   height: 100%;
   width: 100%;
-  padding: 10px 5px 5px 5px;
-  /* text-align: center; */
   flex-wrap: wrap;
-  /* justify-content: center; */
 }
 
 /* ==================================================================================== */
-#UserContains{
-  padding-bottom: 10px;
-}
-
-#UserContains .dx-item {
-  padding: 15px 8px 15px 8px;
-}
-
-#UserAuthorized {
-  margin: auto;
-  padding: 10px;
-  /* background-color: rgba(100, 100, 100, 0.08); */
-  border-radius: 8px;
-  margin:30px;
-  box-shadow: 0 0 10px 0 rgba(100, 100, 100, 1);
-}
-
 #UserPage {
-  padding-top: 10px;
-  text-align: center;
-  justify-content: center;
-}
-
-#UserPage .dx-button {
-  margin: 0.5%;
-}
-
-.btnPageLayout {
-  width: 19%;
-}
-
-
-@media only screen and (max-width: 960px) {
-  #UserPage .dx-button {
-    margin: 1%;
-  }
-
-  .btnPageLayout {
-    width: 23%;
-    /*split 4 */
-  }
-
-}
-
-@media only screen and (max-width: 600px) {
-  #UserPage .dx-button {
-    margin: 1.5%;
-  }
-
-  .btnPageLayout {
-    width: 30.33%;
-    /* Split 3 */
-  }
-
-}
-
-@media only screen and (max-width: 480px) {
-  #UserPage .dx-button {
-    margin: 0.9%;
-  }
-
-  .btnPageLayout {
-    width: 48.2%;
-  }
-
-}
-
-@media only screen and (max-width: 368px) {
-  #UserPage .dx-button {
-    margin: auto;
-    margin-bottom: 10px;
-  }
-
-  .btnPageLayout {
-    width: 100%;
-  }
+  margin: 8px;
 }
