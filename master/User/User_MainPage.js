@@ -19,15 +19,30 @@ $(document).ready(function () {
   }).dxResponsiveBox("instance");
 
   _Authentication = {
-    FormOpt: {
-      readOnly: true,
-      labelLocation: "left",
-      labelMode: "outside",
-      showColonAfterLabel: false,
-      colCount: "auto",
-      colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
-      screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
-    },
+    Authorized: [
+      {
+        itemType: 'group',
+        colSpan: 2,
+        items: [
+          {
+            template: `
+          <div id=UserPict style="text-align: center">
+            <img src=${_main.account.user.photo} style="display:inline-flex;object-fit:scale-down;width:106px;height:106px;"></img>
+          </div>`
+          },
+        ],
+      },
+      {
+        itemType: 'group',
+        caption: 'User Info',
+        items: ['nama', 'organisasi', 'keterangan', "id"]
+      },
+      {
+        itemType: 'group',
+        caption: 'Account Info',
+        items: ['email', 'sub']
+      },
+    ],
     CurrentUser: () => {
       var _orgUser = null;
 
@@ -135,10 +150,14 @@ $(document).ready(function () {
   };
 
   // ===============================================================================================
-  FormUserAuthentication();
+  addPageForm(
+    "#UserAuthentication",
+    _main.account.user,
+    _Authentication.Authorized
+  );
 
   _Authentication.CurrentUser().forEach(function (itemData) {
-  
+
     addPageButton(
       "#UserPage", //itemElement,
       itemData.tabs,  //itemBDataCaption,
@@ -156,45 +175,5 @@ $(document).ready(function () {
     useNative: false,
     showScrollbar: 'onHover',
   });
-  
-});
 
-// ===============================================================================================
-function FormUserAuthentication() {
-  $("#UserAuthentication").dxForm({
-    readOnly: true,
-    labelLocation: "left",
-    labelMode: "outside",
-    showColonAfterLabel: false,
-    colCount: "auto",
-    colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
-    screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
-    formData: _main.account.user,
-    items: [
-      {
-        itemType: 'group',
-        colSpan: 2,
-        items: [
-          {
-            template: `
-          <div id=UserPict style="text-align: center">
-            <img src=${_main.account.user.photo} style="display:inline-flex;object-fit:scale-down;width:106px;height:106px;"></img>
-          </div>`
-          },
-        ],
-      },
-      {
-        itemType: 'group',
-        caption: 'User Info',
-        // colSpan: 2,
-        items: ['nama', 'organisasi', 'keterangan', "id"]
-      },
-      {
-        itemType: 'group',
-        caption: 'Account Info',
-        // colSpan: 2,
-        items: ['email', 'sub']
-      },
-    ],
-  }).dxForm("instance");
-}
+});

@@ -976,7 +976,7 @@ function _PageSidebar(_dataSource) {
         }
     );
 
-};
+}
 
 //=== NOTIFY ======================================================================
 function _notify(_message) {
@@ -992,7 +992,7 @@ function _notify(_message) {
         },
         { position: "top right", direction: "down-push" }
     );
-};
+}
 
 //=== USER AUTHENTICATION ======================================================================
 function decodeJwtResponse(token) {
@@ -1008,7 +1008,7 @@ function decodeJwtResponse(token) {
     );
 
     return JSON.parse(jsonPayload);
-};
+}
 
 function onSignIn(currentAccount) {
 
@@ -1052,7 +1052,7 @@ function onSignIn(currentAccount) {
     delete getQuery;
     delete responsePayload;
     _main.arrVarGlobal._dataArray = [];
-};
+}
 
 //=== VISUALIZATION QUERY ======================================================================
 function GetVisualizationQuery(_DBId, _TBId, _Range, _Query) {
@@ -1115,7 +1115,7 @@ function GetJsonData(response) {
         return;
     };
 
-};
+}
 
 function addPageButton(itemElement, itemDataCaption, actPageContains, ParentPageContains, pdfFileContains) {
 
@@ -1150,4 +1150,19 @@ function addPageButton(itemElement, itemDataCaption, actPageContains, ParentPage
             },
         })
     );
+}
+
+// ===============================================================================================
+function addPageForm(itemElement, itemData, itemContent) {
+  $(itemElement).dxForm({
+    readOnly: true,
+    labelLocation: "left",
+    labelMode: "outside",
+    showColonAfterLabel: false,
+    colCount: "auto",
+    colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
+    screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
+    formData: itemData,
+    items: itemContent,
+  }).dxForm("instance");
 }
