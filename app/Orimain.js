@@ -28,11 +28,11 @@ $(document).ready(function () {
             user: {
                 cred: null,
                 sub: null,
-                id: null,
-                nama: null,
-                email: null,
-                organisasi: null,
-                keterangan: null,
+                userid: null,
+                username: null,
+                useremail: null,
+                userstate: null,
+                userdept: null,
                 photo: null,
             },
             initialize: () => {
@@ -65,6 +65,7 @@ $(document).ready(function () {
             _PdfFilePageContains: null,
             _ParentPageContains: null,
             _data: null,
+            _columnArray: [],
             _dataArray: [],
             _dataObject: {},
         },
@@ -830,102 +831,105 @@ $(document).ready(function () {
             }).dxToolbar("instance"),
 
         //Layout Contains =================================================
-        LayoutContains: $('#LayoutContent').dxDrawer({
-            opened: false,
-            animationEnabled: false,
-            revealMode: "slide", //"slide | expand"
-            openedStateMode: $(window).width() < 980 ? "overlap" : "shrink", //shrink //overlap
-            position: 'left', //right
-            shading: $(window).width() < 600 ? true : false,
-            closeOnOutsideClick: true,
-        }).dxDrawer('instance'),
+        LayoutContains:
+            $('#LayoutContent').dxDrawer({
+                opened: false,
+                animationEnabled: false,
+                revealMode: "slide", //"slide | expand"
+                openedStateMode: $(window).width() < 980 ? "overlap" : "shrink", //shrink //overlap
+                position: 'left', //right
+                shading: $(window).width() < 600 ? true : false,
+                closeOnOutsideClick: true,
+            }).dxDrawer('instance'),
 
         //Item PageToolbar =================================================
-        PageToolbar: $("#PageToolbar").dxToolbar({
-            items: [
-                {
-                    location: "before", //before|center|after
-                    widget: "dxButton", //dxButton|dxButtonGroup|dxToolbar|dxTabs
-                    locateInMenu: "never", //auto|never|always
-                    visible: true,
-                    cssClass: "items-before",
-                    options: {
-                        index: 0,
-                        elementAttr: { id: "elPageToolbar-" + (0).toString().padStart(3, "0"), },
-                        icon: "fas fa-right-from-bracket fa-rotate-180",
-                        text: "",
-                        template: undefined,
-                        label: "",
-                        hint: "",
-                        stylingMode: "text", //text|outlined|contained
-                        type: "normal", //normal|default|danger|success
-                        hoverStateEnabled: false,
-                        focusStateEnabled: false,
-                        activeStateEnabled: true,
-                        disabled: false,
+        PageToolbar:
+            $("#PageToolbar").dxToolbar({
+                items: [
+                    {
+                        location: "before", //before|center|after
+                        widget: "dxButton", //dxButton|dxButtonGroup|dxToolbar|dxTabs
+                        locateInMenu: "never", //auto|never|always
                         visible: true,
-                        onClick() {
-                            _element.PageToolbar.option("items[2].visible", false);
-                            $("#PageContains").empty();
-                            _main.arrVarGlobal._actPageContains = _main.arrVarGlobal._ParentPageContains;
-                            $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                        cssClass: "items-before",
+                        options: {
+                            index: 0,
+                            elementAttr: { id: "elPageToolbar-" + (0).toString().padStart(3, "0"), },
+                            icon: "fas fa-right-from-bracket fa-rotate-180",
+                            text: "",
+                            template: undefined,
+                            label: "",
+                            hint: "",
+                            stylingMode: "text", //text|outlined|contained
+                            type: "normal", //normal|default|danger|success
+                            hoverStateEnabled: false,
+                            focusStateEnabled: false,
+                            activeStateEnabled: true,
+                            disabled: false,
+                            visible: true,
+                            onClick() {
+                                _element.PageToolbar.option("items[2].visible", false);
+                                $("#PageContains").empty();
+                                _main.arrVarGlobal._actPageContains = _main.arrVarGlobal._ParentPageContains;
+                                $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                            },
                         },
                     },
-                },
-                {
-                    location: "before", //before|center|after
-                    // widget: "dxButton", //dxButton|dxButtonGroup|dxToolbar|dxTabs
-                    locateInMenu: "never", //auto|never|always
-                    visible: true,
-                    text: "",
-                    cssClass: "Page-Title",
-                    options: {
-                    },
-                },
-                {
-                    location: "after", //before|center|after
-                    widget: "dxButtonGroup", //dxButton|dxButtonGroup|dxToolbar|dxTabs
-                    locateInMenu: "auto", //auto|never|always
-                    visible: false,
-                    cssClass: "items-after",
-                    options: {},
-                },
-                {
-                    location: "after", //before|center|after
-                    widget: "dxButton", //dxButton|dxButtonGroup|dxToolbar|dxTabs
-                    locateInMenu: "never", //auto|never|always
-                    visible: true,
-                    cssClass: "items-after",
-                    options: {
-                        index: 3,
-                        elementAttr: { id: "elPageToolbar-" + (3).toString().padStart(3, "0"), },
-                        icon: "fas fa-refresh",
-                        text: "",
-                        template: undefined,
-                        label: "",
-                        hint: "",
-                        stylingMode: "text", //text|outlined|contained
-                        type: "normal", //normal|default|danger|success
-                        hoverStateEnabled: false,
-                        focusStateEnabled: false,
-                        activeStateEnabled: true,
-                        disabled: false,
+                    {
+                        location: "before", //before|center|after
+                        // widget: "dxButton", //dxButton|dxButtonGroup|dxToolbar|dxTabs
+                        locateInMenu: "never", //auto|never|always
                         visible: true,
-                        onClick() {
-                            _element.PageToolbar.option("items[2].visible", false);
+                        text: "",
+                        cssClass: "Page-Title",
+                        options: {
+                        },
+                    },
+                    {
+                        location: "after", //before|center|after
+                        widget: "dxButtonGroup", //dxButton|dxButtonGroup|dxToolbar|dxTabs
+                        locateInMenu: "auto", //auto|never|always
+                        visible: false,
+                        cssClass: "items-after",
+                        options: {},
+                    },
+                    {
+                        location: "after", //before|center|after
+                        widget: "dxButton", //dxButton|dxButtonGroup|dxToolbar|dxTabs
+                        locateInMenu: "never", //auto|never|always
+                        visible: true,
+                        cssClass: "items-after",
+                        options: {
+                            index: 3,
+                            elementAttr: { id: "elPageToolbar-" + (3).toString().padStart(3, "0"), },
+                            icon: "fas fa-refresh",
+                            text: "",
+                            template: undefined,
+                            label: "",
+                            hint: "",
+                            stylingMode: "text", //text|outlined|contained
+                            type: "normal", //normal|default|danger|success
+                            hoverStateEnabled: false,
+                            focusStateEnabled: false,
+                            activeStateEnabled: true,
+                            disabled: false,
+                            visible: true,
+                            onClick() {
+                                _element.PageToolbar.option("items[2].visible", false);
 
-                            $("#PageContains").empty();
-                            $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                                $("#PageContains").empty();
+                                $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                            },
                         },
                     },
-                },
-            ]
-        }).dxToolbar("instance"),
+                ]
+            }).dxToolbar("instance"),
 
         //Toast info =================================================
-        Toast: $('#toast').dxToast({
-            displayTime: 5000,
-        }).dxToast('instance'),
+        Toast:
+            $('#toast').dxToast({
+                displayTime: 5000,
+            }).dxToast('instance'),
     };
 
     //==============================================================================
@@ -1025,12 +1029,14 @@ function onSignIn(currentAccount) {
         GetJsonData(VisualizationQuery);
         _main.account.user.cred = _main.arrVarGlobal._dataArray.length != 0 ? currentAccount.credential : null;
         _main.account.user.sub = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.sub : null;
-        _main.account.user.id = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].ID : null;
-        _main.account.user.nama = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].nama : null;
-        _main.account.user.email = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].email : null;
-        _main.account.user.organisasi = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].organisasi : null;
-        _main.account.user.keterangan = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].keterangan : null;
+        _main.account.user.userid = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].userid : null;
+        _main.account.user.username = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].username : null;
+        _main.account.user.useremail = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].useremail : null;
+        _main.account.user.userstate = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].userstate : null;
+        _main.account.user.userdept = _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray[0].userdept : null;
         _main.account.user.photo = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.picture : null;
+
+        //https://lh3.googleusercontent.com/d/FILE_ID
 
         if (_main.account.user.cred != null) {
             _element.PageToolbar.option("items[1].text", "e-Platform Authorized");
@@ -1051,6 +1057,7 @@ function onSignIn(currentAccount) {
     });
     delete getQuery;
     delete responsePayload;
+    _main.arrVarGlobal._columnArray = [];
     _main.arrVarGlobal._dataArray = [];
 }
 
@@ -1070,13 +1077,14 @@ function GetVisualizationQuery(_DBId, _TBId, _Range, _Query) {
 }
 
 function GetJsonData(response) {
+    _main.arrVarGlobal._columnArray = [];
     _main.arrVarGlobal._dataArray = [];
 
     if (!(response.isError())) {
         var
-            data = response.getDataTable(),
-            // _dataSource = [],
-            _column = [];
+            data = response.getDataTable();
+        // _dataSource = [],
+        // _column = [];
 
         //GetJSONData Structure==================================
         data = JSON.parse(data.toJSON());
@@ -1097,16 +1105,14 @@ function GetJsonData(response) {
                     _arrCol["sortOrder"] = _cIndex == 0 ? "asc" : "";
                     _arrCol["dataType"] = _field.type;
                     _arrCol["format"] = _field.pattern;
-                    _column.push(_arrCol);
+                    _main.arrVarGlobal._columnArray.push(_arrCol);
                 };
-
             });
             _main.arrVarGlobal._dataArray.push(_arrRow);
         });
 
         delete data;
         delete _field;
-        delete _column;
         delete _arrCol;
         delete _arrRow;
         return;
@@ -1117,7 +1123,7 @@ function GetJsonData(response) {
 
 }
 
-function addPageButton(itemElement, itemDataCaption, actPageContains, ParentPageContains, pdfFileContains) {
+function addPageButton(itemElement, itemData, itemDataCaption, actPageContains, ParentPageContains, pdfFileContains) {
 
     $(itemElement).append(
         $("<div />").dxButton({
@@ -1153,16 +1159,17 @@ function addPageButton(itemElement, itemDataCaption, actPageContains, ParentPage
 }
 
 // ===============================================================================================
-function addPageForm(itemElement, itemData, itemContent) {
-  $(itemElement).dxForm({
-    readOnly: true,
-    labelLocation: "left",
-    labelMode: "outside",
-    showColonAfterLabel: false,
-    colCount: "auto",
-    colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
-    screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
-    formData: itemData,
-    items: itemContent,
-  }).dxForm("instance");
+function addPageForm(element, formColCount, itemData, itemContent) {
+    $(element).dxForm({
+        readOnly: true,
+        labelLocation: "left",
+        labelMode: "outside",
+        showColonAfterLabel: true,
+        colCount: formColCount,
+        // colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
+        // screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
+        formData: itemData,
+        items: itemContent,
+    }).dxForm("instance");
+
 }

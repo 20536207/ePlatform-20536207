@@ -1,4 +1,36 @@
-// ===============================================================================================
+  // ===============================================================================================
+  // _Authentication.CurrentUser().forEach(function (itemData) {
+  //   addPageButton(
+  //     "#UserPage", //itemElement,
+  //     itemData,
+  //     itemData.tabs,  //itemBDataCaption,
+  //     "/master/AIOFormPageContains/AIO_FormPageContains.html",    //actPageContains,
+  //     "/master/User/User_MainPage.html", //ParentPageContains
+  //     "" //pdfFileContains
+  //   );
+  // })
+
+  
+//  $("#UserAuthentication").dxTabPanel({
+//     dataSource: _Authentication.CurrentUser(),
+//     collapsible: true,
+//     hoverStateEnabled: false,
+//     focusStateEnabled: false,
+//     activeStateEnabled: true,
+//     swipeEnabled: true,
+//     stylingMode: "primary",
+//     tabsPosition: $(window).width() <= 960 ? "top" : "left",
+//     itemTitleTemplate: (itemData) => { return itemData.tabs},
+//     itemTemplate: function () {
+//       return addPageForm(
+//         "<div>",
+//         _main.account.user,
+//         _Authentication.Authorized
+//       )
+//     },
+//   }).dxTabPanel("instance");
+  
+  // ===============================================================================================
   // $("#UserAuthorized").append(
   //   $(
   //     "<div " +

@@ -105,6 +105,7 @@ $(document).ready(function () {
 
         addPageButton(
             "#HomePageContains", //itemElement,
+            itemData,
             itemData.text,  //itemBDataCaption,
             itemData.target,    //actPageContains,
             "/master/Homepage/Homepage_Home.html", //ParentPageContains

@@ -649,6 +649,7 @@ $(document).ready(async function () {
                 });
                 e.component._isReady = true;
                 delete getQuery;
+                _main.arrVarGlobal._columnArray = [];
                 _main.arrVarGlobal._dataArray = [];
             }
         },
