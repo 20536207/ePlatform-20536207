@@ -817,7 +817,7 @@ $(document).ready(function () {
                                     // google.accounts.id.initialize(_main.account.initialize);
                                     google.accounts.id.prompt();
                                 } else {
-                                    _element.PageToolbar.option("items[1].text", "e-Platform Authorized");
+                                    _element.PageToolbar.option("items[1].text", "e-Platform Authentication");
                                     _element.PageToolbar.option("items[2].visible", false);
 
                                     $("#PageContains").empty();

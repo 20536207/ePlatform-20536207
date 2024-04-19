@@ -35,6 +35,7 @@ $(document).ready(function () {
     getQuery = null;
 
   switch (_main.account.user.userstate) {
+
     case "Peserta Didik":
       getQuery = GetVisualizationQuery(
         _main.appConfig.dataSource.Kesiswaan,           //SpreadsheetID
@@ -62,32 +63,32 @@ $(document).ready(function () {
       });
       break;
 
-    case "Pendidik":
-      getQuery = GetVisualizationQuery(
-        _main.appConfig.dataSource.Kepegawaian,                   //SpreadsheetID
-        1523976848,                                               //SheetID
-        "A4:LP",                                                  //Range
-        "SELECT * WHERE A  '" + _main.account.user.userid + "')"  //Filter or Query
-      );
-      getQuery.send(response => {
-        GetJsonData(response);
-        if (_main.arrVarGlobal._dataArray.length != 0) {
-          formPendidik(getQuery);
-        }
-      });
-      break;
+    case "Pendidik" && "Kependidikan" :
 
-    case "Kependidikan":
       getQuery = GetVisualizationQuery(
         _main.appConfig.dataSource.Kepegawaian,                   //SpreadsheetID
         1523976848,                                               //SheetID
         "A4:LP",                                                  //Range
-        "SELECT * WHERE A  '" + _main.account.user.userid + "')"  //Filter or Query
+        "SELECT * WHERE A  = '" + _main.account.user.userid + "'"  //Filter or Query
       );
+
       getQuery.send(response => {
         GetJsonData(response);
+        
         if (_main.arrVarGlobal._dataArray.length != 0) {
-          formKependidikan(getQuery);
+          _Authentication.formData.dataPersonal = _main.arrVarGlobal._dataArray;
+
+          formPegawai(_Authentication.formData);
+          _Authentication.formOption[0].items[0].tabs = _main.arrVarGlobal._data;
+
+          const newForm = addPageForm(
+            "#UserAuthentication",
+            1,
+            _Authentication.formData.dataPersonal[0],
+            _Authentication.formOption,
+          );
+
+          // newForm.option("formData",newForm.option("selectedIndex") == 0 ? _Authentication.formData.currentUser : _Authentication.formData.dataPersonal);
         }
       });
       break;
@@ -368,7 +369,7 @@ function formPesertaDidik(dataSource) {
                 },
                 {
                   dataField: "D04",
-                  editorOptions:{
+                  editorOptions: {
                     format: "000",
                   },
                   label: {
@@ -377,7 +378,7 @@ function formPesertaDidik(dataSource) {
                 },
                 {
                   dataField: "D05",
-                  editorOptions:{
+                  editorOptions: {
                     format: "000",
                   },
                   label: {
@@ -478,7 +479,7 @@ function formPesertaDidik(dataSource) {
                 },
                 {
                   dataField: "E05",
-                  editorOptions:{
+                  editorOptions: {
                     format: "000",
                   },
                   label: {
@@ -487,7 +488,7 @@ function formPesertaDidik(dataSource) {
                 },
                 {
                   dataField: "E06",
-                  editorOptions:{
+                  editorOptions: {
                     format: "000",
                   },
                   label: {
@@ -542,7 +543,7 @@ function formPesertaDidik(dataSource) {
                 },
                 {
                   dataField: "E13",
-                  editorOptions:{
+                  editorOptions: {
                     format: "#0.000 Km",
                   },
                   label: {
@@ -551,7 +552,7 @@ function formPesertaDidik(dataSource) {
                 },
                 {
                   dataField: "E14",
-                  editorOptions:{
+                  editorOptions: {
                     format: "#0 menit",
                   },
                   label: {
@@ -1088,4 +1089,803 @@ function formPesertaDidik(dataSource) {
     },
   ]
 
-}      
+}
+
+// ===============================================================================================
+function formPegawai(dataSource) {
+
+  _main.arrVarGlobal._data = [
+    {
+      title: "User Account",
+      items: [
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+            {
+              itemType: "group",
+              items: [
+                {
+                  template: `
+                    <div id=UserPict style="text-align: center; vertical-align: middle;">
+                      <img src=${dataSource.currentUser.photo} style="display:inline-flex;object-fit:scale-down;max-width:198px;"></img>
+                    </div>`
+                },
+              ],
+            },
+
+            {
+              itemType: "group",
+              caption: "User Info",
+              items: [
+                {
+                  dataField: "",
+                  editorOptions: {
+                    value: dataSource.currentUser.username,
+                  },
+                  label: {
+                    text: "Username",
+                  },
+                },
+                {
+                  dataField: "",
+                  editorOptions: {
+                    value: dataSource.currentUser.userstate,
+                  },
+                  label: {
+                    text: "Group",
+                  },
+                },
+                {
+                  dataField: "",
+                  editorOptions: {
+                    value: dataSource.currentUser.userdept,
+                  },
+                  label: {
+                    text: "sub-Group",
+                  },
+                },
+              ]
+            },
+
+            {
+              itemType: "group",
+              caption: "Account Info",
+              items: [
+                {
+                  dataField: "",
+                  editorOptions: {
+                    value: dataSource.currentUser.useremail,
+                  },
+                  label: {
+                    text: "Email",
+                  },
+                },
+                {
+                  dataField: "",
+                  editorOptions: {
+                    value: dataSource.currentUser.sub,
+                  },
+                  label: {
+                    text: "Account Id",
+                  },
+                }
+              ]
+            },
+
+          ],
+
+        },
+      ],
+    },
+
+    {
+      title: "Identitas Pegawai",
+      items: [
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+            {
+              itemType: "group",
+              items: [
+                {
+                  itemType: "group",
+                  caption: "Identitas Pegawai",
+                  items: [
+                    {
+                      dataField: "A01",
+                      label: {
+                        text: "Nama Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "F01",
+                      label: {
+                        text: "NIP",
+                      },
+                    },
+                    {
+                      dataField: "F02",
+                      label: {
+                        text: "KARPEG",
+                      },
+                    },
+                    {
+                      dataField: "F03",
+                      label: {
+                        text: "NPWP",
+                      },
+                    },
+                    {
+                      dataField: "F04",
+                      label: {
+                        text: "NUPTK",
+                      },
+                    },
+                  ],
+                },
+                {
+                  itemType: "group",
+                  caption: "Rombongan Belajar",
+                  items: [
+                    {
+                      dataField: "A01",
+                      label: {
+                        text: "Id Kelas",
+                      },
+                    },
+                    {
+                      dataField: "A02",
+                      label: {
+                        text: "Tahun Akademik",
+                      },
+                    },
+                    {
+                      dataField: "A03",
+                      label: {
+                        text: "Rombel",
+                      },
+                    },
+                    {
+                      dataField: "A04",
+                      label: {
+                        text: "No. Urut",
+                      },
+                    },
+                  ]
+                },
+              ],
+            },
+            {
+              itemType: "group",
+              caption: "Catatan Sipil",
+              items: [
+                {
+                  dataField: "C01",
+                  label: {
+                    text: "NIK",
+                  },
+                },
+                {
+                  dataField: "C02",
+                  label: {
+                    text: "No. Register",
+                  },
+                },
+                {
+                  dataField: "C03",
+                  label: {
+                    text: "No. Akta Kelahiran",
+                  },
+                },
+                {
+                  dataField: "C04",
+                  editorType: "dxDateBox",
+                  editorOptions: {
+                    displayFormat: "dd/MM/yyyy",
+                  },
+                  label: {
+                    text: "Tertanggal",
+                  },
+                },
+                {
+                  dataField: "C05",
+                  label: {
+                    text: "Gender",
+                  },
+                },
+                {
+                  dataField: "C06",
+                  label: {
+                    text: "Tempat Lahir",
+                  },
+                },
+                {
+                  dataField: "C07",
+                  editorType: "dxDateBox",
+                  editorOptions: {
+                    displayFormat: "dd/MM/yyyy",
+                  },
+                  label: {
+                    text: "Tanggal Lahir",
+                  },
+                },
+                {
+                  dataField: "C08",
+                  label: {
+                    text: "Anak Ke-",
+                  },
+                },
+
+              ],
+            },
+          ],
+        },
+      ]
+    },
+
+    {
+      title: "Catatan Sipil",
+      items: [
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+            {
+              itemType: "group",
+              items: [
+                {
+                  dataField: "D01",
+                  label: {
+                    text: "No. KK",
+                  },
+                },
+                {
+                  dataField: "D02",
+                  // editorType: "dxDateBox",
+                  editorOptions: {
+                    format: "dd/MM/yyyy",
+                  },
+                  label: {
+                    text: "Tertanggal",
+                  },
+                },
+                {
+                  dataField: "D03",
+                  label: {
+                    text: "Alamat",
+                  },
+                },
+                {
+                  dataField: "D04",
+                  editorOptions: {
+                    format: "000",
+                  },
+                  label: {
+                    text: "RT",
+                  },
+                },
+                {
+                  dataField: "D05",
+                  editorOptions: {
+                    format: "000",
+                  },
+                  label: {
+                    text: "RW",
+                  },
+                },
+                {
+                  itemType: "empty",
+                },
+
+              ]
+            },
+
+            {
+              itemType: "group",
+              items: [
+                {
+                  dataField: "D06",
+                  label: {
+                    text: "Desa/Kelurahan",
+                  },
+                },
+                {
+                  dataField: "D07",
+                  label: {
+                    text: "Kecamatan",
+                  },
+                },
+                {
+                  dataField: "D08",
+                  label: {
+                    text: "Pemerintah Daerah",
+                  },
+                },
+                {
+                  dataField: "D09",
+                  label: {
+                    text: "Pemerintah Propinsi",
+                  },
+                },
+                {
+                  dataField: "D10",
+                  label: {
+                    text: "Kode Pos",
+                  },
+                },
+                {
+                  dataField: "D11",
+                  label: {
+                    text: "Agama",
+                  },
+                },
+
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      title: "Catatan Kependudukan",
+      items: [
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+            {
+              itemType: "group",
+              items: [
+                {
+                  dataField: "D01",
+                  label: {
+                    text: "No. KK",
+                  },
+                },
+                {
+                  dataField: "D02",
+                  // editorType: "dxDateBox",
+                  editorOptions: {
+                    format: "dd/MM/yyyy",
+                  },
+                  label: {
+                    text: "Tertanggal",
+                  },
+                },
+                {
+                  dataField: "D03",
+                  label: {
+                    text: "Alamat",
+                  },
+                },
+                {
+                  dataField: "D04",
+                  editorOptions: {
+                    format: "000",
+                  },
+                  label: {
+                    text: "RT",
+                  },
+                },
+                {
+                  dataField: "D05",
+                  editorOptions: {
+                    format: "000",
+                  },
+                  label: {
+                    text: "RW",
+                  },
+                },
+                {
+                  itemType: "empty",
+                },
+
+              ]
+            },
+
+            {
+              itemType: "group",
+              items: [
+                {
+                  dataField: "D06",
+                  label: {
+                    text: "Desa/Kelurahan",
+                  },
+                },
+                {
+                  dataField: "D07",
+                  label: {
+                    text: "Kecamatan",
+                  },
+                },
+                {
+                  dataField: "D08",
+                  label: {
+                    text: "Pemerintah Daerah",
+                  },
+                },
+                {
+                  dataField: "D09",
+                  label: {
+                    text: "Pemerintah Propinsi",
+                  },
+                },
+                {
+                  dataField: "D10",
+                  label: {
+                    text: "Kode Pos",
+                  },
+                },
+                {
+                  dataField: "D11",
+                  label: {
+                    text: "Agama",
+                  },
+                },
+
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      title: "Keterangan Tempat Tinggal",
+      items: [
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+            {
+              itemType: "group",
+              items: [
+                {
+                  dataField: "E01",
+                  label: {
+                    text: "Dokumen",
+                  },
+                },
+                {
+                  dataField: "E02",
+                  label: {
+                    text: "No. Dokumen",
+                  },
+                },
+                {
+                  dataField: "E03",
+                  editorType: "dxDateBox",
+                  editorOptions: {
+                    displayFormat: "dd/MM/yyyy",
+                  },
+                  label: {
+                    text: "Tertanggal",
+                  },
+                },
+                {
+                  dataField: "E04",
+                  label: {
+                    text: "Alamat",
+                  },
+                },
+                {
+                  dataField: "E05",
+                  editorOptions: {
+                    format: "000",
+                  },
+                  label: {
+                    text: "RT",
+                  },
+                },
+                {
+                  dataField: "E06",
+                  editorOptions: {
+                    format: "000",
+                  },
+                  label: {
+                    text: "RW",
+                  },
+                },
+                {
+                  itemType: "empty",
+                },
+
+              ]
+            },
+
+            {
+              itemType: "group",
+              items: [
+                {
+                  dataField: "E07",
+                  label: {
+                    text: "Desa/Kelurahan",
+                  },
+                },
+                {
+                  dataField: "E08",
+                  label: {
+                    text: "Kecamatan",
+                  },
+                },
+                {
+                  dataField: "E09",
+                  label: {
+                    text: "Pemerintah Daerah",
+                  },
+                },
+                {
+                  dataField: "E10",
+                  label: {
+                    text: "Pemerintah Propinsi",
+                  },
+                },
+                {
+                  dataField: "E11",
+                  label: {
+                    text: "Kode Pos",
+                  },
+                },
+                {
+                  dataField: "E12",
+                  label: {
+                    text: "Koordinat",
+                  },
+                },
+                {
+                  dataField: "E13",
+                  editorOptions: {
+                    format: "#0.000 Km",
+                  },
+                  label: {
+                    text: "Jarak",
+                  },
+                },
+                {
+                  dataField: "E14",
+                  editorOptions: {
+                    format: "#0 menit",
+                  },
+                  label: {
+                    text: "Waktu Tempuh",
+                  },
+                },
+
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      title: "Keterangan Pendidikan",
+      items: [
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+            {
+              itemType: "group",
+              items: [
+                {
+                  dataField: "I01",
+                  label: {
+                    text: "No. Telpon",
+                  },
+                },
+                {
+                  dataField: "I02",
+                  label: {
+                    text: "Tinggi Badan ( Cm )",
+                  },
+                },
+                {
+                  dataField: "I03",
+                  label: {
+                    text: "Berat Badan ( Kg )",
+                  },
+                },
+                {
+                  dataField: "I04",
+                  label: {
+                    text: "Lingkar Kepala ( Cm )",
+                  },
+                },
+                {
+                  dataField: "I05",
+                  label: {
+                    text: "Hobi",
+                  },
+                },
+                {
+                  dataField: "I06",
+                  label: {
+                    text: "Cita-cita",
+                  },
+                },
+                {
+                  dataField: "I07",
+                  label: {
+                    text: "Bakat",
+                  },
+                },
+                {
+                  itemType: "empty",
+                },
+
+              ]
+            },
+
+            {
+              itemType: "group",
+              items: [
+                {
+                  dataField: "I08",
+                  label: {
+                    text: "Berkebutuhan Khusus",
+                  },
+                },
+                {
+                  dataField: "I09",
+                  label: {
+                    text: "Jml. Sdr. Kandung",
+                  },
+                },
+                {
+                  dataField: "I10",
+                  label: {
+                    text: "Jml. Sdr. Tiri",
+                  },
+                },
+                {
+                  dataField: "I11",
+                  label: {
+                    text: "Jml. Sdr. Angkat",
+                  },
+                },
+                {
+                  dataField: "I12",
+                  label: {
+                    text: "Status Sosial Anak",
+                  },
+                },
+
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      title: "Putusan Non ASN",
+      items: [
+        {
+          itemType: "group",
+          items: [
+            {
+              dataField: "J01",
+              label: {
+                text: "Jenis Jamsos",
+              },
+            },
+            {
+              dataField: "J02",
+              label: {
+                text: "No. Jamsos",
+              },
+            },
+            {
+              dataField: "J03",
+              label: {
+                text: "Nomor Rekening PIP",
+              },
+            },
+            {
+              dataField: "J04",
+              label: {
+                text: "Nama Bank PIP",
+              },
+            },
+          ]
+        },
+      ],
+    },
+
+    {
+      title: "Putusan CPNS",
+      items: [
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+            {
+              itemType: "group",
+              caption: "Registrasi",
+              items: [
+                {
+                  dataField: "K01",
+                  label: {
+                    text: "Jalur Penerimaan",
+                  },
+                },
+                {
+                  dataField: "K02",
+                  label: {
+                    text: "Nomor Daftar / Dokumen",
+                  },
+                },
+                {
+                  dataField: "K03",
+                  editorType: "dxDateBox",
+                  editorOptions: {
+                    displayFormat: "dd/MM/yyyy",
+                  },
+                  label: {
+                    text: "Tertanggal",
+                  },
+                },
+                {
+                  dataField: "K04",
+                  label: {
+                    text: "Classical",
+                  },
+                },
+              ]
+            },
+            {
+              itemType: "group",
+              items: [
+                {
+                  itemType: "group",
+                  caption: "Asal Sekolah Lulusan",
+                  items: [
+                    {
+                      dataField: "L01",
+                      label: {
+                        text: "Identitas Satuan Pendidikan",
+                      },
+                    },
+                    {
+                      dataField: "L02",
+                      label: {
+                        text: "Nomor Dokumen",
+                      },
+                    },
+                    {
+                      dataField: "L03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                  ],
+                },
+                {
+                  itemType: "group",
+                  caption: "Asal Sekolah Pindahan",
+                  items: [
+                    {
+                      dataField: "L04",
+                      label: {
+                        text: "Identitas Satuan Pendidikan",
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ]
+    },
+  ]
+
+}
