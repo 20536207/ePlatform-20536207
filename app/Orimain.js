@@ -1162,8 +1162,8 @@ function addPageButton(itemElement, itemData, itemDataCaption, actPageContains, 
 function addPageForm(element, formColCount, itemData, itemContent) {
     $(element).dxForm({
         readOnly: true,
-        labelLocation: "left",
-        labelMode: "outside",
+        labelLocation: "top",
+        labelMode: "static",
         showColonAfterLabel: true,
         colCount: formColCount,
         // colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
