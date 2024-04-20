@@ -1039,7 +1039,7 @@ function onSignIn(currentAccount) {
         //https://lh3.googleusercontent.com/d/FILE_ID
 
         if (_main.account.user.cred != null) {
-            _element.PageToolbar.option("items[1].text", "e-Platform Authorized");
+            _element.PageToolbar.option("items[1].text", "e-Platform Authentication ");
             _element.PageToolbar.option("items[2].visible", false);
 
             $("#PageContains").empty();

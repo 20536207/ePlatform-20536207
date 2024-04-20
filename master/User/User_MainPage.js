@@ -63,7 +63,7 @@ $(document).ready(function () {
       });
       break;
 
-    case "Pendidik" && "Kependidikan" :
+    case "Pendidik" && "Kependidikan":
 
       getQuery = GetVisualizationQuery(
         _main.appConfig.dataSource.Kepegawaian,                   //SpreadsheetID
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
       getQuery.send(response => {
         GetJsonData(response);
-        
+
         if (_main.arrVarGlobal._dataArray.length != 0) {
           _Authentication.formData.dataPersonal = _main.arrVarGlobal._dataArray;
 
@@ -1180,7 +1180,7 @@ function formPegawai(dataSource) {
     },
 
     {
-      title: "Identitas Pegawai",
+      title: "Kepegawaian",
       items: [
         {
           itemType: "group",
@@ -1188,17 +1188,18 @@ function formPegawai(dataSource) {
           items: [
             {
               itemType: "group",
+              caption: "Identitas Pegawai",
               items: [
                 {
+                  dataField: "A01",
+                  label: {
+                    text: "Nama Pegawai",
+                  },
+                },
+                {
                   itemType: "group",
-                  caption: "Identitas Pegawai",
+                  colCount: "auto",
                   items: [
-                    {
-                      dataField: "A01",
-                      label: {
-                        text: "Nama Pegawai",
-                      },
-                    },
                     {
                       dataField: "F01",
                       label: {
@@ -1225,203 +1226,372 @@ function formPegawai(dataSource) {
                     },
                   ],
                 },
+
                 {
                   itemType: "group",
-                  caption: "Rombongan Belajar",
+                  colCount: "auto",
+                  caption: "Unsur Pegawai",
                   items: [
                     {
-                      dataField: "A01",
+                      dataField: "P06",
                       label: {
-                        text: "Id Kelas",
+                        text: "Status",
                       },
                     },
                     {
-                      dataField: "A02",
+                      dataField: "P07",
                       label: {
-                        text: "Tahun Akademik",
+                        text: "Jenis",
+                      },
+                    },
+                  ],
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Unsur Ketenagaan",
+                  items: [
+                    {
+                      dataField: "P08",
+                      label: {
+                        text: "Kategori",
                       },
                     },
                     {
-                      dataField: "A03",
+                      dataField: "P09",
                       label: {
-                        text: "Rombel",
+                        text: "Jenis",
                       },
                     },
                     {
-                      dataField: "A04",
+                      dataField: "P19",
                       label: {
-                        text: "No. Urut",
+                        text: "Penugasan",
                       },
                     },
-                  ]
+                  ],
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Kepangkatan",
+                  items: [
+                    {
+                      dataField: "P10",
+                      label: {
+                        text: "Gol./Ruang",
+                      },
+                    },
+                    {
+                      dataField: "P12",
+                      label: {
+                        text: "Pangkat",
+                      },
+                    },
+                    {
+                      dataField: "P13",
+                      label: {
+                        text: "Masa Kerja",
+                      },
+                    },
+                  ],
+                },
+
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Jabatan",
+                  items: [
+                    {
+                      dataField: "P14",
+                      label: {
+                        text: "Jabatan ASN",
+                      },
+                    },
+                    {
+                      dataField: "P15",
+                      label: {
+                        text: "Jenjang Jabatan",
+                      },
+                    },
+                  ],
+                },
+
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Angka Kredit JF",
+                  items: [
+                    {
+                      dataField: "P16",
+                      editorOptions: {
+                        format: "#0.000",
+                      },
+                      label: {
+                        text: "Nilai A.K",
+                      },
+                    },
+                    {
+                      dataField: "P17",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Penilaian",
+                      },
+                    },
+                    {
+                      dataField: "P18",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.s.t Penilaian",
+                      },
+                    },
+                  ],
+                },
+
+                {
+                  itemType: "group",
+                  caption: "Gaji/ Penghasilan",
+                  items: [
+                    {
+                      dataField: "P01",
+                      label: {
+                        text: "Keputusan Pejabat",
+                      },
+                    },
+                    {
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "P02",
+                          label: {
+                            text: "Nomor Dokumen",
+                          },
+                        },
+                        {
+                          dataField: "P03",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "Tertanggal",
+                          },
+                        },
+                      ],
+                    },
+
+                    {
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "P04",
+                          label: {
+                            text: "Perihal Putusan",
+                          },
+                        },
+                        {
+                          dataField: "P05",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "T.m.t Berlaku",
+                          },
+                        },
+                        {
+                          dataField: "P22",
+                          editorOptions: {
+                            format: "0,000,000",
+                          },
+                          label: {
+                            text: "Gaji/Penghasilan",
+                          },
+                        },
+                      ],
+                    },
+
+                    {
+                      dataField: "P23",
+                      label: {
+                        text: "Terbilang",
+                      },
+                    },
+                    {
+                      dataField: "P24",
+                      label: {
+                        text: "Dasar Peraturan",
+                      },
+                    },
+
+                  ],
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "P25",
+                      label: {
+                        text: "Peraturan Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "P26",
+                      editorOptions: {
+                        format: "0,000,000",
+                      },
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ],
+                },
+                {
+                  dataField: "P27",
+                  label: {
+                    text: "Terbilang",
+                  },
                 },
               ],
             },
-            {
-              itemType: "group",
-              caption: "Catatan Sipil",
-              items: [
-                {
-                  dataField: "C01",
-                  label: {
-                    text: "NIK",
-                  },
-                },
-                {
-                  dataField: "C02",
-                  label: {
-                    text: "No. Register",
-                  },
-                },
-                {
-                  dataField: "C03",
-                  label: {
-                    text: "No. Akta Kelahiran",
-                  },
-                },
-                {
-                  dataField: "C04",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tertanggal",
-                  },
-                },
-                {
-                  dataField: "C05",
-                  label: {
-                    text: "Gender",
-                  },
-                },
-                {
-                  dataField: "C06",
-                  label: {
-                    text: "Tempat Lahir",
-                  },
-                },
-                {
-                  dataField: "C07",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tanggal Lahir",
-                  },
-                },
-                {
-                  dataField: "C08",
-                  label: {
-                    text: "Anak Ke-",
-                  },
-                },
-
-              ],
-            },
-          ],
-        },
-      ]
-    },
-
-    {
-      title: "Catatan Sipil",
-      items: [
-        {
-          itemType: "group",
-          colCount: "auto",
-          items: [
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "D01",
-                  label: {
-                    text: "No. KK",
-                  },
-                },
-                {
-                  dataField: "D02",
-                  // editorType: "dxDateBox",
-                  editorOptions: {
-                    format: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tertanggal",
-                  },
-                },
-                {
-                  dataField: "D03",
-                  label: {
-                    text: "Alamat",
-                  },
-                },
-                {
-                  dataField: "D04",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RT",
-                  },
-                },
-                {
-                  dataField: "D05",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RW",
-                  },
-                },
-                {
-                  itemType: "empty",
-                },
-
-              ]
-            },
 
             {
               itemType: "group",
               items: [
                 {
-                  dataField: "D06",
-                  label: {
-                    text: "Desa/Kelurahan",
-                  },
+                  itemType: "group",
+                  caption: "Catatan Sipil",
+                  items: [
+                    {
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "A02",
+                          label: {
+                            text: "NIK",
+                          },
+                        },
+                        {
+                          dataField: "A03",
+                          label: {
+                            text: "Nama",
+                          },
+                        },
+                      ],
+                    },
+                    {
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "A04",
+                          label: {
+                            text: "Gender",
+                          },
+                        },
+                        {
+                          dataField: "A05",
+                          label: {
+                            text: "Tempat Lahir",
+                          },
+                        },
+                        {
+                          dataField: "A06",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "Tanggal Lahir",
+                          },
+                        },
+                        {
+                          dataField: "A07",
+                          label: {
+                            text: "Umur",
+                          },
+                        },
+                        {
+                          dataField: "A08",
+                          label: {
+                            text: "Agama",
+                          },
+                        },
+                        {
+                          dataField: "A09",
+                          label: {
+                            text: "Gol. Darah",
+                          },
+                        },
+                      ]
+                    },
+                    {
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "A10",
+                          label: {
+                            text: "Ayah Kandung",
+                          },
+                        },
+                        {
+                          dataField: "A11",
+                          label: {
+                            text: "Ibu Kandung",
+                          },
+                        },
+                      ],
+                    },
+                  ],
                 },
                 {
-                  dataField: "D07",
-                  label: {
-                    text: "Kecamatan",
-                  },
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Contact Person",
+                  items: [
+                    {
+                      dataField: "D01",
+                      label: {
+                        text: "Nomor Telepon",
+                      },
+                    },
+                    {
+                      dataField: "D02",
+                      label: {
+                        text: "Nomor Whatsapp",
+                      },
+                    },
+                  ],
                 },
                 {
-                  dataField: "D08",
-                  label: {
-                    text: "Pemerintah Daerah",
-                  },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "D03",
+                      label: {
+                        text: "Email PTK",
+                      },
+                    },
+                    {
+                      dataField: "D04",
+                      label: {
+                        text: "Akun Belajar Id",
+                      },
+                    },
+                  ],
                 },
-                {
-                  dataField: "D09",
-                  label: {
-                    text: "Pemerintah Propinsi",
-                  },
-                },
-                {
-                  dataField: "D10",
-                  label: {
-                    text: "Kode Pos",
-                  },
-                },
-                {
-                  dataField: "D11",
-                  label: {
-                    text: "Agama",
-                  },
-                },
-
               ],
             },
           ],
@@ -1432,458 +1602,72 @@ function formPegawai(dataSource) {
     {
       title: "Catatan Kependudukan",
       items: [
-        {
-          itemType: "group",
-          colCount: "auto",
-          items: [
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "D01",
-                  label: {
-                    text: "No. KK",
-                  },
-                },
-                {
-                  dataField: "D02",
-                  // editorType: "dxDateBox",
-                  editorOptions: {
-                    format: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tertanggal",
-                  },
-                },
-                {
-                  dataField: "D03",
-                  label: {
-                    text: "Alamat",
-                  },
-                },
-                {
-                  dataField: "D04",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RT",
-                  },
-                },
-                {
-                  dataField: "D05",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RW",
-                  },
-                },
-                {
-                  itemType: "empty",
-                },
-
-              ]
-            },
-
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "D06",
-                  label: {
-                    text: "Desa/Kelurahan",
-                  },
-                },
-                {
-                  dataField: "D07",
-                  label: {
-                    text: "Kecamatan",
-                  },
-                },
-                {
-                  dataField: "D08",
-                  label: {
-                    text: "Pemerintah Daerah",
-                  },
-                },
-                {
-                  dataField: "D09",
-                  label: {
-                    text: "Pemerintah Propinsi",
-                  },
-                },
-                {
-                  dataField: "D10",
-                  label: {
-                    text: "Kode Pos",
-                  },
-                },
-                {
-                  dataField: "D11",
-                  label: {
-                    text: "Agama",
-                  },
-                },
-
-              ],
-            },
-          ],
-        },
       ],
     },
 
     {
       title: "Keterangan Tempat Tinggal",
       items: [
-        {
-          itemType: "group",
-          colCount: "auto",
-          items: [
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "E01",
-                  label: {
-                    text: "Dokumen",
-                  },
-                },
-                {
-                  dataField: "E02",
-                  label: {
-                    text: "No. Dokumen",
-                  },
-                },
-                {
-                  dataField: "E03",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tertanggal",
-                  },
-                },
-                {
-                  dataField: "E04",
-                  label: {
-                    text: "Alamat",
-                  },
-                },
-                {
-                  dataField: "E05",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RT",
-                  },
-                },
-                {
-                  dataField: "E06",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RW",
-                  },
-                },
-                {
-                  itemType: "empty",
-                },
-
-              ]
-            },
-
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "E07",
-                  label: {
-                    text: "Desa/Kelurahan",
-                  },
-                },
-                {
-                  dataField: "E08",
-                  label: {
-                    text: "Kecamatan",
-                  },
-                },
-                {
-                  dataField: "E09",
-                  label: {
-                    text: "Pemerintah Daerah",
-                  },
-                },
-                {
-                  dataField: "E10",
-                  label: {
-                    text: "Pemerintah Propinsi",
-                  },
-                },
-                {
-                  dataField: "E11",
-                  label: {
-                    text: "Kode Pos",
-                  },
-                },
-                {
-                  dataField: "E12",
-                  label: {
-                    text: "Koordinat",
-                  },
-                },
-                {
-                  dataField: "E13",
-                  editorOptions: {
-                    format: "#0.000 Km",
-                  },
-                  label: {
-                    text: "Jarak",
-                  },
-                },
-                {
-                  dataField: "E14",
-                  editorOptions: {
-                    format: "#0 menit",
-                  },
-                  label: {
-                    text: "Waktu Tempuh",
-                  },
-                },
-
-              ],
-            },
-          ],
-        },
       ],
     },
 
     {
       title: "Keterangan Pendidikan",
       items: [
-        {
-          itemType: "group",
-          colCount: "auto",
-          items: [
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "I01",
-                  label: {
-                    text: "No. Telpon",
-                  },
-                },
-                {
-                  dataField: "I02",
-                  label: {
-                    text: "Tinggi Badan ( Cm )",
-                  },
-                },
-                {
-                  dataField: "I03",
-                  label: {
-                    text: "Berat Badan ( Kg )",
-                  },
-                },
-                {
-                  dataField: "I04",
-                  label: {
-                    text: "Lingkar Kepala ( Cm )",
-                  },
-                },
-                {
-                  dataField: "I05",
-                  label: {
-                    text: "Hobi",
-                  },
-                },
-                {
-                  dataField: "I06",
-                  label: {
-                    text: "Cita-cita",
-                  },
-                },
-                {
-                  dataField: "I07",
-                  label: {
-                    text: "Bakat",
-                  },
-                },
-                {
-                  itemType: "empty",
-                },
-
-              ]
-            },
-
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "I08",
-                  label: {
-                    text: "Berkebutuhan Khusus",
-                  },
-                },
-                {
-                  dataField: "I09",
-                  label: {
-                    text: "Jml. Sdr. Kandung",
-                  },
-                },
-                {
-                  dataField: "I10",
-                  label: {
-                    text: "Jml. Sdr. Tiri",
-                  },
-                },
-                {
-                  dataField: "I11",
-                  label: {
-                    text: "Jml. Sdr. Angkat",
-                  },
-                },
-                {
-                  dataField: "I12",
-                  label: {
-                    text: "Status Sosial Anak",
-                  },
-                },
-
-              ],
-            },
-          ],
-        },
       ],
     },
 
     {
       title: "Putusan Non ASN",
       items: [
-        {
-          itemType: "group",
-          items: [
-            {
-              dataField: "J01",
-              label: {
-                text: "Jenis Jamsos",
-              },
-            },
-            {
-              dataField: "J02",
-              label: {
-                text: "No. Jamsos",
-              },
-            },
-            {
-              dataField: "J03",
-              label: {
-                text: "Nomor Rekening PIP",
-              },
-            },
-            {
-              dataField: "J04",
-              label: {
-                text: "Nama Bank PIP",
-              },
-            },
-          ]
-        },
       ],
     },
 
     {
       title: "Putusan CPNS",
       items: [
-        {
-          itemType: "group",
-          colCount: "auto",
-          items: [
-            {
-              itemType: "group",
-              caption: "Registrasi",
-              items: [
-                {
-                  dataField: "K01",
-                  label: {
-                    text: "Jalur Penerimaan",
-                  },
-                },
-                {
-                  dataField: "K02",
-                  label: {
-                    text: "Nomor Daftar / Dokumen",
-                  },
-                },
-                {
-                  dataField: "K03",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tertanggal",
-                  },
-                },
-                {
-                  dataField: "K04",
-                  label: {
-                    text: "Classical",
-                  },
-                },
-              ]
-            },
-            {
-              itemType: "group",
-              items: [
-                {
-                  itemType: "group",
-                  caption: "Asal Sekolah Lulusan",
-                  items: [
-                    {
-                      dataField: "L01",
-                      label: {
-                        text: "Identitas Satuan Pendidikan",
-                      },
-                    },
-                    {
-                      dataField: "L02",
-                      label: {
-                        text: "Nomor Dokumen",
-                      },
-                    },
-                    {
-                      dataField: "L03",
-                      editorType: "dxDateBox",
-                      editorOptions: {
-                        displayFormat: "dd/MM/yyyy",
-                      },
-                      label: {
-                        text: "Tertanggal",
-                      },
-                    },
-                  ],
-                },
-                {
-                  itemType: "group",
-                  caption: "Asal Sekolah Pindahan",
-                  items: [
-                    {
-                      dataField: "L04",
-                      label: {
-                        text: "Identitas Satuan Pendidikan",
-                      },
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
+      ]
+    },
+
+    {
+      title: "Putusan ASN",
+      items: [
+      ]
+    },
+
+    {
+      title: "Putusan Kepangkatan",
+      items: [
+      ]
+    },
+
+    {
+      title: "Putusan Gaji Berkala",
+      items: [
+      ]
+    },
+
+    {
+      title: "Putusan Jabatan",
+      items: [
+      ]
+    },
+
+    {
+      title: "Peniaian Angka Kredit",
+      items: [
+      ]
+    },
+
+    {
+      title: "Penugasan",
+      items: [
+      ]
+    },
+
+    {
+      title: "Arsip Dokumen",
+      items: [
       ]
     },
   ]
