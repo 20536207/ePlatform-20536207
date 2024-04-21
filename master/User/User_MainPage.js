@@ -1604,7 +1604,7 @@ function formPegawai(dataSource) {
                     },
                     {
                       dataField: "P24", label: {
-                        text: "Dasar Peraturan",
+                        text: "Peraturan Gaji/Penghasilan",
                       },
                     },
                     {
@@ -1613,7 +1613,7 @@ function formPegawai(dataSource) {
                       items: [
                         {
                           dataField: "P25", label: {
-                            text: "Peraturan Berlaku",
+                            text: "Peraturan Gaji/Penghasilan Berlaku",
                           },
                         },
                         {
@@ -2003,48 +2003,1907 @@ function formPegawai(dataSource) {
     {
       title: "Putusan Non ASN",
       items: [
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+
+            {
+              itemType: "group",
+              caption: "Penetapan Awal",
+              items: [
+                {
+                  dataField: "G01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "G02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "G03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "G04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "G05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "G06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "G07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "G08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "G09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "G19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "G20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "G21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "G24",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan",
+                      },
+                    },
+                    {
+                      dataField: "G22",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "G23",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "G25",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "G26",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "G27",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+
+              ]
+            },
+            // ===============================================================================================
+            // ===============================================================================================
+            {
+              itemType: "group",
+              caption: "Penetapan Akhir",
+              items: [
+                {
+                  dataField: "H01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "H02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "H03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "H04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "H05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "H06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "H07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "H08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "H09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "H19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "H20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "H21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "H24",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan",
+                      },
+                    },
+                    {
+                      dataField: "H22",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "H23",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "H25",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "H26",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "H27",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+
+              ]
+            }
+
+          ]
+        }
       ],
     },
 
-    {
-      title: "Putusan CPNS",
-      items: [
-      ]
-    },
-
+    // ===============================================================================================
     {
       title: "Putusan ASN",
       items: [
-      ]
+        {
+          itemType: "group",
+          colCount: "auto",
+          items: [
+
+            {
+              itemType: "group",
+              caption: "Penetapan CPNS",
+              items: [
+                {
+                  dataField: "I01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "I02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "I03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "I04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "I05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "I06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "I07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "I10",
+                      label: {
+                        text: "Gol./Ruang",
+                      },
+                    },
+                    {
+                      dataField: "I12",
+                      label: {
+                        text: "Pangkat",
+                      },
+                    },
+                    {
+                      dataField: "I13",
+                      editorOptions: {
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].I13.substr(0, 2)) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].I13.substr(3, 2)) + " Bulan"),
+                      },
+                      label: {
+                        text: "Masa Kerja",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "I14",
+                      label: {
+                        text: "Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "I15",
+                      label: {
+                        text: "Jenjang Jabatan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "I08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "I09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "I19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "I20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "I21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "I24",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan",
+                      },
+                    },
+                    {
+                      dataField: "I22",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "I23",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Penghasilan/Gaji",
+                  items: [
+                    {
+                      dataField: "I25",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "I26",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "I27",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+
+              ]
+            },
+            // ===============================================================================================
+            // ===============================================================================================
+            {
+              itemType: "group",
+              caption: "Penetapan PNS/PPPK",
+              items: [
+                {
+                  dataField: "J01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "J02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "J03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "J04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "J05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "J06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "J07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "J10",
+                      label: {
+                        text: "Gol./Ruang",
+                      },
+                    },
+                    {
+                      dataField: "J12",
+                      label: {
+                        text: "Pangkat",
+                      },
+                    },
+                    {
+                      dataField: "J13",
+                      editorOptions: {
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].J13.substr(0, 2)) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].J13.substr(3, 2)) + " Bulan"),
+                      },
+                      label: {
+                        text: "Masa Kerja",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "J14",
+                      label: {
+                        text: "Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "J15",
+                      label: {
+                        text: "Jenjang Jabatan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "J08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "J09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "J19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "J20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "J21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "J24",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan",
+                      },
+                    },
+                    {
+                      dataField: "J22",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "J23",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Penghasilan/Gaji",
+                  items: [
+                    {
+                      dataField: "J25",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "J26",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "J27",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+
+              ]
+            }
+
+          ]
+        }
+      ],
     },
 
+    // ===============================================================================================
     {
       title: "Putusan Kepangkatan",
       items: [
+        {
+          itemType: "group",
+          items: [
+
+            {
+              itemType: "group",
+              caption: "Ketetapan Putusan",
+              items: [
+                {
+                  dataField: "K01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "K02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "K03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "K04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "K05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "K06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "K07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "K10",
+                      label: {
+                        text: "Gol./Ruang",
+                      },
+                    },
+                    {
+                      dataField: "K12",
+                      label: {
+                        text: "Pangkat",
+                      },
+                    },
+                    {
+                      dataField: "K13",
+                      editorOptions: {
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].K13.substr(0, 2)) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].K13.substr(3, 2)) + " Bulan"),
+                      },
+                      label: {
+                        text: "Masa Kerja",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "K14",
+                      label: {
+                        text: "Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "K15",
+                      label: {
+                        text: "Jenjang Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "K16",
+                      editorOptions: {
+                        format: "0.000",
+                      },
+                      label: {
+                        text: "Angka Kredit",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "K08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "K09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "K19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "K20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "K21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "K24",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan",
+                      },
+                    },
+                    {
+                      dataField: "K22",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "K23",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Penghasilan/Gaji",
+                  items: [
+                    {
+                      dataField: "K25",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "K26",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "K27",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+
+              ]
+            },
+          ]
+
+        }
       ]
     },
 
+    // ===============================================================================================
     {
       title: "Putusan Gaji Berkala",
       items: [
+        {
+          itemType: "group",
+          items: [
+
+            {
+              itemType: "group",
+              caption: "Ketetapan Putusan",
+              items: [
+                {
+                  dataField: "L01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "L02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "L03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "L04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "L05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "L06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "L07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "L10",
+                      label: {
+                        text: "Gol./Ruang",
+                      },
+                    },
+                    {
+                      dataField: "L12",
+                      label: {
+                        text: "Pangkat",
+                      },
+                    },
+                    {
+                      dataField: "L13",
+                      editorOptions: {
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].L13.substr(0, 2)) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].L13.substr(3, 2)) + " Bulan"),
+                      },
+                      label: {
+                        text: "Masa Kerja",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "L14",
+                      label: {
+                        text: "Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "L15",
+                      label: {
+                        text: "Jenjang Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "L16",
+                      editorOptions: {
+                        format: "0.000",
+                      },
+                      label: {
+                        text: "Angka Kredit",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "L08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "L09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "L19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "L20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "L21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "L24",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan",
+                      },
+                    },
+                    {
+                      dataField: "L22",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "L23",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  caption: "Penghasilan/Gaji",
+                  items: [
+                    {
+                      dataField: "L25",
+                      label: {
+                        text: "Peraturan Gaji/Penghasilan Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "L26",
+                      label: {
+                        text: "Gaji/Penghasilan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  dataField: "L27",
+                  label: {
+                    text: "Terbilang",
+                  },
+                },
+
+              ]
+            },
+          ]
+
+        }
       ]
     },
 
+    // ===============================================================================================
     {
       title: "Putusan Jabatan",
       items: [
+        {
+          itemType: "group",
+          items: [
+
+            {
+              itemType: "group",
+              caption: "Ketetapan Putusan",
+              items: [
+                {
+                  dataField: "M01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "M02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "M03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "M04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "M05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "M06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "M07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "M10",
+                      label: {
+                        text: "Gol./Ruang",
+                      },
+                    },
+                    {
+                      dataField: "M12",
+                      label: {
+                        text: "Pangkat",
+                      },
+                    },
+
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "M14",
+                      label: {
+                        text: "Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "M15",
+                      label: {
+                        text: "Jenjang Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "M16",
+                      editorOptions: {
+                        format: "0.000",
+                      },
+                      label: {
+                        text: "Angka Kredit",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "M08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "M09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "M19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "M20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "M21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+              ]
+            },
+          ]
+
+        }
       ]
     },
 
     {
       title: "Peniaian Angka Kredit",
       items: [
+        {
+          itemType: "group",
+          items: [
+
+            {
+              itemType: "group",
+              caption: "Ketetapan Putusan",
+              items: [
+                {
+                  dataField: "N01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "N02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "N03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "N04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "N05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "N06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "N07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "N10",
+                      label: {
+                        text: "Gol./Ruang",
+                      },
+                    },
+                    {
+                      dataField: "N12",
+                      label: {
+                        text: "Pangkat",
+                      },
+                    },
+
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "N14",
+                      label: {
+                        text: "Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "N15",
+                      label: {
+                        text: "Jenjang Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "N16",
+                      editorOptions: {
+                        format: "0.000",
+                      },
+                      label: {
+                        text: "Angka Kredit",
+                      },
+                    },
+                    {
+                      dataField: "N07",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t P",
+                      },
+                    },
+                    {
+                      dataField: "N18",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.s.t Penilaian",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "N08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "N09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "N19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "N20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "N21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+              ]
+            },
+          ]
+
+        }
       ]
     },
 
     {
       title: "Penugasan",
       items: [
+        {
+          itemType: "group",
+          items: [
+
+            {
+              itemType: "group",
+              caption: "Ketetapan Putusan",
+              items: [
+                {
+                  dataField: "O01",
+                  label: {
+                    text: "oleh Pejabat",
+                  },
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "O02",
+                      label: {
+                        text: "Nomor",
+                      },
+                    },
+                    {
+                      dataField: "O03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                    {
+                      dataField: "O04",
+                      label: {
+                        text: "Perihal",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "O05",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "T.m.t Berlaku",
+                      },
+                    },
+                    {
+                      dataField: "O06",
+                      label: {
+                        text: "Status Pegawai",
+                      },
+                    },
+                    {
+                      dataField: "O07",
+                      label: {
+                        text: "Jenis Pegawai",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "O10",
+                      label: {
+                        text: "Gol./Ruang",
+                      },
+                    },
+                    {
+                      dataField: "O12",
+                      label: {
+                        text: "Pangkat",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "O14",
+                      label: {
+                        text: "Jabatan",
+                      },
+                    },
+                    {
+                      dataField: "O15",
+                      label: {
+                        text: "Jenjang Jabatan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  items: [
+                    {
+                      itemType: "empty",
+                    }
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "O08",
+                      label: {
+                        text: "Kategori PTK",
+                      },
+                    },
+                    {
+                      dataField: "O09",
+                      label: {
+                        text: "Jenis PTK",
+                      },
+                    },
+                    {
+                      dataField: "O19",
+                      label: {
+                        text: "Penugasan",
+                      },
+                    },
+                  ]
+                },
+                {
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "O20",
+                      label: {
+                        text: "Unit Kerja",
+                      },
+                    },
+                    {
+                      dataField: "O21",
+                      label: {
+                        text: "Instansi Pemerintahan",
+                      },
+                    },
+                  ]
+                },
+              ]
+            },
+          ]
+
+        }
       ]
     },
 

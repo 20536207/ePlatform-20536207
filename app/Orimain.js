@@ -36,28 +36,32 @@ $(document).ready(function () {
                 photo: null,
             },
             initialize: () => {
-                google.accounts.id.initialize(
-                    {
-                        client_id: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
-                        auto_select: true,
-                        callback: onSignIn,
-                        // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
-                        // native_callback:"onSignIn",
-                        cancel_on_tap_outside: false,
-                        // prompt_parent_id: "PageContains",
-                        // auto_prompt: true,
-                        // nonce: "ePlatform20536207",
-                        context: "signin",
-                        // state_cookie_domain:"_*.domain",
-                        // ux_mode: "redirect", //popup,redirect
-                        // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
-                        // intermediate_iframe_close_callback:"logBeforeClose",
-                        itp_support: true,
-                        // login_hint:"",
-                        // hd: "*",
-                        use_fedcm_for_prompt: true,
-                    }
-                );
+                try {
+                    google.accounts.id.initialize(
+                        {
+                            client_id: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
+                            auto_select: true,
+                            callback: onSignIn,
+                            // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
+                            // native_callback:"onSignIn",
+                            cancel_on_tap_outside: false,
+                            // prompt_parent_id: "PageContains",
+                            // auto_prompt: true,
+                            // nonce: "ePlatform20536207",
+                            context: "signin",
+                            // state_cookie_domain:"_*.domain",
+                            // ux_mode: "redirect", //popup,redirect
+                            // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
+                            // intermediate_iframe_close_callback:"logBeforeClose",
+                            itp_support: true,
+                            // login_hint:"",
+                            // hd: "*",
+                            use_fedcm_for_prompt: true,
+                        }
+                    );
+                } catch (error) {
+                    _notify(error);
+                };
             },
         },
         arrVarGlobal: {
@@ -1169,7 +1173,7 @@ function addPageForm(element, formColCount, itemData, itemContent) {
         // colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
         // screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
         formData: itemData,
-        items: itemContent,        
+        items: itemContent,
     }).dxForm("instance");
 
 }
