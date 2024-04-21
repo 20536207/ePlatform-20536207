@@ -1169,7 +1169,7 @@ function addPageForm(element, formColCount, itemData, itemContent) {
         // colCountByScreen: { lg: 2, md: 2, sm: 1, xs: 1, },
         // screenByWidth(width) { return width < 960 ? 'sm' : 'lg'; },
         formData: itemData,
-        items: itemContent,
+        items: itemContent,        
     }).dxForm("instance");
 
 }
