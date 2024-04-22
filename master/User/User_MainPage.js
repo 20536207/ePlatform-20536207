@@ -57,6 +57,7 @@ $(document).ready(function () {
           _Authentication.formOption,
         );
 
+<<<<<<< HEAD
         // newForm.option("formData",newForm.option("selectedIndex") == 0 ? _Authentication.formData.currentUser : _Authentication.formData.dataPersonal);
       }
     });
@@ -65,6 +66,14 @@ $(document).ready(function () {
       _main.account.user.userstate == "Pendidik" ||
       _main.account.user.userstate == "Kependidikan"
     ) {
+=======
+          // newForm.option("formData",newForm.option("selectedIndex") == 0 ? _Authentication.formData.currentUser : _Authentication.formData.dataPersonal);
+        }
+      });
+      break;
+
+    case ("Pendidik" || "Kependidikan"):
+>>>>>>> b2fd7a7802a28fda8995cac736ea0df278e74544
 
       getQuery = GetVisualizationQuery(
         _main.appConfig.dataSource.Kepegawaian,                   //SpreadsheetID
