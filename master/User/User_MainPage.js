@@ -63,7 +63,7 @@ $(document).ready(function () {
       });
       break;
 
-    case "Pendidik" && "Kependidikan":
+    case ("Pendidik" || "Kependidikan"):
 
       getQuery = GetVisualizationQuery(
         _main.appConfig.dataSource.Kepegawaian,                   //SpreadsheetID
