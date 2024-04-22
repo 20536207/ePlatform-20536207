@@ -34,36 +34,37 @@ $(document).ready(function () {
     },
     getQuery = null;
 
-  switch (_main.account.user.userstate) {
+  if (_main.account.user.userstate == "Peserta DIdik") {
 
-    case "Peserta Didik":
-      getQuery = GetVisualizationQuery(
-        _main.appConfig.dataSource.Kesiswaan,           //SpreadsheetID
-        1300103800,                                     //SheetID
-        "A1:CX",                                        //Range
-        "SELECT * WHERE E = '" + _main.account.user.userid + "'"   //Filter or Query
-      );
-      getQuery.send(response => {
-        GetJsonData(response);
-        if (_main.arrVarGlobal._dataArray.length != 0) {
-          _Authentication.formData.dataPersonal = _main.arrVarGlobal._dataArray;
+    getQuery = GetVisualizationQuery(
+      _main.appConfig.dataSource.Kesiswaan,           //SpreadsheetID
+      1300103800,                                     //SheetID
+      "A1:CX",                                        //Range
+      "SELECT * WHERE E = '" + _main.account.user.userid + "'"   //Filter or Query
+    );
+    getQuery.send(response => {
+      GetJsonData(response);
+      if (_main.arrVarGlobal._dataArray.length != 0) {
+        _Authentication.formData.dataPersonal = _main.arrVarGlobal._dataArray;
 
-          formPesertaDidik(_Authentication.formData);
-          _Authentication.formOption[0].items[0].tabs = _main.arrVarGlobal._data;
+        formPesertaDidik(_Authentication.formData);
+        _Authentication.formOption[0].items[0].tabs = _main.arrVarGlobal._data;
 
-          const newForm = addPageForm(
-            "#UserAuthentication",
-            1,
-            _Authentication.formData.dataPersonal[0],
-            _Authentication.formOption,
-          );
+        const newForm = addPageForm(
+          "#UserAuthentication",
+          1,
+          _Authentication.formData.dataPersonal[0],
+          _Authentication.formOption,
+        );
 
-          // newForm.option("formData",newForm.option("selectedIndex") == 0 ? _Authentication.formData.currentUser : _Authentication.formData.dataPersonal);
-        }
-      });
-      break;
-
-    case "Pendidik" && "Kependidikan":
+        // newForm.option("formData",newForm.option("selectedIndex") == 0 ? _Authentication.formData.currentUser : _Authentication.formData.dataPersonal);
+      }
+    });
+  } else
+    if (
+      _main.account.user.userstate == "Pendidik" ||
+      _main.account.user.userstate == "Kependidikan"
+    ) {
 
       getQuery = GetVisualizationQuery(
         _main.appConfig.dataSource.Kepegawaian,                   //SpreadsheetID
@@ -91,11 +92,7 @@ $(document).ready(function () {
           // newForm.option("formData",newForm.option("selectedIndex") == 0 ? _Authentication.formData.currentUser : _Authentication.formData.dataPersonal);
         }
       });
-      break;
-
-    default:
-      break;
-  };
+    };
 
   delete _Authentication;
   delete getQuery;

@@ -39,8 +39,8 @@ $(document).ready(function () {
                 try {
                     google.accounts.id.initialize(
                         {
-                            client_id: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
-                            auto_select: true,
+                            client_id: '666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com',
+                            // auto_select: true,
                             callback: onSignIn,
                             // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
                             // native_callback:"onSignIn",
@@ -57,10 +57,10 @@ $(document).ready(function () {
                             // login_hint:"",
                             // hd: "*",
                             use_fedcm_for_prompt: true,
-                        }
+                        },
                     );
                 } catch (error) {
-                    _notify(error);
+                    _notify("Failed to Load Google Account...., Please Refresh your Browser again");
                 };
             },
         },
