@@ -34,7 +34,7 @@ $(document).ready(function () {
     },
     getQuery = null;
 
-  if (_main.account.user.userstate == "Peserta DIdik") {
+  if (_main.account.user.userstate == "Peserta Didik") {
 
     getQuery = GetVisualizationQuery(
       _main.appConfig.dataSource.Kesiswaan,           //SpreadsheetID
