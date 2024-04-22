@@ -1,3 +1,29 @@
+window.onload = () => {
+    google.accounts.id.initialize(
+        {
+            client_id: '666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com',
+            // auto_select: true,
+            callback: onSignIn,
+            // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
+            // native_callback:"onSignIn",
+            cancel_on_tap_outside: false,
+            // prompt_parent_id: "PageContains",
+            // auto_prompt: true,
+            // nonce: "ePlatform20536207",
+            context: "signin",
+            // state_cookie_domain:"_*.domain",
+            // ux_mode: "redirect", //popup,redirect
+            // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
+            // intermediate_iframe_close_callback:"logBeforeClose",
+            itp_support: true,
+            // login_hint:"",
+            // hd: "*",
+            use_fedcm_for_prompt: true,
+        },
+    );
+    // google.accounts.id.prompt();
+};
+
 //=======================================================
 $(document).ready(function () {
     window.jsPDF = window.jspdf.jsPDF;
@@ -34,34 +60,6 @@ $(document).ready(function () {
                 userstate: null,
                 userdept: null,
                 photo: null,
-            },
-            initialize: () => {
-                try {
-                    google.accounts.id.initialize(
-                        {
-                            client_id: '666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com',
-                            // auto_select: true,
-                            callback: onSignIn,
-                            // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
-                            // native_callback:"onSignIn",
-                            cancel_on_tap_outside: false,
-                            // prompt_parent_id: "PageContains",
-                            // auto_prompt: true,
-                            // nonce: "ePlatform20536207",
-                            context: "signin",
-                            // state_cookie_domain:"_*.domain",
-                            // ux_mode: "redirect", //popup,redirect
-                            // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
-                            // intermediate_iframe_close_callback:"logBeforeClose",
-                            itp_support: true,
-                            // login_hint:"",
-                            // hd: "*",
-                            use_fedcm_for_prompt: true,
-                        },
-                    );
-                } catch (error) {
-                    _notify("Failed to Load Google Account...., Please Refresh your Browser again");
-                };
             },
         },
         arrVarGlobal: {
@@ -818,7 +816,6 @@ $(document).ready(function () {
                             visible: true,
                             onClick() {
                                 if (_main.account.user.cred == null) {
-                                    // google.accounts.id.initialize(_main.account.initialize);
                                     google.accounts.id.prompt();
                                 } else {
                                     _element.PageToolbar.option("items[1].text", "e-Platform Authentication");
@@ -931,9 +928,20 @@ $(document).ready(function () {
 
         //Toast info =================================================
         Toast:
-            $('#toast').dxToast({
+            $('#ShowMessage').dxToast({
                 displayTime: 5000,
             }).dxToast('instance'),
+
+        //Toast info =================================================
+        Popup:
+            $('#ShowMessage').dxPopup({
+                height: "auto",
+                showCloseButton: false,
+                hideOnOutsideClick: true,
+                hideOnParentScroll: true,
+                visible: false,
+                width: $(window).width() < 368 ? "90%" : "25%",
+            }).dxPopup("instance"),
     };
 
     //==============================================================================
@@ -944,7 +952,6 @@ $(document).ready(function () {
     $(window).resize(function () {
         _element.LayoutContains.option('openedStateMode', $(window).width() < 960 ? "overlap" : "shrink");
     });
-    _main.account.initialize();
 });
 
 //=== Sidebar ======================================================================
@@ -1050,12 +1057,23 @@ function onSignIn(currentAccount) {
             _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
             $("#PageContains").load(_main.arrVarGlobal._actPageContains);
         } else {
-            _element.Toast.option(
-                "message",
-                responsePayload.email + " un-authorized as user " + _main.appConfig.app.title
+            _element.Popup.option(
+                "contentTemplate",
+                function (contentElement) {
+                    contentElement.append(
+
+                        `<p>
+                        <div id=UserPict style="text-align: center; vertical-align: middle;">
+                            <img src=${responsePayload.picture} style="display:inline-flex;object-fit:scale-down;border-radius:100%;max-width:198px;"></img>
+                        </div>
+                        <div div id = "UserAccount" style = "font-size: large;margin: 5px 0 5px 0; text-align: center;" >${responsePayload.name}</div>
+                        <div style = "padding: 4px; margin: 5px 0 5px 0; text-align: center;" >${responsePayload.email}</div>
+                        <div style = "padding: 4px; background-color: rgba(100,100,100,0.7); margin: 5px 0 5px 0; text-align: center;" >as user guest</div>`
+                    );
+                }
             );
-            _element.Toast.option("type", "error");
-            _element.Toast.show();
+            _element.Popup.option("title", "Authentication");
+            _element.Popup.option("visible", true);
         }
 
     });
@@ -1140,13 +1158,13 @@ function addPageButton(itemElement, itemData, itemDataCaption, actPageContains, 
             height: '130px',
             template: () => {
                 return `
-                        <div class="itemPageButtton">
+                    <div div class= "itemPageButtton" >
                             <div class="itemPageButtonIcon"><i class="fas fa-layer-group fa-4x"></i></div>
                             <div class="itemPageButtonCaption">
                                 ${itemDataCaption}
                             </div>
                         </div>
-                    `;
+                        `;
             },
             onClick() {
                 _element.PageToolbar.option("items[1].text", itemDataCaption);
