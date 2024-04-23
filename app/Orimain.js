@@ -765,7 +765,7 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick: () => {
-                                if (_main.account.user.cred != null) {
+                                if (_main.account.user.cred != null && _main.account.user.userstate != "Peserta Didik") {
                                     _element.LayoutContains.toggle();
                                 };
                             }
