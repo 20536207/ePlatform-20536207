@@ -89,7 +89,7 @@ $(document).ready(function () {
         }
 
       });
-      
+
     };
 
   delete _Authentication;
@@ -112,6 +112,8 @@ $(document).ready(function () {
 function formPesertaDidik(dataSource) {
 
   _main.arrVarGlobal._data = [
+
+    // ===============================================================================================
     {
       title: "User Account",
       items: [
@@ -196,6 +198,7 @@ function formPesertaDidik(dataSource) {
       ],
     },
 
+    // ===============================================================================================
     {
       title: "Identitas Peserta Didik",
       items: [
@@ -203,11 +206,14 @@ function formPesertaDidik(dataSource) {
           itemType: "group",
           colCount: "auto",
           items: [
+
             {
               itemType: "group",
               items: [
+                // ===============================================================================================
                 {
                   itemType: "group",
+                  colCount: "auto",
                   caption: "Data Induk",
                   items: [
                     {
@@ -220,15 +226,18 @@ function formPesertaDidik(dataSource) {
                         text: "NISN",
                       },
                     },
-                    {
-                      dataField: "B03", label: {
-                        text: "Nama Lengkap",
-                      },
-                    },
-                  ],
+                  ]
                 },
+                // ===============================================================================================
+                {
+                  dataField: "B03", label: {
+                    text: "Nama Lengkap",
+                  },
+                },
+                // ===============================================================================================
                 {
                   itemType: "group",
+                  colCount: "auto",
                   caption: "Rombongan Belajar",
                   items: [
                     {
@@ -255,6 +264,8 @@ function formPesertaDidik(dataSource) {
                 },
               ],
             },
+            //===================================================================================
+            //===================================================================================
             {
               itemType: "group",
               caption: "Catatan Sipil",
@@ -266,63 +277,70 @@ function formPesertaDidik(dataSource) {
                   },
                 },
                 {
-                  dataField: "C02",
-                  label: {
-                    text: "No. Register",
-                  },
-                },
-                {
-                  dataField: "C03",
-                  label: {
-                    text: "No. Akta Kelahiran",
-                  },
-                },
-                {
-                  dataField: "C04",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tertanggal",
-                  },
-                },
-                {
-                  dataField: "C05",
-                  label: {
-                    text: "Gender",
-                  },
-                },
-                {
-                  dataField: "C06",
-                  label: {
-                    text: "Tempat Lahir",
-                  },
-                },
-                {
-                  dataField: "C07",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tanggal Lahir",
-                  },
-                },
-                {
-                  dataField: "C08",
-                  label: {
-                    text: "Anak Ke-",
-                  },
-                },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "C02",
+                      label: {
+                        text: "No. Register",
+                      },
+                    },
+                    {
+                      dataField: "C03",
+                      label: {
+                        text: "No. Akta Kelahiran",
+                      },
+                    },
+                    {
+                      dataField: "C04",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
 
+                    {
+                      dataField: "C05",
+                      label: {
+                        text: "Gender",
+                      },
+                    },
+                    {
+                      dataField: "C06",
+                      label: {
+                        text: "Tempat Lahir",
+                      },
+                    },
+                    {
+                      dataField: "C07",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tanggal Lahir",
+                      },
+                    },
+                    {
+                      dataField: "C08",
+                      label: {
+                        text: "Anak Ke-",
+                      },
+                    },
+                  ]
+                }
               ],
             },
           ],
         },
-      ]
+      ],
     },
 
+    // ===============================================================================================
     {
       title: "Catatan Kependudukan",
       items: [
@@ -332,22 +350,29 @@ function formPesertaDidik(dataSource) {
           items: [
             {
               itemType: "group",
+              caption: "Kartu Keluarga",
               items: [
                 {
-                  dataField: "D01",
-                  label: {
-                    text: "No. KK",
-                  },
-                },
-                {
-                  dataField: "D02",
-                  // editorType: "dxDateBox",
-                  editorOptions: {
-                    format: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tertanggal",
-                  },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "D01",
+                      label: {
+                        text: "No. KK",
+                      },
+                    },
+                    {
+                      dataField: "D02",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                  ]
                 },
                 {
                   dataField: "D03",
@@ -356,108 +381,107 @@ function formPesertaDidik(dataSource) {
                   },
                 },
                 {
-                  dataField: "D04",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RT",
-                  },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "D04",
+                      editorOptions: {
+                        format: "000",
+                      },
+                      label: {
+                        text: "RT",
+                      },
+                    },
+                    {
+                      dataField: "D05",
+                      editorOptions: {
+                        format: "000",
+                      },
+                      label: {
+                        text: "RW",
+                      },
+                    },
+                  ]
                 },
                 {
-                  dataField: "D05",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RW",
-                  },
-                },
-                {
-                  itemType: "empty",
-                },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "D06",
+                      label: {
+                        text: "Desa/Kelurahan",
+                      },
+                    },
+                    {
+                      dataField: "D07",
+                      label: {
+                        text: "Kecamatan",
+                      },
+                    },
+                    {
+                      dataField: "D08",
+                      label: {
+                        text: "Pemerintah Daerah",
+                      },
+                    },
+                    {
+                      dataField: "D09",
+                      label: {
+                        text: "Pemerintah Propinsi",
+                      },
+                    },
+                    {
+                      dataField: "D10",
+                      label: {
+                        text: "Kode Pos",
+                      },
+                    },
+                    {
+                      dataField: "D11",
+                      label: {
+                        text: "Agama",
+                      },
+                    },
 
-              ]
-            },
-
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "D06",
-                  label: {
-                    text: "Desa/Kelurahan",
-                  },
+                  ],
                 },
-                {
-                  dataField: "D07",
-                  label: {
-                    text: "Kecamatan",
-                  },
-                },
-                {
-                  dataField: "D08",
-                  label: {
-                    text: "Pemerintah Daerah",
-                  },
-                },
-                {
-                  dataField: "D09",
-                  label: {
-                    text: "Pemerintah Propinsi",
-                  },
-                },
-                {
-                  dataField: "D10",
-                  label: {
-                    text: "Kode Pos",
-                  },
-                },
-                {
-                  dataField: "D11",
-                  label: {
-                    text: "Agama",
-                  },
-                },
-
               ],
             },
-          ],
-        },
-      ],
-    },
-
-    {
-      title: "Keterangan Tempat Tinggal",
-      items: [
-        {
-          itemType: "group",
-          colCount: "auto",
-          items: [
+            // ===============================================================================================
+            // ===============================================================================================
             {
               itemType: "group",
+              caption: "Tempat Tinggal",
               items: [
                 {
-                  dataField: "E01",
-                  label: {
-                    text: "Dokumen",
-                  },
-                },
-                {
-                  dataField: "E02",
-                  label: {
-                    text: "No. Dokumen",
-                  },
-                },
-                {
-                  dataField: "E03",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tertanggal",
-                  },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "E01",
+                      label: {
+                        text: "Dokumen",
+                      },
+                    },
+                    {
+                      dataField: "E02",
+                      label: {
+                        text: "No. Dokumen",
+                      },
+                    },
+                    {
+                      dataField: "E03",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tertanggal",
+                      },
+                    },
+                  ]
                 },
                 {
                   dataField: "E04",
@@ -466,97 +490,99 @@ function formPesertaDidik(dataSource) {
                   },
                 },
                 {
-                  dataField: "E05",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RT",
-                  },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "E05",
+                      editorOptions: {
+                        format: "000",
+                      },
+                      label: {
+                        text: "RT",
+                      },
+                    },
+                    {
+                      dataField: "E06",
+                      editorOptions: {
+                        format: "000",
+                      },
+                      label: {
+                        text: "RW",
+                      },
+                    },
+                  ]
                 },
                 {
-                  dataField: "E06",
-                  editorOptions: {
-                    format: "000",
-                  },
-                  label: {
-                    text: "RW",
-                  },
-                },
-                {
-                  itemType: "empty",
-                },
-
-              ]
-            },
-
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "E07",
-                  label: {
-                    text: "Desa/Kelurahan",
-                  },
-                },
-                {
-                  dataField: "E08",
-                  label: {
-                    text: "Kecamatan",
-                  },
-                },
-                {
-                  dataField: "E09",
-                  label: {
-                    text: "Pemerintah Daerah",
-                  },
-                },
-                {
-                  dataField: "E10",
-                  label: {
-                    text: "Pemerintah Propinsi",
-                  },
-                },
-                {
-                  dataField: "E11",
-                  label: {
-                    text: "Kode Pos",
-                  },
-                },
-                {
-                  dataField: "E12",
-                  label: {
-                    text: "Koordinat",
-                  },
-                },
-                {
-                  dataField: "E13",
-                  editorOptions: {
-                    format: "#0.000 Km",
-                  },
-                  label: {
-                    text: "Jarak",
-                  },
-                },
-                {
-                  dataField: "E14",
-                  editorOptions: {
-                    format: "#0 menit",
-                  },
-                  label: {
-                    text: "Waktu Tempuh",
-                  },
-                },
-
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "E07",
+                      label: {
+                        text: "Desa/Kelurahan",
+                      },
+                    },
+                    {
+                      dataField: "E08",
+                      label: {
+                        text: "Kecamatan",
+                      },
+                    },
+                    {
+                      dataField: "E09",
+                      label: {
+                        text: "Pemerintah Daerah",
+                      },
+                    },
+                    {
+                      dataField: "E10",
+                      label: {
+                        text: "Pemerintah Propinsi",
+                      },
+                    },
+                    {
+                      dataField: "E11",
+                      label: {
+                        text: "Kode Pos",
+                      },
+                    },
+                    {
+                      dataField: "E12",
+                      label: {
+                        text: "Koordinat",
+                      },
+                    },
+                    {
+                      dataField: "E13",
+                      editorOptions: {
+                        format: "#0.000 Km",
+                      },
+                      label: {
+                        text: "Jarak",
+                      },
+                    },
+                    {
+                      dataField: "E14",
+                      editorOptions: {
+                        format: "#0 menit",
+                      },
+                      label: {
+                        text: "Waktu Tempuh",
+                      },
+                    },
+                  ]
+                }
               ],
             },
-          ],
+          ]
         },
-      ],
+      ]
     },
 
+    // ===============================================================================================
     {
-      title: "Keterangan Ayah Kandung",
+      title: "Orang Tua Kandung",
       items: [
         {
           itemType: "group",
@@ -564,6 +590,7 @@ function formPesertaDidik(dataSource) {
           items: [
             {
               itemType: "group",
+              caption: "Ayah Kandung",
               items: [
                 {
                   dataField: "F01",
@@ -572,82 +599,170 @@ function formPesertaDidik(dataSource) {
                   },
                 },
                 {
-                  dataField: "F02",
-                  label: {
-                    text: "Gelar Depan",
-                  },
-                },
-                {
-                  dataField: "F03",
-                  label: {
-                    text: "Gelar Belakang",
-                  },
-                },
-                {
-                  dataField: "F04",
-                  label: {
-                    text: "NIK",
-                  },
-                },
-                {
-                  dataField: "F05",
-                  label: {
-                    text: "Tempat Lahir",
-                  },
-                },
-                {
-                  dataField: "F06",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tanggal Lahir",
-                  },
-                },
-                {
-                  itemType: "empty",
-                },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "F02",
+                      label: {
+                        text: "Gelar Depan",
+                      },
+                    },
+                    {
+                      dataField: "F03",
+                      label: {
+                        text: "Gelar Belakang",
+                      },
+                    },
+                    {
+                      dataField: "F04",
+                      label: {
+                        text: "NIK",
+                      },
+                    },
+                    {
+                      dataField: "F05",
+                      label: {
+                        text: "Tempat Lahir",
+                      },
+                    },
+                    {
+                      dataField: "F06",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tanggal Lahir",
+                      },
+                    },
 
+                    {
+                      dataField: "F07",
+                      label: {
+                        text: "Agama",
+                      },
+                    },
+                    {
+                      dataField: "F08",
+                      label: {
+                        text: "Pendidikan",
+                      },
+                    },
+                    {
+                      dataField: "F09",
+                      label: {
+                        text: "Pekerjaan",
+                      },
+                    },
+                    {
+                      dataField: "F10",
+                      label: {
+                        text: "Status Perkawinan",
+                      },
+                    },
+                    {
+                      dataField: "F11",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tanggal Meninggal",
+                      },
+                    },
+                  ]
+                },
               ]
             },
-
             {
               itemType: "group",
+              caption: "Ibu Kandung",
               items: [
                 {
-                  dataField: "F07",
-                  label: {
-                    text: "Agama",
-                  },
+                  itemType: "group",
+                  items: [
+                    {
+                      dataField: "G01",
+                      label: {
+                        text: "Nama Lengkap",
+                      },
+                    },
+                  ]
                 },
                 {
-                  dataField: "F08",
-                  label: {
-                    text: "Pendidikan",
-                  },
-                },
-                {
-                  dataField: "F09",
-                  label: {
-                    text: "Pekerjaan",
-                  },
-                },
-                {
-                  dataField: "F10",
-                  label: {
-                    text: "Status Perkawinan",
-                  },
-                },
-                {
-                  dataField: "F11",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tanggal Meninggal",
-                  },
+                  itemType: "group",
+                  colCount: "auto",
+                  items: [
+                    {
+                      dataField: "G02",
+                      label: {
+                        text: "Gelar Depan",
+                      },
+                    },
+                    {
+                      dataField: "G03",
+                      label: {
+                        text: "Gelar Belakang",
+                      },
+                    },
+                    {
+                      dataField: "G04",
+                      label: {
+                        text: "NIK",
+                      },
+                    },
+                    {
+                      dataField: "G05",
+                      label: {
+                        text: "Tempat Lahir",
+                      },
+                    },
+                    {
+                      dataField: "G06",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tanggal Lahir",
+                      },
+                    },
+                    {
+                      dataField: "G07",
+                      label: {
+                        text: "Agama",
+                      },
+                    },
+                    {
+                      dataField: "G08",
+                      label: {
+                        text: "Pendidikan",
+                      },
+                    },
+                    {
+                      dataField: "G09",
+                      label: {
+                        text: "Pekerjaan",
+                      },
+                    },
+                    {
+                      dataField: "G10",
+                      label: {
+                        text: "Status Perkawinan",
+                      },
+                    },
+                    {
+                      dataField: "G11",
+                      editorType: "dxDateBox",
+                      editorOptions: {
+                        displayFormat: "dd/MM/yyyy",
+                      },
+                      label: {
+                        text: "Tanggal Meninggal",
+                      },
+                    },
+                  ]
                 },
 
               ],
@@ -657,110 +772,9 @@ function formPesertaDidik(dataSource) {
       ],
     },
 
+    // ===============================================================================================
     {
-      title: "Keterangan Ibu Kandung",
-      items: [
-        {
-          itemType: "group",
-          colCount: "auto",
-          items: [
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "G01",
-                  label: {
-                    text: "Nama Lengkap",
-                  },
-                },
-                {
-                  dataField: "G02",
-                  label: {
-                    text: "Gelar Depan",
-                  },
-                },
-                {
-                  dataField: "G03",
-                  label: {
-                    text: "Gelar Belakang",
-                  },
-                },
-                {
-                  dataField: "G04",
-                  label: {
-                    text: "NIK",
-                  },
-                },
-                {
-                  dataField: "G05",
-                  label: {
-                    text: "Tempat Lahir",
-                  },
-                },
-                {
-                  dataField: "G06",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tanggal Lahir",
-                  },
-                },
-                {
-                  itemType: "empty",
-                },
-
-              ]
-            },
-
-            {
-              itemType: "group",
-              items: [
-                {
-                  dataField: "G07",
-                  label: {
-                    text: "Agama",
-                  },
-                },
-                {
-                  dataField: "G08",
-                  label: {
-                    text: "Pendidikan",
-                  },
-                },
-                {
-                  dataField: "G09",
-                  label: {
-                    text: "Pekerjaan",
-                  },
-                },
-                {
-                  dataField: "G10",
-                  label: {
-                    text: "Status Perkawinan",
-                  },
-                },
-                {
-                  dataField: "G11",
-                  editorType: "dxDateBox",
-                  editorOptions: {
-                    displayFormat: "dd/MM/yyyy",
-                  },
-                  label: {
-                    text: "Tanggal Meninggal",
-                  },
-                },
-
-              ],
-            },
-          ],
-        },
-      ],
-    },
-
-    {
-      title: "Keterangan Wali",
+      title: "Orang Tua Wali",
       items: [
         {
           itemType: "group",
@@ -794,6 +808,12 @@ function formPesertaDidik(dataSource) {
                   },
                 },
                 {
+                  dataField: "H05",
+                  label: {
+                    text: "NIK",
+                  },
+                },
+                {
                   itemType: "empty",
                 },
 
@@ -803,12 +823,6 @@ function formPesertaDidik(dataSource) {
             {
               itemType: "group",
               items: [
-                {
-                  dataField: "H05",
-                  label: {
-                    text: "NIK",
-                  },
-                },
                 {
                   dataField: "H06",
                   label: {
@@ -850,6 +864,7 @@ function formPesertaDidik(dataSource) {
       ],
     },
 
+    // ===============================================================================================
     {
       title: "Keterangan Data Dinamis",
       items: [
@@ -950,6 +965,7 @@ function formPesertaDidik(dataSource) {
       ],
     },
 
+    // ===============================================================================================
     {
       title: "Jaminan Sosial Pendidikan",
       items: [
@@ -985,6 +1001,7 @@ function formPesertaDidik(dataSource) {
       ],
     },
 
+    // ===============================================================================================
     {
       title: "Penerimaan Peserta Didik",
       items: [
