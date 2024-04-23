@@ -530,12 +530,12 @@ $(document).ready(function () {
                     "Keterangan": "",
                     "Image": "./master/Homepage/Assets/bannerimage/6.png"
                 },
-                {
-                    "ID": "8",
-                    "Title": "",
-                    "Keterangan": "",
-                    "Image": "./master/Homepage/Assets/bannerimage/8.png"
-                }
+                // {
+                //     "ID": "8",
+                //     "Title": "",
+                //     "Keterangan": "",
+                //     "Image": "./master/Homepage/Assets/bannerimage/8.png"
+                // }
             ],
             header: [
                 {
