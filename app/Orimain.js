@@ -940,7 +940,7 @@ $(document).ready(function () {
                 hideOnOutsideClick: true,
                 hideOnParentScroll: true,
                 visible: false,
-                width: $(window).width() < 368 ? "90%" : "25%",
+                width: $(window).width() < 680 ? "90%" : "25%",
             }).dxPopup("instance"),
     };
 
