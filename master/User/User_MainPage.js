@@ -3,7 +3,7 @@ _element.PageToolbar.option("items[2].visible", false);
 _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
 $(document).ready(function () {
-
+  // searchFile("1-crfVPx2u9vnbosWdcYwDoc8vzpsfm04"); //PHOTO PEGAWAI GDRIVE
   var
     _Authentication = {
       formData: {
@@ -93,6 +93,7 @@ $(document).ready(function () {
     };
 
   delete _Authentication;
+  delete formOption;
   delete getQuery;
   _main.arrVarGlobal._data = null;
   _main.arrVarGlobal._columnArray = [];
@@ -127,7 +128,7 @@ function formPesertaDidik(dataSource) {
                 {
                   template: `
                     <div id=UserPict style="text-align: center; vertical-align: middle;">
-                      <img src=${dataSource.currentUser.photo} style="display:inline-flex;object-fit:scale-down;max-width:198px;"></img>
+                      <img src=${dataSource.currentUser.photo} style="display:inline-flex;object-fit:scale-down;max-width:198px;border-radius:100%;box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.7);"></img>
                     </div>`
                 },
               ],
@@ -1110,7 +1111,7 @@ function formPegawai(dataSource) {
                 {
                   template: `
                     <div id=UserPict style="text-align: center; vertical-align: middle;">
-                      <img src=${dataSource.currentUser.photo} style="display:inline-flex;object-fit:scale-down;max-width:198px;"></img>
+                      <img src=${dataSource.currentUser.photo} style="display:inline-flex;object-fit:scale-down;max-width:198px;border-radius:100%;box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.7);;"></img>
                     </div>`
                 },
               ],
