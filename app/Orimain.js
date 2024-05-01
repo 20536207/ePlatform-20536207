@@ -700,12 +700,12 @@ _main = {
 };
 
 window.onload = () => {
+    window.jsPDF = window.jspdf.jsPDF;
     onInitClient();
 };
 
 //=======================================================
 $(document).ready(function () {
-    window.jsPDF = window.jspdf.jsPDF;
 
     //App Head =================================================
     let _titleApp = document.createElement('title');
@@ -914,7 +914,7 @@ $(document).ready(function () {
 
         //Toast info =================================================
         Popup:
-            $('#ShowMessage').dxPopup({
+            $("#ShowMessage").dxPopup({
                 height: "auto",
                 showCloseButton: false,
                 hideOnOutsideClick: true,
@@ -922,6 +922,23 @@ $(document).ready(function () {
                 visible: false,
                 width: $(window).width() < 680 ? "90%" : "25%",
             }).dxPopup("instance"),
+
+        //ActionSheet =================================================
+        ActionSheet:
+            $('#ShowMessage').dxActionSheet({
+                dataSource: undefined,
+                title: null,
+                showTitle: true,
+                showCancelButton: true,
+                visible: false,
+                usePopover: true,
+                width: undefined,
+                onCancelClick() {
+                    this.option('dataSource', undefined);
+                    this.option('title', null);
+                    return false;
+                },
+            }).dxActionSheet('instance'),
     };
 
     //==============================================================================
@@ -991,6 +1008,36 @@ function _notify(_message) {
 
 //=== CLIENT AUTHENTICATION ======================================================================
 function onInitClient() {
+
+    google.accounts.id.initialize(
+        {
+            client_id: _main.appConfig.gapi.clientId,
+            callback: onSignIn,
+            cancel_on_tap_outside: true,
+            context: "signin",
+            itp_support: true,
+            use_fedcm_for_prompt: true,
+            // prompt_parent_id: "elHeader-002",
+            // auto_select: true,
+            // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
+            // native_callback: (moment)=>{console.log(moment)}, //"nativeGSI"
+            // auto_prompt: true,
+            // nonce: "ePlatform20536207",
+            // state_cookie_domain:"_*.domain",
+            // ux_mode: "popup",//,redirect
+            // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
+            // intermediate_iframe_close_callback: (moment)=>{console.log(moment)}, //"logBeforeClose",
+            // login_hint:"",
+            // hd: "*",
+        }
+    );
+    google.accounts.id.prompt();
+    // google.accounts.id.prompt((notification) => {
+        // if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+        // console.log(notification);
+        // return;
+    // });
+
     // gapi.load('client',
     //     gapi.auth2.ClientConfig({
     //         apiKey: "AIzaSyCAXrx4H2jplyt2O7MAI1Q0bX60V2QoP9Q",
@@ -1021,34 +1068,11 @@ function onInitClient() {
     //         console.log(_main.account.user.token);
     //     },
     // });
-
-    google.accounts.id.initialize(
-        {
-            client_id: _main.appConfig.gapi.clientId, //'666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com',
-            callback: onSignIn,
-            cancel_on_tap_outside: false,
-            context: "signin",
-            itp_support: true,
-            use_fedcm_for_prompt: true,
-            // auto_select: true,
-            // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
-            // native_callback:"onSignIn",
-            // prompt_parent_id: "PageContains",
-            // auto_prompt: true,
-            // nonce: "ePlatform20536207",
-            // state_cookie_domain:"_*.domain",
-            // ux_mode: "redirect", //popup,redirect
-            // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
-            // intermediate_iframe_close_callback:"logBeforeClose",
-            // login_hint:"",
-            // hd: "*",
-        },
-    );
 }
 
 function decodeJwtResponse(token) {
     var base64Url = token.split(".")[1];
-    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");    
+    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
     var jsonPayload = decodeURIComponent(
         atob(base64)
             .split("")
@@ -1061,7 +1085,7 @@ function decodeJwtResponse(token) {
 }
 
 function onSignIn(currentAccount) {
-    
+
     const
         responsePayload = decodeJwtResponse(currentAccount.credential),
         getQuery = GetVisualizationQuery(
@@ -1084,31 +1108,33 @@ function onSignIn(currentAccount) {
         //https://lh3.googleusercontent.com/d/FILE_ID
 
         if (_main.account.user.cred != null) {
+
             _element.PageToolbar.option("items[1].text", "e-Platform Authentication ");
             _element.PageToolbar.option("items[2].visible", false);
 
             $("#PageContains").empty();
             _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
             $("#PageContains").load(_main.arrVarGlobal._actPageContains);
-        } else {
-            _element.Popup.option(
-                "contentTemplate",
-                function (contentElement) {
-                    contentElement.append(
+        };
+        // else {
+        //     _element.Popup.option(
+        //         "contentTemplate",
+        //         function (contentElement) {
+        //             contentElement.append(
 
-                        `<p>
-                        <div id=UserPict style="text-align: center; vertical-align: middle;">
-                            <img src=${responsePayload.picture} style="display:inline-flex;object-fit:scale-down;border-radius:100%;max-width:198px;"></img>
-                        </div>
-                        <div div id = "UserAccount" style = "font-size: large;margin: 5px 0 5px 0; text-align: center;" >${responsePayload.name}</div>
-                        <div style = "padding: 4px; margin: 5px 0 5px 0; text-align: center;" >${responsePayload.email}</div>
-                        <div style = "padding: 4px; background-color: rgba(100,100,100,0.7); margin: 5px 0 5px 0; text-align: center;" >as user guest</div>`
-                    );
-                }
-            );
-            _element.Popup.option("title", "Authentication");
-            _element.Popup.option("visible", true);
-        }
+        //                 `<p>
+        //                 <div id=UserPict style="text-align: center; vertical-align: middle;">
+        //                     <img src=${responsePayload.picture} style="display:inline-flex;object-fit:scale-down;border-radius:100%;max-width:198px;"></img>
+        //                 </div>
+        //                 <div div id = "UserAccount" style = "font-size: large;margin: 5px 0 5px 0; text-align: center;" >${responsePayload.name}</div>
+        //                 <div style = "padding: 4px; margin: 5px 0 5px 0; text-align: center;" >${responsePayload.email}</div>
+        //                 <div style = "padding: 4px; background-color: rgba(100,100,100,0.7); margin: 5px 0 5px 0; text-align: center;" >as user guest</div>`
+        //             );
+        //         }
+        //     );
+        //     _element.Popup.option("title", "Authentication");
+        //     _element.Popup.option("visible", true);
+        // }
 
     });
     delete getQuery;
@@ -1139,8 +1165,6 @@ function GetJsonData(response) {
     if (!(response.isError())) {
         var
             data = response.getDataTable();
-        // _dataSource = [],
-        // _column = [];
 
         //GetJSONData Structure==================================
         data = JSON.parse(data.toJSON());
@@ -1169,6 +1193,7 @@ function GetJsonData(response) {
 
         delete data;
         delete _field;
+        delete _value;
         delete _arrCol;
         delete _arrRow;
         return;
@@ -1307,6 +1332,7 @@ function searchFile(folderId) {
 
 function onXMLHttpRequest() {
     var xhr = new XMLHttpRequest();
+
     xhr.open('GET',
         'https://www.googleapis.com/drive/v3/about?fields=user&' +
         'access_token=' + params['access_token']);
