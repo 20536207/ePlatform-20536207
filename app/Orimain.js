@@ -908,9 +908,9 @@ $(document).ready(function () {
 
         //Toast info =================================================
         Toast:
-            $('#ShowMessage').dxToast({
+            $("#ShowMessage").dxToast({
                 displayTime: 5000,
-            }).dxToast('instance'),
+            }).dxToast("instance"),
 
         //Toast info =================================================
         Popup:
@@ -925,8 +925,13 @@ $(document).ready(function () {
 
         //ActionSheet =================================================
         ActionSheet:
-            $('#ShowMessage').dxActionSheet({
-                dataSource: undefined,
+            $("#ShowMessage").dxActionSheet({
+                dataSource: [
+                    { 
+                        text: _main.account.user.cred == null ? "Login" : "Logout",
+                        icon: "fas fa-circle-user",
+                    },
+                ],
                 title: null,
                 showTitle: true,
                 showCancelButton: true,
@@ -934,11 +939,11 @@ $(document).ready(function () {
                 usePopover: true,
                 width: undefined,
                 onCancelClick() {
-                    this.option('dataSource', undefined);
-                    this.option('title', null);
+                    this.option("dataSource", undefined);
+                    this.option("title", null);
                     return false;
                 },
-            }).dxActionSheet('instance'),
+            }).dxActionSheet("instance"),
     };
 
     //==============================================================================
@@ -1033,9 +1038,9 @@ function onInitClient() {
     );
     google.accounts.id.prompt();
     // google.accounts.id.prompt((notification) => {
-        // if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-        // console.log(notification);
-        // return;
+    // if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+    // console.log(notification);
+    // return;
     // });
 
     // gapi.load('client',
@@ -1115,26 +1120,26 @@ function onSignIn(currentAccount) {
             $("#PageContains").empty();
             _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
             $("#PageContains").load(_main.arrVarGlobal._actPageContains);
-        };
-        // else {
-        //     _element.Popup.option(
-        //         "contentTemplate",
-        //         function (contentElement) {
-        //             contentElement.append(
+        }
+        else {
+            _element.Popup.option(
+                "contentTemplate",
+                function (contentElement) {
+                    contentElement.append(
 
-        //                 `<p>
-        //                 <div id=UserPict style="text-align: center; vertical-align: middle;">
-        //                     <img src=${responsePayload.picture} style="display:inline-flex;object-fit:scale-down;border-radius:100%;max-width:198px;"></img>
-        //                 </div>
-        //                 <div div id = "UserAccount" style = "font-size: large;margin: 5px 0 5px 0; text-align: center;" >${responsePayload.name}</div>
-        //                 <div style = "padding: 4px; margin: 5px 0 5px 0; text-align: center;" >${responsePayload.email}</div>
-        //                 <div style = "padding: 4px; background-color: rgba(100,100,100,0.7); margin: 5px 0 5px 0; text-align: center;" >as user guest</div>`
-        //             );
-        //         }
-        //     );
-        //     _element.Popup.option("title", "Authentication");
-        //     _element.Popup.option("visible", true);
-        // }
+                        `<p>
+                        <div id=UserPict style="text-align: center; vertical-align: middle;">
+                            <img src=${responsePayload.picture} style="display:inline-flex;object-fit:scale-down;border-radius:100%;max-width:198px;"></img>
+                        </div>
+                        <div div id = "UserAccount" style = "font-size: large;margin: 5px 0 5px 0; text-align: center;" >${responsePayload.name}</div>
+                        <div style = "padding: 4px; margin: 5px 0 5px 0; text-align: center;" >${responsePayload.email}</div>
+                        <div style = "padding: 4px; background-color: rgba(100,100,100,0.7); margin: 5px 0 5px 0; text-align: center;" >as user guest</div>`
+                    );
+                }
+            );
+            _element.Popup.option("title", "Authentication");
+            _element.Popup.option("visible", true);
+        }
 
     });
     delete getQuery;
