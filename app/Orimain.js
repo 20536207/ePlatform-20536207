@@ -788,23 +788,62 @@ $(document).ready(function () {
                             label: "",
                             hint: "",
                             stylingMode: "text", //text|outlined|contained
-                            type: "noramal", //normal|default|danger|success
+                            type: "normal", //normal|default|danger|success
                             hoverStateEnabled: false,
                             focusStateEnabled: false,
                             activeStateEnabled: true,
                             disabled: false,
                             visible: true,
-                            onClick() {
-                                if (_main.account.user.cred == null) {
-                                    google.accounts.id.prompt();
-                                } else {
-                                    _element.PageToolbar.option("items[1].text", "e-Platform Authentication");
-                                    _element.PageToolbar.option("items[2].visible", false);
+                            onClick(e) {
+                                // if (_main.account.user.cred == null) {
+                                //     google.accounts.id.prompt();
+                                // } else {
+                                //     _element.PageToolbar.option("items[1].text", "e-Platform Authentication");
+                                //     _element.PageToolbar.option("items[2].visible", false);
 
-                                    $("#PageContains").empty();
-                                    _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
-                                    $("#PageContains").load(_main.arrVarGlobal._actPageContains);
-                                }
+                                //     $("#PageContains").empty();
+                                //     _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
+                                //     $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                                // }
+                                //=====================================================
+                                _element.ActionSheet.option("dataSource",
+                                    [
+                                        {
+                                            text: _main.account.user.cred == null ? "Login" : "Logout",
+                                            icon: "fas fa-circle-user",
+                                        },
+                                        {
+                                            text: "Info Personal",
+                                            icon: "fas fa-id-card",
+                                            disabled: _main.account.user.cred == null ? true : false,
+                                        },
+                                    ]
+                                );
+                                _element.ActionSheet.option("onItemClick", value => {
+                                    switch (value.itemIndex) {
+                                        case 0:
+                                            if (_main.account.user.cred == null) {
+                                                google.accounts.id.prompt();
+                                            } else {
+                                                window.location.reload(true);
+                                            };
+                                            break;
+
+                                        case 1:
+                                            _element.PageToolbar.option("items[1].text", "e-Platform Authentication");
+                                            _element.PageToolbar.option("items[2].visible", false);
+
+                                            $("#PageContains").empty();
+                                            _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
+                                            $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                                            break;
+
+                                        default: break;
+                                    }
+                                });
+
+                                _element.ActionSheet.option("target", e.element);
+                                _element.ActionSheet.option("visible", true);
                             },
                         },
                     },
@@ -925,24 +964,14 @@ $(document).ready(function () {
 
         //ActionSheet =================================================
         ActionSheet:
-            $("#ShowMessage").dxActionSheet({
-                dataSource: [
-                    { 
-                        text: _main.account.user.cred == null ? "Login" : "Logout",
-                        icon: "fas fa-circle-user",
-                    },
-                ],
+            $("#ActionSheet").dxActionSheet({
+                dataSource: undefined,
                 title: null,
-                showTitle: true,
+                showTitle: false,
                 showCancelButton: true,
                 visible: false,
-                usePopover: true,
-                width: undefined,
-                onCancelClick() {
-                    this.option("dataSource", undefined);
-                    this.option("title", null);
-                    return false;
-                },
+                usePopover: $(window).width() < 680 ? false : true,
+                onItemClick: undefined,
             }).dxActionSheet("instance"),
     };
 
@@ -952,7 +981,7 @@ $(document).ready(function () {
     $("#PageContains").empty();
     $("#PageContains").load(_main.arrVarGlobal._actPageContains);
     $(window).resize(function () {
-        _element.LayoutContains.option('openedStateMode', $(window).width() < 960 ? "overlap" : "shrink");
+        _element.LayoutContains.option("openedStateMode", $(window).width() < 960 ? "overlap" : "shrink");
     });
 });
 
