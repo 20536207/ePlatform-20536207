@@ -815,17 +815,33 @@ $(document).ready(function () {
                                         {
                                             text: "Info Personal",
                                             icon: "fas fa-id-card",
-                                            disabled: _main.account.user.cred == null ? true : false,
+                                            visible: _main.account.user.cred == null ? false : true,
+                                            // disabled: _main.account.user.cred == null ? true : false,
+                                        },
+                                        {
+                                            visible: _main.account.user.cred == null ? true : false,
+                                            template: `<p></p>`
+                                        },
+                                        {
+                                            visible: _main.account.user.cred == null ? true : false,
+                                            template: function () {
+                                                return `<div id="google_btn"></div>`;
+                                            },
+                                        },
+                                        {
+                                            visible: _main.account.user.cred == null ? true : false,
+                                            template: `<p></p>`
                                         },
                                     ]
                                 );
+
                                 _element.ActionSheet.option("onItemClick", value => {
                                     switch (value.itemIndex) {
                                         case 0:
                                             if (_main.account.user.cred == null) {
                                                 google.accounts.id.prompt();
                                             } else {
-                                                window.location.reload(true);
+                                                location.reload(true);
                                             };
                                             break;
 
@@ -838,12 +854,23 @@ $(document).ready(function () {
                                             $("#PageContains").load(_main.arrVarGlobal._actPageContains);
                                             break;
 
-                                        default: break;
+                                        default:
+                                            break;
                                     }
                                 });
-
+                                
                                 _element.ActionSheet.option("target", e.element);
                                 _element.ActionSheet.option("visible", true);
+                                google.accounts.id.renderButton(document.getElementById("google_btn"),
+                                    {
+                                        type: "standard",
+                                        text: "signin_with",
+                                        shape: "pill",
+                                        theme: "outline",
+                                        size: "small",
+                                        logo_alignment: "left"
+                                    }
+                                );
                             },
                         },
                     },
@@ -959,7 +986,10 @@ $(document).ready(function () {
                 hideOnOutsideClick: true,
                 hideOnParentScroll: true,
                 visible: false,
-                width: $(window).width() < 680 ? "90%" : "25%",
+                width: "auto",//$(window).width() < 680 ? "90%" : "25%",
+                onHidden: ()=>{
+                    location.reload(true);
+                },
             }).dxPopup("instance"),
 
         //ActionSheet =================================================
@@ -972,6 +1002,7 @@ $(document).ready(function () {
                 visible: false,
                 usePopover: $(window).width() < 680 ? false : true,
                 onItemClick: undefined,
+                width: "auto",
             }).dxActionSheet("instance"),
     };
 
@@ -1051,14 +1082,14 @@ function onInitClient() {
             context: "signin",
             itp_support: true,
             use_fedcm_for_prompt: true,
-            // prompt_parent_id: "elHeader-002",
-            // auto_select: true,
+            // prompt_parent_id: "google_btn",
+            // auto_select: false,
             // login_uri: "https://www.sdntisnonegaran1probolinggo.sch.id/login",
             // native_callback: (moment)=>{console.log(moment)}, //"nativeGSI"
-            // auto_prompt: true,
+            // auto_prompt: false,
             // nonce: "ePlatform20536207",
             // state_cookie_domain:"_*.domain",
-            // ux_mode: "popup",//,redirect
+            ux_mode: "popup",//,redirect
             // allowed_parent_origin: "https://www.sdntisnonegaran1probolinggo.sch.id",
             // intermediate_iframe_close_callback: (moment)=>{console.log(moment)}, //"logBeforeClose",
             // login_hint:"",
@@ -1141,7 +1172,7 @@ function onSignIn(currentAccount) {
         _main.account.user.photo = _main.arrVarGlobal._dataArray.length != 0 ? responsePayload.picture : null;
         //https://lh3.googleusercontent.com/d/FILE_ID
 
-        if (_main.account.user.cred != null) {
+        if (_main.account.user.cred != null && _main.account.user.userstate != null) {
 
             _element.PageToolbar.option("items[1].text", "e-Platform Authentication ");
             _element.PageToolbar.option("items[2].visible", false);
