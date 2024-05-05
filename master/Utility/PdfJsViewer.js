@@ -39,6 +39,8 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 hint: 'Print',
                 stylingMode: 'contained',
                 onClick(e) {
+                    // window.print();
+                    // printPages(_pdfPageContains);
                     _notify('option of ' + _pdfToolItems.items[3].hint + ' masih proses ritual');
                 },
             }

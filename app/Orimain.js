@@ -795,16 +795,6 @@ $(document).ready(function () {
                             disabled: false,
                             visible: true,
                             onClick(e) {
-                                // if (_main.account.user.cred == null) {
-                                //     google.accounts.id.prompt();
-                                // } else {
-                                //     _element.PageToolbar.option("items[1].text", "e-Platform Authentication");
-                                //     _element.PageToolbar.option("items[2].visible", false);
-
-                                //     $("#PageContains").empty();
-                                //     _main.arrVarGlobal._actPageContains = "/master/User/User_MainPage.html";
-                                //     $("#PageContains").load(_main.arrVarGlobal._actPageContains);
-                                // }
                                 //=====================================================
                                 _element.ActionSheet.option("dataSource",
                                     [
@@ -829,13 +819,14 @@ $(document).ready(function () {
                                             },
                                         },
                                         {
-                                            visible: _main.account.user.cred == null ? true : false,
+                                            visible: _main.account.user.cred == null ? ($(window).width() < 680 ? true : false) : false,
                                             template: `<p></p>`
                                         },
                                     ]
                                 );
 
                                 _element.ActionSheet.option("onItemClick", value => {
+
                                     switch (value.itemIndex) {
                                         case 0:
                                             if (_main.account.user.cred == null) {
@@ -857,8 +848,9 @@ $(document).ready(function () {
                                         default:
                                             break;
                                     }
+
                                 });
-                                
+
                                 _element.ActionSheet.option("target", e.element);
                                 _element.ActionSheet.option("visible", true);
                                 google.accounts.id.renderButton(document.getElementById("google_btn"),
@@ -867,7 +859,7 @@ $(document).ready(function () {
                                         text: "signin_with",
                                         shape: "pill",
                                         theme: "outline",
-                                        size: "small",
+                                        size: "middle",
                                         logo_alignment: "left"
                                     }
                                 );
@@ -987,7 +979,7 @@ $(document).ready(function () {
                 hideOnParentScroll: true,
                 visible: false,
                 width: "auto",//$(window).width() < 680 ? "90%" : "25%",
-                onHidden: ()=>{
+                onHidden: () => {
                     location.reload(true);
                 },
             }).dxPopup("instance"),
@@ -1322,15 +1314,14 @@ function addPageForm(element, formColCount, itemData, itemContent) {
 
 function printPages(elemenOfPage) {
     var dataUrl = elemenOfPage.toDataURL(); //attempt to save base64 string to server using this var  
-    // document.getElementById(elemenOfPage).toDataURL(); //attempt to save base64 string to server using this var  
     var windowContent = '<!DOCTYPE html>';
     windowContent += '<html>'
     windowContent += '<head><title>Print canvas</title></head>';
-    windowContent += '<body>'
+    windowContent += '<body>';
     windowContent += '<img src="' + dataUrl + '">';
     windowContent += '</body>';
     windowContent += '</html>';
-    var printWin = window.open('', '', 'width=340,height=260');
+    var printWin = window.open('', '', 'width=auto,height=auto');
     printWin.document.open();
     printWin.document.write(windowContent);
     printWin.document.close();
