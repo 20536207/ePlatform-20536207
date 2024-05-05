@@ -263,9 +263,9 @@ $(document).ready(function () {
                             caption: "NIK",
                             dataField: "A02",
                             dataType: "string",
-                            format: function (value) {
-                                return value.replace(value.substr(1, 13), "*".repeat(13));
-                            },
+                            // format: function (value) {
+                            //     return value.replace(value.substr(1, 13), "*".repeat(13));
+                            // },
                         }, {
                             caption: "Nama",
                             dataField: "A03",
@@ -313,9 +313,9 @@ $(document).ready(function () {
                             caption: "No. KK",
                             dataField: "B01",
                             dataType: "string",
-                            format: function (value) {
-                                return value.replace(value.substr(1, 13), "*".repeat(13));
-                            },
+                            // format: function (value) {
+                            //     return value.replace(value.substr(1, 13), "*".repeat(13));
+                            // },
                         }, {
                             caption: "Tertanggal",
                             dataField: "B02",

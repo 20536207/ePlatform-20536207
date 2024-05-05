@@ -36,9 +36,9 @@ $(document).ready(function () {
                         caption: 'NIK',
                         dataField: 'C01',
                         dataType: 'string',
-                        format: function (value) {
-                            return value.replace(value.substr(1, 13), "*".repeat(13));
-                        },
+                        // format: function (value) {
+                        //     return value.replace(value.substr(1, 13), "*".repeat(13));
+                        // },
                     }, {
                         caption: 'No. Register',
                         dataField: 'C02',
@@ -83,9 +83,9 @@ $(document).ready(function () {
                         caption: 'No. KK',
                         dataField: 'D01',
                         dataType: 'string',
-                        format: function (value) {
-                            return value.replace(value.substr(1, 13), "*".repeat(13));
-                        },
+                        // format: function (value) {
+                        //     return value.replace(value.substr(1, 13), "*".repeat(13));
+                        // },
 
                     }, {
                         caption: 'Tertanggal',
@@ -240,9 +240,9 @@ $(document).ready(function () {
                         caption: 'NIK',
                         dataField: 'F04',
                         dataType: 'string',
-                        format: function (value) {
-                            return value.replace(value.substr(1, 13), "*".repeat(13));
-                        },
+                        // format: function (value) {
+                        //     return value.replace(value.substr(1, 13), "*".repeat(13));
+                        // },
                     }, {
                         caption: 'Tempat Lahir',
                         dataField: 'F05',
@@ -303,9 +303,9 @@ $(document).ready(function () {
                         caption: 'NIK',
                         dataField: 'G04',
                         dataType: 'string',
-                        format: function (value) {
-                            return value.replace(value.substr(1, 13), "*".repeat(13));
-                        },
+                        // format: function (value) {
+                        //     return value.replace(value.substr(1, 13), "*".repeat(13));
+                        // },
                     }, {
                         caption: 'Tempat Lahir',
                         dataField: 'G05',
@@ -371,9 +371,9 @@ $(document).ready(function () {
                         caption: 'NIK',
                         dataField: 'H05',
                         dataType: 'string',
-                        format: function (value) {
-                            return value.replace(value.substr(1, 13), "*".repeat(13));
-                        },
+                        // format: function (value) {
+                        //     return value.replace(value.substr(1, 13), "*".repeat(13));
+                        // },
                     }, {
                         caption: 'Tempat Lahir',
                         dataField: 'H06',
@@ -408,9 +408,9 @@ $(document).ready(function () {
                         caption: 'No. Telpon',
                         dataField: 'I01',
                         dataType: 'string',
-                        format: function (value) {
-                            return value.replace(value.substr(3, 5), "*".repeat(5));
-                        },
+                        // format: function (value) {
+                        //     return value.replace(value.substr(3, 5), "*".repeat(5));
+                        // },
                     }, {
                         caption: 'Tinggi Badan (Cm)',
                         dataField: 'I02',
@@ -478,9 +478,9 @@ $(document).ready(function () {
                         caption: 'Nomor Rekening PIP',
                         dataField: 'J03',
                         dataType: 'string',
-                        format: function (value) {
-                            return value.replace(value.substr(3, 10), "*".repeat(10));
-                        },
+                        // format: function (value) {
+                        //     return value.replace(value.substr(3, 10), "*".repeat(10));
+                        // },
                     }, {
                         caption: 'Nama Bank PIP',
                         dataField: 'J04',

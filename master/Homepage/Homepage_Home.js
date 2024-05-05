@@ -102,7 +102,6 @@ $(document).ready(function () {
 
     // ===============================================================================================
     _main.navigator.main[0].items.forEach(function (itemData) {
-
         addPageButton(
             "#HomePageContains", //itemElement,
             itemData,
@@ -111,7 +110,6 @@ $(document).ready(function () {
             "/master/Homepage/Homepage_Home.html", //ParentPageContains
             "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
         );
-
     });
 
     $("#HomePagesMain").dxScrollView({

@@ -1103,82 +1103,123 @@ function formPegawai(dataSource) {
       items: [
         {
           itemType: "group",
-          colCount: "auto",
           items: [
+
             {
               itemType: "group",
+              colCount: "auto",
               items: [
                 {
-                  template: `
+                  itemType: "group",
+                  items: [
+                    {
+                      template: `
                     <div id=UserPict style="text-align: center; vertical-align: middle;">
                       <img src=${dataSource.currentUser.photo} style="display:inline-flex;object-fit:scale-down;max-width:198px;border-radius:100%;box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.7);;"></img>
                     </div>`
+                    },
+                  ],
                 },
+
+                {
+                  itemType: "group",
+                  caption: "User Info",
+                  items: [
+                    {
+                      dataField: "",
+                      editorOptions: {
+                        value: dataSource.currentUser.username,
+                      },
+                      label: {
+                        text: "Username",
+                      },
+                    },
+                    {
+                      dataField: "",
+                      editorOptions: {
+                        value: dataSource.currentUser.userstate,
+                      },
+                      label: {
+                        text: "Group",
+                      },
+                    },
+                    {
+                      dataField: "",
+                      editorOptions: {
+                        value: dataSource.currentUser.userdept,
+                      },
+                      label: {
+                        text: "sub-Group",
+                      },
+                    },
+                  ]
+                },
+
+                {
+                  itemType: "group",
+                  caption: "Account Info",
+                  items: [
+                    {
+                      dataField: "",
+                      editorOptions: {
+                        value: dataSource.currentUser.useremail,
+                      },
+                      label: {
+                        text: "Email",
+                      },
+                    },
+                    {
+                      dataField: "",
+                      editorOptions: {
+                        value: dataSource.currentUser.sub,
+                      },
+                      label: {
+                        text: "Account Id",
+                      },
+                    }
+                  ]
+                },
+
               ],
             },
 
             {
               itemType: "group",
-              caption: "User Info",
+              colCount: "auto",
+              caption: [_main.navigator.linkedSatdik[0].dev.replace("SATDIK","NPSN")]+` - `+[_main.navigator.linkedSatdik[0].detail],
               items: [
                 {
-                  dataField: "",
-                  editorOptions: {
-                    value: dataSource.currentUser.username,
-                  },
-                  label: {
-                    text: "Username",
+                  template: function (data, itemElement) {
+                    _main.navigator.linkedSatdik[0].items.forEach(function (productdata, productindex, productelement) {
+                      itemElement.append(
+                        $("<div id='userApp'>").dxButton({
+                          stylingMode: 'text',
+                          type: 'normal',
+                          width: '100%',
+                          activeStateEnabled: true,
+                          focusStateEnabled: false,
+                          hoverStateEnabled: false,
+                          onClick() {
+                            window.open(productdata.target, '_blank')
+                          },
+                          template: () => {
+                            return `
+                              <div class = "UserLinkedPlatform-item-detail">
+                                <a>${productdata.product}</a><br>
+                                <i>${productdata.detail}</i></br>
+                                </div>
+                            `;
+                          },
+                        })
+                      )
+                    });
                   },
                 },
-                {
-                  dataField: "",
-                  editorOptions: {
-                    value: dataSource.currentUser.userstate,
-                  },
-                  label: {
-                    text: "Group",
-                  },
-                },
-                {
-                  dataField: "",
-                  editorOptions: {
-                    value: dataSource.currentUser.userdept,
-                  },
-                  label: {
-                    text: "sub-Group",
-                  },
-                },
-              ]
+              ],
             },
 
-            {
-              itemType: "group",
-              caption: "Account Info",
-              items: [
-                {
-                  dataField: "",
-                  editorOptions: {
-                    value: dataSource.currentUser.useremail,
-                  },
-                  label: {
-                    text: "Email",
-                  },
-                },
-                {
-                  dataField: "",
-                  editorOptions: {
-                    value: dataSource.currentUser.sub,
-                  },
-                  label: {
-                    text: "Account Id",
-                  },
-                }
-              ]
-            },
-
-          ],
-
-        },
+          ]
+        }
       ],
     },
 

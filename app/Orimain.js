@@ -289,43 +289,6 @@ _main = {
         linkedPlatform: [
             {
                 "id": 0,
-                "dev": "SATDIK 20536207",
-                "detail": "Satuan Pendidikan SD Negeri Tisnonegaran 1",
-                "items": [
-                    {
-                        "product": "Database Peserta Didik",
-                        "detail": "Manajemen Database Internal Peserta Didik",
-                        "icon": "tags",
-                        "target": "https://docs.google.com/spreadsheets/d/1wRpAJIQs6rzrlq_dGzuInUGk5Hb4BLwDdeN6MRdtE6g/edit?usp=sharing"
-                    },
-                    {
-                        "product": "Database Pegawai",
-                        "detail": "Manajemen Database Internal Kepegawaian",
-                        "icon": "tags",
-                        "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo/edit?usp=sharing"
-                    },
-                    {
-                        "product": "Dapodik",
-                        "detail": "Manajemen Data Pokok Pendidikan",
-                        "icon": "tags",
-                        "target": "http://20536207.ip-dynamic.com:5774"
-                    },
-                    {
-                        "product": "e-Rapor SD-KM",
-                        "detail": "Manajemen Rapor Kurikulum Merdeka",
-                        "icon": "tags",
-                        "target": "http://20536207.ip-dynamic.com:7231"
-                    },
-                    {
-                        "product": "e-Rapor SP",
-                        "detail": "Manajemen Rapor Alternatif",
-                        "icon": "tags",
-                        "target": "http://20536207.ip-dynamic.com:7252"
-                    }
-                ]
-            },
-            {
-                "id": 1,
                 "dev": "DISDIKBUD",
                 "detail": "Dinas Pendidikan dan Kebudayaan",
                 "items": [
@@ -338,7 +301,7 @@ _main = {
                 ]
             },
             {
-                "id": 2,
+                "id": 1,
                 "dev": "BKPSDM",
                 "detail": "Badan Kepegawaian dan Pengembangan Sumber Daya Manusia",
                 "items": [
@@ -363,7 +326,7 @@ _main = {
                 ]
             },
             {
-                "id": 3,
+                "id": 2,
                 "dev": "BPPKAD",
                 "detail": "Badan Pendapatan, Pengelolaan Keuangan dan Aset Daerah",
                 "items": [
@@ -382,7 +345,7 @@ _main = {
                 ]
             },
             {
-                "id": 4,
+                "id": 3,
                 "dev": "KEMENDIKBUD RISTEK",
                 "detail": "Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi",
                 "items": [
@@ -425,7 +388,7 @@ _main = {
                 ]
             },
             {
-                "id": 5,
+                "id": 4,
                 "dev": "BKN",
                 "detail": "Badan Kepegawaian Negara Republik Indonesia",
                 "items": [
@@ -451,7 +414,7 @@ _main = {
                 ]
             },
             {
-                "id": 6,
+                "id": 5,
                 "dev": "KEMENPANRB",
                 "detail": "Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Republik Indonesia",
                 "items": [
@@ -464,6 +427,45 @@ _main = {
 
                 ]
             }
+        ],
+        linkedSatdik: [
+            {
+                "id": 0,
+                "dev": "SATDIK 20536207",
+                "detail": "Satuan Pendidikan SD Negeri Tisnonegaran 1",
+                "items": [
+                    {
+                        "product": "Database Peserta Didik",
+                        "detail": "Manajemen Database Internal Peserta Didik",
+                        "icon": "tags",
+                        "target": "https://docs.google.com/spreadsheets/d/1wRpAJIQs6rzrlq_dGzuInUGk5Hb4BLwDdeN6MRdtE6g/edit?usp=sharing"
+                    },
+                    {
+                        "product": "Database Pegawai",
+                        "detail": "Manajemen Database Internal Kepegawaian",
+                        "icon": "tags",
+                        "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo/edit?usp=sharing"
+                    },
+                    {
+                        "product": "Dapodik",
+                        "detail": "Manajemen Data Pokok Pendidikan",
+                        "icon": "tags",
+                        "target": "http://20536207.ip-dynamic.com:5774"
+                    },
+                    {
+                        "product": "e-Rapor SD-KM",
+                        "detail": "Manajemen Rapor Kurikulum Merdeka",
+                        "icon": "tags",
+                        "target": "http://20536207.ip-dynamic.com:7231"
+                    },
+                    {
+                        "product": "e-Rapor SP",
+                        "detail": "Manajemen Rapor Alternatif",
+                        "icon": "tags",
+                        "target": "http://20536207.ip-dynamic.com:7252"
+                    }
+                ]
+            },
         ],
         banner: [
             {

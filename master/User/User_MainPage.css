@@ -9,6 +9,31 @@
 }
 
 /* ==================================================================================== */
+.UserLinkedPlatform-dev {
+    padding: 0 20px 0 0;
+    text-align: left;
+    /* align-self: center; */
+    font-size: small;
+}
+
+.UserLinkedPlatform-dev>i {
+    font-size: smaller;
+}
+
+#userApp .dx-button-content {
+    text-align: left;
+    justify-content: left;
+}
+
+.UserLinkedPlatform-item-detail {
+    text-align: left;
+    font-size: small;
+}
+
+.UserLinkedPlatform-item-detail>i {
+    font-size: smaller;
+}
+
 /* #UserAuthentication {
   margin: 8px;
 } */
