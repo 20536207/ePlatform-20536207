@@ -1195,6 +1195,9 @@ function formPegawai(dataSource) {
                     {
                       template: function (data, itemElement) {
                         _main.navigator.linkedSatdik[0].items.forEach(function (productdata, productindex, productelement) {
+                          if (_main.account.user.userstate != "Kependidikan" && productindex <= 1) {
+                            return false;
+                          }
                           itemElement.append(
                             $("<div id='userApp'>").dxButton({
                               stylingMode: 'text',
@@ -1216,6 +1219,8 @@ function formPegawai(dataSource) {
                               },
                             })
                           )
+
+
                         });
                       },
                     },
