@@ -1185,11 +1185,12 @@ function formPegawai(dataSource) {
 
             {
               itemType: "group",
+              caption: [_main.navigator.linkedSatdik[0].detail],
               colCount: "auto",
               items: [
                 {
                   itemType: "group",
-                  caption: [_main.navigator.linkedSatdik[0].dev.replace("SATDIK", "NPSN")] + ` - ` + [_main.navigator.linkedSatdik[0].detail],
+                  caption: "Manajemen Tata Kelola Data",
                   items: [
                     {
                       template: function (data, itemElement) {
@@ -1222,7 +1223,7 @@ function formPegawai(dataSource) {
                 },
                 {
                   itemType: "group",
-                  caption: [_main.navigator.linkedBlanko[0].dev] + ` - ` + [_main.navigator.linkedBlanko[0].detail],
+                  caption: "Referensi Lembar Daftar",
                   items: [
                     {
                       template: function (data, itemElement) {

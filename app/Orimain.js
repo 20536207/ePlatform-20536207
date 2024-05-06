@@ -452,6 +452,13 @@ _main = {
                         "icon": "tags",
                         "target": "https://drive.google.com/file/d/1xdWDQSeaQAetCfetfvINOsfrIq-cYAEd/view?usp=sharing"
                     },
+                    {
+                        "product": "20536207-Daftar Hadir",
+                        "detail": "Format Daftar Hadir",
+                        "icon": "tags",
+                        "target": "https://drive.google.com/file/d/1IiV99TJ151qVADPqVlzdDINh6AoMXJu3/view?usp=sharing"
+                    },
+                    
                 ]
             }
         ],
