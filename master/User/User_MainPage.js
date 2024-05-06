@@ -1186,36 +1186,74 @@ function formPegawai(dataSource) {
             {
               itemType: "group",
               colCount: "auto",
-              caption: [_main.navigator.linkedSatdik[0].dev.replace("SATDIK","NPSN")]+` - `+[_main.navigator.linkedSatdik[0].detail],
               items: [
                 {
-                  template: function (data, itemElement) {
-                    _main.navigator.linkedSatdik[0].items.forEach(function (productdata, productindex, productelement) {
-                      itemElement.append(
-                        $("<div id='userApp'>").dxButton({
-                          stylingMode: 'text',
-                          type: 'normal',
-                          width: '100%',
-                          activeStateEnabled: true,
-                          focusStateEnabled: false,
-                          hoverStateEnabled: false,
-                          onClick() {
-                            window.open(productdata.target, '_blank')
-                          },
-                          template: () => {
-                            return `
+                  itemType: "group",
+                  caption: [_main.navigator.linkedSatdik[0].dev.replace("SATDIK", "NPSN")] + ` - ` + [_main.navigator.linkedSatdik[0].detail],
+                  items: [
+                    {
+                      template: function (data, itemElement) {
+                        _main.navigator.linkedSatdik[0].items.forEach(function (productdata, productindex, productelement) {
+                          itemElement.append(
+                            $("<div id='userApp'>").dxButton({
+                              stylingMode: 'text',
+                              type: 'normal',
+                              width: '100%',
+                              activeStateEnabled: true,
+                              focusStateEnabled: false,
+                              hoverStateEnabled: false,
+                              onClick() {
+                                window.open(productdata.target, '_blank')
+                              },
+                              template: () => {
+                                return `
                               <div class = "UserLinkedPlatform-item-detail">
                                 <a>${productdata.product}</a><br>
                                 <i>${productdata.detail}</i></br>
                                 </div>
                             `;
-                          },
-                        })
-                      )
-                    });
-                  },
+                              },
+                            })
+                          )
+                        });
+                      },
+                    },
+                  ],
                 },
-              ],
+                {
+                  itemType: "group",
+                  caption: [_main.navigator.linkedBlanko[0].dev] + ` - ` + [_main.navigator.linkedBlanko[0].detail],
+                  items: [
+                    {
+                      template: function (data, itemElement) {
+                        _main.navigator.linkedBlanko[0].items.forEach(function (productdata, productindex, productelement) {
+                          itemElement.append(
+                            $("<div id='userApp'>").dxButton({
+                              stylingMode: 'text',
+                              type: 'normal',
+                              width: '100%',
+                              activeStateEnabled: true,
+                              focusStateEnabled: false,
+                              hoverStateEnabled: false,
+                              onClick() {
+                                window.open(productdata.target, '_blank')
+                              },
+                              template: () => {
+                                return `
+                              <div class = "UserLinkedPlatform-item-detail">
+                                <a>${productdata.product}</a><br>
+                                <i>${productdata.detail}</i></br>
+                                </div>
+                            `;
+                              },
+                            })
+                          )
+                        });
+                      },
+                    },
+                  ],
+                },
+              ]
             },
 
           ]

@@ -428,6 +428,27 @@ _main = {
                 ]
             }
         ],
+        linkedBlanko: [
+            {
+                "id": 0,
+                "dev": "Blanko",
+                "detail": "Lembar Daftar",
+                "items": [
+                    {
+                        "product": "Classical Uniform",
+                        "detail": "Kesisswaan-Daftar Anggota Rombel",
+                        "icon": "tags",
+                        "target": "https://drive.google.com/file/d/1xTdaY-_iRJYhLWx_VOe1R6jK_Yit3jhu/view?usp=sharing"
+                    },
+                    {
+                        "product": "Classical Daftar Hadir",
+                        "detail": "Kesiswaan-Daftar Hadir Anggota Rombel ",
+                        "icon": "tags",
+                        "target": "https://drive.google.com/file/d/1xWVGs9WkpJA9TZATPBklBULazgutXf8l/view?usp=sharing"
+                    },
+                ]
+            }
+        ],
         linkedSatdik: [
             {
                 "id": 0,
