@@ -442,9 +442,15 @@ _main = {
                     },
                     {
                         "product": "Classical Daftar Hadir",
-                        "detail": "Kesiswaan-Daftar Hadir Anggota Rombel ",
+                        "detail": "Kesiswaan-Daftar Hadir Anggota Rombel",
                         "icon": "tags",
                         "target": "https://drive.google.com/file/d/1xWVGs9WkpJA9TZATPBklBULazgutXf8l/view?usp=sharing"
+                    },
+                    {
+                        "product": "Classical Daftar Hadir Wali Murid",
+                        "detail": "Kesiswaan-Daftar Hadir Wali Murid",
+                        "icon": "tags",
+                        "target": "https://drive.google.com/file/d/1xdWDQSeaQAetCfetfvINOsfrIq-cYAEd/view?usp=sharing"
                     },
                 ]
             }
