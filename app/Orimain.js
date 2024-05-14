@@ -458,7 +458,7 @@ _main = {
                         "icon": "tags",
                         "target": "https://drive.google.com/file/d/1IiV99TJ151qVADPqVlzdDINh6AoMXJu3/view?usp=sharing"
                     },
-                    
+
                 ]
             }
         ],
@@ -835,6 +835,16 @@ $(document).ready(function () {
                                 _element.ActionSheet.option("dataSource",
                                     [
                                         {
+                                            text: "Kebijakan dan Ketentuan",
+                                            icon: "fas fa-user-shield",
+                                            visible: _main.account.user.cred == null ? true : false,
+                                            // disabled: _main.account.user.cred == null ? true : false,
+                                        },
+                                        {
+                                            visible: _main.account.user.cred == null ? true : false,
+                                            template: `<hr class="separator"></hr>`
+                                        },
+                                        {
                                             text: _main.account.user.cred == null ? "Login" : "Logout",
                                             icon: "fas fa-circle-user",
                                         },
@@ -865,6 +875,16 @@ $(document).ready(function () {
 
                                     switch (value.itemIndex) {
                                         case 0:
+                                            _element.PageToolbar.option("items[1].text", "Kebijakan dan Ketentuan");
+                                            _element.PageToolbar.option("items[2].visible", false);
+
+                                            $("#PageContains").empty();
+                                            _main.arrVarGlobal._actPageContains = "/privacyandterms/privacyandterms.html";
+                                            $("#PageContains").load(_main.arrVarGlobal._actPageContains);
+                                            // window.open("https://www.privacypolicyonline.com/live.php?token=QqfzxjmlFgOsdMrTvIaSc6ibbvak1vo1", '_blank');
+                                            break;
+
+                                        case 2:
                                             if (_main.account.user.cred == null) {
                                                 google.accounts.id.prompt();
                                             } else {
@@ -872,7 +892,8 @@ $(document).ready(function () {
                                             };
                                             break;
 
-                                        case 1:
+                                        case 3:
+                                            // console.log("hore");
                                             _element.PageToolbar.option("items[1].text", "e-Platform Authentication");
                                             _element.PageToolbar.option("items[2].visible", false);
 
@@ -893,9 +914,9 @@ $(document).ready(function () {
                                     {
                                         type: "standard",
                                         text: "signin_with",
-                                        shape: "pill",
+                                        shape: "square",
                                         theme: "outline",
-                                        size: "middle",
+                                        size: "medium",
                                         logo_alignment: "left"
                                     }
                                 );
@@ -1101,6 +1122,17 @@ function _notify(_message) {
 
 //=== CLIENT AUTHENTICATION ======================================================================
 function onInitClient() {
+    // gapi.load('client', async function () {
+    //     gapi.client.init({
+    //         apiKey: _main.appConfig.gapi.apiKey,
+    //         discoveryDocs: _main.appConfig.gapi.discoveryDocs,
+    //     });
+    // });
+    // google.accounts.oauth2.initTokenClient({
+    //     client_id: _main.appConfig.gapi.clientId,
+    //     scope: _main.appConfig.gapi.scope,
+    //     callback: 'onSignIn',
+    // }).requestAccessToken({ prompt: 'consent' });
 
     google.accounts.id.initialize(
         {
@@ -1122,45 +1154,10 @@ function onInitClient() {
             // intermediate_iframe_close_callback: (moment)=>{console.log(moment)}, //"logBeforeClose",
             // login_hint:"",
             // hd: "*",
+            scope: _main.appConfig.gapi.scope,
         }
     );
     google.accounts.id.prompt();
-    // google.accounts.id.prompt((notification) => {
-    // if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-    // console.log(notification);
-    // return;
-    // });
-
-    // gapi.load('client',
-    //     gapi.auth2.ClientConfig({
-    //         apiKey: "AIzaSyCAXrx4H2jplyt2O7MAI1Q0bX60V2QoP9Q",
-    //         discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
-    //     })
-    // );
-
-    // google.accounts.oauth2.initTokenClient({
-    //     client_id: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
-    //     scope: "https://www.googleapis.com/auth/drive",
-    // });
-    // google.accounts.oauth2.initCodeClient(config: CodeClientConfig)
-
-    // _main.account.user.client = google.accounts.oauth2.initTokenClient({
-    //     client_id: _main.appConfig.gapi.clientId,
-    //     scope: _main.appConfig.gapi.scope,
-    //     prompt: "none",
-    //     callback: (tokenResponse) => {
-    //         _main.account.user.token = tokenResponse.access_token;
-    //         console.log(_main.account.user.token);
-    //     },
-    // });
-    // _main.account.user.client = google.accounts.oauth2.initCodeClient({
-    //     client_id: _main.appConfig.gapi.clientId,
-    //     scope: _main.appConfig.gapi.scope,
-    //     callback: (tokenResponse) => {
-    //         _main.account.user.token = tokenResponse.access_token;
-    //         console.log(_main.account.user.token);
-    //     },
-    // });
 }
 
 function decodeJwtResponse(token) {
@@ -1178,7 +1175,6 @@ function decodeJwtResponse(token) {
 }
 
 function onSignIn(currentAccount) {
-
     const
         responsePayload = decodeJwtResponse(currentAccount.credential),
         getQuery = GetVisualizationQuery(
@@ -1366,62 +1362,6 @@ function printPages(elemenOfPage) {
     printWin.close();
 }
 
-function searchFile(folderId) {
-    // console.log(_main.appConfig.gapi);
-    // gapi.client.init(_main.appConfig.gapi);
-    // return gapi.client.drive.children.list({
-    //     "folderId": folderId,
-    // })
-    //     .then(function (response) {
-    //         // Handle the results here (response.result has the parsed body).
-    //         console.log("Response", response);
-    //     },
-    //         function (err) { console.error("Execute error", err); });
-
-    //===========================================================================
-    // const getfilelist = require("google-drive-getfilelist");
-
-    // const resource = {
-    //     auth: _main.appConfig.gapi.apiKey,
-    //     id: folderId,
-    //     fields: "files(name,id)",
-    // };
-
-    // getfilelist.GetFileList(resource, function (err, res) {
-    //     // or getfilelist.GetFolderTree(resource, function(err, res) {
-    //     if (err) {
-    //         console.log(err);
-    //         return;
-    //     }
-    //     console.log(res);
-    // });
-    //===========================================================================
-    // const { GoogleAuth } = require('google-auth-library');
-    // const { google } = require('googleapis');
-    // const auth = new GoogleAuth({
-    //     scopes: 'https://www.googleapis.com/auth/drive',
-    // });
-    // const service = google.drive({ version: 'v3', auth });
-    // const files = [];
-    // try {
-    //     const res = service.files.list({
-    //         //   q: 'mimeType=\'image/jpeg\'',
-    //         q: "mimeType = application/vnd.google-apps.folder",
-    //         // fields: "nextPageToken, files(id, name)",
-    //         // spaces: "drive",
-    //     });
-    //     Array.prototype.push.apply(files, res.files);
-    //     // res.data.files.forEach(function(file) {
-    //     //   console.log('Found file:', file.name, file.id);
-    //     // });
-    //     console.log(res.data.files);
-    //     return res.data.files;
-    // } catch (err) {
-    //     // TODO(developer) - Handle error
-    //     throw err;
-    // }
-}
-
 function onXMLHttpRequest() {
     var xhr = new XMLHttpRequest();
 
@@ -1432,4 +1372,32 @@ function onXMLHttpRequest() {
         console.log(xhr.response);
     };
     xhr.send(null);
+}
+
+async function searchFile() {
+    const { GoogleAuth } = require('google-auth-library');
+    const { google } = require('googleapis');
+
+    // Get credentials and build service
+    // TODO (developer) - Use appropriate auth mechanism for your app
+    const auth = new GoogleAuth({
+        scopes: 'https://www.googleapis.com/auth/drive',
+    });
+    const service = google.drive({ version: 'v3', auth });
+    const files = [];
+    try {
+        const res = await service.files.list({
+            q: 'mimeType=\'image/jpeg\'',
+            fields: 'nextPageToken, files(id, name)',
+            spaces: 'drive',
+        });
+        Array.prototype.push.apply(files, res.files);
+        res.data.files.forEach(function (file) {
+            console.log('Found file:', file.name, file.id);
+        });
+        return res.data.files;
+    } catch (err) {
+        // TODO(developer) - Handle error
+        throw err;
+    }
 }
