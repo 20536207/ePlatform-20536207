@@ -154,7 +154,7 @@ _main = {
                         "icon": "tags",
                         "badge": "",
                         "disabled": true,
-                        "visible": true,
+                        "visible": false,
                         "target": "./master/KepegawaianPutusanNonASN/Kepegawaian_PutusanNonASN.html"
                     },
                     {
@@ -163,7 +163,7 @@ _main = {
                         "icon": "tags",
                         "badge": "",
                         "disabled": true,
-                        "visible": true,
+                        "visible": false,
                         "target": "./master/KepegawaianPutusanASN/Kepegawaian_PutusanASN.html"
                     },
                     {
@@ -172,7 +172,7 @@ _main = {
                         "icon": "tags",
                         "badge": "",
                         "disabled": true,
-                        "visible": true,
+                        "visible": false,
                         "target": "./master/KepegawaianPutusanKepangkatan/Kepegawaian_PutusanKepangkatan.html"
                     },
                     {
@@ -181,7 +181,7 @@ _main = {
                         "icon": "tags",
                         "badge": "",
                         "disabled": true,
-                        "visible": true,
+                        "visible": false,
                         "target": "./master/KepegawaianGajiBerkala/Kepegawaian_PutusanGajiBerkala.html"
                     }
                 ]
