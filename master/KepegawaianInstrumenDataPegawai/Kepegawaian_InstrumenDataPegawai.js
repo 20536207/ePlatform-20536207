@@ -65,69 +65,69 @@ $(document).ready(function () {
                     columns: [
                         {
                             caption: "Penetapan/Putusan Penghasilan",
-                            dataField: "P01",
+                            dataField: "Z01",
                             dataType: "string",
                         }, {
                             caption: "Nomor",
-                            dataField: "P02",
+                            dataField: "Z02",
                             dataType: "string",
                         }, {
                             caption: "Tertanggal",
-                            dataField: "P03",
+                            dataField: "Z03",
                             dataType: "date",
                             format: "dd/MM/yyyy",
                         }, {
                             caption: "Perihal",
-                            dataField: "P04",
+                            dataField: "Z04",
                             dataType: "string",
                         }, {
                             caption: "TMT Berlaku",
-                            dataField: "P05",
+                            dataField: "Z05",
                             dataType: "date",
                             format: "dd/MM/yyyy",
                         }, {
                             caption: "Status Pegawai",
-                            dataField: "P06",
+                            dataField: "Z06",
                             dataType: "string",
                         }, {
                             caption: "Jenis Pegawai",
-                            dataField: "P07",
+                            dataField: "Z07",
                             dataType: "string",
                         }, {
                             caption: "Kategori PTK",
-                            dataField: "P08",
+                            dataField: "Z08",
                             dataType: "string",
                         }, {
                             caption: "Jenis PTK",
-                            dataField: "P09",
+                            dataField: "Z09",
                             dataType: "string",
                         }, {
                             caption: "Gol./Ruang",
-                            dataField: "P10",
+                            dataField: "Z10",
                             dataType: "string",
                         }, {
                             caption: "GolRuang",
-                            dataField: "P11",
+                            dataField: "Z11",
                             dataType: "string",
                         }, {
                             caption: "Pangkat",
-                            dataField: "P12",
+                            dataField: "Z12",
                             dataType: "string",
                         }, {
                             caption: "Masa Kerja",
-                            dataField: "P13",
+                            dataField: "Z13",
                             dataType: "string",
                         }, {
                             caption: "Jabatan ASN",
-                            dataField: "P14",
+                            dataField: "Z14",
                             dataType: "string",
                         }, {
                             caption: "Jenjang Jabatan",
-                            dataField: "P15",
+                            dataField: "Z15",
                             dataType: "string",
                         }, {
                             caption: "Angka Kredit",
-                            dataField: "P16",
+                            dataField: "Z16",
                             dataType: "number",
                             format: {
                                 type: "fixedPoint",
@@ -135,55 +135,55 @@ $(document).ready(function () {
                             },
                         }, {
                             caption: "P.A.K TMT",
-                            dataField: "P17",
+                            dataField: "Z17",
                             dataType: "date",
                             format: "dd/MM/yyyy",
                         }, {
                             caption: "P.A.K TST",
-                            dataField: "P18",
+                            dataField: "Z18",
                             dataType: "date",
                             format: "dd/MM/yyyy",
                         }, {
                             caption: "Penugasan",
-                            dataField: "P19",
+                            dataField: "Z19",
                             dataType: "string",
                         }, {
                             caption: "Unit / Satuan Kerja",
-                            dataField: "P20",
+                            dataField: "Z20",
                             dataType: "string",
                         }, {
                             caption: "Instansi Pemerintahan",
-                            dataField: "P21",
+                            dataField: "Z21",
                             dataType: "string",
                         }, {
                             caption: "Gaji",
-                            dataField: "P22",
+                            dataField: "Z22",
                             dataType: "number",
                             format: {
                                 type: "fixedPoint",
                             },
                         }, {
                             caption: "Gaji Terbilang",
-                            dataField: "P23",
+                            dataField: "Z23",
                             dataType: "string",
                         }, {
                             caption: "Peraturan Dasar Gaji",
-                            dataField: "P24",
+                            dataField: "Z24",
                             dataType: "string",
                         }, {
                             caption: "Peraturan Gaji Berlaku",
-                            dataField: "P25",
+                            dataField: "Z25",
                             dataType: "string",
                         }, {
                             caption: "Gaji Berlaku",
-                            dataField: "P26",
+                            dataField: "Z26",
                             dataType: "number",
                             format: {
                                 type: "fixedPoint",
                             },
                         }, {
                             caption: "Gaji Berlaku Terbilang",
-                            dataField: "P27",
+                            dataField: "Z27",
                             dataType: "string",
                         },
                     ],

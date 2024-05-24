@@ -1517,12 +1517,12 @@ function formPegawai(dataSource) {
                   caption: "Unsur Pegawai",
                   items: [
                     {
-                      dataField: "P06", label: {
+                      dataField: "Z06", label: {
                         text: "Status",
                       },
                     },
                     {
-                      dataField: "P07", label: {
+                      dataField: "Z07", label: {
                         text: "Jenis",
                       },
                     },
@@ -1535,17 +1535,17 @@ function formPegawai(dataSource) {
                   caption: "Unsur Ketenagaan",
                   items: [
                     {
-                      dataField: "P08", label: {
+                      dataField: "Z08", label: {
                         text: "Kategori",
                       },
                     },
                     {
-                      dataField: "P09", label: {
+                      dataField: "Z09", label: {
                         text: "Jenis",
                       },
                     },
                     {
-                      dataField: "P19", label: {
+                      dataField: "Z19", label: {
                         text: "Penugasan",
                       },
                     },
@@ -1558,20 +1558,20 @@ function formPegawai(dataSource) {
                   caption: "Kepangkatan",
                   items: [
                     {
-                      dataField: "P10", label: {
+                      dataField: "Z10", label: {
                         text: "Gol./Ruang",
                       },
                     },
                     {
-                      dataField: "P12", label: {
+                      dataField: "Z12", label: {
                         text: "Pangkat",
                       },
                     },
                     {
-                      dataField: "P13",
+                      dataField: "Z13",
                       editorOptions: {
-                        value: parseInt(_main.arrVarGlobal._dataArray[0].P13.substr(0, 2)) + " Tahun, "
-                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].P13.substr(3, 2)) + " Bulan"),
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].Z13.substr(0, 2)) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].Z13.substr(3, 2)) + " Bulan"),
                       }, label: {
                         text: "Masa Kerja",
                       },
@@ -1586,12 +1586,12 @@ function formPegawai(dataSource) {
                   caption: "Jabatan",
                   items: [
                     {
-                      dataField: "P14", label: {
+                      dataField: "Z14", label: {
                         text: "Jabatan ASN",
                       },
                     },
                     {
-                      dataField: "P15", label: {
+                      dataField: "Z15", label: {
                         text: "Jenjang Jabatan",
                       },
                     },
@@ -1605,7 +1605,7 @@ function formPegawai(dataSource) {
                   caption: "Angka Kredit JF",
                   items: [
                     {
-                      dataField: "P16",
+                      dataField: "Z16",
                       editorOptions: {
                         format: "#0.000",
                       }, label: {
@@ -1613,7 +1613,7 @@ function formPegawai(dataSource) {
                       },
                     },
                     {
-                      dataField: "P17",
+                      dataField: "Z17",
                       editorType: "dxDateBox",
                       editorOptions: {
                         displayFormat: "dd/MM/yyyy",
@@ -1622,7 +1622,7 @@ function formPegawai(dataSource) {
                       },
                     },
                     {
-                      dataField: "P18",
+                      dataField: "Z18",
                       editorType: "dxDateBox",
                       editorOptions: {
                         displayFormat: "dd/MM/yyyy",
@@ -1639,7 +1639,7 @@ function formPegawai(dataSource) {
                   caption: "Gaji/ Penghasilan",
                   items: [
                     {
-                      dataField: "P01", label: {
+                      dataField: "Z01", label: {
                         text: "Keputusan Pejabat",
                       },
                     },
@@ -1648,13 +1648,13 @@ function formPegawai(dataSource) {
                       colCount: "auto",
                       items: [
                         {
-                          dataField: "P02",
+                          dataField: "Z02",
                           label: {
                             text: "Nomor Dokumen",
                           },
                         },
                         {
-                          dataField: "P03",
+                          dataField: "Z03",
                           editorType: "dxDateBox",
                           editorOptions: {
                             displayFormat: "dd/MM/yyyy",
@@ -1671,13 +1671,13 @@ function formPegawai(dataSource) {
                       colCount: "auto",
                       items: [
                         {
-                          dataField: "P04",
+                          dataField: "Z04",
                           label: {
                             text: "Perihal Putusan",
                           },
                         },
                         {
-                          dataField: "P05",
+                          dataField: "Z05",
                           editorType: "dxDateBox",
                           editorOptions: {
                             displayFormat: "dd/MM/yyyy",
@@ -1687,7 +1687,7 @@ function formPegawai(dataSource) {
                           },
                         },
                         {
-                          dataField: "P22",
+                          dataField: "Z22",
                           label: {
                             text: "Gaji/Penghasilan",
                           },
@@ -1696,12 +1696,12 @@ function formPegawai(dataSource) {
                     },
 
                     {
-                      dataField: "P23", label: {
+                      dataField: "Z23", label: {
                         text: "Terbilang",
                       },
                     },
                     {
-                      dataField: "P24", label: {
+                      dataField: "Z24", label: {
                         text: "Peraturan Gaji/Penghasilan",
                       },
                     },
@@ -1710,12 +1710,12 @@ function formPegawai(dataSource) {
                       colCount: "auto",
                       items: [
                         {
-                          dataField: "P25", label: {
+                          dataField: "Z25", label: {
                             text: "Peraturan Gaji/Penghasilan Berlaku",
                           },
                         },
                         {
-                          dataField: "P26",
+                          dataField: "Z26",
                           label: {
                             text: "Gaji/Penghasilan",
                           },
@@ -1723,7 +1723,7 @@ function formPegawai(dataSource) {
                       ],
                     },
                     {
-                      dataField: "P27",
+                      dataField: "Z27",
                       label: {
                         text: "Terbilang",
                       },
