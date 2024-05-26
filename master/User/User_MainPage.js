@@ -52,7 +52,7 @@ $(document).ready(function () {
       getQuery = GetVisualizationQuery(
         _main.appConfig.dataSource.Kepegawaian,                   //SpreadsheetID
         1523976848,                                               //SheetID
-        "A4:LV",                                                  //Range
+        "A4:MF",                                                  //Range
         "SELECT * WHERE A  = '" + _main.account.user.userid + "'"  //Filter or Query
       );
 
@@ -1737,10 +1737,10 @@ function formPegawai(dataSource) {
                           },
                         },
                         {
-                          dataField: "Z27",
+                          dataField: "",
                           editorOptions: {
-                            value: parseInt(_main.arrVarGlobal._dataArray[0].Z27.substr(0, 2)) + " Tahun, "
-                              .concat(parseInt(_main.arrVarGlobal._dataArray[0].Z27.substr(3, 2)) + " Bulan"),
+                            value: parseInt(_main.arrVarGlobal._dataArray[0].Z27TH) + " Tahun, "
+                              .concat(parseInt(_main.arrVarGlobal._dataArray[0].Z27BL) + " Bulan"),
                           },
                           label: {
                             text: "Masa Kerja",
@@ -2632,10 +2632,10 @@ function formPegawai(dataSource) {
                       },
                     },
                     {
-                      dataField: "I13",
+                      dataField: "",
                       editorOptions: {
-                        value: parseInt(_main.arrVarGlobal._dataArray[0].I13.substr(0, 2)) + " Tahun, "
-                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].I13.substr(3, 2)) + " Bulan"),
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].I13TH) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].I13BL) + " Bulan"),
                       },
                       label: {
                         text: "Masa Kerja",
@@ -2864,10 +2864,10 @@ function formPegawai(dataSource) {
                       },
                     },
                     {
-                      dataField: "J13",
+                      dataField: "",
                       editorOptions: {
-                        value: parseInt(_main.arrVarGlobal._dataArray[0].J13.substr(0, 2)) + " Tahun, "
-                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].J13.substr(3, 2)) + " Bulan"),
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].J13TH) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].J13BL) + " Bulan"),
                       },
                       label: {
                         text: "Masa Kerja",
@@ -3108,10 +3108,10 @@ function formPegawai(dataSource) {
                       },
                     },
                     {
-                      dataField: "K13",
+                      dataField: "",
                       editorOptions: {
-                        value: parseInt(_main.arrVarGlobal._dataArray[0].K13.substr(0, 2)) + " Tahun, "
-                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].K13.substr(3, 2)) + " Bulan"),
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].K13TH) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].K13BL) + " Bulan"),
                       },
                       label: {
                         text: "Masa Kerja",
@@ -3361,10 +3361,10 @@ function formPegawai(dataSource) {
                       },
                     },
                     {
-                      dataField: "L13",
+                      dataField: "",
                       editorOptions: {
-                        value: parseInt(_main.arrVarGlobal._dataArray[0].L13.substr(0, 2)) + " Tahun, "
-                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].L13.substr(3, 2)) + " Bulan"),
+                        value: parseInt(_main.arrVarGlobal._dataArray[0].L13TH) + " Tahun, "
+                          .concat(parseInt(_main.arrVarGlobal._dataArray[0].L13BL) + " Bulan"),
                       },
                       label: {
                         text: "Masa Kerja",

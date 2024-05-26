@@ -222,8 +222,18 @@ $(document).ready(function () {
                                     format: "dd/MM/yyyy",
                                 }, {
                                     caption: "Masa Kerja",
-                                    dataField: "Z27",
-                                    dataType: "string",
+                                    dataField: "Z27TH",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
+                                }, {
+                                    caption: "Masa Kerja",
+                                    dataField: "Z27BL",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
                                 }, {
                                     caption: "Gaji",
                                     dataField: "Z28",
@@ -643,9 +653,19 @@ $(document).ready(function () {
                                     dataField: "G09",
                                     dataType: "string",
                                 }, {
-                                    caption: "Masa Kerja",
-                                    dataField: "G13",
-                                    dataType: "string",
+                                    caption: "Masa Kerja (THN)",
+                                    dataField: "G13TH",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
+                                }, {
+                                    caption: "Masa Kerja (BLN)",
+                                    dataField: "G13BL",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
                                 }, {
                                     caption: "Penugasan",
                                     dataField: "G19",
@@ -714,9 +734,19 @@ $(document).ready(function () {
                                     dataField: "H09",
                                     dataType: "string",
                                 }, {
-                                    caption: "Masa Kerja",
-                                    dataField: "H13",
-                                    dataType: "string",
+                                    caption: "Masa Kerja (THN)",
+                                    dataField: "H13TH",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
+                                }, {
+                                    caption: "Masa Kerja (BLN)",
+                                    dataField: "H13BL",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
                                 }, {
                                     caption: "Penugasan",
                                     dataField: "H19",
@@ -797,9 +827,19 @@ $(document).ready(function () {
                                     dataField: "I12",
                                     dataType: "string",
                                 }, {
-                                    caption: "Masa Kerja",
-                                    dataField: "I13",
-                                    dataType: "string",
+                                    caption: "Masa Kerja (THN)",
+                                    dataField: "I13TH",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
+                                }, {
+                                    caption: "Masa Kerja (BLN)",
+                                    dataField: "I13BL",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
                                 }, {
                                     caption: "Penugasan",
                                     dataField: "I19",
@@ -884,9 +924,19 @@ $(document).ready(function () {
                                     dataField: "J12",
                                     dataType: "string",
                                 }, {
-                                    caption: "Masa Kerja",
-                                    dataField: "J13",
-                                    dataType: "string",
+                                    caption: "Masa Kerja (THN)",
+                                    dataField: "J13TH",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
+                                }, {
+                                    caption: "Masa Kerja (BLN)",
+                                    dataField: "J13BL",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
                                 }, {
                                     caption: "Jabatan ASN",
                                     dataField: "J14",
@@ -987,9 +1037,19 @@ $(document).ready(function () {
                                     dataField: "K12",
                                     dataType: "string",
                                 }, {
-                                    caption: "Masa Kerja",
-                                    dataField: "K13",
-                                    dataType: "string",
+                                    caption: "Masa Kerja (THN)",
+                                    dataField: "K13TH",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
+                                }, {
+                                    caption: "Masa Kerja (BLN)",
+                                    dataField: "K13BL",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
                                 }, {
                                     caption: "Jabatan ASN",
                                     dataField: "K14",
@@ -1090,9 +1150,19 @@ $(document).ready(function () {
                                     dataField: "L12",
                                     dataType: "string",
                                 }, {
-                                    caption: "Masa Kerja",
-                                    dataField: "L13",
-                                    dataType: "string",
+                                    caption: "Masa Kerja (THN)",
+                                    dataField: "L13TH",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
+                                }, {
+                                    caption: "Masa Kerja (BLN)",
+                                    dataField: "L13BL",
+                                    dataType: "number",
+                                    format: {
+                                        type: "fixedPoint",
+                                    },
                                 }, {
                                     caption: "Jabatan ASN",
                                     dataField: "L14",
@@ -1323,7 +1393,7 @@ $(document).ready(function () {
                 const getQuery = GetVisualizationQuery(
                     _main.appConfig.dataSource.Kepegawaian, //SpreadsheetID
                     1523976848,                                     //SheetID
-                    "A4:Lv",                                        //Range
+                    "A4:MV",                                        //Range
                     "SELECT * WHERE A <> ''"                         //Filter or Query
                 );
                 getQuery.send(response => {
