@@ -221,14 +221,14 @@ $(document).ready(function () {
                                     dataType: "date",
                                     format: "dd/MM/yyyy",
                                 }, {
-                                    caption: "Masa Kerja",
+                                    caption: "Masa Kerja (THN)",
                                     dataField: "Z27TH",
                                     dataType: "number",
                                     format: {
                                         type: "fixedPoint",
                                     },
                                 }, {
-                                    caption: "Masa Kerja",
+                                    caption: "Masa Kerja (BLN)",
                                     dataField: "Z27BL",
                                     dataType: "number",
                                     format: {
