@@ -43,7 +43,7 @@ $(document).ready(function () {
       "A1:CX",                                        //Range
       "SELECT * WHERE E = '" + _main.account.user.userid + "'"   //Filter or Query
     );
-    
+
   } else
     if (
       _main.account.user.userstate == "Pendidik" ||
@@ -1499,107 +1499,138 @@ function formPegawai(dataSource) {
                 // ===============================================================================================
                 {
                   itemType: "group",
-                  colCount: "auto",
+                  // colCount: "auto",
                   caption: "Unsur Pegawai",
                   items: [
                     {
-                      dataField: "Z01",
-                      label: {
-                        text: "Status",
-                      },
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "Z01",
+                          label: {
+                            text: "Status",
+                          },
+                        },
+                        {
+                          dataField: "Z02",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "T.m.t Status",
+                          },
+                        },
+                      ]
                     },
                     {
-                      dataField: "Z02",
-                      editorType: "dxDateBox",
-                      editorOptions: {
-                        displayFormat: "dd/MM/yyyy",
-                      },
-                      label: {
-                        text: "T.m.t Status",
-                      },
-                    },
-                    {
-                      dataField: "Z03",
-                      label: {
-                        text: "Jenis",
-                      },
-                    },
-                    {
-                      dataField: "Z04",
-                      editorType: "dxDateBox",
-                      editorOptions: {
-                        displayFormat: "dd/MM/yyyy",
-                      },
-                      label: {
-                        text: "T.m.t Jenis",
-                      },
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "Z03",
+                          label: {
+                            text: "Jenis",
+                          },
+                        },
+                        {
+                          dataField: "Z04",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "T.m.t Jenis",
+                          },
+                        },
+                      ]
                     },
                   ],
                 },
                 // ===============================================================================================
                 {
                   itemType: "group",
-                  colCount: "auto",
+                  // colCount: "auto",
                   caption: "Unsur Ketenagaan",
                   items: [
                     {
-                      dataField: "Z05",
-                      label: {
-                        text: "Kategori",
-                      },
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "Z05",
+                          label: {
+                            text: "Kategori",
+                          },
+                        },
+                        {
+                          dataField: "Z06",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "T.m.t Awal Kategori PTK",
+                          },
+                        },
+                      ]
                     },
                     {
-                      dataField: "Z06",
-                      editorType: "dxDateBox",
-                      editorOptions: {
-                        displayFormat: "dd/MM/yyyy",
-                      },
-                      label: {
-                        text: "T.m.t Awal Kategori PTK",
-                      },
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "Z07",
+                          label: {
+                            text: "Jenis",
+                          },
+                        },
+                        {
+                          dataField: "Z08",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "T.m.t Awal Jenis PTK",
+                          },
+                        },
+                      ]
                     },
                     {
-                      dataField: "Z07",
-                      label: {
-                        text: "Jenis",
-                      },
+                      itemType: "group",
+                      colCount: "auto",
+                      items: [
+                        {
+                          dataField: "Z09",
+                          label: {
+                            text: "Penugasan",
+                          },
+                        },
+                        {
+                          dataField: "Z10",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "T.m.t Penugasan Awal",
+                          },
+                        },
+                        {
+                          dataField: "Z11",
+                          editorType: "dxDateBox",
+                          editorOptions: {
+                            displayFormat: "dd/MM/yyyy",
+                          },
+                          label: {
+                            text: "T.m.t Penugasan Akhir",
+                          },
+                        },
+                      ]
                     },
-                    {
-                      dataField: "Z08",
-                      editorType: "dxDateBox",
-                      editorOptions: {
-                        displayFormat: "dd/MM/yyyy",
-                      },
-                      label: {
-                        text: "T.m.t Awal Jenis PTK",
-                      },
-                    },
-                    {
-                      dataField: "Z09",
-                      label: {
-                        text: "Penugasan",
-                      },
-                    },
-                    {
-                      dataField: "Z10",
-                      editorType: "dxDateBox",
-                      editorOptions: {
-                        displayFormat: "dd/MM/yyyy",
-                      },
-                      label: {
-                        text: "T.m.t Penugasan Awal",
-                      },
-                    },
-                    {
-                      dataField: "Z11",
-                      editorType: "dxDateBox",
-                      editorOptions: {
-                        displayFormat: "dd/MM/yyyy",
-                      },
-                      label: {
-                        text: "T.m.t Penugasan Akhir",
-                      },
-                    },
+
                   ],
                 },
                 // ===============================================================================================
@@ -1747,6 +1778,11 @@ function formPegawai(dataSource) {
                           },
                         },
                         {
+                          dataField: "Z30", label: {
+                            text: "Peraturan Gaji/Penghasilan",
+                          },
+                        },
+                        {
                           dataField: "Z28",
                           label: {
                             text: "Gaji/Penghasilan",
@@ -1757,12 +1793,7 @@ function formPegawai(dataSource) {
 
                     {
                       dataField: "Z29", label: {
-                        text: "Terbilang",
-                      },
-                    },
-                    {
-                      dataField: "Z30", label: {
-                        text: "Peraturan Gaji/Penghasilan",
+                        text: "Terbilang Gaji/Penghasilan",
                       },
                     },
                     {
@@ -1777,7 +1808,7 @@ function formPegawai(dataSource) {
                         {
                           dataField: "Z32",
                           label: {
-                            text: "Gaji/Penghasilan",
+                            text: "Gaji/Penghasilan Berlaku",
                           },
                         },
                       ],
@@ -1785,7 +1816,7 @@ function formPegawai(dataSource) {
                     {
                       dataField: "Z33",
                       label: {
-                        text: "Terbilang",
+                        text: "Terbilang Gaji/Penghasilan Berlaku",
                       },
                     },
                   ],

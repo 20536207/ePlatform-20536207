@@ -235,33 +235,33 @@ $(document).ready(function () {
                                         type: "fixedPoint",
                                     },
                                 }, {
-                                    caption: "Gaji",
+                                    caption: "Peraturan Gaji/Penghasilan",
+                                    dataField: "Z30",
+                                    dataType: "string",
+                                }, {
+                                    caption: "Gaji/Penghasilan",
                                     dataField: "Z28",
                                     dataType: "number",
                                     format: {
                                         type: "fixedPoint",
                                     },
                                 }, {
-                                    caption: "Gaji Terbilang",
+                                    caption: "Terbilang Gaji/Penghasilan",
                                     dataField: "Z29",
                                     dataType: "string",
                                 }, {
-                                    caption: "Peraturan Dasar Gaji",
-                                    dataField: "Z30",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Peraturan Gaji Berlaku",
+                                    caption: "Peraturan Gaji/Penghasilan Berlaku",
                                     dataField: "Z31",
                                     dataType: "string",
                                 }, {
-                                    caption: "Gaji Berlaku",
+                                    caption: "Gaji/Penghasilan Berlaku",
                                     dataField: "Z32",
                                     dataType: "number",
                                     format: {
                                         type: "fixedPoint",
                                     },
                                 }, {
-                                    caption: "Gaji Berlaku Terbilang",
+                                    caption: "Terbilang Gaji/Penghasilan Berlaku",
                                     dataField: "Z33",
                                     dataType: "string",
                                 },
