@@ -44,6 +44,26 @@ $(document).ready(function () {
       "SELECT * WHERE E = '" + _main.account.user.userid + "'"   //Filter or Query
     );
 
+    getQuery.send(response => {
+      GetJsonData(response);
+
+      if (_main.arrVarGlobal._dataArray.length != 0) {
+        _Authentication.formData.dataPersonal = _main.arrVarGlobal._dataArray;
+
+        formPesertaDidik(_Authentication.formData);
+        _Authentication.formOption[0].items[0].tabs = _main.arrVarGlobal._data;
+
+        const newForm = addPageForm(
+          "#UserAuthentication",
+          1,
+          _Authentication.formData.dataPersonal[0],
+          _Authentication.formOption,
+        );
+      }
+
+    });
+
+
   } else
     if (
       _main.account.user.userstate == "Pendidik" ||
@@ -56,28 +76,28 @@ $(document).ready(function () {
         "SELECT * WHERE A  = '" + _main.account.user.userid + "'"  //Filter or Query
       );
 
+      getQuery.send(response => {
+        GetJsonData(response);
+
+        if (_main.arrVarGlobal._dataArray.length != 0) {
+          _Authentication.formData.dataPersonal = _main.arrVarGlobal._dataArray;
+
+          formPegawai(_Authentication.formData);
+          _Authentication.formOption[0].items[0].tabs = _main.arrVarGlobal._data;
+
+          const newForm = addPageForm(
+            "#UserAuthentication",
+            1,
+            _Authentication.formData.dataPersonal[0],
+            _Authentication.formOption,
+          );
+        }
+
+      });
+
+
     };
   //=====================================================
-
-  getQuery.send(response => {
-    GetJsonData(response);
-
-    if (_main.arrVarGlobal._dataArray.length != 0) {
-      _Authentication.formData.dataPersonal = _main.arrVarGlobal._dataArray;
-
-      formPegawai(_Authentication.formData);
-      _Authentication.formOption[0].items[0].tabs = _main.arrVarGlobal._data;
-
-      const newForm = addPageForm(
-        "#UserAuthentication",
-        1,
-        _Authentication.formData.dataPersonal[0],
-        _Authentication.formOption,
-      );
-    }
-
-  });
-
   delete _Authentication;
   delete formOption;
   delete getQuery;
