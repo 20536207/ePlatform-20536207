@@ -1235,6 +1235,7 @@ function formPegawai(dataSource) {
                 {
                   itemType: "group",
                   caption: "Referensi Lembar Daftar",
+                  colCount: "auto",
                   items: [
                     {
                       template: function (data, itemElement) {
@@ -1263,6 +1264,7 @@ function formPegawai(dataSource) {
                         });
                       },
                     },
+
                   ],
                 },
               ]

@@ -438,26 +438,33 @@ _main = {
                         "product": "Classical Uniform",
                         "detail": "Kesisswaan-Daftar Anggota Rombel",
                         "icon": "tags",
-                        "target": "https://drive.google.com/file/d/1xTdaY-_iRJYhLWx_VOe1R6jK_Yit3jhu/view?usp=sharing"
+                        "target": "https://drive.google.com/file/d/1xTdaY-_iRJYhLWx_VOe1R6jK_Yit3jhu"
                     },
                     {
                         "product": "Classical Daftar Hadir",
                         "detail": "Kesiswaan-Daftar Hadir Anggota Rombel",
                         "icon": "tags",
-                        "target": "https://drive.google.com/file/d/1xWVGs9WkpJA9TZATPBklBULazgutXf8l/view?usp=sharing"
+                        "target": "https://drive.google.com/file/d/1xWVGs9WkpJA9TZATPBklBULazgutXf8l"
                     },
                     {
                         "product": "Classical Daftar Hadir Wali Murid",
                         "detail": "Kesiswaan-Daftar Hadir Wali Murid",
                         "icon": "tags",
-                        "target": "https://drive.google.com/file/d/1xdWDQSeaQAetCfetfvINOsfrIq-cYAEd/view?usp=sharing"
+                        "target": "https://drive.google.com/file/d/1xdWDQSeaQAetCfetfvINOsfrIq-cYAEd"
                     },
                     {
                         "product": "20536207-Daftar Hadir",
                         "detail": "Format Daftar Hadir",
                         "icon": "tags",
-                        "target": "https://drive.google.com/file/d/1IiV99TJ151qVADPqVlzdDINh6AoMXJu3/view?usp=sharing"
+                        "target": "https://drive.google.com/file/d/1IiV99TJ151qVADPqVlzdDINh6AoMXJu3"
                     },
+                    {
+                        "product": "20536207-Notulen",
+                        "detail": "Format Notulen Rapat",
+                        "icon": "tags",
+                        "target": "https://drive.google.com/file/d/15f-YD4rxX2INEgJ4xjbuEGKtltOvZw7e"
+                    },
+                    
 
                 ]
             }
