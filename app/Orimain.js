@@ -488,6 +488,12 @@ _main = {
                         "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo/edit?usp=sharing"
                     },
                     {
+                        "product": "Persuratan",
+                        "detail": "Tata Naskah Kedinasan",
+                        "icon": "tags",
+                        "target": "https://drive.google.com/drive/folders/15iBnkJbKpcD5fxUsS_kaPKTOmQgXYi3p"
+                    },
+                    {
                         "product": "Dapodik",
                         "detail": "Manajemen Data Pokok Pendidikan",
                         "icon": "tags",
