@@ -52,7 +52,7 @@
 }
 
 .bannerimage {
-    width: 90%;
+    width:90%;
 }
 
 .banner-image-title {
@@ -126,10 +126,10 @@
 
 
 /* ==================================================================================== */
-/* #HomePageContains { */
-    /* text-align: center; */
-    /* justify-content: center; */
-/* } */
+#HomePageContains {
+    text-align: center;
+    justify-content: center;
+}
 
 /* ==================================================================================== */
 @media only screen and (max-width: 960px) {

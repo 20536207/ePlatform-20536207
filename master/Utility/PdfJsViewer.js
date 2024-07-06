@@ -26,6 +26,7 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 text: 'Download',
                 label: 'Download',
                 hint: 'Download',
+                disabled: true,
                 stylingMode: 'contained',
                 onClick(e) {
                     _notify('option of ' + _pdfToolItems.items[2].hint + ' masih proses ritual');
@@ -37,6 +38,7 @@ function GoPdfJsViewer(_pdffile, _pdfPageContains) {
                 text: 'Print',
                 label: 'Print',
                 hint: 'Print',
+                disabled: true,
                 stylingMode: 'contained',
                 onClick(e) {
                     // window.print();
