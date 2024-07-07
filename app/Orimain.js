@@ -297,6 +297,12 @@ _main = {
                         "detail": "Manajemen Sistem Informasi Ijasah Online",
                         "icon": "tags",
                         "target": "https://siijol.probolinggokota.go.id"
+                    },
+                    {
+                        "product": "PPDB",
+                        "detail": "Penerimaan Peserta Didik Baru",
+                        "icon": "tags",
+                        "target": "https://ppdb.probolinggokota.go.id"
                     }
                 ]
             },
@@ -383,8 +389,27 @@ _main = {
                         "product": "Verval-PD",
                         "detail": "Manajemen Verifikasi Validasi data Peserta Didik",
                         "icon": "tags",
-                        "target": "https://vervalpd.data.kemdikbud.go.id/"
+                        "target": "https://vervalpd.data.kemdikbud.go.id"
+                    },
+                    {
+                        "product": "SIBI",
+                        "detail": "Sistem Informasi perBukuan Indonesia",
+                        "icon": "tags",
+                        "target": "https://buku.kemdikbud.go.id/katalog/buku-kurikulum-merdeka"
+                    },
+                    {
+                        "product": "NISN",
+                        "detail": "Nomor Induk Siswa Nasional",
+                        "icon": "tags",
+                        "target": "https://nisn.data.kemdikbud.go.id"
+                    },
+                    {
+                        "product": "PIP",
+                        "detail": "Program Indoensia Pintar",
+                        "icon": "tags",
+                        "target": "https://pip.kemdikbud.go.id"
                     }
+
                 ]
             },
             {
@@ -426,7 +451,20 @@ _main = {
                     }
 
                 ]
-            }
+            },
+            {
+                "id": 6,
+                "dev": "KEMENSOS",
+                "detail": "Kementerian Sosial Republik Indonesia",
+                "items": [
+                    {
+                        "product": "DTKS",
+                        "detail": "Cek Bansos Data Terpadu Kementerian Sosial",
+                        "icon": "tags",
+                        "target": "https://cekbansos.kemensos.go.id/"
+                    },
+                ]
+            },
         ],
         linkedBlanko: [
             {
