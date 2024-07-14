@@ -13,6 +13,13 @@ $(document).ready(function () {
                     dataField: 'B01',
                     sortOrder: 'asc',
                     dataType: 'string',
+                    cellTemplate(container, options) {
+                        if (options.data.O01 !== '') {
+                            return $('<a>', { href: 'https://drive.google.com/file/d/' + options.data.O01, target: '_blank' }).text(options.value);
+                        } else {
+                            return $('<div>').text(options.value);
+                        }
+                    },
                     // // hidingPriority: 1,
                 },
                 {
@@ -27,6 +34,13 @@ $(document).ready(function () {
                             caption: 'Nama Lengkap',
                             dataField: 'B03',
                             dataType: 'string',
+                            cellTemplate(container, options) {
+                                if (options.data.O02 !== '') {
+                                    return $('<a>', { href: 'https://drive.google.com/file/d/' + options.data.O02, target: '_blank' }).text(options.value);
+                                } else {
+                                    return $('<div>').text(options.value);
+                                }
+                            },
                         }
                     ],
                 },
@@ -36,6 +50,13 @@ $(document).ready(function () {
                         caption: 'NIK',
                         dataField: 'C01',
                         dataType: 'string',
+                        cellTemplate(container, options) {
+                            if (options.data.O03 !== '') {
+                                return $('<a>', { href: 'https://drive.google.com/file/d/' + options.data.O03, target: '_blank' }).text(options.value);
+                            } else {
+                                return $('<div>').text(options.value);
+                            }
+                        },
                         // format: function (value) {
                         //     return value.replace(value.substr(1, 13), "*".repeat(13));
                         // },
@@ -473,11 +494,25 @@ $(document).ready(function () {
                         caption: 'Nomor Jamsos',
                         dataField: 'J02',
                         dataType: 'string',
+                        cellTemplate(container, options) {
+                            if (options.data.O04 !== '') {
+                                return $('<a>', { href: 'https://drive.google.com/file/d/' + options.data.O04, target: '_blank' }).text(options.value);
+                            } else {
+                                return $('<div>').text(options.value);
+                            }
+                        },
 
                     }, {
                         caption: 'Nomor Rekening PIP',
                         dataField: 'J03',
                         dataType: 'string',
+                        cellTemplate(container, options) {
+                            if (options.data.O05 !== '') {
+                                return $('<a>', { href: 'https://drive.google.com/file/d/' + options.data.O05, target: '_blank' }).text(options.value);
+                            } else {
+                                return $('<div>').text(options.value);
+                            }
+                        },
                         // format: function (value) {
                         //     return value.replace(value.substr(3, 10), "*".repeat(10));
                         // },
@@ -517,6 +552,13 @@ $(document).ready(function () {
                         caption: 'Identitas Satuan Pendidikan',
                         dataField: 'L01',
                         dataType: 'string',
+                        cellTemplate(container, options) {
+                            if (options.data.O06 !== '') {
+                                return $('<a>', { href: 'https://drive.google.com/file/d/' + options.data.O06, target: '_blank' }).text(options.value);
+                            } else {
+                                return $('<div>').text(options.value);
+                            }
+                        },
 
                     }, {
                         caption: 'Nomor Dokumen',
@@ -603,6 +645,18 @@ $(document).ready(function () {
                             caption: 'Status',
                             dataField: 'N02',
                             dataType: 'string',
+                            cellTemplate(container, options) {
+                            if (options.data.O08 !== '') {
+                                return $('<a>',
+                                    {
+                                        href: 'https://drive.google.com/file/d/' +
+                                            (options.value == 'Lulus' ? options.data.O08 : options.data.O09),
+                                        target: '_blank'
+                                    }).text(options.value);
+                            } else {
+                                return $('<div>').text(options.value);
+                            }
+                        },
 
                         }, {
                             caption: 'Nomor Dokumen Non Aktif',
@@ -633,7 +687,7 @@ $(document).ready(function () {
                 const getQuery = GetVisualizationQuery(
                     _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
                     2138208914,                           //SheetID
-                    "A1:CO",                              //Range
+                    "A1:CU",                              //Range
                     "SELECT * WHERE A <> ''"              //Filter or Query
                 );
                 getQuery.send(response => {
@@ -773,8 +827,8 @@ $(document).ready(function () {
                             const getQuery = GetVisualizationQuery(
                                 _main.appConfig.dataSource.Kesiswaan, //SpreadsheetID
                                 1316011922,                                         //SheetID
-                                "A1:CX",                                            //Range
-                                "SELECT E, A, CT, CU, CV, CW, CX WHERE E = '" + options.data.B01 + "'"     //Filter or Query
+                                "A1:DG",                                            //Range
+                                "SELECT E, A, CT, CU, CV, CW, CX, DE, DF, DG WHERE E = '" + options.data.B01 + "'"     //Filter or Query
                             );
                             getQuery.send(response => {
                                 GetJsonData(response);
