@@ -473,14 +473,14 @@ _main = {
                 "detail": "Lembar Daftar",
                 "items": [
                     {
-                        "product": "Daftar Induk Peserta Didik",
-                        "detail": "Kesisswaan-Data Induk Siswa",
+                        "product": "Data Induk Peserta Didik",
+                        "detail": "Kesiswaan-Data Induk Siswa",
                         "icon": "tags",
-                        "target": "https://drive.google.com/drive/folders/16KThJS6Tgw4mglPucUO5BcvJscyCogl7"
+                        "target": "https://drive.google.com/file/d/19T4bRgzZJabeEiAu-b7uuZjJIiYXJnVj"
                     },
                     {
                         "product": "Classical Uniform",
-                        "detail": "Kesisswaan-Daftar Anggota Rombel",
+                        "detail": "Kesiswaan-Daftar Anggota Rombel",
                         "icon": "tags",
                         "target": "https://drive.google.com/file/d/1xTdaY-_iRJYhLWx_VOe1R6jK_Yit3jhu"
                     },
