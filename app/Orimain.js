@@ -340,18 +340,31 @@ _main = {
                         "product": "SIMRAL",
                         "detail": "Manajemen Sistem Informasi Perencanaan, Penganggaran dan Pelaporan",
                         "icon": "tags",
-                        "target": "https://simral.probolinggokota.go.id/2021/"
+                        "target": "https://simral.probolinggokota.go.id/2021"
                     },
                     {
                         "product": "SIMPATDA",
                         "detail": "Manajemen Sistem Pendapatan Asli Daerah",
                         "icon": "tags",
-                        "target": "http://esptpd.probolinggokota.go.id/"
+                        "target": "http://esptpd.probolinggokota.go.id"
                     }
                 ]
             },
             {
                 "id": 3,
+                "dev": "DISDUKCAPIL",
+                "detail": "Dinas Kependudukan dan Pencatatan Sipil",
+                "items": [
+                    {
+                        "product": "DUKCAPIL ONLINE",
+                        "detail": "Layanan Administrasi Kependudukan dan Pencatatan Sipil",
+                        "icon": "tags",
+                        "target": "https://dukcapilprobolinggokota.online"
+                    }
+                ]
+            },
+            {
+                "id": 4,
                 "dev": "KEMENDIKBUD RISTEK",
                 "detail": "Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi",
                 "items": [
@@ -413,7 +426,7 @@ _main = {
                 ]
             },
             {
-                "id": 4,
+                "id": 5,
                 "dev": "BKN",
                 "detail": "Badan Kepegawaian Negara Republik Indonesia",
                 "items": [
@@ -439,7 +452,7 @@ _main = {
                 ]
             },
             {
-                "id": 5,
+                "id": 6,
                 "dev": "KEMENPANRB",
                 "detail": "Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Republik Indonesia",
                 "items": [
@@ -453,7 +466,7 @@ _main = {
                 ]
             },
             {
-                "id": 6,
+                "id": 7,
                 "dev": "KEMENSOS",
                 "detail": "Kementerian Sosial Republik Indonesia",
                 "items": [
