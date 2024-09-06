@@ -18,7 +18,7 @@ $(document).ready(async function () {
                 groupItems: [{
                     column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Total : ( {0} Prestasi )',
+                    displayFormat: 'Jumlah Data : ( {0} Prestasi )',
                     alignByColumn: true,
                     showInColumn: 'B02',
                     showInGroupFooter: true,
@@ -27,7 +27,7 @@ $(document).ready(async function () {
                 totalItems: [{
                     column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Total : ( {0} Perolehan Prestasi )',
+                    displayFormat: 'Total Data Keseluruhan : ( {0} Prestasi )',
                     alignByColumn: true,
                     showInColumn: 'B02',
                     showInGroupFooter: true,
