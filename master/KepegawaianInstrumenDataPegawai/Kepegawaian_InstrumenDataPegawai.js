@@ -10,17 +10,17 @@ $(document).ready(function () {
                 groupItems: [{
                     // column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Total : ( {0} Pegawai )',
-                    alignByColumn: true,
+                    displayFormat: ' {0} Pegawai ',
+                    alignByColumn: false,
                     showInColumn: 'ID',
-                    showInGroupFooter: true,
+                    showInGroupFooter: false,
                 },],
 
                 totalItems: [{
                     // column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Total : ( {0} Pegawai )',
-                    alignByColumn: true,
+                    displayFormat: 'Total Keseluruhan: ( {0} Pegawai )',
+                    alignByColumn: false,
                     showInColumn: 'ID',
                     showInGroupFooter: true,
                 },]
@@ -1484,7 +1484,7 @@ $(document).ready(function () {
             pageSize: 20,
         },
         pager: {
-            allowedPageSizes: [5, 10, 15, 20, 25, 50],
+            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100],
             displayMode: "compact",
             showInfo: true,
             showNavigationButtons: true,

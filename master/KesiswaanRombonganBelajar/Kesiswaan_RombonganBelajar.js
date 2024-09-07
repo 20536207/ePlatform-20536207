@@ -8,29 +8,29 @@ $(document).ready(async function () {
             SumIDRombel: {
                 column: 'A01',
                 summaryType: 'count',
-                displayFormat: 'Total : ( {0} Peserta Didik )',
-                alignByColumn: true,
+                displayFormat: ' {0} Peserta Didik ',
+                alignByColumn: false,
                 showInColumn: 'A01',
-                showInGroupFooter: true,
+                showInGroupFooter: false,
             },
 
             TBSummaryInfo: {
                 groupItems: [{
                     column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Total : ( {0} Peserta Didik )',
-                    alignByColumn: true,
+                    displayFormat: ' {0} Peserta Didik ',
+                    alignByColumn: false,
                     showInColumn: 'A01',
-                    showInGroupFooter: true,
+                    showInGroupFooter: false,
                 },],
 
                 totalItems: [{
                     column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Total : ( {0} Peserta Didik )',
-                    alignByColumn: true,
+                    displayFormat: 'Total Keseluruhan: ( {0} Peserta Didik )',
+                    alignByColumn: false,
                     showInColumn: 'A01',
-                    showInGroupFooter: true,
+                    showInGroupFooter: false,
                 },]
             },
 
@@ -784,7 +784,7 @@ $(document).ready(async function () {
             pageSize: 20,
         },
         pager: {
-            allowedPageSizes: [5, 10, 15, 20, 25, 50],
+            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100],
             displayMode: "compact",
             showInfo: true,
             showNavigationButtons: true,

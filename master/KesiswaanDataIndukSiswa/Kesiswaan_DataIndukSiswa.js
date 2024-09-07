@@ -596,27 +596,27 @@ $(document).ready(function () {
             SumIDRombel: {
                 column: 'B01',
                 summaryType: 'count',
-                displayFormat: 'Total : ( {0} Peserta Didik )',
-                alignByColumn: true,
+                displayFormat: ' {0} Peserta Didik ',
+                alignByColumn: false,
                 showInColumn: 'B01',
-                showInGroupFooter: true,
+                showInGroupFooter: false,
             },
 
             TBSummaryInfo: {
                 groupItems: [{
                     column: 'B01',
                     summaryType: 'count',
-                    displayFormat: 'Total : ( {0} Peserta Didik )',
-                    alignByColumn: true,
+                    displayFormat: ' {0} Peserta Didik ',
+                    alignByColumn: false,
                     showInColumn: 'B01',
-                    showInGroupFooter: true,
+                    showInGroupFooter: false,
                 },],
 
                 totalItems: [{
                     column: 'B01',
                     summaryType: 'count',
-                    displayFormat: 'Total : ( {0} Peserta Didik )',
-                    alignByColumn: true,
+                    displayFormat: 'Total Keseluruhan: ( {0} Peserta Didik )',
+                    alignByColumn: false,
                     showInColumn: 'B01',
                     showInGroupFooter: true,
                 },]
@@ -775,7 +775,7 @@ $(document).ready(function () {
             pageSize: 20,
         },
         pager: {
-            allowedPageSizes: [5, 10, 15, 20, 25, 50],
+            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100],
             displayMode: "compact",
             showInfo: true,
             showNavigationButtons: true,
@@ -884,7 +884,7 @@ $(document).ready(function () {
                         pageSize: 'null',
                     },
                     pager: {
-                        allowedPageSizes: [5, 10, 15, 20, 25, 50],
+                        allowedPageSizes: [5, 10, 15, 20, 25, 50, 100],
                         displayMode: "compact",
                         showInfo: true,
                         showNavigationButtons: true,

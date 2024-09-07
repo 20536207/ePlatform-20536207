@@ -724,13 +724,21 @@ $(document).ready(function () {
                 ]
             },
 
-            SumRombel: {
+            TotalRombel: {
                 column: 'Z01',
                 summaryType: 'count',
                 displayFormat: 'Total : ( {0} Rombel )',
-                alignByColumn: true,
+                alignByColumn: false,
                 showInColumn: 'A01',
                 showInGroupFooter: true,
+            },
+            SumRombel: {
+                column: 'Z01',
+                summaryType: 'count',
+                displayFormat: ' {0} Rombel ',
+                alignByColumn: false,
+                showInColumn: 'A01',
+                showInGroupFooter: false,
             },
 
             SumAnggotaRombel: [{
@@ -2531,7 +2539,7 @@ $(document).ready(function () {
                     _objData.SumUp12Th[0], _objData.SumUp12Th[1], _objData.SumUp12Th[2]
                 ],
                 totalItems: [
-                    _objData.SumRombel,
+                    _objData.TotalRombel,
                     _objData.SumAnggotaRombel[0], _objData.SumAnggotaRombel[1], _objData.SumAnggotaRombel[2],
                     _objData.SumBerkebutuhanKhusus[0], _objData.SumBerkebutuhanKhusus[1], _objData.SumBerkebutuhanKhusus[2],
                     _objData.SumYatim[0], _objData.SumYatim[1], _objData.SumYatim[2],
@@ -2695,7 +2703,7 @@ $(document).ready(function () {
             pageSize: 20,
         },
         pager: {
-            allowedPageSizes: [5, 10, 15, 20, 25, 50],
+            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100],
             displayMode: "compact",
             showInfo: true,
             showNavigationButtons: true,
@@ -2797,7 +2805,7 @@ $(document).ready(function () {
                         pageSize: 5,
                     },
                     pager: {
-                        allowedPageSizes: [5, 10, 15, 20, 25, 50],
+                        allowedPageSizes: [5, 10, 15, 20, 25, 50, 100],
                         displayMode: "compact",
                         showInfo: true,
                         showNavigationButtons: true,

@@ -5,30 +5,30 @@ $(document).ready(async function () {
     // ===============================================================================================
     const
         _objData = {
-            SumIDRombel: {
-                column: 'A01',
-                summaryType: 'count',
-                displayFormat: 'Total : ( {0} Peserta Didik )',
-                alignByColumn: true,
-                showInColumn: 'B02',
-                showInGroupFooter: true,
-            },
+            // SumIDRombel: {
+            //     column: 'A01',
+            //     summaryType: 'count',
+            //     displayFormat: 'Total : ( {0} Peserta Didik )',
+            //     alignByColumn: true,
+            //     showInColumn: 'B02',
+            //     showInGroupFooter: false,
+            // },
 
             TBSummaryInfo: {
                 groupItems: [{
                     column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Jumlah Data : ( {0} Prestasi )',
-                    alignByColumn: true,
+                    displayFormat: ' {0} Prestasi ',
+                    alignByColumn: false,
                     showInColumn: 'B02',
-                    showInGroupFooter: true,
+                    showInGroupFooter: false,
                 },],
 
                 totalItems: [{
                     column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Total Data Keseluruhan : ( {0} Prestasi )',
-                    alignByColumn: true,
+                    displayFormat: 'Total Keseluruhan Data : ( {0} Prestasi )',
+                    alignByColumn: false,
                     showInColumn: 'B02',
                     showInGroupFooter: true,
                 },]
@@ -244,7 +244,7 @@ $(document).ready(async function () {
             pageSize: 20,
         },
         pager: {
-            allowedPageSizes: [5, 10, 15, 20, 25, 50],
+            allowedPageSizes: [5, 10, 15, 20, 25, 50, 100],
             displayMode: "compact",
             showInfo: true,
             showNavigationButtons: true,
