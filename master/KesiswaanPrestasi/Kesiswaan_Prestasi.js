@@ -36,30 +36,16 @@ $(document).ready(async function () {
 
             TbColumns: [
                 {
-                    caption: 'Tahun Perolehan',
-                    dataField: 'B01',
-                    dataType: 'string',
-                    sortOrder: 'asc',
-                    groupIndex: 0,
-                },
-                {
-                    caption: 'Rombel Dinamis',
-                    dataField: 'A06',
-                    dataType: 'string',
-                    sortOrder: 'asc',
-                    groupIndex: 0,
-                },
-                {
-                    caption: 'Peserta Didik',
-                    dataField: 'A01',
-                    dataType: 'string',
-                    sortOrder: 'asc',
-                    groupIndex: 0,
-                },
-                {
                     caption: 'Identitas Peserta Didik',
                     visible: false,
                     columns: [
+                        {
+                            caption: 'Peserta Didik',
+                            dataField: 'A01',
+                            dataType: 'string',
+                            sortOrder: 'asc',
+                            groupIndex: 2,
+                        },
                         {
                             caption: 'NIPD',
                             dataField: 'A02',
@@ -82,6 +68,12 @@ $(document).ready(async function () {
                             dataType: 'string',
                             visible: false,
                         }, {
+                            caption: 'Rombel Dinamis',
+                            dataField: 'A06',
+                            dataType: 'string',
+                            sortOrder: 'asc',
+                            groupIndex: 1,
+                        }, {
                             caption: 'Status',
                             dataField: 'A07',
                             dataType: 'string',
@@ -93,6 +85,12 @@ $(document).ready(async function () {
                     caption: 'Catatan Prestasi',
                     columns: [
                         {
+                            caption: 'Tahun Perolehan',
+                            dataField: 'B01',
+                            dataType: 'string',
+                            sortOrder: 'asc',
+                            groupIndex: 0,
+                        }, {
                             caption: 'Nomor Piagam/ Sertifikat',
                             dataField: 'B02',
                             dataType: 'string',
