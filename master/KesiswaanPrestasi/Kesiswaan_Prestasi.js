@@ -27,10 +27,9 @@ $(document).ready(async function () {
                 totalItems: [{
                     column: 'A01',
                     summaryType: 'count',
-                    displayFormat: 'Total Keseluruhan Data : ( {0} Prestasi )',
+                    displayFormat: 'Total Keseluruhan : ( {0} Prestasi )',
                     alignByColumn: false,
                     showInColumn: 'B02',
-                    showInGroupFooter: true,
                 },]
             },
 
