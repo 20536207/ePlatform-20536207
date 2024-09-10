@@ -70,7 +70,6 @@ $(document).ready(async function () {
                             caption: 'Rombel Dinamis',
                             dataField: 'A06',
                             dataType: 'string',
-                            sortOrder: 'asc',
                             groupIndex: 1,
                         }, {
                             caption: 'Status',
@@ -96,7 +95,6 @@ $(document).ready(async function () {
                         }, {
                             caption: 'Tertanggal',
                             dataField: 'B03',
-                            sortOrder: 'asc',
                             dataType: 'date',
                             format: "dd/MM/yyyy",
                         }, {
