@@ -96,6 +96,7 @@ $(document).ready(async function () {
                         }, {
                             caption: 'Tertanggal',
                             dataField: 'B03',
+                            sortOrder: 'asc',
                             dataType: 'date',
                             format: "dd/MM/yyyy",
                         }, {
