@@ -52,6 +52,9 @@ $(document).ready(function () {
                             caption: "NPWP",
                             dataField: "F03",
                             dataType: "string",
+                            customizeText: function (cell) {
+                                return cell.value.replace(cell.value.substr(3, 9), "*".repeat(9));
+                            }
                         }, {
                             caption: "NUPTK",
                             dataField: "F04",
@@ -347,8 +350,8 @@ $(document).ready(function () {
                                     caption: "NIK",
                                     dataField: "A02",
                                     dataType: "string",
-                                    format: function (value) {
-                                        let aa = value.replace(value.substr(2, 8), "*".repeat(8));
+                                    customizeText: function (cell) {
+                                        let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
                                         return aa.replace(aa.substr(12, 4), "*".repeat(4));
                                     },
                                 }, {
@@ -398,8 +401,8 @@ $(document).ready(function () {
                                     caption: "No. KK",
                                     dataField: "B01",
                                     dataType: "string",
-                                    format: function (value) {
-                                        let aa = value.replace(value.substr(2, 8), "*".repeat(8));
+                                    customizeText: function (cell) {
+                                        let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
                                         return aa.replace(aa.substr(12, 4), "*".repeat(4));
                                     },
                                 }, {
@@ -459,8 +462,8 @@ $(document).ready(function () {
                                     caption: "Nomor",
                                     dataField: "C02",
                                     dataType: "string",
-                                    format: function (value) {
-                                        let aa = value.replace(value.substr(2, 8), "*".repeat(8));
+                                    customizeText: function (cell) {
+                                        let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
                                         return aa.replace(aa.substr(12, 4), "*".repeat(4));
                                     },
                                 }, {
