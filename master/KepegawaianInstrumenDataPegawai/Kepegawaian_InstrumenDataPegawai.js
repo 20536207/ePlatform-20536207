@@ -34,13 +34,12 @@ $(document).ready(function () {
                     dataType: "string",
                 },
                 {
-                    caption: 'Identitas Pegawai :',
+                    caption: "Identitas Pegawai :",
                     columns: [
                         {
                             caption: "Nama Pegawai",
                             dataField: "A01",
                             dataType: "string",
-                            // format: undefined,
                         }, {
                             caption: "NIP",
                             dataField: "F01",
@@ -348,9 +347,10 @@ $(document).ready(function () {
                                     caption: "NIK",
                                     dataField: "A02",
                                     dataType: "string",
-                                    // format: function (value) {
-                                    //     return value.replace(value.substr(1, 13), "*".repeat(13));
-                                    // },
+                                    format: function (value) {
+                                        let aa = value.replace(value.substr(2, 8), "*".repeat(8));
+                                        return aa.replace(aa.substr(12, 4), "*".repeat(4));
+                                    },
                                 }, {
                                     caption: "Nama",
                                     dataField: "A03",
@@ -398,9 +398,10 @@ $(document).ready(function () {
                                     caption: "No. KK",
                                     dataField: "B01",
                                     dataType: "string",
-                                    // format: function (value) {
-                                    //     return value.replace(value.substr(1, 13), "*".repeat(13));
-                                    // },
+                                    format: function (value) {
+                                        let aa = value.replace(value.substr(2, 8), "*".repeat(8));
+                                        return aa.replace(aa.substr(12, 4), "*".repeat(4));
+                                    },
                                 }, {
                                     caption: "Tertanggal",
                                     dataField: "B02",
@@ -459,7 +460,8 @@ $(document).ready(function () {
                                     dataField: "C02",
                                     dataType: "string",
                                     format: function (value) {
-                                        return value.replace(value.substr(1, 13), "*".repeat(13));
+                                        let aa = value.replace(value.substr(2, 8), "*".repeat(8));
+                                        return aa.replace(aa.substr(12, 4), "*".repeat(4));
                                     },
                                 }, {
                                     caption: "Tertanggal",
