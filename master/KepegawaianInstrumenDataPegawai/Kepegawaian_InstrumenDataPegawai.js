@@ -1398,7 +1398,7 @@ $(document).ready(function () {
                 const getQuery = GetVisualizationQuery(
                     _main.appConfig.dataSource.Kepegawaian, //SpreadsheetID
                     1523976848,                                     //SheetID
-                    "A4:MV",                                        //Range
+                    "A4:MF",                                        //Range
                     "SELECT * WHERE A <> ''"                         //Filter or Query
                 );
                 getQuery.send(response => {
