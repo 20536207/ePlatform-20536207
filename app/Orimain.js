@@ -608,12 +608,12 @@ _main = {
                 "Keterangan": "",
                 "Image": "./master/Homepage/Assets/bannerimage/6.png"
             },
-            // {
-            //     "ID": "8",
-            //     "Title": "",
-            //     "Keterangan": "",
-            //     "Image": "./master/Homepage/Assets/bannerimage/8.png"
-            // }
+            {
+                "ID": "7",
+                "Title": "",
+                "Keterangan": "",
+                "Image": "./master/Homepage/Assets/bannerimage/7.png"
+            }
         ],
         header: [
             {
