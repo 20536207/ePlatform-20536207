@@ -529,6 +529,11 @@ $(document).ready(async function () {
                         dataField: 'I11',
                         dataType: 'number',
 
+                    }, {
+                        caption: 'Status Sosial Anak',
+                        dataField: 'I12',
+                        dataType: 'string',
+
                     }]
                 },
                 {
