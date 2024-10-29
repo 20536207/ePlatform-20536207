@@ -359,7 +359,7 @@ _main = {
                         "product": "DUKCAPIL ONLINE",
                         "detail": "Layanan Administrasi Kependudukan dan Pencatatan Sipil",
                         "icon": "tags",
-                        "target": "https://dukcapilprobolinggokota.online"
+                        "target": "https://siak.probolinggokota.go.id"
                     }
                 ]
             },
