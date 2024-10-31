@@ -655,6 +655,7 @@ $(document).ready(async function () {
                         caption: 'Status',
                         dataField: 'N02',
                         dataType: 'string',
+                        groupIndex: 0,
                         cellTemplate(container, options) {
                             if (options.data.O08 !== '') {
                                 return $('<a>',
