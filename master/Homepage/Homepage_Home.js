@@ -216,11 +216,10 @@ $(document).ready(function () {
     //     ]
     // });
 
-
-
     const d = document, s = d.createElement("script"); s.type = "module";
     s.src = "https://w.behold.so/widget.js"; d.head.append(s);
 
+    // ===============================================================================================
     $("#HomePagesMain").dxScrollView({
         scrollByContent: true,
         scrollByThumb: true,
