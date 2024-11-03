@@ -576,44 +576,45 @@ _main = {
                 "ID": "1",
                 "Title": "SD NEGERI TISNONEGARAN 1",
                 "Keterangan": "Satuan Pendidikan Dasar",
-                "Image": "./master/Homepage/Assets/bannerimage/1.png"
+                "Image": "https://drive.google.com/thumbnail?id=15nBcjVEzpRH_JVS1sLKNt8bp4RfIQyhH"
             },
             {
                 "ID": "2",
                 "Title": "PEMERINTAH KOTA PROBOLINGGO",
                 "Keterangan": "Pemerintahan Daerah",
-                "Image": "./master/Homepage/Assets/bannerimage/2.png"
+                "Image": "https://drive.google.com/thumbnail?id=15n_VLb_qRzeAcj4TnRueRa6uU1gqp5Fn"
             },
             {
                 "ID": "3",
                 "Title": "KEMENDIKBUDRISTEK",
                 "Keterangan": "Kementerian Negara R.I",
-                "Image": "./master/Homepage/Assets/bannerimage/3.png"
+                "Image": "https://drive.google.com/thumbnail?id=15pfdTRaIP8CsZOpyLGi7TV657b1qt0wu"
             },
             {
                 "ID": "4",
                 "Title": "SEKOLAH ADIWIYATA NASIONAL",
                 "Keterangan": "Penganugerahan Satuan Pendidikan",
-                "Image": "./master/Homepage/Assets/bannerimage/4.png"
+                "Image": "https://drive.google.com/thumbnail?id=16JdiFujRvKZDqiKM1VB3fGmDqSy4fd3V"
             },
             {
                 "ID": "5",
                 "Title": "SEKOLAH RAMAH ANAK",
                 "Keterangan": "Penganugerahan Satuan Pendidikan",
-                "Image": "./master/Homepage/Assets/bannerimage/5.png"
+                "Image": "https://drive.google.com/thumbnail?id=16ClqldgXdPKgBIf1xWGUSraA0MzHM_5v"
             },
             {
                 "ID": "6",
                 "Title": "",
                 "Keterangan": "",
-                "Image": "./master/Homepage/Assets/bannerimage/6.png"
+                "Image": "https://drive.google.com/thumbnail?id=15vSWJVH8go3cTSXAWT8J-ynYlQTo9Z3J"
             },
             {
                 "ID": "7",
                 "Title": "",
                 "Keterangan": "",
-                "Image": "./master/Homepage/Assets/bannerimage/7.png"
+                "Image": "https://drive.google.com/thumbnail?id=15sMxFv_z1z_rVksvbYBKiGj3IlLJ6I8m"
             }
+            
         ],
         header: [
             {
