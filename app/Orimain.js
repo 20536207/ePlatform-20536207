@@ -4,9 +4,9 @@ _main = {
             title: "e-Platform ( 20536207 )",
             iconUrl: "/assets/images/LOGO20536207.png",
             appname: "e-Platform AIO",
-            appver: "2024.01",
+            appver: "2025.01",
             owner: "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
-            createdYear: "2022-2024",
+            createdYear: "2022-2025",
         },
         gapi: {
             clientId: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
