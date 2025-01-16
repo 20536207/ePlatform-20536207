@@ -4,6 +4,7 @@ _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
 // ===============================================================================================
 $(document).ready(function () {
+
     $("#HomePagesContains").dxResponsiveBox({
         rows: [
             { ratio: 0, screen: 'sm lg' }, //01
@@ -132,16 +133,46 @@ $(document).ready(function () {
                 tabs: [
                     {
                         title: "#sdntisnonegaran1probolinggo",
-                        template: '<div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>'
+                        template: `<div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>`
                     },
                     {
                         title: "#20536207Talenta",
-                        template: '<div data-behold-id="Ukh5TwJ9HnHOEO3dpcOj"></div>'
+                        template: `<div data-behold-id="Ukh5TwJ9HnHOEO3dpcOj"></div>`
                     },
                     {
                         title: "#20536207Adiwiyata",
-                        template: '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
+                        template: `<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>`
                     },
+                    // {
+                    //     title: "Youtube Channel",
+                    //     template: (element) => {
+                    //         element = $(`
+                    //                     <div style="width: inherit;height: inherit;">
+                    //                         <tilecontains style="flex-direction: column; width: 30.33%;">
+                    //                         </tilecontains>
+                                    
+                    //                      </div>
+                    //                 `);
+                    //         fetch(_main.appConfig.YtApi.url)
+                    //             .then(res => res.json())
+                    //             .then(data => {
+
+                    //                 data.items.forEach((_rowItems, _rowIndex) => {
+                    //                     document.querySelector("tilecontains").innerHTML += `
+                    //                         <div>
+                    //                             <a href="https://www.youtube.com/watch/?v=${_rowItems.snippet.resourceId.videoId}">
+                    //                                 <img src="${_rowItems.snippet.thumbnails.maxres.url}"/>
+                    //                                 <div>${_rowItems.snippet.title}</div>
+                    //                             </a>
+                    //                         </div>
+                    //                     `;
+                    //                 });
+                    //             });
+
+                    //         return element;
+                    //     },
+
+                    // },
                     // {
                     //     title: "#20536207News",
                     //     template: '<div style="text-align: center;align-content: center;width: 100%"><image class="bannerimage" src="https://lh3.googleusercontent.com/d/13tw6S8CGnrRoN1SAbCeBK8T2pGev5JYR" /></div>'

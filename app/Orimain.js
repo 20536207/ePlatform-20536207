@@ -19,6 +19,12 @@ _main = {
             Kepegawaian: "1CKt_wRc7-pJ9mCvyASKJ9TK11lDqMllZfXzVIsm5mgg",
             User: "1oWTnHGFKF8X-YgnAZjT2YwtXuRpVSfBnCVtKHxFBEWY",
         },
+        YtApi: {
+            apiKey: "AIzaSyCUc3W_Mt5LHvhYrmC6h8GvGjXb7IqOSG4",
+            channelId: "UCtAfyg6GOiDibAakAiMJFqQ",
+            uploadId: "UUtAfyg6GOiDibAakAiMJFqQ",
+            url: "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9&playlistId=UUtAfyg6GOiDibAakAiMJFqQ&key=AIzaSyCUc3W_Mt5LHvhYrmC6h8GvGjXb7IqOSG4",
+        },
     },
     account: {
         user: {
@@ -92,7 +98,16 @@ _main = {
                         "disabled": false,
                         "visible": true,
                         "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
-                    }
+                    },
+                    {
+                        "id": "01-06",
+                        "text": "Ekstrakurikuler",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
+                    },
                 ]
             },
             {
@@ -521,7 +536,7 @@ _main = {
                         "icon": "tags",
                         "target": "https://drive.google.com/file/d/15f-YD4rxX2INEgJ4xjbuEGKtltOvZw7e"
                     },
-                    
+
 
                 ]
             }
@@ -614,7 +629,7 @@ _main = {
                 "Keterangan": "",
                 "Image": "https://drive.google.com/thumbnail?id=15sMxFv_z1z_rVksvbYBKiGj3IlLJ6I8m"
             }
-            
+
         ],
         header: [
             {
@@ -1377,13 +1392,13 @@ function addPageButton(itemElement, itemData, itemDataCaption, actPageContains, 
             height: '130px',
             template: () => {
                 return `
-                    <div div class= "itemPageButtton" >
-                            <div class="itemPageButtonIcon"><i class="fas fa-layer-group fa-4x"></i></div>
-                            <div class="itemPageButtonCaption">
-                                ${itemDataCaption}
-                            </div>
+                    <div class= "itemPageButton" >
+                        <div class="itemPageButtonIcon"><i class="fas fa-layer-group fa-4x"></i></div>
+                        <div class="itemPageButtonCaption">
+                            ${itemDataCaption}
                         </div>
-                        `;
+                    </div>
+                `;
             },
             onClick() {
                 _element.PageToolbar.option("items[1].text", itemDataCaption);
