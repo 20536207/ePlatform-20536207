@@ -61,7 +61,8 @@ _main = {
                         "badge": "",
                         "disabled": false,
                         "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1tf0xJRXI1IcKMIadwR70mJr7tmmtKqxa/preview"
                     },
                     {
                         "id": "01-02",
@@ -70,7 +71,8 @@ _main = {
                         "badge": "",
                         "disabled": false,
                         "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1tf0xJRXI1IcKMIadwR70mJr7tmmtKqxa/preview"
                     },
                     {
                         "id": "01-03",
@@ -79,7 +81,8 @@ _main = {
                         "badge": "",
                         "disabled": false,
                         "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1tkCXOtac4r8OUSgJz6HAqLLo2BQhs1y2/preview"
                     },
                     {
                         "id": "01-04",
@@ -88,7 +91,8 @@ _main = {
                         "badge": "",
                         "disabled": false,
                         "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1vT6jG-U9bTC3w_fhpivqjve0ySHlXRoJ/preview"
                     },
                     {
                         "id": "01-05",
@@ -97,7 +101,8 @@ _main = {
                         "badge": "",
                         "disabled": false,
                         "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1tevtCQojfl_cBJkeh_iemr5j5r6inPrU/preview"
                     },
                     {
                         "id": "01-06",
@@ -106,7 +111,8 @@ _main = {
                         "badge": "",
                         "disabled": false,
                         "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html"
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1vXn8Fym1lKmD_BCpAsMfcyK1eJjmgGz1/preview"
                     },
                 ]
             },

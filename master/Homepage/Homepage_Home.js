@@ -109,7 +109,8 @@ $(document).ready(function () {
             itemData.text,  //itemBDataCaption,
             itemData.target,    //actPageContains,
             "/master/Homepage/Homepage_Home.html", //ParentPageContains
-            "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
+            // "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
+            itemData.fileId //pdffileContains
         );
     });
 
