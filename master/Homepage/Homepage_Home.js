@@ -108,6 +108,7 @@ $(document).ready(function () {
         focusStateEnabled: false,
         hoverStateEnabled: false,
         animationDuration: 0,
+        selectedIndex: -1,
         collapsible: true,
         itemTitleTemplate: (devdata, devindex, develement) => {
             return `
