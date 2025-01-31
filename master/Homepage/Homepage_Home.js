@@ -102,18 +102,44 @@ $(document).ready(function () {
     });
 
     // ===============================================================================================
-    _main.navigator.main[0].items.forEach(function (itemData) {
-        addPageButton(
-            "#Publishing", //itemElement,
-            itemData,
-            itemData.text,  //itemBDataCaption,
-            itemData.target,    //actPageContains,
-            "/master/Homepage/Homepage_Home.html", //ParentPageContains
-            // "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
-            itemData.fileId //pdffileContains
-        );
-    });
+    $('#Dashboard').dxAccordion({
+        dataSource: _main.navigator.dashboard,
+        activeStateEnabled: true,
+        focusStateEnabled: false,
+        hoverStateEnabled: false,
+        animationDuration: 0,
+        collapsible: true,
+        itemTitleTemplate: (devdata, devindex, develement) => {
+            return `
+                <div class = "HomeLinkedPlatform-dev">
+                    <b>${devdata.key.toUpperCase()}</b><br>
+                </div>
+            `;
+        },
+        itemTemplate: function (devdata, devindex, develement) {
+            if (devindex == 0) {
+                 develement.append(`<br><div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>`);
+            }
+            else {
+                devdata.items.forEach(function (itemdata, itemindex) {
+                    addPageButton(
+                        develement, //itemElement,
+                        itemdata,
+                        itemdata.text,  //itemBDataCaption,
+                        itemdata.target,    //actPageContains,
+                        "/master/Homepage/Homepage_Home.html", //ParentPageContains
+                        // "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
+                        itemdata.fileId, //pdffileContains
+                        itemdata.icon //iconobj
+                    );
 
+                });
+            };
+        },
+    });
+    // ===============================================================================================
+
+    /*
     const newForm = addPageForm(
         "#MediaSosial",
         1,
@@ -144,37 +170,48 @@ $(document).ready(function () {
                         title: "#20536207Adiwiyata",
                         template: `<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>`
                     },
-                     
-                    // {
-                    //     title: "Youtube Channel",
-                    //     template: (element) => {
-                    //         element = $(`
-                    //                     <div style="width: inherit;height: inherit;">
-                    //                         <tilecontains style="flex-direction: column; width: 30.33%;">
-                    //                         </tilecontains>
-                                    
-                    //                      </div>
-                    //                 `);
-                    //         fetch(_main.appConfig.YtApi.url)
-                    //             .then(res => res.json())
-                    //             .then(data => {
-
-                    //                 data.items.forEach((_rowItems, _rowIndex) => {
-                    //                     document.querySelector("tilecontains").innerHTML += `
-                    //                         <div>
-                    //                             <a href="https://www.youtube.com/watch/?v=${_rowItems.snippet.resourceId.videoId}">
-                    //                                 <img src="${_rowItems.snippet.thumbnails.maxres.url}"/>
-                    //                                 <div>${_rowItems.snippet.title}</div>
-                    //                             </a>
-                    //                         </div>
-                    //                     `;
-                    //                 });
-                    //             });
-
-                    //         return element;
-                    //     },
-
-                    // },
+     
+                    {
+                        title: "Youtube Channel",
+                        template: (element) => {
+                                                       
+                            eltile = $(`
+                                <tilecontains 
+                                    style= "
+                                        display:flex;
+                                        
+                                        width: inherit;
+                                        height: inherit;
+                                        overflow: hidden;">
+                                </tilecontains>
+                            `);
+     
+                            fetch(_main.appConfig.YtApi.url)
+                                .then(res => res.json())
+                                .then(data => {
+     
+                                    data.items.forEach((_rowItems, _rowIndex) => {
+                                        document.querySelector("tilecontains").innerHTML += `
+                                            <div class="pageButton">
+     
+                                                <div class="itemPageButton">
+     
+                                                    <img class="itemPageButtonIcon" src="${_rowItems.snippet.thumbnails.maxres.url}"></img>
+     
+                                                    <div class="itemPageButtonCaption">${_rowItems.snippet.title}</div>
+                                                </div>
+     
+                                            </div>
+     
+                                        `
+                                    });
+                                });
+                            //     // <a href="https://www.youtube.com/watch/?v=${_rowItems.snippet.resourceId.videoId}" target="_blank"></a>
+     
+                            return eltile;
+                        },
+     
+                    },
                     // {
                     //     title: "#20536207News",
                     //     template: '<div style="text-align: center;align-content: center;width: 100%"><image class="bannerimage" src="https://lh3.googleusercontent.com/d/13tw6S8CGnrRoN1SAbCeBK8T2pGev5JYR" /></div>'
@@ -185,10 +222,11 @@ $(document).ready(function () {
                     //         '<div><embed type="text/html" src="https://drive.google.com/embeddedfolderview?id=1uh3G7-cDTjuLbNSU07yFdq2agnNQYn_2#list" width="100%" height="1028rem"></embed></div>'
                     // }
                 ]
-
+     
             }
         ],
     );
+    */
 
     // $('#MediaSosial').dxGallery({
     //     // dataSource: _main.navigator.banner,
@@ -220,38 +258,9 @@ $(document).ready(function () {
     //     ]
     // }).dxGallery('instance');
 
-    // $("#MediaSosial").dxAccordion({
-    //     activeStateEnabled: true,
-    //     focusStateEnabled: false,
-    //     hoverStateEnabled: false,
-    //     animationDuration: 0,
-    //     collapsible: true,
-
-    //     items: [
-    //         {
-    //             title: "#sdntisnonegaran1probolinggo",
-    //             template: '<br><div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>'
-    //             // '<div data-behold-id="Ukh5TwJ9HnHOEO3dpcOj"></div>'
-    //             // '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
-
-    //         },
-    //         {
-    //             title: "#20536207Talenta",
-    //             template: '<br><div data-behold-id="Ukh5TwJ9HnHOEO3dpcOj"></div>'
-    //             // '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
-
-    //         },
-    //         {
-    //             title: "#20536207Adiwiyata",
-    //             template: '<br><div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
-
-    //         },
-    //     ]
-    // });
-
+    // ===============================================================================================
     const d = document, s = d.createElement("script"); s.type = "module";
     s.src = "https://w.behold.so/widget.js"; d.head.append(s);
-
     // ===============================================================================================
     $("#HomePagesMain").dxScrollView({
         scrollByContent: true,

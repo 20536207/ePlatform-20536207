@@ -1,4 +1,17 @@
   // ===============================================================================================
+    // _main.navigator.dashboard.items.forEach(function (itemData) {
+    //     addPageButton(
+    //         "#Publishing", //itemElement,
+    //         itemData,
+    //         itemData.text,  //itemBDataCaption,
+    //         itemData.target,    //actPageContains,
+    //         "/master/Homepage/Homepage_Home.html", //ParentPageContains
+    //         // "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
+    //         itemData.fileId //pdffileContains
+    //     );
+    // });
+    
+  // ===============================================================================================
   // _Authentication.CurrentUser().forEach(function (itemData) {
   //   addPageButton(
   //     "#UserPage", //itemElement,

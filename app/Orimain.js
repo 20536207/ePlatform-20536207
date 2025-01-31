@@ -50,13 +50,18 @@ _main = {
         _dataObject: {},
     },
     navigator: {
-        main: [
+        dashboard: [
             {
-                "key": "Dashboard",
+                "key": "01. Arteji Album",
+                "items": [
+                ]
+            },
+            {
+                "key": "02. Profil Sekolah",
                 "items": [
                     {
                         "id": "01-01",
-                        "text": "Profil Sekolah",
+                        "text": "item 01-01",
                         "icon": "tags",
                         "badge": "",
                         "disabled": false,
@@ -66,7 +71,63 @@ _main = {
                     },
                     {
                         "id": "01-02",
-                        "text": "Peserta Didik",
+                        "text": "item 01-02",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/01-02/preview"
+                    },
+                    {
+                        "id": "01-03",
+                        "text": "item 01-03",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+
+                        "fileId": "https://drive.google.com/file/d/01-03/preview"
+                    },
+                    {
+                        "id": "01-04",
+                        "text": "item 01-04",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/01-04/preview"
+                    },
+                    {
+                        "id": "01-05",
+                        "text": "item 01-05",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/01-05/preview"
+                    },
+                    {
+                        "id": "01-06",
+                        "text": "item 01-06",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/01-06/preview"
+                    },
+                ]
+            },
+            {
+                "key": "03. Peserta Didik",
+                "items": [
+                    {
+                        "id": "02-01",
+                        "text": "item 02-01",
                         "icon": "tags",
                         "badge": "",
                         "disabled": false,
@@ -75,20 +136,131 @@ _main = {
                         "fileId": "https://drive.google.com/file/d/1tkCXOtac4r8OUSgJz6HAqLLo2BQhs1y2/preview"
                     },
                     {
-                        "id": "01-03",
-                        "text": "Pegawai",
+                        "id": "02-02",
+                        "text": "item 02-02",
                         "icon": "tags",
                         "badge": "",
                         "disabled": false,
                         "visible": true,
                         "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
-                        
+                        "fileId": "https://drive.google.com/file/d/02-02/preview"
+                    },
+                    {
+                        "id": "02-03",
+                        "text": "item 02-03",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+
+                        "fileId": "https://drive.google.com/file/d/02-03/preview"
+                    },
+                    {
+                        "id": "02-04",
+                        "text": "item 02-04",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/02-04/preview"
+                    },
+                    {
+                        "id": "02-05",
+                        "text": "item 02-05",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/02-05/preview"
+                    },
+                    {
+                        "id": "02-06",
+                        "text": "item 02-06",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/02-06/preview"
+                    },
+                ]
+            },
+            {
+                "key": "04. Pegawai",
+                "items": [
+                    {
+                        "id": "03-01",
+                        "text": "item 03-01",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+
                         "fileId": "https://drive.google.com/file/d/1ttBhpssaUpe8FM9RVUefgR5hoiUs7VYd/preview"
                     },
                     {
-                        "id": "01-04",
-                        "text": "Sarana dan Prasarana",
+                        "id": "03-02",
+                        "text": "item 03-02",
                         "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/03-02/preview"
+                    },
+                    {
+                        "id": "03-03",
+                        "text": "item 03-03",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/03-03/preview"
+                    },
+                    {
+                        "id": "03-04",
+                        "text": "item 03-04",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/03-04/preview"
+                    },
+                    {
+                        "id": "03-05",
+                        "text": "item 03-05",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/03-05/preview"
+                    },
+                    {
+                        "id": "03-06",
+                        "text": "item 03-06",
+                        "icon": "tags",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/03-06/preview"
+                    },
+                ]
+            },
+            {
+                "key": "05. Prasarana",
+                "items": [
+                    {
+                        "id": "",
+                        "text": "Ruang Kelas",
+                        "icon": "fas fa-landmark fa-4x",
                         "badge": "",
                         "disabled": false,
                         "visible": true,
@@ -96,9 +268,96 @@ _main = {
                         "fileId": "https://drive.google.com/file/d/1vT6jG-U9bTC3w_fhpivqjve0ySHlXRoJ/preview"
                     },
                     {
-                        "id": "01-05",
-                        "text": "Program Kegiatan",
-                        "icon": "tags",
+                        "id": "",
+                        "text": "Perpustakaan",
+                        "icon": "fas fa-landmark-dome fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/drive/folders/1pfUtrKivMkLJ1De53mYcJkp0nckg_NKQ"
+                        
+                    },
+                    {
+                        "id": "",
+                        "text": "Toilet",
+                        "icon": "fas fa-toilet-portable fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/04-03/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Lab. Komputer",
+                        "icon": "fas fa-house-laptop fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/04-04/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Mushola",
+                        "icon": "fas fa-mosque fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/04-05/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Sirkulasi",
+                        "icon": "fas fa-archway fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/04-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Kantin",
+                        "icon": "fas fa-store fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/04-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "UKS",
+                        "icon": "fas fa-house-chimney-medical fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/04-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Aula",
+                        "icon": "fas fa-building-user fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/04-06/preview"
+                    },
+                    
+                ]
+            },
+            {
+                "key": "06. Program kegiatan",
+                "items": [
+                    {
+                        "id": "",
+                        "text": "Rencana Kerja Tahunan",
+                        "icon": "fas fa-puzzle-piece fa-4x",
                         "badge": "",
                         "disabled": false,
                         "visible": true,
@@ -106,17 +365,249 @@ _main = {
                         "fileId": "https://drive.google.com/file/d/1tevtCQojfl_cBJkeh_iemr5j5r6inPrU/preview"
                     },
                     {
-                        "id": "01-06",
-                        "text": "Ekstrakurikuler",
-                        "icon": "tags",
+                        "id": "",
+                        "text": "Pagu Anggaran",
+                        "icon": "fas fa-puzzle-piece fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/05-02/preview"
+                    },
+                    {
+                        "id": "05-03",
+                        "text": "item 05-03",
+                        "icon": "fas fa-puzzle-piece fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/05-03/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "item 05-04",
+                        "icon": "fas fa-puzzle-piece fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/05-04/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "item 05-05",
+                        "icon": "fas fa-puzzle-piece fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/05-05/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "item 05-06",
+                        "icon": "fas fa-puzzle-piece fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/05-06/preview"
+                    },
+                ]
+            },
+            {
+                "key": "07. Ekstrakurikuler",
+                "items": [
+                    {
+                        "id": "",
+                        "text": "Pramuka",
+                        "icon": "fab fa-atlassian fa-4x",
                         "badge": "",
                         "disabled": false,
                         "visible": true,
                         "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
                         "fileId": "https://drive.google.com/file/d/1vXn8Fym1lKmD_BCpAsMfcyK1eJjmgGz1/preview"
                     },
+                    {
+                        "id": "",
+                        "text": "Basket",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-02/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Voli",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-03/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Silat",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-04/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Karate",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-05/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Taekwondo",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Tari",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Musik Islami",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Tahfidzul Qur'an",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Sains Matematika",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Sains IPA",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-06/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "TIK",
+                        "icon": "fab fa-atlassian fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/06-06/preview"
+                    },
                 ]
             },
+            {
+                "key": "08. Prestasi",
+                "items": [
+                    {
+                        "id": "",
+                        "text": "2024",
+                        "icon": "fas fa-medal fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/2024/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "2023",
+                        "icon": "fas fa-medal fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/2023/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "2022",
+                        "icon": "fas fa-medal fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/2022/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "2021",
+                        "icon": "fas fa-medal fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/2021/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "2020",
+                        "icon": "fas fa-medal fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/2020/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "2019",
+                        "icon": "fas fa-medal fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/2019/preview"
+                    },
+                ]
+            },
+        ],
+        main: [
             {
                 "key": "Informasi Kesiswaan",
                 "items": [
@@ -1386,7 +1877,7 @@ function GetJsonData(response) {
 
 }
 
-function addPageButton(itemElement, itemData, itemDataCaption, actPageContains, ParentPageContains, pdfFileContains) {
+function addPageButton(itemElement, itemData, itemDataCaption, actPageContains, ParentPageContains, pdfFileContains, iconobj) {
 
     $(itemElement).append(
         $("<div />").dxButton({
@@ -1400,7 +1891,7 @@ function addPageButton(itemElement, itemData, itemDataCaption, actPageContains, 
             template: () => {
                 return `
                     <div class= "itemPageButton" >
-                        <div class="itemPageButtonIcon"><i class="fas fa-layer-group fa-4x"></i></div>
+                        <div class="itemPageButtonIcon"><i class="${iconobj}"></i></div>
                         <div class="itemPageButtonCaption">
                             ${itemDataCaption}
                         </div>
