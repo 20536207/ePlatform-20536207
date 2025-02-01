@@ -61,13 +61,53 @@ _main = {
                 "items": [
                     {
                         "id": "",
-                        "text": "Identitas Sekolah",
+                        "text": "Identitas",
                         "icon": "fas fa-school-flag fa-4x",
                         "badge": "",
                         "disabled": false,
                         "visible": true,
                         "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
                         "fileId": "https://drive.google.com/file/d/1-cUWD2-IfQtj5nGloGOfPGnQ0xBqr55U/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Visi dan Misi",
+                        "icon": "fas fa-school-flag fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1-Xg7kVBrwIa3ktUikpRPBhZU2IyJuwP3/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Sejarah dan Riwayat",
+                        "icon": "fas fa-school-flag fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1-XNAH6aLPJC-nIpX7xvkexcJNdo3BVg4/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Struktur Organisasi",
+                        "icon": "fas fa-school-flag fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1-RaayCQ-bfo2SKJIS5jgSLJHU51D0JGD/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "Fasilitas",
+                        "icon": "fas fa-school-flag fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1-NM08wWUaTeOQq6J62lipiCnJ6wLQgWU/preview"
                     },
                     {
                         "id": "",
@@ -78,46 +118,6 @@ _main = {
                         "visible": true,
                         "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
                         "fileId": "https://drive.google.com/file/d/1-aqcCclwCgcvMw9pUvkpZ1zRBfCMY7cT/preview"
-                    },
-                    {
-                        "id": "",
-                        "text": "...",
-                        "icon": "fas fa-school-flag fa-4x",
-                        "badge": "",
-                        "disabled": false,
-                        "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
-                        "fileId": "https://drive.google.com/file/d/1-Xg7kVBrwIa3ktUikpRPBhZU2IyJuwP3/preview"
-                    },
-                    {
-                        "id": "",
-                        "text": "...",
-                        "icon": "fas fa-school-flag fa-4x",
-                        "badge": "",
-                        "disabled": false,
-                        "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
-                        "fileId": "https://drive.google.com/file/d/1-XNAH6aLPJC-nIpX7xvkexcJNdo3BVg4/preview"
-                    },
-                    {
-                        "id": "",
-                        "text": "...",
-                        "icon": "fas fa-school-flag fa-4x",
-                        "badge": "",
-                        "disabled": false,
-                        "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
-                        "fileId": "https://drive.google.com/file/d/1-RaayCQ-bfo2SKJIS5jgSLJHU51D0JGD/preview"
-                    },
-                    {
-                        "id": "",
-                        "text": "...",
-                        "icon": "fas fa-school-flag fa-4x",
-                        "badge": "",
-                        "disabled": false,
-                        "visible": true,
-                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
-                        "fileId": "https://drive.google.com/file/d/1-NM08wWUaTeOQq6J62lipiCnJ6wLQgWU/preview"
                     },
                 ]
             },
