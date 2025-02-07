@@ -5,6 +5,15 @@ _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 // ===============================================================================================
 $(document).ready(function () {
 
+    $("#HomePagesMain").dxScrollView({
+        scrollByContent: true,
+        scrollByThumb: true,
+        useNative: false,
+        showScrollbar: 'onHover',
+        onReachBottom: false,
+    }).dxScrollView('instance');
+
+    // ===============================================================================================
     $("#HomePagesContains").dxResponsiveBox({
         rows: [
             { ratio: 0, screen: 'sm lg' }, //01
@@ -110,7 +119,7 @@ $(document).ready(function () {
         animationDuration: 0,
         selectedIndex: -1,
         collapsible: true,
-        itemTitleTemplate: (devdata, devindex, develement) => {
+        itemTitleTemplate: function (devdata, devindex, develement) {
             return `
                 <div class = "HomeLinkedPlatform-dev">
                     <b>${devdata.key.toUpperCase()}</b><br>
@@ -118,8 +127,8 @@ $(document).ready(function () {
             `;
         },
         itemTemplate: function (devdata, devindex, develement) {
-            if (devindex == 0) {
-                 develement.append(`<br><div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>`);
+            if (devindex == 0) {   
+                develement.append(`<br><div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>`);
             }
             else {
                 devdata.items.forEach(function (itemdata, itemindex) {
@@ -139,135 +148,7 @@ $(document).ready(function () {
         },
     });
     // ===============================================================================================
-
-    /*
-    const newForm = addPageForm(
-        "#MediaSosial",
-        1,
-        undefined,
-        [
-            {
-                itemType: "tabbed",
-                tabPanelOptions: {
-                    hoverStateEnabled: false,
-                    focusStateEnabled: false,
-                    activeStateEnabled: true,
-                    scrollByContent: true,
-                    scrollingEnabled: true,
-                    showNavButtons: false,
-                    stylingMode: "secondary",
-                    swipeEnabled: true,
-                },
-                tabs: [
-                    {
-                        title: "#sdntisnonegaran1probolinggo",
-                        template: `<div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>`
-                    },
-                    {
-                        title: "#20536207Talenta",
-                        template: `<div data-behold-id="Ukh5TwJ9HnHOEO3dpcOj"></div>`
-                    },
-                    {
-                        title: "#20536207Adiwiyata",
-                        template: `<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>`
-                    },
-     
-                    {
-                        title: "Youtube Channel",
-                        template: (element) => {
-                                                       
-                            eltile = $(`
-                                <tilecontains 
-                                    style= "
-                                        display:flex;
-                                        
-                                        width: inherit;
-                                        height: inherit;
-                                        overflow: hidden;">
-                                </tilecontains>
-                            `);
-     
-                            fetch(_main.appConfig.YtApi.url)
-                                .then(res => res.json())
-                                .then(data => {
-     
-                                    data.items.forEach((_rowItems, _rowIndex) => {
-                                        document.querySelector("tilecontains").innerHTML += `
-                                            <div class="pageButton">
-     
-                                                <div class="itemPageButton">
-     
-                                                    <img class="itemPageButtonIcon" src="${_rowItems.snippet.thumbnails.maxres.url}"></img>
-     
-                                                    <div class="itemPageButtonCaption">${_rowItems.snippet.title}</div>
-                                                </div>
-     
-                                            </div>
-     
-                                        `
-                                    });
-                                });
-                            //     // <a href="https://www.youtube.com/watch/?v=${_rowItems.snippet.resourceId.videoId}" target="_blank"></a>
-     
-                            return eltile;
-                        },
-     
-                    },
-                    // {
-                    //     title: "#20536207News",
-                    //     template: '<div style="text-align: center;align-content: center;width: 100%"><image class="bannerimage" src="https://lh3.googleusercontent.com/d/13tw6S8CGnrRoN1SAbCeBK8T2pGev5JYR" /></div>'
-                    // },
-                    // {
-                    //     title: "#20536207Storage",
-                    //     template:
-                    //         '<div><embed type="text/html" src="https://drive.google.com/embeddedfolderview?id=1uh3G7-cDTjuLbNSU07yFdq2agnNQYn_2#list" width="100%" height="1028rem"></embed></div>'
-                    // }
-                ]
-     
-            }
-        ],
-    );
-    */
-
-    // $('#MediaSosial').dxGallery({
-    //     // dataSource: _main.navigator.banner,
-    //     height: 'innerWidth',
-    //     width: 'innerWidth',
-    //     focusStateEnabled: false,
-    //     loop: true,
-    //     slideshowDelay: 6000,
-    //     // showNavButtons: true,
-    //     showIndicator: false,
-    //     items: [
-    //         {
-    //             // "title": "#sdntisnonegaran1probolinggo",
-    //             // template: '<div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>'
-    //             template: '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
-
-    //         },
-    //         {
-    //             // "title": "#20536207Talenta",
-    //             // template: '<div data-behold-id="Ukh5TwJ9HnHOEO3dpcOj"></div>'
-    //             template: '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
-
-    //         },
-    //         {
-    //             // "title": "#20536207Adiwiyata",
-    //             template: '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
-
-    //         },
-    //     ]
-    // }).dxGallery('instance');
-
-    // ===============================================================================================
-    const d = document, s = d.createElement("script"); s.type = "module";
-    s.src = "https://w.behold.so/widget.js"; d.head.append(s);
-    // ===============================================================================================
-    $("#HomePagesMain").dxScrollView({
-        scrollByContent: true,
-        scrollByThumb: true,
-        useNative: false,
-        showScrollbar: 'onHover',
-    });
+    const d = document, e = d.createElement("script"); e.type = "module";
+    e.src = "https://w.behold.so/widget.js"; d.head.append(e);
 
 });

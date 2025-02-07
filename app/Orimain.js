@@ -4,9 +4,9 @@ _main = {
             title: "e-Platform ( 20536207 )",
             iconUrl: "/assets/images/LOGO20536207.png",
             appname: "e-Platform AIO",
-            appver: "2025.01",
+            appver: new Date().getFullYear() + "." + new Date().getMonth(),
             owner: "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
-            createdYear: "2022-2025",
+            createdYear: "2022-" + new Date().getFullYear(),
         },
         gapi: {
             clientId: "666683014815-5urr0akccfc5scgfm1ao6r5e5kn63707.apps.googleusercontent.com",
@@ -23,7 +23,7 @@ _main = {
             apiKey: "AIzaSyCUc3W_Mt5LHvhYrmC6h8GvGjXb7IqOSG4",
             channelId: "UCtAfyg6GOiDibAakAiMJFqQ",
             uploadId: "UUtAfyg6GOiDibAakAiMJFqQ",
-            url: "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9&playlistId=UUtAfyg6GOiDibAakAiMJFqQ&key=AIzaSyCUc3W_Mt5LHvhYrmC6h8GvGjXb7IqOSG4",
+            url: "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=UUtAfyg6GOiDibAakAiMJFqQ&key=AIzaSyCUc3W_Mt5LHvhYrmC6h8GvGjXb7IqOSG4",
         },
     },
     account: {
@@ -111,13 +111,33 @@ _main = {
                     },
                     {
                         "id": "",
-                        "text": "Sekolah Adiwiyata Mandiri",
+                        "text": "Penghargaan",
                         "icon": "fas fa-school-flag fa-4x",
                         "badge": "",
                         "disabled": false,
                         "visible": true,
                         "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
-                        "fileId": "https://drive.google.com/file/d/1-aqcCclwCgcvMw9pUvkpZ1zRBfCMY7cT/preview"
+                        "fileId": "https://drive.google.com/file/d/1-KsIqEYeueGGWm_i8mZwH3L6XN3xdZNN/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "...",
+                        "icon": "fas fa-school-flag fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1-J_0-URKQCTEBZb0j2JtSBpXx8OOyR9d/preview"
+                    },
+                    {
+                        "id": "",
+                        "text": "...",
+                        "icon": "fas fa-school-flag fa-4x",
+                        "badge": "",
+                        "disabled": false,
+                        "visible": true,
+                        "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
+                        "fileId": "https://drive.google.com/file/d/1-gMRgafZW9F1BoB1LCI6se-14zOzRobJ/preview"
                     },
                 ]
             },
@@ -550,7 +570,7 @@ _main = {
                         "disabled": false,
                         "visible": true,
                         "target": "./master/AIOPdfPageContains/AIO_PdfPageContains.html",
-                        "fileId": "https://drive.google.com/file/d/1-iQRstA4Bwvh3spG0VTyU--cU8hX9Jip/preview"
+                        "fileId": "https://drive.google.com/file/d/1-un-0ff_-drs6vwsJ0zawThmuJhNRIY1/preview"
                     },
                     {
                         "id": "",

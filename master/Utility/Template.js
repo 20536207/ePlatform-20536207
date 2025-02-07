@@ -10,6 +10,131 @@
     //         itemData.fileId //pdffileContains
     //     );
     // });
+
+// ===============================================================================================
+    /*
+    const newForm = addPageForm(
+        "#Publishing",
+        1,
+        undefined,
+        [
+            {
+                itemType: "tabbed",
+                tabPanelOptions: {
+                    hoverStateEnabled: false,
+                    focusStateEnabled: false,
+                    activeStateEnabled: true,
+                    scrollByContent: true,
+                    scrollingEnabled: true,
+                    showNavButtons: false,
+                    stylingMode: "secondary",
+                    swipeEnabled: true,
+                },
+                tabs: [
+                    {
+                        title: "#sdntisnonegaran1probolinggo",
+                        template: `<div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>`
+                    },
+                    {
+                        title: "#20536207Talenta",
+                        template: `<div data-behold-id="Ukh5TwJ9HnHOEO3dpcOj"></div>`
+                    },
+                    {
+                        title: "#20536207Adiwiyata",
+                        template: `<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>`
+                    },
+
+                    {
+                        title: "Youtube Channel",
+                        template: (develement) => {
+
+                            // eltile = $(`
+                            //     <tilecontains 
+                            //         style= "
+
+                            //             display: flex;
+                            //             width: 100%;
+                            //             height: 100%;
+                            //             overflow: hidden;">
+                            //     </tilecontains>
+                            // `);
+
+                            fetch(_main.appConfig.YtApi.url)
+                                .then(res => res.json())
+                                .then(data => {
+
+                                    data.items.forEach(function (itemdata, itemindex) {
+                                        
+                                        develement.append(function () {
+                                            `
+                                            <div class="pageButton">
+
+                                                <div class="itemPageButton">
+
+                                                    <img class="itemPageButtonIcon" src="${itemdata.snippet.thumbnails.maxres.url}"></img>
+
+                                                    <div class="itemPageButtonCaption">${itemdata.snippet.title}</div>
+                                                </div>
+
+                                            </div>
+
+                                            `
+                                        });
+
+                                    });
+                                });
+                            //     // <a href="https://www.youtube.com/watch/?v=${_rowItems.snippet.resourceId.videoId}" target="_blank"></a>
+
+                            // return eltile;
+                        },
+
+                    },
+                    // {
+                    //     title: "#20536207News",
+                    //     template: '<div style="text-align: center;align-content: center;width: 100%"><image class="bannerimage" src="https://lh3.googleusercontent.com/d/13tw6S8CGnrRoN1SAbCeBK8T2pGev5JYR" /></div>'
+                    // },
+                    // {
+                    //     title: "#20536207Storage",
+                    //     template:
+                    //         '<div><embed type="text/html" src="https://drive.google.com/embeddedfolderview?id=1uh3G7-cDTjuLbNSU07yFdq2agnNQYn_2#list" width="100%" height="1028rem"></embed></div>'
+                    // }
+                ]
+
+            }
+        ],
+    );
+    */
+
+
+    // $('#MediaSosial').dxGallery({
+    //     // dataSource: _main.navigator.banner,
+    //     height: 'innerWidth',
+    //     width: 'innerWidth',
+    //     focusStateEnabled: false,
+    //     loop: true,
+    //     slideshowDelay: 6000,
+    //     // showNavButtons: true,
+    //     showIndicator: false,
+    //     items: [
+    //         {
+    //             // "title": "#sdntisnonegaran1probolinggo",
+    //             // template: '<div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>'
+    //             template: '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
+
+    //         },
+    //         {
+    //             // "title": "#20536207Talenta",
+    //             // template: '<div data-behold-id="Ukh5TwJ9HnHOEO3dpcOj"></div>'
+    //             template: '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
+
+    //         },
+    //         {
+    //             // "title": "#20536207Adiwiyata",
+    //             template: '<div data-behold-id="bbbEMFcoHtRs9szh9x8H"></div>'
+
+    //         },
+    //     ]
+    // }).dxGallery('instance');
     
   // ===============================================================================================
   // _Authentication.CurrentUser().forEach(function (itemData) {
@@ -1987,10 +2112,6 @@
 
 // <!-- src="https://www.youtube.com/embed/videoseries?list=PLasucyBLR_zCPhyGpg0n4X6jfYfI23zBW&autoplay=0&mute=1&loop=1" -->
 // <!-- src="https://googledriveembedder.collegefam.com/?key=AIzaSyB8nuwb4z7YOFftmhwzCVmYduqTwvvNfpg&folderid=1jRia9a9LhFbNTLMGhKDK7bm0fOq2CBJ4" -->
-
-
-
-
 
 /*===================================================================================*/
 // function GoEncrypt(_Contains, _Key) {
