@@ -271,7 +271,7 @@ $(document).ready(function () {
                         },
 
                     ],
-                }/*,
+                },
                 {
                     caption: 'Data Detail Kepegawaian :',
                     columns: [
@@ -1386,7 +1386,6 @@ $(document).ready(function () {
                         },
                     ]
                 }
-                */
             ],
 
         };
