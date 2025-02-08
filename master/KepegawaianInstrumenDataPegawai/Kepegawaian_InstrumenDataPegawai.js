@@ -32,6 +32,10 @@ $(document).ready(function () {
                     fixed: true,
                     dataField: "ID",
                     dataType: "string",
+                    customizeText: function (cell) {
+                        let aa = cell.value.replace(cell.value.substr(cell.value.indexOf("-")+3, 4), "*".repeat(4));
+                        return aa.replace(aa.substr(aa.indexOf("-")+13, 4), "*".repeat(4));
+                    },
                 },
                 {
                     caption: "Identitas Pegawai :",
