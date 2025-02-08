@@ -62,6 +62,280 @@ $(document).ready(function () {
                         },
                     ]
                 },
+                ,
+                {
+                    caption: 'Catatan Sipil :',
+                    columns: [
+                        {
+                            caption: "NIK",
+                            dataField: "A02",
+                            dataType: "string",
+                            customizeText: function (cell) {
+                                let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
+                                return aa.replace(aa.substr(12, 4), "*".repeat(4));
+                            },
+                        }, {
+                            caption: "Nama",
+                            dataField: "A03",
+                            dataType: "string",
+                        }, {
+                            caption: "Gender",
+                            dataField: "A04",
+                            dataType: "string",
+                        }, {
+                            caption: "Tempat Lahir",
+                            dataField: "A05",
+                            dataType: "string",
+                        }, {
+                            caption: "Tanggal Lahir",
+                            dataField: "A06",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Umur",
+                            dataField: "A07",
+                            dataType: "number",
+                        }, {
+                            caption: "Agama",
+                            dataField: "A08",
+                            dataType: "string",
+                        }, {
+                            caption: "Gol. Darah",
+                            dataField: "A09",
+                            dataType: "string",
+                        }, {
+                            caption: "Ayah Kandung",
+                            dataField: "A10",
+                            dataType: "string",
+                        }, {
+                            caption: "Ibu Kandung",
+                            dataField: "A11",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Catatan Kependudukan :',
+                    columns: [
+                        {
+                            caption: "No. KK",
+                            dataField: "B01",
+                            dataType: "string",
+                            customizeText: function (cell) {
+                                let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
+                                return aa.replace(aa.substr(12, 4), "*".repeat(4));
+                            },
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "B02",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Alamat",
+                            dataField: "B03",
+                            dataType: "string",
+                        }, {
+                            caption: "RT",
+                            dataField: "B04",
+                            dataType: "string",
+                            format: "000",
+                        }, {
+                            caption: "RW",
+                            dataField: "B05",
+                            dataType: "string",
+                            format: "000",
+                        }, {
+                            caption: "Desa/Kelurahan",
+                            dataField: "B06",
+                            dataType: "string",
+                        }, {
+                            caption: "Kecamatan",
+                            dataField: "B07",
+                            dataType: "string",
+                        }, {
+                            caption: "Pemerintah Daerah",
+                            dataField: "B08",
+                            dataType: "string",
+                        }, {
+                            caption: "Pemerintah Propinsi",
+                            dataField: "B09",
+                            dataType: "string",
+                        }, {
+                            caption: "Kode Pos",
+                            dataField: "B10",
+                            dataType: "string",
+                        }, {
+                            caption: "Status",
+                            dataField: "B11",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Tempat Tinggal :',
+                    columns: [
+                        {
+                            caption: "Dokumen",
+                            dataField: "C01",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "C02",
+                            dataType: "string",
+                            customizeText: function (cell) {
+                                let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
+                                return aa.replace(aa.substr(12, 4), "*".repeat(4));
+                            },
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "C03",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Alamat",
+                            dataField: "C04",
+                            dataType: "string",
+                        }, {
+                            caption: "RT",
+                            dataField: "C05",
+                            dataType: "string",
+                            format: "000",
+                        }, {
+                            caption: "RT",
+                            dataField: "C06",
+                            dataType: "string",
+                            format: "000",
+                        }, {
+                            caption: "Desa/Kelurahan",
+                            dataField: "C07",
+                            dataType: "string",
+                        }, {
+                            caption: "Kecamatan",
+                            dataField: "C08",
+                            dataType: "string",
+                        }, {
+                            caption: "Pemerintah Daerah",
+                            dataField: "C09",
+                            dataType: "string",
+                        }, {
+                            caption: "Pemerintah Propinsi",
+                            dataField: "C10",
+                            dataType: "string",
+                        }, {
+                            caption: "Kode Pos",
+                            dataField: "C11",
+                            dataType: "string",
+                        }, {
+                            caption: "Koordinat",
+                            dataField: "C12",
+                            dataType: "string",
+                        }, {
+                            caption: "Jarak ( Km )",
+                            dataField: "C13",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                                precision: 3,
+                            },
+                        }, {
+                            caption: "Waktu ( Menit )",
+                            dataField: "C14",
+                            dataType: "number",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Contact Person :',
+                    columns: [
+                        {
+                            caption: "Telepon",
+                            dataField: "D01",
+                            dataType: "string",
+                        }, {
+                            caption: "Whatsapp",
+                            dataField: "D02",
+                            dataType: "string",
+                        }, {
+                            caption: "Email PTK",
+                            dataField: "D03",
+                            dataType: "string",
+                        }, {
+                            caption: "Belajar Id",
+                            dataField: "D04",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Keterangan Ijasah :',
+                    columns: [
+                        {
+                            caption: "Jenjang",
+                            dataField: "E01",
+                            dataType: "string",
+                        }, {
+                            caption: "Satuan Pendidikan",
+                            dataField: "E02",
+                            dataType: "string",
+                        }, {
+                            caption: "Nomor",
+                            dataField: "E03",
+                            dataType: "string",
+                        }, {
+                            caption: "Tertanggal",
+                            dataField: "E04",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "NIM",
+                            dataField: "E05",
+                            dataType: "string",
+                        },
+                    ],
+                },
+                {
+                    caption: 'Keterangan Lulusan :',
+                    columns: [
+                        {
+                            caption: "Tanggal",
+                            dataField: "E06",
+                            dataType: "date",
+                            format: "dd/MM/yyyy",
+                        }, {
+                            caption: "Jurusan/ Program Studi",
+                            dataField: "E07",
+                            dataType: "string",
+                        }, {
+                            caption: "Fakultas",
+                            dataField: "E08",
+                            dataType: "string",
+                        }, {
+                            caption: "Gelar Depan",
+                            dataField: "E09",
+                            dataType: "string",
+                        }, {
+                            caption: "Gelar Belakang",
+                            dataField: "E10",
+                            dataType: "string",
+                        }, {
+                            caption: "Nilai Ujian/ IPK",
+                            dataField: "E11",
+                            dataType: "number",
+                            format: {
+                                type: "fixedPoint",
+                                precision: 3,
+                            },
+                        }, {
+                            caption: "Akta Mengajar",
+                            dataField: "E12",
+                            dataType: "string",
+                        }, {
+                            caption: "Keterangan Pendidikan",
+                            dataField: "E13",
+                            dataType: "string",
+                        },
+                    ],
+                },
                 {
                     caption: 'Data Pokok Kepegawaian :',
                     columns: [
@@ -272,6 +546,7 @@ $(document).ready(function () {
 
                     ],
                 },
+                /*
                 {
                     caption: 'Data Detail Kepegawaian :',
                     columns: [
@@ -339,279 +614,6 @@ $(document).ready(function () {
                                 }, {
                                     caption: "Penugasan",
                                     dataField: "O19",
-                                    dataType: "string",
-                                },
-                            ],
-                        },
-                        {
-                            caption: 'Catatan Sipil :',
-                            columns: [
-                                {
-                                    caption: "NIK",
-                                    dataField: "A02",
-                                    dataType: "string",
-                                    customizeText: function (cell) {
-                                        let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
-                                        return aa.replace(aa.substr(12, 4), "*".repeat(4));
-                                    },
-                                }, {
-                                    caption: "Nama",
-                                    dataField: "A03",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Gender",
-                                    dataField: "A04",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Tempat Lahir",
-                                    dataField: "A05",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Tanggal Lahir",
-                                    dataField: "A06",
-                                    dataType: "date",
-                                    format: "dd/MM/yyyy",
-                                }, {
-                                    caption: "Umur",
-                                    dataField: "A07",
-                                    dataType: "number",
-                                }, {
-                                    caption: "Agama",
-                                    dataField: "A08",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Gol. Darah",
-                                    dataField: "A09",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Ayah Kandung",
-                                    dataField: "A10",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Ibu Kandung",
-                                    dataField: "A11",
-                                    dataType: "string",
-                                },
-                            ],
-                        },
-                        {
-                            caption: 'Catatan Kependudukan :',
-                            columns: [
-                                {
-                                    caption: "No. KK",
-                                    dataField: "B01",
-                                    dataType: "string",
-                                    customizeText: function (cell) {
-                                        let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
-                                        return aa.replace(aa.substr(12, 4), "*".repeat(4));
-                                    },
-                                }, {
-                                    caption: "Tertanggal",
-                                    dataField: "B02",
-                                    dataType: "date",
-                                    format: "dd/MM/yyyy",
-                                }, {
-                                    caption: "Alamat",
-                                    dataField: "B03",
-                                    dataType: "string",
-                                }, {
-                                    caption: "RT",
-                                    dataField: "B04",
-                                    dataType: "string",
-                                    format: "000",
-                                }, {
-                                    caption: "RW",
-                                    dataField: "B05",
-                                    dataType: "string",
-                                    format: "000",
-                                }, {
-                                    caption: "Desa/Kelurahan",
-                                    dataField: "B06",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Kecamatan",
-                                    dataField: "B07",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Pemerintah Daerah",
-                                    dataField: "B08",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Pemerintah Propinsi",
-                                    dataField: "B09",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Kode Pos",
-                                    dataField: "B10",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Status",
-                                    dataField: "B11",
-                                    dataType: "string",
-                                },
-                            ],
-                        },
-                        {
-                            caption: 'Tempat Tinggal :',
-                            columns: [
-                                {
-                                    caption: "Dokumen",
-                                    dataField: "C01",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Nomor",
-                                    dataField: "C02",
-                                    dataType: "string",
-                                    customizeText: function (cell) {
-                                        let aa = cell.value.replace(cell.value.substr(2, 8), "*".repeat(8));
-                                        return aa.replace(aa.substr(12, 4), "*".repeat(4));
-                                    },
-                                }, {
-                                    caption: "Tertanggal",
-                                    dataField: "C03",
-                                    dataType: "date",
-                                    format: "dd/MM/yyyy",
-                                }, {
-                                    caption: "Alamat",
-                                    dataField: "C04",
-                                    dataType: "string",
-                                }, {
-                                    caption: "RT",
-                                    dataField: "C05",
-                                    dataType: "string",
-                                    format: "000",
-                                }, {
-                                    caption: "RT",
-                                    dataField: "C06",
-                                    dataType: "string",
-                                    format: "000",
-                                }, {
-                                    caption: "Desa/Kelurahan",
-                                    dataField: "C07",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Kecamatan",
-                                    dataField: "C08",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Pemerintah Daerah",
-                                    dataField: "C09",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Pemerintah Propinsi",
-                                    dataField: "C10",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Kode Pos",
-                                    dataField: "C11",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Koordinat",
-                                    dataField: "C12",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Jarak ( Km )",
-                                    dataField: "C13",
-                                    dataType: "number",
-                                    format: {
-                                        type: "fixedPoint",
-                                        precision: 3,
-                                    },
-                                }, {
-                                    caption: "Waktu ( Menit )",
-                                    dataField: "C14",
-                                    dataType: "number",
-                                },
-                            ],
-                        },
-                        {
-                            caption: 'Contact Person :',
-                            columns: [
-                                {
-                                    caption: "Telepon",
-                                    dataField: "D01",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Whatsapp",
-                                    dataField: "D02",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Email PTK",
-                                    dataField: "D03",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Belajar Id",
-                                    dataField: "D04",
-                                    dataType: "string",
-                                },
-                            ],
-                        }/*,
-                        {
-                            caption: 'Keterangan Ijasah :',
-                            columns: [
-                                {
-                                    caption: "Jenjang",
-                                    dataField: "E01",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Satuan Pendidikan",
-                                    dataField: "E02",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Nomor",
-                                    dataField: "E03",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Tertanggal",
-                                    dataField: "E04",
-                                    dataType: "date",
-                                    format: "dd/MM/yyyy",
-                                }, {
-                                    caption: "NIM",
-                                    dataField: "E05",
-                                    dataType: "string",
-                                },
-                            ],
-                        },
-                        {
-                            caption: 'Keterangan Lulusan :',
-                            columns: [
-                                {
-                                    caption: "Tanggal",
-                                    dataField: "E06",
-                                    dataType: "date",
-                                    format: "dd/MM/yyyy",
-                                }, {
-                                    caption: "Jurusan/ Program Studi",
-                                    dataField: "E07",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Fakultas",
-                                    dataField: "E08",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Gelar Depan",
-                                    dataField: "E09",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Gelar Belakang",
-                                    dataField: "E10",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Nilai Ujian/ IPK",
-                                    dataField: "E11",
-                                    dataType: "number",
-                                    format: {
-                                        type: "fixedPoint",
-                                        precision: 3,
-                                    },
-                                }, {
-                                    caption: "Akta Mengajar",
-                                    dataField: "E12",
-                                    dataType: "string",
-                                }, {
-                                    caption: "Keterangan Pendidikan",
-                                    dataField: "E13",
                                     dataType: "string",
                                 },
                             ],
@@ -1384,9 +1386,10 @@ $(document).ready(function () {
                                 },
                             ],
                         },
-                        */
+                        
                     ]
                 }
+                */
             ],
 
         };
@@ -1398,8 +1401,8 @@ $(document).ready(function () {
             if (!e.component._isReady) {
                 const getQuery = GetVisualizationQuery(
                     _main.appConfig.dataSource.Kepegawaian, //SpreadsheetID
-                    1523976848,                                     //SheetID
-                    "A4:MF",                                        //Range
+                    1146160413,                                     //SheetID
+                    "A4:CN",                                        //Range
                     "SELECT * WHERE A <> ''"                         //Filter or Query
                 );
                 getQuery.send(response => {
