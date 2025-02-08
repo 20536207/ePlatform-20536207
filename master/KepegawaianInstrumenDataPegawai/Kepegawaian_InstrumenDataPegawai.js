@@ -545,7 +545,7 @@ $(document).ready(function () {
                                     dataType: "string",
                                 },
                             ],
-                        },
+                        }/*,
                         {
                             caption: 'Keterangan Ijasah :',
                             columns: [
@@ -1384,6 +1384,7 @@ $(document).ready(function () {
                                 },
                             ],
                         },
+                        */
                     ]
                 }
             ],
