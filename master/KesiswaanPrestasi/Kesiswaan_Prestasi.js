@@ -36,7 +36,7 @@ $(document).ready(async function () {
             TbColumns: [
                 {
                     caption: 'Identitas Peserta Didik',
-                    visible: true,
+                    //visible: true,
                     columns: [
                         {
                             caption: 'Peserta Didik',
@@ -44,40 +44,40 @@ $(document).ready(async function () {
                             dataType: 'string',
                             sortOrder: 'asc',
                             groupIndex: 2,
-                            visible: true,
+                            visible: false,
                         },
                         {
                             caption: 'NIPD',
                             dataField: 'A02',
                             sortOrder: 'asc',
                             dataType: 'string',
-                            visible: true,
+                            //visible: true,
                         }, {
                             caption: 'NISN',
                             dataField: 'A03',
                             dataType: 'string',
-                            visible: true,
+                            //visible: true,
                         }, {
                             caption: 'Nama Lengkap',
                             dataField: 'A04',
                             dataType: 'string',
-                            visible: true,
+                            //visible: true,
                         }, {
                             caption: 'Gender',
                             dataField: 'A05',
                             dataType: 'string',
-                            visible: true,
+                            //visible: true,
                         }, {
                             caption: 'Rombel Dinamis',
                             dataField: 'A06',
                             dataType: 'string',
                             groupIndex: 1,
-                            visible: true
+                            //visible: true
                         }, {
                             caption: 'Status',
                             dataField: 'A07',
                             dataType: 'string',
-                            visible: true,
+                            //visible: true,
                         }
                     ],
                 },
