@@ -5,15 +5,6 @@ $(document).ready(async function () {
     // ===============================================================================================
     const
         _objData = {
-            // SumIDRombel: {
-            //     column: 'A01',
-            //     summaryType: 'count',
-            //     displayFormat: 'Total : ( {0} Peserta Didik )',
-            //     alignByColumn: true,
-            //     showInColumn: 'B02',
-            //     showInGroupFooter: false,
-            // },
-
             TBSummaryInfo: {
                 groupItems: [{
                     column: 'A01',
@@ -35,49 +26,43 @@ $(document).ready(async function () {
 
             TbColumns: [
                 {
+                    caption: 'Peserta Didik',
+                    dataField: 'A01',
+                    dataType: 'string',
+                    sortOrder: 'asc',
+                    groupIndex: 2,
+                    fixed: true,
+                },
+                {
                     caption: 'Identitas Peserta Didik',
-                    //visible: true,
+                    visible: false,
                     columns: [
-                        {
-                            caption: 'Peserta Didik',
-                            dataField: 'A01',
-                            dataType: 'string',
-                            sortOrder: 'asc',
-                            groupIndex: 2,
-                            visible: false,
-                        },
                         {
                             caption: 'NIPD',
                             dataField: 'A02',
                             sortOrder: 'asc',
                             dataType: 'string',
-                            //visible: true,
                         }, {
                             caption: 'NISN',
                             dataField: 'A03',
                             dataType: 'string',
-                            //visible: true,
                         }, {
                             caption: 'Nama Lengkap',
                             dataField: 'A04',
                             dataType: 'string',
-                            //visible: true,
                         }, {
                             caption: 'Gender',
                             dataField: 'A05',
                             dataType: 'string',
-                            //visible: true,
                         }, {
                             caption: 'Rombel Dinamis',
                             dataField: 'A06',
                             dataType: 'string',
                             groupIndex: 1,
-                            //visible: true
                         }, {
                             caption: 'Status',
                             dataField: 'A07',
                             dataType: 'string',
-                            //visible: true,
                         }
                     ],
                 },
@@ -270,6 +255,7 @@ $(document).ready(async function () {
             selectAllMode: "allPages",
             showCheckBoxesMode: "click"
         },
+
         scrolling: {
             columnRenderingMode: "standard",
             mode: "standard",
