@@ -840,10 +840,10 @@ _main = {
                         "target": "https://siijol.probolinggokota.go.id"
                     },
                     {
-                        "product": "PPDB",
-                        "detail": "Penerimaan Peserta Didik Baru",
+                        "product": "SPMB",
+                        "detail": "Sistem Penerimaan Murid Baru",
                         "icon": "tags",
-                        "target": "https://ppdb.probolinggokota.go.id"
+                        "target": "https://spmb.probolinggokota.go.id"
                     }
                 ]
             },
@@ -906,8 +906,8 @@ _main = {
             },
             {
                 "id": 4,
-                "dev": "KEMENDIKBUD RISTEK",
-                "detail": "Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi",
+                "dev": "KEMENDIKDASMEN",
+                "detail": "Kementerian Pendidikan Dasar dan Menengah",
                 "items": [
                     {
                         "product": "DAPODIK-SP",
@@ -961,7 +961,7 @@ _main = {
                         "product": "PIP",
                         "detail": "Program Indoensia Pintar",
                         "icon": "tags",
-                        "target": "https://pip.kemdikbud.go.id"
+                        "target": "https://pip.kemendikdasmen.go.id"
                     }
 
                 ]
