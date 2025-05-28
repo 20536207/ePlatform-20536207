@@ -1062,6 +1062,13 @@ _main = {
                         "icon": "tags",
                         "target": "https://drive.google.com/file/d/15f-YD4rxX2INEgJ4xjbuEGKtltOvZw7e"
                     },
+                    {
+                        "product": "Kartu Asesmen",
+                        "detail": "Kartu Asesmen Pembelajaran",
+                        "icon": "tags",
+                        "target": "https://drive.google.com/file/d/1Jhm72QKo9XW-Dnaw8aQzTAbDpoFewsTE"
+                    },
+                    
 
 
                 ]
