@@ -127,23 +127,31 @@ $(document).ready(function () {
             `;
         },
         itemTemplate: function (devdata, devindex, develement) {
-            if (devindex == 0) {   
-                develement.append(`<br><div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>`);
-            }
-            else {
-                devdata.items.forEach(function (itemdata, itemindex) {
-                    addPageButton(
-                        develement, //itemElement,
-                        itemdata,
-                        itemdata.text,  //itemBDataCaption,
-                        itemdata.target,    //actPageContains,
-                        "/master/Homepage/Homepage_Home.html", //ParentPageContains
-                        // "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
-                        itemdata.fileId, //pdffileContains
-                        itemdata.icon //iconobj
-                    );
 
-                });
+            switch (devindex) {
+                // case 0:
+                //     develement.append(
+                //         "wait..next session"
+                //     );
+                //     break;
+                case 0:
+                    develement.append(`<br><div data-behold-id="Zi34hTXiKqwACPkXEx0G"></div>`);
+                    break;
+                default:
+                    devdata.items.forEach(function (itemdata, itemindex) {
+                        addPageButton(
+                            develement, //itemElement,
+                            itemdata,
+                            itemdata.text,  //itemBDataCaption,
+                            itemdata.target,    //actPageContains,
+                            "/master/Homepage/Homepage_Home.html", //ParentPageContains
+                            // "/master/AIOPdfPageContains/PdfPageContains/" + itemData.text.replace(" ", "") + ".pdf" //pdfFileContains
+                            itemdata.fileId, //pdffileContains
+                            itemdata.icon //iconobj
+                        );
+
+                    });
+                    break;
             };
         },
     });
