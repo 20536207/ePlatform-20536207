@@ -1845,8 +1845,11 @@ function onSignIn(currentAccount) {
         }
 
     });
-    delete getQuery;
-    delete responsePayload;
+    //delete getQuery;
+    //delete responsePayload;
+    getQuery = null;
+    responsePayload= null;
+
     _main.arrVarGlobal._columnArray = [];
     _main.arrVarGlobal._dataArray = [];
 }
@@ -1899,11 +1902,18 @@ function GetJsonData(response) {
             _main.arrVarGlobal._dataArray.push(_arrRow);
         });
 
-        delete data;
-        delete _field;
-        delete _value;
-        delete _arrCol;
-        delete _arrRow;
+        // delete data;
+        // delete _field;
+        // delete _value;
+        // delete _arrCol;
+        // delete _arrRow;
+
+        data = null;
+        _field = null;
+        _value = null;
+        _arrCol = null;
+        _arrRow = null;
+
         return;
     } else {
         _notify('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
