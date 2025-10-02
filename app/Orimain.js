@@ -1042,7 +1042,7 @@ _main = {
                         "product": "Classical Daftar Hadir",
                         "detail": "Kesiswaan-Daftar Hadir Anggota Rombel",
                         "icon": "tags",
-                        "target": "https://drive.google.com/file/d/1xWVGs9WkpJA9TZATPBklBULazgutXf8l"
+                        "target": "https://drive.google.com/file/d/1F8ytaoBkmI0LiAgvPWnLDVgUMEx-2rZ7"
                     },
                     {
                         "product": "Classical Daftar Hadir Wali Murid",
