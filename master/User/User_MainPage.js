@@ -98,9 +98,9 @@ $(document).ready(function () {
 
     };
   //=====================================================
-  _Authentication=null;
-  formOption=null;
-  getQuery=null;
+  _Authentication = null;
+  formOption = null;
+  getQuery = null;
   _main.arrVarGlobal._data = null;
   _main.arrVarGlobal._columnArray = [];
   _main.arrVarGlobal._dataArray = [];

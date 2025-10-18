@@ -2773,7 +2773,7 @@ $(document).ready(function () {
                                 this.option("dataSource", _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
                             });
                             e.component._isReady = true;
-                            getQuery=null;
+                            getQuery = null;
                             _main.arrVarGlobal._columnArray = [];
                             _main.arrVarGlobal._dataArray = [];
                         }
