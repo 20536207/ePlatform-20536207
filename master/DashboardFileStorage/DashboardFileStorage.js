@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(async function () {
 
   _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 

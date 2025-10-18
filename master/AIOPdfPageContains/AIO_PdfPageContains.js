@@ -1,6 +1,6 @@
 var _zoomScaleCanvas = 0;
 
-$(document).ready(function () {
+$(document).ready(async function () {
     $("#pdfMainPage").dxScrollView({
         scrollByContent: true,
         scrollByThumb: true,

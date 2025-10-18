@@ -2,7 +2,7 @@ _element.PageToolbar.option("items[1].text", "e-Platform Authentication");
 _element.PageToolbar.option("items[2].visible", false);
 _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
-$(document).ready(function () {
+$(document).ready(async function () {
   // searchFile("1-crfVPx2u9vnbosWdcYwDoc8vzpsfm04"); //PHOTO PEGAWAI GDRIVE
   var
     _Authentication = {
@@ -31,9 +31,9 @@ $(document).ready(function () {
         },
       ],
 
-    },
-    getQuery = null;
+    };
 
+    //delete getQuery;
   //=====================================================
   if (_main.account.user.userstate == "Peserta Didik") {
 
@@ -98,9 +98,8 @@ $(document).ready(function () {
 
     };
   //=====================================================
-  //delete _Authentication
-  formOption = null;
-  getQuery = null;
+  //delete _Authentication;
+  //delete getQuery;
   _main.arrVarGlobal._data = null;
   _main.arrVarGlobal._columnArray = [];
   _main.arrVarGlobal._dataArray = [];

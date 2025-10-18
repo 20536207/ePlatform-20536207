@@ -3,7 +3,7 @@ _element.PageToolbar.option("items[2].visible", false);
 _main.arrVarGlobal._ParentPageContains = "/master/Homepage/Homepage_Home.html";
 
 // ===============================================================================================
-$(document).ready(function () {
+$(document).ready(async function () {
 
     $("#HomePagesMain").dxScrollView({
         scrollByContent: true,
