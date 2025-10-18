@@ -98,7 +98,7 @@ $(document).ready(function () {
 
     };
   //=====================================================
-  _Authentication = null;
+  //delete _Authentication
   formOption = null;
   getQuery = null;
   _main.arrVarGlobal._data = null;
