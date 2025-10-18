@@ -2601,7 +2601,7 @@ $(document).ready(async function () {
                     this.option("dataSource", _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
                 });
                 e.component._isReady = true;
-                //delete getQuery;
+                delete(getQuery);
                 _main.arrVarGlobal._columnArray = [];
                 _main.arrVarGlobal._dataArray = [];
             };
@@ -2773,7 +2773,7 @@ $(document).ready(async function () {
                                 this.option("dataSource", _main.arrVarGlobal._dataArray.length != 0 ? _main.arrVarGlobal._dataArray : null);
                             });
                             e.component._isReady = true;
-                            //delete getQuery;
+                            delete(getQuery);
                             _main.arrVarGlobal._columnArray = [];
                             _main.arrVarGlobal._dataArray = [];
                         }

@@ -4,7 +4,7 @@ _main = {
             title: "e-Platform ( 20536207 )",
             iconUrl: "/assets/images/LOGO20536207.png",
             appname: "e-Platform AIO",
-            appver: new Date().getFullYear() + "." + new Date().getMonth(),
+            appver: new Date().getFullYear() + "." + (new Date().getMonth()+1),
             owner: "SD NEGERI TISNONEGARAN 1 PROBOLINGGO",
             createdYear: "2022-" + new Date().getFullYear(),
         },
@@ -1845,10 +1845,10 @@ function onSignIn(currentAccount) {
         }
 
     });
-    //delete getQuery;
-    //delete responsePayload;
-    getQuery = null;
-    responsePayload= null;
+    delete(getQuery);
+    delete(responsePayload);
+    // getQuery = null;
+    // responsePayload= null;
 
     _main.arrVarGlobal._columnArray = [];
     _main.arrVarGlobal._dataArray = [];
@@ -1902,17 +1902,17 @@ function GetJsonData(response) {
             _main.arrVarGlobal._dataArray.push(_arrRow);
         });
 
-        // delete data;
-        // delete _field;
-        // delete _value;
-        // delete _arrCol;
-        // delete _arrRow;
+        delete(data);
+        delete(_field);
+        delete(_value);
+        delete(_arrCol);
+        delete(_arrRow);
 
-        data = null;
-        _field = null;
-        _value = null;
-        _arrCol = null;
-        _arrRow = null;
+        // data = null;
+        // _field = null;
+        // _value = null;
+        // _arrCol = null;
+        // _arrRow = null;
 
         return;
     } else {

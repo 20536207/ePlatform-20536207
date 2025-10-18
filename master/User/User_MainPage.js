@@ -33,7 +33,7 @@ $(document).ready(async function () {
 
     };
 
-    //delete getQuery;
+    delete(getQuery);
   //=====================================================
   if (_main.account.user.userstate == "Peserta Didik") {
 
@@ -98,8 +98,8 @@ $(document).ready(async function () {
 
     };
   //=====================================================
-  //delete _Authentication;
-  //delete getQuery;
+  delete(_Authentication);
+  delete(getQuery);
   _main.arrVarGlobal._data = null;
   _main.arrVarGlobal._columnArray = [];
   _main.arrVarGlobal._dataArray = [];
