@@ -1105,14 +1105,21 @@ _main = {
                         "target": "http://20536207.ip-dynamic.com:5774"
                     },
                     {
-                        "product": "e-Rapor SD-KM",
-                        "detail": "Manajemen Rapor Kurikulum Merdeka",
+                        "product": "e-Rapor SD 2025",
+                        "detail": "Direktorat SD Kemendikdasmen",
                         "icon": "tags",
-                        "target": "http://20536207.ip-dynamic.com:7231"
+                        "target": "http://20536207.ip-dynamic.com:8535"
                     },
+                    // ,
+                    // {
+                    //     "product": "e-Rapor SD-KM",
+                    //     "detail": "Manajemen Rapor Kurikulum Merdeka",
+                    //     "icon": "tags",
+                    //     "target": "http://20536207.ip-dynamic.com:7231"
+                    // },
                     {
                         "product": "e-Rapor SP",
-                        "detail": "Manajemen Rapor Alternatif",
+                        "detail": "Rapor SD Alternative",
                         "icon": "tags",
                         "target": "http://20536207.ip-dynamic.com:7252"
                     }
@@ -1845,8 +1852,8 @@ function onSignIn(currentAccount) {
         }
 
     });
-    delete(getQuery);
-    delete(responsePayload);
+    delete (getQuery);
+    delete (responsePayload);
     // getQuery = null;
     // responsePayload= null;
 
@@ -1902,11 +1909,11 @@ function GetJsonData(response) {
             _main.arrVarGlobal._dataArray.push(_arrRow);
         });
 
-        delete(data);
-        delete(_field);
-        delete(_value);
-        delete(_arrCol);
-        delete(_arrRow);
+        delete (data);
+        delete (_field);
+        delete (_value);
+        delete (_arrCol);
+        delete (_arrRow);
 
         // data = null;
         // _field = null;
