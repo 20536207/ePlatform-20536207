@@ -1121,7 +1121,7 @@ _main = {
                         "product": "e-Rapor SP",
                         "detail": "Rapor SD Alternative",
                         "icon": "tags",
-                        "target": "http://20536207.ip-dynamic.com:7252"
+                        "target": "http://20536207.ip-dynamic.com:8055"
                     }
                 ]
             },
