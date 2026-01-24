@@ -1102,13 +1102,13 @@ _main = {
                         "product": "Dapodik",
                         "detail": "Manajemen Data Pokok Pendidikan",
                         "icon": "tags",
-                        "target": "http://20536207.ip-dynamic.com:5774"
+                        "target": "http://e20536207.ddns.net:5774"
                     },
                     {
                         "product": "e-Rapor SD 2025",
                         "detail": "Direktorat SD Kemendikdasmen",
                         "icon": "tags",
-                        "target": "http://20536207.ip-dynamic.com:8535"
+                        "target": "http://e20536207.ddns.net:8535"
                     },
                     // ,
                     // {
@@ -1121,7 +1121,7 @@ _main = {
                         "product": "e-Rapor SP",
                         "detail": "Rapor SD Alternative",
                         "icon": "tags",
-                        "target": "http://20536207.ip-dynamic.com:8055"
+                        "target": "http://e20536207.ddns.net:8055"
                     }
                 ]
             },
