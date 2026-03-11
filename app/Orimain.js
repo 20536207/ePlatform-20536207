@@ -913,43 +913,43 @@ _main = {
                         "product": "DAPODIK-SP",
                         "detail": "Integrasi pengelolaan Dapodik satuan pendidikan",
                         "icon": "tags",
-                        "target": "https://sp.datadik.kemdikbud.go.id"
+                        "target": "https://sp.datadik.kemendikdasmen.go.id"
                     },
                     {
                         "product": "DAPODIK-PTK",
                         "detail": "Integrasi pengelolaan Dapodik PTK",
                         "icon": "tags",
-                        "target": "https://ptk.datadik.kemdikbud.go.id"
+                        "target": "https://ptk.datadik.kemendikdasmen.go.id"
                     },
                     {
                         "product": "DAPODIK-PD",
                         "detail": "Integrasi pengelolaan Dapodik Peserta Didik",
                         "icon": "tags",
-                        "target": "https://pd.data.kemdikbud.go.id"
+                        "target": "https://pd.data.kemendikdasmen.go.id"
                     },
                     {
                         "product": "Verval-SP",
                         "detail": "Manajemen Verifikasi Validasi data pokok satuan satuan pendidikan",
                         "icon": "tags",
-                        "target": "https://vervalsp.data.kemdikbud.go.id"
+                        "target": "https://vervalsp.data.kemendikdasmen.go.id"
                     },
                     {
                         "product": "Verval-PTK",
                         "detail": "Manajemen Verifikasi Validasi data pokok Pendidik dan Tenaga Kependidikan",
                         "icon": "tags",
-                        "target": "https://vervalptk.data.kemdikbud.go.id"
+                        "target": "https://vervalptk.data.kemendikdasmen.go.id"
                     },
                     {
                         "product": "Verval-PD",
                         "detail": "Manajemen Verifikasi Validasi data Peserta Didik",
                         "icon": "tags",
-                        "target": "https://vervalpd.data.kemdikbud.go.id"
+                        "target": "https://vervalpd.data.kemendikdasmen.go.id"
                     },
                     {
                         "product": "SIBI",
                         "detail": "Sistem Informasi perBukuan Indonesia",
                         "icon": "tags",
-                        "target": "https://buku.kemdikbud.go.id/katalog/buku-kurikulum-merdeka"
+                        "target": "https://buku.kemendikdasmen.go.id/katalog/buku-kurikulum-merdeka"
                     },
                     {
                         "product": "NISN",
