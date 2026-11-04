@@ -1084,13 +1084,19 @@ _main = {
                         "product": "Database Peserta Didik",
                         "detail": "Manajemen Database Internal Peserta Didik",
                         "icon": "tags",
-                        "target": "https://docs.google.com/spreadsheets/d/1wRpAJIQs6rzrlq_dGzuInUGk5Hb4BLwDdeN6MRdtE6g/edit?usp=sharing"
+                        "target": "https://docs.google.com/spreadsheets/d/1wRpAJIQs6rzrlq_dGzuInUGk5Hb4BLwDdeN6MRdtE6g"
                     },
                     {
                         "product": "Database Pegawai",
                         "detail": "Manajemen Database Internal Kepegawaian",
                         "icon": "tags",
-                        "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo/edit?usp=sharing"
+                        "target": "https://docs.google.com/spreadsheets/d/1N1XhNYsLjkzSRinGy_OsmH_K5WHmT3-7KhZORKOMpzo"
+                    },
+                    {
+                        "product": "Informasi Pegawai",
+                        "detail": "Manajemen Informasi Internal Kepegawaian",
+                        "icon": "tags",
+                        "target": "https://docs.google.com/spreadsheets/d/1_qz0_q_obVlb6CmeGsI-FY8Tp_r-Y9F7uQR8TjbEB-E"
                     },
                     {
                         "product": "Persuratan",
